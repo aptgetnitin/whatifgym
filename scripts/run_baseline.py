@@ -3,7 +3,7 @@
 
     python scripts/run_baseline.py --tasks tasks/factory_planning/data_change_v0.jsonl --agent oracle
     python scripts/run_baseline.py --tasks ... --agent noop
-    python scripts/run_baseline.py --tasks ... --split test --agent anthropic --model claude-sonnet-4-5
+    python scripts/run_baseline.py --tasks ... --agent anthropic --model claude-sonnet-5-5
 
 Agents
   oracle            submits the hidden gold scenario (pipeline sanity check: every task must score 1.1)
@@ -87,7 +87,19 @@ def _extract_json(text: str) -> dict:
     return json.loads(text[start:end + 1])
 
 
-def make_anthropic_agent(model_name: str, max_tokens: int = 2000):
+# USD per million tokens (input, output) from platform.claude.com/docs/en/models/overview, read 2026-10-02.
+PRICES = {"claude-fable-5-1": (10.0, 50.0), "claude-opus-5-5": (4.0, 20.0), "claude-sonnet-5-5": (2.0, 10.0),
+          "claude-haiku-4-5-20251001": (1.0, 5.0), "claude-haiku-4-5": (1.0, 5.0)}
+
+
+def estimate_cost_usd(model_name: str, input_tokens: int, output_tokens: int) -> float | None:
+    for key, (pin, pout) in PRICES.items():
+        if model_name.startswith(key):
+            return input_tokens / 1e6 * pin + output_tokens / 1e6 * pout
+    return None
+
+
+def make_anthropic_agent(model_name: str, max_tokens: int = 4000, retries: int = 3):
     try:
         import anthropic
     except ImportError as exc:
@@ -98,12 +110,22 @@ def make_anthropic_agent(model_name: str, max_tokens: int = 2000):
 
     def agent(obs, task, state):
         t0 = time.perf_counter()
-        resp = client.messages.create(model=model_name, max_tokens=max_tokens, system=SYSTEM_PROMPT,
-                                      messages=[{"role": "user", "content": build_prompt(obs)}])
-        text = "".join(getattr(b, "text", "") for b in resp.content)
+        for attempt in range(retries):
+            try:
+                resp = client.messages.create(model=model_name, max_tokens=max_tokens, system=SYSTEM_PROMPT,
+                                              messages=[{"role": "user", "content": build_prompt(obs)}])
+                break
+            except (anthropic.RateLimitError, anthropic.APIConnectionError, anthropic.InternalServerError) as exc:
+                if attempt == retries - 1:
+                    raise
+                time.sleep(5 * (attempt + 1))
+                state["retries"] = state.get("retries", 0) + 1
+        text = "".join(getattr(b, "text", "") or "" for b in resp.content if getattr(b, "type", "") == "text")
         state["latency_s"] = state.get("latency_s", 0.0) + time.perf_counter() - t0
         state["input_tokens"] = state.get("input_tokens", 0) + resp.usage.input_tokens
         state["output_tokens"] = state.get("output_tokens", 0) + resp.usage.output_tokens
+        state["model"] = model_name
+        state["raw_output"] = text[:4000]
         try:
             scenario = _extract_json(text)
         except Exception:
@@ -160,7 +182,13 @@ def summarise(records) -> str:
     tok_out = sum(r["agent_state"].get("output_tokens", 0) for r in records)
     lat = sum(r["agent_state"].get("latency_s", 0.0) for r in records)
     if tok_in:
-        lines.append(f"API tokens: {tok_in} in / {tok_out} out; mean latency {lat / n:.2f}s")
+        model_name = next((r["agent_state"].get("model") for r in records if r["agent_state"].get("model")), "")
+        cost = estimate_cost_usd(model_name, tok_in, tok_out)
+        lines.append(f"API tokens: {tok_in} in / {tok_out} out; mean latency {lat / n:.2f}s"
+                     + (f"; estimated cost ${cost:.2f} ({model_name})" if cost is not None else ""))
+        parse_errors = sum(1 for r in records if r["agent_state"].get("parse_error"))
+        if parse_errors:
+            lines.append(f"unparseable model outputs: {parse_errors}")
     return "\n".join(lines)
 
 
@@ -169,7 +197,7 @@ def main(argv=None) -> int:
     ap.add_argument("--tasks", required=True)
     ap.add_argument("--split", default=None, help="train | dev | test (default: all)")
     ap.add_argument("--agent", default="oracle", choices=["oracle", "noop", "ask_then_oracle", "anthropic"])
-    ap.add_argument("--model", default="claude-sonnet-4-5", help="API model name for --agent anthropic")
+    ap.add_argument("--model", default="claude-sonnet-5-5", help="API model id for --agent anthropic (see PRICES)")
     ap.add_argument("--solver", default="highs")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--out", default=None)
