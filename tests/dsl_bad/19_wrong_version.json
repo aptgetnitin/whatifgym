@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "holding_cost",
+      "value": 1
+    }
+  ]
+}

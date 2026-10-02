@@ -1,0 +1,24 @@
+{
+  "_question": "Item item9 is withdrawn and a sixth bin of capacity 80 is added.",
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "items",
+      "where": {
+        "item": "item9"
+      }
+    },
+    {
+      "op": "add",
+      "table": "bins",
+      "rows": [
+        {
+          "bin": "bin5",
+          "capacity": 80
+        }
+      ]
+    }
+  ]
+}

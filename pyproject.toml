@@ -9,7 +9,7 @@ description = "Clean-room benchmark and RL environment for LLM what-if agents ov
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
-dependencies = ["pulp>=2.8,<4", "highspy>=1.8", "pyscipopt>=5.0", "ortools>=9.10"]
+dependencies = ["pulp>=2.8,<4", "highspy>=1.8", "pyscipopt>=5.0", "ortools>=9.10", "jsonschema>=4.18"]
 
 [project.optional-dependencies]
 test = ["pytest>=7"]
@@ -18,7 +18,7 @@ test = ["pytest>=7"]
 include = ["whatifgym*"]
 
 [tool.setuptools.package-data]
-whatifgym = ["models/*/data/*.csv", "models/*/*.md", "models/*/*.json"]
+whatifgym = ["models/*/data/*.csv", "models/*/*.md", "models/*/*.json", "dsl/*.json", "dsl/*.md", "dsl/examples/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

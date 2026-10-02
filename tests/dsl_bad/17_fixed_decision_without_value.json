@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "fixed_decisions": [
+    {
+      "measure": "make",
+      "scope": {
+        "product": "Prod1"
+      }
+    }
+  ]
+}

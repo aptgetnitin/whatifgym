@@ -1,0 +1,18 @@
+{
+  "_question": "What if one borer is down in February (no borer maintenance was planned that month)?",
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "downtime",
+      "rows": [
+        {
+          "month": "Feb",
+          "machine": "borer",
+          "machines_down": 1
+        }
+      ]
+    }
+  ]
+}

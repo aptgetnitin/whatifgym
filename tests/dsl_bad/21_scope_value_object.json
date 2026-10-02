@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "rules": [
+    {
+      "measure": "make",
+      "scope": {
+        "month": {
+          "from": "Jan"
+        }
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

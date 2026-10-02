@@ -28,6 +28,7 @@ class FactoryPlanning(BaseModel):
     )
     DATA_DIR = Path(__file__).parent / "data"
     TABLES = ("months", "products", "machines", "process_hours", "downtime", "max_sales")
+    MEASURE_DIMS = {"make": ("month", "product"), "store": ("month", "product"), "sell": ("month", "product")}
 
     # ----------------------------------------------------------------- helpers
     @staticmethod

@@ -1,0 +1,17 @@
+{
+  "_question": "Only four tables fit in the room and tables now seat five.",
+  "version": "0.1",
+  "base_model": "wedding_seating",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_tables",
+      "value": 4
+    },
+    {
+      "op": "set_param",
+      "name": "max_table_size",
+      "value": 5
+    }
+  ]
+}

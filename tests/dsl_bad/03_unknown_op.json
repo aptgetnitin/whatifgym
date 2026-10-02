@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "data_changes": [
+    {
+      "op": "multiply",
+      "table": "max_sales",
+      "column": "max_sales",
+      "factor": 2
+    }
+  ]
+}

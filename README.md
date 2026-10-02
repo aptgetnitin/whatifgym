@@ -22,6 +22,10 @@ the original public implementation (`whatifgym/models/<name>/reference.json`); s
 | yes | HiGHS, SCIP (PySCIPOpt) and OR-Tools installed and verified (`setup.sh`, `requirements.txt`) |
 | yes | One model each ported from the Gurobi examples, the OR-Tools examples and the PuLP case studies; all three solve on open solvers with objectives matching the originals (`scripts/verify_models.py`) |
 | yes | 30 base models chosen (at least 4 per domain, 50 to 5 000 variables, open-solver time under 2 s) with source, licence and measured size: `docs/base_models.md`, `data/base_models.csv` |
+| yes | Scenario DSL v0.1 with a JSON Schema: 10 worked examples validate, 22 planted bad scenarios are rejected with actionable errors (`whatifgym/dsl/SPEC.md`) |
+| yes | Oracle and scorer: a scenario is validated, applied, re-solved and compared within relative tolerance 1e-3; the same change spelled two ways scores identically |
+| started | Task families: `data_change` over `factory_planning` (60 tasks with reference solutions, `tasks/factory_planning/data_change_v0.jsonl`); `new_limit` and the other 9 models are next |
+| started | Environment (`reset`/`step`, ask + scenario actions, 3 turns) and baseline runner; trivial agents verified (oracle 1.10, noop 0.10, unneeded ask 0.90); the frontier-API agent is wired up (`--agent anthropic`) but has not been run yet |
 
 ## Ported models
 
@@ -58,6 +62,42 @@ scenario = m.solve(data, solver="highs")
 print(base.objective - scenario.objective, scenario.kpis["machine_utilisation"])
 ```
 
+## Scenario DSL, oracle, environment
+
+A what-if question is answered with one JSON object in the scenario DSL (`whatifgym/dsl/SPEC.md`): data
+changes (`scale`, `shift`, `set`, `add`, `remove` rows; parameter edits), rules (limits on sums of decision
+measures, absolute or relative), lexicographic objective stages, fixed decisions, or a single `ask`. The oracle
+validates it (JSON Schema, then semantics against the model's tables, keys and measures), applies it, re-solves on
+an open solver and returns status, objective, KPIs and decisions. The scorer compares results, never text.
+
+```python
+from whatifgym.oracle import solve_scenario
+from whatifgym.env import WhatIfEnv
+from whatifgym.tasks import load_tasks
+
+r = solve_scenario("factory_planning", {"version": "0.1", "data_changes": [
+    {"op": "scale", "table": "max_sales", "column": "max_sales",
+     "where": {"product": "Prod5", "month": ["May", "Jun"]}, "factor": 0.8}]})
+print(r.status, r.objective, r.kpis["profit"])
+
+tasks = load_tasks("tasks/factory_planning/data_change_v0.jsonl", split="test")
+env = WhatIfEnv(tasks)
+obs = env.reset(tasks[0])          # description, schema, index sets, measures, DSL schema, 2 worked examples, question
+obs, reward, done, info = env.step({"type": "scenario", "scenario": {...}})
+```
+
+```bash
+python scripts/make_tasks.py --family data_change --model factory_planning --n 60 --check-solvers
+python scripts/run_baseline.py --tasks tasks/factory_planning/data_change_v0.jsonl --agent oracle   # 1.10
+python scripts/run_baseline.py --tasks tasks/factory_planning/data_change_v0.jsonl --agent noop     # 0.10
+ANTHROPIC_API_KEY=... python scripts/run_baseline.py --tasks tasks/factory_planning/data_change_v0.jsonl --split test --agent anthropic --model <model>
+```
+
+Reward: 1.0 when status, objective and the family's KPIs match the hidden reference within 1e-3 relative, plus
+0.1 for a valid scenario, minus 0.2 for an unnecessary clarifying question; a needed question not asked scores 0.
+Every task is generated so that "no change" is clearly wrong under that tolerance, and every reference is checked
+to be identical on HiGHS, SCIP and CBC.
+
 ## Layout
 
 ```
@@ -67,10 +107,19 @@ whatifgym/
   runner.py        solve one (model, solver) pair in-process or in a subprocess; CLI
   registry.py      model registry
   models/<name>/   model.py, description.md, schema.json, reference.json, data/*.csv
+  dsl/             schema.json, SPEC.md, validate.py, apply.py, examples/
+  oracle.py        validate + apply + solve -> ScenarioResult
+  scoring.py       compare results (rel 1e-3), reward rules
+  env.py           WhatIfEnv: reset / step, ask + scenario actions
+  tasks.py         Task records, JSONL I/O, deterministic splits
+  families/        task-family generators (data_change)
 scripts/
   verify_models.py           cross-solver verification against reference optima
   build_base_model_table.py  regenerates docs/base_models.md and data/base_models.csv
-tests/             pytest: reference objectives, sizes, CP-SAT agreement, what-if smoke tests
+  make_tasks.py              generates a task file with oracle references (+ cross-solver stability check)
+  run_baseline.py            runs an agent (oracle | noop | ask_then_oracle | anthropic) through the environment
+tasks/<model>/<family>_v0.jsonl   generated tasks with hidden gold scenarios and references
+tests/             pytest (47 tests): models, DSL, oracle, scoring, environment, families
 docs/base_models.md, data/base_models.csv   the 30-model shortlist with sources, licences and measured sizes
 ```
 

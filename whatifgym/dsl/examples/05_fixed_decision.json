@@ -1,0 +1,15 @@
+{
+  "_question": "Commit to making exactly 100 units of Prod3 in January and optimise the rest.",
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "fixed_decisions": [
+    {
+      "measure": "make",
+      "scope": {
+        "product": "Prod3",
+        "month": "Jan"
+      },
+      "value": 100
+    }
+  ]
+}

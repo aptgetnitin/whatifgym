@@ -1,0 +1,15 @@
+{
+  "_question": "Keep the profit at its maximum, then minimise total stock held.",
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "store"
+    }
+  ]
+}

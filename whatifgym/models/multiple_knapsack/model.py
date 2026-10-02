@@ -27,6 +27,7 @@ class MultipleKnapsack(BaseModel):
     DATA_DIR = Path(__file__).parent / "data"
     TABLES = ("items", "bins")
     HAS_PARAMS = False
+    MEASURE_DIMS = {"x": ("item", "bin")}
 
     @staticmethod
     def _index(data: dict[str, Any]):

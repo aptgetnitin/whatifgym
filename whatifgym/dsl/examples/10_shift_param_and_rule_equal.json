@@ -1,0 +1,23 @@
+{
+  "_question": "Cut the end-of-horizon stock target by 25 units and sell exactly 300 units of Prod4 in April.",
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "shift_param",
+      "name": "store_target",
+      "delta": -25
+    }
+  ],
+  "rules": [
+    {
+      "measure": "sell",
+      "scope": {
+        "product": "Prod4",
+        "month": "Apr"
+      },
+      "sense": "==",
+      "value": 300
+    }
+  ]
+}

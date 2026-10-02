@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {},
+      "value": 3
+    }
+  ]
+}

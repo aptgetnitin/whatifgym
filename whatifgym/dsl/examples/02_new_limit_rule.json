@@ -1,0 +1,37 @@
+{
+  "_worked_example": true,
+  "_question": "What if we may make at most 500 units of Prod1 in February and March combined, and must sell at least as much Prod2 as Prod1 overall?",
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod1_cap_feb_mar",
+      "measure": "make",
+      "scope": {
+        "product": "Prod1",
+        "month": [
+          "Feb",
+          "Mar"
+        ]
+      },
+      "sense": "<=",
+      "value": 500
+    },
+    {
+      "name": "prod2_at_least_prod1",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod1"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

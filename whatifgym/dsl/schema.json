@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/aptgetnitin/whatifgym/whatifgym/dsl/schema.json",
+  "title": "whatifgym scenario DSL v0.1",
+  "description": "One agent action: either a clarifying question (`ask`) or a scenario applied to a base model. A scenario is data changes (scale, shift, set, add, remove rows; parameter changes), rules (new linear limits on sums of a decision measure, absolute or relative to another sum), an ordered objective list (lexicographic stages) and fixed decisions. Scopes select rows or variables by key columns; a value may be a scalar or a list (membership).",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {"type": "string", "const": "0.1"},
+    "base_model": {"type": "string", "minLength": 1},
+    "ask": {"type": "string", "minLength": 3, "description": "A clarifying question to the planner. When present, nothing else may be present."},
+    "data_changes": {"type": "array", "items": {"$ref": "#/$defs/data_change"}},
+    "rules": {"type": "array", "items": {"$ref": "#/$defs/rule"}},
+    "objective": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"$ref": "#/$defs/objective_stage"},
+                  "description": "Lexicographic stages: stage k+1 is optimised with every earlier stage held at its optimum (relative tolerance 1e-6)."},
+    "fixed_decisions": {"type": "array", "items": {"$ref": "#/$defs/fixed_decision"}},
+    "note": {"type": "string", "maxLength": 500, "description": "Free-text rationale; ignored by the solver."}
+  },
+  "oneOf": [
+    {"required": ["ask"], "not": {"anyOf": [{"required": ["data_changes"]}, {"required": ["rules"]}, {"required": ["objective"]}, {"required": ["fixed_decisions"]}]}},
+    {"not": {"required": ["ask"]}, "anyOf": [{"required": ["data_changes"]}, {"required": ["rules"]}, {"required": ["objective"]}, {"required": ["fixed_decisions"]}]}
+  ],
+  "$defs": {
+    "scalar": {"type": ["string", "number", "boolean"]},
+    "selector_value": {
+      "oneOf": [
+        {"$ref": "#/$defs/scalar"},
+        {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/scalar"}, "uniqueItems": true}
+      ]
+    },
+    "where": {
+      "type": "object",
+      "description": "column -> value or list of values; a row matches when every listed column matches.",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/selector_value"}
+    },
+    "scope": {
+      "type": "object",
+      "description": "dimension -> value or list of values of a decision measure; omitted dimensions mean all.",
+      "additionalProperties": {"$ref": "#/$defs/selector_value"}
+    },
+    "data_change": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false,
+         "required": ["op", "table", "column", "factor"],
+         "properties": {"op": {"const": "scale"}, "table": {"type": "string"}, "column": {"type": "string"},
+                        "where": {"$ref": "#/$defs/where"}, "factor": {"type": "number", "minimum": 0}}},
+        {"type": "object", "additionalProperties": false,
+         "required": ["op", "table", "column", "delta"],
+         "properties": {"op": {"const": "shift"}, "table": {"type": "string"}, "column": {"type": "string"},
+                        "where": {"$ref": "#/$defs/where"}, "delta": {"type": "number"}}},
+        {"type": "object", "additionalProperties": false,
+         "required": ["op", "table", "column", "value"],
+         "properties": {"op": {"const": "set"}, "table": {"type": "string"}, "column": {"type": "string"},
+                        "where": {"$ref": "#/$defs/where"}, "value": {"$ref": "#/$defs/scalar"}}},
+        {"type": "object", "additionalProperties": false,
+         "required": ["op", "table", "rows"],
+         "properties": {"op": {"const": "add"}, "table": {"type": "string"},
+                        "rows": {"type": "array", "minItems": 1, "items": {"type": "object", "minProperties": 1,
+                                 "additionalProperties": {"$ref": "#/$defs/scalar"}}}}},
+        {"type": "object", "additionalProperties": false,
+         "required": ["op", "table", "where"],
+         "properties": {"op": {"const": "remove"}, "table": {"type": "string"}, "where": {"$ref": "#/$defs/where"}}},
+        {"type": "object", "additionalProperties": false,
+         "required": ["op", "name", "value"],
+         "properties": {"op": {"const": "set_param"}, "name": {"type": "string"}, "value": {"$ref": "#/$defs/scalar"}}},
+        {"type": "object", "additionalProperties": false,
+         "required": ["op", "name", "factor"],
+         "properties": {"op": {"const": "scale_param"}, "name": {"type": "string"}, "factor": {"type": "number", "minimum": 0}}},
+        {"type": "object", "additionalProperties": false,
+         "required": ["op", "name", "delta"],
+         "properties": {"op": {"const": "shift_param"}, "name": {"type": "string"}, "delta": {"type": "number"}}}
+      ]
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["measure", "sense"],
+      "properties": {
+        "name": {"type": "string", "maxLength": 80},
+        "measure": {"type": "string", "description": "A decision measure of the base model (see the model schema), e.g. make, sell, store."},
+        "scope": {"$ref": "#/$defs/scope"},
+        "sense": {"enum": ["<=", ">=", "=="]},
+        "value": {"type": "number", "description": "Absolute limit on the sum of the measure over the scope."},
+        "relative_to": {
+          "type": "object", "additionalProperties": false, "required": ["measure"],
+          "properties": {"measure": {"type": "string"}, "scope": {"$ref": "#/$defs/scope"}},
+          "description": "Relative limit: sum(measure over scope) sense factor * sum(relative_to.measure over relative_to.scope)."
+        },
+        "factor": {"type": "number", "minimum": 0}
+      },
+      "oneOf": [
+        {"required": ["value"], "not": {"required": ["relative_to"]}},
+        {"required": ["relative_to", "factor"], "not": {"required": ["value"]}}
+      ]
+    },
+    "objective_stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sense", "measure"],
+      "properties": {
+        "sense": {"enum": ["min", "max"]},
+        "measure": {"type": "string", "description": "`original` keeps the model's own objective; otherwise the sum of a decision measure over the scope."},
+        "scope": {"$ref": "#/$defs/scope"}
+      }
+    },
+    "fixed_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["measure", "scope", "value"],
+      "properties": {
+        "measure": {"type": "string"},
+        "scope": {"$ref": "#/$defs/scope"},
+        "value": {"type": "number", "description": "Every variable of the measure inside the scope is fixed to this value."}
+      }
+    }
+  }
+}

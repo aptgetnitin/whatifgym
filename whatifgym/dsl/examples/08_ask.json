@@ -1,0 +1,6 @@
+{
+  "_question": "What if demand rises?",
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "ask": "Which product's demand rises, by how much, and in which months?"
+}

@@ -48,6 +48,32 @@ class SolveResult:
         return asdict(self)
 
 
+@dataclass
+class Measure:
+    """A family of decision variables exposed to the scenario DSL (e.g. ``make[month, product]``)."""
+
+    name: str
+    dims: tuple[str, ...]
+    vars: dict[tuple, Any]  # index tuple (aligned with dims) -> solver variable
+
+    def values(self, dim: str) -> list:
+        i = self.dims.index(dim)
+        seen: dict = {}
+        for key in self.vars:
+            seen.setdefault(key[i], None)
+        return list(seen)
+
+    def select(self, scope: dict[str, Any] | None) -> list:
+        """Variables whose index matches ``scope`` (dimension -> value or list of values; missing = all)."""
+        scope = scope or {}
+        wanted = {}
+        for dim, val in scope.items():
+            if dim not in self.dims:
+                raise KeyError(f"measure {self.name!r} has no dimension {dim!r}; dimensions are {list(self.dims)}")
+            wanted[self.dims.index(dim)] = set(val) if isinstance(val, (list, tuple, set)) else {val}
+        return [v for key, v in self.vars.items() if all(key[i] in allowed for i, allowed in wanted.items())]
+
+
 def _coerce(value: str) -> Any:
     """Turn CSV strings into int/float/bool where they obviously are one; keep text otherwise."""
     s = value.strip()
@@ -106,6 +132,7 @@ class BaseModel:
     DATA_DIR: Path | None = None  # set in each subclass: Path(__file__).parent / "data"
     TABLES: tuple[str, ...] = ()  # CSV table names (without .csv) expected in DATA_DIR
     HAS_PARAMS: bool = True       # whether data/params.csv exists
+    MEASURE_DIMS: dict[str, tuple[str, ...]] = {}  # decision measure -> its index dimensions (for the DSL)
 
     # ------------------------------------------------------------------ data
     @classmethod
@@ -151,6 +178,29 @@ class BaseModel:
 
     def kpis_cpsat(self, solver, variables, data: dict[str, Any]) -> dict[str, Any]:
         raise NotImplementedError(f"{self.name} has no CP-SAT formulation")
+
+    def measures(self, prob) -> dict[str, Measure]:
+        """Decision measures of a built PuLP problem, keyed by name (see ``MEASURE_DIMS``)."""
+        handles = getattr(prob, "_wig", {})
+        out: dict[str, Measure] = {}
+        for name, dims in self.MEASURE_DIMS.items():
+            variables = handles[name]
+            out[name] = Measure(name, tuple(dims),
+                                {(k if isinstance(k, tuple) else (k,)): v for k, v in variables.items()})
+        return out
+
+    @classmethod
+    def index_sets(cls, data: dict[str, Any]) -> dict[str, list]:
+        """Key values per key column across all tables (what an agent may name; never raw numbers)."""
+        schema = cls.schema()
+        out: dict[str, list] = {}
+        for table, spec in schema.get("tables", {}).items():
+            for col in spec.get("key", []):
+                vals = out.setdefault(col, [])
+                for row in data.get(table, []):
+                    if row.get(col) is not None and row[col] not in vals:
+                        vals.append(row[col])
+        return out
 
     @property
     def supports_cpsat(self) -> bool:

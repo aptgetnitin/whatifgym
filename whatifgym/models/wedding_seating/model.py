@@ -30,6 +30,13 @@ class WeddingSeating(BaseModel):
     )
     DATA_DIR = Path(__file__).parent / "data"
     TABLES = ("guests",)
+    MEASURE_DIMS = {"x": ("table",)}
+
+    def measures(self, prob):
+        from ...base import Measure
+
+        x = prob._wig["x"]
+        return {"x": Measure("x", ("table",), {("".join(t),): var for t, var in x.items()})}
 
     # ----------------------------------------------------------------- helpers
     @staticmethod

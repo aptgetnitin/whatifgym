@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "rules": [
+    {
+      "measure": "make",
+      "sense": "<",
+      "value": 10
+    }
+  ]
+}

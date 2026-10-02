@@ -1,0 +1,9 @@
+{
+  "version": "0.1",
+  "rules": [
+    {
+      "measure": "make",
+      "value": 10
+    }
+  ]
+}
