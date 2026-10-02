@@ -7,3 +7,5 @@ __pycache__/
 *.sol
 .DS_Store
 /scenarios/_scratch/
+.vscode/
+.idea/
