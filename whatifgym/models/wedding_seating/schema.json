@@ -1,0 +1,25 @@
+{
+  "model": "wedding_seating",
+  "sense": "min",
+  "objective": "sum over candidate tables of unhappiness[table] * x[table], unhappiness = rank[last guest] - rank[first guest]",
+  "tables": {
+    "guests": {
+      "key": ["guest"],
+      "columns": {
+        "guest": {"type": "string"},
+        "rank": {"type": "int", "description": "Position on the guest list; tables spanning a wide rank range are unhappy"}
+      }
+    }
+  },
+  "params": {
+    "max_tables": {"type": "int", "description": "Maximum number of tables used"},
+    "max_table_size": {"type": "int", "description": "Maximum guests per table; candidate tables are all guest subsets of size 1..max_table_size"}
+  },
+  "decision_variables": {"x[table]": "binary, 1 if the candidate table is used"},
+  "constraints": {
+    "max_tables": "sum_t x[t] <= max_tables",
+    "seat[guest]": "sum over tables containing the guest of x[t] = 1"
+  },
+  "kpis": ["total_unhappiness", "tables_used", "largest_table", "worst_table_unhappiness", "tables"],
+  "cpsat": true
+}

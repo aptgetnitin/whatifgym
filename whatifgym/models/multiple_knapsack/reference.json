@@ -1,0 +1,8 @@
+{
+  "objective": 395.0,
+  "source_solver": "OR-Tools 9.15 CP-SAT (multiple_knapsack_sat.py) and SCIP via pywraplp (multiple_knapsack_mip.py), original sample scripts run unmodified on 2026-10-02",
+  "n_vars": 75,
+  "n_constraints": 20,
+  "n_int_vars": 75,
+  "notes": "Several optimal packings exist; packed weight of the reference solution is 438."
+}

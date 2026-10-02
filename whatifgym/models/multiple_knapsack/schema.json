@@ -1,0 +1,30 @@
+{
+  "model": "multiple_knapsack",
+  "sense": "max",
+  "objective": "sum of value[item] * x[item, bin]",
+  "tables": {
+    "items": {
+      "key": ["item"],
+      "columns": {
+        "item": {"type": "string"},
+        "weight": {"type": "int", "unit": "weight units", "description": "Capacity consumed by the item"},
+        "value": {"type": "int", "description": "Value earned if the item is packed"}
+      }
+    },
+    "bins": {
+      "key": ["bin"],
+      "columns": {
+        "bin": {"type": "string"},
+        "capacity": {"type": "int", "unit": "weight units"}
+      }
+    }
+  },
+  "params": {},
+  "decision_variables": {"x[item, bin]": "binary, 1 if item is packed in bin"},
+  "constraints": {
+    "assign_once[item]": "sum_b x[item, b] <= 1",
+    "capacity[bin]": "sum_i weight[i] * x[i, bin] <= capacity[bin]"
+  },
+  "kpis": ["packed_value", "packed_weight", "items_packed", "items_left_out", "value_left_out", "bin_utilisation", "bins_used"],
+  "cpsat": true
+}

@@ -1,0 +1,8 @@
+{
+  "objective": 93715.17857142858,
+  "source_solver": "Gurobi 13.0.3 (size-limited pip licence), original notebook code run unmodified on 2026-10-02",
+  "n_vars": 126,
+  "n_constraints": 79,
+  "n_int_vars": 0,
+  "notes": "Objective is unique; the production plan has alternative optima in some months."
+}

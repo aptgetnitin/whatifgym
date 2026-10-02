@@ -1,0 +1,7 @@
+# Open solvers and modelling layer (see README "Solvers" for the highspy/ortools import caveat)
+pulp>=2.8,<4
+highspy>=1.8
+pyscipopt>=5.0
+ortools>=9.10
+# tooling
+pytest>=7

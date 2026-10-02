@@ -1,0 +1,8 @@
+{
+  "objective": 12.0,
+  "source_solver": "PuLP 3.3.2 examples/wedding.py run unmodified on CBC, HiGHS and SCIP on 2026-10-02 (all 12.0)",
+  "n_vars": 3213,
+  "n_constraints": 18,
+  "n_int_vars": 3213,
+  "notes": "Many alternative optimal seatings exist; only the objective is unique."
+}

@@ -1,0 +1,3 @@
+name,value,description
+max_tables,5,Maximum number of tables that may be used
+max_table_size,4,Maximum number of guests per table

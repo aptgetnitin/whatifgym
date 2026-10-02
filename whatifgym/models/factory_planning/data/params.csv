@@ -1,0 +1,5 @@
+name,value,description
+holding_cost,0.5,Storage cost per unit per month
+max_inventory,100,Maximum units of each product that can be stored in a month
+store_target,50,Units of each product required in stock at the end of the last month
+hours_per_month,384,Working hours per machine per month (2 shifts x 8 hours x 24 days)
