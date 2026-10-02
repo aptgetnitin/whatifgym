@@ -1,7 +1,8 @@
 """The what-if environment: reset/step over tasks, with the oracle as the only solver.
 
 Observation (the OptiGuide stance: structure and keys, never raw numbers):
-    model, description, schema, index_sets, measures, dsl_schema, examples, question, dialogue, turns_left
+    model, description, schema, index_sets, table_keys (which rows exist), params (names), measures,
+    dsl_schema, examples, question, dialogue, turns_left
 Actions:
     {"type": "ask", "text": "..."}                    one clarifying question (the simulator answers from the task)
     {"type": "scenario", "scenario": {...DSL...}}     ends the episode; the oracle solves and the scorer scores
@@ -65,6 +66,8 @@ class WhatIfEnv:
             "description": model.description(),
             "schema": model.schema(),
             "index_sets": model.index_sets(data),
+            "table_keys": model.table_keys(data),
+            "params": sorted(data.get("params", {})) if isinstance(data.get("params"), dict) else [],
             "measures": {k: list(v) for k, v in model.MEASURE_DIMS.items()},
             "dsl_schema": SCHEMA,
             "examples": worked_examples(),

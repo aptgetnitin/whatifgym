@@ -106,7 +106,7 @@ def t_outage(rng, data):
     name = MACHINE_NAMES[mc]
     q = rng.choice([
         f"What if {n} {name}{'s are' if n > 1 else ' is'} down for maintenance in {MONTH_NAMES[m]}?",
-        f"Maintenance is rescheduled so that {n} {name}{'s' if n > 1 else ''} will be unavailable in {MONTH_NAMES[m]}.",
+        f"Additional maintenance is scheduled: {n} {name}{'s' if n > 1 else ''} will be unavailable in {MONTH_NAMES[m]} (on top of the existing plan for other machines).",
         f"Assume {n} of the {installed[mc]} {name}{'s' if installed[mc] > 1 else ''} {'are' if n > 1 else 'is'} out of service in {MONTH_NAMES[m]}.",
     ])
     if (m, mc) in down:

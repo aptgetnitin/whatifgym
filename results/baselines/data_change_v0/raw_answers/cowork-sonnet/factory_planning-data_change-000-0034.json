@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"scale","table":"max_sales","column":"max_sales","where":{"product":"Prod3","month":"Feb"},"factor":1.3}],"note":"A 30% rise in forecast Prod3 demand for February is a scale of the max_sales market limit by 1.3 on that single row."}

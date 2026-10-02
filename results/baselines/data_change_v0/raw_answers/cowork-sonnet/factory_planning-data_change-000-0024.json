@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "factory_planning", "data_changes": [{"op": "set", "table": "max_sales", "column": "max_sales", "where": {"month": "Feb", "product": "Prod5"}, "value": 500}], "note": "The per-month sales cap is the max_sales table (upper bound on sell), so capping Prod5 sales in February at 500 is a set on that single existing row."}

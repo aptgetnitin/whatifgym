@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"add","table":"downtime","rows":[{"month":"Jun","machine":"grinder","machines_down":4}]}],"note":"No Jun/grinder downtime row exists, so a new row is added; 4 down of the 4 installed grinders leaves zero grinder hours in June."}

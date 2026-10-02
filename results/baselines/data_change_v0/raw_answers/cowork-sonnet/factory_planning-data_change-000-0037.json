@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "factory_planning", "data_changes": [{"op": "set", "table": "max_sales", "column": "max_sales", "where": {"month": "May", "product": "Prod2"}, "value": 200}], "note": "A stated cap on units sold in a month is the market limit, so the max_sales row for Prod2 in May is set to 200."}

@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "factory_planning", "data_changes": [{"op": "set", "table": "process_hours", "column": "hours_per_unit", "where": {"machine": "grinder", "product": "Prod2"}, "value": 1.4}], "note": "New absolute grinder time for Prod2 on an existing process_hours row is a set to 1.4 hours/unit."}

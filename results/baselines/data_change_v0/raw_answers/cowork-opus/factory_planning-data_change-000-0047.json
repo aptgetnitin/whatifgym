@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"downtime","column":"machines_down","where":{"month":"Jun","machine":"planer"},"value":0}],"note":"The June planer maintenance is cancelled, so machines_down is set to 0 for (Jun, planer)."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"scale","table":"products","column":"profit_per_unit","where":{"product":"Prod5"},"factor":1.5},{"op":"shift","table":"machines","column":"installed","where":{"machine":"horiDrill"},"delta":-1}],"note":"Prod5 contribution per unit x1.5; one horizontal drill retired (installed count reduced by 1)."}

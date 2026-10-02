@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"add","table":"downtime","rows":[{"month":"Mar","machine":"vertDrill","machines_down":2}]}],"note":"No downtime row exists for (Mar, vertDrill), so a new row is added with machines_down = 2, taking both installed vertical drills out of service in March."}

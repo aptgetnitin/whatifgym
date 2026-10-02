@@ -32,6 +32,8 @@ def test_env_oracle_scores_full_reward_and_observation_hides_raw_values():
     for task in tasks:
         obs = env.reset(task)
         assert "index_sets" in obs and "max_sales" not in json.dumps(obs["index_sets"])
+        assert {"month": "Jan", "machine": "grinder"} in obs["table_keys"]["downtime"]
+        assert all(set(r) == {"month", "machine"} for r in obs["table_keys"]["downtime"])  # keys only, no values
         assert len(obs["examples"]) == 2 and obs["question"] == task.question
         _, reward, done, info = env.step({"type": "scenario", "scenario": task.scenario})
         assert done and reward == 1.1 and info["score"]["correct"]

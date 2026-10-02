@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"scale_param","name":"holding_cost","factor":2.0}],"note":"Storage cost is the per-unit-per-month holding_cost parameter; doubling it is a scale_param with factor 2."}

@@ -25,7 +25,7 @@ the original public implementation (`whatifgym/models/<name>/reference.json`); s
 | yes | Scenario DSL v0.1 with a JSON Schema: 10 worked examples validate, 22 planted bad scenarios are rejected with actionable errors (`whatifgym/dsl/SPEC.md`) |
 | yes | Oracle and scorer: a scenario is validated, applied, re-solved and compared within relative tolerance 1e-3; the same change spelled two ways scores identically |
 | started | Task families: `data_change` over `factory_planning` (60 tasks with reference solutions, `tasks/factory_planning/data_change_v0.jsonl`); `new_limit` and the other 9 models are next |
-| started | Environment (`reset`/`step`, ask + scenario actions, 3 turns) and baseline runner; trivial agents verified (oracle 1.10, noop 0.10, unneeded ask 0.90); the frontier-API agent is wired up (`--agent anthropic`) but has not been run yet |
+| started | Environment (`reset`/`step`, ask + scenario actions, 3 turns) and baseline runner; trivial agents verified (oracle 1.10, noop 0.10, unneeded ask 0.90); first frontier baseline on all 60 tasks: Claude Sonnet 59/60, Claude Opus 60/60 (`results/baselines/data_change_v0/`) |
 
 ## Ported models
 
@@ -92,6 +92,9 @@ python scripts/run_baseline.py --tasks tasks/factory_planning/data_change_v0.jso
 python scripts/run_baseline.py --tasks tasks/factory_planning/data_change_v0.jsonl --agent noop     # 0.10
 ANTHROPIC_API_KEY=... python scripts/run_baseline.py --tasks tasks/factory_planning/data_change_v0.jsonl --split test --agent anthropic --model <model>
 ```
+
+First baseline (`results/baselines/data_change_v0/README.md`): on the 60 data-change tasks, Claude Sonnet scores 59/60
+and Claude Opus 60/60 — this family is the floor check; the harder families and held-out models come next.
 
 Reward: 1.0 when status, objective and the family's KPIs match the hidden reference within 1e-3 relative, plus
 0.1 for a valid scenario, minus 0.2 for an unnecessary clarifying question; a needed question not asked scores 0.

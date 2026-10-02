@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set_param","name":"hours_per_month","value":320}],"note":"20 working days gives 320 available hours per machine per month, so hours_per_month is set to 320."}

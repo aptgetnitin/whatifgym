@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"scale","table":"max_sales","column":"max_sales","where":{"product":"Prod1","month":["Jan","Feb","Mar"]},"factor":1.1}],"note":"A relative demand increase of 10% for Prod1 in January, February and March is a scale of max_sales by 1.1 over the matching rows."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"max_sales","column":"max_sales","where":{"month":"May","product":"Prod6"},"value":0}],"note":"The Prod6 market disappears in May, so the May market limit on Prod6 sales is set to 0. Prod6 can still be made and held in stock."}

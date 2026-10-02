@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"max_sales","column":"max_sales","where":{"month":"Apr","product":"Prod3"},"value":800}],"note":"An absolute new market limit for one product-month is a set on the existing max_sales row (Apr, Prod3)."}

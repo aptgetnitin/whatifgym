@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set_param","name":"hours_per_month","value":576}],"note":"Three shifts raise the available hours per machine per month from 384 to 576."}

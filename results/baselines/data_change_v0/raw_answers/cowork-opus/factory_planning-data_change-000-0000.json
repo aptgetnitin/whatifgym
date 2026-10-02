@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"shift","table":"machines","column":"installed","where":{"machine":"grinder"},"delta":-1}],"note":"Scrapping one of the 4 grinders for the whole horizon reduces installed grinders from 4 to 3, which lowers grinder capacity in every month (hours_per_month * (installed - machines_down))."}

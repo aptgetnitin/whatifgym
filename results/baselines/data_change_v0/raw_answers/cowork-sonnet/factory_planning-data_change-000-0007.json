@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"products","column":"profit_per_unit","where":{"product":"Prod2"},"value":4}],"note":"Prod2's contribution is products.profit_per_unit; the price change sets it from 6 to 4."}

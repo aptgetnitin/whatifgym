@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "factory_planning", "data_changes": [{"op": "scale", "table": "products", "column": "profit_per_unit", "where": {"product": "Prod6"}, "factor": 0.7}], "note": "Higher raw-material cost cuts Prod6's per-unit profit by 30%, so profit_per_unit on the Prod6 row is scaled by 0.7."}

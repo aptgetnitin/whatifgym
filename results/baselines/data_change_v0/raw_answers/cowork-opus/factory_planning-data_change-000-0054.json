@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set_param","name":"hours_per_month","value":320}],"note":"Fewer working days reduce the hours each machine is available every month. hours_per_month is set to the stated 320 hours."}

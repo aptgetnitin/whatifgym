@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"max_sales","column":"max_sales","where":{"month":"Apr","product":"Prod2"},"value":0}],"note":"Prod2 market disappears in April: the April sales limit for Prod2 is set to 0; all other months and products are unchanged."}

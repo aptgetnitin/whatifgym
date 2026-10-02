@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "factory_planning", "data_changes": [{"op": "add", "table": "downtime", "rows": [{"month": "Feb", "machine": "planer", "machines_down": 1}]}], "note": "There is no Feb/planer row in downtime, so one is added with machines_down = 1. This is an extra outage, so the existing June planer outage stays."}

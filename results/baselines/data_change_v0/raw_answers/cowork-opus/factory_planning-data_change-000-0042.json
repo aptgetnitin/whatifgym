@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"process_hours","column":"hours_per_unit","where":{"machine":"horiDrill","product":"Prod3"},"value":1.2}],"note":"Absolute new processing time for an existing (machine, product) row is a set on process_hours.hours_per_unit."}

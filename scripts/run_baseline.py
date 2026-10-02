@@ -68,6 +68,9 @@ def build_prompt(obs: dict) -> str:
         f"# Base model: {obs['title']} (`{obs['model']}`)", obs["description"],
         "# Model schema (tables, columns, parameters)", json.dumps(_compact_schema(obs["schema"]), indent=1),
         "# Key values you may refer to", json.dumps(obs["index_sets"]),
+        "# Rows that exist in each table (keys only; `set`/`scale`/`shift` need an existing row, `add` a new key)",
+        json.dumps({t: [list(r.values()) for r in rows] for t, rows in obs["table_keys"].items()}, separators=(",", ":")),
+        "# Parameter names", json.dumps(obs["params"]),
         "# Decision measures for rules / fixed decisions / objective stages", json.dumps(obs["measures"]),
         "# Scenario DSL JSON Schema", json.dumps(obs["dsl_schema"], separators=(",", ":")),
         "# Worked examples",
@@ -136,6 +139,43 @@ def make_anthropic_agent(model_name: str, max_tokens: int = 4000, retries: int =
     return agent
 
 
+def make_answers_agent(answers_dir: str, label: str):
+    """Replay answers collected offline: one <task_id>.json (or .txt with JSON inside) per task.
+
+    Used when the model is driven by something other than this script (another harness, a human, an API
+    proxy): export the prompts with --export-prompts, collect the raw replies, then score them here so the
+    environment, scorer and bookkeeping stay identical across agents.
+    """
+    folder = Path(answers_dir)
+
+    def agent(obs, task, state):
+        state["model"] = label
+        for ext in (".json", ".txt"):
+            f = folder / f"{task.id}{ext}"
+            if f.exists():
+                text = f.read_text(encoding="utf-8")
+                state["raw_output"] = text[:4000]
+                try:
+                    return {"type": "scenario", "scenario": _extract_json(text)}
+                except Exception:
+                    state["parse_error"] = text[:500]
+                    return {"type": "scenario", "scenario": {"version": "0.1", "note": "unparseable output", "data_changes": []}}
+        state["missing_answer"] = True
+        return {"type": "scenario", "scenario": {"version": "0.1", "note": "no answer collected", "data_changes": []}}
+
+    return agent
+
+
+def export_prompts(tasks, out_dir: Path) -> int:
+    """Write the exact prompt each task would receive (system + user) so an external runner can answer it."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    env = WhatIfEnv(tasks)
+    for task in tasks:
+        obs = env.reset(task)
+        (out_dir / f"{task.id}.txt").write_text("SYSTEM:\n" + SYSTEM_PROMPT + "\n\nUSER:\n" + build_prompt(obs), encoding="utf-8")
+    return len(tasks)
+
+
 # ------------------------------------------------------------------------------------------------ driver
 def run(tasks, agent, solver="highs", verbose=False):
     env = WhatIfEnv(tasks, solver=solver)
@@ -186,9 +226,12 @@ def summarise(records) -> str:
         cost = estimate_cost_usd(model_name, tok_in, tok_out)
         lines.append(f"API tokens: {tok_in} in / {tok_out} out; mean latency {lat / n:.2f}s"
                      + (f"; estimated cost ${cost:.2f} ({model_name})" if cost is not None else ""))
-        parse_errors = sum(1 for r in records if r["agent_state"].get("parse_error"))
-        if parse_errors:
-            lines.append(f"unparseable model outputs: {parse_errors}")
+    parse_errors = sum(1 for r in records if r["agent_state"].get("parse_error"))
+    missing = sum(1 for r in records if r["agent_state"].get("missing_answer"))
+    if parse_errors:
+        lines.append(f"unparseable model outputs: {parse_errors}")
+    if missing:
+        lines.append(f"missing answers: {missing}")
     return "\n".join(lines)
 
 
@@ -196,7 +239,10 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--tasks", required=True)
     ap.add_argument("--split", default=None, help="train | dev | test (default: all)")
-    ap.add_argument("--agent", default="oracle", choices=["oracle", "noop", "ask_then_oracle", "anthropic"])
+    ap.add_argument("--agent", default="oracle", choices=["oracle", "noop", "ask_then_oracle", "anthropic", "answers"])
+    ap.add_argument("--answers-dir", default=None, help="for --agent answers: folder of <task_id>.json replies")
+    ap.add_argument("--label", default=None, help="for --agent answers: how to name the model in results")
+    ap.add_argument("--export-prompts", default=None, metavar="DIR", help="write each task's full prompt to DIR and exit")
     ap.add_argument("--model", default="claude-sonnet-5-5", help="API model id for --agent anthropic (see PRICES)")
     ap.add_argument("--solver", default="highs")
     ap.add_argument("--limit", type=int, default=None)
@@ -207,11 +253,20 @@ def main(argv=None) -> int:
     tasks = load_tasks(args.tasks, split=args.split)
     if args.limit:
         tasks = tasks[:args.limit]
+    if args.export_prompts:
+        n = export_prompts(tasks, Path(args.export_prompts))
+        print(f"wrote {n} prompts to {args.export_prompts}")
+        return 0
     agent = {"oracle": agent_oracle, "noop": agent_noop, "ask_then_oracle": agent_ask_then_oracle}.get(args.agent)
-    if agent is None:
+    if args.agent == "anthropic":
         agent = make_anthropic_agent(args.model)
+    elif args.agent == "answers":
+        if not args.answers_dir:
+            raise SystemExit("--agent answers needs --answers-dir")
+        agent = make_answers_agent(args.answers_dir, args.label or Path(args.answers_dir).name)
     records = run(tasks, agent, solver=args.solver, verbose=args.verbose)
-    out = Path(args.out or ROOT / "results" / f"{Path(args.tasks).stem}.{args.agent}{'.' + args.model if args.agent == 'anthropic' else ''}.jsonl")
+    suffix = {"anthropic": "." + args.model, "answers": "." + (args.label or Path(args.answers_dir).name)}.get(args.agent, "")
+    out = Path(args.out or ROOT / "results" / f"{Path(args.tasks).stem}.{args.agent}{suffix}.jsonl")
     out.parent.mkdir(parents=True, exist_ok=True)
     with open(out, "w", encoding="utf-8") as fh:
         for r in records:

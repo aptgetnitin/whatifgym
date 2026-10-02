@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"max_sales","column":"max_sales","where":{"month":"May","product":"Prod2"},"value":200}],"note":"The May market limit for Prod2 becomes 200 units, so the existing max_sales row (May, Prod2) is set to 200."}

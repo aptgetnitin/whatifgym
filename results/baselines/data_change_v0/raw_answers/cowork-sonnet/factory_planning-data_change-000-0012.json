@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "factory_planning", "data_changes": [{"op": "scale", "table": "products", "column": "profit_per_unit", "where": {"product": "Prod6"}, "factor": 0.7}], "note": "Prod6 earns 30% less per unit, so its profit_per_unit is scaled by 0.7."}

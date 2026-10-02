@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"products","column":"profit_per_unit","where":{"product":"Prod5"},"value":14},{"op":"shift","table":"machines","column":"installed","where":{"machine":"planer"},"delta":2}],"note":"Prod5 contribution set to 14 (from 11); two additional planers installed."}

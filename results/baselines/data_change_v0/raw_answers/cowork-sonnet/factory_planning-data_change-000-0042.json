@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"process_hours","column":"hours_per_unit","where":{"machine":"horiDrill","product":"Prod3"},"value":1.2}],"note":"Prod3 horizontal-drill time becomes an absolute 1.2 h/unit, so the existing (horiDrill, Prod3) process_hours row is set to 1.2."}

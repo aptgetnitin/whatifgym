@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"products","column":"profit_per_unit","where":{"product":"Prod1"},"value":5}],"note":"Prod1 profit contribution is an absolute new value of 5 per unit, so set products.profit_per_unit for Prod1."}

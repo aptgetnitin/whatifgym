@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"downtime","column":"machines_down","where":{"month":"Mar","machine":"borer"},"value":0}],"note":"No borer maintenance in March: the existing downtime row (Mar, borer) is set to 0 machines down."}

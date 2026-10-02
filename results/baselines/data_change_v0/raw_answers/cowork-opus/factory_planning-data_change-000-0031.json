@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"downtime","column":"machines_down","where":{"month":"Jan","machine":"grinder"},"value":0}],"note":"Cancelling the January grinder maintenance means no grinders are down in January: set machines_down to 0 on the existing (Jan, grinder) downtime row."}

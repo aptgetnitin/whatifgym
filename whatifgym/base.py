@@ -202,6 +202,17 @@ class BaseModel:
                         vals.append(row[col])
         return out
 
+    @classmethod
+    def table_keys(cls, data: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
+        """The key tuples present in every keyed table (which rows exist), without any non-key values."""
+        schema = cls.schema()
+        out: dict[str, list[dict[str, Any]]] = {}
+        for table, spec in schema.get("tables", {}).items():
+            keys = spec.get("key", [])
+            if keys:
+                out[table] = [{k: row.get(k) for k in keys} for row in data.get(table, [])]
+        return out
+
     @property
     def supports_cpsat(self) -> bool:
         return type(self).build_cpsat is not BaseModel.build_cpsat

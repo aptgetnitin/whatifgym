@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"shift","table":"machines","column":"installed","where":{"machine":"horiDrill"},"delta":-1}],"note":"Scrapping one of the 3 horizontal drills for the whole horizon lowers installed horiDrill by 1 (3 -> 2)."}

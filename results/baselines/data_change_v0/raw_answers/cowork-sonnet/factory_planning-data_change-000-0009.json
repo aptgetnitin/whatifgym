@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"scale","table":"products","column":"profit_per_unit","where":{"product":"Prod5"},"factor":1.25}],"note":"Prod5 earns 25% more per unit, so its profit_per_unit contribution is scaled by 1.25."}

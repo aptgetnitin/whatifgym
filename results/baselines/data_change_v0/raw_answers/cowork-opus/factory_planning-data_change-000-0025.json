@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"process_hours","column":"hours_per_unit","where":{"machine":"grinder","product":"Prod1"},"value":0.25}],"note":"The process change sets Prod1's grinder time to 0.25 h per unit on the existing (grinder, Prod1) process_hours row."}

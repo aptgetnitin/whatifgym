@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"downtime","column":"machines_down","where":{"month":"Mar","machine":"borer"},"value":0}],"note":"The March borer maintenance is cancelled, so no borers are down in March."}

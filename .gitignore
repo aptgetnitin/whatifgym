@@ -9,5 +9,5 @@ __pycache__/
 /scenarios/_scratch/
 .vscode/
 .idea/
-/results/
+/results/scratch/
 .env

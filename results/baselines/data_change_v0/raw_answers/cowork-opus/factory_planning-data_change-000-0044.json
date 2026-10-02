@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "factory_planning", "data_changes": [{"op": "scale", "table": "max_sales", "column": "max_sales", "where": {"product": "Prod2", "month": ["May", "Jun"]}, "factor": 1.5}], "note": "A 50% rise in forecast Prod2 demand for May and June scales the market limit on Prod2 sales in those months by 1.5; the original profit objective is kept."}

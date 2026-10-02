@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"max_sales","column":"max_sales","where":{"month":"Feb","product":"Prod5"},"value":500}],"note":"Capping a product's sales in a month sets the market limit (max_sales) for that month-product row to the stated value."}
