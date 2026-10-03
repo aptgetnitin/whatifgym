@@ -1,0 +1,4 @@
+# Task files that published results refer to. scripts/make_tasks.py never overwrites them, even with --force
+# (use --force-frozen, and then re-run the baselines in results/baselines/ that cite the file).
+# One repo-relative path per line; lines starting with # are comments.
+tasks/factory_planning/data_change_v0.jsonl   # results/baselines/data_change_v0 (Claude Sonnet 59/60, Opus 60/60)
