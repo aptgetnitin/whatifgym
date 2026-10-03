@@ -1,0 +1,8 @@
+{
+  "objective": 108855.0,
+  "source_solver": "Gurobi 13.0.3 via gurobipy (size-limited pip licence), original notebook code cells run unmodified (only the %pip line dropped) on 2026-10-02",
+  "n_vars": 156,
+  "n_constraints": 84,
+  "n_int_vars": 30,
+  "notes": "Objective is unique; the maintenance calendar (repair) has alternative optima, so Gurobi, HiGHS, SCIP and CBC return different maintenance months at the same profit. In the notebook, ub=down_req is a dict keyed by machine while repair is indexed by (month, machine), so gurobipy leaves the bound at +inf; this port applies the documented bound 0..machines_to_maintain, which the maintenance equality implies, so optimum and sizes are unchanged. The notebook's markdown objective uses profit*make; its code, and this port, use profit*sell."
+}

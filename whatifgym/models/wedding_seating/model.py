@@ -31,6 +31,7 @@ class WeddingSeating(BaseModel):
     DATA_DIR = Path(__file__).parent / "data"
     TABLES = ("guests",)
     MEASURE_DIMS = {"x": ("table",)}
+    SCORING_KPIS = ["total_unhappiness"]  # KPIs that are unique at the optimum; the scorer compares these
 
     def measures(self, prob):
         from ...base import Measure

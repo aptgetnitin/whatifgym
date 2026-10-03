@@ -1,0 +1,136 @@
+{
+  "model": "mining",
+  "sense": "max",
+  "objective": "sum over years of (1 + discount_rate)^-(order - 1) * (price * blend - sum over mines of royalty * open)",
+  "tables": {
+    "mines": {
+      "key": [
+        "mine"
+      ],
+      "label": "mines",
+      "columns": {
+        "mine": {
+          "type": "string",
+          "description": "Mine identifier (the notebook's mines 1 to 4)",
+          "label": "mine"
+        },
+        "royalty": {
+          "type": "number",
+          "unit": "USD/year",
+          "description": "Royalty due for every year the mine is kept open, whether or not it is worked",
+          "label": "yearly royalty"
+        },
+        "capacity": {
+          "type": "number",
+          "unit": "tons/year",
+          "description": "Most ore that can be extracted from the mine in a year in which it is worked",
+          "label": "yearly extraction limit"
+        },
+        "quality": {
+          "type": "number",
+          "unit": "grade",
+          "description": "Grade of the mine's ore; grades blend linearly by tonnage",
+          "label": "ore quality"
+        }
+      }
+    },
+    "years": {
+      "key": [
+        "year"
+      ],
+      "label": "planning years",
+      "columns": {
+        "year": {
+          "type": "string",
+          "description": "Year of the planning horizon (the notebook's years 1 to 5)",
+          "label": "year"
+        },
+        "order": {
+          "type": "int",
+          "description": "Position in the horizon (1 = first year). Revenue and royalties of the year are discounted by (1 + discount_rate)^-(order - 1); consecutive years are linked by the stay-closed rule",
+          "label": "year number",
+          "editable": false
+        },
+        "quality_target": {
+          "type": "number",
+          "unit": "grade",
+          "description": "Grade the blended ore sold in the year must have exactly",
+          "label": "blended ore quality target"
+        }
+      }
+    }
+  },
+  "params": {
+    "price": {
+      "type": "number",
+      "unit": "USD/ton",
+      "description": "Selling price of the blended ore",
+      "label": "ore selling price"
+    },
+    "max_mines": {
+      "type": "int",
+      "unit": "mines",
+      "description": "Maximum number of mines that may be worked in any one year",
+      "label": "maximum mines worked per year"
+    },
+    "discount_rate": {
+      "type": "number",
+      "unit": "fraction per year",
+      "description": "Annual discount rate for revenue and royalties (0.1 = 10% per year)",
+      "label": "annual discount rate"
+    }
+  },
+  "decision_variables": {
+    "extract[year, mine]": "tons of ore extracted from the mine in the year (>= 0)",
+    "operate[year, mine]": "binary, 1 if the mine is worked in the year",
+    "open[year, mine]": "binary, 1 if the mine is kept open in the year (royalty due)",
+    "blend[year]": "tons of blended ore produced and sold in the year (>= 0)"
+  },
+  "constraints": {
+    "max_operating[year]": "sum_m operate <= max_mines",
+    "quality[year]": "sum_m quality * extract = quality_target * blend",
+    "mass_balance[year]": "sum_m extract = blend",
+    "capacity[year, mine]": "extract <= capacity * operate",
+    "open_to_operate[year, mine]": "operate <= open",
+    "stay_closed[year, mine]": "open[year] <= open[previous year] for every year after the first (a closed mine never reopens)"
+  },
+  "kpis": [
+    "profit",
+    "discounted_revenue",
+    "discounted_royalties",
+    "ore_sold_tons",
+    "ore_sold_by_year",
+    "mines_worked_by_year",
+    "years_open_by_mine",
+    "mine_utilisation"
+  ],
+  "measures": {
+    "extract": {
+      "dims": [
+        "year",
+        "mine"
+      ],
+      "label": "tons of ore extracted"
+    },
+    "operate": {
+      "dims": [
+        "year",
+        "mine"
+      ],
+      "label": "mine-years worked (0/1 per mine and year)"
+    },
+    "open": {
+      "dims": [
+        "year",
+        "mine"
+      ],
+      "label": "mine-years kept open (0/1 per mine and year)"
+    },
+    "blend": {
+      "dims": [
+        "year"
+      ],
+      "label": "tons of blended ore sold"
+    }
+  }
+}

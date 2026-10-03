@@ -1,0 +1,4 @@
+skill,redundancy_cost,short_time_cost,overmanning_cost
+unskilled,200,500,1500
+semi_skilled,500,400,2000
+skilled,500,400,3000

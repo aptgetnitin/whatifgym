@@ -1,0 +1,8 @@
+{
+  "objective": 1000630.0,
+  "source_solver": "Gurobi 13.0.3 via gurobipy (size-limited pip licence), original notebook code cells run unmodified (only the %pip line dropped) on 2026-10-02",
+  "n_vars": 75,
+  "n_constraints": 85,
+  "n_int_vars": 50,
+  "notes": "20 of the 50 integer variables are binary (hydro on/start). The notebook run stops at Gurobi's default 1e-4 MIP gap (best bound 1000609.44); re-solving the same model object with MIPGap=0 proves 1000630.0 optimal. The integer part of the optimum (units running, hydro schedule, and hence the minimal start-ups) is unique: excluding it with a no-good cut and re-solving at zero gap gives 1000771 (HydroA instead of HydroB in periods 15-18 and 18-24), 141 more. Pumping by period and the reservoir levels have alternative optima (the notebook's printed pumping 815/0/950/0/350 MW and this run's 450/0/1315/0/350 MW cost the same). Same formulation and size as the notebook; the scalar maxstart0 = 5 (thermal units on before the first period, applied to every type) is the per-type column thermal_types.units_on_at_start, and the notebook's assumption that hydro units start the day off is hydro_units.on_at_start = 0."
+}

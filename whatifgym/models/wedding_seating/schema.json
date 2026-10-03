@@ -4,22 +4,60 @@
   "objective": "sum over candidate tables of unhappiness[table] * x[table], unhappiness = rank[last guest] - rank[first guest]",
   "tables": {
     "guests": {
-      "key": ["guest"],
+      "key": [
+        "guest"
+      ],
       "columns": {
-        "guest": {"type": "string"},
-        "rank": {"type": "int", "description": "Position on the guest list; tables spanning a wide rank range are unhappy"}
-      }
+        "guest": {
+          "type": "string",
+          "label": "guest"
+        },
+        "rank": {
+          "type": "int",
+          "description": "Position on the guest list; tables spanning a wide rank range are unhappy Structural: the guest list order that defines table unhappiness; change the guest list (add/remove guests) rather than ranks.",
+          "label": "rank on the guest list",
+          "editable": false
+        }
+      },
+      "label": "guests"
     }
   },
   "params": {
-    "max_tables": {"type": "int", "description": "Maximum number of tables used"},
-    "max_table_size": {"type": "int", "description": "Maximum guests per table; candidate tables are all guest subsets of size 1..max_table_size"}
+    "max_tables": {
+      "type": "int",
+      "description": "Maximum number of tables used",
+      "label": "maximum number of tables",
+      "min": 1
+    },
+    "max_table_size": {
+      "type": "int",
+      "description": "Maximum guests per table; candidate tables are all guest subsets of size 1..max_table_size Scenarios keep this at most 6: every candidate table is enumerated as a column, so larger tables blow up the model.",
+      "label": "maximum guests per table",
+      "min": 2,
+      "max": 6
+    }
   },
-  "decision_variables": {"x[table]": "binary, 1 if the candidate table is used"},
+  "decision_variables": {
+    "x[table]": "binary, 1 if the candidate table is used"
+  },
   "constraints": {
     "max_tables": "sum_t x[t] <= max_tables",
     "seat[guest]": "sum over tables containing the guest of x[t] = 1"
   },
-  "kpis": ["total_unhappiness", "tables_used", "largest_table", "worst_table_unhappiness", "tables"],
-  "cpsat": true
+  "kpis": [
+    "total_unhappiness",
+    "tables_used",
+    "largest_table",
+    "worst_table_unhappiness",
+    "tables"
+  ],
+  "cpsat": true,
+  "measures": {
+    "x": {
+      "dims": [
+        "table"
+      ],
+      "label": "candidate tables used (0/1 per table)"
+    }
+  }
 }

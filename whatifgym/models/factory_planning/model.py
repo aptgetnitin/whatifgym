@@ -29,6 +29,7 @@ class FactoryPlanning(BaseModel):
     DATA_DIR = Path(__file__).parent / "data"
     TABLES = ("months", "products", "machines", "process_hours", "downtime", "max_sales")
     MEASURE_DIMS = {"make": ("month", "product"), "store": ("month", "product"), "sell": ("month", "product")}
+    SCORING_KPIS = ["profit", "holding_cost", "sales_contribution"]  # KPIs that are unique at the optimum; the scorer compares these
 
     # ----------------------------------------------------------------- helpers
     @staticmethod

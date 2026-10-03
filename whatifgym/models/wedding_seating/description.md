@@ -2,7 +2,7 @@
 
 **Domain:** packing / assignment / covering · **Type:** IP (binary, column-enumerated) · **Size:** 3 213 variables, 18 constraints · **Sense:** minimise unhappiness
 
-Seventeen guests must be seated at no more than five tables of at most four people. Every subset of guests that
+Eighteen guests (A to R) must be seated at no more than five tables of at most four people. Every subset of guests that
 fits a table is enumerated as a candidate table (a column) with an "unhappiness" score equal to the rank spread
 between its first and last guest; the model picks a set of tables so that each guest sits at exactly one of them.
 It is the textbook example of set partitioning — the same structure as crew pairing, vehicle-route selection and

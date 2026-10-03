@@ -28,6 +28,7 @@ class MultipleKnapsack(BaseModel):
     TABLES = ("items", "bins")
     HAS_PARAMS = False
     MEASURE_DIMS = {"x": ("item", "bin")}
+    SCORING_KPIS = ["packed_value"]  # KPIs that are unique at the optimum; the scorer compares these
 
     @staticmethod
     def _index(data: dict[str, Any]):

@@ -1,0 +1,8 @@
+{
+  "objective": 841.796875,
+  "source_solver": "Gurobi 13.0.3 (gurobipy, size-limited pip licence), original notebook code cells run unmodified (only the %pip line dropped) on 2026-10-02",
+  "n_vars": 72,
+  "n_constraints": 30,
+  "n_int_vars": 0,
+  "notes": "Objective is the notebook's first one, minimum total redundancy (117 nonzeros, as in the original). Alternative objective, the notebook's second (minimum total cost; its code is in a markdown cell and was run on the same gurobipy model): 498677.2853185595, with 1423.72 redundancies; the port reproduces it with ManpowerPlanning.cost_expression on HiGHS, SCIP and CBC. The redundancy optimum and its split by year and skill are unique; the rest of the plan is not: its total cost ranges from 1441389.80 (the notebook's plan, the cheapest) to 1696250.00 across alternative optima, and recruitment, retraining, downgrading and short-time working vary too. Same columns and rows as the original except: the unskilled-to-skilled ban (Train == 0) is written <= 0, an equivalent limit taken from data; the short-time coefficient in the requirement row is (1 - short_time_productivity), the same 0.5 as the notebook at the published productivity of 0.5; 9 of the 72 columns are the notebook's same-level Train[t,s,s], kept inert with a zero objective coefficient."
+}

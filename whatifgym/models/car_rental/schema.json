@@ -1,0 +1,274 @@
+{
+  "model": "car_rental",
+  "sense": "max",
+  "objective": "weekly profit = sum over days and depots of contribution per rental * rentals - sum over days and lanes of transfer cost * (undamaged + damaged transfers) - cost_per_car * fleet_size; contribution per rental at a depot = sum over return depots and rental lengths of return share * length share * (price for that return - marginal_cost + damaged_share * damage_excess)",
+  "tables": {
+    "depots": {
+      "key": [
+        "depot"
+      ],
+      "label": "depots",
+      "columns": {
+        "depot": {
+          "type": "string",
+          "description": "Depot name",
+          "label": "depot"
+        },
+        "repair_capacity": {
+          "type": "number",
+          "unit": "cars/day",
+          "description": "Damaged cars the depot can repair per day; a depot with positive capacity is a repair depot, a depot with 0 sends its damaged cars to a repair depot",
+          "label": "repair capacity"
+        }
+      }
+    },
+    "days": {
+      "key": [
+        "day"
+      ],
+      "label": "trading days",
+      "columns": {
+        "day": {
+          "type": "string",
+          "description": "Trading day of the weekly cycle (the company is closed on Sunday)",
+          "label": "day"
+        },
+        "order": {
+          "type": "int",
+          "description": "Position in the weekly cycle (1 = Monday); the day after the last day is the first day again",
+          "label": "position in the week",
+          "editable": false
+        }
+      }
+    },
+    "demand": {
+      "key": [
+        "day",
+        "depot"
+      ],
+      "label": "rental demand",
+      "columns": {
+        "day": {
+          "type": "string",
+          "ref": "days.day",
+          "label": "day"
+        },
+        "depot": {
+          "type": "string",
+          "ref": "depots.depot",
+          "label": "depot"
+        },
+        "demand": {
+          "type": "number",
+          "unit": "cars/day",
+          "description": "Estimated number of cars customers want to rent at the depot on the day; upper bound on rentals (demand need not be met); a missing row means no demand",
+          "label": "rental demand"
+        }
+      }
+    },
+    "rental_lengths": {
+      "key": [
+        "rental_days"
+      ],
+      "label": "rental-length mix and prices",
+      "columns": {
+        "rental_days": {
+          "type": "int",
+          "unit": "days",
+          "description": "Length of the rental; a car rented on a day comes back that many trading days later, in the morning",
+          "label": "rental length"
+        },
+        "share": {
+          "type": "number",
+          "unit": "fraction",
+          "description": "Share of rentals that last this many days (the shares should sum to 1; they are not renormalised)",
+          "label": "share of rentals"
+        },
+        "marginal_cost": {
+          "type": "number",
+          "unit": "currency/rental",
+          "description": "Company's marginal cost of one rental of this length (wear and tear, administration)",
+          "label": "marginal cost per rental"
+        },
+        "price_same_depot": {
+          "type": "number",
+          "unit": "currency/rental",
+          "description": "Price paid when the car is returned to the depot it was rented from",
+          "label": "price, return to same depot"
+        },
+        "price_other_depot": {
+          "type": "number",
+          "unit": "currency/rental",
+          "description": "Price paid when the car is returned to another depot (one-way rental)",
+          "label": "price, return to another depot"
+        }
+      }
+    },
+    "return_shares": {
+      "key": [
+        "from_depot",
+        "to_depot"
+      ],
+      "label": "return pattern",
+      "columns": {
+        "from_depot": {
+          "type": "string",
+          "ref": "depots.depot",
+          "description": "Depot the car is rented from",
+          "label": "rental depot"
+        },
+        "to_depot": {
+          "type": "string",
+          "ref": "depots.depot",
+          "description": "Depot the car is returned to",
+          "label": "return depot"
+        },
+        "share": {
+          "type": "number",
+          "unit": "fraction",
+          "description": "Share of the cars rented at from_depot that are returned to to_depot, independent of day and rental length (the shares out of each depot should sum to 1; they are not renormalised)",
+          "label": "share returned"
+        }
+      }
+    },
+    "transfer_costs": {
+      "key": [
+        "from_depot",
+        "to_depot"
+      ],
+      "label": "transfer costs",
+      "columns": {
+        "from_depot": {
+          "type": "string",
+          "ref": "depots.depot",
+          "description": "Depot the car is sent from",
+          "label": "origin depot"
+        },
+        "to_depot": {
+          "type": "string",
+          "ref": "depots.depot",
+          "description": "Depot the car is sent to",
+          "label": "destination depot"
+        },
+        "cost": {
+          "type": "number",
+          "unit": "currency/car",
+          "description": "Cost of moving one car (damaged or undamaged) between the two depots; a car sent on a day arrives the next morning; a transfer lane exists only where a row exists",
+          "label": "transfer cost per car"
+        }
+      }
+    }
+  },
+  "params": {
+    "cost_per_car": {
+      "type": "number",
+      "unit": "currency/car/week",
+      "description": "Opportunity cost of owning one car for a week (interest on capital, storage, servicing)",
+      "label": "weekly cost of owning a car"
+    },
+    "damaged_share": {
+      "type": "number",
+      "unit": "fraction",
+      "description": "Share of the cars returned by customers that come back damaged; the rest come back undamaged",
+      "label": "damage rate of returned cars"
+    },
+    "damage_excess": {
+      "type": "number",
+      "unit": "currency/damaged car",
+      "description": "Excess charged to the customer for each car returned damaged (the repair itself is insured); every rental earns damaged_share * damage_excess on average",
+      "label": "damage excess charged"
+    }
+  },
+  "decision_variables": {
+    "fleet_size": "cars owned (>= 0): cars on rent plus cars at the depots at the start of the third trading day (Wednesday)",
+    "rentals[day, depot]": "cars rented out (0..demand)",
+    "undamaged_stock[day, depot]": "undamaged cars at the depot in the morning (returns, arrivals, repaired cars and cars kept overnight)",
+    "damaged_stock[day, depot]": "damaged cars at the depot in the morning",
+    "undamaged_left[day, depot]": "undamaged cars kept at the depot at the end of the day",
+    "damaged_left[day, depot]": "damaged cars kept at the depot at the end of the day",
+    "undamaged_transfers[day, from_depot, to_depot]": "undamaged cars sent on the day, arriving the next morning",
+    "damaged_transfers[day, from_depot, to_depot]": "damaged cars sent on the day, arriving the next morning",
+    "repairs[day, depot]": "damaged cars repaired during the day, available for rent the next morning (0..repair_capacity)"
+  },
+  "constraints": {
+    "undamaged_in[day, depot]": "undamaged returns + undamaged transfers arriving + yesterday's repairs + undamaged cars kept yesterday = undamaged_stock (the day before the first day is the last day)",
+    "undamaged_out[day, depot]": "rentals + undamaged transfers sent + undamaged cars kept = undamaged_stock",
+    "damaged_in[day, depot]": "damaged returns + damaged cars kept yesterday (+ damaged transfers arriving, at a repair depot) = damaged_stock",
+    "damaged_out[day, depot]": "repairs + damaged transfers sent + damaged cars kept = damaged_stock; a depot without a workshop sends to repair depots, a repair depot (as in the original) to depots without a workshop",
+    "fleet_count": "fleet_size = cars rented earlier and still out at the start of the third trading day + undamaged and damaged stock at all depots that morning"
+  },
+  "kpis": [
+    "profit",
+    "rental_contribution",
+    "transfer_cost",
+    "fleet_cost",
+    "fleet_size",
+    "cars_rented",
+    "demand_fill_rate",
+    "repair_utilisation"
+  ],
+  "measures": {
+    "fleet_size": {
+      "dims": [],
+      "label": "fleet size (cars owned)"
+    },
+    "rentals": {
+      "dims": [
+        "day",
+        "depot"
+      ],
+      "label": "cars rented out"
+    },
+    "undamaged_stock": {
+      "dims": [
+        "day",
+        "depot"
+      ],
+      "label": "undamaged cars at the depot in the morning"
+    },
+    "damaged_stock": {
+      "dims": [
+        "day",
+        "depot"
+      ],
+      "label": "damaged cars at the depot in the morning"
+    },
+    "undamaged_left": {
+      "dims": [
+        "day",
+        "depot"
+      ],
+      "label": "undamaged cars kept at the depot overnight"
+    },
+    "damaged_left": {
+      "dims": [
+        "day",
+        "depot"
+      ],
+      "label": "damaged cars kept at the depot overnight"
+    },
+    "undamaged_transfers": {
+      "dims": [
+        "day",
+        "from_depot",
+        "to_depot"
+      ],
+      "label": "undamaged cars transferred"
+    },
+    "damaged_transfers": {
+      "dims": [
+        "day",
+        "from_depot",
+        "to_depot"
+      ],
+      "label": "damaged cars transferred"
+    },
+    "repairs": {
+      "dims": [
+        "day",
+        "depot"
+      ],
+      "label": "cars repaired"
+    }
+  }
+}

@@ -133,6 +133,7 @@ class BaseModel:
     TABLES: tuple[str, ...] = ()  # CSV table names (without .csv) expected in DATA_DIR
     HAS_PARAMS: bool = True       # whether data/params.csv exists
     MEASURE_DIMS: dict[str, tuple[str, ...]] = {}  # decision measure -> its index dimensions (for the DSL)
+    SCORING_KPIS: list[str] = []  # KPI keys that are unique at the optimum (safe to score); [] = objective only
 
     # ------------------------------------------------------------------ data
     @classmethod

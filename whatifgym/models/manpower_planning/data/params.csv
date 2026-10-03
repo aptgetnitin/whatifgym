@@ -1,0 +1,5 @@
+name,value,description
+downgrade_attrition,0.5,Share of downgraded workers who leave the company in the year they are downgraded
+max_overmanned,150,Most workers employed in excess of requirements in any year (all skill levels together)
+max_short_time,50,Most workers of each skill level on short-time working in any year
+short_time_productivity,0.5,Output of a worker on short-time working as a fraction of a full-time worker

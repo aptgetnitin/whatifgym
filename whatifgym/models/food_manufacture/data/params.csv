@@ -1,0 +1,10 @@
+name,value,description
+product_price,150,Sale price of the blended food product (USD per ton)
+veg_refining_capacity,200,Tons of vegetable oil the vegetable refining line can process per month
+nonveg_refining_capacity,250,Tons of non-vegetable oil the non-vegetable refining line can process per month
+min_hardness,3,Lowest hardness allowed for the blended product
+max_hardness,6,Highest hardness allowed for the blended product
+holding_cost,5,Storage cost per ton of raw oil held at a month end (USD per ton per month)
+storage_capacity,1000,Maximum tons of each raw oil that can be held in storage at a month end
+initial_stock,500,Tons of each raw oil in storage at the start of the first month
+final_stock,500,Tons of each raw oil that must be in storage at the end of the last month

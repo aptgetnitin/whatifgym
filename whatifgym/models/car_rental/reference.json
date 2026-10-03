@@ -1,0 +1,8 @@
+{
+  "objective": 121160.20722480546,
+  "source_solver": "Gurobi 13.0.3 via gurobipy (size-limited pip licence), original notebook code cells run unmodified (only the %pip line dropped) on 2026-10-02",
+  "n_vars": 289,
+  "n_constraints": 97,
+  "n_int_vars": 0,
+  "notes": "Optimal fleet 616.69 cars (the notebook prints 617), 1920 rentals a week (58.8% of demand); both repair depots work at capacity (192 repairs a week = 10% of 1920 rentals). The objective, fleet size, rentals, transfer cost and rental contribution are unique at the optimum (checked by min/max with profit held); the daily plan has alternative optima. The PuLP model matches the original coefficient for coefficient; the only representational change is that the repair variables of the depots without a workshop (upper bound 0, attached to no constraint in the original) also appear in those depots' balance rows, so PuLP counts them and CBC accepts them (feasible set unchanged; 1085 vs 1061 nonzeros). Hard-coded values in the original are derived from the data: repair depots = depots with positive repair capacity; fleet-count factors 0.25/0.45 from the rental-length mix; damagedFee 10 = damaged_share 0.1 * damage_excess 100; pctUndamaged = 1 - damaged_share. The unused 0.001 same-depot transfer costs are omitted. Kept from the original: damaged transfers out of a repair depot go only to depots without a workshop, which do not receive them, and damaged transfers between repair depots are received without leaving the sender; these flows are zero at the published optimum."
+}

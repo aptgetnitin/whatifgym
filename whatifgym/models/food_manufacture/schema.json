@@ -1,0 +1,188 @@
+{
+  "model": "food_manufacture",
+  "sense": "max",
+  "objective": "product_price * sum of produce - sum over months and oils of price * buy - holding_cost * sum of store",
+  "tables": {
+    "months": {
+      "key": [
+        "month"
+      ],
+      "label": "planning months",
+      "columns": {
+        "month": {
+          "type": "string",
+          "description": "Period label",
+          "label": "month"
+        },
+        "order": {
+          "type": "int",
+          "description": "Position in the planning horizon (1 = first month)",
+          "label": "month order",
+          "editable": false
+        }
+      }
+    },
+    "oils": {
+      "key": [
+        "oil"
+      ],
+      "label": "raw oils",
+      "columns": {
+        "oil": {
+          "type": "string",
+          "description": "Raw oil identifier",
+          "label": "oil"
+        },
+        "category": {
+          "type": "string",
+          "description": "Refining line the oil goes through: veg (vegetable) or nonveg (non-vegetable); an oil with any other category cannot be refined",
+          "label": "oil category"
+        },
+        "hardness": {
+          "type": "number",
+          "unit": "hardness units",
+          "description": "Hardness of the raw oil; the blend's hardness is the tonnage-weighted average of the oils refined",
+          "label": "oil hardness"
+        }
+      }
+    },
+    "purchase_prices": {
+      "key": [
+        "month",
+        "oil"
+      ],
+      "label": "raw oil purchase prices",
+      "columns": {
+        "month": {
+          "type": "string",
+          "ref": "months.month",
+          "description": "Month of purchase",
+          "label": "month"
+        },
+        "oil": {
+          "type": "string",
+          "ref": "oils.oil",
+          "description": "Raw oil bought",
+          "label": "oil"
+        },
+        "price": {
+          "type": "number",
+          "unit": "USD/ton",
+          "description": "Price of buying one ton of the oil in the month; with no row for a (month, oil) pair the oil cannot be bought that month",
+          "label": "purchase price"
+        }
+      }
+    }
+  },
+  "params": {
+    "product_price": {
+      "type": "number",
+      "unit": "USD/ton",
+      "description": "Sale price of the blended food product",
+      "label": "food product price"
+    },
+    "veg_refining_capacity": {
+      "type": "number",
+      "unit": "tons/month",
+      "description": "Tons of vegetable oil the vegetable refining line can process per month",
+      "label": "vegetable oil refining capacity"
+    },
+    "nonveg_refining_capacity": {
+      "type": "number",
+      "unit": "tons/month",
+      "description": "Tons of non-vegetable oil the non-vegetable refining line can process per month",
+      "label": "non-vegetable oil refining capacity"
+    },
+    "min_hardness": {
+      "type": "number",
+      "unit": "hardness units",
+      "description": "Lowest hardness allowed for the blended product",
+      "label": "minimum product hardness"
+    },
+    "max_hardness": {
+      "type": "number",
+      "unit": "hardness units",
+      "description": "Highest hardness allowed for the blended product",
+      "label": "maximum product hardness"
+    },
+    "holding_cost": {
+      "type": "number",
+      "unit": "USD/ton/month",
+      "description": "Storage cost per ton of raw oil held at a month end",
+      "label": "oil storage cost"
+    },
+    "storage_capacity": {
+      "type": "number",
+      "unit": "tons",
+      "description": "Maximum tons of each raw oil that can be in storage at a month end",
+      "label": "storage capacity per oil"
+    },
+    "initial_stock": {
+      "type": "number",
+      "unit": "tons",
+      "description": "Tons of each raw oil in storage at the start of the first month",
+      "label": "opening stock per oil"
+    },
+    "final_stock": {
+      "type": "number",
+      "unit": "tons",
+      "description": "Tons of each raw oil that must be in storage at the end of the last month",
+      "label": "closing stock target per oil"
+    }
+  },
+  "decision_variables": {
+    "buy[month, oil]": "tons of raw oil bought (>= 0; fixed to 0 when the month has no purchase price for the oil)",
+    "consume[month, oil]": "tons of raw oil refined and blended into the product (>= 0); 'Use' in the notebook",
+    "store[month, oil]": "tons of raw oil in storage at the month end (0..storage_capacity)",
+    "produce[month]": "tons of food product made and sold (>= 0)"
+  },
+  "constraints": {
+    "initial_balance[oil]": "initial_stock + buy[first month] = consume[first month] + store[first month]",
+    "balance[month, oil]": "store[previous month] + buy = consume + store, for every month after the first",
+    "horizon_closure[oil]": "store[last month] + buy[first month] - consume[first month] - store[first month] = final_stock - initial_stock (the notebook's wrap-around first-month balance row; implied by initial_balance and end_stock)",
+    "end_stock[oil]": "store[last month] = final_stock",
+    "refining[category, month]": "sum of consume over the oils of the category <= that line's refining capacity (veg_refining_capacity or nonveg_refining_capacity)",
+    "hardness_min[month]": "sum over oils of hardness * consume >= min_hardness * produce",
+    "hardness_max[month]": "sum over oils of hardness * consume <= max_hardness * produce",
+    "mass_balance[month]": "sum over oils of consume = produce (refining loses no mass)"
+  },
+  "kpis": [
+    "profit",
+    "revenue",
+    "purchase_cost",
+    "holding_cost",
+    "food_produced",
+    "oil_bought",
+    "refining_utilisation",
+    "food_produced_by_month"
+  ],
+  "measures": {
+    "buy": {
+      "dims": [
+        "month",
+        "oil"
+      ],
+      "label": "tons of oil bought"
+    },
+    "consume": {
+      "dims": [
+        "month",
+        "oil"
+      ],
+      "label": "tons of oil refined"
+    },
+    "store": {
+      "dims": [
+        "month",
+        "oil"
+      ],
+      "label": "tons of oil in storage"
+    },
+    "produce": {
+      "dims": [
+        "month"
+      ],
+      "label": "tons of food produced"
+    }
+  }
+}

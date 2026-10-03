@@ -1,0 +1,8 @@
+{
+  "objective": 4.0,
+  "source_solver": "OR-Tools 9.15.6755 SCIP via pywraplp (SCIP 10.0.0, LP solver SoPlex 8.0.0), original sample script bin_packing_mip.py run unmodified on 2026-10-02",
+  "n_vars": 132,
+  "n_constraints": 22,
+  "n_int_vars": 132,
+  "notes": "Objective, best bound (4.0) and sizes read from the pywraplp solver created by the original main() (NumVariables, NumConstraints, integer variables). The optimum meets the weight bound ceil(370 / 100) = 4; many packings reach it (the original prints bins of 97, 99, 84 and 90). The sample's single capacity (100) is stored per bin in bins.csv; formulation and size are unchanged."
+}

@@ -1,0 +1,231 @@
+{
+  "model": "power_generation_hydro",
+  "sense": "min",
+  "objective": "sum over periods of hours * (sum over thermal types of cost_per_hour * ngen + cost_per_mwh_above_min * (output - min_output_mw * ngen) + sum over hydro units of cost_per_hour * hydro_on) + sum of startup_cost * nstart + sum of hydro startup_cost * hydro_start",
+  "tables": {
+    "periods": {
+      "key": [
+        "period"
+      ],
+      "label": "demand periods",
+      "columns": {
+        "period": {
+          "type": "string",
+          "description": "Time window of the day, as start-end hour (00-06 = midnight to 6 am)",
+          "label": "period"
+        },
+        "order": {
+          "type": "int",
+          "description": "Position in the day (1 = first period). Consecutive periods are linked by start-ups and the reservoir level; the period before the first is the last (the day is a cycle)",
+          "label": "period order",
+          "editable": false
+        },
+        "hours": {
+          "type": "int",
+          "unit": "hours",
+          "description": "Length of the period; hourly costs, reservoir drawdown and pumping are multiplied by it Structural: the periods partition the 24-hour day.",
+          "label": "period length",
+          "editable": false
+        },
+        "demand_mw": {
+          "type": "number",
+          "unit": "MW",
+          "description": "Predicted power demand during the period",
+          "label": "predicted demand"
+        }
+      }
+    },
+    "thermal_types": {
+      "key": [
+        "type"
+      ],
+      "label": "thermal generator types",
+      "columns": {
+        "type": {
+          "type": "string",
+          "description": "Thermal generator type (the notebook's types 0, 1 and 2)",
+          "label": "generator type"
+        },
+        "units_available": {
+          "type": "int",
+          "unit": "units",
+          "description": "Number of generators of this type that can run",
+          "label": "units available"
+        },
+        "min_output_mw": {
+          "type": "number",
+          "unit": "MW",
+          "description": "Least output of each running unit",
+          "label": "minimum output per unit"
+        },
+        "max_output_mw": {
+          "type": "number",
+          "unit": "MW",
+          "description": "Most output of each running unit; also what a running unit counts towards the reserve",
+          "label": "maximum output per unit"
+        },
+        "cost_per_hour": {
+          "type": "number",
+          "unit": "$/unit-hour",
+          "description": "Cost of each running unit per hour, covering its output up to the minimum",
+          "label": "hourly running cost per unit"
+        },
+        "cost_per_mwh_above_min": {
+          "type": "number",
+          "unit": "$/MWh",
+          "description": "Cost of each MWh produced above the running units' minimum output",
+          "label": "cost per MWh above minimum"
+        },
+        "startup_cost": {
+          "type": "number",
+          "unit": "$/start",
+          "description": "Cost of starting one unit of this type",
+          "label": "start-up cost per unit"
+        },
+        "units_on_at_start": {
+          "type": "int",
+          "unit": "units",
+          "description": "Units of this type already running before the first period; they need no start-up Initial state carried over from the previous day; not a what-if input.",
+          "label": "units running at the start of the day",
+          "editable": false
+        }
+      }
+    },
+    "hydro_units": {
+      "key": [
+        "hydro"
+      ],
+      "label": "hydro units",
+      "columns": {
+        "hydro": {
+          "type": "string",
+          "description": "Hydroelectric unit (the notebook's plants A and B)",
+          "label": "hydro unit"
+        },
+        "output_mw": {
+          "type": "number",
+          "unit": "MW",
+          "description": "Fixed output while the unit runs; the full amount always counts towards the reserve",
+          "label": "hydro output"
+        },
+        "cost_per_hour": {
+          "type": "number",
+          "unit": "$/hour",
+          "description": "Cost per hour while the unit runs",
+          "label": "hourly running cost"
+        },
+        "startup_cost": {
+          "type": "number",
+          "unit": "$/start",
+          "description": "Cost of starting the unit",
+          "label": "start-up cost"
+        },
+        "depletion_m_per_hour": {
+          "type": "number",
+          "unit": "m/hour",
+          "description": "Reservoir level lost per hour while the unit runs",
+          "label": "reservoir drawdown per hour"
+        },
+        "on_at_start": {
+          "type": "int",
+          "unit": "0/1",
+          "description": "1 if the unit is already running before the first period (no start-up needed), else 0 Initial state carried over from the previous day; not a what-if input.",
+          "label": "running at the start of the day",
+          "editable": false
+        }
+      }
+    }
+  },
+  "params": {
+    "reserve_margin": {
+      "type": "number",
+      "unit": "fraction of demand",
+      "description": "Running thermal units at maximum output plus the full output of every hydro unit must cover predicted demand times (1 + reserve_margin); 0.15 = 115% of demand",
+      "label": "reserve margin"
+    },
+    "pump_mwh_per_m": {
+      "type": "number",
+      "unit": "MWh/m",
+      "description": "Electricity consumed by pumping to raise the reservoir level by one metre",
+      "label": "pumping energy per metre of reservoir"
+    }
+  },
+  "decision_variables": {
+    "ngen[period, type]": "integer number of thermal units of the type running (>= 0)",
+    "output[period, type]": "total output of the type's running units, MW (>= 0)",
+    "nstart[period, type]": "integer number of thermal units of the type started at the beginning of the period (>= 0)",
+    "hydro_on[period, hydro]": "binary, 1 if the hydro unit runs",
+    "hydro_start[period, hydro]": "binary, 1 if the hydro unit is started at the beginning of the period",
+    "pump[period]": "power used to pump water back into the reservoir, MW (>= 0)",
+    "reservoir_level[period]": "reservoir level at the end of the period, metres above its lowest point in the day (>= 0)"
+  },
+  "constraints": {
+    "available[period, type]": "ngen <= units_available",
+    "min_output[period, type]": "output >= min_output_mw * ngen",
+    "max_output[period, type]": "output <= max_output_mw * ngen",
+    "demand[period]": "sum_t output + sum_h output_mw * hydro_on >= demand_mw + pump",
+    "reservoir[period]": "reservoir_level = reservoir_level[previous period] + hours * pump / pump_mwh_per_m - sum_h depletion_m_per_hour * hours * hydro_on (the previous period of the first is the last: the level ends the day where it started)",
+    "reserve[period]": "sum_t max_output_mw * ngen >= (1 + reserve_margin) * demand_mw - sum_h output_mw",
+    "thermal_startup[period, type]": "ngen <= ngen[previous period] + nstart (units_on_at_start before the first period)",
+    "hydro_startup[period, hydro]": "hydro_on <= hydro_on[previous period] + hydro_start (on_at_start before the first period)"
+  },
+  "kpis": [
+    "total_cost",
+    "thermal_running_cost",
+    "thermal_output_cost",
+    "thermal_startup_cost",
+    "hydro_cost",
+    "units_on",
+    "hydro_hours",
+    "pumped_energy_mwh"
+  ],
+  "measures": {
+    "ngen": {
+      "dims": [
+        "period",
+        "type"
+      ],
+      "label": "thermal units running"
+    },
+    "output": {
+      "dims": [
+        "period",
+        "type"
+      ],
+      "label": "thermal output (MW)"
+    },
+    "nstart": {
+      "dims": [
+        "period",
+        "type"
+      ],
+      "label": "thermal units started"
+    },
+    "hydro_on": {
+      "dims": [
+        "period",
+        "hydro"
+      ],
+      "label": "hydro unit-periods running (0/1 per unit and period)"
+    },
+    "hydro_start": {
+      "dims": [
+        "period",
+        "hydro"
+      ],
+      "label": "hydro unit start-ups (0/1 per unit and period)"
+    },
+    "pump": {
+      "dims": [
+        "period"
+      ],
+      "label": "pumping power (MW)"
+    },
+    "reservoir_level": {
+      "dims": [
+        "period"
+      ],
+      "label": "reservoir level (m)"
+    }
+  }
+}

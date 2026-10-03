@@ -1,0 +1,266 @@
+{
+  "model": "manpower_planning",
+  "sense": "min",
+  "objective": "sum over years and skill levels of redundant[year, skill] (total redundancies; the notebook's first objective)",
+  "tables": {
+    "skills": {
+      "key": [
+        "skill"
+      ],
+      "label": "skill levels",
+      "columns": {
+        "skill": {
+          "type": "string",
+          "description": "Skill level (the notebook's s1 = unskilled, s2 = semi-skilled, s3 = skilled)",
+          "label": "skill level"
+        },
+        "level": {
+          "type": "int",
+          "description": "Rank of the skill level, 1 = least skilled; moving up a rank is retraining, moving down is downgrading. Ranks must differ Structural: orders the skill levels (retraining goes up, downgrading goes down); not a what-if input.",
+          "label": "skill rank",
+          "editable": false
+        },
+        "current_strength": {
+          "type": "int",
+          "unit": "workers",
+          "description": "Workers employed at the start of the plan; all have at least one year of service",
+          "label": "current workforce"
+        },
+        "attrition_new": {
+          "type": "number",
+          "unit": "fraction",
+          "description": "Share of the workers recruited in a year who leave within that first year",
+          "label": "first-year attrition rate of recruits"
+        },
+        "attrition_experienced": {
+          "type": "number",
+          "unit": "fraction/year",
+          "description": "Share of workers with at least one year of service who leave each year; also applied to workers retrained into this level",
+          "label": "yearly attrition rate of experienced workers"
+        }
+      }
+    },
+    "years": {
+      "key": [
+        "year"
+      ],
+      "label": "planning years",
+      "columns": {
+        "year": {
+          "type": "int",
+          "description": "Year of the plan, 1 = first year; years are planned in increasing order and year 1 starts from current_strength",
+          "label": "year"
+        }
+      }
+    },
+    "requirements": {
+      "key": [
+        "year",
+        "skill"
+      ],
+      "label": "manpower requirements and recruitment limits",
+      "columns": {
+        "year": {
+          "type": "int",
+          "ref": "years.year",
+          "description": "Year of the plan",
+          "label": "year"
+        },
+        "skill": {
+          "type": "string",
+          "ref": "skills.skill",
+          "description": "Skill level",
+          "label": "skill level"
+        },
+        "required": {
+          "type": "int",
+          "unit": "workers",
+          "description": "Full-time workers needed in the year; a missing row means none are needed",
+          "label": "manpower requirement"
+        },
+        "max_recruit": {
+          "type": "int",
+          "unit": "workers/year",
+          "description": "Most workers that can be recruited from outside in the year (upper bound on recruit); a missing row means no recruitment",
+          "label": "recruitment limit"
+        }
+      }
+    },
+    "retraining": {
+      "key": [
+        "from_skill",
+        "to_skill"
+      ],
+      "label": "retraining limits and costs",
+      "columns": {
+        "from_skill": {
+          "type": "string",
+          "ref": "skills.skill",
+          "description": "Skill level the workers leave",
+          "label": "from skill level"
+        },
+        "to_skill": {
+          "type": "string",
+          "ref": "skills.skill",
+          "description": "Skill level the workers join (must differ from from_skill)",
+          "label": "to skill level"
+        },
+        "max_per_year": {
+          "type": "int",
+          "unit": "workers/year",
+          "description": "Fixed number of workers who can make this move each year. The yearly limit is max_per_year + max_share_of_target * workforce of to_skill in that year; both 0 forbids the move. A move with no row is unlimited and free",
+          "label": "retraining places per year"
+        },
+        "max_share_of_target": {
+          "type": "number",
+          "unit": "fraction",
+          "description": "Further allowance as a share of the to_skill workforce in the same year (0.25 = a quarter of it)",
+          "label": "retraining limit as a share of the destination workforce"
+        },
+        "cost": {
+          "type": "number",
+          "unit": "currency/worker",
+          "description": "Cost per worker making the move; counted in total_cost, not in the redundancy objective",
+          "label": "retraining cost per worker"
+        }
+      }
+    },
+    "costs": {
+      "key": [
+        "skill"
+      ],
+      "label": "cost rates per skill level",
+      "columns": {
+        "skill": {
+          "type": "string",
+          "ref": "skills.skill",
+          "description": "Skill level",
+          "label": "skill level"
+        },
+        "redundancy_cost": {
+          "type": "number",
+          "unit": "currency/worker",
+          "description": "Severance payment per worker made redundant; counted in total_cost",
+          "label": "redundancy payment per worker"
+        },
+        "short_time_cost": {
+          "type": "number",
+          "unit": "currency/worker/year",
+          "description": "Cost per worker on short-time working per year; counted in total_cost",
+          "label": "short-time working cost per worker"
+        },
+        "overmanning_cost": {
+          "type": "number",
+          "unit": "currency/worker/year",
+          "description": "Cost per worker employed above the requirement per year; counted in total_cost",
+          "label": "overmanning cost per worker"
+        }
+      }
+    }
+  },
+  "params": {
+    "downgrade_attrition": {
+      "type": "number",
+      "unit": "fraction",
+      "description": "Share of downgraded workers who leave the company in the year they are downgraded",
+      "label": "share of downgraded workers who leave"
+    },
+    "max_overmanned": {
+      "type": "int",
+      "unit": "workers",
+      "description": "Most workers employed above requirements in any year, all skill levels together",
+      "label": "overmanning allowance per year"
+    },
+    "max_short_time": {
+      "type": "int",
+      "unit": "workers",
+      "description": "Most workers of each skill level on short-time working in any year (upper bound on short_time)",
+      "label": "short-time working limit per skill level"
+    },
+    "short_time_productivity": {
+      "type": "number",
+      "unit": "fraction",
+      "description": "Output of a worker on short-time working relative to a full-time worker; each one leaves (1 - productivity) of a full-time worker's output to be covered",
+      "label": "short-time worker productivity"
+    }
+  },
+  "decision_variables": {
+    "recruit[year, skill]": "workers recruited from outside (0..max_recruit; the notebook's Hire)",
+    "retrain[year, from_skill, to_skill]": "workers retrained to a higher skill level (>= 0; the notebook's Train for upward moves)",
+    "downgrade[year, from_skill, to_skill]": "workers downgraded to a lower skill level (>= 0; the notebook's Train for downward moves)",
+    "redundant[year, skill]": "workers made redundant (>= 0; the notebook's Layoff)",
+    "short_time[year, skill]": "workers on short-time working (0..max_short_time; the notebook's Part_time)",
+    "overmanned[year, skill]": "workers employed above the requirement (>= 0; the notebook's Overmanned)",
+    "workforce[year, skill]": "workers employed in the year after all flows (>= 0; the notebook's Available)",
+    "same_level[year, skill]": "inert copies of the notebook's Train[year, s, s] columns: in no constraint, zero cost, not a measure; kept so the size matches the original"
+  },
+  "constraints": {
+    "balance[year, skill]": "workforce = (1 - attrition_experienced) * (last year's workforce, or current_strength in year 1) + (1 - attrition_new) * recruit + (1 - attrition_experienced) * retrained in + (1 - downgrade_attrition) * downgraded in - workers moved out - redundant",
+    "retraining_limit[year, from_skill, to_skill]": "move <= max_per_year + max_share_of_target * workforce[year, to_skill], one per retraining row and year",
+    "overmanning[year]": "sum over skill levels of overmanned <= max_overmanned",
+    "requirement[year, skill]": "workforce = required + overmanned + (1 - short_time_productivity) * short_time"
+  },
+  "kpis": [
+    "total_redundancy",
+    "redundancy_by_year",
+    "redundancy_by_skill",
+    "total_cost",
+    "cost_breakdown",
+    "recruited",
+    "retrained",
+    "downgraded"
+  ],
+  "measures": {
+    "recruit": {
+      "dims": [
+        "year",
+        "skill"
+      ],
+      "label": "workers recruited"
+    },
+    "retrain": {
+      "dims": [
+        "year",
+        "from_skill",
+        "to_skill"
+      ],
+      "label": "workers retrained to a higher skill level"
+    },
+    "downgrade": {
+      "dims": [
+        "year",
+        "from_skill",
+        "to_skill"
+      ],
+      "label": "workers downgraded to a lower skill level"
+    },
+    "redundant": {
+      "dims": [
+        "year",
+        "skill"
+      ],
+      "label": "workers made redundant"
+    },
+    "short_time": {
+      "dims": [
+        "year",
+        "skill"
+      ],
+      "label": "workers on short-time working"
+    },
+    "overmanned": {
+      "dims": [
+        "year",
+        "skill"
+      ],
+      "label": "workers employed above requirement"
+    },
+    "workforce": {
+      "dims": [
+        "year",
+        "skill"
+      ],
+      "label": "workers employed"
+    }
+  }
+}

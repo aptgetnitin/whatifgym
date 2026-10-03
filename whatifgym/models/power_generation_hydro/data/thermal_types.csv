@@ -1,0 +1,4 @@
+type,units_available,min_output_mw,max_output_mw,cost_per_hour,cost_per_mwh_above_min,startup_cost,units_on_at_start
+Thermal0,12,850,2000,1000,2,2000,5
+Thermal1,10,1250,1750,2600,1.3,1000,5
+Thermal2,5,1500,4000,3000,3,500,5

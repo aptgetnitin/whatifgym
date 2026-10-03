@@ -1,0 +1,8 @@
+{
+  "objective": 107842.59259259261,
+  "source_solver": "gurobipy 13.0.3 (Gurobi 13.0.3, size-limited pip licence), original notebook code cells run unmodified (only the %pip line dropped) on 2026-10-02",
+  "n_vars": 96,
+  "n_constraints": 70,
+  "n_int_vars": 0,
+  "notes": "Objective is unique; every optimum makes 450 t of food a month (both refining lines full), but purchase timing and the OIL2/OIL3 mix have alternative optima, so the purchase_cost / holding_cost split is not unique (profit, revenue, food_produced, oil_bought, refining_utilisation and food_produced_by_month are). The original's Balance family is generated with `month != month[0]` (a typo for months[0]), so it also holds one January row per oil, store[Jun] + buy[Jan] = consume[Jan] + store[Jan]; the port keeps these 5 rows as horizon_closure with right-hand side final_stock - initial_stock (0 in the notebook data), so all 70 rows and 278 nonzeros equal the original's, while what-ifs that change only the opening or closing stock stay feasible instead of turning infeasible through the typo. The 1,000 t per-oil storage limit stated in the notebook text but missing from its code is imposed as an upper bound on store (bounds are not rows; non-binding at the optimum)."
+}

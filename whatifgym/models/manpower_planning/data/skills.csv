@@ -1,0 +1,4 @@
+skill,level,current_strength,attrition_new,attrition_experienced
+unskilled,1,2000,0.25,0.10
+semi_skilled,2,1500,0.20,0.05
+skilled,3,1000,0.10,0.05

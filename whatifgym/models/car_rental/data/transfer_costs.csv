@@ -1,0 +1,13 @@
+from_depot,to_depot,cost
+Glasgow,Manchester,20
+Glasgow,Birmingham,30
+Glasgow,Plymouth,50
+Manchester,Glasgow,20
+Manchester,Birmingham,15
+Manchester,Plymouth,35
+Birmingham,Glasgow,30
+Birmingham,Manchester,15
+Birmingham,Plymouth,25
+Plymouth,Glasgow,50
+Plymouth,Manchester,35
+Plymouth,Birmingham,25

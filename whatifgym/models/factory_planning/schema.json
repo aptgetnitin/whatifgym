@@ -4,56 +4,160 @@
   "objective": "sum over months and products of profit_per_unit * sell - holding_cost * store",
   "tables": {
     "months": {
-      "key": ["month"],
+      "key": [
+        "month"
+      ],
       "columns": {
-        "month": {"type": "string", "description": "Period label"},
-        "order": {"type": "int", "description": "Position in the planning horizon (1 = first month)"}
-      }
+        "month": {
+          "type": "string",
+          "description": "Period label",
+          "label": "month"
+        },
+        "order": {
+          "type": "int",
+          "description": "Position in the planning horizon (1 = first month)",
+          "label": "position in horizon",
+          "editable": false
+        }
+      },
+      "label": "planning months"
     },
     "products": {
-      "key": ["product"],
+      "key": [
+        "product"
+      ],
       "columns": {
-        "product": {"type": "string", "description": "Product identifier"},
-        "profit_per_unit": {"type": "number", "unit": "currency/unit", "description": "Sales price minus raw-material cost"}
-      }
+        "product": {
+          "type": "string",
+          "description": "Product identifier",
+          "label": "product"
+        },
+        "profit_per_unit": {
+          "type": "number",
+          "unit": "currency/unit",
+          "description": "Sales price minus raw-material cost",
+          "label": "profit contribution per unit"
+        }
+      },
+      "label": "products"
     },
     "machines": {
-      "key": ["machine"],
+      "key": [
+        "machine"
+      ],
       "columns": {
-        "machine": {"type": "string", "description": "Machine type"},
-        "installed": {"type": "int", "description": "Number of machines of this type installed"}
-      }
+        "machine": {
+          "type": "string",
+          "description": "Machine type",
+          "label": "machine type"
+        },
+        "installed": {
+          "type": "int",
+          "description": "Number of machines of this type installed",
+          "label": "number of machines installed"
+        }
+      },
+      "label": "installed machines"
     },
     "process_hours": {
-      "key": ["machine", "product"],
+      "key": [
+        "machine",
+        "product"
+      ],
       "columns": {
-        "machine": {"type": "string", "ref": "machines.machine"},
-        "product": {"type": "string", "ref": "products.product"},
-        "hours_per_unit": {"type": "number", "unit": "hours/unit", "description": "Machine time needed per unit; missing pairs need no time on that machine"}
-      }
+        "machine": {
+          "type": "string",
+          "ref": "machines.machine",
+          "label": "machine type"
+        },
+        "product": {
+          "type": "string",
+          "ref": "products.product",
+          "label": "product"
+        },
+        "hours_per_unit": {
+          "type": "number",
+          "unit": "hours/unit",
+          "description": "Machine time needed per unit; missing pairs need no time on that machine",
+          "label": "machine hours per unit"
+        }
+      },
+      "label": "process times"
     },
     "downtime": {
-      "key": ["month", "machine"],
+      "key": [
+        "month",
+        "machine"
+      ],
       "columns": {
-        "month": {"type": "string", "ref": "months.month"},
-        "machine": {"type": "string", "ref": "machines.machine"},
-        "machines_down": {"type": "int", "description": "Machines of this type unavailable (maintenance) in the month"}
-      }
+        "month": {
+          "type": "string",
+          "ref": "months.month",
+          "label": "month"
+        },
+        "machine": {
+          "type": "string",
+          "ref": "machines.machine",
+          "label": "machine type"
+        },
+        "machines_down": {
+          "type": "int",
+          "description": "Machines of this type unavailable (maintenance) in the month",
+          "label": "machines down for maintenance"
+        }
+      },
+      "label": "maintenance downtime"
     },
     "max_sales": {
-      "key": ["month", "product"],
+      "key": [
+        "month",
+        "product"
+      ],
       "columns": {
-        "month": {"type": "string", "ref": "months.month"},
-        "product": {"type": "string", "ref": "products.product"},
-        "max_sales": {"type": "number", "unit": "units", "description": "Market limit on units sold in the month (upper bound on sell)"}
-      }
+        "month": {
+          "type": "string",
+          "ref": "months.month",
+          "label": "month"
+        },
+        "product": {
+          "type": "string",
+          "ref": "products.product",
+          "label": "product"
+        },
+        "max_sales": {
+          "type": "number",
+          "unit": "units",
+          "description": "Market limit on units sold in the month (upper bound on sell)",
+          "label": "market limit (units)"
+        }
+      },
+      "label": "market limits"
     }
   },
   "params": {
-    "holding_cost": {"type": "number", "unit": "currency/unit/month"},
-    "max_inventory": {"type": "number", "unit": "units", "description": "Per product, per month"},
-    "store_target": {"type": "number", "unit": "units", "description": "Required closing stock of each product in the last month"},
-    "hours_per_month": {"type": "number", "unit": "hours", "description": "Available hours per machine per month"}
+    "holding_cost": {
+      "type": "number",
+      "unit": "currency/unit/month",
+      "label": "storage cost per unit per month"
+    },
+    "max_inventory": {
+      "type": "number",
+      "unit": "units",
+      "description": "Per product, per month",
+      "label": "storage limit per product"
+    },
+    "store_target": {
+      "type": "number",
+      "unit": "units",
+      "description": "Required closing stock of each product in the last month",
+      "label": "required closing stock per product"
+    },
+    "hours_per_month": {
+      "type": "number",
+      "unit": "hours",
+      "description": "Available hours per machine per month",
+      "label": "machine hours per month"
+    }
   },
   "decision_variables": {
     "make[month, product]": "units manufactured (>= 0)",
@@ -65,5 +169,37 @@
     "end_stock[product]": "store[last month] = store_target",
     "capacity[month, machine]": "sum_p hours_per_unit * make <= hours_per_month * (installed - machines_down)"
   },
-  "kpis": ["profit", "sales_contribution", "holding_cost", "units_sold", "units_made", "demand_fill_rate", "machine_utilisation", "units_sold_by_product"]
+  "kpis": [
+    "profit",
+    "sales_contribution",
+    "holding_cost",
+    "units_sold",
+    "units_made",
+    "demand_fill_rate",
+    "machine_utilisation",
+    "units_sold_by_product"
+  ],
+  "measures": {
+    "make": {
+      "dims": [
+        "month",
+        "product"
+      ],
+      "label": "units made"
+    },
+    "store": {
+      "dims": [
+        "month",
+        "product"
+      ],
+      "label": "units in stock"
+    },
+    "sell": {
+      "dims": [
+        "month",
+        "product"
+      ],
+      "label": "units sold"
+    }
+  }
 }

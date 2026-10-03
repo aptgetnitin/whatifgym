@@ -1,6 +1,6 @@
 # Base models (30)
 
-Public, permissively licensed optimization models with named data tables, 50 to 5 000 variables and an open-solver solve time under 2 s. Every number was **measured** on 2026-10-02 by running the original public implementation and then timing an open solver on the same model (see `scripts/build_base_model_table.py` for the exact method per source). Times are single-run wall-clock seconds on one sandbox CPU core and are indicative only. Three models are already ported into `whatifgym/models/`; the rest are the Phase 1-2 porting queue.
+Public, permissively licensed optimization models with named data tables, 50 to 5 000 variables and an open-solver solve time under 2 s. Every number was **measured** on 2026-10-02 by running the original public implementation and then timing an open solver on the same model (see `scripts/build_base_model_table.py` for the exact method per source). Times are single-run wall-clock seconds on one sandbox CPU core and are indicative only. Ten models are already ported into `whatifgym/models/` (marked **(ported)**); the rest are the Phase 1-2 porting queue.
 
 Domains: Supply chain & logistics (4), Production planning (5), Scheduling (workforce, machines, projects) (5), Energy & power (4), Packing, assignment & covering (4), Network & routing (4), Revenue & resource planning (4).
 
@@ -18,16 +18,16 @@ Domains: Supply chain & logistics (4), Production planning (5), Scheduling (work
 | # | model | type | vars | cons | int | open solver | time (s) | reference objective | licence | what-if hooks |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 5 | [Factory Planning I](https://github.com/Gurobi/modeling-examples/blob/master/factory_planning/factory_planning_1.ipynb)<br>`gurobi_factory_planning_1` **(ported)** | LP | 126 | 79 | 0 | HiGHS | 0.003 | 93,715.2 | Apache-2.0 | Monthly market limits per product, machine hours per product, maintenance (machines down) table, profit contributions, storage cost, end stock target |
-| 6 | [Factory Planning II (maintenance schedule as a decision)](https://github.com/Gurobi/modeling-examples/blob/master/factory_planning/factory_planning_2.ipynb)<br>`gurobi_factory_planning_2` | MILP | 156 | 84 | 30 | HiGHS | 0.017 | 108,855 | Apache-2.0 | Same tables as Factory Planning I plus the number of machines of each type that must undergo maintenance in the horizon |
-| 7 | [Food Manufacture I (oil blending and purchasing)](https://github.com/Gurobi/modeling-examples/blob/master/food_manufacturing/food_manufacture_1.ipynb)<br>`gurobi_food_manufacture_1` | LP | 96 | 70 | 0 | HiGHS | 0.002 | 107,843 | Apache-2.0 | Monthly oil purchase prices, hardness values, refining capacities, storage capacity and cost, product price, hardness bounds |
+| 6 | [Factory Planning II (maintenance schedule as a decision)](https://github.com/Gurobi/modeling-examples/blob/master/factory_planning/factory_planning_2.ipynb)<br>`gurobi_factory_planning_2` **(ported)** | MILP | 156 | 84 | 30 | HiGHS | 0.017 | 108,855 | Apache-2.0 | Same tables as Factory Planning I plus the number of machines of each type that must undergo maintenance in the horizon |
+| 7 | [Food Manufacture I (oil blending and purchasing)](https://github.com/Gurobi/modeling-examples/blob/master/food_manufacturing/food_manufacture_1.ipynb)<br>`gurobi_food_manufacture_1` **(ported)** | LP | 96 | 70 | 0 | HiGHS | 0.002 | 107,843 | Apache-2.0 | Monthly oil purchase prices, hardness values, refining capacities, storage capacity and cost, product price, hardness bounds |
 | 8 | [Farm Planning (multi-year herd, crop and capital plan)](https://github.com/Gurobi/modeling-examples/blob/master/farm_planning/farm_planning.ipynb)<br>`gurobi_farm_planning` | LP | 131 | 116 | 0 | HiGHS | 0.002 | 121,719 | Apache-2.0 | Land area, herd dynamics, yields and prices, labour hours per activity, capital and loan limits, housing capacity |
-| 9 | [Mining (multi-year mine operation and blending)](https://github.com/Gurobi/modeling-examples/blob/master/mining/mining.ipynb)<br>`gurobi_mining` | MILP | 65 | 71 | 40 | HiGHS | 0.123 | 1.46862e+08 | Apache-2.0 | Per-mine royalty, extraction capacity and ore quality, yearly blended-quality targets, selling price, discount rate, maximum mines operated per year |
+| 9 | [Mining (multi-year mine operation and blending)](https://github.com/Gurobi/modeling-examples/blob/master/mining/mining.ipynb)<br>`gurobi_mining` **(ported)** | MILP | 65 | 71 | 40 | HiGHS | 0.123 | 1.46862e+08 | Apache-2.0 | Per-mine royalty, extraction capacity and ore quality, yearly blended-quality targets, selling price, discount rate, maximum mines operated per year |
 
 ## Scheduling (workforce, machines, projects)
 
 | # | model | type | vars | cons | int | open solver | time (s) | reference objective | licence | what-if hooks |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 10 | [Manpower Planning (recruitment, retraining, redundancy over 3 years)](https://github.com/Gurobi/modeling-examples/blob/master/manpower_planning/manpower_planning.ipynb)<br>`gurobi_manpower_planning` | LP | 72 | 30 | 0 | HiGHS | 0.001 | 841.8 | Apache-2.0 | Yearly manpower requirements per skill level, attrition rates, recruitment caps, retraining capacities and costs, redundancy/overmanning/short-time costs |
+| 10 | [Manpower Planning (recruitment, retraining, redundancy over 3 years)](https://github.com/Gurobi/modeling-examples/blob/master/manpower_planning/manpower_planning.ipynb)<br>`gurobi_manpower_planning` **(ported)** | LP | 72 | 30 | 0 | HiGHS | 0.001 | 841.8 | Apache-2.0 | Yearly manpower requirements per skill level, attrition rates, recruitment caps, retraining capacities and costs, redundancy/overmanning/short-time costs |
 | 11 | [Job-shop scheduling, Fisher-Thompson 6x6 instance](https://github.com/google/or-tools/blob/stable/examples/python/jobshop_ft06_sat.py)<br>`ortools_jobshop_ft06_sat` | CP-SAT | 73 | 73 | 73 | CP-SAT | 0.021 | 55 | Apache-2.0 | Job routings, processing times, machine availability; makespan objective |
 | 12 | [Flexible job-shop scheduling](https://github.com/google/or-tools/blob/stable/examples/python/flexible_job_shop_sat.py)<br>`ortools_flexible_job_shop_sat` | CP-SAT | 109 | 136 | 109 | CP-SAT | 0.029 | 6 | Apache-2.0 | Alternative machines per task with different durations, job routings; makespan objective |
 | 13 | [Single machine scheduling with setup times, release and due dates](https://github.com/google/or-tools/blob/stable/examples/python/single_machine_scheduling_with_setup_release_due_dates_sat.py)<br>`ortools_single_machine_scheduling_sat` | CP-SAT | 271 | 245 | 271 | CP-SAT | 0.271 | 112,605 | Apache-2.0 | Job durations, release dates, due dates, sequence-dependent setup matrix; weighted lateness objective |
@@ -38,7 +38,7 @@ Domains: Supply chain & logistics (4), Production planning (5), Scheduling (work
 | # | model | type | vars | cons | int | open solver | time (s) | reference objective | licence | what-if hooks |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 15 | [Battery scheduling against hourly prices with PV and load](https://github.com/Gurobi/modeling-examples/blob/master/battery_scheduling/battery_scheduling.ipynb)<br>`gurobi_battery_scheduling` | LP | 72 | 25 | 0 | HiGHS | 0.001 | 1.56625 | Apache-2.0 | Hourly import/export prices, load and PV profiles, battery energy capacity, charge/discharge limits and efficiencies, cycling cost |
-| 16 | [Electrical Power Generation 2 (thermal units plus pumped hydro)](https://github.com/Gurobi/modeling-examples/blob/master/electrical_power_generation/electrical_power_2.ipynb)<br>`gurobi_electrical_power_2` | MILP | 75 | 85 | 50 | HiGHS | 0.155 | 1.00063e+06 | Apache-2.0 | Demand per period, generator min/max output, running and startup costs, hydro output and reservoir depletion, pumping efficiency |
+| 16 | [Electrical Power Generation 2 (thermal units plus pumped hydro)](https://github.com/Gurobi/modeling-examples/blob/master/electrical_power_generation/electrical_power_2.ipynb)<br>`gurobi_electrical_power_2` **(ported)** | MILP | 75 | 85 | 50 | HiGHS | 0.155 | 1.00063e+06 | Apache-2.0 | Demand per period, generator min/max output, running and startup costs, hydro output and reservoir depletion, pumping efficiency |
 | 17 | [Power generation schedule (unit commitment with startup and health costs)](https://github.com/Gurobi/modeling-examples/blob/master/power_generation/optimize_power_schedule.ipynb)<br>`gurobi_optimize_power_schedule` | MILP | 960 | 1722 | 720 | HiGHS | 0.047 | 4.49515e+06 | Apache-2.0 | Hourly demand curve, plant capacities, fuel, operating, startup and health-cost tables (small_plant_data/; a large variant ships too) |
 | 18 | [PyPSA unit commitment example (two generators, 30 snapshots)](https://github.com/PyPSA/PyPSA/blob/master/docs/examples/unit-commitment.ipynb)<br>`pypsa_unit_commitment` | MILP | 240 | 598 | 180 | HiGHS (linopy) | 0.013 | 2.22745e+06 | MIT (code); CC-BY-4.0 (notebook) | Load profile, generator marginal and startup costs, min up/down times, ramp limits, minimum stable output |
 
@@ -47,7 +47,7 @@ Domains: Supply chain & logistics (4), Production planning (5), Scheduling (work
 | # | model | type | vars | cons | int | open solver | time (s) | reference objective | licence | what-if hooks |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 19 | [Multiple knapsack](https://github.com/google/or-tools/blob/stable/ortools/sat/samples/multiple_knapsack_sat.py)<br>`ortools_multiple_knapsack` **(ported)** | IP | 75 | 20 | 75 | HiGHS / CP-SAT | 0.064 | 395 | Apache-2.0 | Item weights and values, bin capacities, number of bins |
-| 20 | [Bin packing (minimise bins used)](https://github.com/google/or-tools/blob/stable/ortools/linear_solver/samples/bin_packing_mip.py)<br>`ortools_bin_packing_mip` | IP | 132 | 22 | 132 | SCIP (pywraplp) | 0.005 | 4 | Apache-2.0 | Item weights, bin capacity, number of candidate bins |
+| 20 | [Bin packing (minimise bins used)](https://github.com/google/or-tools/blob/stable/ortools/linear_solver/samples/bin_packing_mip.py)<br>`ortools_bin_packing_mip` **(ported)** | IP | 132 | 22 | 132 | SCIP (pywraplp) | 0.005 | 4 | Apache-2.0 | Item weights, bin capacity, number of candidate bins |
 | 21 | [Wedding seating as set partitioning](https://github.com/coin-or/pulp/blob/master/examples/wedding.py)<br>`pulp_wedding_seating` **(ported)** | IP | 3213 | 18 | 3213 | HiGHS | 0.334 | 12 | MIT | Guest list and ranks, maximum tables, maximum table size |
 | 22 | [Assignment with group constraints](https://github.com/google/or-tools/blob/stable/examples/python/assignment_with_constraints_sat.py)<br>`ortools_assignment_with_constraints_sat` | CP-SAT | 84 | 33 | 84 | CP-SAT | 0.027 | 239 | Apache-2.0 | Worker-task cost matrix, allowed group combinations (table constraints), tasks per worker |
 
@@ -66,7 +66,7 @@ Domains: Supply chain & logistics (4), Production planning (5), Scheduling (work
 |---|---|---|---|---|---|---|---|---|---|---|
 | 27 | [Economic Planning (input-output model with capacity building)](https://github.com/Gurobi/modeling-examples/blob/master/economic_planning/economic_planning.ipynb)<br>`gurobi_economic_planning` | LP | 51 | 33 | 0 | HiGHS | 0.001 | 1,902.22 | Apache-2.0 | Input-output coefficients between industries, capacity-building coefficients, exogenous demand, initial stocks and capacities, manpower limits |
 | 28 | [Fantasy basketball line-up under a salary cap (part 1)](https://github.com/Gurobi/modeling-examples/blob/master/fantasy_basketball/fantasy_basketball_part1.ipynb)<br>`gurobi_fantasy_basketball_1` | IP | 96 | 97 | 96 | HiGHS | 0.017 | 171.92 | Apache-2.0 | Predicted points per player, salaries, salary cap, position requirements |
-| 29 | [Car Rental 1 (fleet positioning, transfers and repairs)](https://github.com/Gurobi/modeling-examples/blob/master/car_rental/car_rental_1.ipynb)<br>`gurobi_car_rental_1` | LP | 289 | 97 | 0 | HiGHS | 0.003 | 121,160 | Apache-2.0 | Daily rental demand per depot, price by rental length, return-depot shares, damage rates and repair capacities, transfer costs |
+| 29 | [Car Rental 1 (fleet positioning, transfers and repairs)](https://github.com/Gurobi/modeling-examples/blob/master/car_rental/car_rental_1.ipynb)<br>`gurobi_car_rental_1` **(ported)** | LP | 289 | 97 | 0 | HiGHS | 0.003 | 121,160 | Apache-2.0 | Daily rental demand per depot, price by rental length, return-depot shares, damage rates and repair capacities, transfer costs |
 | 30 | [Car Rental 2 (adds repair-capacity expansion decisions)](https://github.com/Gurobi/modeling-examples/blob/master/car_rental/car_rental_2.ipynb)<br>`gurobi_car_rental_2` | MILP | 294 | 118 | 5 | HiGHS | 0.020 | 132,341 | Apache-2.0 | Same tables as Car Rental 1 plus repair-capacity expansion options and costs |
 
 ## Notes per model
@@ -76,16 +76,19 @@ Domains: Supply chain & logistics (4), Production planning (5), Scheduling (work
 3. `gurobi_drone_network` — Reads three CSV files shipped in the example folder.
 4. `gurobi_food_supply` — Reads seven CSV files shipped in the example folder.
 5. `gurobi_factory_planning_1` — PORTED: whatifgym/models/factory_planning (verified on HiGHS, SCIP, CBC, Gurobi).
-7. `gurobi_food_manufacture_1` — Food Manufacture II adds logical (indicator) constraints that the LP-file route could not read in HiGHS; port directly if wanted.
-10. `gurobi_manpower_planning` — Objective here is minimum redundancy (the notebook's first objective).
+6. `gurobi_factory_planning_2` — PORTED: whatifgym/models/factory_planning_2 (verified on HiGHS, SCIP, CBC).
+7. `gurobi_food_manufacture_1` — PORTED: whatifgym/models/food_manufacture (verified on HiGHS, SCIP, CBC). Food Manufacture II adds logical (indicator) constraints; port directly if wanted.
+9. `gurobi_mining` — PORTED: whatifgym/models/mining (verified on HiGHS, SCIP, CBC).
+10. `gurobi_manpower_planning` — PORTED: whatifgym/models/manpower_planning (verified on HiGHS, SCIP, CBC). Objective is minimum redundancy (the notebook's first objective); `cost_expression()` gives the second.
 11. `ortools_jobshop_ft06_sat` — Interval/no-overlap model; a MIP port needs disjunctive big-M constraints.
 13. `ortools_single_machine_scheduling_sat` — Run with the script's default flags.
 14. `ortools_task_allocation_sat` — Largest CP-SAT model in the shortlist; still under one second.
 15. `gurobi_battery_scheduling` — Default variant 'S'; the 'LGS' variant adds indicator constraints.
-16. `gurobi_electrical_power_2` — Part 1 (45 variables) is just below the size floor.
+16. `gurobi_electrical_power_2` — PORTED: whatifgym/models/power_generation_hydro (verified on HiGHS, SCIP, CBC). Part 1 (45 variables) is just below the size floor.
 17. `gurobi_optimize_power_schedule` — Reads CSV files from the example folder.
 18. `pypsa_unit_commitment` — Data is inline in the notebook; the 4-snapshot variant is too small (32 variables).
 19. `ortools_multiple_knapsack` — PORTED: whatifgym/models/multiple_knapsack (verified on HiGHS, SCIP, CBC, CP-SAT, Gurobi).
+20. `ortools_bin_packing_mip` — PORTED: whatifgym/models/bin_packing (verified on HiGHS, SCIP, CBC, CP-SAT).
 21. `pulp_wedding_seating` — PORTED: whatifgym/models/wedding_seating (verified on HiGHS, SCIP, CBC, CP-SAT).
 22. `ortools_assignment_with_constraints_sat` — Uses table constraints; a MIP port enumerates the allowed combinations.
 23. `gurobi_technician_routing_scheduling` — Objective for scenario Sce3 (Sce0 has objective 0). Data is an Excel workbook in the example folder.
@@ -93,6 +96,7 @@ Domains: Supply chain & logistics (4), Production planning (5), Scheduling (work
 26. `ortools_tsp_sat` — Gurobi's tsp.ipynb uses lazy subtour cuts and is deferred until a cut loop exists on open solvers.
 27. `gurobi_economic_planning` — Objective of the notebook's second model (maximise total production); the first model is 3 variables.
 28. `gurobi_fantasy_basketball_1` — Predicted points come from a regression step in the notebook; freeze them into the data table when porting.
+29. `gurobi_car_rental_1` — PORTED: whatifgym/models/car_rental (verified on HiGHS, SCIP, CBC).
 
 ## Deferred candidates
 

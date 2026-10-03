@@ -1,0 +1,216 @@
+{
+  "model": "factory_planning_2",
+  "sense": "max",
+  "objective": "sum over months and products of profit_per_unit * sell - holding_cost * store",
+  "tables": {
+    "months": {
+      "key": [
+        "month"
+      ],
+      "label": "planning months",
+      "columns": {
+        "month": {
+          "type": "string",
+          "description": "Period label",
+          "label": "month"
+        },
+        "order": {
+          "type": "int",
+          "description": "Position in the planning horizon (1 = first month)",
+          "label": "month order",
+          "editable": false
+        }
+      }
+    },
+    "products": {
+      "key": [
+        "product"
+      ],
+      "label": "products",
+      "columns": {
+        "product": {
+          "type": "string",
+          "description": "Product identifier",
+          "label": "product"
+        },
+        "profit_per_unit": {
+          "type": "number",
+          "unit": "currency/unit",
+          "description": "Sales price minus raw-material cost",
+          "label": "profit per unit"
+        }
+      }
+    },
+    "machines": {
+      "key": [
+        "machine"
+      ],
+      "label": "installed machines",
+      "columns": {
+        "machine": {
+          "type": "string",
+          "description": "Machine type",
+          "label": "machine type"
+        },
+        "installed": {
+          "type": "int",
+          "unit": "machines",
+          "description": "Number of machines of this type installed",
+          "label": "machines installed"
+        }
+      }
+    },
+    "maintenance": {
+      "key": [
+        "machine"
+      ],
+      "label": "maintenance requirements",
+      "columns": {
+        "machine": {
+          "type": "string",
+          "ref": "machines.machine",
+          "description": "Machine type",
+          "label": "machine type"
+        },
+        "machines_to_maintain": {
+          "type": "int",
+          "unit": "machines",
+          "description": "Machines of this type that must each be down for maintenance in one month of the horizon; the model chooses the months (several may share a month). A missing row means no maintenance is required.",
+          "label": "machines needing maintenance"
+        }
+      }
+    },
+    "process_hours": {
+      "key": [
+        "machine",
+        "product"
+      ],
+      "label": "process times",
+      "columns": {
+        "machine": {
+          "type": "string",
+          "ref": "machines.machine",
+          "description": "Machine type",
+          "label": "machine type"
+        },
+        "product": {
+          "type": "string",
+          "ref": "products.product",
+          "description": "Product identifier",
+          "label": "product"
+        },
+        "hours_per_unit": {
+          "type": "number",
+          "unit": "hours/unit",
+          "description": "Machine time needed per unit; missing pairs need no time on that machine",
+          "label": "machine hours per unit"
+        }
+      }
+    },
+    "max_sales": {
+      "key": [
+        "month",
+        "product"
+      ],
+      "label": "market limits",
+      "columns": {
+        "month": {
+          "type": "string",
+          "ref": "months.month",
+          "description": "Period label",
+          "label": "month"
+        },
+        "product": {
+          "type": "string",
+          "ref": "products.product",
+          "description": "Product identifier",
+          "label": "product"
+        },
+        "max_sales": {
+          "type": "number",
+          "unit": "units",
+          "description": "Market limit on units sold in the month (upper bound on sell); a missing row means nothing can be sold",
+          "label": "market limit"
+        }
+      }
+    }
+  },
+  "params": {
+    "holding_cost": {
+      "type": "number",
+      "unit": "currency/unit/month",
+      "description": "Storage cost per unit per month",
+      "label": "holding cost"
+    },
+    "max_inventory": {
+      "type": "number",
+      "unit": "units",
+      "description": "Maximum stock of each product at the end of any month",
+      "label": "storage limit"
+    },
+    "store_target": {
+      "type": "number",
+      "unit": "units",
+      "description": "Required closing stock of each product in the last month",
+      "label": "closing stock target"
+    },
+    "hours_per_month": {
+      "type": "number",
+      "unit": "hours",
+      "description": "Available hours per working machine per month (2 shifts x 8 hours x 24 days)",
+      "label": "machine hours per month"
+    }
+  },
+  "decision_variables": {
+    "make[month, product]": "units manufactured (>= 0)",
+    "store[month, product]": "units in stock at month end (0..max_inventory)",
+    "sell[month, product]": "units sold (0..max_sales)",
+    "repair[month, machine]": "integer number of machines of the type down for maintenance in the month (0..machines_to_maintain)"
+  },
+  "constraints": {
+    "balance[month, product]": "store[prev] + make = sell + store (opening stock 0)",
+    "end_stock[product]": "store[last month] = store_target",
+    "capacity[month, machine]": "sum_p hours_per_unit * make <= hours_per_month * (installed - repair)",
+    "maintenance[machine]": "sum over months of repair = machines_to_maintain"
+  },
+  "kpis": [
+    "profit",
+    "sales_contribution",
+    "holding_cost",
+    "units_sold",
+    "demand_fill_rate",
+    "machine_utilisation",
+    "units_sold_by_product",
+    "maintenance_plan"
+  ],
+  "measures": {
+    "make": {
+      "dims": [
+        "month",
+        "product"
+      ],
+      "label": "units made"
+    },
+    "store": {
+      "dims": [
+        "month",
+        "product"
+      ],
+      "label": "units in stock"
+    },
+    "sell": {
+      "dims": [
+        "month",
+        "product"
+      ],
+      "label": "units sold"
+    },
+    "repair": {
+      "dims": [
+        "month",
+        "machine"
+      ],
+      "label": "machines down for maintenance"
+    }
+  }
+}

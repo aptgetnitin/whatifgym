@@ -6,11 +6,19 @@ from .base import BaseModel
 
 def _registry() -> dict[str, type[BaseModel]]:
     # Imported lazily so that `import whatifgym` stays cheap and solver-free.
+    from .models.bin_packing.model import BinPacking
+    from .models.car_rental.model import CarRental
     from .models.factory_planning.model import FactoryPlanning
+    from .models.factory_planning_2.model import FactoryPlanning2
+    from .models.food_manufacture.model import FoodManufacture
+    from .models.manpower_planning.model import ManpowerPlanning
+    from .models.mining.model import Mining
     from .models.multiple_knapsack.model import MultipleKnapsack
+    from .models.power_generation_hydro.model import PowerGenerationHydro
     from .models.wedding_seating.model import WeddingSeating
 
-    classes = [FactoryPlanning, MultipleKnapsack, WeddingSeating]
+    classes = [FactoryPlanning, FactoryPlanning2, FoodManufacture, Mining, ManpowerPlanning, PowerGenerationHydro,
+               MultipleKnapsack, BinPacking, WeddingSeating, CarRental]
     return {cls.name: cls for cls in classes}
 
 

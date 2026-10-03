@@ -1,0 +1,4 @@
+from_skill,to_skill,max_per_year,max_share_of_target,cost
+unskilled,semi_skilled,200,0,400
+unskilled,skilled,0,0,0
+semi_skilled,skilled,0,0.25,500

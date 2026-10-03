@@ -1,0 +1,3 @@
+name,value,description
+reserve_margin,0.15,Running thermal units at maximum output plus the full output of every hydro unit must cover predicted demand plus this fraction of it (0.15 = 115% of demand)
+pump_mwh_per_m,3000,Electricity consumed by pumping to raise the reservoir level by one metre

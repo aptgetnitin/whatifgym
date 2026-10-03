@@ -1,0 +1,8 @@
+{
+  "objective": 146861974.3642283,
+  "source_solver": "gurobipy 13.0.3 (Gurobi Optimizer 13.0.3, size-limited pip licence), original notebook code cells run unmodified (only the %pip line dropped) on 2026-10-02",
+  "n_vars": 65,
+  "n_constraints": 71,
+  "n_int_vars": 40,
+  "notes": "Proven optimal (MIP gap 0). Reference plan: all four mines open in years 1-4 and Mine4 closed after year 4; mines worked: Year1 {1,3,4}, Year2 {2,3,4}, Year3 {1,3}, Year4 {1,2,4}, Year5 {1,2,3}; 26.09 Mt of blended ore sold. HiGHS, SCIP and CBC return the same plan. The PuLP model has the original's variables, rows (same order, senses, right-hand sides) and objective coefficients; only the names differ (Working -> operate, Available -> open, mines 1-4 -> Mine1-Mine4, years 1-5 -> Year1-Year5). The 10% discount rate, hard-coded in the notebook, is the parameter discount_rate."
+}

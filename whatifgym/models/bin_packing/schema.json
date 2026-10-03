@@ -1,0 +1,38 @@
+{
+  "model": "bin_packing",
+  "sense": "min",
+  "objective": "number of bins used: sum of y[bin]",
+  "tables": {
+    "items": {
+      "key": ["item"],
+      "label": "items to pack",
+      "columns": {
+        "item": {"type": "string", "description": "Item identifier", "label": "item"},
+        "weight": {"type": "int", "unit": "weight units", "description": "Capacity the item takes up in the bin it is packed into", "label": "item weight"}
+      }
+    },
+    "bins": {
+      "key": ["bin"],
+      "label": "available bins",
+      "columns": {
+        "bin": {"type": "string", "description": "Candidate bin identifier (the original offers one bin per item)", "label": "bin"},
+        "capacity": {"type": "int", "unit": "weight units", "description": "Most weight the bin can hold when it is used", "label": "bin capacity"}
+      }
+    }
+  },
+  "params": {},
+  "decision_variables": {
+    "x[item, bin]": "binary, 1 if the item is packed into the bin",
+    "y[bin]": "binary, 1 if the bin is used"
+  },
+  "constraints": {
+    "assign[item]": "sum_b x[item, b] = 1 (every item is packed exactly once)",
+    "capacity[bin]": "sum_i weight[i] * x[i, bin] <= capacity[bin] * y[bin] (only a used bin holds weight)"
+  },
+  "kpis": ["bins_used", "total_weight", "open_capacity", "spare_capacity", "fill_rate", "min_bins_by_weight", "bin_load", "bin_items"],
+  "measures": {
+    "x": {"dims": ["item", "bin"], "label": "items packed"},
+    "y": {"dims": ["bin"], "label": "bins used"}
+  },
+  "cpsat": true
+}

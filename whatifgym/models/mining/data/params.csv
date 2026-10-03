@@ -1,0 +1,4 @@
+name,value,description
+price,10,Selling price of the blended ore in USD per ton
+max_mines,3,Maximum number of mines that may be worked in any one year
+discount_rate,0.1,Annual discount rate for revenue and royalties of later years (0.1 = 10% per year)

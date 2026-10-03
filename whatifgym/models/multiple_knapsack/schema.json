@@ -4,27 +4,71 @@
   "objective": "sum of value[item] * x[item, bin]",
   "tables": {
     "items": {
-      "key": ["item"],
+      "key": [
+        "item"
+      ],
       "columns": {
-        "item": {"type": "string"},
-        "weight": {"type": "int", "unit": "weight units", "description": "Capacity consumed by the item"},
-        "value": {"type": "int", "description": "Value earned if the item is packed"}
-      }
+        "item": {
+          "type": "string",
+          "label": "item"
+        },
+        "weight": {
+          "type": "int",
+          "unit": "weight units",
+          "description": "Capacity consumed by the item",
+          "label": "item weight"
+        },
+        "value": {
+          "type": "int",
+          "description": "Value earned if the item is packed",
+          "label": "item value"
+        }
+      },
+      "label": "items"
     },
     "bins": {
-      "key": ["bin"],
+      "key": [
+        "bin"
+      ],
       "columns": {
-        "bin": {"type": "string"},
-        "capacity": {"type": "int", "unit": "weight units"}
-      }
+        "bin": {
+          "type": "string",
+          "label": "bin"
+        },
+        "capacity": {
+          "type": "int",
+          "unit": "weight units",
+          "label": "capacity"
+        }
+      },
+      "label": "bins"
     }
   },
   "params": {},
-  "decision_variables": {"x[item, bin]": "binary, 1 if item is packed in bin"},
+  "decision_variables": {
+    "x[item, bin]": "binary, 1 if item is packed in bin"
+  },
   "constraints": {
     "assign_once[item]": "sum_b x[item, b] <= 1",
     "capacity[bin]": "sum_i weight[i] * x[i, bin] <= capacity[bin]"
   },
-  "kpis": ["packed_value", "packed_weight", "items_packed", "items_left_out", "value_left_out", "bin_utilisation", "bins_used"],
-  "cpsat": true
+  "kpis": [
+    "packed_value",
+    "packed_weight",
+    "items_packed",
+    "items_left_out",
+    "value_left_out",
+    "bin_utilisation",
+    "bins_used"
+  ],
+  "cpsat": true,
+  "measures": {
+    "x": {
+      "dims": [
+        "item",
+        "bin"
+      ],
+      "label": "item placements (0/1 per item and bin)"
+    }
+  }
 }
