@@ -15,8 +15,10 @@ Mean reward of the three trivial agents on every task file (`scripts/run_trivial
 | `tasks/bin_packing/relative_rule_v0.jsonl` | 18 | 1.100 | 0.100 | 0.900 |
 | `tasks/bin_packing/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 |
 | `tasks/car_rental/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
+| `tasks/car_rental/data_change_v0_nl.jsonl` | 6 | 1.100 | 0.100 | 0.900 |
 | `tasks/car_rental/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/car_rental/new_limit_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
+| `tasks/car_rental/new_limit_v0_nl.jsonl` | 9 | 1.100 | 0.100 | 0.900 |
 | `tasks/car_rental/objective_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/car_rental/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/car_rental/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 |
@@ -45,8 +47,10 @@ Mean reward of the three trivial agents on every task file (`scripts/run_trivial
 | `tasks/farm_planning/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/farm_planning/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 |
 | `tasks/food_manufacture/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
+| `tasks/food_manufacture/data_change_v0_nl.jsonl` | 9 | 1.100 | 0.100 | 0.900 |
 | `tasks/food_manufacture/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/food_manufacture/new_limit_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
+| `tasks/food_manufacture/new_limit_v0_nl.jsonl` | 6 | 1.100 | 0.100 | 0.900 |
 | `tasks/food_manufacture/objective_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/food_manufacture/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/food_manufacture/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 |
@@ -57,14 +61,18 @@ Mean reward of the three trivial agents on every task file (`scripts/run_trivial
 | `tasks/food_supply/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/food_supply/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 |
 | `tasks/manpower_planning/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
+| `tasks/manpower_planning/data_change_v0_nl.jsonl` | 3 | 1.100 | 0.100 | 0.900 |
 | `tasks/manpower_planning/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/manpower_planning/new_limit_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
+| `tasks/manpower_planning/new_limit_v0_nl.jsonl` | 15 | 1.100 | 0.100 | 0.900 |
 | `tasks/manpower_planning/objective_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/manpower_planning/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/manpower_planning/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 |
 | `tasks/mining/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
+| `tasks/mining/data_change_v0_nl.jsonl` | 3 | 1.100 | 0.100 | 0.900 |
 | `tasks/mining/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/mining/new_limit_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
+| `tasks/mining/new_limit_v0_nl.jsonl` | 9 | 1.100 | 0.100 | 0.900 |
 | `tasks/mining/objective_change_v0.jsonl` | 11 | 1.100 | 0.100 | 0.900 |
 | `tasks/mining/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/mining/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 |
@@ -75,14 +83,16 @@ Mean reward of the three trivial agents on every task file (`scripts/run_trivial
 | `tasks/multiple_knapsack/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/multiple_knapsack/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 |
 | `tasks/power_generation_hydro/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
+| `tasks/power_generation_hydro/data_change_v0_nl.jsonl` | 12 | 1.100 | 0.100 | 0.900 |
 | `tasks/power_generation_hydro/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/power_generation_hydro/new_limit_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
+| `tasks/power_generation_hydro/new_limit_v0_nl.jsonl` | 6 | 1.100 | 0.100 | 0.900 |
 | `tasks/power_generation_hydro/objective_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/power_generation_hydro/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/power_generation_hydro/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 |
 | `tasks/wedding_seating/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 |
 | `tasks/wedding_seating/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 |
 
-Total tasks: **1500** in 78 files.
+Total tasks: **1578** in 88 files.
 
 No deviations from the expected rewards.

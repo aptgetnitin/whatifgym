@@ -380,6 +380,21 @@ frozen files unless `--force-frozen` is given). Everything else can be regenerat
 `--force` regenerates it. Generation applies a 60-second limit to every oracle solve, because a rule can turn an
 easy MILP into a hard one; a candidate that needs longer is dropped.
 
+### Natural-language paraphrases (`*_nl.jsonl`)
+
+The generic templates are unambiguous but sound like a database. `scripts/paraphrase_tasks.py` rewrites a task's
+question the way a planner would say it and keeps a rewrite only if an **independent** model translates it back
+into a scenario that re-solves to the task's reference (a round trip through the oracle), so paraphrased tasks keep
+the source task's gold scenario, reference and split, carry the tag `paraphrase`, an id `<source id>-p<k>` and
+full provenance in `slots.provenance` (source task, original question, paraphraser, verifier, prompt version); a
+`..._nl.provenance.json` next to each file records the prompt and the acceptance counts. The first batch covers
+the test split of the `data_change` and `new_limit` files for five models (78 rewrites: paraphraser Claude Opus,
+verifier Claude Sonnet, 78 of 78 accepted), e.g. the template question *"An overall cap of 55 applies to the
+damaged cars transferred in total."* became *"What if we couldn't move more than 55 damaged cars overall — that's
+adding up every day and every route between depots?"*. The pipeline runs against Ollama or the Anthropic API, or
+offline in passes (export prompts, collect replies, import), and the verifier must not be a model whose results on
+the paraphrases are then reported, since verification selects rewrites it could solve.
+
 ## 10. Results so far
 
 **Trivial agents** (`results/trivial_baselines.md`, `scripts/run_trivial_baselines.py`): on all 78 files and 1500
@@ -580,10 +595,10 @@ keep that property or the data-change family becomes a look-up exercise.
 | done | 14 base models ported and verified on HiGHS, SCIP and CBC, 3 of them also on CP-SAT; the last four also re-run against the original notebooks on Gurobi 13 |
 | done | Scenario DSL v0.1 with JSON Schema, two-stage validation, 10 worked examples, 22 planted bad scenarios |
 | done | Oracle, scorer (relative 1e-3 on status, objective and scoring KPIs) and environment (ask + scenario, 3 turns) |
-| done | Six task families (`data_change`, `new_limit`, `relative_rule`, `objective_change`, `fixed_decision`, `under_specified`) with specific and schema-driven generic templates; 1500 tasks in 78 files over all 14 models; trivial agents exact on every file |
+| done | Six task families (`data_change`, `new_limit`, `relative_rule`, `objective_change`, `fixed_decision`, `under_specified`) with specific and schema-driven generic templates; 1500 tasks in 78 files over all 14 models, plus 78 verified natural-language paraphrases; trivial agents exact on every file |
 | done | First frontier baseline on `factory_planning` data_change: Claude Sonnet 59/60, Claude Opus 60/60 |
 | done | First local open-model baseline: Qwen3 8B through Ollama on the 399 original tasks, 78.7 % (see `results/baselines/README.md` for the reading) |
-| next | The scaling ladder (Qwen3 4B–32B, gpt-oss 20B, thinking on/off) and the new families through the same runner; natural-language paraphrases of the generic questions (`scripts/paraphrase_tasks.py`) |
+| next | The scaling ladder (Qwen3 4B–32B, gpt-oss 20B, thinking on/off) and the new families and paraphrases through the same runner; paraphrase at scale with a local model (`scripts/paraphrase_tasks.py`) |
 | next | Frontier baselines on the new files, through the API with pinned model ids |
 | next | Remaining families: logical either-or rules and relax/remove a constraint (both need a DSL extension), infeasible-request diagnosis, chained scenarios |
 | next | Port the remaining shortlisted models; hold some out for generalisation tests |

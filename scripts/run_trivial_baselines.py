@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run the three trivial agents over every task file and write one summary table.
 
-    python scripts/run_trivial_baselines.py                 # all of tasks/*/*_v0.jsonl
+    python scripts/run_trivial_baselines.py                 # all of tasks/*/*.jsonl
     python scripts/run_trivial_baselines.py --out results/trivial_baselines.md
 
 The trivial agents pin the reward scale and catch leaks:
@@ -42,7 +42,7 @@ def main(argv=None) -> int:
     ap.add_argument("--solver", default="highs")
     args = ap.parse_args(argv)
 
-    files = [Path(p) for p in args.tasks] if args.tasks else sorted(ROOT.glob("tasks/*/*_v0.jsonl"))
+    files = [Path(p).resolve() for p in args.tasks] if args.tasks else sorted(ROOT.glob("tasks/*/*.jsonl"))
     scratch = ROOT / "results" / "scratch"
     scratch.mkdir(parents=True, exist_ok=True)
     rows, problems = [], []

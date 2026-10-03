@@ -39,6 +39,8 @@ def load_records(paths: list[Path]) -> list[dict]:
                     r["_label"] = (r.get("agent_state") or {}).get("model") or f.stem
                     parts = r["task_id"].split("-")
                     r["_base_model"], r["_family"] = (parts[0], parts[1]) if len(parts) >= 4 else ("?", "?")
+                    if len(parts) >= 5 and parts[4].startswith("p"):
+                        r["_family"] += " (nl)"        # a verified natural-language paraphrase of a template task
                     records.append(r)
     return records
 
