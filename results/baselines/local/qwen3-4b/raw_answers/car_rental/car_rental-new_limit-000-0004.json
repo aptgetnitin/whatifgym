@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "fleet_size",
+      "column": "fleet_size",
+      "where": {},
+      "value": 1550
+    }
+  ]
+}

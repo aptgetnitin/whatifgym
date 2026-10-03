@@ -1,0 +1,17 @@
+{
+
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": ["Year1", "Year2", "Year3", "Year4", "Year5"]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Reduce all quality targets by 20% using scale operation on the years table's quality_target column."
+}

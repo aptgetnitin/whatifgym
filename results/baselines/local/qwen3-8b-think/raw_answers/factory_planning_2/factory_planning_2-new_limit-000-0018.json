@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "may_make_cap",
+   "measure": "make",
+   "scope": {
+    "month": "May"
+   },
+   "sense": "<=",
+   "value": 1500
+  }
+ ],
+ "note": "Limits total production in May to 1500 units across all products."
+}

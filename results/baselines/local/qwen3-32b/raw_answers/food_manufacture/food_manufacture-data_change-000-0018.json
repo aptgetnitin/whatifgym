@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": "VEG1"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "The hardness of VEG1 is scaled by 50% to reflect the change in its hardness value."
+}

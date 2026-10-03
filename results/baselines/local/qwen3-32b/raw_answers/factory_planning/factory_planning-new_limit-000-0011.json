@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "may_stock_limit",
+   "measure": "store",
+   "scope": {
+    "month": "May"
+   },
+   "sense": "<=",
+   "value": 150
+  }
+ ],
+ "note": "A rule limits the total stock across all products at the end of May."
+}

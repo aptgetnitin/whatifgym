@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "oil": "VEG1",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "value": 2200
+    }
+  ],
+  "note": "The total tons of oil in storage for oil VEG1 must be at least 2200. This is a fixed decision on the store measure for VEG1 across all months."
+}

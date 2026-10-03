@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "factory_planning_2","data_changes": [{"op": "set","table": "machines","column": "installed","where": {"machine": "vertDrill"},"value": 1}]}

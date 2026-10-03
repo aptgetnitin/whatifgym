@@ -189,6 +189,8 @@ def make_ollama_agent(model_name: str, host: str = "http://localhost:11434", num
 
     think_value = {"off": False, "on": True}.get(think, think)
     send_think = {"value": True}
+    # distinct label so a thinking run is not merged with the plain run (both share the Ollama model id)
+    label = f"ollama/{model_name}" + ("" if think == "off" else f"+think={think}")
 
     def agent(obs, task, state):
         prompt = build_prompt(obs)
@@ -206,14 +208,26 @@ def make_ollama_agent(model_name: str, host: str = "http://localhost:11434", num
             if "think" in str(exc).lower() and send_think["value"]:
                 send_think["value"] = False          # model has no thinking switch: resend without it, once for all
                 body.pop("think", None)
-                resp = _ollama_request(host, "/api/chat", body, timeout=timeout)
+                try:
+                    resp = _ollama_request(host, "/api/chat", body, timeout=timeout)
+                except RuntimeError as exc2:
+                    exc = exc2
+                    resp = None
             else:
-                raise
+                resp = None
+            if resp is None:
+                # a per-task server error (e.g. HTTP 500 "token repeat limit reached") must not abort the whole
+                # run: record it, score it as a failed answer, and move to the next task.
+                state["request_error"] = str(exc)[:300]
+                state["latency_s"] = state.get("latency_s", 0.0) + time.perf_counter() - t0
+                state["model"] = label
+                _save_answer(save_dir, task.id, f"REQUEST_ERROR: {exc}")
+                return {"type": "scenario", "scenario": {"version": "0.1", "note": "request error", "data_changes": []}}
         text = (resp.get("message") or {}).get("content", "")
         state["latency_s"] = state.get("latency_s", 0.0) + time.perf_counter() - t0
         state["input_tokens"] = state.get("input_tokens", 0) + int(resp.get("prompt_eval_count") or 0)
         state["output_tokens"] = state.get("output_tokens", 0) + int(resp.get("eval_count") or 0)
-        state["model"] = f"ollama/{model_name}"
+        state["model"] = label
         state["raw_output"] = text[:4000]
         if (resp.get("message") or {}).get("thinking"):
             state["thinking_chars"] = len(resp["message"]["thinking"])

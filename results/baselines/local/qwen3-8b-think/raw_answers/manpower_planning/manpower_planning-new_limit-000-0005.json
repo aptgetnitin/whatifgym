@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_cap_year3",
+   "measure": "retrain",
+   "scope": {
+    "year": 3
+   },
+   "sense": "<=",
+   "value": 210
+  }
+ ],
+ "note": "Limits total retraining in year 3 to 210 workers"
+}

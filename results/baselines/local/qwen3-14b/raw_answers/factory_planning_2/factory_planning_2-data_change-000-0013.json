@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "factor": 1.1
+    }
+  ],
+  "note": "Scaling all max_sales entries by 1.1 to reflect a 10% increase in market limits."
+}

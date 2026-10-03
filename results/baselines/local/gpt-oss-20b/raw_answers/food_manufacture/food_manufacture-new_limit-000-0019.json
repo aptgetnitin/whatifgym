@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "min_store_veg1",
+      "measure": "store",
+      "scope": {
+        "oil": "VEG1"
+      },
+      "sense": ">=",
+      "value": 1800
+    },
+    {
+      "name": "max_total_buy",
+      "measure": "buy",
+      "sense": "<=",
+      "value": 1900
+    }
+  ],
+  "note": "Enforce minimum storage for VEG1 and cap total purchases."
+}

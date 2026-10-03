@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "undamaged_stock_friday_limit",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Friday"
+      },
+      "sense": "<=",
+      "value": 310
+    }
+  ],
+  "note": "A rule caps the sum of undamaged_stock on Friday across all depots."
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": "Thermal0"
+      },
+      "factor": 1.2
+    },
+    {
+      "op": "scale",
+      "table": "hydro_units",
+      "column": "depletion_m_per_hour",
+      "where": {
+        "hydro": "HydroA"
+      },
+      "factor": 1.16
+    }
+  ]
+}

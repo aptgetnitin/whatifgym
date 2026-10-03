@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "retraining",
+      "column": "cost",
+      "where": {
+        "from_skill": "semi_skilled",
+        "to_skill": "skilled"
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [1, 2, 3],
+        "skill": ["unskilled", "semi_skilled", "skilled"]
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "The retraining cost for semi-skilled to skilled is increased by 10%, and all manpower requirements are reduced by 10%."
+}

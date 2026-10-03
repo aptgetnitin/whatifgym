@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "extract",
+      "column": "extract",
+      "where": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "factor": 0.999999
+    }
+  ],
+  "note": "The total tons of ore extracted summed over everything is the sum of extract[year, mine] over all years and mines. Scaling the entire sum by a factor less than 1 reduces it to 99.9999% of the original value, which is close to 19568750."
+}

@@ -1,0 +1,18 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "May",
+    "product": "Prod2"
+   },
+   "value": 200
+  }
+ ],
+ "note": "Directly setting the max_sales value for Prod2 in May to 200 units."
+}

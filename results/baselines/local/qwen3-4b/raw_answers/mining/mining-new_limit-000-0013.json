@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_mines",
+      "value": 13
+    }
+  ],
+  "note": "The planner's question specifies an overall cap of 13 mine-years worked in total, which translates to a parameter change for max_mines from its original value to 13."
+}

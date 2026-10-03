@@ -1,0 +1,32 @@
+{
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine2"
+      }
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "open",
+      "scope": {
+        "mine": [
+          "Mine1",
+          "Mine3",
+          "Mine4"
+        ],
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "value": 1
+    }
+  ]
+}

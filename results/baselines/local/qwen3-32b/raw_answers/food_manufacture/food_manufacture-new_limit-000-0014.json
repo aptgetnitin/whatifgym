@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_oil_purchase_cap",
+      "measure": "buy",
+      "scope": {},
+      "sense": "<=",
+      "value": 2150
+    }
+  ],
+  "note": "A total cap on all oil purchases is a rule that sums the buy measure over all months and oils."
+}

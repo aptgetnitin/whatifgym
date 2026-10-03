@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin2_placement_cap",
+      "measure": "x",
+      "scope": {
+        "bin": "bin2"
+      },
+      "sense": "<=",
+      "value": 2
+    },
+    {
+      "name": "total_placement_cap",
+      "measure": "x",
+      "scope": {},
+      "sense": "<=",
+      "value": 9
+    }
+  ],
+  "note": "Rules bound the total number of item placements in bin2 and overall."
+}

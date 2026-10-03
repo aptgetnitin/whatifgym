@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "price_same_depot",
+      "where": {
+        "rental_days": 3
+      },
+      "factor": 1.3
+    }
+  ],
+  "note": "The price for a 3-day rental returned to the same depot is increased by 30%."
+}

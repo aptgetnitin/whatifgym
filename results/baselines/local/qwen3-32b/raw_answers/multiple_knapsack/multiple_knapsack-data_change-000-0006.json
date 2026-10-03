@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "items",
+      "column": "value",
+      "where": {
+        "item": "item13"
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "The value of item13 is reduced by 10%."
+}

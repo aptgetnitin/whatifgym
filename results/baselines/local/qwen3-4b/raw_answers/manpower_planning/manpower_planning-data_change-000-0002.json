@@ -1,0 +1,20 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "shift_param",
+      "name": "costs.redundancy_cost",
+      "delta": -0.1
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "value": 375
+    }
+  ]
+}

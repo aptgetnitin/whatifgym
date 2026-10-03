@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "short_time",
+      "sense": "<=",
+      "value": 220
+    }
+  ],
+  "note": "Overall cap on short-time workers."
+}

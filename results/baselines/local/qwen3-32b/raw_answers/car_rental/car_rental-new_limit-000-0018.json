@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "birmingham_rental_cap",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Birmingham"
+      },
+      "sense": "<=",
+      "value": 510
+    }
+  ],
+  "note": "A cap on total rentals for a depot is a rule on the sum of the rentals measure over the depot scope."
+}

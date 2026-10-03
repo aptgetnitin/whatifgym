@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod5",
+    "month": "Apr"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": "grinder",
+    "product": "Prod1"
+   },
+   "value": 0.625
+  }
+ ],
+ "note": "Zero demand for Prod5 in April is modeled by setting max_sales to zero. A process change for Prod1 on the grinder is modeled by setting the hours_per_unit to 0.625."
+}

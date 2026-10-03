@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "rentals",
+      "column": "rentals",
+      "where": {
+        "day": "Monday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "delta": -150
+    }
+  ]
+}

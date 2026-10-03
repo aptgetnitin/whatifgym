@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "max_items_in_bin3",
+   "measure": "x",
+   "scope": {
+    "bin": "bin3"
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Limits bin3 to at most 1 item placement"
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"wedding_seating","data_changes":[{"op":"remove","table":"guests","where":{"guest":"M"}}],"note":"Removing guest M from the guests table reduces the guest list by one, affecting possible table combinations and overall seating arrangement."}

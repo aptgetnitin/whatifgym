@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "measure": "blend",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": "<=",
+      "value": 4218750
+    },
+    {
+      "measure": "blend",
+      "sense": "<=",
+      "value": 13045850
+    }
+  ]
+}

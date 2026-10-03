@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"measure":"store","scope":{"month":"May"},"sense":"<=","value":150}],"note":"Total inventory at end of May limited to 150 units."}

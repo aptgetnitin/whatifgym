@@ -1,0 +1,13 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "store_target",
+   "factor": 2
+  }
+ ]
+}

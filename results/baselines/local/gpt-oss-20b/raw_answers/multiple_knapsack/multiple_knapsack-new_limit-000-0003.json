@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"max_one_item_in_bin0","measure":"x","scope":{"bin":"bin0"},"sense":"<=","value":1}]}

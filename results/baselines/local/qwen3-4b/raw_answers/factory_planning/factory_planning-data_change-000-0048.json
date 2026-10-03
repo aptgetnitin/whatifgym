@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "downtime",
+      "where": {
+        "month": "Feb",
+        "machine": "horiDrill"
+      }
+    }
+  ],
+  "note": "The planner is asking about the impact of removing a downtime row for horizontal drills in February. The original downtime table shows a row for Feb and horiDrill, so we remove it."
+  }

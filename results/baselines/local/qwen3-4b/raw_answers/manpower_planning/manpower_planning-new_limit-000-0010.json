@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "skill": "skilled",
+        "year": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "value": 1250
+    }
+  ],
+  "note": "The planner wants to set the required number of skilled workers to 1250 across all years."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "year4_extraction_limit",
+      "measure": "extract",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": "<=",
+      "value": 2812500
+    }
+  ],
+  "note": "A rule is added to limit the total tons of ore extracted in Year4 to 2,812,500."
+}

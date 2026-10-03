@@ -1,0 +1,21 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod2",
+    "month": [
+     "May",
+     "Jun"
+    ]
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "Prod2's May/June max_sales increases 50% to reflect higher demand forecast."
+}

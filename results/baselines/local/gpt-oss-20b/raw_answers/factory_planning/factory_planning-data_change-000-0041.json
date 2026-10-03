@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "cap_prod3_sales_may",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod3",
+        "month": "May"
+      },
+      "sense": "<=",
+      "value": 1000
+    }
+  ],
+  "note": "Cap Prod3 sales in May at 1000."
+}

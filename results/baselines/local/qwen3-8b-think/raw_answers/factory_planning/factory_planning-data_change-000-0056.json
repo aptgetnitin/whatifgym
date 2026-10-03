@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "factory_planning","data_changes": [{"op": "scale","table": "max_sales","column": "max_sales","where": {"product": "Prod6","month": ["May"]},"factor": 0.0}],"note": "Setting Prod6's May max_sales to zero simulates market disappearance."}

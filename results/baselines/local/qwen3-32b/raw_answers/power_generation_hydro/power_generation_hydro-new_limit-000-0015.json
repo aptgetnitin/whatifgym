@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal0_output_limit",
+      "measure": "output",
+      "scope": {
+        "type": "Thermal0"
+      },
+      "sense": "<=",
+      "value": 33300
+    }
+  ],
+  "note": "A rule limits the total output of Thermal0 generators across all periods."
+}

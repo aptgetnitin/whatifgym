@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod7_stock_min",
+      "measure": "store",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "value": 160
+    },
+    {
+      "name": "jun_production_cap",
+      "measure": "make",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 2050
+    }
+  ],
+  "note": "Two new constraints: minimum stock for Prod7 and maximum production in June."
+}

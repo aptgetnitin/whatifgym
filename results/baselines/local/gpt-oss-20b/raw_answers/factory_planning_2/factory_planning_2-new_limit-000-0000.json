@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "measure": "make",
+      "sense": "<=",
+      "value": 11950,
+      "scope": {}
+    },
+    {
+      "measure": "make",
+      "sense": "<=",
+      "value": 390,
+      "scope": {
+        "product": "Prod7"
+      }
+    }
+  ],
+  "note": "Overall cap of 11950 on total units made; Prod7 cap of 390."
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "year4_blend_cap",
+      "measure": "blend",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": "<=",
+      "value": 4218750
+    },
+    {
+      "name": "total_blend_cap",
+      "measure": "blend",
+      "scope": {},
+      "sense": "<=",
+      "value": 13045850
+    }
+  ]
+}

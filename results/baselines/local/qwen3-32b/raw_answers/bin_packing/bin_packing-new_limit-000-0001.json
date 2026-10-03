@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "bin2_min_items",
+      "measure": "x",
+      "scope": {
+        "bin": "bin2"
+      },
+      "sense": ">=",
+      "value": 4
+    }
+  ],
+  "note": "A rule ensures that at least 4 items are packed into bin2."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "retraining_limit_year_3",
+      "measure": "retrain",
+      "scope": {
+        "year": 3
+      },
+      "sense": "<=",
+      "value": 210
+    }
+  ],
+  "note": "Added a rule to limit the total number of workers retrained to a higher skill level in year 3 to 210."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "feb_production_cap",
+      "measure": "make",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "value": 1950
+    }
+  ],
+  "note": "A rule limits the total production in February to 1950 units."
+}

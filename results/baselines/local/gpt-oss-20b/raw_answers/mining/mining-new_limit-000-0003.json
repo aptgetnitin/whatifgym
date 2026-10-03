@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min2_work_years_min",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 4
+    },
+    {
+      "name": "total_extract_cap",
+      "measure": "extract",
+      "sense": "<=",
+      "value": 20873350
+    }
+  ],
+  "note": "Enforce minimum work years for Mine2 and total extraction cap."
+}

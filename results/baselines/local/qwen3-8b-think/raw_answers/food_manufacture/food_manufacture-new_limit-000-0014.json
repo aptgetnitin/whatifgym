@@ -1,0 +1,12 @@
+{
+
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "buy",
+      "sense": "<=",
+      "value": 2150
+    }
+  ]
+}

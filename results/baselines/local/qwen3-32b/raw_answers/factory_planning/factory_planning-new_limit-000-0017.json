@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod7_total_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": "<=",
+   "value": 400
+  }
+ ],
+ "note": "A total production cap over the entire horizon is a rule on the sum of the make measure for the product over all months."
+}

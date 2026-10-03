@@ -1,0 +1,12 @@
+{
+
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "product_price",
+      "factor": 2.0
+    }
+  ]
+}

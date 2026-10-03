@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine1_total_extraction_limit",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine1"
+      },
+      "sense": "<=",
+      "value": 4252500
+    }
+  ],
+  "note": "A total extraction limit for Mine1 is enforced as a rule on the sum of the extract measure over all years for that mine."
+}

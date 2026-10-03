@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "food_manufacture","rules": [{"name": "april_refining_cap","measure": "consume","scope": {"month": ["Apr"]},"sense": "<=","value": 340}],"note": "Limits total oil refined in April to 340 tons."}

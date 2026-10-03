@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg1_refine_total_limit",
+      "measure": "consume",
+      "scope": {
+        "oil": "VEG1"
+      },
+      "sense": "<=",
+      "value": 590
+    },
+    {
+      "name": "oil3_storage_total_limit",
+      "measure": "store",
+      "scope": {
+        "oil": "OIL3"
+      },
+      "sense": ">=",
+      "value": 3300
+    }
+  ]
+}

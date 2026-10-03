@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "vertDrill"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Scraping one vertical drill reduces the installed count from 2 to 1, affecting machine-hour capacity across the entire planning horizon."
+}

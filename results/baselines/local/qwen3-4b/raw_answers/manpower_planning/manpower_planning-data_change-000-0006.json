@@ -1,0 +1,23 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "skills",
+      "column": "current_strength",
+      "where": {
+        "skill": "unskilled"
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "scale",
+      "table": "costs",
+      "column": "short_time_cost",
+      "where": {
+        "skill": "unskilled"
+      },
+      "factor": 1000
+    }
+  ]
+}

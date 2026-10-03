@@ -1,0 +1,19 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "downtime",
+   "rows": [
+    {
+     "month": "Jun",
+     "machine": "grinder",
+     "machines_down": 4
+    }
+   ]
+  }
+ ],
+ "note": "Adding a new downtime row for June and grinder with 4 machines down."
+}

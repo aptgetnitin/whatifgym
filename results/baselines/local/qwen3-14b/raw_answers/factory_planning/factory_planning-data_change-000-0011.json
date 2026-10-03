@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "downtime",
+      "where": {
+        "month": "Feb",
+        "machine": "horiDrill"
+      }
+    },
+    {
+      "op": "set_param",
+      "name": "profit_per_unit",
+      "value": 7,
+      "where": {
+        "product": "Prod6"
+      }
+    }
+  ]
+}

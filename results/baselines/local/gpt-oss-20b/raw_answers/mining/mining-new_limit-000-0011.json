@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"measure":"extract","sense":"<=","value":23482500}],"note":"Total extraction cap"}

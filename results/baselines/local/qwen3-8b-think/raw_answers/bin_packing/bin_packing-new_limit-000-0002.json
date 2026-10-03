@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","rules":[{"name":"min_items_bin1","measure":"x","scope":{"bin":"bin1"},"sense":">=","value":4}],"note":"Enforces bin1 to contain at least 4 items by constraining the sum of x[item, bin1]"}

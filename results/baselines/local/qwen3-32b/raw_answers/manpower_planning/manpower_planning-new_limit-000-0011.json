@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "semi_skilled_recruit_min",
+      "measure": "recruit",
+      "scope": {
+        "skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "value": 2000
+    }
+  ],
+  "note": "Adds a rule that the total number of semi-skilled recruits across all years must be at least 2000."
+}

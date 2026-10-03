@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_inventory",
+      "where": {
+        "product": "all"
+      },
+      "value": 550
+    }
+  ],
+  "note": "The planner's question refers to a new inventory limit of 550 units across all products and months. However, the model's `max_inventory` parameter is per product, not total. The question asks for a sum over all products and months, which is not directly supported by the model's schema. The model does not have a parameter for total inventory, so this scenario cannot be precisely defined."
+  }

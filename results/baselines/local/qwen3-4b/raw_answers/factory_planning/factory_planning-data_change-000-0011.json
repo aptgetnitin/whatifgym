@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "downtime",
+      "column": "machines_down",
+      "where": {
+        "month": "Feb",
+        "machine": "horiDrill"
+      },
+      "delta": 0
+    },
+    {
+      "op": "set_param",
+      "name": "profit_per_unit",
+      "value": 7
+    }
+  ]
+}

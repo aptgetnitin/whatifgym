@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "overall_make_cap",
+      "measure": "make",
+      "scope": {},
+      "sense": "<=",
+      "value": 6650
+    }
+  ],
+  "note": "Overall production cap of 6650 units."
+}

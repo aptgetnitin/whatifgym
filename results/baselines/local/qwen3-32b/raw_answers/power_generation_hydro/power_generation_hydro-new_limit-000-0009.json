@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "hydroB_startups_min",
+      "measure": "hydro_start",
+      "scope": {
+        "hydro": "HydroB"
+      },
+      "sense": ">=",
+      "value": 2
+    },
+    {
+      "name": "thermal0_units_cap",
+      "measure": "ngen",
+      "scope": {
+        "type": "Thermal0"
+      },
+      "sense": "<=",
+      "value": 30
+    }
+  ],
+  "note": "Rules enforce a minimum number of HydroB start-ups and a maximum number of Thermal0 units running."
+}

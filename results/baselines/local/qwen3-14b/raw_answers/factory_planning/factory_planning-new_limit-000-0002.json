@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod7_make_limit_may_jun",
+      "measure": "make",
+      "scope": {
+        "product": "Prod7",
+        "month": [
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 90
+    },
+    {
+      "name": "total_stock_limit",
+      "measure": "store",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "sense": "<=",
+      "value": 800
+    }
+  ]
+}

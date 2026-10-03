@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "items",
+      "column": "weight",
+      "factor": 1.2
+    }
+  ],
+  "note": "All item weights are increased by 20%."
+}

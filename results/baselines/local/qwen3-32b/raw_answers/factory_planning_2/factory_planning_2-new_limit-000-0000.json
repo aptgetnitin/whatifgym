@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_units_cap",
+      "measure": "make",
+      "scope": {},
+      "sense": "<=",
+      "value": 11950
+    },
+    {
+      "name": "prod7_units_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": "<=",
+      "value": 390
+    }
+  ]
+}

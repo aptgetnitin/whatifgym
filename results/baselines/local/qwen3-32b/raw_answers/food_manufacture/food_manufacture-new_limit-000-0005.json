@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_refined_cap",
+      "measure": "consume",
+      "scope": {
+        "oil": ["VEG1", "VEG2", "OIL1", "OIL2", "OIL3"]
+      },
+      "sense": "<=",
+      "value": 2150
+    }
+  ],
+  "note": "A total cap on the tons of oil refined is enforced by summing the 'consume' measure across all oils."
+}

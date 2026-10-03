@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set_param","name":"hours_per_month","value":320}],"note":"Each month has only 20 working days, so machine hours per month are set to 320."}

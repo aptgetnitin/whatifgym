@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","data_changes":[{"op":"set","table":"items","column":"weight","where":{"item":"item0"},"value":24}],"note":"Updated weight of item0 to 24."}

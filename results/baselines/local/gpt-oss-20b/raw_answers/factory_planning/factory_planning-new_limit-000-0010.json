@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod6_total_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "value": 1050
+    },
+    {
+      "name": "prod7_prod5_jan_cap",
+      "measure": "make",
+      "scope": {
+        "month": "Jan",
+        "product": [
+          "Prod7",
+          "Prod5"
+        ]
+      },
+      "sense": "<=",
+      "value": 600
+    }
+  ],
+  "note": "Supplier limits: Prod6 total <= 1050; Jan production of Prod5+Prod7 <= 600."
+}

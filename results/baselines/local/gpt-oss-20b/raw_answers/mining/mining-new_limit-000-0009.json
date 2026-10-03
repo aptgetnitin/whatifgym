@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "max_extract_year2",
+      "measure": "extract",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "value": 5400000
+    }
+  ]
+}

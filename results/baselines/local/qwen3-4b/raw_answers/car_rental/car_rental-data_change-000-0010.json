@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "day": "Saturday",
+        "depot": "Manchester"
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "scale",
+      "table": "transfer_costs",
+      "column": "cost",
+      "where": {
+        "from_depot": "Plymouth",
+        "to_depot": "Manchester"
+      },
+      "factor": 0.7
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_left_saturday_min",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Saturday"
+   },
+   "sense": ">=",
+   "value": 1.9
+  },
+  {
+   "name": "manchester_damaged_stock_max",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Saturday",
+    "depot": "Manchester"
+   },
+   "sense": "<=",
+   "value": 67
+  }
+ ],
+ "note": "Enforces minimum damaged cars kept overnight on Saturday and maximum damaged stock in Manchester on Saturday."
+}

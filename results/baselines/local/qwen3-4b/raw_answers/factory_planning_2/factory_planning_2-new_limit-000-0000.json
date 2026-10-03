@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod7"
+      },
+      "value": 11950
+    },
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod7"
+      },
+      "value": 390
+    }
+  ],
+  "note": "The planner's question is ambiguous: it specifies two limits for the same product (Prod7) but the values are different (11950 vs 390). This is a conflict that needs clarification."
+}

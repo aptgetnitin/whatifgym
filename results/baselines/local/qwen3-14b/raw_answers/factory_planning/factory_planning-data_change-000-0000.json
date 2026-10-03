@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": "grinder"
+      },
+      "value": 3
+    }
+  ],
+  "note": "Reducing the number of installed grinders from 4 to 3 by setting the 'installed' column to 3 for the 'grinder' machine."
+}

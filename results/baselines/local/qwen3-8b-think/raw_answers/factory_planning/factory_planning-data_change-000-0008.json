@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "factory_planning","data_changes": [{"op": "set","table": "machines","column": "installed","where": {"machine": "borer"},"value": 2},{"op": "scale","table": "products","column": "profit_per_unit","where": {"product": "Prod5"},"factor": 0.75}],"note": "Add a second borer machine and reduce Prod5's profit by 25%."}

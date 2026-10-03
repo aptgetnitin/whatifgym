@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod6_total_limit",
+   "measure": "make",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": "<=",
+   "value": 1050
+  },
+  {
+   "name": "prod5_prod7_jan_limit",
+   "measure": "make",
+   "scope": {
+    "product": [
+     "Prod5",
+     "Prod7"
+    ],
+    "month": "Jan"
+   },
+   "sense": "<=",
+   "value": 600
+  }
+ ]
+}

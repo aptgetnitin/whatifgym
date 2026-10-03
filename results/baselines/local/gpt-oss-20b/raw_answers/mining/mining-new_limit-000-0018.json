@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Mine3_work_limit",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine3"
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ],
+  "note": "Limit total number of years Mine3 can be worked to 3."
+}

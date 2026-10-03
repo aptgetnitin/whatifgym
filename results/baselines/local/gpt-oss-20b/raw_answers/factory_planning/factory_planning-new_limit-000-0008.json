@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "max_make_prod1_per_month",
+      "measure": "make",
+      "scope": {
+        "product": "Prod1"
+      },
+      "sense": "<=",
+      "value": 420
+    }
+  ],
+  "note": "Limit production of Prod1 to at most 420 units in each month."
+}

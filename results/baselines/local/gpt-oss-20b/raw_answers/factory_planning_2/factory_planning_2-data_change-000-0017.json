@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "month": "Jun",
+        "product": "Prod1"
+      },
+      "value": 1000
+    }
+  ],
+  "note": "Set the market limit for Prod1 in June to 1000 units."
+}

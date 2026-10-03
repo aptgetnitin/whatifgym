@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "total_item_placements_cap",
+      "measure": "x",
+      "scope": {
+        "item": "*",
+        "bin": "*"
+      },
+      "sense": "<=",
+      "value": 9
+    },
+    {
+      "name": "bin0_placement_floor",
+      "measure": "x",
+      "scope": {
+        "item": "*",
+        "bin": "bin0"
+      },
+      "sense": ">=",
+      "value": 3
+    }
+  ],
+  "note": "Two rules are added: one to cap the total number of item placements and another to enforce a minimum number of placements in bin0."
+}

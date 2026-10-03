@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "max_hardness",
+      "where": {
+        "param": "max_hardness"
+      },
+      "factor": 2.0
+    }
+  ]
+}

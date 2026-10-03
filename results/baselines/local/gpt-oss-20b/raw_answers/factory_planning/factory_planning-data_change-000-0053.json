@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"add","table":"downtime","rows":[{"month":"Jun","machine":"grinder","machines_down":4}]}],"note":"All 4 grinders are down in June."}

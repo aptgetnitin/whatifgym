@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "extract_year4_limit",
+      "measure": "extract",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": "<=",
+      "value": 2812500
+    }
+  ],
+  "note": "Limit on total extraction in Year4."
+}

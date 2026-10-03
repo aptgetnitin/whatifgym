@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "depots",
+      "column": "repair_capacity",
+      "factor": 0.75
+    }
+  ],
+  "note": "Repair capacity is reduced by 25% for all depots."
+}

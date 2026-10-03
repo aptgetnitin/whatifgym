@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "undamaged_left_total_limit",
+      "measure": "undamaged_left",
+      "scope": {},
+      "sense": "<=",
+      "value": 130
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

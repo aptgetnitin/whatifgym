@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_inventory_cap",
+      "measure": "store",
+      "scope": {},
+      "sense": "<=",
+      "value": 570
+    }
+  ],
+  "note": "A total cap on units in stock is a rule on the sum of store over all months and products."
+}

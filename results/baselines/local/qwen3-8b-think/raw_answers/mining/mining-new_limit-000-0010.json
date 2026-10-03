@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "mining","rules": [{"name": "mine1_extraction_cap","measure": "extract","scope": {"mine": "Mine1"},"sense": "<=","value": 4252500}],"note": "Limits total extraction from Mine1 across all years to 4,252,500 tons."}

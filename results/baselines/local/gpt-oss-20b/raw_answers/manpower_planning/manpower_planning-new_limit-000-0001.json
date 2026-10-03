@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "recruit",
+      "scope": {
+        "skill": "skilled"
+      },
+      "sense": ">=",
+      "value": 1100
+    }
+  ]
+}

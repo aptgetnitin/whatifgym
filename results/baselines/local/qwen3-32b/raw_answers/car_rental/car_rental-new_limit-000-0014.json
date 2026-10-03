@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "monday_rental_cap",
+      "measure": "rentals",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": "<=",
+      "value": 150
+    }
+  ],
+  "note": "A cap on total rentals for Monday is a rule on the sum of rentals for that day."
+}

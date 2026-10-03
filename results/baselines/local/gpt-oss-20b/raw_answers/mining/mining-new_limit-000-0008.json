@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"measure":"extract","sense":"<=","value":19568750}],"note":"Total extraction capped at 19,568,750 tons."}

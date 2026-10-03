@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "items",
+      "column": "weight",
+      "where": {
+        "item": "item2"
+      },
+      "delta": -50
+    }
+  ]
+}

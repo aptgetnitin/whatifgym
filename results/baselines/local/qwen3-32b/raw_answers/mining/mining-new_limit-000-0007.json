@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "total_ore_extraction_limit",
+      "measure": "extract",
+      "scope": {},
+      "sense": "<=",
+      "value": 13045850
+    }
+  ],
+  "note": "A rule is added to cap the total tons of ore extracted across all years and mines."
+}

@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "pump_min_00-06",
+      "measure": "pump",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "value": 500
+    },
+    {
+      "name": "total_thermal_units_cap",
+      "measure": "ngen",
+      "scope": {},
+      "sense": "<=",
+      "value": 60
+    }
+  ],
+  "note": "Added a minimum pumping power constraint for period 00-06 and a cap on the total number of thermal units running across all periods."
+}

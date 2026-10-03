@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "total_open_mine_years_cap",
+      "measure": "open",
+      "scope": {},
+      "sense": "<=",
+      "value": 10
+    }
+  ],
+  "note": "A rule limits the total number of mine-years kept open across the entire planning horizon."
+}

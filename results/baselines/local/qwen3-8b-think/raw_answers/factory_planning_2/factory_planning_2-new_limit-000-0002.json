@@ -1,0 +1,18 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "total_sales_cap",
+   "measure": "sell",
+   "scope": {
+    "product": ["Prod1", "Prod2", "Prod3", "Prod4", "Prod5", "Prod6", "Prod7"],
+    "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+   },
+   "sense": "<=",
+   "value": 6450
+  }
+ ],
+ "note": "An overall cap on total units sold across all months and products."
+}

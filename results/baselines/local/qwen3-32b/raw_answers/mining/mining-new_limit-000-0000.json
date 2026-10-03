@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine_years_worked_limit_year3",
+      "measure": "operate",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "Limits the total number of mines worked in Year3 to 1."
+}

@@ -1,0 +1,50 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "total_stock_unit_months_limit",
+   "measure": "store",
+   "scope": {
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ],
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 550
+  },
+  {
+   "name": "total_stock_feb_end_limit",
+   "measure": "store",
+   "scope": {
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ],
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 240
+  }
+ ],
+ "note": "Two rules are added to limit the total unit-months of stock over the horizon and the total stock at the end of February."
+}

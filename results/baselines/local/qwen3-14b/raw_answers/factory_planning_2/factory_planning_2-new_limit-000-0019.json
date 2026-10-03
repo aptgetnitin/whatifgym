@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod7_stock_min",
+      "measure": "store",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "value": 160
+    },
+    {
+      "name": "jun_production_max",
+      "measure": "make",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 2050
+    }
+  ]
+}

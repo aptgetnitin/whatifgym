@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "max_mine_years_open_year5",
+      "measure": "open",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+  }

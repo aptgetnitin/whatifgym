@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_inventory",
+      "value": 50
+    }
+  ],
+  "note": "Set storage limit to 50 units per product per month."
+}

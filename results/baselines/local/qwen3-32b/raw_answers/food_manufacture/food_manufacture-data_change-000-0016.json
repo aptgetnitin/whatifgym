@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {},
+      "factor": 0.9
+    }
+  ],
+  "note": "All purchase prices are reduced by 10%."
+}

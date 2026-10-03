@@ -1,0 +1,12 @@
+{
+
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_short_time",
+   "value": 38
+  }
+ ]
+}

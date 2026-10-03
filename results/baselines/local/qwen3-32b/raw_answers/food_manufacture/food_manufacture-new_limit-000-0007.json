@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_food_production_cap",
+      "measure": "produce",
+      "scope": {
+        "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+      },
+      "sense": "<=",
+      "value": 2150
+    },
+    {
+      "name": "january_refined_oil_cap",
+      "measure": "consume",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ],
+  "note": "Two rules are added: one for the total food production cap and another for the January refined oil cap."
+}

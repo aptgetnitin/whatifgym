@@ -1,0 +1,30 @@
+{
+
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "skills",
+   "column": "current_strength",
+   "where": {
+    "skill": "skilled"
+   },
+   "value": 750
+  },
+  {
+   "op": "scale",
+   "table": "costs",
+   "column": "short_time_cost",
+   "where": {
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "Reduce initial skilled workforce by 25% and increase short-time costs by 20% for all skill levels."
+}

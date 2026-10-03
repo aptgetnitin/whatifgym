@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "downtime",
+      "where": {
+        "month": "Jun",
+        "machine": [
+          "planer",
+          "horiDrill"
+        ]
+      }
+    }
+  ],
+  "note": "The planner is asking about the value of removing downtime in June. The downtime rows for June are 'planer' and 'horiDrill' as per the existing rows in the downtime table."
+}

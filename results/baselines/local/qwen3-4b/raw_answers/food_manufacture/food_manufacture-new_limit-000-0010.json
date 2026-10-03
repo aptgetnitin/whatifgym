@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "buy",
+      "where": {
+        "oil": "VEG1"
+      },
+      "value": 730
+    }
+  ]
+}

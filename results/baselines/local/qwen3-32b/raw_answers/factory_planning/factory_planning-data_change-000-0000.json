@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "grinder"
+   },
+   "value": 3
+  }
+ ],
+ "note": "One of the 4 grinders is scrapped, so the number of installed grinders is reduced to 3."
+}

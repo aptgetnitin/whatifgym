@@ -1,0 +1,14 @@
+{
+
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "holding_cost",
+   "factor": 2.0
+  }
+ ],
+ "note": "Doubling the oil storage cost per ton per month"
+}

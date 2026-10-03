@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "minimum_skilled_recruits",
+      "measure": "recruit",
+      "scope": {
+        "skill": "skilled"
+      },
+      "sense": ">=",
+      "value": 1100
+    }
+  ],
+  "note": "Adds a rule that enforces a minimum total number of skilled recruits across all years."
+}

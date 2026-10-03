@@ -1,0 +1,24 @@
+{
+
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "thermal_types",
+   "rows": [
+    {
+     "type": "new_type",
+     "units_available": 12,
+     "min_output_mw": 1060,
+     "max_output_mw": 1200,
+     "cost_per_hour": 1000,
+     "cost_per_mwh_above_min": 1.6,
+     "startup_cost": 3000,
+     "units_on_at_start": 5
+    }
+   ]
+  }
+ ],
+ "note": "Adding a new thermal generator type with specified parameters to the thermal_types table."
+}

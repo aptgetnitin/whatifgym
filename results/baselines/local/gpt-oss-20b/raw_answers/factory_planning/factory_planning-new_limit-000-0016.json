@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod6_total_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "value": 1300
+    }
+  ],
+  "note": "Total production of Prod6 across all months is limited to 1300 units."
+}

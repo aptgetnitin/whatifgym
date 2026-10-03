@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "products",
+      "column": "profit_per_unit",
+      "factor": 1.2
+    }
+  ],
+  "note": "All profit per unit values are increased by 20%."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod1_monthly_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": "<=",
+   "value": 420
+  }
+ ],
+ "note": "A rule limits the maximum production of Prod1 per month across the entire planning horizon."
+}

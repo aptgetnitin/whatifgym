@@ -1,0 +1,14 @@
+{
+
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_refined_cap",
+      "measure": "consume",
+      "sense": "<=",
+      "value": 2150,
+      "scope": {}
+    }
+  ]
+}

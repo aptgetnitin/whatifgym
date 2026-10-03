@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "total_stock_horizon",
+      "measure": "store",
+      "sense": "<=",
+      "value": 550
+    },
+    {
+      "name": "feb_end_stock_limit",
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "value": 240
+    }
+  ],
+  "note": "Limit total stock over the horizon to 550 unit‑months and end‑of‑Feb stock to 240 units."
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "short_time_productivity",
+      "value": 0.25
+    }
+  ],
+  "note": "Assume short-time worker productivity becomes 0.25."
+}

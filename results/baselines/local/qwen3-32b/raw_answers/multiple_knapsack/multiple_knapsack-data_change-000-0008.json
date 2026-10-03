@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "bins",
+      "column": "capacity",
+      "where": {},
+      "factor": 0.75
+    }
+  ],
+  "note": "All bin capacities are reduced by 25%."
+}

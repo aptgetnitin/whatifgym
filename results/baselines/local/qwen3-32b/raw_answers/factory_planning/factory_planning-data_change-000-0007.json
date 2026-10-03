@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod2"
+      },
+      "value": 4
+    }
+  ],
+  "note": "Prod2's profit_per_unit is updated to 4."
+}

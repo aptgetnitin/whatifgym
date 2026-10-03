@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "product": "Prod7"
+      },
+      "value": 160
+    },
+    {
+      "op": "set",
+      "table": "make",
+      "column": "make",
+      "where": {
+        "month": "Jun",
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "value": 2050
+    }
+  ],
+  "note": "The first limit is a fixed stock level for Prod7, the second is a fixed production limit for June across all products."
+}

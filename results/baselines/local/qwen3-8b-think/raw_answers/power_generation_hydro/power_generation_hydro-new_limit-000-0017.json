@@ -1,0 +1,28 @@
+{
+
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_units_total_cap",
+   "measure": "ngen",
+   "scope": {
+    "period": [
+     "00-06",
+     "06-09",
+     "09-15",
+     "15-18",
+     "18-24"
+    ],
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "sense": "<=",
+   "value": 75
+  }
+ ],
+ "note": "Limits total thermal units running across all periods and types to 75"
+}

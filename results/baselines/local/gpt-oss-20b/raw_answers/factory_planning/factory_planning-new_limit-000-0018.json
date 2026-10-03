@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"prod4_total_cap","measure":"make","scope":{"product":"Prod4"},"sense":"<=","value":1100}],"note":"Total production of Prod4 capped at 1100 units over the horizon."}

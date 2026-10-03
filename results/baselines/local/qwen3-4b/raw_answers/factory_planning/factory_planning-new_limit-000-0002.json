@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod7",
+        "month": [
+          "May",
+          "Jun"
+        ]
+      },
+      "factor": 0.9
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_stock_limit",
+      "measure": "store",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 800
+    }
+  ]
+}

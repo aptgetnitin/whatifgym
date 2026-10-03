@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "transfer_costs",
+      "column": "cost",
+      "where": {
+        "from_depot": "Manchester",
+        "to_depot": "Glasgow"
+      },
+      "factor": 1.2
+    },
+    {
+      "op": "scale",
+      "table": "depots",
+      "column": "repair_capacity",
+      "where": {},
+      "factor": 1.25
+    }
+  ],
+  "note": "The transfer cost from Manchester to Glasgow is increased by 20%, and the repair capacity of all depots is increased by 25%."
+}

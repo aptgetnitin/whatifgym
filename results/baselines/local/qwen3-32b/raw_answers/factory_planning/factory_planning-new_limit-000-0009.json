@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "warehouse_limit_feb",
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "value": 200
+    }
+  ],
+  "note": "A rule limits the total stock at the end of February to 200 units."
+}

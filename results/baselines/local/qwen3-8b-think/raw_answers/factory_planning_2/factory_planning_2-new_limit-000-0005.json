@@ -1,0 +1,16 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "measure": "make",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 1950
+  }
+ ],
+ "note": "Limits total production in February across all products."
+}

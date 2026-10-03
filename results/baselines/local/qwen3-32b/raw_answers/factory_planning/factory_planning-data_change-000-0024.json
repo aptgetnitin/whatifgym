@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod5_feb_sales_cap",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod5",
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 500
+  }
+ ]
+}

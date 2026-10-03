@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {},
+      "factor": 1.1
+    },
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": "OIL1"
+      },
+      "factor": 1.2
+    }
+  ],
+  "note": "The purchase price for all oils is increased by 10%, and the hardness of OIL1 is increased by 20%."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "overmanned",
+      "scope": {
+        "skill": "semi_skilled"
+      },
+      "sense": "<=",
+      "value": 9
+    }
+  ],
+  "note": "Limit total overmanning for semi‑skilled workers to 9 across all years."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_refined_oil_apr",
+      "measure": "consume",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": "<=",
+      "value": 340
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod5"
+   },
+   "value": 8
+  }
+ ],
+ "note": "Updating the profit contribution of a product requires setting the profit_per_unit column for that product."
+}

@@ -1,0 +1,27 @@
+{
+
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "costs",
+   "column": "redundancy_cost",
+   "where": {
+    "skill": "unskilled"
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "value": 375
+  }
+ ],
+ "note": "Reduce unskilled redundancy cost by 10% and lower year 2 unskilled requirement to 375"
+}

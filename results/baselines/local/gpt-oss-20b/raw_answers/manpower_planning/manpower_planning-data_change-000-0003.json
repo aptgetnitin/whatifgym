@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[{"op":"scale","table":"retraining","column":"cost","where":{"from_skill":"unskilled","to_skill":"semi_skilled"},"factor":1.10},{"op":"set","table":"skills","column":"current_strength","where":{"skill":"unskilled"},"value":1000}]}

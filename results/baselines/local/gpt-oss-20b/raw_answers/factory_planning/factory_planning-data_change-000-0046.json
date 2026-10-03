@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"scale","table":"products","column":"profit_per_unit","where":{"product":"Prod5"},"factor":1.5},{"op":"shift","table":"machines","column":"installed","where":{"machine":"horiDrill"},"delta":-1}],"note":"Increase Prod5 margin by 50% and retire one horizontal drill."}

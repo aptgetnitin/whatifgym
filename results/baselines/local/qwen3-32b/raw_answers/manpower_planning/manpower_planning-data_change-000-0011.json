@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "skills",
+      "column": "current_strength",
+      "where": {},
+      "factor": 0.75
+    }
+  ],
+  "note": "The current_strength column in the skills table is scaled by 0.75 for all rows."
+}

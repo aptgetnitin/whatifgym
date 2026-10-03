@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod5"
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "A 20% increase in Prod5's profit per unit directly scales the profit_per_unit parameter in the products table."
+}

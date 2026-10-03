@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "april_refining_limit",
+      "measure": "consume",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": "<=",
+      "value": 340
+    }
+  ],
+  "note": "A rule limits the total tons of oil refined in April."
+}

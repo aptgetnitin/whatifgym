@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine1"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The question specifies a maximum extraction limit for Mine1, which corresponds to scaling the mine's capacity by a factor to reflect the reduced maximum extraction."
+}

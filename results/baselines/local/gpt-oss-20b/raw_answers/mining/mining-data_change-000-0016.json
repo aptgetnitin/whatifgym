@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine1"
+      }
+    },
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year5"
+      },
+      "value": 0.8
+    }
+  ],
+  "note": "Remove Mine1 and adjust Year5 quality target to 0.8."
+}

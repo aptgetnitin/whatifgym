@@ -1,0 +1,18 @@
+{
+
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "may_storage_min",
+      "measure": "store",
+      "scope": {
+        "month": [
+          "May"
+        ]
+      },
+      "sense": ">=",
+      "value": 1100
+    }
+  ]
+}

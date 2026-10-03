@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "factor": 1.1
+    }
+  ],
+  "note": "All purchase prices are increased by 10% across all rows in the purchase_prices table."
+}

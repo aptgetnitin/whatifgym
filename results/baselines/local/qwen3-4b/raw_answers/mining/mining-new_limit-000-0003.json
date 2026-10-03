@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine2_mine_years_at_least_4",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 4
+    },
+    {
+      "name": "total_extract_cap",
+      "measure": "extract",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "sense": "<=",
+      "value": 20873350
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "total_thermal_units_cap",
+      "measure": "ngen",
+      "scope": {
+        "type": ["Thermal0", "Thermal1", "Thermal2"]
+      },
+      "sense": "<=",
+      "value": 80
+    },
+    {
+      "name": "thermal_units_cap_06-09",
+      "measure": "ngen",
+      "scope": {
+        "period": "06-09",
+        "type": ["Thermal0", "Thermal1", "Thermal2"]
+      },
+      "sense": "<=",
+      "value": 17
+    }
+  ],
+  "note": "Two new constraints: total thermal units running over all periods and types must not exceed 80, and thermal units running in period 06-09 must not exceed 17."
+}

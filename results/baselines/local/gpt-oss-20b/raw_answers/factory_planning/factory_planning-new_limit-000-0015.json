@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "jan_prod1_prod5_cap",
+      "measure": "make",
+      "scope": {
+        "month": "Jan",
+        "product": ["Prod1", "Prod5"]
+      },
+      "sense": "<=",
+      "value": 1150
+    }
+  ],
+  "note": "Combined production of Prod1 and Prod5 in January limited to 1150 units."
+}

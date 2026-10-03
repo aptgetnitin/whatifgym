@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "car_rental","rules": [{"name": "total_damaged_transfers_cap","measure": "damaged_transfers","scope": {"day": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"from_depot": ["Glasgow","Manchester","Birmingham","Plymouth"],"to_depot": ["Glasmond","Manchester","Birmingham","Plymouth"]},"sense": "<=","value": 51}]}

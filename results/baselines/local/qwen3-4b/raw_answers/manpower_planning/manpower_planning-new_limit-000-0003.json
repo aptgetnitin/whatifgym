@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "overmanned",
+      "where": {
+        "year": 1,
+        "skill": "semi_skilled"
+      },
+      "value": 9
+    }
+  ],
+  "note": "The question specifies a limit on overmanned workers for semi_skilled in year 1, so we set the overmanned value to 9 for that specific year and skill level."
+}

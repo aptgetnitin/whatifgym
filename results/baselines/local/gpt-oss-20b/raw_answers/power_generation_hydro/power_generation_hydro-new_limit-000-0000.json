@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "measure": "nstart",
+      "sense": "<=",
+      "value": 11
+    }
+  ],
+  "note": "Total thermal units started across all periods and types must not exceed 11."
+}

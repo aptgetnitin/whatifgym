@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "holding_cost",
+   "factor": 2
+  }
+ ],
+ "note": "Storage cost is a parameter in the model, and doubling it is achieved by scaling the parameter."
+}

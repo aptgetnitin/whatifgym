@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_output_min_peak",
+      "measure": "output",
+      "scope": {
+        "period": "15-18",
+        "type": ["Thermal0", "Thermal1", "Thermal2"]
+      },
+      "sense": ">=",
+      "value": 48250
+    }
+  ],
+  "note": "A minimum total thermal output is imposed for the peak period 15-18."
+}

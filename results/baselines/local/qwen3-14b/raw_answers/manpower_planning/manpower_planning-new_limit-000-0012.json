@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "costs",
+      "column": "max_short_time",
+      "where": {
+        "skill": "semi_skilled"
+      },
+      "value": 38
+    }
+  ]
+}

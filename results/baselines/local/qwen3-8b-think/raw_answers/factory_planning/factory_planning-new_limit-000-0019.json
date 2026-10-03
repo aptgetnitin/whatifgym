@@ -1,0 +1,32 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "measure": "store",
+   "sense": "<=",
+   "value": 1000,
+   "scope": {
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ],
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   }
+  }
+ ],
+ "note": "Total inventory across all products and months must not exceed 1000 units."
+}

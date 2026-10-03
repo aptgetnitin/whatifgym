@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "profit_per_unit",
+      "value": 5
+    }
+  ],
+  "note": "The profit contribution of Prod1 is a parameter in the products table, but the model schema shows that profit_per_unit is a column in the products table, not a parameter. Wait, let me check the model schema again."
+  }

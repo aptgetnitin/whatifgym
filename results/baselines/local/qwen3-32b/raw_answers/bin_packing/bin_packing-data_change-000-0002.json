@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "items",
+      "rows": [
+        {
+          "item": "new_item",
+          "weight": 36
+        }
+      ]
+    },
+    {
+      "op": "scale",
+      "table": "bins",
+      "column": "capacity",
+      "where": {},
+      "factor": 1.2
+    }
+  ],
+  "note": "A new item is added to the items table, and the capacity of all bins is increased by 20%."
+}

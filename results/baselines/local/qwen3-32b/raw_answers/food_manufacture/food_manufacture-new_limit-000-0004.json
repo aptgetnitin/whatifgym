@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "minimum_veg1_refined",
+      "measure": "consume",
+      "scope": {
+        "oil": "VEG1"
+      },
+      "sense": ">=",
+      "value": 730
+    }
+  ],
+  "note": "A rule that enforces a minimum total consumption of VEG1 over the planning horizon."
+}

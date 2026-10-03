@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod2_6_may_cap",
+      "measure": "make",
+      "scope": {
+        "month": "May",
+        "product": ["Prod2", "Prod6"]
+      },
+      "sense": "<=",
+      "value": 300
+    }
+  ],
+  "note": "Combined output of Prod2 and Prod6 in May limited to 300 units."
+}

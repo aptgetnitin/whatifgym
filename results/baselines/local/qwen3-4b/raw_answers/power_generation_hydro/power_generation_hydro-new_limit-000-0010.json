@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "reservoir_level_sum_00-06",
+      "measure": "reservoir_level",
+      "scope": {
+        "period": [
+          "00-06"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.99
+    },
+    {
+      "name": "thermal_units_started_total",
+      "measure": "nstart",
+      "scope": {
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ],
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "value": 7
+    }
+  ],
+  "note": "The reservoir level sum over period 00-06 must be at least 0.99, and the total thermal units started across all periods and types must not exceed 7."
+}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_output_min_09-15",
+      "measure": "output",
+      "scope": {
+        "period": "09-15",
+        "type": ["Thermal0", "Thermal1", "Thermal2"]
+      },
+      "sense": ">=",
+      "value": 32900
+    },
+    {
+      "name": "pumping_power_max_00-06",
+      "measure": "pump",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": "<=",
+      "value": 360
+    }
+  ],
+  "note": "Two new constraints: minimum thermal output during 09-15 and maximum pumping power during 00-06."
+}

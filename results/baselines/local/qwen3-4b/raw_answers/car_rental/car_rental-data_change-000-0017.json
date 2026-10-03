@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "shift_param",
+      "name": "cost_per_car",
+      "delta": 30
+    }
+  ]
+}

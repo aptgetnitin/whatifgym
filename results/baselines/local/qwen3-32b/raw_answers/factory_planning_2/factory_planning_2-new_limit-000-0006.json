@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod5_production_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod5"
+      },
+      "sense": "<=",
+      "value": 2000
+    }
+  ],
+  "note": "A rule limits the total units made for product Prod5 across all months to 2000."
+}

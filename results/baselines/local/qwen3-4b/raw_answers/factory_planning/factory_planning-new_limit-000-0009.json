@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_inventory",
+      "where": {
+        "product": "Prod1"
+      },
+      "value": 200
+    }
+  ],
+  "note": "The planner's question specifies a constraint on the stock at the end of February for Prod1, but the model's max_inventory is a per-product parameter. The question says 'no more than 200 units in stock in total at the end of February' — this implies a per-product limit for the stock at the end of February, but the model's max_inventory is a per-product per-month limit. However, the question is ambiguous: it says 'in total' which could mean across products or per product. Given the context, it's likely per product. But the model doesn't have a per-month stock limit for a specific product at a specific month; the max_inventory is a parameter that applies to all months. So the correct interpretation is to set max_inventory to 200 for Prod1."
+  }

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod4_total_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4"
+      },
+      "sense": "<=",
+      "value": 1100
+    }
+  ],
+  "note": "A total production cap for Prod4 over the entire horizon is enforced by summing the make measure across all months for Prod4 and setting an upper bound."
+}

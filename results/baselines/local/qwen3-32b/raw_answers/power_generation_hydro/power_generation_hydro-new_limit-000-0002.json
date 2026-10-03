@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal1_units_cap",
+      "measure": "ngen",
+      "scope": {
+        "type": "Thermal1"
+      },
+      "sense": "<=",
+      "value": 27
+    }
+  ],
+  "note": "A rule caps the total number of Thermal1 units running across all periods."
+}

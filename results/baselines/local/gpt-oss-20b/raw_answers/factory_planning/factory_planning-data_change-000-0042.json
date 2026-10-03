@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "process_hours",
+      "column": "hours_per_unit",
+      "where": {
+        "machine": "horiDrill",
+        "product": "Prod3"
+      },
+      "value": 1.2
+    }
+  ],
+  "note": "Updated process hours for Prod3 on horiDrill to 1.2 hours per unit."
+}

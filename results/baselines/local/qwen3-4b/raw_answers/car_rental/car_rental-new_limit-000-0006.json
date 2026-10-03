@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "undamaged_stock",
+      "column": "undamaged_stock",
+      "where": {
+        "day": "Friday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "total_mine_years_worked_limit",
+      "measure": "operate",
+      "scope": {},
+      "sense": "<=",
+      "value": 7
+    },
+    {
+      "name": "year5_blend_limit",
+      "measure": "blend",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": "<=",
+      "value": 3280000
+    }
+  ]
+}

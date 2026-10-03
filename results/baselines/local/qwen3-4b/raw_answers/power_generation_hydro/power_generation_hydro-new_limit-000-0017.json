@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 0.9666666666666667
+    }
+  ],
+  "note": "The total number of thermal units running summed over everything may not exceed 75. This is a scale change on the units_available column for all thermal types, as the original model has 12, 10, and 5 units available, summing to 27. 75/27 ≈ 2.777, so the factor is 75/27 ≈ 2.777? Wait, no: the question says 'may not exceed 75' for the total number of thermal units running, but the model's units_available is the maximum number of units that can run. The question is about the constraint on the running units, not the available units. I think the planner meant to say that the total number of thermal units running (across all periods and types) is capped at 75. But the model's constraint is 'available[period, type]: ngen <= units_available', so the total running units would be sum_{period, type} ngen. The question says 'may not exceed 75', so we need to set a new constraint that sum_{period, type} ngen <= 75. However, the DSL doesn't support adding new constraints directly; it uses rules. So we need to create a rule that bounds the sum of ngen over all periods and types. But the rule DSL requires a measure and a scope. The measure 'ngen' is defined as 'ngen[period, type]'. So the rule would be: measure: 'ngen', scope: {period: all, type: all}, sense: '<=', value: 75. But the problem says: 'the total number of thermal units running, summed over everything, may not exceed 75'. So the rule is: sum(ngen) <= 75. However, the DSL for rules is defined as: a rule is a linear constraint on a sum of a decision measure. So we can create a rule with measure 'ngen', scope {period: all, type: all}, sense '<=', value 75. But the question says 'may not exceed 75', so it's a constraint that the sum is <= 75. But the model's current constraints are already there, so this is a new rule. However, the planner's question is about a what-if scenario, so we need to express it as a rule. But the problem says: 'turn a planner's what-if question into a machine-checkable scenario for an existing optimization model'. The existing model has constraints, but the planner is asking for a new constraint. So the answer should be a rule. But the problem says: 'only when the question cannot be made precise from the information available, {"}

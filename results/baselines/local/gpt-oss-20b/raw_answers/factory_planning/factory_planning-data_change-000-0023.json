@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "hours_per_month",
+      "value": 576
+    }
+  ],
+  "note": "Increase machine hours per month to 576 (three shifts)."
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "factor": 0.8
+    }
+  ],
+  "note": "All purchase prices are reduced by 20% across all months and oils."
+}

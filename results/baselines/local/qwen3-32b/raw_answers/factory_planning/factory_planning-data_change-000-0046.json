@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "profit_per_unit",
+   "factor": 1.5,
+   "where": {
+    "product": "Prod5"
+   }
+  },
+  {
+   "op": "set",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "horiDrill"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Prod5's profit per unit is increased by 50%, and the number of horizontal drills is reduced by one."
+}

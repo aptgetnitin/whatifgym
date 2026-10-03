@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "month": "Jun",
+        "oil": "OIL1"
+      },
+      "factor": 0.75
+    }
+  ]
+}

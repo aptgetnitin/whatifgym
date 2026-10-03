@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"remove","table":"mines","where":{"mine":"Mine4"}}],"note":"Delete Mine4 from the model."}

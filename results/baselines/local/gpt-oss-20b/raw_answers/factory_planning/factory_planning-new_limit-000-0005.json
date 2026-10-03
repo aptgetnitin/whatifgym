@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "value": 320
+    },
+    {
+      "measure": "make",
+      "scope": {
+        "month": ["Mar", "Apr"],
+        "product": "Prod1"
+      },
+      "sense": "<=",
+      "value": 160
+    }
+  ],
+  "note": "Warehouse space limit at end of February and production cap for Prod1 in March–April."
+}

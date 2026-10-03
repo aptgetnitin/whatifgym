@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "max_total_sell_prod6",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "value": 1000
+    }
+  ],
+  "note": "Total units sold for Prod6 limited to 1000."
+}

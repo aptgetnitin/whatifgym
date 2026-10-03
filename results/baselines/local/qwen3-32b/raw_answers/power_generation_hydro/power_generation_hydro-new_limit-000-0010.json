@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "reservoir_level_min_00-06",
+      "measure": "reservoir_level",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "value": 0.99
+    },
+    {
+      "name": "total_thermal_starts_max_7",
+      "measure": "nstart",
+      "scope": {},
+      "sense": "<=",
+      "value": 7
+    }
+  ],
+  "note": "Added two rules: one to enforce a minimum reservoir level for the 00-06 period and another to limit the total number of thermal unit starts across all periods."
+}

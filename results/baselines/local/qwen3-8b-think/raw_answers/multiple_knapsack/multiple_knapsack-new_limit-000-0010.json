@@ -1,0 +1,23 @@
+{
+
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "measure": "x",
+      "scope": {
+        "bin": [
+          "bin3"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "measure": "x",
+      "scope": {},
+      "sense": "<=",
+      "value": 6
+    }
+  ]
+}

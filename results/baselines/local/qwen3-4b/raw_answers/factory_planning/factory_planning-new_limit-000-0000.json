@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod7",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "value": 320
+    }
+  ],
+  "note": "Total production cap for Prod7 is set across all months to 320 units per month (but note: max_sales is the market limit on sales, not production)."
+}

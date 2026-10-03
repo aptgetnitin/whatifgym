@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod6"
+   },
+   "factor": 0.7
+  }
+ ],
+ "note": "A 30% reduction in profit_per_unit for Prod6 translates to scaling its value by 0.7."
+}

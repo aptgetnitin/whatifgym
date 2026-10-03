@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"wedding_seating","data_changes":[{"op":"scale_param","name":"max_tables","factor":2.0}],"note":"Scale maximum number of tables by factor 2.0."}

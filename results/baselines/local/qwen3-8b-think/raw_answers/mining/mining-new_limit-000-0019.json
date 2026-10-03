@@ -1,0 +1,34 @@
+{
+
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "year4_blend_cap",
+   "measure": "blend",
+   "scope": {
+    "year": [
+     "Year4"
+    ]
+   },
+   "sense": "<=",
+   "value": 4218750
+  },
+  {
+   "name": "total_blend_cap",
+   "measure": "blend",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "<=",
+   "value": 13045850
+  }
+ ],
+ "note": "Two absolute caps on blended ore sales: Year4 limited to 4,218,750 tons and total across all years to 13,045,850 tons."
+}

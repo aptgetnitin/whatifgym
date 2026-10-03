@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "undamaged_stock_total_cap",
+      "measure": "undamaged_stock",
+      "scope": {
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 1900
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "total_item_placements_cap",
+      "measure": "x",
+      "scope": {},
+      "sense": "<=",
+      "value": 7
+    }
+  ],
+  "note": "A global cap on the total number of item placements is enforced via a rule on the sum of the decision measure x."
+}

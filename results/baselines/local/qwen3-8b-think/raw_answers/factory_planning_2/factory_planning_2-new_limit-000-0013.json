@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "factory_planning_2","rules": [{"name": "prod6_sales_cap","measure": "sell","scope": {"product": "Prod6"},"sense": "<=","value": 1000}],"note": "Limits total units sold for Prod6 across all months to 1000."}

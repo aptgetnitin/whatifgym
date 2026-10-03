@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {},
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod1"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The market limits are scaled by 20% across all rows, and the profit per unit for Prod1 is reduced by 20%."
+}

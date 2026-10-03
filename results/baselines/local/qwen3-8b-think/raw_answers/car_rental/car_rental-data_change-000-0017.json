@@ -1,0 +1,12 @@
+{
+
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "cost_per_car",
+   "value": 30
+  }
+ ]
+}

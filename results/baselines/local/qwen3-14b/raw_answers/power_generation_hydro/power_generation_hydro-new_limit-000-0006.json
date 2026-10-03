@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "pump_min_00-06",
+      "measure": "pump",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "value": 500
+    },
+    {
+      "name": "thermal_units_max_total",
+      "measure": "ngen",
+      "scope": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "value": 60
+    }
+  ]
+}

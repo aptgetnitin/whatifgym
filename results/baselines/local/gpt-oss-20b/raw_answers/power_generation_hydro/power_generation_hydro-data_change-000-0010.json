@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": "Thermal0"
+      },
+      "factor": 1.2
+    },
+    {
+      "op": "set",
+      "table": "hydro_units",
+      "column": "depletion_m_per_hour",
+      "where": {
+        "hydro": "HydroA"
+      },
+      "value": 0.16
+    }
+  ],
+  "note": "Increase Thermal0 availability by 20% and set HydroA depletion to 0.16 m/h."
+}

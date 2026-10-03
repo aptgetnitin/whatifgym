@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "minimum_undamaged_stock_plymouth",
+      "measure": "undamaged_stock",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 270
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "cost_per_hour",
+      "where": {
+        "type": "Thermal0"
+      },
+      "value": 1500
+    },
+    {
+      "op": "scale_param",
+      "name": "hydro_units.startup_cost",
+      "where": {
+        "hydro": "HydroA"
+      },
+      "factor": 1.1
+    }
+  ]
+}

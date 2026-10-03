@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_inventory",
+      "value": 900
+    }
+  ],
+  "note": "The question refers to total unit-months of stock over the horizon. However, the model's `max_inventory` parameter is per product per month, not total unit-months. The question is ambiguous and cannot be precisely mapped to the model's parameters."
+  }

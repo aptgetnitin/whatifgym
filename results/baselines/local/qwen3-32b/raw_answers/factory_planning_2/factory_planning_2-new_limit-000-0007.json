@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_stock_limit",
+      "measure": "store",
+      "scope": {},
+      "sense": "<=",
+      "value": 860
+    }
+  ],
+  "note": "A rule limits the total stock across all products and months to 860 units."
+}

@@ -1,0 +1,14 @@
+{
+
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_sales_cap",
+      "measure": "sell",
+      "scope": {},
+      "sense": "<=",
+      "value": 11600
+    }
+  ]
+}

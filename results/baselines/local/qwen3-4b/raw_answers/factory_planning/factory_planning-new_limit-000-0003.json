@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_inventory",
+      "where": {
+        "product": "Prod1"
+      },
+      "value": 220
+    }
+  ],
+  "note": "The planner's question specifies a limit on stock at the end of May for a specific product (Prod1), but the model's `max_inventory` parameter is per product per month. The question says 'no more than 220 units in stock in total at the end of May' for a specific product (Prod1), so we set the max_inventory for Prod1 to 220 for the month of May."
+  }

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod1"
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "set",
+      "table": "process_hours",
+      "column": "hours_per_unit",
+      "where": {
+        "machine": "planer",
+        "product": "Prod7"
+      },
+      "value": 0.025
+    }
+  ],
+  "note": "Prod7 planer time halved, Prod1 profit reduced 20%."
+}

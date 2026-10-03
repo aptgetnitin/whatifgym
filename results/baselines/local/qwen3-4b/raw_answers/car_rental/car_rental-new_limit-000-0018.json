@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "depot": "Birmingham"
+      },
+      "factor": 0.98
+    }
+  ],
+  "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}

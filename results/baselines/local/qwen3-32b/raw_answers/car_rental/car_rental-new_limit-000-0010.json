@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_transfers_cap",
+      "measure": "damaged_transfers",
+      "scope": {},
+      "sense": "<=",
+      "value": 55
+    }
+  ],
+  "note": "An overall cap on damaged transfers is a rule on the sum of the damaged_transfers measure over all days and lanes."
+}

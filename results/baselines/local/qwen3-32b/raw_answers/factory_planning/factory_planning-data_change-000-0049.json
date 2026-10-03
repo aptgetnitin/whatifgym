@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": "grinder",
+    "product": "Prod7"
+   },
+   "value": 0.625
+  },
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod3",
+    "month": "Jan"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Two simultaneous changes: a process improvement for Prod7 and zero demand for Prod3 in January."
+}

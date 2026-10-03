@@ -1,0 +1,23 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod1_prod5_output_cap",
+   "measure": "make",
+   "scope": {
+    "product": [
+     "Prod1",
+     "Prod5"
+    ],
+    "month": [
+     "Jan"
+    ]
+   },
+   "sense": "<=",
+   "value": 1150
+  }
+ ],
+ "note": "Limits combined production of Prod1 and Prod5 in January to 1150 units."
+}

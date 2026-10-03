@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "total_short_time_cap",
+   "measure": "short_time",
+   "scope": {
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   },
+   "sense": "<=",
+   "value": 220
+  }
+ ],
+ "note": "Adds an overall cap of 220 workers on short-time working across all skill levels."
+}

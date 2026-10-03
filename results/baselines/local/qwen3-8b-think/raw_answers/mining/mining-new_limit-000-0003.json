@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "mining","rules": [{"name": "mine2_worked_years","measure": "operate","scope": {"mine": "Mine2"},"sense": ">=","value": 4},{"name": "total_extraction_cap","measure": "extract","sense": "<=","value": 20873350}],"note": "Two new constraints: Mine2 must be operated in at least 4 years, and total extraction is capped at 20,873,350 tons."}

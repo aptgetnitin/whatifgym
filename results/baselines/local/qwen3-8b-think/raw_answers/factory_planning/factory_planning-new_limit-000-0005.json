@@ -1,0 +1,21 @@
+{
+
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "total_stock_feb",
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "value": 320
+    },
+    {
+      "name": "prod1_make_mar_apr",
+      "measure": "make",
+      "scope": {
+        "product": "Prod1",
+        "month": [
+          "Mar

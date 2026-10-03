@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"overall_sell_cap","measure":"sell","sense":"<=","value":6450}],"note":"Overall cap on total units sold."}

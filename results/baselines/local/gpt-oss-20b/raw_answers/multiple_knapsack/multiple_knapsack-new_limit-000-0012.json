@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"max_one_item_bin1","measure":"x","scope":{"bin":"bin1"},"sense":"<=","value":1}],"note":"Limit placements in bin1 to at most 1."}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "total_stock_limit",
+      "measure": "store",
+      "sense": "<=",
+      "value": 900
+    }
+  ],
+  "note": "Limit total unit‑months of stock to 900."
+}

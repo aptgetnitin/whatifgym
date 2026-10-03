@@ -1,0 +1,12 @@
+{
+
+"version": "0.1",
+"base_model": "mining",
+"rules": [
+  {
+    "measure": "open",
+    "sense": "<=",
+    "value": 11
+  }
+]
+}

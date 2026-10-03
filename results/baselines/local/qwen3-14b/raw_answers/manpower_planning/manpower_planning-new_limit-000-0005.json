@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "retraining_limit_year3",
+      "measure": "retrain",
+      "scope": {
+        "year": 3
+      },
+      "sense": "<=",
+      "value": 210
+    }
+  ]
+}

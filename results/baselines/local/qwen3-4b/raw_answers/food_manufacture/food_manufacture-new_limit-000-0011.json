@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "feb_buy_sum",
+      "measure": "buy",
+      "scope": {
+        "month": [
+          "Feb"
+        ]
+      },
+      "sense": ">=",
+      "value": 940
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "new_mine",
+          "royalty": 6250000,
+          "capacity": 2000000,
+          "quality": 1
+        }
+      ]
+    },
+    {
+      "op": "scale",
+      "table": "years",
+      "column": "quality_target",
+      "where": {},
+      "factor": 1.2
+    }
+  ],
+  "note": "Added a new mine and increased the quality target for all years by 20%."
+}

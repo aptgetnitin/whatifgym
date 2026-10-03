@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "bins",
+      "rows": [
+        {
+          "bin": "new_bin",
+          "capacity": 125
+        }
+      ]
+    },
+    {
+      "op": "remove",
+      "table": "items",
+      "where": {
+        "item": "item8"
+      }
+    }
+  ],
+  "note": "Adding a new bin and removing an item from the items table."
+}

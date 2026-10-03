@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_stock_total_cap",
+      "measure": "damaged_stock",
+      "scope": {},
+      "sense": "<=",
+      "value": 200
+    }
+  ],
+  "note": "Limits the total number of damaged cars at all depots in the morning across all days."
+}

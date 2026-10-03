@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hydro_units",
+      "column": "cost_per_hour",
+      "factor": 0.8
+    },
+    {
+      "op": "add",
+      "table": "thermal_types",
+      "rows": [
+        {
+          "type": "new_type",
+          "units_available": 3,
+          "min_output_mw": 1200,
+          "max_output_mw": 4000,
+          "cost_per_hour": 1800,
+          "cost_per_mwh_above_min": 2.4,
+          "startup_cost": 750,
+          "units_on_at_start": 5
+        }
+      ]
+    }
+  ],
+  "note": "Scale the hourly running cost of hydro units by 20% and add a new thermal generator type."
+}

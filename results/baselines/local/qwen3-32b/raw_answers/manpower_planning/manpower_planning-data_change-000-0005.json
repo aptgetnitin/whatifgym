@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "skills",
+      "column": "current_strength",
+      "where": {
+        "skill": "skilled"
+      },
+      "factor": 1.2
+    },
+    {
+      "op": "scale",
+      "table": "costs",
+      "column": "short_time_cost",
+      "where": {
+        "skill": ["unskilled", "semi_skilled", "skilled"]
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "The current_strength of skilled workers is increased by 20%, and short_time_cost for all skill levels is reduced by 10%."
+}

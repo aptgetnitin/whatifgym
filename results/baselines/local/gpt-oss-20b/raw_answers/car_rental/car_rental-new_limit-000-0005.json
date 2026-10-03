@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "max_total_damaged_transfers",
+      "measure": "damaged_transfers",
+      "scope": {},
+      "sense": "<=",
+      "value": 51
+    }
+  ],
+  "note": "Limit total damaged car transfers to 51."
+}

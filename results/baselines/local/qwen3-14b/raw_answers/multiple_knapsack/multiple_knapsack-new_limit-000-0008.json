@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "total_item_placements_cap",
+      "measure": "x",
+      "scope": {},
+      "sense": "<=",
+      "value": 9
+    },
+    {
+      "name": "bin0_item_placements_min",
+      "measure": "x",
+      "scope": {
+        "bin": "bin0"
+      },
+      "sense": ">=",
+      "value": 3
+    }
+  ]
+}

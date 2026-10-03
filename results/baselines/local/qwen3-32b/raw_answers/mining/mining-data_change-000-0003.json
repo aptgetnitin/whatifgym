@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "royalty",
+      "where": {
+        "mine": "Mine1"
+      },
+      "value": 2500000
+    }
+  ],
+  "note": "The royalty for Mine1 is updated to 2,500,000 USD/year."
+}

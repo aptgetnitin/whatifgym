@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "downtime",
+   "column": "machines_down",
+   "where": {
+    "month": "May",
+    "machine": "vertDrill"
+   },
+   "value": 0
+  },
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod5"
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "Adjusting maintenance and profit per unit for the given scenario."
+}

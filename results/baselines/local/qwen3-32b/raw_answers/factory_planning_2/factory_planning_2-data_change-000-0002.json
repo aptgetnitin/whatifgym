@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {},
+      "factor": 0.75
+    }
+  ],
+  "note": "A uniform 25% reduction in profit per unit for all products is achieved by scaling the profit_per_unit column in the products table."
+}

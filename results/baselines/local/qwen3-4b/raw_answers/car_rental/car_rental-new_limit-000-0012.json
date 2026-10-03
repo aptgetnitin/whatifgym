@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "undamaged_overnight_cap",
+      "measure": "undamaged_left",
+      "scope": {},
+      "sense": "<=",
+      "value": 130
+    },
+    {
+      "name": "repairs_tuesday_cap",
+      "measure": "repairs",
+      "scope": {
+        "day": "Tuesday"
+      },
+      "sense": "<=",
+      "value": 16
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

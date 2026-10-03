@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retrain",
+      "column": "retrain",
+      "where": {
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is about the total downgraded workers across all skill levels and years. However, the model's `downgrade` measure is not directly available as a single sum. The `downgrade` decision variable is defined per year and skill level, so the total downgraded workers would be the sum over all years and all skill level pairs. But the question specifies 'summed over everything', which implies the total across all years and all skill levels. The model does not have a single measure for the total downgraded workers; it requires summing the `downgrade` variables. The question is asking for a constraint on this total sum. However, the DSL does not support creating a new measure for the total downgraded workers. Instead, we need to create a rule that bounds the sum of `downgrade` over all years and all skill level pairs. But the DSL's rule definition requires a specific measure and scope. The `downgrade` measure is defined as `downgrade[year, from_skill, to_skill]`, so the total downgraded workers would be the sum over all years and all skill level pairs. The question asks for a constraint that this total does not exceed 130. However, the model does not have a built-in measure for this sum. The DSL requires that the rule be defined in terms of existing measures. Since the `downgrade` measure is not a single measure but a multi-dimensional one, the rule would need to be defined as a sum over the scope. But the DSL does not support this directly. The question might be better phrased as a rule on the total `downgrade` across all years and skill levels. However, the model's `downgrade` is a decision variable that is summed over the scope. The problem is that the question is asking for a constraint on the total downgraded workers, but the model does not have a single measure for this total. The correct approach is to create a rule that bounds the sum of `downgrade` over all years and all skill level pairs. But the DSL does not allow for this because the rule requires a specific measure and scope. The `downgrade` measure is defined as `downgrade[year, from_skill, to_skill]`, so the total downgraded workers would be the sum over all years and all skill level pairs. The question asks for a constraint that this total does not exceed 130. However, the DSL does not support creating a rule that sums over all dimensions. The model's `downgrade` is a multi-dimensional decision variable, so the rule would need to be defined as a sum over the scope. But the DSL's rule definition requires a specific measure and scope. The problem is that the question is not precise enough to be converted into a machine-checkable scenario. The planner's question is about the total downgraded workers, but the model does not have a single measure for this total. The model has `downgrade[year, from_skill, to_skill]`, so the total downgraded workers would be the sum over all years and all skill level pairs. However, the DSL does not support creating a rule that sums over all dimensions. The question might be better phrased as a rule on the total `downgrade` across all years and skill levels. But the model does not have a built-in measure for this sum. The correct answer is to ask for clarification because the question is not precise enough to be converted into a machine-checkable scenario. The planner's question is: 'What if the total workers downgraded to a lower skill level, summed over everything, may not exceed 130?'. The 'summed over everything' implies the total across all years and all skill levels. However, the model does not have a single measure for this total. The model has `downgrade[year, from_skill, to_skill]`, so the total downgraded workers would be the sum over all years and all skill level pairs. But the DSL does not support creating a rule that sums over all dimensions. The question is asking for a constraint on this total sum, but the model does not have a built-in measure for this sum. Therefore, the answer is to ask for clarification: 'What does "}

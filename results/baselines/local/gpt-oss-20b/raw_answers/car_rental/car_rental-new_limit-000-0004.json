@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "measure": "rentals",
+      "sense": "<=",
+      "value": 1550
+    }
+  ],
+  "note": "Cap on total rentals across all days and depots"
+}

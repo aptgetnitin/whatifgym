@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "minimum_total_purchases_feb",
+      "measure": "buy",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "value": 940
+    }
+  ],
+  "note": "A rule that enforces a minimum total purchase of oil in February."
+}

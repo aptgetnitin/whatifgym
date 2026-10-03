@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_inventory",
+      "where": {
+        "product": "all"
+      },
+      "value": 150
+    }
+  ],
+  "note": "The question specifies a stock limit per product, but the model's max_inventory is a per-product parameter. The 'all' selector in the where clause refers to all products, which is valid per the DSL schema."
+}

@@ -1,0 +1,35 @@
+{
+
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "total_food_cap",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 2150
+  },
+  {
+   "name": "jan_refining_cap",
+   "measure": "consume",
+   "scope": {
+    "month": [
+     "Jan"
+    ]
+   },
+   "sense": "<=",
+   "value": 400
+  }
+ ],
+ "note": "Total food production capped at 2150 tons; January oil refining limited to 400 tons"
+}

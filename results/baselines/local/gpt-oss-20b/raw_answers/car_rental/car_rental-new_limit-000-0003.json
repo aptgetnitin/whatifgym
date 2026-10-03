@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "measure": "repairs",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": "<=",
+      "value": 29
+    }
+  ],
+  "note": "Limit total repairs on Monday to 29."
+}

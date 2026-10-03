@@ -1,0 +1,27 @@
+{
+
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Monday",
+    "depot": "Glasgow"
+   },
+   "value": 50
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": 3
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "Set Glasgow's Monday demand to 50 and scale 3-day other-depot price by 1.2"
+}

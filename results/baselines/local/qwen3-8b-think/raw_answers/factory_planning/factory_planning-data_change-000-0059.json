@@ -1,0 +1,26 @@
+{
+
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "downtime",
+      "column": "machines_down",
+      "where": {
+        "month": "May",
+        "machine": "grinder"
+      },
+      "factor": 2
+    },
+    {
+      "op": "set",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": "grinder"
+      },
+      "value": 2
+    }
+  ]
+}

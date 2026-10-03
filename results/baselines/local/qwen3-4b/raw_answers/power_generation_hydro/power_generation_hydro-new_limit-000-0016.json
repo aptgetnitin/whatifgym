@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_on_at_start",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The planner's question refers to the total number of thermal units started across all types and periods. However, the model's `units_on_at_start` is an initial state (not a decision variable) and cannot be scaled directly. The constraint `thermal_startup` links `nstart` to `ngen` and the initial state. To limit the total `nstart` over all periods and types, we need to add a rule that bounds the sum of `nstart` across all periods and types. But the question asks for a data change, which is not possible here. The correct approach is to add a rule, not a data change."
+  }

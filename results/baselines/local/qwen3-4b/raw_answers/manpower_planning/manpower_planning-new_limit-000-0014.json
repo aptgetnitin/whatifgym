@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_short_time",
+      "where": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "value": 220
+    }
+  ]
+}

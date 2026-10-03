@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "buy",
+      "where": {
+        "month": "Jun",
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The question asks for a constraint on the total tons of oil bought in June. However, the model's decision variable `buy[month, oil]` is not directly constrained by a single value for the month. The total purchase for June would be the sum over oils. To express a constraint on the total purchase for June, we need to create a rule that sums the `buy` over all oils for June. But the question is phrased as a 'what-if' scenario, which typically implies a data change rather than a rule. Since the model does not have a direct 'total purchase' variable, the scenario must be interpreted as a rule that limits the sum of `buy` for June across all oils. However, the DSL does not support creating a rule as a data change. The question is ambiguous: it could mean a data change (e.g., a new price) or a rule. Given the context, it's likely a rule. But the problem states to output a scenario or an ask. Since the question is not precise enough, we need to check if it can be made machine-checkable."
+  }

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "max_make_prod7",
+      "measure": "make",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ],
+  "note": "Limit total production of Prod7 to 400 units over the six-month horizon."
+}

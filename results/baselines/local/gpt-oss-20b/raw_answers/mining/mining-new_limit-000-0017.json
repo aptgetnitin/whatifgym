@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "measure": "operate",
+      "sense": "<=",
+      "value": 10
+    }
+  ],
+  "note": "Limit total mine-years worked to 10."
+}

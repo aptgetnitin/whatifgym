@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_inventory",
+      "column": "max_inventory",
+      "where": {
+        "product": "Prod1",
+        "month": "Feb"
+      },
+      "value": 320
+    },
+    {
+      "op": "scale",
+      "table": "process_hours",
+      "column": "hours_per_unit",
+      "where": {
+        "product": "Prod1",
+        "month": "Mar",
+        "month": "Apr"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The first data change sets the max inventory for Feb to 320 units. The second data change scales the production hours for Prod1 in Mar and Apr to 0.8, but this seems incorrect as the question mentions production limits, not process hours."
+  }

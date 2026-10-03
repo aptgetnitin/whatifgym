@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_production_cap",
+      "measure": "make",
+      "scope": {},
+      "sense": "<=",
+      "value": 6650
+    }
+  ],
+  "note": "A total cap on units made is a rule on the sum of the make measure over all months and products."
+}

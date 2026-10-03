@@ -1,0 +1,18 @@
+{
+
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_left_total_cap",
+   "measure": "undamaged_left",
+   "scope": {
+    "day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "depot": ["Glasgow", "Manchester", "Birmingham", "Plymouth"]
+   },
+   "sense": "<=",
+   "value": 110
+  }
+ ],
+ "note": "Limits the total undamaged cars kept overnight across all depots and days to 110."
+}

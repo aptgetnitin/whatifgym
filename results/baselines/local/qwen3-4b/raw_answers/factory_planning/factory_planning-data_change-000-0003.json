@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "downtime",
+      "column": "machines_down",
+      "where": {
+        "month": "Mar",
+        "machine": "borer"
+      },
+      "delta": 0
+    }
+  ],
+  "note": "The planner is asking about the impact of removing a downtime event for borers in March. Since the original downtime for borers was in March (from the rows list), shifting the machines_down column to 0 means no borers are down in March."
+}

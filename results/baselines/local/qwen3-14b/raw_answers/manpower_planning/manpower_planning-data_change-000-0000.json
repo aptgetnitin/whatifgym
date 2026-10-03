@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "downgrade_attrition",
+      "factor": 2.0
+    }
+  ]
+}

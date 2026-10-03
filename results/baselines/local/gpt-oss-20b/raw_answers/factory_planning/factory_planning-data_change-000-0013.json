@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": "grinder"
+      },
+      "delta": 1
+    }
+  ],
+  "note": "Add one more grinder to the installed capacity."
+}

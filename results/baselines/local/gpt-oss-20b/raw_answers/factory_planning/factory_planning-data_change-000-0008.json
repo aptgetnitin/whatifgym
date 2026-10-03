@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": "borer"
+      },
+      "delta": 1
+    },
+    {
+      "op": "scale",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod5"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Add a second borer and reduce Prod5 profit by 25%."
+}

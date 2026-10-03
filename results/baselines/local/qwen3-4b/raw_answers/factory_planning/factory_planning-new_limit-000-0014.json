@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_inventory",
+      "value": 700
+    },
+    {
+      "op": "set_param",
+      "name": "store_target",
+      "value": 1200
+    }
+  ],
+  "note": "The planner's question refers to two new limits: total unit-months of stock over the horizon may not exceed 700 (interpreted as max_inventory = 700) and total Prod6 production is capped at 1200 units for the horizon (interpreted as store_target = 1200)."
+}

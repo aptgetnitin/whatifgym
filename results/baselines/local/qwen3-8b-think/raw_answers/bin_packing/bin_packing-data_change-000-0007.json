@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "bin_packing","data_changes": [{"op": "remove","table": "items","where": {"item": "item3"}}],"note": "Removing item3 from the items table reduces the number of items to pack, potentially allowing fewer bins to be used."}

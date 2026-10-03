@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod5"
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "A 25% increase in profit_per_unit for Prod5 reflects higher contribution margin from raw-material price changes."
+}

@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal0_output_cap",
+   "measure": "output",
+   "scope": {
+    "type": "Thermal0"
+   },
+   "sense": "<=",
+   "value": 33300
+  }
+ ],
+ "note": "Limits total Thermal0 output across all periods to 33300 MW."
+}

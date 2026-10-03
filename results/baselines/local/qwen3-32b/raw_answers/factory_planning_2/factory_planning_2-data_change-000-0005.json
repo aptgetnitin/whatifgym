@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "month": "Jun",
+        "product": "Prod5"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "A 25% reduction in the market limit for Jun, Prod5 is modeled as a scale operation on the max_sales table."
+}

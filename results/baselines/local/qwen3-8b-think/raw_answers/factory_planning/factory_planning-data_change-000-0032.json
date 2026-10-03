@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"remove","table":"downtime","where":{"month":"May","machine":"vertDrill"}},{"op":"scale","table":"products","column":"profit_per_unit","where":{"product":"Prod5"},"factor":0.9}],"note":"Remove vertical drill downtime in May and scale Prod5's profit per unit by 10%."}

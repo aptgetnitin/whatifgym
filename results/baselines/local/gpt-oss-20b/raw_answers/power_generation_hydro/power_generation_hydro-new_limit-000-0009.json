@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "measure": "hydro_start",
+      "scope": {
+        "hydro": "HydroB"
+      },
+      "sense": ">=",
+      "value": 2
+    },
+    {
+      "measure": "ngen",
+      "scope": {
+        "type": "Thermal0"
+      },
+      "sense": "<=",
+      "value": 30
+    }
+  ]
+}

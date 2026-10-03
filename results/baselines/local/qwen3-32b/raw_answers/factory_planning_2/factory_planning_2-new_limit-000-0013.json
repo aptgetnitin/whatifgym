@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod6_total_sales_limit",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "value": 1000
+    }
+  ],
+  "note": "A total sales limit for a product is a rule on the sum of the sell measure over all months for that product."
+}

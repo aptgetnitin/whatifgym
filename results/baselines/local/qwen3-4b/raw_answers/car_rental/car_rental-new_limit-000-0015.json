@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "undamaged_left",
+      "column": "undamaged_left",
+      "where": {
+        "day": "Thursday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "factor": 0.9999999999999999
+    }
+  ],
+  "note": "The question specifies a cap on the total undamaged cars kept overnight for Thursday. Since the model has a weekly steady state, the constraint applies to all depots on Thursday."
+}

@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "factory_planning","data_changes": [{"op": "scale","table": "max_sales","column": "max_sales","where": {"product": "Prod3","month": ["Feb"]},"factor": 1.3}],"note": "A 30% increase in February demand for Prod3 requires scaling the max_sales upper bound for that product-month pair."}

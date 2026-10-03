@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "overmanned",
+      "column": "overmanned",
+      "where": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 0.0
+    },
+    {
+      "op": "scale",
+      "table": "redundant",
+      "column": "redundant",
+      "where": {
+        "year": [
+          "2"
+        ]
+      },
+      "factor": 0.0
+    }
+  ],
+  "note": "The planner's question specifies two constraints: one on total short-time workers (summed over all years and skills) and one on redundant workers in year 2. The model's `short_time` measure is summed over `year` and `skill` to get the total, and `redundant` is constrained per `year` and `skill`. The `data_changes` approach here uses scale to set the upper bounds as absolute limits (factor 0.0 implies a hard cap)."
+}

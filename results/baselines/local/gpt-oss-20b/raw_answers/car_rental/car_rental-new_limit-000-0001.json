@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Wednesday"
+      },
+      "sense": ">=",
+      "value": 400
+    }
+  ],
+  "note": "Ensure at least 400 undamaged cars at all depots on Wednesday morning."
+}

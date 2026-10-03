@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod1_monthly_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod1",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 420
+    }
+  ],
+  "note": "A monthly cap on Prod1 production is a rule that limits the sum of make over all months for Prod1 to 420 units."
+  }

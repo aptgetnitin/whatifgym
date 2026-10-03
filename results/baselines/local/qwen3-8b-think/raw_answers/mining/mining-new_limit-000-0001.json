@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine4_total_extraction",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine4"
+   },
+   "sense": ">=",
+   "value": 9562500
+  }
+ ],
+ "note": "Enforces minimum total extraction of 9,562,500 tons from Mine4 across all years."
+}

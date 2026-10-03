@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "max_start_00-06",
+      "measure": "nstart",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": "<=",
+      "value": 5
+    }
+  ],
+  "note": "Limit the total number of thermal units started in period 00-06 to at most 5."
+}

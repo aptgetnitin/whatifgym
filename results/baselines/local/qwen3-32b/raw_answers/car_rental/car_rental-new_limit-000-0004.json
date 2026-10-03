@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "total_rentals_cap",
+      "measure": "rentals",
+      "scope": {},
+      "sense": "<=",
+      "value": 1550
+    }
+  ],
+  "note": "An overall cap on total rentals is a rule that limits the sum of the rentals decision measure across all days and depots."
+}

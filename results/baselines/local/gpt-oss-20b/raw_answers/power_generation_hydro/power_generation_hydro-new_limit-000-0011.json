@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "total_start_cap",
+      "measure": "nstart",
+      "sense": "<=",
+      "value": 7
+    }
+  ],
+  "note": "Cap on the total number of thermal units started across all periods and types."
+}

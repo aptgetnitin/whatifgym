@@ -1,0 +1,19 @@
+{
+
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "feb_buy_total",
+   "measure": "buy",
+   "scope": {
+    "month": [
+     "Feb"
+    ]
+   },
+   "sense": ">=",
+   "value": 940
+  }
+ ],
+ "note": "Require total oil purchases in February to meet a minimum threshold."
+}

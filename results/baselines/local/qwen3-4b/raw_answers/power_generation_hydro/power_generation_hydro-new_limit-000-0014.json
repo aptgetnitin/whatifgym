@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ngen",
+      "column": "ngen",
+      "where": {
+        "period": "00-06",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 5
+    }
+  ],
+  "note": "A limit on the sum of thermal units started in the first period (00-06) is a fixed decision on the sum of nstart over all thermal types in that period."
+}

@@ -1,0 +1,76 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year1"
+      },
+      "value": 1.2
+    },
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year2"
+      },
+      "value": 1.2
+    },
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year3"
+      },
+      "value": 1.0
+    },
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year4"
+      },
+      "value": 1.2
+    },
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year5"
+      },
+      "value": 1.2
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "open",
+      "scope": {
+        "year": "Year5",
+        "mine": "Mine4"
+      },
+      "value": 0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "blend",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      }
+    }
+  ]
+}

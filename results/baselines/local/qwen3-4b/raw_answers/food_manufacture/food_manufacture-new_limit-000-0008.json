@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "total_refined",
+      "where": {
+        "type": "total_refined"
+      },
+      "value": 1900
+    }
+  ]
+}

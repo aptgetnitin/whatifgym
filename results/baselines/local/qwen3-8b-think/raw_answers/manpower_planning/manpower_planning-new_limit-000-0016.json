@@ -1,0 +1,16 @@
+{
+
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "min_downgrade_year_1",
+      "measure": "downgrade",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 210
+    }
+  ]
+}

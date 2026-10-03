@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year1"
+      },
+      "value": 2875000
+    }
+  ],
+  "note": "The scenario specifies a limit on the sum of blend over year=Year1, but the model's blend is a per-year measure. The sum over Year1 is just blend[Year1]. So the data change sets the quality_target for Year1 to 2875000 to enforce the constraint."
+}

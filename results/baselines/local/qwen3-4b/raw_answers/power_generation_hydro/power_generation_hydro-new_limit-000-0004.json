@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": "09-15"
+      },
+      "value": 31600
+    }
+  ],
+  "note": "The planner wants to set the demand for period 09-15 to 31600 MW, which is a data change to the periods table."
+}

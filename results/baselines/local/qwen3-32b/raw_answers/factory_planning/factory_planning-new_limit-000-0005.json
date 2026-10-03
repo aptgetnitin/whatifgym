@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "warehouse_limit_feb",
+   "measure": "store",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 320
+  },
+  {
+   "name": "prod1_limit_mar_apr",
+   "measure": "make",
+   "scope": {
+    "product": "Prod1",
+    "month": [
+     "Mar",
+     "Apr"
+    ]
+   },
+   "sense": "<=",
+   "value": 160
+  }
+ ]
+}

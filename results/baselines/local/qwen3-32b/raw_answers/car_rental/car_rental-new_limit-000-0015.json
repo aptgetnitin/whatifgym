@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "undamaged_left_thursday_limit",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Thursday"
+      },
+      "sense": "<=",
+      "value": 2.3
+    }
+  ],
+  "note": "Limits the total undamaged cars kept overnight at depots for Thursday."
+}

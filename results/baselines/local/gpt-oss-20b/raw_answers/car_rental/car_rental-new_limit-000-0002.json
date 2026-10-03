@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "max_total_damaged_stock",
+      "measure": "damaged_stock",
+      "sense": "<=",
+      "value": 200
+    }
+  ]
+}

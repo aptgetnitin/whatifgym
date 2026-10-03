@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"measure":"undamaged_stock","scope":{"day":"Friday"},"sense":"<=","value":310}]}

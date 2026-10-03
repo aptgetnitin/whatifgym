@@ -1,0 +1,16 @@
+{
+
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal1_run_limit",
+      "measure": "ngen",
+      "scope": {
+        "type": "Thermal1"
+      },
+      "sense": "<=",
+      "value": 29
+    }
+  ]
+}

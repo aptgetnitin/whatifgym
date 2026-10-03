@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "pump_mwh_per_m",
+      "factor": 0.75
+    }
+  ],
+  "note": "Pumping energy per metre is reduced by 25%."
+}

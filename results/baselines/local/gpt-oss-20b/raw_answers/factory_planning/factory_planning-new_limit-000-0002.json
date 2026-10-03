@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod7_may_jun_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod7",
+        "month": [
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 90
+    },
+    {
+      "name": "total_stock_limit",
+      "measure": "store",
+      "sense": "<=",
+      "value": 800
+    }
+  ],
+  "note": "Limit production of Prod7 in May and June to 90 units and total stock over the horizon to 800 unit‑months."
+}

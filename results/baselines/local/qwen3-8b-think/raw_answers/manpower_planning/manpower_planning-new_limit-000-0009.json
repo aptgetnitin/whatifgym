@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "skilled_downgrade_cap",
+   "measure": "downgrade",
+   "scope": {
+    "from_skill": "skilled"
+   },
+   "sense": "<=",
+   "value": 130
+  }
+ ],
+ "note": "Limits total downgrades from skilled workers across all years and to all lower skill levels to 130."
+}

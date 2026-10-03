@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod1"
+   },
+   "factor": 0.7
+  },
+  {
+   "op": "scale",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod5",
+    "month": [
+     "Mar",
+     "Apr",
+     "May"
+    ]
+   },
+   "factor": 0.85
+  }
+ ],
+ "note": "Prod1's profit is scaled down by 30%, and Prod5's max sales are reduced by 15% in March, April, and May."
+}

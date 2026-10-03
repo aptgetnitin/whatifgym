@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod7_total_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": "<=",
+   "value": 320
+  }
+ ],
+ "note": "Capping total Prod7 production across all months to 320 units."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "machines",
+      "rows": [
+        {
+          "machine": "grinder"
+        }
+      ]
+    }
+  ],
+  "note": "Adding a new row to the machines table for the grinder machine type with an additional installed machine."
+  }

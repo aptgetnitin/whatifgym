@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "total_stock_feb",
+   "measure": "store",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 200
+  }
+ ],
+ "note": "A total stock limit at the end of February requires a rule bounding the sum of store across all products in that month."
+}

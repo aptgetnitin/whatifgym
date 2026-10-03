@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_plymouth_rentals",
+      "measure": "rentals",
+      "scope": {
+        "depot": [
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 370
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "profit"
+    }
+  ],
+  "fixed_decisions": []
+}

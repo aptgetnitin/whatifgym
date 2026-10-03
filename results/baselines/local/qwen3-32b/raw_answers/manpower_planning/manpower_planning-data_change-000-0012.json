@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "skilled"
+      },
+      "factor": 1.1
+    }
+  ],
+  "note": "Scaling the required number of skilled workers in year 1 by 10%."
+}

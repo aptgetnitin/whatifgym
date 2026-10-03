@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "skill": "semi_skilled"
+      },
+      "value": 22
+    }
+  ],
+  "note": "The requirement for semi-skilled workers above the requirement is set to 22."
+}

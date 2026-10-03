@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "skill": "semi_skilled"
+      },
+      "value": 2000
+    }
+  ],
+  "note": "The planner wants to set the required number of semi-skilled workers to 2000, but the model's requirements table has a column 'required' that is an integer. However, the question says 'the workers recruited, summed over everything with skill level = semi_skilled', which is a decision measure, not a requirement. This might be a misinterpretation."
+  }

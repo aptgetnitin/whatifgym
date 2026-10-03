@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "hours_per_month",
+      "where": {
+        "key": "hours_per_month"
+      },
+      "factor": 576.0
+    }
+  ],
+  "note": "The 'hours_per_month' parameter is scaled by a factor of 576 to represent 576 machine hours per month instead of 384."
+}

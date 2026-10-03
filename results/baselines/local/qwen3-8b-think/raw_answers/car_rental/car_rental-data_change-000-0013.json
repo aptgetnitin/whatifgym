@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": 2
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "A 10% increase in the price for 2-day rentals returned to another depot"
+}

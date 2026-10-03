@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "downtime",
+      "column": "machines_down",
+      "where": {
+        "month": "Feb",
+        "machine": "horiDrill"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod6"
+      },
+      "value": 7
+    }
+  ],
+  "note": "Cancel Feb horiDrill maintenance and set Prod6 profit to 7."
+}

@@ -1,0 +1,61 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": "VEG1"
+      },
+      "value": 4.4
+    },
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": "VEG1"
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": "VEG2"
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": "OIL1"
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": "OIL2"
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": "OIL3"
+      },
+      "factor": 1.1
+    }
+  ],
+  "note": "VEG1's hardness is updated to 4.4, and all purchase prices are increased by 10%."
+}

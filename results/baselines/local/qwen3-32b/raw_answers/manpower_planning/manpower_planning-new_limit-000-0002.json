@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "downgrade_total_limit",
+      "measure": "downgrade",
+      "scope": {},
+      "sense": "<=",
+      "value": 130
+    }
+  ]
+}

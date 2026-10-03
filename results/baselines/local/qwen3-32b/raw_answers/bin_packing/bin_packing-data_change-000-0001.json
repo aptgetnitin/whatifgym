@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "bins",
+      "where": {
+        "bin": "bin5"
+      }
+    },
+    {
+      "op": "scale",
+      "table": "items",
+      "column": "weight",
+      "where": {
+        "item": "item1"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "bin5 is removed from the bins table, and the weight of item1 is reduced by 20%."
+}

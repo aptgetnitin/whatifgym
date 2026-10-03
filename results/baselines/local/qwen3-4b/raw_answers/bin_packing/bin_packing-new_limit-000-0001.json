@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "bin2_at_least_4_items",
+      "measure": "x[item, bin]",
+      "scope": {
+        "bin": [
+          "bin2"
+        ]
+      },
+      "sense": ">=",
+      "value": 4
+    }
+  ]
+}

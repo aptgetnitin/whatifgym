@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "holding_cost",
+      "where": {
+        "param": "holding_cost"
+      },
+      "factor": 2.0
+    }
+  ]
+}

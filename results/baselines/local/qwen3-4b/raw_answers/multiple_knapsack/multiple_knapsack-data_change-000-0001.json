@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "bins",
+      "column": "capacity",
+      "where": {
+        "bin": [
+          "bin0",
+          "bin1",
+          "bin2",
+          "bin3",
+          "bin4"
+          ]
+      },
+      "factor": 1.2
+    },
+    {
+      "op": "set",
+      "table": "items",
+      "column": "value",
+      "where": {
+        "item": "item1"
+      },
+      "value": 60
+    }
+  ]
+}

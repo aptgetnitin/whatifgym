@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "cost_per_hour",
+      "where": {},
+      "factor": 1.2
+    }
+  ],
+  "note": "A 20% increase in the hourly running cost for all thermal generator types."
+}

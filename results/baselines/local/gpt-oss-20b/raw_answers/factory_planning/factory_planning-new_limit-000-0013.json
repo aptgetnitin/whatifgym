@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod5_total_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod5"
+      },
+      "sense": "<=",
+      "value": 1950
+    }
+  ],
+  "note": "Supplier limits total production of Prod5 to 1950 units."
+}

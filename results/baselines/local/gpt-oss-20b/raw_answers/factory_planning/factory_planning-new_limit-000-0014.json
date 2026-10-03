@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "measure": "store",
+      "sense": "<=",
+      "value": 700
+    },
+    {
+      "measure": "make",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "value": 1200
+    }
+  ],
+  "note": "Total unit‑months of stock over the horizon limited to 700, and total production of Prod6 capped at 1200 units."
+}

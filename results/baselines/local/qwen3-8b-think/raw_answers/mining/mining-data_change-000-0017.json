@@ -1,0 +1,20 @@
+{
+
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine2"
+      }
+    },
+    {
+      "op": "scale",
+      "table": "years",
+      "column": "quality_target",
+      "factor": 0.8
+    }
+  ]
+}

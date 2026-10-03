@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_produce_cap",
+      "measure": "produce",
+      "sense": "<=",
+      "value": 2150
+    },
+    {
+      "name": "jan_consume_cap",
+      "measure": "consume",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ]
+}

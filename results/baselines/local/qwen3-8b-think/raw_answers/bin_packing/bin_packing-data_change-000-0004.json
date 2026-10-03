@@ -1,0 +1,26 @@
+{
+
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "bins",
+   "column": "capacity",
+   "where": {
+    "bin": "bin2"
+   },
+   "value": 110
+  },
+  {
+   "op": "add",
+   "table": "items",
+   "rows": [
+    {
+     "item": "new_item",
+     "weight": 45
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+
+  "version": "0.1",
+  "base_model": "wedding_seating",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "guests",
+      "where": {
+        "guest": "P"
+      }
+    }
+  ],
+  "note": "Remove guest P from the guest list and re-optimize table assignments"
+}

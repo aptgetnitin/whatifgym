@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"measure":"retrain","scope":{"year":3},"sense":"<=","value":210}]}

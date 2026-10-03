@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_on_at_start",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "nstart",
+      "where": {
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ],
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 7
+    }
+  ],
+  "note": "The planner's question refers to a total cap on thermal units started across all periods and types. However, the model's decision variable `nstart[period, type]` is per period and type, so a single fixed value of 7 for all `nstart` would not be feasible. The question likely intends a constraint on the sum of `nstart` over all periods and types. This requires a rule, not a data change."
+}

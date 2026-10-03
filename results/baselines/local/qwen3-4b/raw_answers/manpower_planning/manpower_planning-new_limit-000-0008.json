@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "redundant",
+      "column": "redundant",
+      "where": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 0.0
+    }
+  ],
+  "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}

@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin3_placement_limit",
+      "measure": "x",
+      "scope": {
+        "bin": "bin3"
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "total_placement_limit",
+      "measure": "x",
+      "scope": {},
+      "sense": "<=",
+      "value": 6
+    }
+  ],
+  "note": "Two new rules: one for bin3's item placements and another for the total number of item placements."
+}

@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "bin1_placement_limit",
+   "measure": "x",
+   "scope": {
+    "bin": "bin1"
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Limits total item placements in bin1 to 1"
+}

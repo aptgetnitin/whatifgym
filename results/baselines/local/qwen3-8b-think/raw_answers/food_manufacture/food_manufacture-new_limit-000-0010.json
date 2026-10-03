@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "food_manufacture","rules": [{"name": "veg1_buy_total","measure": "buy","scope": {"oil": ["VEG1"],"month": ["Jan","Feb","Mar","Apr","May","Jun"]},"sense": ">=","value": 730}],"note": "Enforces total purchase of VEG1 across all months to be at least 730 tons"}

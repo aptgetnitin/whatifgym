@@ -1,0 +1,28 @@
+{
+
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "Scale all required and max_recruit values by 20% across all years and skill levels in the requirements table."
+}

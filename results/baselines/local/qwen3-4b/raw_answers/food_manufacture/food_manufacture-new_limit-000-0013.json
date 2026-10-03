@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "storage_sum_may",
+      "measure": "store",
+      "scope": {
+        "month": [
+          "May"
+        ]
+      },
+      "sense": ">=",
+      "value": 1100
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

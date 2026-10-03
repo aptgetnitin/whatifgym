@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"overall_make_cap","measure":"make","sense":"<=","value":9300}],"note":"Cap on total units produced."}

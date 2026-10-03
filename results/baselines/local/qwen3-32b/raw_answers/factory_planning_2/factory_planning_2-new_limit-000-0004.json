@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_production_limit",
+      "measure": "make",
+      "scope": {},
+      "sense": "<=",
+      "value": 9950
+    }
+  ],
+  "note": "A rule limits the total production across all products and months."
+}

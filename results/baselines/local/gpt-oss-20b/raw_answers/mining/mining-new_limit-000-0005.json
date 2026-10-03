@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "max_total_open",
+      "measure": "open",
+      "sense": "<=",
+      "value": 11
+    }
+  ],
+  "note": "Total open mine-years limited to 11."
+}

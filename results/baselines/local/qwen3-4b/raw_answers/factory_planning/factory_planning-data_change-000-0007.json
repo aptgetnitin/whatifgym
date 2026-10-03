@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "profit_per_unit",
+      "value": 4
+    }
+  ],
+  "note": "The question refers to a price change for Prod2, which affects the profit_per_unit parameter for the product. However, the model schema shows that 'profit_per_unit' is a column in the 'products' table, not a parameter. This indicates a potential issue with the question's precision."
+  }

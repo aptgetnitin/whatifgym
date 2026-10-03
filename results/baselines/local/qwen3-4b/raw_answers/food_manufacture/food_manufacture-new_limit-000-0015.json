@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "oils_store_oil3_min",
+      "measure": "store",
+      "scope": {
+        "oil": [
+          "OIL3"
+        ]
+      },
+      "sense": ">=",
+      "value": 3600
+    },
+    {
+      "name": "food_produce_total_max",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 2450
+    }
+  ],
+  "note": "The first rule sets a minimum sum of store for OIL3 across all months, and the second rule sets a maximum total produce over the horizon."
+}

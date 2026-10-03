@@ -1,0 +1,27 @@
+{
+
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod7"
+   },
+   "factor": 2
+  },
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Jun",
+    "product": "Prod5"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Prod7's profit doubles via scaling, and Prod5's June max sales is zeroed via explicit setting."
+}

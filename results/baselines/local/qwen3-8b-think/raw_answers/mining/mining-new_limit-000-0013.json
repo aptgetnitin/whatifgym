@@ -1,0 +1,29 @@
+{
+
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "total_mine_years_cap",
+   "measure": "operate",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ],
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ]
+   },
+   "sense": "<=",
+   "value": 13
+  }
+ ],
+ "note": "Limits total mine-years worked across all years and mines to 13."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "warehouse_limit_may",
+      "measure": "store",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 220
+    }
+  ],
+  "note": "A rule limits the total stock at the end of May (June's opening stock)."
+}

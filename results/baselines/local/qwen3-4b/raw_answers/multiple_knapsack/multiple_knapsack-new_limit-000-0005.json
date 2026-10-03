@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "x",
+      "column": "x",
+      "where": {
+        "item": [
+          "item0",
+          "item1",
+          "item2",
+          "item3",
+          "item4",
+          "item5",
+          "item6",
+          "item7",
+          "item8",
+          "item9",
+          "item10",
+          "item11",
+          "item12",
+          "item13",
+          "item14"
+        ],
+        "bin": [
+          "bin0",
+          "bin1",
+          "bin2",
+          "bin3",
+          "bin4"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The total number of item placements is the sum of x[item, bin] over all items and bins. Scaling this sum by 0.8 would make it 80% of the original value, but the question asks for a maximum of 6, so this approach is incorrect."
+}

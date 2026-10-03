@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_sales_cap",
+      "measure": "sell",
+      "scope": {},
+      "sense": "<=",
+      "value": 11600
+    }
+  ],
+  "note": "A total cap on units sold is a rule on the sum of the sell measure over all products and months."
+}

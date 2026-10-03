@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod7_min_stock",
+      "measure": "store",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "value": 160
+    },
+    {
+      "name": "jun_make_cap",
+      "measure": "make",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 2050
+    }
+  ],
+  "note": "Added stock and production limits."
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "price_other_depot",
+      "factor": 1.25
+    },
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "price_same_depot",
+      "factor": 1.25
+    }
+  ],
+  "note": "All prices in the rental-length mix and prices table are increased by 25%."
+}

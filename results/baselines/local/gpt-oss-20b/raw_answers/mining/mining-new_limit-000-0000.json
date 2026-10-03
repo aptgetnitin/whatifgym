@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "max_one_mine_in_year3",
+      "measure": "operate",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "Limit the number of mines worked in Year3 to at most one."
+}

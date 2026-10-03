@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod3_production_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod3"
+      },
+      "sense": "<=",
+      "value": 900
+    }
+  ],
+  "note": "A rule limits the total units made of Prod3 across all months."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "jun_total_sales_limit",
+      "measure": "sell",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 2450
+    }
+  ],
+  "note": "A total sales limit for June is enforced by summing the sell measure over all products in June."
+}

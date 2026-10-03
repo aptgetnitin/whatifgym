@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_sales_limit",
+      "measure": "sell",
+      "scope": {},
+      "sense": "<=",
+      "value": 9700
+    },
+    {
+      "name": "april_sales_floor",
+      "measure": "sell",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "value": 720
+    }
+  ]
+}

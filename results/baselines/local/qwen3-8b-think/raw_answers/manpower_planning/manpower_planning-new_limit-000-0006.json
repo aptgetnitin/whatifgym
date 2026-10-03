@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "manpower_planning","rules": [{"name": "redundant_cap_year3","measure": "redundant","scope": {"year": 3},"sense": "<=","value": 120}],"note": "Limits total redundancies in year 3 to 120 or below."}

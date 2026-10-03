@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "jan_refined_limit",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Jan"
+        ]
+      },
+      "sense": "<=",
+      "value": 360
+    }
+  ]
+}

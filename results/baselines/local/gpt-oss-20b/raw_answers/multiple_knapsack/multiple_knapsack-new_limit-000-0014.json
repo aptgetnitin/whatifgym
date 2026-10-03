@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"min_bin1_placements","measure":"x","scope":{"bin":"bin1"},"sense":">=","value":3},{"name":"max_bin3_placements","measure":"x","scope":{"bin":"bin3"},"sense":"<=","value":1}]}

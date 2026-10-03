@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "total_thermal_starts_limit",
+      "measure": "nstart",
+      "scope": {
+        "type": ["Thermal0", "Thermal1", "Thermal2"],
+        "period": ["00-06", "06-09", "09-15", "15-18", "18-24"]
+      },
+      "sense": "<=",
+      "value": 8
+    }
+  ],
+  "note": "A rule limits the total number of thermal unit starts across all types and periods."
+}

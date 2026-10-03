@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "total_short_time_cap",
+      "measure": "short_time",
+      "scope": {},
+      "sense": "<=",
+      "value": 220
+    }
+  ],
+  "note": "An overall cap on short-time workers in total is a rule with an empty scope."
+}

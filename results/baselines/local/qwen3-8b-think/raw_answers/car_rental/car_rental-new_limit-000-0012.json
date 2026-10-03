@@ -1,0 +1,24 @@
+{
+
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "measure": "undamaged_left",
+   "sense": "<=",
+   "value": 130,
+   "scope": {}
+  },
+  {
+   "measure": "repairs",
+   "sense": "<=",
+   "value": 16,
+   "scope": {
+    "day": [
+     "Tuesday"
+    ]
+   }
+  }
+ ],
+ "note": "Caps total undamaged cars kept overnight and Tuesday repairs"
+}

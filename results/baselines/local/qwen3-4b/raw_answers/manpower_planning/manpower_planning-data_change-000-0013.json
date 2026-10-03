@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "max_overmanned",
+      "factor": 0.5
+    }
+  ]
+}

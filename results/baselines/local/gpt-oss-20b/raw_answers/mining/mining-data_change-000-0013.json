@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"scale","table":"years","column":"quality_target","factor":1.1}],"note":"Increase all quality targets by 10%."}

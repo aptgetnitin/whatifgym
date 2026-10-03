@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_inventory_cap",
+      "measure": "store",
+      "scope": {},
+      "sense": "<=",
+      "value": 570
+    }
+  ],
+  "note": "Cap on total inventory across all products and months."
+}

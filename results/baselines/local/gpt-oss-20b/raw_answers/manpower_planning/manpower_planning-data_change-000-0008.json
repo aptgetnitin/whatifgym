@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "max_recruit",
+      "factor": 0.8
+    }
+  ],
+  "note": "Scale all requirement and recruitment limit values by 20% lower."
+}

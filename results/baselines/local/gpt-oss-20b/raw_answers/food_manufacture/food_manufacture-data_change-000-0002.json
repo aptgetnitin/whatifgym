@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"scale","table":"oils","column":"hardness","where":{"category":["veg","nonveg"]},"factor":0.75}]}

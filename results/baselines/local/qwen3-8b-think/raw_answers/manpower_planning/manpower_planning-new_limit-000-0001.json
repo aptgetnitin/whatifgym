@@ -1,0 +1,17 @@
+{
+
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "skilled_recruit_min",
+   "measure": "recruit",
+   "scope": {
+    "skill": "skilled"
+   },
+   "sense": ">=",
+   "value": 1100
+  }
+ ],
+ "note": "Enforces total skilled worker recruitment across all years to be at least 1100"
+}

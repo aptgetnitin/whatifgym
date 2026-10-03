@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "measure": "nstart",
+      "sense": "<=",
+      "value": 10
+    }
+  ],
+  "note": "Overall cap on total thermal units started."
+}

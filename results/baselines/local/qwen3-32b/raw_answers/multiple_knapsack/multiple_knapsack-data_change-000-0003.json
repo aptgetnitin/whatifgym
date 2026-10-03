@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "items",
+      "rows": [
+        {
+          "item": "new_item",
+          "weight": 36,
+          "value": 45
+        }
+      ]
+    },
+    {
+      "op": "scale",
+      "table": "bins",
+      "column": "capacity",
+      "where": {},
+      "factor": 0.75
+    }
+  ],
+  "note": "A new item is added to the items table, and all bin capacities are reduced by 25%."
+}

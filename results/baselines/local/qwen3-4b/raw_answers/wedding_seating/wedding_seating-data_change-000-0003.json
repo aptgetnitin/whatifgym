@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "wedding_seating",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "max_tables",
+      "where": {
+        "param": "max_tables"
+      },
+      "factor": 1.25
+    }
+  ]
+}

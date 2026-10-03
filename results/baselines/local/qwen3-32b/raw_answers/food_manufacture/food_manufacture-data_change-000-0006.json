@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "month": "Jan",
+        "oil": "VEG1"
+      },
+      "value": 220
+    },
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": "VEG1"
+      },
+      "factor": 1.2
+    }
+  ],
+  "note": "Updated the purchase price for VEG1 in January and increased its hardness by 20%."
+}

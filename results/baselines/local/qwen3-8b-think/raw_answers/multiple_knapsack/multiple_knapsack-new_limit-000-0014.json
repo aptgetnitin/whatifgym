@@ -1,0 +1,24 @@
+{
+
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "measure": "x",
+   "scope": {
+    "bin": "bin1"
+   },
+   "sense": ">=",
+   "value": 3
+  },
+  {
+   "measure": "x",
+   "scope": {
+    "bin": "bin3"
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Add two bin-specific placement constraints: bin1 must have at least 3 items, bin3 at most 1."
+}

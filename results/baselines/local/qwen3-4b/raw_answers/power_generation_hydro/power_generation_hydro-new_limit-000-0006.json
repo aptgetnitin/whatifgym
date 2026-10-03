@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "pump",
+      "column": "pump",
+      "where": {
+        "period": "00-06"
+      },
+      "value": 500
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "ngen",
+      "scope": {
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ],
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 60
+    }
+  ]
+}

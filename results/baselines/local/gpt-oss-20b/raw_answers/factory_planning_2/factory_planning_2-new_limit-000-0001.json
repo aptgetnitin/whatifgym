@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"max_total_sell_prod1","measure":"sell","scope":{"product":"Prod1"},"sense":"<=","value":1000}],"note":"Limit total sales of Prod1 to 1000 units over the entire horizon."}

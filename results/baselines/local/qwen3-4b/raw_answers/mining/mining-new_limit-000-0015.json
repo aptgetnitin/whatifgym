@@ -1,0 +1,82 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine1"
+      },
+      "value": 1.6
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 1.6
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": "Mine2"
+      },
+      "value": 0.6
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "royalty",
+      "where": {
+        "mine": "Mine1"
+      },
+      "value": 6000000
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "royalty",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 1600000
+    },
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine4"
+      }
+    },
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "Mine5",
+          "royalty": 3000000,
+          "capacity": 1000000,
+          "quality": 1.2
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "name": "extract_limit_year4",
+      "measure": "extract",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": "<=",
+      "value": 2812500
+    }
+  ],
+  "note": "The scenario changes the mines table with specific updates, removes Mine4, adds Mine5, and sets a rule on the extract measure for Year4."
+  }

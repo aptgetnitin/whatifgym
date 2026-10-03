@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "royalty",
+      "factor": 0.75
+    }
+  ],
+  "note": "The yearly royalty for all mines is reduced by 25%."
+}

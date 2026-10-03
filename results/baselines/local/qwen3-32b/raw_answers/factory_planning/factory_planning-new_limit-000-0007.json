@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod2_and_prod6_output_limit_may",
+   "measure": "make",
+   "scope": {
+    "product": [
+     "Prod2",
+     "Prod6"
+    ],
+    "month": "May"
+   },
+   "sense": "<=",
+   "value": 300
+  }
+ ]
+}

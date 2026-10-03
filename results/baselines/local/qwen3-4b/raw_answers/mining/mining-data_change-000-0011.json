@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "new_mine"
+        }
+      ]
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "royalty",
+      "where": {
+        "mine": "new_mine"
+      },
+      "value": 3000000
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "new_mine"
+      },
+      "value": 1600000
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": "new_mine"
+      },
+      "value": 1.5
+    }
+  ]
+}

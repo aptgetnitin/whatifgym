@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "total_mine_years_worked_cap",
+      "measure": "operate",
+      "scope": {},
+      "sense": "<=",
+      "value": 10
+    }
+  ],
+  "note": "A rule limits the total number of mine-years worked across the entire planning horizon."
+}

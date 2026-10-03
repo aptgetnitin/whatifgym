@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "machines",
+   "rows": [
+    {
+     "machine": "borer",
+     "installed": 1
+    }
+   ]
+  },
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod5"
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Adding a new borer and reducing the profit per unit of Prod5 by 25%."
+}

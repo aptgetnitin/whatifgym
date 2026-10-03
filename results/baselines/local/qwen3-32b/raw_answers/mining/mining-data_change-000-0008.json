@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "quality",
+      "factor": 1.1
+    }
+  ],
+  "note": "Scaling the quality column of the mines table by 10% to reflect the increased ore quality."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "open_mines_year5_limit",
+      "measure": "open",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ],
+  "note": "Limits the number of mines that can be kept open in Year5 to 2."
+}

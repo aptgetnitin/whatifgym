@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg1_min_total_bought",
+      "measure": "buy",
+      "scope": {
+        "oil": "VEG1"
+      },
+      "sense": ">=",
+      "value": 730
+    }
+  ],
+  "note": "A rule ensures the total tons of VEG1 bought over the planning horizon is at least 730."
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "profit_per_unit",
+      "value": 18
+    }
+  ],
+  "note": "The profit per unit for product Prod6 is a parameter in the products table, but the scenario DSL requires parameter changes to be handled via the params table. However, the model schema shows that 'profit_per_unit' is a column in the 'products' table, not a parameter. This indicates a potential issue with the model schema definition. The correct approach is to update the 'products' table for Prod6 with the new profit_per_unit value."
+  }

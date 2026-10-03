@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "items",
+      "rows": [
+        {
+          "item": "new_item"
+        }
+      ]
+    }
+  ],
+  "note": "Adding a new item row with a weight of 11 units. The weight value needs to be specified in the rows, but the question says 'item weight 11', so we assume it's a new row with item 'new_item' and weight 11."
+  }

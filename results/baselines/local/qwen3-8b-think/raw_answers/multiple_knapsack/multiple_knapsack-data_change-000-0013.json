@@ -1,0 +1,17 @@
+{
+
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "items",
+      "column": "weight",
+      "where": {
+        "item": "item0"
+      },
+      "value": 24
+    }
+  ],
+  "note": "Updating item0's weight to 24 directly modifies the weight parameter in the items table."
+}

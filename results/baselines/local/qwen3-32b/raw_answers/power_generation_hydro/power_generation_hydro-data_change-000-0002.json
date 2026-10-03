@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "min_output_mw",
+      "where": {},
+      "factor": 0.9
+    }
+  ],
+  "note": "A 10% reduction in the minimum output per unit for all thermal generator types."
+}

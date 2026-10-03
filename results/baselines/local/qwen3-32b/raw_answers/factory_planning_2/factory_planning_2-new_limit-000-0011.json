@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_sales_limit",
+      "measure": "sell",
+      "scope": {},
+      "sense": "<=",
+      "value": 10350
+    }
+  ],
+  "note": "A global limit on total units sold is a rule on the sum of the sell measure over all products and months."
+}

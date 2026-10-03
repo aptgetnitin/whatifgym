@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_sales_feb_limit",
+      "measure": "sell",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "value": 1100
+    }
+  ],
+  "note": "A total sales limit for February is enforced by summing the sell measure over all products in that month."
+}

@@ -1,0 +1,26 @@
+{
+
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine2_mine_years",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine2"
+   },
+   "sense": ">=",
+   "value": 4
+  },
+  {
+   "name": "year2_extraction_cap",
+   "measure": "extract",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": "<=",
+   "value": 5400000
+  }
+ ],
+ "note": "Enforces minimum 4 years of operation for Mine2 and caps Year2 extraction total"
+}

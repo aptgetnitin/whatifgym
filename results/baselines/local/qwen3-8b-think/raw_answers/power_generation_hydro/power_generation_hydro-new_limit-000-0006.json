@@ -1,0 +1,21 @@
+{
+
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "measure": "pump",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "value": 500
+    },
+    {
+      "measure": "ngen",
+      "scope": {},
+      "sense": "<=",
+      "value": 60
+    }
+  ]
+}

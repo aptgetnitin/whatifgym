@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_sell_cap",
+      "measure": "sell",
+      "sense": "<=",
+      "value": 9700
+    },
+    {
+      "name": "apr_sell_min",
+      "measure": "sell",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "value": 720
+    }
+  ],
+  "note": "Limit total sales to 9700 and require at least 720 units sold in April."
+}

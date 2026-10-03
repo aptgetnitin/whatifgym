@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod3",
+    "month": "Apr"
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "Demand for Prod3 in April is increased by 50%."
+}

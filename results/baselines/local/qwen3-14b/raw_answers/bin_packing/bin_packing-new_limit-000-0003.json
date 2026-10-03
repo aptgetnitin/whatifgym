@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "bin0_item_limit",
+      "measure": "x",
+      "scope": {
+        "bin": "bin0"
+      },
+      "sense": "<=",
+      "value": 2
+    },
+    {
+      "name": "bin2_item_min",
+      "measure": "x",
+      "scope": {
+        "bin": "bin2"
+      },
+      "sense": ">=",
+      "value": 4
+    }
+  ]
+}

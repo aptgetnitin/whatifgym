@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "value": 700
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "skilled"
+      },
+      "value": 2200
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "redundant",
+      "scope": {
+        "year": 1
+      },
+      "value": 530
+    }
+  ]
+}

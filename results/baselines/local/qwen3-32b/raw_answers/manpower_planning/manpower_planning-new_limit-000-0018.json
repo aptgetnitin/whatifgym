@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "unskilled_short_time_limit",
+      "measure": "short_time",
+      "scope": {
+        "skill": "unskilled"
+      },
+      "sense": "<=",
+      "value": 110
+    }
+  ],
+  "note": "Added a rule to limit the number of unskilled workers on short-time working to 110."
+}

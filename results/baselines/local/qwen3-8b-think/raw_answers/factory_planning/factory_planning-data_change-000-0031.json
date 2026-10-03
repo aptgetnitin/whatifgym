@@ -1,0 +1,16 @@
+{
+
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "downtime",
+      "where": {
+        "month": "Jan",
+        "machine": "grinder"
+      }
+    }
+  ],
+  "note": "Removing the grinder maintenance in January from downtime table reflects cancellation of planned downtime."
+}

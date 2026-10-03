@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"max_extract_mine1","measure":"extract","scope":{"mine":"Mine1"},"sense":"<=","value":4252500}]}

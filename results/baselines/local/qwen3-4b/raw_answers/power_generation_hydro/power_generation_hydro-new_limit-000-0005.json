@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "The total number of thermal units running summed over everything is bounded by 90. This is a data change to the units_available parameter for all thermal types, scaled by 0.9 to represent a maximum of 90 units."
+}

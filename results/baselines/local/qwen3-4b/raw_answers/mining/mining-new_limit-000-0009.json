@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine1"
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine2"
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine3"
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine4"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}
