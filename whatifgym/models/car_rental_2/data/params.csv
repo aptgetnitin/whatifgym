@@ -1,0 +1,5 @@
+name,value,description
+cost_per_car,15,Opportunity cost of owning one car for a week (interest on capital; storage; servicing)
+damaged_share,0.1,Share of cars returned by customers that come back damaged (the rest are undamaged)
+damage_excess,100,Excess charged to the customer for each car returned damaged (the damage itself is insured)
+max_expansions,3,Most repair-capacity expansion options that may be carried out in total (a further expansion counts as one more)

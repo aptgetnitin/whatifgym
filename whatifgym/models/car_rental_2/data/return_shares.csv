@@ -1,0 +1,17 @@
+from_depot,to_depot,share
+Glasgow,Glasgow,0.6
+Glasgow,Manchester,0.2
+Glasgow,Birmingham,0.1
+Glasgow,Plymouth,0.1
+Manchester,Glasgow,0.15
+Manchester,Manchester,0.55
+Manchester,Birmingham,0.25
+Manchester,Plymouth,0.05
+Birmingham,Glasgow,0.15
+Birmingham,Manchester,0.2
+Birmingham,Birmingham,0.54
+Birmingham,Plymouth,0.11
+Plymouth,Glasgow,0.08
+Plymouth,Manchester,0.12
+Plymouth,Birmingham,0.27
+Plymouth,Plymouth,0.53

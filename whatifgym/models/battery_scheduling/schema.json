@@ -1,0 +1,139 @@
+{
+  "model": "battery_scheduling",
+  "sense": "max",
+  "objective": "sum over hours of step_hours * (export_price * discharge - import_price * charge)",
+  "tables": {
+    "hours": {
+      "key": [
+        "hour"
+      ],
+      "label": "hourly prices",
+      "columns": {
+        "hour": {
+          "type": "string",
+          "description": "Hour of the day as start-end clock hours (00-01 = midnight to 1 am)",
+          "label": "hour"
+        },
+        "order": {
+          "type": "int",
+          "description": "Position in the day (1 = first hour). Consecutive hours are linked by the battery's stored energy",
+          "label": "hour order",
+          "editable": false
+        },
+        "step_hours": {
+          "type": "number",
+          "unit": "hours",
+          "description": "Length of the time step; powers in kW are multiplied by it to get energy in kWh. Structural: the 24 steps partition the day into hours.",
+          "label": "step length",
+          "editable": false
+        },
+        "import_price": {
+          "type": "number",
+          "unit": "EUR/kWh",
+          "description": "Price paid for each kWh bought from the grid, which is what charging the battery costs",
+          "label": "grid import price (EUR/kWh)"
+        },
+        "export_price": {
+          "type": "number",
+          "unit": "EUR/kWh",
+          "description": "Price received for each kWh sold to the grid, which is what discharging the battery earns",
+          "label": "grid export price (EUR/kWh)"
+        }
+      }
+    }
+  },
+  "params": {
+    "energy_capacity_kwh": {
+      "type": "number",
+      "unit": "kWh",
+      "description": "Usable energy capacity of the battery; the stored energy never exceeds it",
+      "label": "battery energy capacity (kWh)",
+      "min": 0
+    },
+    "max_charge_kw": {
+      "type": "number",
+      "unit": "kW",
+      "description": "Most power the battery can draw from the grid in any hour",
+      "label": "maximum charging power (kW)",
+      "min": 0
+    },
+    "max_discharge_kw": {
+      "type": "number",
+      "unit": "kW",
+      "description": "Most power the battery can deliver to the grid in any hour",
+      "label": "maximum discharging power (kW)",
+      "min": 0
+    },
+    "charge_efficiency": {
+      "type": "number",
+      "unit": "0-1",
+      "description": "Share of the energy drawn from the grid for charging that ends up stored in the battery",
+      "label": "charging efficiency",
+      "min": 0.5,
+      "max": 1
+    },
+    "discharge_efficiency": {
+      "type": "number",
+      "unit": "0-1",
+      "description": "Share of the energy taken out of the battery for discharging that reaches the grid; the battery gives up energy at 1 / discharge_efficiency per kWh delivered",
+      "label": "discharging efficiency",
+      "min": 0.5,
+      "max": 1
+    },
+    "initial_soc_kwh": {
+      "type": "number",
+      "unit": "kWh",
+      "description": "Energy stored in the battery at the start of the day",
+      "label": "battery charge at the start of the day (kWh)",
+      "min": 0
+    },
+    "terminal_soc_kwh": {
+      "type": "number",
+      "unit": "kWh",
+      "description": "Least energy the battery must hold at the end of the last hour",
+      "label": "minimum battery charge at the end of the day (kWh)",
+      "min": 0
+    }
+  },
+  "decision_variables": {
+    "charge[hour]": "battery charging power drawn from the grid, kW (0..max_charge_kw)",
+    "discharge[hour]": "battery discharging power delivered to the grid, kW (0..max_discharge_kw)",
+    "soc[hour]": "energy stored in the battery at the end of the hour, kWh (0..energy_capacity_kwh)"
+  },
+  "constraints": {
+    "soc_balance[hour]": "soc = soc[previous hour] + charge_efficiency * step_hours * charge - step_hours / discharge_efficiency * discharge (initial_soc_kwh before the first hour)",
+    "terminal_soc": "soc[last hour] >= terminal_soc_kwh"
+  },
+  "kpis": [
+    "profit",
+    "export_revenue",
+    "import_cost",
+    "energy_charged_kwh",
+    "energy_discharged_kwh",
+    "conversion_losses_kwh",
+    "full_cycles",
+    "peak_soc_kwh",
+    "charge_kw_by_hour",
+    "discharge_kw_by_hour"
+  ],
+  "measures": {
+    "charge": {
+      "dims": [
+        "hour"
+      ],
+      "label": "battery charging power (kW)"
+    },
+    "discharge": {
+      "dims": [
+        "hour"
+      ],
+      "label": "battery discharging power (kW)"
+    },
+    "soc": {
+      "dims": [
+        "hour"
+      ],
+      "label": "battery stored energy (kWh)"
+    }
+  }
+}

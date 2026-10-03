@@ -1,0 +1,3 @@
+name,value,description
+max_nutrient_factor,2,Upper limit on each nutrient per person per day as a multiple of its minimum requirement (twice the minimum in the original)
+max_purchase,10000000,Most units of one food that can be bought at one supplier (the original's deliberately large purchase limit; it never binds)

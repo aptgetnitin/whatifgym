@@ -70,8 +70,8 @@ Every model, dataset and scenario in this repository comes from **public, permis
 (Apache-2.0, MIT, BSD) and is **rebuilt from scratch** here. No employer or client code, data, scenarios or names
 are used, now or later. Each ported model records its source, licence and the reference optimum obtained by running
 the original public implementation (`whatifgym/models/<name>/reference.json`); the full list with the notices the
-licences require is `ATTRIBUTION.md`. Ten models are ported so far; the thirty-model shortlist they come from, with
-links, licences and measured sizes, is `docs/base_models.md`.
+licences require is `ATTRIBUTION.md`. Fourteen models are ported so far; the thirty-model shortlist they come from,
+with links, licences and measured sizes, is `docs/base_models.md`.
 
 ## 3. Glossary
 
@@ -151,10 +151,10 @@ requirements.txt, setup.sh      pulp<4, highspy, pyscipopt, ortools, jsonschema,
 
 ## 5. Base models
 
-Ten public models are ported so far, chosen from the shortlist in `docs/base_models.md` to cover several domains
-and all three problem types. Each one reproduces the published optimum on HiGHS, SCIP and CBC
-(`scripts/verify_models.py`: 33 of 33 model–solver pairs match); the pure-integer ones also have a native OR-Tools
-CP-SAT formulation.
+Fourteen public models are ported so far, chosen from the shortlist in `docs/base_models.md` to cover several
+domains and all three problem types. Each one reproduces the published optimum on HiGHS, SCIP and CBC
+(`scripts/verify_models.py`; for the last four the original notebook was also re-run on Gurobi 13 and its value
+stored in `reference.json`); the pure-integer ones also have a native OR-Tools CP-SAT formulation.
 
 | model | origin (all re-implemented; data values only) | type | vars / cons / int | sense | reference optimum | scoring KPIs | measures |
 |---|---|---|---|---|---|---|---|
@@ -168,6 +168,10 @@ CP-SAT formulation.
 | `multiple_knapsack` | OR-Tools samples, multiple knapsack | IP | 75 / 20 / 75 | max | 395 | packed_value | x |
 | `bin_packing` | OR-Tools samples, bin packing | IP | 132 / 22 / 132 | min | 4 | bins_used, total_weight, min_bins_by_weight | x, y |
 | `wedding_seating` | PuLP case study, set partitioning (every candidate table is a column) | IP | 3 213 / 18 / 3 213 | min | 12 | total_unhappiness | x |
+| `farm_planning` | Gurobi, Farm Planning: five-year herd, crop and capital plan (Williams ex. 8) | LP | 131 / 116 / 0 | max | 121 719.17 | profit, final_dairy_cows, heifer_calves, feed_trade_tons, extra_housing_places, overtime_hours, revenue, costs | herd, grow_grain, raise_heifers, sell_heifers, grow_beet, buy/sell grain and beet, overtime, extra_housing, yearly_profit |
+| `battery_scheduling` | Gurobi, Battery Scheduling (variant S): hourly charge/discharge against grid prices | LP | 72 / 25 / 0 | max | 1.56625 | profit, export_revenue, import_cost, energy_charged_kwh, energy_discharged_kwh | charge, discharge, soc |
+| `car_rental_2` | Gurobi, Car Rental 2: Car Rental 1 plus repair-capacity expansion decisions (Williams ex. 26) | MILP | 294 / 118 / 5 | max | 132 341.47 | car_rental's five + expansion_cost, capacity_added | car_rental's nine + expand |
+| `food_supply` | Gurobi, Food Supply (World Food Programme): rations, procurement and transport over a network | LP | 1 397 / 437 / 0 | min | 400 812 394.00 | total_cost, procurement_cost, transport_cost, food_bought | ration, purchase, flow |
 
 Every model follows the same contract (`whatifgym/base.py`):
 
@@ -187,8 +191,8 @@ class FactoryPlanning(BaseModel):
 per dimension), `table_keys(data)` (which rows exist, keys only) and `solve(data, solver, time_limit,
 keep_variables)`. Solver libraries are imported lazily inside methods, never at module import (see section 13).
 
-`docs/PORTING_GUIDE.md` is the step-by-step recipe that produced these ten; the remaining twenty shortlisted models
-are the porting queue.
+`docs/PORTING_GUIDE.md` is the step-by-step recipe that produced these fourteen; the remaining sixteen shortlisted
+models are the porting queue (the CP-SAT-native scheduling models need a CP-SAT path for rules first).
 
 ## 6. The scenario DSL
 

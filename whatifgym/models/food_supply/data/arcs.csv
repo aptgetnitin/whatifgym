@@ -1,0 +1,38 @@
+from_city,to_city,transport_cost
+Aleppo,Ar Raqqa,408
+Aleppo,Idleb,133.8
+Amman,As_Suweida,296
+Amman,Daraa,199.8
+Ar Raqqa,Aleppo,408
+Ar Raqqa,Dayr_Az_Zor,278
+Ar Raqqa,Hassakeh,440
+As_Suweida,Damascus,222
+As_Suweida,Daraa,114
+As_Suweida,Dayr_Az_Zor,1102
+Beirut,Damascus,226
+Beirut,Homs,372
+Damascus,As_Suweida,222
+Damascus,Daraa,222
+Damascus,Homs,332
+Daraa,As_Suweida,114
+Daraa,Damascus,222
+Daraa,Daraa,0
+Dayr_Az_Zor,Ar Raqqa,278
+Dayr_Az_Zor,As_Suweida,1102
+Dayr_Az_Zor,Dayr_Az_Zor,0
+Dayr_Az_Zor,Jubb_al_Jarrah,642
+Gaziantep,Aleppo,246
+Hama,Homs,92
+Hama,Idleb,208
+Hama,Jubb_al_Jarrah,148
+Hassakeh,Ar Raqqa,440
+Hassakeh,Hassakeh,0
+Hassakeh,Qamishli,163
+Homs,Damascus,332
+Homs,Hama,92
+Homs,Jubb_al_Jarrah,131.6
+Idleb,Aleppo,133.8
+Idleb,Hama,208
+Jubb_al_Jarrah,Dayr_Az_Zor,642
+Jubb_al_Jarrah,Hama,131.6
+Jubb_al_Jarrah,Homs,131.6

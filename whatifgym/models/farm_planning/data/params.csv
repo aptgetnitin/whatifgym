@@ -1,0 +1,36 @@
+name,value,description
+land_area,200,Acres of land on the farm (shared by heifers and dairy cows and by grain and sugar beet)
+housing_capacity,130,Cow places in the existing housing (heifers and dairy cows; cows sold at the sale age need none)
+heifer_acres,0.6666666666666666,Acres needed to support one heifer for a year (two thirds of an acre)
+cow_acres,1,Acres needed to support one dairy cow for a year
+beet_yield,1.5,Tons of sugar beet harvested per acre (any acre of the farm can grow sugar beet)
+grain_per_cow,0.6,Tons of grain eaten by one dairy cow in a year
+beet_per_cow,0.7,Tons of sugar beet eaten by one dairy cow in a year
+heifer_labour_hours,10,Labour hours needed per heifer per year
+cow_labour_hours,42,Labour hours needed per dairy cow per year
+grain_labour_hours,4,Labour hours needed per acre of grain per year
+beet_labour_hours,14,Labour hours needed per acre of sugar beet per year
+regular_labour_hours,5500,Labour hours covered by the regular labour cost each year
+regular_labour_cost,4000,Yearly cost of the regular labour (paid whatever the plan)
+overtime_cost,1.2,Cost of each labour hour beyond the regular hours
+heifer_death_rate,0.05,Share of heifers that die each year (applied to calves raised and to one-year-old heifers)
+cow_death_rate,0.02,Share of dairy cows that die each year
+calves_per_cow,1.1,Calves born per dairy cow per year
+heifer_calf_share,0.5,Share of calves born that are heifers; the rest are bullocks sold at birth
+bullock_price,30,Price of a bullock calf sold shortly after birth
+heifer_calf_price,40,Price of a heifer calf sold at birth instead of being raised
+cull_cow_price,120,Price of a cow sold at the sale age (12 years)
+milk_revenue_per_cow,370,Yearly revenue from the milk of one dairy cow
+grain_purchase_price,90,Price paid per ton of grain bought
+grain_sale_price,75,Price received per ton of grain sold
+beet_purchase_price,70,Price paid per ton of sugar beet bought
+beet_sale_price,58,Price received per ton of sugar beet sold
+heifer_upkeep,50,Other yearly cost per heifer
+cow_upkeep,100,Other yearly cost per dairy cow
+grain_acre_cost,15,Other yearly cost per acre of grain
+beet_acre_cost,10,Other yearly cost per acre of sugar beet
+housing_installment,39.71,Yearly loan repayment per extra cow place (each place costs 200 and is financed by a loan repaid in equal yearly instalments; book value at 15% over 10 years)
+loan_term_years,10,Number of equal yearly repayments of the housing loan; repayments still due after the last planning year are charged to the plan
+min_final_dairy_cows,50,Fewest dairy cows allowed in the last planning year (half of today's 100)
+max_final_dairy_cows,175,Most dairy cows allowed in the last planning year (today's 100 plus 75%)
+min_yearly_profit,0,Lowest profit (cash flow after loan repayments) allowed in any year; 0 = no year may make a loss

@@ -1,0 +1,417 @@
+{
+  "model": "farm_planning",
+  "sense": "max",
+  "objective": "sum over years of yearly_profit, minus housing_installment * (repayments still due after the last year) * extra_housing for the housing added in each year",
+  "tables": {
+    "years": {
+      "key": [
+        "year"
+      ],
+      "label": "planning years",
+      "columns": {
+        "year": {
+          "type": "string",
+          "description": "Year of the plan (the notebook's years 1 to 5)",
+          "label": "year"
+        },
+        "order": {
+          "type": "int",
+          "description": "Position in the horizon (1 = first year). The first year starts from the initial herd, the last year must end with a dairy herd within the final limits, and housing added in a year leaves loan_term_years minus its repayments inside the horizon still to be paid after the last year",
+          "label": "year number",
+          "editable": false
+        }
+      }
+    },
+    "land_groups": {
+      "key": [
+        "land_group"
+      ],
+      "label": "land groups suitable for grain",
+      "columns": {
+        "land_group": {
+          "type": "string",
+          "description": "Group of acres on which grain can grow (the notebook's land groups 1 to 4); these acres are part of land_area",
+          "label": "land group"
+        },
+        "area": {
+          "type": "number",
+          "unit": "acres",
+          "description": "Acres of the group on which grain can grow",
+          "label": "grain-suitable acres"
+        },
+        "grain_yield": {
+          "type": "number",
+          "unit": "tons/acre",
+          "description": "Tons of grain harvested per acre of the group; at most grain_yield * area tons a year",
+          "label": "grain yield per acre"
+        }
+      }
+    },
+    "ages": {
+      "key": [
+        "age"
+      ],
+      "label": "herd ages",
+      "removable": false,
+      "columns": {
+        "age": {
+          "type": "int",
+          "unit": "years",
+          "description": "Age of the animals. Sorted, the youngest age holds the one-year-old heifers (calves raised in a year join it the next year), the oldest holds the cows sold that year at cull_cow_price (they need no housing, land, labour or feed), and the ages in between are dairy cows, which give milk and calves and eat grain and sugar beet (ages 1, 12 and 2 to 11 in the published data)",
+          "label": "age"
+        },
+        "initial_head": {
+          "type": "number",
+          "unit": "head",
+          "description": "Animals of this age in the first year: today's 10 head per age from newborn to 11 years, one year older and net of one year's deaths (9.5 heifers of ages 1 and 2, 9.8 cows of ages 3 to 12). Structural: the starting herd, not a what-if input",
+          "label": "head of this age in the first year",
+          "editable": false
+        }
+      }
+    }
+  },
+  "params": {
+    "land_area": {
+      "type": "number",
+      "unit": "acres",
+      "description": "Acres of land on the farm, shared by heifers, dairy cows, grain and sugar beet",
+      "label": "farm area (acres)",
+      "min": 0
+    },
+    "housing_capacity": {
+      "type": "int",
+      "unit": "cow places",
+      "description": "Places in the existing housing; heifers (calves being raised and one-year-olds) and dairy cows each need one",
+      "label": "existing housing capacity (cow places)",
+      "min": 0
+    },
+    "heifer_acres": {
+      "type": "number",
+      "unit": "acres/heifer",
+      "description": "Acres needed to support one heifer (a calf being raised or a one-year-old) for a year; two thirds of an acre",
+      "label": "acres needed per heifer"
+    },
+    "cow_acres": {
+      "type": "number",
+      "unit": "acres/cow",
+      "description": "Acres needed to support one dairy cow for a year",
+      "label": "acres needed per dairy cow"
+    },
+    "beet_yield": {
+      "type": "number",
+      "unit": "tons/acre",
+      "description": "Tons of sugar beet harvested per acre; any acre of the farm can grow sugar beet (0 = no sugar beet can be grown)",
+      "label": "sugar beet yield per acre (tons)",
+      "min": 0
+    },
+    "grain_per_cow": {
+      "type": "number",
+      "unit": "tons/cow/year",
+      "description": "Grain eaten by one dairy cow in a year",
+      "label": "grain eaten per dairy cow per year (tons)"
+    },
+    "beet_per_cow": {
+      "type": "number",
+      "unit": "tons/cow/year",
+      "description": "Sugar beet eaten by one dairy cow in a year",
+      "label": "sugar beet eaten per dairy cow per year (tons)"
+    },
+    "heifer_labour_hours": {
+      "type": "number",
+      "unit": "hours/heifer/year",
+      "description": "Labour needed per heifer per year",
+      "label": "labour hours per heifer per year"
+    },
+    "cow_labour_hours": {
+      "type": "number",
+      "unit": "hours/cow/year",
+      "description": "Labour needed per dairy cow per year",
+      "label": "labour hours per dairy cow per year"
+    },
+    "grain_labour_hours": {
+      "type": "number",
+      "unit": "hours/acre/year",
+      "description": "Labour needed per acre of grain per year",
+      "label": "labour hours per acre of grain"
+    },
+    "beet_labour_hours": {
+      "type": "number",
+      "unit": "hours/acre/year",
+      "description": "Labour needed per acre of sugar beet per year",
+      "label": "labour hours per acre of sugar beet"
+    },
+    "regular_labour_hours": {
+      "type": "number",
+      "unit": "hours/year",
+      "description": "Labour hours covered each year by the regular labour cost; hours beyond them are overtime",
+      "label": "regular labour hours per year"
+    },
+    "regular_labour_cost": {
+      "type": "number",
+      "unit": "USD/year",
+      "description": "Yearly cost of the regular labour, paid whatever the plan",
+      "label": "yearly cost of regular labour"
+    },
+    "overtime_cost": {
+      "type": "number",
+      "unit": "USD/hour",
+      "description": "Cost of each labour hour beyond the regular hours",
+      "label": "overtime cost per hour"
+    },
+    "heifer_death_rate": {
+      "type": "number",
+      "unit": "fraction/year",
+      "description": "Share of heifers that die each year: applied to the calves raised (on becoming one-year-olds) and to the one-year-olds (on becoming dairy cows)",
+      "label": "yearly heifer death rate",
+      "min": 0,
+      "max": 1
+    },
+    "cow_death_rate": {
+      "type": "number",
+      "unit": "fraction/year",
+      "description": "Share of dairy cows that die each year",
+      "label": "yearly dairy cow death rate",
+      "min": 0,
+      "max": 1
+    },
+    "calves_per_cow": {
+      "type": "number",
+      "unit": "calves/cow/year",
+      "description": "Calves born per dairy cow per year",
+      "label": "calves born per dairy cow per year",
+      "min": 0
+    },
+    "heifer_calf_share": {
+      "type": "number",
+      "unit": "fraction",
+      "description": "Share of the calves born that are heifers; the rest are bullocks, sold shortly after birth",
+      "label": "share of calves that are heifers",
+      "min": 0,
+      "max": 1
+    },
+    "bullock_price": {
+      "type": "number",
+      "unit": "USD/head",
+      "description": "Price of a bullock calf, sold shortly after birth",
+      "label": "sale price of a bullock calf"
+    },
+    "heifer_calf_price": {
+      "type": "number",
+      "unit": "USD/head",
+      "description": "Price of a heifer calf sold at birth instead of being raised",
+      "label": "sale price of a heifer calf"
+    },
+    "cull_cow_price": {
+      "type": "number",
+      "unit": "USD/head",
+      "description": "Price of a cow sold at the sale age (12 years)",
+      "label": "sale price of a cow at the sale age"
+    },
+    "milk_revenue_per_cow": {
+      "type": "number",
+      "unit": "USD/cow/year",
+      "description": "Yearly revenue from the milk of one dairy cow",
+      "label": "yearly milk revenue per dairy cow"
+    },
+    "grain_purchase_price": {
+      "type": "number",
+      "unit": "USD/ton",
+      "description": "Price paid per ton of grain bought",
+      "label": "purchase price of grain per ton"
+    },
+    "grain_sale_price": {
+      "type": "number",
+      "unit": "USD/ton",
+      "description": "Price received per ton of grain sold",
+      "label": "sale price of grain per ton"
+    },
+    "beet_purchase_price": {
+      "type": "number",
+      "unit": "USD/ton",
+      "description": "Price paid per ton of sugar beet bought",
+      "label": "purchase price of sugar beet per ton"
+    },
+    "beet_sale_price": {
+      "type": "number",
+      "unit": "USD/ton",
+      "description": "Price received per ton of sugar beet sold",
+      "label": "sale price of sugar beet per ton"
+    },
+    "heifer_upkeep": {
+      "type": "number",
+      "unit": "USD/heifer/year",
+      "description": "Other yearly cost per heifer (calves being raised and one-year-olds)",
+      "label": "other yearly cost per heifer"
+    },
+    "cow_upkeep": {
+      "type": "number",
+      "unit": "USD/cow/year",
+      "description": "Other yearly cost per dairy cow",
+      "label": "other yearly cost per dairy cow"
+    },
+    "grain_acre_cost": {
+      "type": "number",
+      "unit": "USD/acre/year",
+      "description": "Other yearly cost per acre of grain",
+      "label": "other yearly cost per acre of grain"
+    },
+    "beet_acre_cost": {
+      "type": "number",
+      "unit": "USD/acre/year",
+      "description": "Other yearly cost per acre of sugar beet",
+      "label": "other yearly cost per acre of sugar beet"
+    },
+    "housing_installment": {
+      "type": "number",
+      "unit": "USD/cow place/year",
+      "description": "Yearly loan repayment per cow place added to housing. A place costs 200, financed by a loan repaid in loan_term_years equal yearly instalments; 39.71 is the book's value at 15% over 10 years (the annuity formula gives 39.85). Not recomputed when loan_term_years changes",
+      "label": "yearly loan repayment per extra cow place",
+      "min": 0
+    },
+    "loan_term_years": {
+      "type": "int",
+      "unit": "years",
+      "description": "Number of equal yearly repayments of a housing loan, starting in the year the housing is added; repayments due after the last planning year are charged to the plan in the objective",
+      "label": "number of yearly loan repayments",
+      "min": 1
+    },
+    "min_final_dairy_cows": {
+      "type": "int",
+      "unit": "head",
+      "description": "Fewest dairy cows allowed in the last planning year (today's 100 less 50%)",
+      "label": "minimum number of dairy cows in the last year",
+      "min": 0
+    },
+    "max_final_dairy_cows": {
+      "type": "int",
+      "unit": "head",
+      "description": "Most dairy cows allowed in the last planning year (today's 100 plus 75%)",
+      "label": "maximum number of dairy cows in the last year",
+      "min": 0
+    },
+    "min_yearly_profit": {
+      "type": "number",
+      "unit": "USD/year",
+      "description": "Lowest profit (cash flow after loan repayments) allowed in any year; 0 means no year may make a loss",
+      "label": "minimum profit in any year"
+    }
+  },
+  "decision_variables": {
+    "herd[year, age]": "animals of the age in the year (>= 0): one-year-old heifers at the youngest age, dairy cows in between, cows sold at the oldest (the notebook's Cows)",
+    "raise_heifers[year]": "heifer calves born in the year and kept to be raised (>= 0; the notebook's Newborn)",
+    "sell_heifers[year]": "heifer calves sold at birth (>= 0; the notebook's HF_sell)",
+    "grow_grain[year, land_group]": "tons of grain grown on the land group (>= 0; the notebook's GR)",
+    "grow_beet[year]": "tons of sugar beet grown (>= 0; the notebook's SB)",
+    "buy_grain[year]": "tons of grain bought (>= 0; the notebook's GR_buy)",
+    "sell_grain[year]": "tons of grain sold (>= 0; the notebook's GR_sell)",
+    "buy_beet[year]": "tons of sugar beet bought (>= 0; the notebook's SB_buy)",
+    "sell_beet[year]": "tons of sugar beet sold (>= 0; the notebook's SB_sell)",
+    "overtime[year]": "labour hours beyond regular_labour_hours (>= 0; the notebook's Overtime, which counts hundreds of hours)",
+    "extra_housing[year]": "cow places added to housing in the year, each financed by a loan (>= 0; the notebook's Outlay, in units of 200 USD)",
+    "yearly_profit[year]": "profit of the year after loan repayments (>= min_yearly_profit; the notebook's Profit)",
+    "final_dairy_cows_headroom": "max_final_dairy_cows minus the dairy cows of the last year, in [0, max_final_dairy_cows - min_final_dairy_cows]: the slack of the final-herd range row (Gurobi's RgFinal_dairy_cows); not a measure"
+  },
+  "constraints": {
+    "housing[year]": "raise_heifers + herd[youngest age] + dairy cows <= housing_capacity + extra_housing added up to and including the year",
+    "grain_feed[year]": "grain_per_cow * dairy cows <= buy_grain - sell_grain + sum over land groups of grow_grain",
+    "beet_feed[year]": "beet_per_cow * dairy cows <= buy_beet - sell_beet + grow_beet",
+    "grain_land[year, land_group]": "grow_grain <= grain_yield * area",
+    "land[year]": "grow_beet / beet_yield + heifer_acres * (raise_heifers + herd[youngest age]) + sum over land groups of grow_grain / grain_yield + cow_acres * dairy cows <= land_area",
+    "labour[year]": "heifer_labour_hours * heifers + cow_labour_hours * dairy cows + grain_labour_hours * grain acres + beet_labour_hours * sugar beet acres <= regular_labour_hours + overtime",
+    "calves_raised[year]": "herd[year, youngest age] = (1 - heifer_death_rate) * raise_heifers[previous year], every year after the first",
+    "heifers_calve[year]": "herd[year, first dairy age] = (1 - heifer_death_rate) * herd[previous year, youngest age], every year after the first",
+    "ageing[year, age]": "herd[year, age] = (1 - cow_death_rate) * herd[previous year, next younger age], for every age above the first dairy age, every year after the first",
+    "calving[year]": "raise_heifers + sell_heifers = calves_per_cow * heifer_calf_share * dairy cows",
+    "final_dairy_cows": "dairy cows of the last year + final_dairy_cows_headroom = max_final_dairy_cows, so the last year's dairy herd lies in [min_final_dairy_cows, max_final_dairy_cows]",
+    "initial_herd[age]": "herd[first year, age] = initial_head",
+    "profit[year]": "yearly_profit = milk + bullock and heifer calves sold + cows sold at the sale age + crops sold - feed bought - regular labour and overtime - upkeep of heifers and dairy cows - crop acre costs - housing loan repayments due in the year"
+  },
+  "kpis": [
+    "profit",
+    "profit_by_year",
+    "final_dairy_cows",
+    "dairy_cows_by_year",
+    "heifer_calves",
+    "feed_trade_tons",
+    "extra_housing_places",
+    "overtime_hours",
+    "revenue",
+    "costs"
+  ],
+  "measures": {
+    "herd": {
+      "dims": [
+        "year",
+        "age"
+      ],
+      "label": "head of cattle"
+    },
+    "raise_heifers": {
+      "dims": [
+        "year"
+      ],
+      "label": "heifer calves raised"
+    },
+    "sell_heifers": {
+      "dims": [
+        "year"
+      ],
+      "label": "heifer calves sold"
+    },
+    "grow_grain": {
+      "dims": [
+        "year",
+        "land_group"
+      ],
+      "label": "tons of grain grown"
+    },
+    "grow_beet": {
+      "dims": [
+        "year"
+      ],
+      "label": "tons of sugar beet grown"
+    },
+    "buy_grain": {
+      "dims": [
+        "year"
+      ],
+      "label": "tons of grain bought"
+    },
+    "sell_grain": {
+      "dims": [
+        "year"
+      ],
+      "label": "tons of grain sold"
+    },
+    "buy_beet": {
+      "dims": [
+        "year"
+      ],
+      "label": "tons of sugar beet bought"
+    },
+    "sell_beet": {
+      "dims": [
+        "year"
+      ],
+      "label": "tons of sugar beet sold"
+    },
+    "overtime": {
+      "dims": [
+        "year"
+      ],
+      "label": "overtime labour hours"
+    },
+    "extra_housing": {
+      "dims": [
+        "year"
+      ],
+      "label": "extra cow places built"
+    },
+    "yearly_profit": {
+      "dims": [
+        "year"
+      ],
+      "label": "yearly profit (USD)"
+    }
+  }
+}
