@@ -169,7 +169,7 @@ def _ollama_request(host: str, path: str, body: dict | None = None, timeout: flo
 
 def make_ollama_agent(model_name: str, host: str = "http://localhost:11434", num_ctx: int = 16384, think: str = "off",
                       max_tokens: int = 2000, temperature: float = 0.0, json_mode: bool = True,
-                      save_dir: str | None = None, timeout: float = 900.0):
+                      save_dir: str | None = None, timeout: float = 900.0, think_max_tokens: int = 8192):
     """A local open-weight model through Ollama's native /api/chat.
 
     Pre-flight: the server answers, the model is pulled, and its native context length is at least --num-ctx
@@ -189,12 +189,16 @@ def make_ollama_agent(model_name: str, host: str = "http://localhost:11434", num
 
     think_value = {"off": False, "on": True}.get(think, think)
     send_think = {"value": True}
+    # distinct label so a thinking run is not merged with the plain run (both share the Ollama model id)
+    label = f"ollama/{model_name}" + ("" if think == "off" else f"+think={think}")
+    # thinking tokens count against num_predict: give a thinking run room, or answers get cut off mid-JSON
+    budget = max_tokens if think == "off" else max(max_tokens, think_max_tokens)
 
     def agent(obs, task, state):
         prompt = build_prompt(obs)
         body = {"model": model_name, "stream": False,
                 "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": prompt}],
-                "options": {"num_ctx": num_ctx, "temperature": temperature, "num_predict": max_tokens, "seed": 0}}
+                "options": {"num_ctx": num_ctx, "temperature": temperature, "num_predict": budget, "seed": 0}}
         if json_mode:
             body["format"] = "json"
         if send_think["value"]:
@@ -206,18 +210,30 @@ def make_ollama_agent(model_name: str, host: str = "http://localhost:11434", num
             if "think" in str(exc).lower() and send_think["value"]:
                 send_think["value"] = False          # model has no thinking switch: resend without it, once for all
                 body.pop("think", None)
-                resp = _ollama_request(host, "/api/chat", body, timeout=timeout)
+                try:
+                    resp = _ollama_request(host, "/api/chat", body, timeout=timeout)
+                except RuntimeError as exc2:
+                    exc = exc2
+                    resp = None
             else:
-                raise
+                resp = None
+            if resp is None:
+                # a per-task server error (e.g. HTTP 500 "token repeat limit reached") must not abort the whole
+                # run: record it, score it as a failed answer, and move to the next task.
+                state["request_error"] = str(exc)[:300]
+                state["latency_s"] = state.get("latency_s", 0.0) + time.perf_counter() - t0
+                state["model"] = label
+                _save_answer(save_dir, task.id, f"REQUEST_ERROR: {exc}")
+                return {"type": "scenario", "scenario": {"version": "0.1", "note": "request error", "data_changes": []}}
         text = (resp.get("message") or {}).get("content", "")
         state["latency_s"] = state.get("latency_s", 0.0) + time.perf_counter() - t0
         state["input_tokens"] = state.get("input_tokens", 0) + int(resp.get("prompt_eval_count") or 0)
         state["output_tokens"] = state.get("output_tokens", 0) + int(resp.get("eval_count") or 0)
-        state["model"] = f"ollama/{model_name}"
+        state["model"] = label
         state["raw_output"] = text[:4000]
         if (resp.get("message") or {}).get("thinking"):
             state["thinking_chars"] = len(resp["message"]["thinking"])
-        if int(resp.get("prompt_eval_count") or 0) >= num_ctx - max_tokens:
+        if int(resp.get("prompt_eval_count") or 0) >= num_ctx - budget:
             state["truncated"] = True
             print(f"warning: {task.id}: prompt filled the context window ({resp.get('prompt_eval_count')} tokens); raise --num-ctx")
         if resp.get("done_reason") == "length":
@@ -326,6 +342,9 @@ def summarise(records) -> str:
         lines.append(f"prompts that filled the context window (likely truncated): {truncated}")
     if cut_off:
         lines.append(f"answers cut off at max tokens: {cut_off}")
+    request_errors = sum(1 for r in records if r["agent_state"].get("request_error"))
+    if request_errors:
+        lines.append(f"server/request errors (scored as wrong): {request_errors}")
     parse_errors = sum(1 for r in records if r["agent_state"].get("parse_error"))
     missing = sum(1 for r in records if r["agent_state"].get("missing_answer"))
     if parse_errors:
@@ -349,6 +368,7 @@ def main(argv=None) -> int:
     ap.add_argument("--think", default="off", help="Ollama thinking: off | on | low | medium | high (gpt-oss levels)")
     ap.add_argument("--no-json-mode", action="store_true", help="do not constrain Ollama output to JSON")
     ap.add_argument("--max-tokens", type=int, default=2000, help="max output tokens per answer")
+    ap.add_argument("--think-max-tokens", type=int, default=8192, help="output budget when thinking is on (thinking tokens count against it)")
     ap.add_argument("--save-answers", default=None, metavar="DIR", help="save each raw model reply as DIR/<task_id>.json (re-score later with --agent answers)")
     ap.add_argument("--solver", default="highs")
     ap.add_argument("--limit", type=int, default=None)
@@ -368,7 +388,7 @@ def main(argv=None) -> int:
         agent = make_anthropic_agent(args.model, max_tokens=args.max_tokens)
     elif args.agent == "ollama":
         agent = make_ollama_agent(args.model, host=args.host, num_ctx=args.num_ctx, think=args.think, max_tokens=args.max_tokens,
-                                  json_mode=not args.no_json_mode, save_dir=args.save_answers)
+                                  json_mode=not args.no_json_mode, save_dir=args.save_answers, think_max_tokens=args.think_max_tokens)
     elif args.agent == "answers":
         if not args.answers_dir:
             raise SystemExit("--agent answers needs --answers-dir")

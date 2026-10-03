@@ -116,14 +116,14 @@ def build_tables(records: list[dict], skip_trivial: bool = True) -> str:
         lines.append("")
 
     # ---- failure modes
-    lines += ["## Failure modes", "", "| model | wrong result | invalid DSL | unparseable | cut off at max tokens | truncated prompt |", "|---|---|---|---|---|---|"]
+    lines += ["## Failure modes", "", "| model | wrong result | invalid DSL | unparseable | cut off at max tokens | truncated prompt | request errors |", "|---|---|---|---|---|---|---|"]
     for lab in labels:
         rows = by_label[lab]
         st = [r.get("agent_state", {}) for r in rows]
         invalid = sum(1 for r in rows if not r["valid_dsl"])
         unparse = sum(1 for s in st if s.get("parse_error"))
         wrong = sum(1 for r in rows if not r["correct"] and r["valid_dsl"])
-        lines.append(f"| `{lab}` | {wrong} | {invalid} | {unparse} | {sum(1 for s in st if s.get('cut_off'))} | {sum(1 for s in st if s.get('truncated'))} |")
+        lines.append(f"| `{lab}` | {wrong} | {invalid} | {unparse} | {sum(1 for s in st if s.get('cut_off'))} | {sum(1 for s in st if s.get('truncated'))} | {sum(1 for s in st if s.get('request_error'))} |")
     lines.append("")
     return "\n".join(lines)
 

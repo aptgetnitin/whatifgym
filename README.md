@@ -521,7 +521,11 @@ Two things the runner enforces because they silently corrupt results otherwise: 
 `--num-ctx` (16384) on every call, since Ollama's default of 4096 tokens truncates our 4–7k-token prompts from
 the front without any error; and JSON output mode is on (`--no-json-mode` to measure raw format compliance).
 Thinking is off by default (`--think on`, or `low|medium|high` for gpt-oss) so runs are comparable and fast; a
-model without a thinking switch is retried without the flag. Per-episode records land in
+model without a thinking switch is retried without the flag; thinking runs get a separate output budget
+(`--think-max-tokens`, 8192) because Ollama counts thinking tokens against `num_predict` and 2,000 tokens cut 29 of
+399 answers off mid-JSON in the first thinking run; the result label carries the setting (`+think=on`). A per-task
+server error (Ollama can return HTTP 500 on a repetition loop) is recorded and scored as a wrong answer instead of
+aborting the run. Per-episode records land in
 `results/baselines/local/<model>/`, raw replies in its `raw_answers/` (re-scorable with `--agent answers`), and
 `scripts/summarise_results.py` builds the comparison tables — accuracy by family, difficulty, base model and
 template, plus failure modes (wrong result, invalid DSL, unparseable, cut off, truncated) — in
