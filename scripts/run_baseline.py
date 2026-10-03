@@ -4,12 +4,17 @@
     python scripts/run_baseline.py --tasks tasks/factory_planning/data_change_v0.jsonl --agent oracle
     python scripts/run_baseline.py --tasks ... --agent noop
     python scripts/run_baseline.py --tasks ... --agent anthropic --model claude-sonnet-5-5
+    python scripts/run_baseline.py --tasks ... --agent ollama --model qwen3:8b --save-answers results/raw/qwen3-8b
 
 Agents
   oracle            submits the hidden gold scenario (pipeline sanity check: every task must score 1.1)
   noop              submits an empty but valid scenario (scores the 0.1 validity bonus only)
   ask_then_oracle   asks an unnecessary question first, then the gold scenario (expects 0.9)
   anthropic         a frontier model through the Anthropic Messages API (needs ANTHROPIC_API_KEY and `pip install anthropic`)
+  ollama            a local open-weight model served by Ollama (http://localhost:11434); the context window is
+                    forced to --num-ctx (default 16384) because Ollama's default of 4096 silently truncates our
+                    4-7k-token prompts, and JSON output mode is on unless --no-json-mode
+  answers           replays answers collected elsewhere (one <task_id>.json per task) so any model can be scored here
 
 Writes one JSON line per episode to --out and prints a summary table.
 """
@@ -139,6 +144,95 @@ def make_anthropic_agent(model_name: str, max_tokens: int = 4000, retries: int =
     return agent
 
 
+def _save_answer(save_dir, task_id: str, text: str) -> None:
+    if save_dir:
+        Path(save_dir).mkdir(parents=True, exist_ok=True)
+        (Path(save_dir) / f"{task_id}.json").write_text(text, encoding="utf-8")
+
+
+def _ollama_request(host: str, path: str, body: dict | None = None, timeout: float = 600.0) -> dict:
+    import urllib.error
+    import urllib.request
+
+    data = json.dumps(body).encode("utf-8") if body is not None else None
+    req = urllib.request.Request(host.rstrip("/") + path, data=data, method="POST" if body is not None else "GET",
+                                 headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", "replace")[:500]
+        raise RuntimeError(f"Ollama {path} returned HTTP {exc.code}: {detail}") from exc
+    except urllib.error.URLError as exc:
+        raise SystemExit(f"cannot reach Ollama at {host} ({exc.reason}); start it with `ollama serve` or the app") from exc
+
+
+def make_ollama_agent(model_name: str, host: str = "http://localhost:11434", num_ctx: int = 16384, think: str = "off",
+                      max_tokens: int = 2000, temperature: float = 0.0, json_mode: bool = True,
+                      save_dir: str | None = None, timeout: float = 900.0):
+    """A local open-weight model through Ollama's native /api/chat.
+
+    Pre-flight: the server answers, the model is pulled, and its native context length is at least --num-ctx
+    (Ollama's default window is 4096 tokens and it truncates silently; our prompts are 4-7k tokens, so every call
+    sets `num_ctx` explicitly). Thinking is off by default for comparability and speed (`--think on`, or
+    low|medium|high for gpt-oss); a model that does not support the `think` flag is retried without it.
+    """
+    tags = _ollama_request(host, "/api/tags", timeout=30)
+    names = {m.get("name") for m in tags.get("models", [])} | {m.get("model") for m in tags.get("models", [])}
+    if model_name not in names and f"{model_name}:latest" not in names:
+        raise SystemExit(f"model {model_name!r} is not pulled; run `ollama pull {model_name}` (have: {sorted(n for n in names if n)})")
+    show = _ollama_request(host, "/api/show", {"model": model_name}, timeout=60)
+    native_ctx = next((v for k, v in (show.get("model_info") or {}).items() if k.endswith(".context_length")), None)
+    if native_ctx and native_ctx < num_ctx:
+        print(f"warning: {model_name} has a native context of {native_ctx} tokens, below --num-ctx {num_ctx}; prompts may be truncated")
+    print(f"ollama: {model_name} ready (num_ctx={num_ctx}, think={think}, json_mode={json_mode}, native context={native_ctx})")
+
+    think_value = {"off": False, "on": True}.get(think, think)
+    send_think = {"value": True}
+
+    def agent(obs, task, state):
+        prompt = build_prompt(obs)
+        body = {"model": model_name, "stream": False,
+                "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": prompt}],
+                "options": {"num_ctx": num_ctx, "temperature": temperature, "num_predict": max_tokens, "seed": 0}}
+        if json_mode:
+            body["format"] = "json"
+        if send_think["value"]:
+            body["think"] = think_value
+        t0 = time.perf_counter()
+        try:
+            resp = _ollama_request(host, "/api/chat", body, timeout=timeout)
+        except RuntimeError as exc:
+            if "think" in str(exc).lower() and send_think["value"]:
+                send_think["value"] = False          # model has no thinking switch: resend without it, once for all
+                body.pop("think", None)
+                resp = _ollama_request(host, "/api/chat", body, timeout=timeout)
+            else:
+                raise
+        text = (resp.get("message") or {}).get("content", "")
+        state["latency_s"] = state.get("latency_s", 0.0) + time.perf_counter() - t0
+        state["input_tokens"] = state.get("input_tokens", 0) + int(resp.get("prompt_eval_count") or 0)
+        state["output_tokens"] = state.get("output_tokens", 0) + int(resp.get("eval_count") or 0)
+        state["model"] = f"ollama/{model_name}"
+        state["raw_output"] = text[:4000]
+        if (resp.get("message") or {}).get("thinking"):
+            state["thinking_chars"] = len(resp["message"]["thinking"])
+        if int(resp.get("prompt_eval_count") or 0) >= num_ctx - max_tokens:
+            state["truncated"] = True
+            print(f"warning: {task.id}: prompt filled the context window ({resp.get('prompt_eval_count')} tokens); raise --num-ctx")
+        if resp.get("done_reason") == "length":
+            state["cut_off"] = True
+        _save_answer(save_dir, task.id, text)
+        try:
+            scenario = _extract_json(text)
+        except Exception:
+            state["parse_error"] = text[:500]
+            return {"type": "scenario", "scenario": {"version": "0.1", "note": "unparseable model output", "data_changes": []}}
+        return {"type": "scenario", "scenario": scenario}
+
+    return agent
+
+
 def make_answers_agent(answers_dir: str, label: str):
     """Replay answers collected offline: one <task_id>.json (or .txt with JSON inside) per task.
 
@@ -226,6 +320,12 @@ def summarise(records) -> str:
         cost = estimate_cost_usd(model_name, tok_in, tok_out)
         lines.append(f"API tokens: {tok_in} in / {tok_out} out; mean latency {lat / n:.2f}s"
                      + (f"; estimated cost ${cost:.2f} ({model_name})" if cost is not None else ""))
+    truncated = sum(1 for r in records if r["agent_state"].get("truncated"))
+    cut_off = sum(1 for r in records if r["agent_state"].get("cut_off"))
+    if truncated:
+        lines.append(f"prompts that filled the context window (likely truncated): {truncated}")
+    if cut_off:
+        lines.append(f"answers cut off at max tokens: {cut_off}")
     parse_errors = sum(1 for r in records if r["agent_state"].get("parse_error"))
     missing = sum(1 for r in records if r["agent_state"].get("missing_answer"))
     if parse_errors:
@@ -239,11 +339,17 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--tasks", required=True)
     ap.add_argument("--split", default=None, help="train | dev | test (default: all)")
-    ap.add_argument("--agent", default="oracle", choices=["oracle", "noop", "ask_then_oracle", "anthropic", "answers"])
+    ap.add_argument("--agent", default="oracle", choices=["oracle", "noop", "ask_then_oracle", "anthropic", "ollama", "answers"])
     ap.add_argument("--answers-dir", default=None, help="for --agent answers: folder of <task_id>.json replies")
     ap.add_argument("--label", default=None, help="for --agent answers: how to name the model in results")
     ap.add_argument("--export-prompts", default=None, metavar="DIR", help="write each task's full prompt to DIR and exit")
-    ap.add_argument("--model", default="claude-sonnet-5-5", help="API model id for --agent anthropic (see PRICES)")
+    ap.add_argument("--model", default="claude-sonnet-5-5", help="model id: Anthropic API id (see PRICES) or an Ollama tag such as qwen3:8b")
+    ap.add_argument("--host", default=os.environ.get("OLLAMA_HOST", "http://localhost:11434"), help="Ollama server for --agent ollama")
+    ap.add_argument("--num-ctx", type=int, default=16384, help="context window forced on Ollama calls (prompts are 4-7k tokens)")
+    ap.add_argument("--think", default="off", help="Ollama thinking: off | on | low | medium | high (gpt-oss levels)")
+    ap.add_argument("--no-json-mode", action="store_true", help="do not constrain Ollama output to JSON")
+    ap.add_argument("--max-tokens", type=int, default=2000, help="max output tokens per answer")
+    ap.add_argument("--save-answers", default=None, metavar="DIR", help="save each raw model reply as DIR/<task_id>.json (re-score later with --agent answers)")
     ap.add_argument("--solver", default="highs")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--out", default=None)
@@ -259,13 +365,23 @@ def main(argv=None) -> int:
         return 0
     agent = {"oracle": agent_oracle, "noop": agent_noop, "ask_then_oracle": agent_ask_then_oracle}.get(args.agent)
     if args.agent == "anthropic":
-        agent = make_anthropic_agent(args.model)
+        agent = make_anthropic_agent(args.model, max_tokens=args.max_tokens)
+    elif args.agent == "ollama":
+        agent = make_ollama_agent(args.model, host=args.host, num_ctx=args.num_ctx, think=args.think, max_tokens=args.max_tokens,
+                                  json_mode=not args.no_json_mode, save_dir=args.save_answers)
     elif args.agent == "answers":
         if not args.answers_dir:
             raise SystemExit("--agent answers needs --answers-dir")
         agent = make_answers_agent(args.answers_dir, args.label or Path(args.answers_dir).name)
     records = run(tasks, agent, solver=args.solver, verbose=args.verbose)
-    suffix = {"anthropic": "." + args.model, "answers": "." + (args.label or Path(args.answers_dir).name)}.get(args.agent, "")
+    if args.agent == "anthropic":
+        suffix = "." + args.model
+    elif args.agent == "ollama":
+        suffix = "." + args.model.replace(":", "-").replace("/", "-")
+    elif args.agent == "answers":
+        suffix = "." + (args.label or Path(args.answers_dir).name)
+    else:
+        suffix = ""
     out = Path(args.out or ROOT / "results" / f"{Path(args.tasks).stem}.{args.agent}{suffix}.jsonl")
     out.parent.mkdir(parents=True, exist_ok=True)
     with open(out, "w", encoding="utf-8") as fh:

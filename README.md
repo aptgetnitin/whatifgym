@@ -127,15 +127,19 @@ scripts/
   verify_models.py              every model x every available solver vs reference.json (33/33 pairs match)
   build_base_model_table.py     regenerates docs/base_models.md and data/base_models.csv (the 30-model shortlist)
   make_tasks.py                 generates task files for one or all (family, model) pairs; respects tasks/frozen.txt
-  run_baseline.py               runs an agent through the environment: oracle | noop | ask_then_oracle | anthropic | answers
+  run_baseline.py               runs an agent through the environment: oracle | noop | ask_then_oracle | anthropic | ollama | answers
   run_trivial_baselines.py      the three trivial agents on every task file -> results/trivial_baselines.md
+  run_local_baselines.py        local Ollama models over every task file, resumable -> results/baselines/local/
+  summarise_results.py          comparison tables across result files -> results/baselines/summary.md
 tasks/
   <model>/data_change_v0.jsonl  generated tasks (question, hidden gold scenario, reference, split)
   <model>/new_limit_v0.jsonl
   frozen.txt                    task files that published results cite; make_tasks.py never overwrites them
 results/
   trivial_baselines.md          oracle / noop / ask_then_oracle on all 19 task files
+  baselines/summary.md          accuracy tables across every model run so far (regenerate with summarise_results.py)
   baselines/data_change_v0/     the first frontier baseline (Claude Sonnet and Opus on factory_planning data_change)
+  baselines/local/<model>/      local open-weight model runs (created by run_local_baselines.py)
 tests/                          pytest, 166 tests: models, DSL, oracle, scoring, env, families, task files
 docs/
   base_models.md                the 30-model shortlist with sources, licences, measured sizes and what-if hooks
@@ -445,6 +449,28 @@ python scripts/run_baseline.py --tasks tasks/mining/new_limit_v0.jsonl --agent a
 episodes that took the right route (ask vs. answer), accuracy by difficulty and by template, and for API runs the
 token counts, latency and estimated cost.
 
+### Local open-weight models (Ollama)
+
+The small open models that are the eventual RL target run locally through [Ollama](https://ollama.com):
+
+```bash
+ollama pull qwen3:8b
+python scripts/run_local_baselines.py --models qwen3:8b                      # every task file, resumable
+python scripts/run_local_baselines.py --models qwen3:4b qwen3:14b qwen3:32b gpt-oss:20b --split test
+python scripts/run_baseline.py --tasks tasks/mining/new_limit_v0.jsonl --agent ollama --model qwen3:8b --think on
+```
+
+Two things the runner enforces because they silently corrupt results otherwise: the context window is set to
+`--num-ctx` (16384) on every call, since Ollama's default of 4096 tokens truncates our 4–7k-token prompts from
+the front without any error; and JSON output mode is on (`--no-json-mode` to measure raw format compliance).
+Thinking is off by default (`--think on`, or `low|medium|high` for gpt-oss) so runs are comparable and fast; a
+model without a thinking switch is retried without the flag. Per-episode records land in
+`results/baselines/local/<model>/`, raw replies in its `raw_answers/` (re-scorable with `--agent answers`), and
+`scripts/summarise_results.py` builds the comparison tables — accuracy by family, difficulty, base model and
+template, plus failure modes (wrong result, invalid DSL, unparseable, cut off, truncated) — in
+`results/baselines/summary.md`. On an Apple-silicon laptop an 8B model takes roughly 20–40 s per task
+(reading the prompt dominates), so the full 399 tasks is a few hours unattended.
+
 ## 12. Extending: new model, new family, new template
 
 **A new base model** follows `docs/PORTING_GUIDE.md`: pick a public, permissively licensed model; put its numbers
@@ -514,6 +540,7 @@ keep that property or the data-change family becomes a look-up exercise.
 | done | Oracle, scorer (relative 1e-3 on status, objective and scoring KPIs) and environment (ask + scenario, 3 turns) |
 | done | Two task families (`data_change`, `new_limit`) with specific and schema-driven generic templates; 399 tasks in 19 files over all 10 models; trivial agents exact on every file |
 | done | First frontier baseline on `factory_planning` data_change: Claude Sonnet 59/60, Claude Opus 60/60 |
+| next | Small open models (Qwen3 4B–32B, gpt-oss 20B) on all 399 tasks through Ollama — the go/no-go measurement for the RL story: is there a gap to close? |
 | next | Frontier baselines on the new files, through the API with pinned model ids |
 | next | More families: relative rules, logical rules, relax/remove a constraint, objective change, fixed decisions, infeasible requests, chained and under-specified questions (the `ask` route is implemented; only `clarification` tasks are missing) |
 | next | Port the remaining shortlisted models; hold some out for generalisation tests |
