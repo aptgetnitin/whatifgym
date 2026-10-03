@@ -215,12 +215,20 @@ class TaskFamily:
         """Two single templates in one question; override for family-specific phrasing."""
         return None
 
+    def accept(self, scenario: dict[str, Any], ref: ScenarioResult) -> bool:
+        """Family-specific acceptance beyond the common filters (override to drop degenerate candidates)."""
+        return True
+
     # ---- generation
+    solve_time_limit: float = 60.0   # seconds per oracle solve during generation; a candidate that needs more is dropped
+
     def _solve(self, scenario: dict[str, Any], solver: str) -> ScenarioResult | None:
         """Oracle call that never raises: a model may reject edited data in ``build`` (``ValueError`` on a
-        structural inconsistency); such a candidate is simply skipped and counted in ``self.skipped``."""
+        structural inconsistency); such a candidate is simply skipped and counted in ``self.skipped``. Every solve
+        carries a time limit, because a rule can turn an easy MILP into a hard one."""
         try:
-            return solve_scenario(self.model, scenario, self.data, solver=solver, keep_decisions=False)
+            return solve_scenario(self.model, scenario, self.data, solver=solver, keep_decisions=False,
+                                  time_limit=self.solve_time_limit)
         except Exception as exc:  # noqa: BLE001 - any model/solver failure just drops the candidate
             self.skipped[f"error: {type(exc).__name__}"] = self.skipped.get(f"error: {type(exc).__name__}", 0) + 1
             return None
@@ -283,9 +291,14 @@ class TaskFamily:
             if not stable:
                 self.skipped["solver disagreement"] = self.skipped.get("solver disagreement", 0) + 1
                 continue
+            if not self.accept(scenario, ref):
+                self.skipped["family filter"] = self.skipped.get("family filter", 0) + 1
+                continue
             seen.add(ref.scenario_hash)
+            clarification = slots.pop("_clarification", None) if isinstance(slots, dict) else None
             tid = f"{self.model.name}-{self.name}-{seed:03d}-{len(tasks):04d}"
             tasks.append(Task(id=tid, family=self.name, model=self.model.name, question=question, scenario=scenario,
                               reference=ref.to_dict(), kpi_keys=list(kpi_keys), difficulty=difficulty, template=tname,
-                              slots=slots, split=split_for(tid), tags=[tname, difficulty, ref.status]))
+                              slots=slots, split=split_for(tid), clarification=clarification,
+                              tags=[tname, difficulty, ref.status] + (["ask"] if clarification else [])))
         return tasks

@@ -96,11 +96,10 @@ def _fix_decisions(measures: dict, fixed: list[dict[str, Any]]) -> int:
     return n
 
 
-def _stage_expression(prob, measures: dict, stage: dict[str, Any]):
-    import pulp
-
+def _stage_expression(measures: dict, stage: dict[str, Any], original):
+    """``original`` = (expression, sense) of the model's own objective, captured before any stage replaced it."""
     if stage["measure"] == "original":
-        return prob.objective, ("max" if prob.sense == pulp.LpMaximize else "min")
+        return original
     return _sum(measures[stage["measure"]].select(stage.get("scope"))), stage["sense"]
 
 
@@ -123,10 +122,11 @@ def apply_scenario(model, scenario: dict[str, Any], data: dict[str, Any] | None 
     n_fixed = _fix_decisions(measures, scenario.get("fixed_decisions", []))
 
     stages = scenario.get("objective") or [{"sense": "original", "measure": "original"}]
+    original = (prob.objective, "max" if prob.sense == pulp.LpMaximize else "min")   # before any stage replaces it
     stage_values: list[float] = []
     status, elapsed_solve, message = "not_solved", 0.0, ""
     for k, stage in enumerate(stages):
-        expr, sense = _stage_expression(prob, measures, stage)
+        expr, sense = _stage_expression(measures, stage, original)
         prob.setObjective(expr)
         prob.sense = pulp.LpMaximize if sense == "max" else pulp.LpMinimize
         status, value, dt, message = solvers.solve_pulp(prob, solver, time_limit=time_limit)

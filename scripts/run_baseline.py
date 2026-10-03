@@ -284,7 +284,7 @@ def run(tasks, agent, solver="highs", verbose=False):
             actions.append(action)
             obs, reward, done, info = env.step(action)
         rec = {"task_id": task.id, "template": task.template, "difficulty": task.difficulty, "split": task.split,
-               "reward": reward, **{k: info["score"][k] for k in ("correct", "valid_dsl", "asked", "route_correct")},
+               "reward": reward, **{k: info["score"][k] for k in ("correct", "valid_dsl", "asked", "route_correct", "ask_needed")},
                "notes": info["score"].get("notes", ""), "validation_errors": info.get("validation_errors", []),
                "final_action": actions[-1], "agent_state": state}
         if "result" in info:

@@ -60,18 +60,19 @@ def build_tables(records: list[dict], skip_trivial: bool = True) -> str:
     lines = ["# Results summary", "",
              "Accuracy = share of episodes whose re-solved result matched the hidden reference (status, objective and "
              "scoring KPIs within 1e-3 relative). Mean reward adds +0.1 for a valid scenario and −0.2 for a needless "
-             "clarifying question. Numbers in parentheses are episode counts. Trivial agents are left out; see "
-             "`results/trivial_baselines.md` for them.", ""]
+             "clarifying question; on under-specified tasks an answer without a question scores 0. `route ok` = share of "
+             "episodes where the agent asked exactly when it should have. Numbers in parentheses are episode counts. "
+             "Trivial agents are left out; see `results/trivial_baselines.md` for them.", ""]
 
     # ---- model x family / difficulty
-    head = ["model", "episodes", "accuracy", "mean reward", "valid DSL"] + [f"{f}" for f in families] + difficulties + ["s/episode"]
+    head = ["model", "episodes", "accuracy", "mean reward", "valid DSL", "route ok"] + [f"{f}" for f in families] + difficulties + ["s/episode"]
     lines += ["## By family and difficulty", "", "| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
     for lab in labels:
         rows = by_label[lab]
         n = len(rows)
         lat = [r["agent_state"].get("latency_s") for r in rows if r.get("agent_state", {}).get("latency_s")]
         cells = [f"`{lab}`", str(n), f"{sum(r['correct'] for r in rows) / n:.3f}", f"{sum(r['reward'] for r in rows) / n:.3f}",
-                 f"{sum(r['valid_dsl'] for r in rows) / n:.2f}"]
+                 f"{sum(r['valid_dsl'] for r in rows) / n:.2f}", f"{sum(r.get('route_correct', True) for r in rows) / n:.2f}"]
         cells += [_acc([r for r in rows if r["_family"] == f]) for f in families]
         cells += [_acc([r for r in rows if r["difficulty"] == d]) for d in difficulties]
         cells.append(f"{sum(lat) / len(lat):.1f}" if lat else "–")
