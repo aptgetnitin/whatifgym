@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_same_depot",
+   "where": {
+    "rental_days": 2
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Friday",
+    "depot": "Birmingham"
+   },
+   "value": 35
+  }
+ ],
+ "note": "The price for 2-day rentals returning to the same depot is reduced by 20%, and the demand for Friday in Birmingham is set to 35."
+}

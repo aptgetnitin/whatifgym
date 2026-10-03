@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "A relative change in the manpower requirements and recruitment limits table is a scale over all its rows."
+}

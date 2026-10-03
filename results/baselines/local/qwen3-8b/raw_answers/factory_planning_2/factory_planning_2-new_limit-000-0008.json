@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod7"
+   },
+   "factor": 0.5
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_stock_cap",
+   "measure": "store",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 570
+  }
+ ],
+ "note": "A total stock cap is applied across all months and products."
+}

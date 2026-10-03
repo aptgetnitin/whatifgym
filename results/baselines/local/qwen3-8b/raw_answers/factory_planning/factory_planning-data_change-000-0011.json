@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "downtime",
+   "where": {
+    "month": "Feb",
+    "machine": "horiDrill"
+   }
+  },
+  {
+   "op": "set",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod6"
+   },
+   "value": 7
+  }
+ ],
+ "note": "The horizontal drill maintenance for February is removed, and the profit contribution of Prod6 is updated."
+}

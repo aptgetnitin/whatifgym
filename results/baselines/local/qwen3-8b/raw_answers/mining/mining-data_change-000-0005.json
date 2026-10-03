@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine2"
+      }
+    }
+  ],
+  "note": "Mine2 is removed from the mines table."
+}

@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod2",
+    "month": "Jun"
+   },
+   "value": 0
+  },
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "grinder"
+   },
+   "factor": 2
+  }
+ ],
+ "note": "Zero demand for Prod2 in June is set in the max_sales table. The number of installed grinders is doubled."
+}

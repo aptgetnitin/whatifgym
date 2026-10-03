@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "horiDrill"
+   },
+   "factor": 0.3333333333
+  }
+ ],
+ "note": "Reducing the number of horizontal drills by one-third reflects scrapping one of the three."
+}

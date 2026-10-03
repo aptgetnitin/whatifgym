@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_inventory",
+   "value": 150
+  }
+ ],
+ "note": "The warehouse capacity is set to 150 units per product."
+}

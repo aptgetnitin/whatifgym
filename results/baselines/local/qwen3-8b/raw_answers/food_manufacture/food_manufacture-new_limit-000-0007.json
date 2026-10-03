@@ -1,0 +1,112 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "final_stock",
+   "value": 500
+  },
+  {
+   "op": "set_param",
+   "name": "initial_stock",
+   "value": 500
+  },
+  {
+   "op": "set_param",
+   "name": "storage_capacity",
+   "value": 600
+  },
+  {
+   "op": "scale_param",
+   "name": "holding_cost",
+   "factor": 2
+  },
+  {
+   "op": "scale_param",
+   "name": "veg_refining_capacity",
+   "factor": 1.25
+  },
+  {
+   "op": "scale_param",
+   "name": "nonveg_refining_capacity",
+   "factor": 1.25
+  },
+  {
+   "op": "scale_param",
+   "name": "max_hardness",
+   "factor": 0.9
+  },
+  {
+   "op": "scale_param",
+   "name": "min_hardness",
+   "factor": 0.9
+  },
+  {
+   "op": "scale_param",
+   "name": "product_price",
+   "factor": 0.8666666666666667
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_food_cap",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 2150
+  },
+  {
+   "name": "total_refined_oil_cap_jan",
+   "measure": "consume",
+   "scope": {
+    "month": [
+     "Jan"
+    ]
+   },
+   "sense": "<=",
+   "value": 400
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   }
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "value": 0
+  }
+ ]
+}

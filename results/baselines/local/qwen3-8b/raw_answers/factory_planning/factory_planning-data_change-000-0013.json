@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "grinder"
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "Installing 1 more grinder increases the installed count by 10%."
+}

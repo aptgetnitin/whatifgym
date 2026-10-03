@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "damaged_transfers",
+   "column": "damaged_transfers",
+   "where": {
+    "from_depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ],
+    "to_depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   },
+   "value": 55
+  }
+ ],
+ "note": "An overall cap on the total damaged transfers is applied by setting all damaged_transfers to 55."
+}

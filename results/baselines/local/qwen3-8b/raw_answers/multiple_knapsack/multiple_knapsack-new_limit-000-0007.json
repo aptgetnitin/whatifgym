@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "bin3_placement_limit",
+   "measure": "x",
+   "scope": {
+    "bin": "bin3"
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "The total number of item placements in bin3 is constrained to be at most 1."
+}

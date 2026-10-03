@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "skills",
+   "column": "current_strength",
+   "where": {
+    "skill": "unskilled"
+   },
+   "value": 2200
+  },
+  {
+   "op": "set",
+   "table": "costs",
+   "column": "short_time_cost",
+   "where": {
+    "skill": "unskilled"
+   },
+   "value": 1000
+  }
+ ],
+ "note": "The current workforce for unskilled is increased by 10%, and the short-time working cost for unskilled workers is set to 1000."
+}

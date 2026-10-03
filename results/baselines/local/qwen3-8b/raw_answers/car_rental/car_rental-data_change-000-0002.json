@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "depots",
+   "column": "repair_capacity",
+   "where": {
+    "depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ]
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Scaling the repair_capacity column for all depots by 25%."
+}

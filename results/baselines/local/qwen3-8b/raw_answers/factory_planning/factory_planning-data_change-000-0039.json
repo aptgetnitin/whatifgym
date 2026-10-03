@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "grinder"
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "shift",
+   "table": "downtime",
+   "column": "machines_down",
+   "where": {
+    "month": "Apr",
+    "machine": "vertDrill"
+   },
+   "delta": 0
+  }
+ ],
+ "note": "Retire one grinder by scaling the installed count by 0.9, and cancel the vertical drill maintenance in April by shifting the machines_down to 0."
+}

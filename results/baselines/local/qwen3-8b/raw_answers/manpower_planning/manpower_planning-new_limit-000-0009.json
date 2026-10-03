@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": "skilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 130
+  }
+ ],
+ "note": "The maximum number of workers downgraded from skilled to semi_skilled is set to 130."
+}

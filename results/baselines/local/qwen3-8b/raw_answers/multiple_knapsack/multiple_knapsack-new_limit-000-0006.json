@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "total_item_placements_cap",
+   "measure": "x",
+   "scope": {
+    "item": "*",
+    "bin": "*"
+   },
+   "sense": "<=",
+   "value": 7
+  }
+ ],
+ "note": "An overall cap of 7 applies to the total number of item placements."
+}

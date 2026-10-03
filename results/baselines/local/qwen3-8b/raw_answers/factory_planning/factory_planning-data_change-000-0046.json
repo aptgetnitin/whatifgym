@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "holding_cost",
+   "factor": 2
+  },
+  {
+   "op": "set_param",
+   "name": "max_inventory",
+   "value": 150
+  },
+  {
+   "op": "set_param",
+   "name": "store_target",
+   "value": 0
+  },
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod5"
+   },
+   "factor": 1.5
+  },
+  {
+   "op": "remove",
+   "table": "machines",
+   "where": {
+    "machine": "horiDrill"
+   }
+  }
+ ],
+ "note": "The holding cost is doubled, the warehouse limit becomes 150, and the end-of-horizon stock target is removed. Prod5's profit per unit is increased by 50%, and one horizontal drill is retired."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod6_total_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": "<=",
+   "value": 1300
+  }
+ ],
+ "note": "A total production cap on Prod6 across the entire planning horizon."
+}

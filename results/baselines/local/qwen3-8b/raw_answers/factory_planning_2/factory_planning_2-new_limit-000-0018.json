@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "make_limit_may",
+   "measure": "make",
+   "scope": {
+    "month": "May"
+   },
+   "sense": "<=",
+   "value": 1500
+  }
+ ],
+ "note": "A limit on the total units made in May."
+}

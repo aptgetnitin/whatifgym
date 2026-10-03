@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "vertDrill"
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Reducing the number of vertical drills by half reflects scrapping one of the two."
+}

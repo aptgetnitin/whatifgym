@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_min_15-18",
+   "measure": "output",
+   "scope": {
+    "period": "15-18"
+   },
+   "sense": ">=",
+   "value": 48250
+  }
+ ],
+ "note": "The total thermal output for period 15-18 must be at least 48250 MW."
+}

@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "requirements",
+   "rows": [
+    {
+     "year": 1,
+     "skill": "skilled"
+    },
+    {
+     "year": 2,
+     "skill": "skilled"
+    },
+    {
+     "year": 3,
+     "skill": "skilled"
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "name": "skilled_recruit_at_least_1100",
+   "measure": "recruit",
+   "scope": {
+    "skill": "skilled"
+   },
+   "sense": ">=",
+   "value": 1100
+  }
+ ],
+ "note": "Added a requirement for the total number of skilled workers recruited across all years to be at least 1100."
+}

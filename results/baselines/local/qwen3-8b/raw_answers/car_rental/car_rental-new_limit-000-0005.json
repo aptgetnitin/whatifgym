@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_transfers_cap",
+   "measure": "damaged_transfers",
+   "scope": {
+    "from_depot": "Glasgow",
+    "to_depot": "Manchester"
+   },
+   "sense": "<=",
+   "value": 51
+  }
+ ],
+ "note": "The total damaged cars transferred is capped at 51."
+}

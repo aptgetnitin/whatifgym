@@ -1,0 +1,41 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": [
+     "grinder",
+     "vertDrill",
+     "horiDrill",
+     "borer",
+     "planer"
+    ],
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ]
+   },
+   "factor": 1.1
+  },
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Jun",
+    "product": "Prod2"
+   },
+   "value": 250
+  }
+ ],
+ "note": "The machine hours per unit are scaled by 10% for all rows in the process_hours table, and the market limit for Jun, Prod2 is set to 250."
+}

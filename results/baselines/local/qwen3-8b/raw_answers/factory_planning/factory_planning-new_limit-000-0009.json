@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_inventory",
+   "where": {
+    "month": "Feb"
+   },
+   "value": 200
+  }
+ ],
+ "note": "The warehouse limit is set to 200 units at the end of February."
+}

@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "holding_cost",
+   "value": 7.5
+  }
+ ],
+ "note": "The oil storage cost is set to 7.5 USD/ton/month."
+}

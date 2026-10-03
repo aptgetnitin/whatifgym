@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "jun_sales_cap",
+   "measure": "sell",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": "<=",
+   "value": 2450
+  }
+ ],
+ "note": "A limit on total sales in June is a absolute rule on the sum of sell over the scope."
+}

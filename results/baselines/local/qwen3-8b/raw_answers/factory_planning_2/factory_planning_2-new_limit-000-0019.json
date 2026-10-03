@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "store",
+   "column": "store",
+   "where": {
+    "product": "Prod7"
+   },
+   "value": 160
+  },
+  {
+   "op": "set",
+   "table": "make",
+   "column": "make",
+   "where": {
+    "month": "Jun"
+   },
+   "value": 2050
+  }
+ ],
+ "note": "The total units in stock for product Prod7 is set to 160, and the total units made for month Jun is set to 2050."
+}

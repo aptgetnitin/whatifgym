@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "min_items_in_bin2",
+   "measure": "x",
+   "scope": {
+    "bin": "bin2"
+   },
+   "sense": ">=",
+   "value": 4
+  }
+ ],
+ "note": "The rule ensures that the sum of x[item, bin2] across all items is at least 4."
+}

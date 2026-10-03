@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "purchase_prices",
+   "column": "price",
+   "where": {
+    "month": "Feb"
+   },
+   "factor": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_buy_feb",
+   "measure": "buy",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "value": 940
+  }
+ ],
+ "note": "The requirement is enforced by a rule that sets a lower bound on the total buy across all oils in February."
+}

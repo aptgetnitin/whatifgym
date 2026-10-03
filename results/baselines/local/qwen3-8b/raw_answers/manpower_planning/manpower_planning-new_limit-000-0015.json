@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "downgrade_to_semi_skilled_cap",
+   "measure": "downgrade",
+   "scope": {
+    "to_skill": "semi_skilled"
+   },
+   "sense": "<=",
+   "value": 130
+  }
+ ],
+ "note": "Limits the total number of workers downgraded to semi-skilled to 130."
+}

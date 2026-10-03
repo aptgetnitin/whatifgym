@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Apr"
+   },
+   "value": 720
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_sales_limit",
+   "measure": "sell",
+   "scope": {
+    "month": "all",
+    "product": "all"
+   },
+   "sense": "<=",
+   "value": 9700
+  }
+ ],
+ "note": "A global limit on total sales and a specific monthly sales requirement are enforced through data changes and rules."
+}

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "downtime",
+   "where": {
+    "month": "Jun",
+    "machine": "planer"
+   }
+  }
+ ],
+ "note": "Removing the planer downtime in June allows more production capacity, which may increase profit."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_left_saturday_min",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Saturday"
+   },
+   "sense": ">=",
+   "value": 1.9
+  },
+  {
+   "name": "damaged_stock_manchester_max",
+   "measure": "damaged_stock",
+   "scope": {
+    "depot": "Manchester"
+   },
+   "sense": "<=",
+   "value": 67
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; the first rule ensures the total damaged cars kept overnight on Saturday is at least 1.9, and the second rule caps the damaged cars at Manchester in the morning to 67."
+}

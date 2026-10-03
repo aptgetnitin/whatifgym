@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "downgrade_attrition",
+   "factor": 1.25
+  }
+ ],
+ "note": "The share of downgraded workers who leave is increased by 25%."
+}

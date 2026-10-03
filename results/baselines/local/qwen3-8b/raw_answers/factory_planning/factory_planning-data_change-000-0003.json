@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "downtime",
+   "where": {
+    "machine": "borer",
+    "month": "Mar"
+   }
+  }
+ ],
+ "note": "Removing the borer downtime in March allows the model to consider the potential increase in production and profit."
+}

@@ -1,0 +1,70 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "storage_capacity",
+   "value": 600
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_buy_cap",
+   "measure": "buy",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   },
+   "sense": "<=",
+   "value": 2150
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   }
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "store",
+   "scope": {
+    "month": [
+     "Jun"
+    ],
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   },
+   "value": 500
+  }
+ ]
+}

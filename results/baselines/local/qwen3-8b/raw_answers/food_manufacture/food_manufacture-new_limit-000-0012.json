@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "may_produce_cap",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "May"
+    ]
+   },
+   "sense": "<=",
+   "value": 220
+  }
+ ],
+ "note": "A limit on the total food production in May."
+}

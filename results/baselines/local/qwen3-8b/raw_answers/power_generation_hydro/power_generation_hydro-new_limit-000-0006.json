@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "periods",
+   "column": "pump",
+   "where": {
+    "period": "00-06"
+   },
+   "value": 500
+  }
+ ],
+ "rules": [
+  {
+   "name": "thermal_units_limit",
+   "measure": "ngen",
+   "scope": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "sense": "<=",
+   "value": 60
+  }
+ ],
+ "note": "The total pumping power for period 00-06 is set to 500 MW, and the total number of thermal units running across all types is limited to 60."
+}

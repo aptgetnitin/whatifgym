@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "total_mine_years_worked_cap",
+   "measure": "operate",
+   "scope": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ],
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "<=",
+   "value": 13
+  }
+ ],
+ "note": "A rule that caps the total number of mine-years worked across all mines and years."
+}

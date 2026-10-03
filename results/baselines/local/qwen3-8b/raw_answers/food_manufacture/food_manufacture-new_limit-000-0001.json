@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg1_refined_limit",
+   "measure": "consume",
+   "scope": {
+    "oil": "VEG1"
+   },
+   "sense": "<=",
+   "value": 590
+  },
+  {
+   "name": "oil3_storage_min",
+   "measure": "store",
+   "scope": {
+    "oil": "OIL3"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "oil": "OIL3"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

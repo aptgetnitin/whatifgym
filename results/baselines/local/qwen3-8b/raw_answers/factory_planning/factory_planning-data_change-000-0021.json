@@ -1,0 +1,41 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "holding_cost",
+   "factor": 2
+  },
+  {
+   "op": "set_param",
+   "name": "max_inventory",
+   "value": 150
+  },
+  {
+   "op": "set_param",
+   "name": "store_target",
+   "value": 0
+  },
+  {
+   "op": "scale",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": "planer",
+    "product": "Prod5"
+   },
+   "factor": 0.5
+  },
+  {
+   "op": "add",
+   "table": "machines",
+   "rows": [
+    {
+     "machine": "planer"
+    }
+   ]
+  }
+ ],
+ "note": "The price change for Prod5 is reflected by adjusting its profit_per_unit, and the installation of 2 more planers increases the installed count for the planer machine."
+}

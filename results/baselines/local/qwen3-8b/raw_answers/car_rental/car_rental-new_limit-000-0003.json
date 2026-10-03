@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "repairs_monday_cap",
+   "measure": "repairs",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": "<=",
+   "value": 29
+  }
+ ],
+ "note": "A limit on the total number of repairs done on Monday."
+}

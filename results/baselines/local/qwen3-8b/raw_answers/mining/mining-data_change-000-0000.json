@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "price",
+   "where": {
+    "name": "price"
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "The ore selling price is scaled by a factor of 2.0."
+}

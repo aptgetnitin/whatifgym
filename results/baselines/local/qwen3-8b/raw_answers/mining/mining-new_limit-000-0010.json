@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine1_extract_limit",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine1"
+   },
+   "sense": "<=",
+   "value": 4252500
+  }
+ ],
+ "note": "A limit on the total tons of ore extracted from Mine1 over the entire planning horizon."
+}

@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_overmanned",
+   "value": 300
+  }
+ ],
+ "note": "The overmanning allowance per year is set to 300."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "jan_refining_cap",
+   "measure": "consume",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": "<=",
+   "value": 360
+  }
+ ],
+ "note": "Limits the total tons of oil refined in January to 360."
+}

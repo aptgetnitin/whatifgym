@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_mines",
+   "where": {
+    "name": "max_mines"
+   },
+   "value": 7
+  }
+ ],
+ "rules": [
+  {
+   "name": "blend_year5_limit",
+   "measure": "blend",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": "<=",
+   "value": 3280000
+  }
+ ],
+ "note": "A new limit on the total number of mine-years worked and a new limit on the total tons of blended ore sold in Year5."
+}

@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod5",
+    "month": [
+     "Apr"
+    ]
+   },
+   "factor": 0
+  },
+  {
+   "op": "scale",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": "grinder",
+    "product": "Prod1"
+   },
+   "factor": 0.625
+  }
+ ],
+ "note": "A zero demand for Prod5 in April is achieved by scaling max_sales to 0 for that row. A process change for Prod1 on the grinder is achieved by scaling the hours_per_unit for that row."
+}

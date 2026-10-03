@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod6"
+   },
+   "factor": 0.7
+  }
+ ],
+ "note": "A relative change in profit per unit for a product is a scale over the matching row."
+}

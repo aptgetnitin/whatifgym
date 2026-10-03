@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Apr",
+    "product": "Prod2"
+   },
+   "value": 0
+  }
+ ],
+ "note": "The market limit for Prod2 in April is set to zero, effectively removing the product from the market during that month."
+}

@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": "planer",
+    "product": "Prod7"
+   },
+   "factor": 0.5
+  },
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod1"
+   },
+   "factor": 0.8
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "sell",
+   "scope": {
+    "product": "*"
+   }
+  }
+ ],
+ "note": "The profit is maximized by the total sales across all products, which reflects the change in contribution margin and machine time for Prod7 and Prod1."
+}

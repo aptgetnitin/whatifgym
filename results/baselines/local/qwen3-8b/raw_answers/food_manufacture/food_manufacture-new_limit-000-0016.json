@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg1_total_store",
+   "measure": "store",
+   "scope": {
+    "oil": "VEG1"
+   },
+   "sense": ">=",
+   "value": 2200
+  }
+ ],
+ "note": "The total storage of VEG1 across all months must be at least 2200 tons."
+}

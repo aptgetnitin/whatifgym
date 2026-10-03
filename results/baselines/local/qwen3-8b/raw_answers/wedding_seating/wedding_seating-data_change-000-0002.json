@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "wedding_seating",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "guests",
+   "rows": [
+    {
+     "guest": "new_guest",
+     "rank": 19
+    }
+   ]
+  }
+ ],
+ "note": "Adding a new guest with rank 19 to the guest list will affect the table assignments and the overall unhappiness score."
+}

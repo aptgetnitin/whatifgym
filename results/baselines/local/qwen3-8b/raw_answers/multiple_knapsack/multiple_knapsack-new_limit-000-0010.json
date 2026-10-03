@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "bin3_placement_cap",
+      "measure": "x",
+      "scope": {
+        "bin": "bin3"
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "total_placement_cap",
+      "measure": "x",
+      "scope": {
+        "bin": [
+          "bin0",
+          "bin1",
+          "bin2",
+          "bin3",
+          "bin4"
+        ]
+      },
+      "sense": "<=",
+      "value": 6
+    }
+  ],
+  "note": "Two new rules limit the number of item placements in bin3 to at most 1 and the total number of item placements across all bins to at most 6."
+}

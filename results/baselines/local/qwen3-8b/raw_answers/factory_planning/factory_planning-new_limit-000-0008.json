@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod1_monthly_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": "<=",
+   "value": 420
+  }
+ ],
+ "note": "A monthly production cap on a single product is a absolute limit on the sum of make over the product's scope."
+}

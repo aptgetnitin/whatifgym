@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "downgrade_attrition",
+   "value": 0.5
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_downgrade_cap",
+   "measure": "downgrade",
+   "scope": {
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "unskilled",
+     "semi_skilled"
+    ]
+   },
+   "sense": "<=",
+   "value": 150
+  }
+ ],
+ "note": "A cap on total downgrades is applied by setting the downgrade_attrition parameter and adding a rule to limit the total number of downgrades."
+}

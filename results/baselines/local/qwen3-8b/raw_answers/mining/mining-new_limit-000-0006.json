@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine2_worked_years",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "mine": "Mine2"
+    }
+   },
+   "factor": 4
+  },
+  {
+   "name": "year2_extract_limit",
+   "measure": "extract",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": "<=",
+   "value": 5400000
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

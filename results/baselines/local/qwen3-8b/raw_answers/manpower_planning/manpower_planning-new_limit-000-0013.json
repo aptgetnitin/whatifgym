@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "unskilled_short_time_cap",
+   "measure": "short_time",
+   "scope": {
+    "skill": "unskilled"
+   },
+   "sense": "<=",
+   "value": 120
+  }
+ ],
+ "note": "A limit on the total number of unskilled workers on short-time working."
+}

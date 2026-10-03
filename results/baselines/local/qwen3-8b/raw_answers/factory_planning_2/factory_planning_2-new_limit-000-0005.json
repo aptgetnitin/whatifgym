@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Feb"
+   },
+   "value": 1950
+  }
+ ],
+ "note": "The question refers to the total units made in February, which is captured by the max_sales table for that month."
+}

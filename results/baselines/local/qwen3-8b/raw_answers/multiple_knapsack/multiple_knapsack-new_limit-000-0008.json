@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "total_item_placements_cap",
+   "measure": "x",
+   "scope": {
+    "bin": [
+     "bin0",
+     "bin1",
+     "bin2",
+     "bin3",
+     "bin4"
+    ]
+   },
+   "sense": "<=",
+   "value": 9
+  },
+  {
+   "name": "item_placements_in_bin0_min",
+   "measure": "x",
+   "scope": {
+    "bin": "bin0"
+   },
+   "sense": ">=",
+   "value": 3
+  }
+ ],
+ "note": "An overall cap on item placements and a minimum requirement for placements in bin0 are enforced through rules."
+}

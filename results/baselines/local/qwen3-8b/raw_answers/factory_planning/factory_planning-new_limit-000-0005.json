@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_inventory",
+   "where": {
+    "month": "Feb"
+   },
+   "value": 320
+  }
+ ],
+ "rules": [
+  {
+   "name": "prod1_make_march_april_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod1",
+    "month": [
+     "Mar",
+     "Apr"
+    ]
+   },
+   "sense": "<=",
+   "value": 160
+  }
+ ],
+ "note": "Warehouse space constraint for Feb and Prod1 production cap for Mar and Apr."
+}

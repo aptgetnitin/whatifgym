@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine3_worked_limit",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine3"
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "A limit on the total number of years Mine3 is operated over the planning horizon."
+}

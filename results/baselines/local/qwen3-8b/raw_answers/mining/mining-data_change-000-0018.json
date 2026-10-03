@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "mines",
+   "rows": [
+    {
+     "mine": "new_mine",
+     "royalty": 6250000,
+     "capacity": 2000000,
+     "quality": 1
+    }
+   ]
+  },
+  {
+   "op": "scale",
+   "table": "years",
+   "column": "quality_target",
+   "where": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "A new mine is added with specified parameters, and the quality target for all years is increased by 20%."
+}

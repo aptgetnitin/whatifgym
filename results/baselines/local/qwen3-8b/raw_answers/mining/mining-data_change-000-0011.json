@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "mines",
+   "rows": [
+    {
+     "mine": "new_mine",
+     "royalty": 3000000,
+     "capacity": 1600000,
+     "quality": 1.5
+    }
+   ]
+  }
+ ],
+ "note": "A new mine 'new_mine' is added with the specified royalty, capacity, and quality."
+}

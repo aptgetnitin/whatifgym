@@ -1,0 +1,75 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "store_target",
+   "where": {},
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_inventory",
+   "where": {},
+   "value": 150
+  },
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "holding_cost",
+   "where": {},
+   "factor": 2
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_make_cap",
+   "measure": "make",
+   "scope": {
+    "product": [
+      "Prod1",
+      "Prod2",
+      "Prod3",
+      "Prod4",
+      "Prod5",
+      "Prod6",
+      "Prod7"
+    ],
+    "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 9300
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "store",
+   "scope": {
+    "product": [
+      "Prod1",
+      "Prod2",
+      "Prod3",
+      "Prod4",
+      "Prod5",
+      "Prod6",
+      "Prod7"
+    ],
+    "month": [
+      "Jun"
+    ]
+   }
+  }
+ ],
+ "note": "The scenario introduces a total make cap, adjusts the storage limit and holding cost, and prioritizes maximizing the closing stock."
+}

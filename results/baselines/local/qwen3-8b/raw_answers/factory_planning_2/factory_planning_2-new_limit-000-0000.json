@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_inventory",
+   "where": {},
+   "value": 150
+  },
+  {
+   "op": "set",
+   "table": "params",
+   "column": "store_target",
+   "where": {},
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_make_cap",
+   "measure": "make",
+   "scope": {},
+   "sense": "<=",
+   "value": 11950
+  },
+  {
+   "name": "prod7_make_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": "<=",
+   "value": 390
+  }
+ ],
+ "note": "The scenario introduces two new limits on the total units made and the units made for product Prod7, while adjusting the storage parameters."
+}

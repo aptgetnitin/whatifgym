@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "years",
+   "column": "quality_target",
+   "where": {
+    "year": "Year2"
+   },
+   "factor": 0.7
+  }
+ ],
+ "note": "The quality target for Year2 is scaled down by 30%."
+}

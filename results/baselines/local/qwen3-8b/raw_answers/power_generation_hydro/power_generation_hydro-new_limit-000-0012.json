@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "periods",
+   "column": "demand_mw",
+   "where": {
+    "period": "09-15"
+   },
+   "value": 32900
+  },
+  {
+   "op": "set",
+   "table": "periods",
+   "column": "demand_mw",
+   "where": {
+    "period": "00-06"
+   },
+   "value": 360
+  }
+ ],
+ "note": "The demand_mw column for period 09-15 is set to 32900 to enforce the thermal output limit, and for period 00-06 is set to 360 to limit pumping power."
+}

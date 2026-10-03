@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "items",
+   "column": "weight",
+   "where": {
+    "item": "item11"
+   },
+   "value": 15
+  }
+ ],
+ "note": "The weight of item11 is set to 15."
+}

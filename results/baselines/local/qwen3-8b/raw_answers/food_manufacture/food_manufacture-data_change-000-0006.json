@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "purchase_prices",
+   "column": "price",
+   "where": {
+    "month": "Jan",
+    "oil": "VEG1"
+   },
+   "factor": 1.1
+  },
+  {
+   "op": "scale",
+   "table": "oils",
+   "column": "hardness",
+   "where": {
+    "oil": "VEG1"
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "The purchase price of VEG1 in January is increased by 10% (from 200 to 220), and its hardness is increased by 20% (from 8.8 to 10.56)."
+}

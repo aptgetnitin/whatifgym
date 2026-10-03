@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase_prices",
+   "column": "price",
+   "where": {
+    "month": "Apr",
+    "oil": "OIL3"
+   },
+   "value": 90
+  }
+ ]
+}

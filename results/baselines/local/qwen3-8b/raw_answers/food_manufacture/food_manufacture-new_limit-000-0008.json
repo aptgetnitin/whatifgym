@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "total_refined_cap",
+   "measure": "consume",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 1900
+  }
+ ],
+ "note": "An overall cap on the total tons of oil refined across all months."
+}

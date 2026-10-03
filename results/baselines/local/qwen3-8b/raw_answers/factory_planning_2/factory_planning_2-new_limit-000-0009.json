@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+    ],
+    "product": [
+      "Prod1",
+      "Prod2",
+      "Prod3",
+      "Prod4",
+      "Prod5",
+      "Prod6",
+      "Prod7"
+    ]
+   },
+   "value": 11600
+  }
+ ],
+ "note": "An overall cap on total units sold is applied by setting the max_sales value for all products across all months to 11600."
+}

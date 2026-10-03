@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "bins",
+   "where": {
+    "bin": "bin5"
+   }
+  },
+  {
+   "op": "scale",
+   "table": "items",
+   "column": "weight",
+   "where": {
+    "item": "item1"
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "Removing bin5 reduces the available bins, and item1's weight is scaled down by 20%."
+}

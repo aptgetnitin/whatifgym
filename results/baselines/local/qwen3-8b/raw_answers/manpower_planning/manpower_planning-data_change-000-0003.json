@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "retraining",
+   "column": "cost",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "factor": 1.1
+  },
+  {
+   "op": "set",
+   "table": "skills",
+   "column": "current_strength",
+   "where": {
+    "skill": "unskilled"
+   },
+   "value": 1000
+  }
+ ],
+ "note": "The retraining cost for unskilled to semi-skilled workers is increased by 10%, and the current strength of unskilled workers is set to 1000."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "downtime",
+   "column": "machines_down",
+   "where": {
+    "month": "Feb",
+    "machine": "planer"
+   },
+   "value": 1
+  }
+ ],
+ "note": "A single machine downtime in February for the planer is set."
+}

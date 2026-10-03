@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "max_items_in_bin0",
+   "measure": "x",
+   "scope": {
+    "bin": "bin0"
+   },
+   "sense": "<=",
+   "value": 2
+  },
+  {
+   "name": "min_items_in_bin2",
+   "measure": "x",
+   "scope": {
+    "bin": "bin2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "bin": "bin2"
+    }
+   },
+   "factor": 4
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "items",
+   "rows": [
+    {
+     "item": "new_item",
+     "weight": 11
+    }
+   ]
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "y",
+   "scope": {
+    "bin": "*"
+   }
+  }
+ ],
+ "note": "Adding a new item to the items table and minimizing the number of bins used."
+}

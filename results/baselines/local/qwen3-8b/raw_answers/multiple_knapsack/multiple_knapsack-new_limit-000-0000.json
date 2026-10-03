@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "total_item_placements_limit",
+   "measure": "x",
+   "scope": {
+    "item": "*",
+    "bin": "*"
+   },
+   "sense": "<=",
+   "value": 10
+  }
+ ],
+ "note": "The total number of item placements across all items and bins is limited to 10."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_left_cap",
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Tuesday"
+   },
+   "sense": "<=",
+   "value": 130
+  },
+  {
+   "name": "repairs_tuesday_cap",
+   "measure": "repairs",
+   "scope": {
+    "day": "Tuesday"
+   },
+   "sense": "<=",
+   "value": 16
+  }
+ ],
+ "note": "An overall cap on undamaged cars kept overnight and a cap on repairs on Tuesdays."
+}

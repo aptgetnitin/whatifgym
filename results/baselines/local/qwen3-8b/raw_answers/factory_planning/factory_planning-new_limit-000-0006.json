@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_inventory",
+   "value": 150
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_stock_units",
+   "measure": "store",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 550
+  },
+  {
+   "name": "end_of_feb_stock",
+   "measure": "store",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 240
+  }
+ ],
+ "note": "The first rule limits total stock across all products and months to 550 units. The second rule limits the total stock at the end of February to 240 units."
+}

@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "units_on_at_start",
+   "where": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "value": 2
+  }
+ ],
+ "rules": [
+  {
+   "name": "thermal_start_limit",
+   "measure": "nstart",
+   "scope": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "sense": "<=",
+   "value": 11
+  }
+ ],
+ "note": "The total number of thermal units started is limited to 11 across all types and periods."
+}

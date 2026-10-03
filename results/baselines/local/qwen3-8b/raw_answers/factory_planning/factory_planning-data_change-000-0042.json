@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": "horiDrill",
+    "product": "Prod3"
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "A relative change in the hours required for a specific product-machine pair is a scale over the matching row."
+}

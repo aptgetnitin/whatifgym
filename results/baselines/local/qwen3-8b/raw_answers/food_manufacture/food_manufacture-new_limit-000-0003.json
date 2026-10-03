@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "purchase_prices",
+   "column": "buy",
+   "where": {
+    "month": "Jun"
+   },
+   "factor": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "max_buy_jun",
+   "measure": "buy",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": "<=",
+   "value": 1750
+  }
+ ],
+ "note": "The total tons of oil bought in June is capped at 1750 tons."
+}

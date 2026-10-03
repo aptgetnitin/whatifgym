@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "damaged_share",
+   "factor": 2
+  }
+ ],
+ "note": "The damage rate of returned cars is doubled by scaling the parameter 'damaged_share' by a factor of 2."
+}

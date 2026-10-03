@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_inventory",
+   "value": 700
+  }
+ ],
+ "rules": [
+  {
+   "name": "prod6_production_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": "<=",
+   "value": 1200
+  }
+ ],
+ "note": "A new limit on total stock unit-months is set via the max_inventory parameter, and a new cap on total Prod6 production is added as a rule."
+}

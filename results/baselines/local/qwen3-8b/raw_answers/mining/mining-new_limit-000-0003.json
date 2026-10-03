@@ -1,0 +1,52 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_mines",
+   "where": {},
+   "value": 2
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine2_worked_years",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine2"
+   },
+   "sense": ">=",
+   "value": 4
+  },
+  {
+   "name": "total_ore_extracted_cap",
+   "measure": "extract",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ],
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ]
+   },
+   "sense": "<=",
+   "value": 20873350
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The total number of mine-years worked for Mine2 must be at least 4, and the total tons of ore extracted across all mines and years is capped at 20873350."
+}

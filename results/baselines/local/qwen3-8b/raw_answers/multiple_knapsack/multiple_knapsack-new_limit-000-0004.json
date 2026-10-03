@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "total_item_placements_cap",
+   "measure": "x",
+   "scope": {
+    "item": "*",
+    "bin": "*"
+   },
+   "sense": "<=",
+   "value": 11
+  }
+ ],
+ "note": "An overall cap on the total number of item placements is enforced through a rule limiting the sum of the decision measure x over all items and bins."
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "bins",
+      "rows": [
+        {
+          "bin": "new_bin"
+        }
+      ]
+    },
+    {
+      "op": "scale",
+      "table": "items",
+      "column": "value",
+      "where": {
+        "item": "item11"
+      },
+      "factor": 1.25
+    }
+  ],
+  "note": "A new bin is added with capacity 100, and the value of item11 is increased by 25%."
+}

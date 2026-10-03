@@ -1,0 +1,45 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod6"
+   },
+   "value": 1050
+  }
+ ],
+ "rules": [
+  {
+   "name": "prod6_total_limit",
+   "measure": "make",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": "<=",
+   "value": 1050
+  },
+  {
+   "name": "prod5_prod7_jan_limit",
+   "measure": "make",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "product": [
+      "Prod5",
+      "Prod7"
+     ]
+    }
+   },
+   "factor": 600
+  }
+ ],
+ "note": "A new supplier constraint limits the total production of Prod6, and a production limit applies to the combined production of Prod5 and Prod7 in January."
+}

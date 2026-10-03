@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "bins",
+   "column": "capacity",
+   "where": {
+    "bin": "bin2"
+   },
+   "factor": 1.1
+  },
+  {
+   "op": "add",
+   "table": "items",
+   "rows": [
+    {
+     "item": "new_item",
+     "weight": 45
+    }
+   ]
+  }
+ ],
+ "note": "The bin capacity for bin2 is increased by 10%, and a new item with weight 45 is added."
+}

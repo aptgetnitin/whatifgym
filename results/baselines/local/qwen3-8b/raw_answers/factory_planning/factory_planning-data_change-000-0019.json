@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod3"
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "A 10% reduction in profit per unit for Prod3 is modeled as a scale operation on the profit_per_unit column for the Prod3 row."
+}

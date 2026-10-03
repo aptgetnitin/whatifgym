@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "downtime",
+   "where": {
+    "machine": "grinder",
+    "month": "Jan"
+   }
+  }
+ ],
+ "note": "Removing the grinder maintenance in January."
+}

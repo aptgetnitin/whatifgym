@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 1.25
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_same_depot",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "All price values in the rental_lengths table are scaled by 25% to reflect the price increase."
+}

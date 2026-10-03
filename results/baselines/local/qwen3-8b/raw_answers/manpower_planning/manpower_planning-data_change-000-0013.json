@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "max_overmanned",
+   "factor": 0.5
+  }
+ ],
+ "note": "The overmanning allowance per year is scaled by a factor of 0.5."
+}

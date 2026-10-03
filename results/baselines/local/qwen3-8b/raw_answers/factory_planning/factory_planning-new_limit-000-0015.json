@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod1_prod5_output_limit",
+   "measure": "make",
+   "scope": {
+    "month": "Jan",
+    "product": [
+     "Prod1",
+     "Prod5"
+    ]
+   },
+   "sense": "<=",
+   "value": 1150
+  }
+ ],
+ "note": "A combined output limit on two products in a specific month is a absolute rule on the sum of make over the scope."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "bins",
+   "column": "capacity",
+   "where": {
+    "bin": [
+     "bin0",
+     "bin1",
+     "bin2",
+     "bin3",
+     "bin4"
+    ]
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "Scaling the capacity of all bins by 20% to simulate a lower capacity scenario."
+}

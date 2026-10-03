@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "semi_skilled_overmanned_min",
+   "measure": "overmanned",
+   "scope": {
+    "skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 22
+  }
+ ],
+ "note": "A rule to ensure the sum of overmanned workers for semi-skilled level meets the minimum requirement."
+}

@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "purchase_prices",
+   "column": "price",
+   "where": {
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   },
+   "factor": 1.1
+  },
+  {
+   "op": "set",
+   "table": "oils",
+   "column": "hardness",
+   "where": {
+    "oil": "VEG1"
+   },
+   "value": 4.4
+  }
+ ],
+ "note": "The oil hardness of VEG1 is adjusted to 4.4, and all purchase prices are increased by 10%."
+}

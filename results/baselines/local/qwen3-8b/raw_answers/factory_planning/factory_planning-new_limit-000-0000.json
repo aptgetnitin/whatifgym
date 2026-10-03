@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod7_production_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": "<=",
+   "value": 320
+  }
+ ],
+ "note": "A total production cap on Prod7 across the entire planning horizon."
+}

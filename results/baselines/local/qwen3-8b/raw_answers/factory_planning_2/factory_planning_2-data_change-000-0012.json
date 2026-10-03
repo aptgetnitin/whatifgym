@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod5",
+    "month": "Mar"
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}
