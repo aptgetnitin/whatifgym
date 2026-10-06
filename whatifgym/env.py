@@ -135,8 +135,13 @@ class WhatIfEnv:
             if action["type"] == "ask":
                 return "ask", action.get("text", "")
             if action["type"] == "scenario":
-                return "scenario", action.get("scenario", {})
-            return action["type"], action
+                action = action.get("scenario", {})
+                if not isinstance(action, dict):
+                    return "scenario", action
+            else:
+                return action["type"], action
+        # an ask-only object is a clarifying question, however the agent wrapped it (LLM agents return every
+        # parsed reply as a scenario; treating {"ask": ...} as a scenario would score every question 0)
         if "ask" in action and len([k for k in action if k not in ("version", "base_model", "note")]) == 1:
             return "ask", action["ask"]
         return "scenario", action

@@ -76,3 +76,14 @@ def test_env_non_numeric_param_is_invalid_not_a_crash():
            "data_changes": [{"op": "set_param", "name": "energy_capacity_kwh", "value": "upper_limit"}]}
     _, reward, done, info = env.step({"type": "scenario", "scenario": bad})
     assert done and reward == 0.0 and info["validation_errors"][0]["path"] == "/data_changes/0/value"
+
+
+def test_env_ask_wrapped_as_scenario_is_a_question():
+    """LLM agents return every parsed reply as a scenario; an ask-only reply must still open the dialogue."""
+    vague = load_tasks("tasks/factory_planning/under_specified_v0.jsonl")[0]
+    env = WhatIfEnv([vague])
+    env.reset(vague)
+    obs, reward, done, info = env.step({"type": "scenario", "scenario": {"version": "0.1", "ask": "By how much?"}})
+    assert not done and info["action"] == "ask" and obs["dialogue"][-1]["role"] == "planner"
+    _, reward, done, info = env.step({"type": "scenario", "scenario": vague.scenario})
+    assert done and reward == 1.1 and info["score"]["route_correct"]

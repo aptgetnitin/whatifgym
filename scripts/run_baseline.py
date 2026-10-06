@@ -323,7 +323,8 @@ def make_ollama_agent(model_name: str, host: str = "http://localhost:11434", num
             print(f"warning: {task.id}: prompt filled the context window ({resp.get('prompt_eval_count')} tokens); raise --num-ctx")
         if resp.get("done_reason") == "length":
             state["cut_off"] = True
-        _save_answer(save_dir, task.id, text)
+        state["turns"] = state.get("turns", 0) + 1   # a reply after a clarifying question must not overwrite the first
+        _save_answer(save_dir, task.id if state["turns"] == 1 else f"{task.id}.turn{state['turns']}", text)
         try:
             scenario = _extract_json(text)
         except Exception:
