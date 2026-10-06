@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the three trivial agents over every task file and write one summary table.
+"""Run the five trivial agents over every task file and write one summary table.
 
     python scripts/run_trivial_baselines.py                 # all of tasks/*/*.jsonl
     python scripts/run_trivial_baselines.py --out results/trivial_baselines.md
@@ -12,6 +12,13 @@ The trivial agents pin the reward scale and catch leaks:
   answer is "nothing changes", which the generator is supposed to drop);
 * ``ask_then_oracle`` asks a question first — must score 0.9 on fully specified tasks (the −0.2 penalty for a
   needless ask).
+
+Two more agents have no exact expectation; their *accuracy* must stay low:
+
+* ``nearest_example`` copies the gold scenario of the most similar training task on the same base model — a
+  high score means near-duplicate tasks (a leak between splits, or a two-part task with a redundant part);
+* ``random_valid`` submits a random scenario that passes validation — a high score means answers that are easy
+  to hit by chance.
 
 Under-specified tasks (family ``under_specified``) invert this: answering without asking scores 0, so there
 ``oracle`` and ``noop`` must score 0.0 and ``ask_then_oracle`` 1.1. The expectations below are per task.
@@ -28,11 +35,15 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from run_baseline import agent_ask_then_oracle, agent_noop, agent_oracle, run  # noqa: E402
+from run_baseline import (agent_ask_then_oracle, agent_nearest_example, agent_noop, agent_oracle,  # noqa: E402
+                          agent_random_valid, run)
 from whatifgym.tasks import load_tasks  # noqa: E402
 
 # expected reward per agent: (fully specified task, under-specified task)
 AGENTS = {"oracle": (agent_oracle, (1.1, 0.0)), "noop": (agent_noop, (0.1, 0.0)), "ask_then_oracle": (agent_ask_then_oracle, (0.9, 1.1))}
+# agents without an exact expectation: accuracy per file, flagged above this level
+PROBES = {"nearest_example": agent_nearest_example, "random_valid": agent_random_valid}
+PROBE_WARN = 0.10
 
 
 def main(argv=None) -> int:
@@ -45,7 +56,7 @@ def main(argv=None) -> int:
     files = [Path(p).resolve() for p in args.tasks] if args.tasks else sorted(ROOT.glob("tasks/*/*.jsonl"))
     scratch = ROOT / "results" / "scratch"
     scratch.mkdir(parents=True, exist_ok=True)
-    rows, problems = [], []
+    rows, problems, warnings = [], [], []
     for path in files:
         tasks = load_tasks(path)
         row = {"file": str(path.relative_to(ROOT)), "n": len(tasks)}
@@ -60,8 +71,19 @@ def main(argv=None) -> int:
                 import json
                 for r in records:
                     fh.write(json.dumps(r, default=str) + "\n")
+        for name, agent in PROBES.items():
+            records = run(tasks, agent, solver=args.solver)
+            row[name] = sum(r["correct"] for r in records) / len(records)
+            hits = [r["task_id"] for r in records if r["correct"]]
+            if row[name] > PROBE_WARN:
+                warnings.append(f"{path.relative_to(ROOT)} / {name}: accuracy {row[name]:.2f} ({hits[:5]})")
+            with open(scratch / f"{path.parent.name}.{path.stem}.{name}.jsonl", "w", encoding="utf-8") as fh:
+                import json
+                for r in records:
+                    fh.write(json.dumps(r, default=str) + "\n")
         rows.append(row)
-        print(f"{row['file']:55s} n={row['n']:3d} oracle {row['oracle']:.3f} noop {row['noop']:.3f} ask_then_oracle {row['ask_then_oracle']:.3f}", flush=True)
+        print(f"{row['file']:55s} n={row['n']:3d} oracle {row['oracle']:.3f} noop {row['noop']:.3f} ask_then_oracle {row['ask_then_oracle']:.3f}"
+              f" | acc nearest {row['nearest_example']:.2f} random {row['random_valid']:.2f}", flush=True)
 
     lines = ["# Trivial baselines", "",
              "Mean reward of the three trivial agents on every task file (`scripts/run_trivial_baselines.py`). "
@@ -69,11 +91,21 @@ def main(argv=None) -> int:
              "validity bonus only), ask_then_oracle 0.900 (gold scenario after one needless clarification). On "
              "`under_specified` files the expectations are 0.000 / 0.000 / 1.100, because answering without asking "
              "scores 0 there. Any other value is a bug or a leaked task.", "",
-             "| task file | tasks | oracle | noop | ask_then_oracle |", "|---|---|---|---|---|"]
+             "The last two columns are *accuracy* (share of tasks answered correctly) of two probes without an exact "
+             "expectation: `nearest_example` copies the gold scenario of the most similar training task on the same "
+             f"base model, `random_valid` submits a random valid scenario. Both must stay low; files above {PROBE_WARN:.2f} "
+             "are listed under Warnings.", "",
+             "| task file | tasks | oracle | noop | ask_then_oracle | nearest_example acc | random_valid acc |",
+             "|---|---|---|---|---|---|---|"]
     for r in rows:
-        lines.append(f"| `{r['file']}` | {r['n']} | {r['oracle']:.3f} | {r['noop']:.3f} | {r['ask_then_oracle']:.3f} |")
+        lines.append(f"| `{r['file']}` | {r['n']} | {r['oracle']:.3f} | {r['noop']:.3f} | {r['ask_then_oracle']:.3f} "
+                     f"| {r['nearest_example']:.2f} | {r['random_valid']:.2f} |")
     total = sum(r["n"] for r in rows)
-    lines += ["", f"Total tasks: **{total}** in {len(rows)} files.", ""]
+    acc = {name: sum(r[name] * r["n"] for r in rows) / max(1, total) for name in PROBES}
+    lines += ["", f"Total tasks: **{total}** in {len(rows)} files. Overall accuracy: nearest_example "
+                  f"**{acc['nearest_example']:.3f}**, random_valid **{acc['random_valid']:.3f}**.", ""]
+    if warnings:
+        lines += ["## Warnings", ""] + [f"- {w}" for w in warnings] + [""]
     if problems:
         lines += ["## Problems", ""] + [f"- {p}" for p in problems] + [""]
     else:

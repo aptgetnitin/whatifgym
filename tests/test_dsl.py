@@ -70,3 +70,67 @@ def test_apply_data_changes_is_pure_and_ordered():
     assert json.dumps(data, sort_keys=True) == before
     jan = next(r for r in new["max_sales"] if r["product"] == "Prod1" and r["month"] == "Jan")
     assert jan["max_sales"] == 500 * 2 + 7 and new["params"]["holding_cost"] == 2.0
+
+
+# ------------------------------------------------------------------ relax and logic
+def _solve(model, **parts):
+    from whatifgym.oracle import solve_scenario
+
+    return solve_scenario(model, {"version": "0.1", **parts}, keep_decisions=False)
+
+
+def _cond(measure, scope, sense, value):
+    return {"measure": measure, "scope": scope, "sense": sense, "value": value}
+
+
+@pytest.mark.parametrize("model_name,conds,k", [
+    ("factory_planning", [_cond("make", {"month": "Jan", "product": "Prod1"}, "<=", 0),
+                          _cond("make", {"month": "Jan", "product": "Prod2"}, "<=", 0)], 1),
+    ("factory_planning", [_cond("sell", {"product": p}, "<=", 0) for p in ("Prod1", "Prod2", "Prod4")], 2),
+    ("mining", [_cond("operate", {"year": "Year1", "mine": "Mine1"}, "<=", 0),
+                _cond("operate", {"year": "Year1", "mine": "Mine3"}, "<=", 0)], 1),
+    ("food_manufacture", [_cond("buy", {"month": "Jan"}, "<=", 0), _cond("buy", {"month": "Feb"}, "==", 300)], 1),
+])
+def test_logic_equals_the_best_branch(model_name, conds, k):
+    """At least k of the conditions == the best of the scenarios that impose k of them as plain rules."""
+    import itertools
+
+    model = get_model(model_name)
+    logic = _solve(model, logic=[{"at_least": k, "of": conds}])
+    branches = [_solve(model, rules=list(c)) for c in itertools.combinations(conds, k)]
+    values = [b.objective for b in branches if b.status == "optimal"]
+    best = max(values) if model.sense == "max" else min(values)
+    assert logic.status == "optimal" and abs(logic.objective - best) <= 1e-6 * max(1.0, abs(best))
+
+
+def test_logic_is_infeasible_when_every_branch_is():
+    model = get_model("factory_planning")   # Prod3 has an end-stock target, and 2,500 is beyond capacity
+    r = _solve(model, logic=[{"at_least": 1, "of": [_cond("make", {"product": "Prod3"}, "<=", 0),
+                                                     _cond("make", {"product": "Prod3"}, ">=", 2500)]}])
+    assert r.status == "infeasible"
+
+
+def test_relax_full_and_scoped():
+    model = get_model("factory_planning")
+    base = _solve(model, data_changes=[])
+    full = _solve(model, relax=[{"constraint": "capacity"}])
+    march = _solve(model, relax=[{"constraint": "capacity", "scope": {"month": "Mar"}}])
+    assert full.n_relaxed_constraints == 30 and march.n_relaxed_constraints == 5
+    assert full.objective > march.objective > base.objective
+
+
+def test_relax_and_logic_semantic_errors():
+    model = get_model("factory_planning")
+    cases = {
+        "unknown constraint family": {"relax": [{"constraint": "nope"}]},
+        "has dimensions": {"relax": [{"constraint": "capacity", "scope": {"product": "Prod1"}}]},
+        "is not a month": {"relax": [{"constraint": "capacity", "scope": {"month": "Smarch"}}]},
+        "only 2 conditions": {"logic": [{"at_least": 3, "of": [_cond("make", {}, "<=", 0), _cond("sell", {}, "<=", 0)]}]},
+        "unknown measure": {"logic": [{"at_least": 1, "of": [_cond("ghost", {}, "<=", 0), _cond("sell", {}, "<=", 0)]}]},
+    }
+    for needle, parts in cases.items():
+        errors = validate_scenario({"version": "0.1", **parts}, model, raise_on_error=False)
+        assert any(needle in e["message"] for e in errors), (needle, errors)
+    unresolvable = validate_scenario({"version": "0.1", "relax": [{"constraint": "refining"}]},
+                                     get_model("food_manufacture"), raise_on_error=False)
+    assert "cannot be relaxed" in unresolvable[0]["message"]

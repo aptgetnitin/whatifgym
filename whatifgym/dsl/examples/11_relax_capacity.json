@@ -1,0 +1,8 @@
+{
+  "_question": "What if the machine-hours limit did not apply in March?",
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "relax": [
+    {"constraint": "capacity", "scope": {"month": "Mar"}}
+  ]
+}

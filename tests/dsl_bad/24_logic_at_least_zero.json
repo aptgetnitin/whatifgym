@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "factory_planning", "logic": [{"at_least": 0, "of": [{"measure": "make", "sense": "<=", "value": 0}, {"measure": "sell", "sense": "<=", "value": 0}]}]}

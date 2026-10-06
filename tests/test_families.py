@@ -20,7 +20,8 @@ FAST_MODELS = [m for m in list_models() if m != "wedding_seating"]
 
 
 def test_registry_has_all_families():
-    assert set(FAMILIES) == {"data_change", "new_limit", "relative_rule", "objective_change", "fixed_decision", "under_specified"}
+    assert set(FAMILIES) == {"data_change", "new_limit", "relative_rule", "objective_change", "fixed_decision",
+                             "relax_remove", "logical_rule", "under_specified"}
     assert FAMILIES["data_change"] is DataChangeFamily and FAMILIES["new_limit"] is NewLimitFamily
 
 
@@ -36,6 +37,11 @@ SLOW_PAIRS = {("objective_change", m) for m in ("mining", "food_supply", "power_
                                                 "bin_packing", "manpower_planning", "car_rental_2")}
 # bin packing's objective (bins used) is robust to almost everything; several families legitimately yield nothing
 MAY_BE_EMPTY = {("bin_packing", f) for f in ("new_limit", "fixed_decision", "objective_change", "relative_rule")}
+# relax_remove only lifts policy constraints, and these models have none (balance and definition constraints only)
+MAY_BE_EMPTY |= {(m, "relax_remove") for m in ("bin_packing", "car_rental", "food_supply")}
+# ... and power generation's only one (the spinning reserve) never binds; bin packing's bins-used objective
+# ignores every either-or rule the templates can state
+MAY_BE_EMPTY |= {("power_generation_hydro", "relax_remove"), ("bin_packing", "logical_rule")}
 
 
 @pytest.mark.parametrize("model_name", FAST_MODELS)

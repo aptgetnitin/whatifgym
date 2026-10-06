@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/aptgetnitin/whatifgym/whatifgym/dsl/schema.json",
   "title": "whatifgym scenario DSL v0.1",
-  "description": "One agent action: either a clarifying question (`ask`) or a scenario applied to a base model. A scenario is data changes (scale, shift, set, add, remove rows; parameter changes), rules (new linear limits on sums of a decision measure, absolute or relative to another sum), an ordered objective list (lexicographic stages) and fixed decisions. Scopes select rows or variables by key columns; a value may be a scalar or a list (membership).",
+  "description": "One agent action: either a clarifying question (`ask`) or a scenario applied to a base model. A scenario is data changes (scale, shift, set, add, remove rows; parameter changes), rules (new linear limits on sums of a decision measure, absolute or relative to another sum), an ordered objective list (lexicographic stages), fixed decisions, relaxations (constraints of the base model removed, in full or over a scope) and logical rules (at least k of several conditions hold). Scopes select rows or variables by key columns; a value may be a scalar or a list (membership).",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -14,11 +14,13 @@
     "objective": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"$ref": "#/$defs/objective_stage"},
                   "description": "Lexicographic stages: stage k+1 is optimised with every earlier stage held at its optimum (relative tolerance 1e-6)."},
     "fixed_decisions": {"type": "array", "items": {"$ref": "#/$defs/fixed_decision"}},
+    "relax": {"type": "array", "items": {"$ref": "#/$defs/relaxation"}, "description": "Constraints of the base model that no longer apply."},
+    "logic": {"type": "array", "items": {"$ref": "#/$defs/logical_rule"}, "description": "Logical rules: at least k of the listed conditions hold."},
     "note": {"type": "string", "maxLength": 500, "description": "Free-text rationale; ignored by the solver."}
   },
   "oneOf": [
-    {"required": ["ask"], "not": {"anyOf": [{"required": ["data_changes"]}, {"required": ["rules"]}, {"required": ["objective"]}, {"required": ["fixed_decisions"]}]}},
-    {"not": {"required": ["ask"]}, "anyOf": [{"required": ["data_changes"]}, {"required": ["rules"]}, {"required": ["objective"]}, {"required": ["fixed_decisions"]}]}
+    {"required": ["ask"], "not": {"anyOf": [{"required": ["data_changes"]}, {"required": ["rules"]}, {"required": ["objective"]}, {"required": ["fixed_decisions"]}, {"required": ["relax"]}, {"required": ["logic"]}]}},
+    {"not": {"required": ["ask"]}, "anyOf": [{"required": ["data_changes"]}, {"required": ["rules"]}, {"required": ["objective"]}, {"required": ["fixed_decisions"]}, {"required": ["relax"]}, {"required": ["logic"]}]}
   ],
   "$defs": {
     "scalar": {"type": ["string", "number", "boolean"]},
@@ -113,6 +115,39 @@
         "scope": {"$ref": "#/$defs/scope"},
         "value": {"type": "number", "description": "Every variable of the measure inside the scope is fixed to this value."}
       }
+    },
+    "relaxation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["constraint"],
+      "properties": {
+        "constraint": {"type": "string", "description": "A constraint family of the base model (see the model schema), e.g. capacity."},
+        "scope": {"$ref": "#/$defs/scope", "description": "dimension -> value or list of values of the constraint family; omitted dimensions mean all."}
+      },
+      "description": "Remove every constraint of the family whose index matches the scope."
+    },
+    "condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["measure", "sense", "value"],
+      "properties": {
+        "measure": {"type": "string"},
+        "scope": {"$ref": "#/$defs/scope"},
+        "sense": {"enum": ["<=", ">=", "=="]},
+        "value": {"type": "number"}
+      },
+      "description": "sum(measure over scope) sense value."
+    },
+    "logical_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["at_least", "of"],
+      "properties": {
+        "name": {"type": "string", "maxLength": 80},
+        "at_least": {"type": "integer", "minimum": 1, "description": "How many of the conditions must hold."},
+        "of": {"type": "array", "minItems": 2, "maxItems": 8, "items": {"$ref": "#/$defs/condition"}}
+      },
+      "description": "At least `at_least` of the conditions hold. Either-or: at_least 1 of two. Never both A and B: at_least 1 of [not A, not B]. None or at least q: at_least 1 of [sum <= 0, sum >= q]."
     }
   }
 }

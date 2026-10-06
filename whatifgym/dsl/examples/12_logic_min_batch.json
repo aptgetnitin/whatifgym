@@ -1,0 +1,13 @@
+{
+  "_question": "Mine2 is either not worked in Year3 or it delivers at least 1,000,000 tons that year; and Mine1 and Mine4 may not both be worked in Year2.",
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {"at_least": 1, "name": "batch_mine2", "of": [
+      {"measure": "extract", "scope": {"year": "Year3", "mine": "Mine2"}, "sense": "<=", "value": 0},
+      {"measure": "extract", "scope": {"year": "Year3", "mine": "Mine2"}, "sense": ">=", "value": 1000000}]},
+    {"at_least": 1, "name": "never_both", "of": [
+      {"measure": "operate", "scope": {"year": "Year2", "mine": "Mine1"}, "sense": "<=", "value": 0},
+      {"measure": "operate", "scope": {"year": "Year2", "mine": "Mine4"}, "sense": "<=", "value": 0}]}
+  ]
+}

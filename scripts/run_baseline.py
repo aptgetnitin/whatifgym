@@ -10,6 +10,10 @@ Agents
   oracle            submits the hidden gold scenario (pipeline sanity check: every task must score 1.1)
   noop              submits an empty but valid scenario (scores the 0.1 validity bonus only)
   ask_then_oracle   asks an unnecessary question first, then the gold scenario (expects 0.9)
+  nearest_example   submits the gold scenario of the most similar training task on the same base model (word
+                    overlap of the questions; the task itself and its paraphrases excluded): a leak check
+  random_valid      submits a random scenario that passes validation (a column or parameter scaled, or a cap on
+                    a measure), seeded by the task id: should almost never be correct
   anthropic         a frontier model through the Anthropic Messages API (needs ANTHROPIC_API_KEY and `pip install anthropic`)
   ollama            a local open-weight model served by Ollama (http://localhost:11434); the context window is
                     forced to --num-ctx (default 16384) because Ollama's default of 4096 silently truncates our
@@ -22,8 +26,11 @@ from __future__ import annotations
 
 import argparse
 import collections
+import functools
+import hashlib
 import json
 import os
+import random
 import re
 import sys
 import time
@@ -52,12 +59,90 @@ def agent_ask_then_oracle(obs, task, state):
     return {"type": "scenario", "scenario": task.scenario}
 
 
+def _words(text: str) -> set[str]:
+    return set(re.findall(r"[a-z0-9]+", text.lower()))
+
+
+@functools.lru_cache(maxsize=1)
+def _train_pool() -> dict[str, list]:
+    """Training-split tasks of every task file, by base model (the pool `nearest_example` copies from)."""
+    pool: dict[str, list] = collections.defaultdict(list)
+    for path in sorted(ROOT.glob("tasks/*/*.jsonl")):
+        for t in load_tasks(path):
+            if t.split == "train":
+                pool[t.model].append((t, _words(t.question)))
+    return pool
+
+
+def agent_nearest_example(obs, task, _state):
+    base_id = re.sub(r"-p\d+$", "", task.id)
+    words = _words(task.question)
+    best, best_sim = None, -1.0
+    for t, tw in _train_pool().get(task.model, []):
+        if re.sub(r"-p\d+$", "", t.id) == base_id:
+            continue
+        sim = len(words & tw) / max(1, len(words | tw))
+        if sim > best_sim:
+            best, best_sim = t, sim
+    if best is None:
+        return agent_noop(obs, task, _state)
+    return {"type": "scenario", "scenario": best.scenario}
+
+
+@functools.lru_cache(maxsize=None)
+def _family_context(model_name: str):
+    from whatifgym.families.base import TaskFamily  # lazy: solves the base plan once per model
+
+    return TaskFamily(model_name).ctx
+
+
+def agent_random_valid(obs, task, _state):
+    from whatifgym.dsl import validate_scenario
+    from whatifgym.families.base import nice
+
+    rng = random.Random(int(hashlib.sha256(task.id.encode()).hexdigest()[:12], 16))
+    ctx = _family_context(task.model)
+    factors = [0.5, 0.75, 0.9, 1.1, 1.25, 1.5, 2.0]
+    for _ in range(30):
+        kind = rng.choice(["scale", "param", "rule"])
+        if kind == "scale":
+            tables = [t for t in ctx.schema["tables"] if ctx.numeric_columns(t) and ctx.data.get(t)]
+            if not tables:
+                continue
+            table = rng.choice(tables)
+            change = {"op": "scale", "table": table, "column": rng.choice(ctx.numeric_columns(table)), "factor": rng.choice(factors)}
+            keys = ctx.schema["tables"][table].get("key", [])
+            if keys:
+                row = rng.choice(ctx.data[table])
+                change["where"] = {k: row[k] for k in keys}
+            body = {"data_changes": [change]}
+        elif kind == "param":
+            params = ctx.numeric_params()
+            if not params:
+                continue
+            body = {"data_changes": [{"op": "scale_param", "name": rng.choice(params), "factor": rng.choice(factors)}]}
+        else:
+            measures = [m for m, dims in ctx.model.MEASURE_DIMS.items() if dims and ctx.measure_sum(m) > 0]
+            if not measures:
+                continue
+            m = rng.choice(measures)
+            dim = rng.choice(list(ctx.model.MEASURE_DIMS[m]))
+            v = rng.choice(ctx.dim_values(m, dim))
+            base = ctx.measure_sum(m, {dim: v})
+            sense = rng.choice(["<=", ">="])
+            body = {"rules": [{"measure": m, "scope": {dim: v}, "sense": sense, "value": nice(base * rng.choice(factors) or 1.0)}]}
+        scenario = {"version": "0.1", "base_model": task.model, **body}
+        if not validate_scenario(scenario, ctx.model, ctx.data, raise_on_error=False):
+            return {"type": "scenario", "scenario": scenario}
+    return agent_noop(obs, task, _state)
+
+
 SYSTEM_PROMPT = """You are a planning analyst who turns a planner's what-if question into a machine-checkable
 scenario for an existing optimization model. You never solve the model yourself. You answer with ONE JSON object
 that validates against the scenario DSL schema you are given: either a scenario (data_changes, rules, objective,
-fixed_decisions) or, only when the question cannot be made precise from the information available, {"ask": "..."}.
-Use only table names, column names, parameter names, measure names and key values that appear in the model
-schema and index sets. Output JSON only, no prose, no code fences."""
+fixed_decisions, relax, logic) or, only when the question cannot be made precise from the information available,
+{"ask": "..."}. Use only table names, column names, parameter names, measure names, constraint names and key values
+that appear in the model schema and index sets. Output JSON only, no prose, no code fences."""
 
 
 def _compact_schema(schema: dict) -> dict:
@@ -358,7 +443,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--tasks", required=True)
     ap.add_argument("--split", default=None, help="train | dev | test (default: all)")
-    ap.add_argument("--agent", default="oracle", choices=["oracle", "noop", "ask_then_oracle", "anthropic", "ollama", "answers"])
+    ap.add_argument("--agent", default="oracle", choices=["oracle", "noop", "ask_then_oracle", "nearest_example", "random_valid", "anthropic", "ollama", "answers"])
     ap.add_argument("--answers-dir", default=None, help="for --agent answers: folder of <task_id>.json replies")
     ap.add_argument("--label", default=None, help="for --agent answers: how to name the model in results")
     ap.add_argument("--export-prompts", default=None, metavar="DIR", help="write each task's full prompt to DIR and exit")
@@ -383,7 +468,8 @@ def main(argv=None) -> int:
         n = export_prompts(tasks, Path(args.export_prompts))
         print(f"wrote {n} prompts to {args.export_prompts}")
         return 0
-    agent = {"oracle": agent_oracle, "noop": agent_noop, "ask_then_oracle": agent_ask_then_oracle}.get(args.agent)
+    agent = {"oracle": agent_oracle, "noop": agent_noop, "ask_then_oracle": agent_ask_then_oracle,
+             "nearest_example": agent_nearest_example, "random_valid": agent_random_valid}.get(args.agent)
     if args.agent == "anthropic":
         agent = make_anthropic_agent(args.model, max_tokens=args.max_tokens)
     elif args.agent == "ollama":

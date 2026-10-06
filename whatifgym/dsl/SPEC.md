@@ -15,11 +15,13 @@ reference. The agent never solves anything. The machine-readable grammar is `sch
   "rules": [ ... ],             // new linear limits on sums of decision measures
   "objective": [ ... ],         // ordered objective stages (lexicographic)
   "fixed_decisions": [ ... ],   // decisions pinned to a value
+  "relax": [ ... ],             // constraints of the base model that no longer apply
+  "logic": [ ... ],             // either-or rules: at least k of several conditions hold
   "note": "free text, ignored"
 }
 ```
 
-A scenario must carry at least one of `data_changes`, `rules`, `objective`, `fixed_decisions`. The only
+A scenario must carry at least one of `data_changes`, `rules`, `objective`, `fixed_decisions`, `relax`, `logic`. The only
 alternative is a clarifying question, which stands alone:
 
 ```json
@@ -88,6 +90,43 @@ The result's `objective` is the value of the last stage; `stage_values` lists al
 Every variable of the measure inside the scope is fixed to the value (lower and upper bound). To pin a *sum*
 instead, use a rule with `==`.
 
+## Relaxations
+
+A relaxation removes constraints of the base model. `constraint` names a constraint family from the model
+schema (`factory_planning`: `balance[month, product]`, `end_stock[product]`, `capacity[month, machine]`); `scope`
+picks members of the family by its index dimensions, and an omitted dimension means "all".
+
+```json
+"relax": [{"constraint": "capacity", "scope": {"month": "Mar"}}]
+```
+
+This lifts the machine-hours limit for every machine in March only. The validator rejects an unknown family, a
+dimension the family does not have, a value that is not a key, and a scope that selects no constraint. A family
+whose dimensions are not key columns of the data cannot be relaxed; change the data or add a rule instead.
+
+## Logical rules
+
+A logical rule says that at least `at_least` of the conditions in `of` hold. A condition bounds the **sum** of a
+decision measure over a scope, like a rule with an absolute `value`. Negations are written out:
+
+| planner says | logic |
+|---|---|
+| A or B (either-or) | `at_least` 1 of [A, B] |
+| never both A and B | `at_least` 1 of [not A, not B], e.g. `make <= 0` for "no production" |
+| make none, or at least q | `at_least` 1 of [`sum <= 0`, `sum >= q`] |
+| if A then B | `at_least` 1 of [not A, B] |
+| at most k of n may be active | `at_least` n − k of [`x_i <= 0`] |
+
+```json
+"logic": [{"at_least": 1, "of": [
+  {"measure": "make", "scope": {"product": "Prod1", "month": "Mar"}, "sense": "<=", "value": 0},
+  {"measure": "make", "scope": {"product": "Prod1", "month": "Mar"}, "sense": ">=", "value": 300}]}]
+```
+
+The oracle adds one binary per condition and a big-M constraint whose M is the exact range of the condition's
+sum over the LP relaxation of the scenario, so no feasible plan is cut off. A condition whose sum has no finite
+bound is an error: bound the measure with a rule first.
+
 ## Results and scoring
 
 The oracle returns `status` (optimal | infeasible | unbounded | not_solved | time_limit | invalid | ask),
@@ -100,4 +139,4 @@ the same reward. Validation errors come back as `{"path", "message"}` pairs an a
 
 `examples/01_demand_scale.json` and `examples/02_new_limit_rule.json` are the two shown to agents in the
 environment observation; the remaining files cover every construct and are all validated in the test suite,
-together with 22 planted invalid scenarios in `tests/dsl_bad/` that the schema must reject.
+together with 26 planted invalid scenarios in `tests/dsl_bad/` that the schema must reject.

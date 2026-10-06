@@ -19,6 +19,7 @@ import time
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
+from ..dsl.apply import scenario_hash
 from ..oracle import ScenarioResult, solve_scenario
 from ..registry import get_model
 from ..scoring import REL_TOL, compare_results
@@ -180,6 +181,9 @@ class TaskFamily:
     specific_templates: dict[str, dict[str, Template]] = {}   # model name -> {template name: fn}
     generic_templates: dict[str, Template] = {}
     combo_share: float = 0.15        # how often a two-part question is attempted
+    check_all_solvers: bool = False  # cross-check references on every other open solver, not only the first
+    distinct_outcomes: bool = False  # drop a candidate whose scored result equals an accepted task's (else one
+                                     # answer fits several questions, which a copy-the-nearest agent exploits)
     max_combo_share: float = 0.3     # ... and the ceiling on two-part questions in a generated file
 
     def __init__(self, model_name: str, solver: str = "highs"):
@@ -246,8 +250,10 @@ class TaskFamily:
         names = list(templates)
         tasks: list[Task] = []
         seen: set[str] = set()
+        tried: set[str] = set()   # every candidate already solved: a repeat is skipped without solving again
         kpi_keys = self.model.SCORING_KPIS
-        checkers = check_solvers if check_solvers is not None else [s for s in available_solvers() if s in ("scip", "cbc") and s != self.solver][:1]
+        checkers = check_solvers if check_solvers is not None else \
+            [s for s in available_solvers() if s in ("scip", "cbc") and s != self.solver][:None if self.check_all_solvers else 1]
         attempts = 0
         while len(tasks) < n and attempts < 60 * n:
             if max_seconds is not None and time.time() - t_start > max_seconds:
@@ -268,6 +274,11 @@ class TaskFamily:
             question, scenario, slots, difficulty = produced
             scenario.setdefault("version", "0.1")
             scenario.setdefault("base_model", self.model.name)
+            h = scenario_hash(scenario)
+            if h in tried:  # same candidate as before: it was accepted (a duplicate) or rejected for a stable reason
+                self.skipped["duplicate"] = self.skipped.get("duplicate", 0) + 1
+                continue
+            tried.add(h)
             ref = self._solve(scenario, self.solver)
             if ref is None:
                 continue
@@ -290,6 +301,9 @@ class TaskFamily:
                     break
             if not stable:
                 self.skipped["solver disagreement"] = self.skipped.get("solver disagreement", 0) + 1
+                continue
+            if self.distinct_outcomes and any(compare_results(t.reference, ref.to_dict(), kpi_keys).match for t in tasks):
+                self.skipped["same outcome as another task"] = self.skipped.get("same outcome as another task", 0) + 1
                 continue
             if not self.accept(scenario, ref):
                 self.skipped["family filter"] = self.skipped.get("family filter", 0) + 1

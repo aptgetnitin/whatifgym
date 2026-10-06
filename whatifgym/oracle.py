@@ -29,6 +29,8 @@ class ScenarioResult:
     n_fixed_vars: int = 0
     n_rules: int = 0
     n_data_changes: int = 0
+    n_relaxed_constraints: int = 0
+    n_logical_rules: int = 0
     solve_time_s: float = 0.0
     wall_time_s: float = 0.0
     scenario_hash: str = ""

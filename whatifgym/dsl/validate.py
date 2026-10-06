@@ -2,7 +2,8 @@
 
 Semantic checks catch what a schema cannot: an unknown table or column, a selector that matches no row
 (a hallucinated entity), a measure or dimension the model does not expose, a scope value that is not a key,
-a row added without every column, a parameter that does not exist, a non-numeric scale target.
+a row added without every column, a parameter that does not exist, a non-numeric scale target, a constraint
+family the model does not have.
 Every problem is reported with a JSON-pointer-like path so an agent can repair its own output.
 """
 from __future__ import annotations
@@ -10,6 +11,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from typing import Any
+
+from .apply import constraint_families, relax_targets
 
 SCHEMA_PATH = Path(__file__).with_name("schema.json")
 SCHEMA: dict[str, Any] = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
@@ -46,8 +49,8 @@ def _explain(err) -> str:
         return err.message
     if not err.path:  # root: ask vs. scenario
         if isinstance(inst, dict) and "ask" in inst:
-            return "an `ask` must stand alone: remove data_changes, rules, objective and fixed_decisions, or remove `ask`"
-        return "a scenario needs at least one of data_changes, rules, objective or fixed_decisions (or a single `ask`)"
+            return "an `ask` must stand alone: remove data_changes, rules, objective, fixed_decisions, relax and logic, or remove `ask`"
+        return "a scenario needs at least one of data_changes, rules, objective, fixed_decisions, relax or logic (or a single `ask`)"
     branches = err.schema.get("oneOf", [])
     if isinstance(inst, dict) and "op" in inst:  # data_change branches are keyed by op
         idx = next((i for i, b in enumerate(branches)
@@ -151,13 +154,14 @@ def validate_semantics(scenario: dict, model, data: dict) -> list[dict[str, str]
             if not shadow[table]:
                 errors.append({"path": p, "message": f"removing these rows empties table {table!r}"})
 
-    # ---- measures (rules, objective, fixed decisions) need a built model for the index values
-    needs_measures = scenario.get("rules") or scenario.get("fixed_decisions") or any(
-        st["measure"] != "original" for st in scenario.get("objective", []))
-    measures = {}
+    # ---- measures (rules, objective, fixed decisions, logic) and relaxations need a built model for the index values
+    needs_measures = scenario.get("rules") or scenario.get("fixed_decisions") or scenario.get("logic") \
+        or scenario.get("relax") or any(st["measure"] != "original" for st in scenario.get("objective", []))
+    measures, prob = {}, None
     if needs_measures:
         try:
-            measures = model.measures(model.build(data))
+            prob = model.build(data)
+            measures = model.measures(prob)
         except Exception as exc:  # pragma: no cover - defensive
             errors.append({"path": "/", "message": f"could not build the base model to inspect measures: {exc}"})
             return errors
@@ -190,6 +194,35 @@ def validate_semantics(scenario: dict, model, data: dict) -> list[dict[str, str]
             errors.append({"path": f"/objective/{i}/scope", "message": "the original objective takes no scope"})
     for i, fd in enumerate(scenario.get("fixed_decisions", [])):
         check_scope(f"/fixed_decisions/{i}", fd["measure"], fd.get("scope"))
+    for i, lr in enumerate(scenario.get("logic", [])):
+        if lr["at_least"] > len(lr["of"]):
+            errors.append({"path": f"/logic/{i}/at_least", "message": f"at_least is {lr['at_least']} but there are only {len(lr['of'])} conditions"})
+        for j, cond in enumerate(lr["of"]):
+            check_scope(f"/logic/{i}/of/{j}", cond["measure"], cond.get("scope"))
+
+    families = constraint_families(model) if scenario.get("relax") else {}
+    index_sets = model.index_sets(data) if scenario.get("relax") else {}
+    for i, rx in enumerate(scenario.get("relax", [])):
+        p = f"/relax/{i}"
+        if rx["constraint"] not in families:
+            errors.append({"path": p + "/constraint", "message": f"unknown constraint family {rx['constraint']!r}; families are {sorted(families)}"})
+            continue
+        dims = families[rx["constraint"]]
+        n_before = len(errors)
+        for dim, val in (rx.get("scope") or {}).items():
+            if dim not in dims:
+                errors.append({"path": f"{p}/scope/{dim}", "message": f"constraint family {rx['constraint']!r} has dimensions {list(dims)}, not {dim!r}"})
+                continue
+            known = set(index_sets.get(dim, []))
+            for v in (val if isinstance(val, list) else [val]):
+                if v not in known:
+                    errors.append({"path": f"{p}/scope/{dim}", "message": f"{v!r} is not a {dim}; known values: {sorted(map(str, known))[:12]}"})
+        if len(errors) == n_before:
+            targets = relax_targets(model, prob, data, rx)
+            if targets is None:
+                errors.append({"path": p + "/constraint", "message": f"constraint family {rx['constraint']!r} cannot be relaxed in this model; change the data or add a rule instead"})
+            elif not targets:
+                errors.append({"path": p + "/scope", "message": "scope selects no constraint"})
     return errors
 
 

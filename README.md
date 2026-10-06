@@ -82,17 +82,17 @@ with links, licences and measured sizes, is `docs/base_models.md`.
 | **schema** | `schema.json`: for every table its key columns, each column's type, unit, description and human **label**, each parameter, each decision measure, and prose for decision variables and constraints. Labels drive the generic question templates; `"editable": false` marks structural columns that are never a what-if (an ordering, an initial state); `"min"`/`"max"` on a parameter bound what scenarios may set it to. |
 | **measure** | A named family of decision variables with dimensions, e.g. `make[month, product]`. Declared in `MEASURE_DIMS` and returned by `model.measures(prob)`. Rules, fixed decisions and objective stages in the DSL refer to measures, never to raw solver variables. |
 | **KPI** | Every model's `kpis(prob, data)` returns a dict of business numbers (profit, holding cost, bins used, ...). `SCORING_KPIS` lists the subset that is unique at the optimum; only those are compared when scoring, because models with degenerate optima have other KPIs that legitimately differ between solvers. |
-| **scenario** | One JSON object in the scenario DSL (`whatifgym/dsl/SPEC.md`, `schema.json`): `data_changes`, `rules`, `objective` stages, `fixed_decisions`, or a lone `ask`. |
+| **scenario** | One JSON object in the scenario DSL (`whatifgym/dsl/SPEC.md`, `schema.json`): `data_changes`, `rules`, `objective` stages, `fixed_decisions`, `relax`, `logic`, or a lone `ask`. |
 | **rule** | A new linear constraint on the sum of a measure over a scope: `{"measure": "make", "scope": {"product": "Prod1"}, "sense": "<=", "value": 1000}`; `relative_to` + `factor` express "at most 80 % of what we sell". |
 | **oracle** | `whatifgym.oracle.solve_scenario(model, scenario, data, solver)`: validate → apply → build → solve → `ScenarioResult`. Used both to produce reference results and to evaluate what the agent submits. |
 | **reference** | The oracle's result on the gold scenario, stored inside each task (`task.reference`). Generation guarantees that HiGHS and a second open solver agree on it. |
 | **task** | `whatifgym.tasks.Task`: id, family, model, question, hidden `scenario`, `reference`, `kpi_keys`, difficulty, template, slots, split, optional `clarification`, tags. One JSON line per task in `tasks/<model>/<family>_v0.jsonl`. |
-| **family** | A kind of what-if, implemented as a `TaskFamily` subclass in `whatifgym/families/`: `data_change` (edit numbers, add or remove rows, change a parameter) and `new_limit` (add rules). |
+| **family** | A kind of what-if, implemented as a `TaskFamily` subclass in `whatifgym/families/`: `data_change`, `new_limit`, `relative_rule`, `objective_change`, `fixed_decision`, `relax_remove`, `logical_rule` and `under_specified` (section 9). |
 | **template** | One question pattern inside a family, a function `(rng, ctx) -> (question, scenario, slots, difficulty)` or `None`. *Specific* templates speak the language of one model (factory planning); *generic* templates work on any model from its schema labels. |
 | **combo** | A two-part question made from two templates ("What if X, and at the same time Y?"); always `difficulty = hard`, capped at 30 % of a file. |
 | **split** | `train` / `dev` / `test`, 70/15/15, decided by a hash of the task id, so regenerating never moves a task between splits. |
 | **reward** | 1.0 if the re-solved result matches the reference (status; and for optimal results objective and scoring KPIs within relative 1e-3), +0.1 for a valid scenario even when wrong, −0.2 for an unnecessary clarifying question, 0 when a needed question was not asked. |
-| **trivial agents** | `oracle` (submits the gold scenario, must score 1.1), `noop` (empty valid scenario, must score 0.1), `ask_then_oracle` (one needless question then the gold scenario, must score 0.9). They pin the reward scale and catch leaked or broken tasks. |
+| **trivial agents** | `oracle` (submits the gold scenario, must score 1.1), `noop` (empty valid scenario, must score 0.1), `ask_then_oracle` (one needless question then the gold scenario, must score 0.9). They pin the reward scale and catch leaked or broken tasks. Two probes have no exact expectation but must score low: `nearest_example` (copies the gold scenario of the most similar training task) and `random_valid` (a random scenario that passes validation). |
 | **frontier baseline** | A large hosted model run through the same environment, either through the Anthropic API (`--agent anthropic`) or by replaying answers collected offline (`--agent answers`). |
 
 ## 4. Repository layout
@@ -128,7 +128,7 @@ scripts/
   build_base_model_table.py     regenerates docs/base_models.md and data/base_models.csv (the 30-model shortlist)
   make_tasks.py                 generates task files for one or all (family, model) pairs; respects tasks/frozen.txt
   run_baseline.py               runs an agent through the environment: oracle | noop | ask_then_oracle | anthropic | ollama | answers
-  run_trivial_baselines.py      the three trivial agents on every task file -> results/trivial_baselines.md
+  run_trivial_baselines.py      the five trivial agents on every task file -> results/trivial_baselines.md
   run_local_baselines.py        local Ollama models over every task file, resumable -> results/baselines/local/
   summarise_results.py          comparison tables across result files -> results/baselines/summary.md
 tasks/
@@ -136,7 +136,7 @@ tasks/
   <model>/new_limit_v0.jsonl
   frozen.txt                    task files that published results cite; make_tasks.py never overwrites them
 results/
-  trivial_baselines.md          oracle / noop / ask_then_oracle on all 78 task files
+  trivial_baselines.md          the five trivial agents on every task file
   baselines/summary.md          accuracy tables across every model run so far (regenerate with summarise_results.py)
   baselines/data_change_v0/     the first frontier baseline (Claude Sonnet and Opus on factory_planning data_change)
   baselines/local/<model>/      local open-weight model runs (created by run_local_baselines.py)
@@ -205,15 +205,19 @@ agent produces. A scenario is one JSON object with `version`, optionally `base_m
 | `rules` | New constraints: the sum of `measure` over `scope` is `<=`, `>=` or `==` an absolute `value`, or `factor` times the sum of another measure (`relative_to`). | `{"measure": "make", "scope": {"product": "Prod1"}, "sense": "<=", "value": 1000}` |
 | `objective` | Up to three lexicographic stages, each `min` or `max` of `original` (the model's own objective) or of the sum of a measure over a scope; earlier stages are held within relative 1e-6 while later ones are optimised. | `[{"sense": "max", "measure": "original"}, {"sense": "min", "measure": "store"}]` |
 | `fixed_decisions` | Fix every variable of a measure inside a scope to a value. | `{"measure": "make", "scope": {"month": "Jan", "product": "Prod3"}, "value": 100}` |
+| `relax` | Remove constraints of the base model: a constraint family from the model schema, in full or over a `scope` of its index dimensions. | `{"constraint": "capacity", "scope": {"month": "Mar"}}` |
+| `logic` | At least `at_least` of the conditions in `of` hold; a condition bounds the sum of a measure over a scope. Covers either-or, never both, none-or-a-minimum-batch, if-then and at-most-k-of-n. The oracle adds one binary per condition, with big-M taken from the exact LP range of the condition, so no feasible plan is cut off. | `{"at_least": 1, "of": [{"measure": "make", "scope": {"product": "Prod1"}, "sense": "<=", "value": 0}, {"measure": "make", "scope": {"product": "Prod1"}, "sense": ">=", "value": 300}]}` |
 | `ask` | Instead of all of the above, one clarifying question to the planner. Must stand alone. | `{"version": "0.1", "ask": "Which product do you mean?"}` |
 
 Validation (`validate.py`) has two stages so that errors are actionable: the JSON Schema catches shape errors
 (unknown op, missing field, `ask` next to other parts), then the semantic pass checks against the actual model —
 table and column exist, `where` names key columns with values that exist in the data, a `set` on a non-numeric
 column is refused, `add` rows have exactly the table's columns and a new key, `remove` does not empty a table,
-measures and scope dimensions exist, parameters exist. Each error is `{"path": "/data_changes/0/where/product",
-"message": "..."}`. `whatifgym/dsl/examples/` holds ten valid worked examples and `tests/dsl_bad/` twenty-two
-planted bad ones that must be rejected with the expected message.
+measures and scope dimensions exist, parameters exist, a numeric parameter gets a number, a relaxed constraint
+family exists and its scope selects at least one constraint, a logical rule asks for no more conditions than it
+lists. Each error is `{"path": "/data_changes/0/where/product", "message": "..."}`. `whatifgym/dsl/examples/` holds
+twelve valid worked examples and `tests/dsl_bad/` twenty-six planted bad ones that must be rejected with the
+expected message.
 
 ## 7. Oracle and scoring
 
@@ -338,7 +342,26 @@ Part of the plan is committed and the rest optimised: one entry fixed at a diffe
 commit to year Year3, mine Mine2"), or every entry of a scope fixed at one level ("day Tuesday gets exactly 14
 damaged cars at the depot in the morning in each depot"). The answer is the DSL's `fixed_decisions`.
 
-### Family 6: `under_specified`
+### Family 6: `relax_remove`
+
+A limit of the base model no longer applies, in full or for part of its index: "What if the machine-hours limit did
+not apply for machine type grinder?", "Suppose the rule that a closed mine can never reopen is lifted for year
+Year2 only." The answer is a `relax` entry naming the constraint family and its scope. Only *policy* constraints are
+relaxed — capacities, specifications, targets and caps a planner could choose to lift — never balance, flow or
+definition constraints, so `whatifgym/families/relax_remove.py` keeps a per-model list of relaxable families with
+the planner's name for each. Bin packing, car rental and food supply have none. A two-part task ("neither A nor
+B") is kept only when each part changes the result on its own.
+
+### Family 7: `logical_rule`
+
+An either-or condition that a linear limit cannot state: "Prod1 and Prod2 may not both be made in March" (never
+both), "the units sold of Prod6 in March must be either zero or at least 600" (minimum batch), "any extraction at
+Mine2 in Year3 requires at least 1,950,000 tons from Mine3 in Year2" (if-then), "at most 2 of mines Mine1 to Mine4
+may extract any ore" (k of n). The answer is a `logic` entry with the negations written out. Every template picks
+conditions the base plan violates, so the rule binds; the test suite checks on four models that a logical rule
+gives exactly the best of the plain-rule branches it allows.
+
+### Family 8: `under_specified`
 
 The question leaves out what is needed to act on it, and the right first move is to ask. Each task is built from
 a fully specified task of `data_change` or `new_limit`: the gold scenario and reference are that task's, the
@@ -354,25 +377,25 @@ Tasks per base model and family (`tasks/<model>/<family>_v0.jsonl`; a dash means
 that model — bin packing's objective is robust to almost everything, and the wedding model's only measure is 3,213
 enumerated 0/1 columns, which the rule, objective and fixed-decision families exclude by design):
 
-| base model | data_change | new_limit | relative_rule | objective_change | fixed_decision | under_specified | total |
-|---|---|---|---|---|---|---|---|
-| `battery_scheduling` | 20 | 20 | 20 | 16 | 20 | 20 | 116 |
-| `bin_packing` | 20 | 4 | 18 | – | – | 20 | 62 |
-| `car_rental` | 20 | 20 | 20 | 20 | 20 | 20 | 120 |
-| `car_rental_2` | 20 | 20 | 20 | 20 | 20 | 20 | 120 |
-| `factory_planning` | 60 | 20 | 20 | 3 | 20 | 20 | 143 |
-| `factory_planning_2` | 20 | 20 | 20 | 13 | 20 | 20 | 113 |
-| `farm_planning` | 20 | 20 | 20 | 20 | 20 | 20 | 120 |
-| `food_manufacture` | 20 | 20 | 20 | 20 | 20 | 20 | 120 |
-| `food_supply` | 20 | 20 | 20 | 4 | 20 | 20 | 104 |
-| `manpower_planning` | 20 | 20 | 20 | 20 | 20 | 20 | 120 |
-| `mining` | 20 | 20 | 20 | 11 | 20 | 20 | 111 |
-| `multiple_knapsack` | 20 | 15 | 20 | 1 | 15 | 20 | 91 |
-| `power_generation_hydro` | 20 | 20 | 20 | 20 | 20 | 20 | 120 |
-| `wedding_seating` | 20 | – | – | – | – | 20 | 40 |
-| **total** | 320 | 239 | 258 | 168 | 235 | 280 | **1500** |
+| base model | data_change | new_limit | relative_rule | objective_change | fixed_decision | relax_remove | logical_rule | under_specified | total |
+|---|---|---|---|---|---|---|---|---|---|
+| `battery_scheduling` | 20 | 20 | 20 | 16 | 20 | 1 | 20 | 20 | 137 |
+| `bin_packing` | 20 | 4 | 18 | – | – | – | – | 20 | 62 |
+| `car_rental` | 20 | 20 | 20 | 20 | 20 | – | 20 | 20 | 140 |
+| `car_rental_2` | 20 | 20 | 20 | 20 | 20 | 14 | 20 | 20 | 154 |
+| `factory_planning` | 60 | 20 | 20 | 3 | 20 | 20 | 20 | 20 | 183 |
+| `factory_planning_2` | 20 | 20 | 20 | 13 | 20 | 7 | 20 | 20 | 140 |
+| `farm_planning` | 20 | 20 | 20 | 20 | 20 | 7 | 20 | 20 | 147 |
+| `food_manufacture` | 20 | 20 | 20 | 20 | 20 | 1 | 20 | 20 | 141 |
+| `food_supply` | 20 | 20 | 20 | 4 | 20 | – | 20 | 20 | 124 |
+| `manpower_planning` | 20 | 20 | 20 | 20 | 20 | 12 | 20 | 20 | 152 |
+| `mining` | 20 | 20 | 20 | 11 | 20 | 20 | 20 | 20 | 151 |
+| `multiple_knapsack` | 20 | 15 | 20 | 1 | 15 | 1 | 18 | 20 | 110 |
+| `power_generation_hydro` | 20 | 20 | 20 | 20 | 20 | – | 20 | 20 | 140 |
+| `wedding_seating` | 20 | – | – | – | – | 1 | – | 20 | 41 |
+| **total** | 320 | 239 | 258 | 168 | 235 | 84 | 238 | 280 | **1822** |
 
-1500 tasks in 78 files, every one with a hidden gold scenario and a solver-verified reference. All but one file
+1822 tasks in 100 files, every one with a hidden gold scenario and a solver-verified reference. All but one file
 were generated with `python scripts/make_tasks.py --family all --model all --n 20 --seed 0`; the
 `factory_planning` data-change file was generated earlier with `--n 60` and is listed in `tasks/frozen.txt` because
 the frontier baseline in `results/baselines/data_change_v0/` refers to it (`make_tasks.py` refuses to overwrite
@@ -397,10 +420,17 @@ the paraphrases are then reported, since verification selects rewrites it could 
 
 ## 10. Results so far
 
-**Trivial agents** (`results/trivial_baselines.md`, `scripts/run_trivial_baselines.py`): on all 78 files and 1500
-tasks the oracle scores exactly 1.100, noop exactly 0.100 and ask_then_oracle exactly 0.900 on fully specified tasks,
-and 0.000 / 0.000 / 1.100 on the under-specified ones (answering without asking scores 0 there). Any other number
-would mean a broken oracle, a broken scorer or a leaked task.
+**Trivial agents** (`results/trivial_baselines.md`, `scripts/run_trivial_baselines.py`): on all 110 files and 1900
+tasks (the 1822 template tasks plus 78 paraphrases) the oracle scores exactly 1.100, noop exactly 0.100 and
+ask_then_oracle exactly 0.900 on fully specified tasks, and 0.000 / 0.000 / 1.100 on the under-specified ones
+(answering without asking scores 0 there). Any other number would mean a broken oracle, a broken scorer or a leaked
+task. The two probes: `random_valid` is correct on 0.3% of tasks; `nearest_example` (copy the gold scenario of the
+most similar training task on the same base model) on 6.6%. Where it scores higher, several questions on one base
+model share one scored outcome (lifting the weight limit on *any* knapsack packs every item; many lexicographic
+stages leave the same plan), so one answer fits them all. The two newest families are generated with
+`distinct_outcomes` (a candidate whose result equals an accepted task's is dropped) and have no file above the 0.10
+warning level; 18 files of the older families do, listed in the report, and are due for the same filter at their
+next regeneration.
 
 **Frontier models** (`results/baselines/data_change_v0/README.md`): on the 60 `factory_planning` data-change tasks,
 Claude Sonnet answered 59/60 and Claude Opus 60/60 correctly, every answer a valid scenario, through the exact
@@ -411,8 +441,8 @@ published numbers stay reproducible.
 
 What that means: the data-change family on a model whose schema is fully exposed is **saturated** for frontier
 models. It is the floor check that the pipeline and the reward are sound. Difficulty has to come from the other
-families (`new_limit` is the first; relative, logical and relax/remove rules, objective changes, fixed decisions,
-infeasible requests, chained and under-specified questions are planned), from models held out at test time, and
+families (`new_limit`, relative and logical rules, relax/remove, objective changes, fixed decisions and
+under-specified questions are built; infeasible requests and chained scenarios are planned), from models held out at test time, and
 from the small open models that are the eventual RL target. No frontier run has been made yet on the 339 new
 tasks; `scripts/run_baseline.py --export-prompts` produces their prompts.
 
@@ -597,14 +627,14 @@ keep that property or the data-change family becomes a look-up exercise.
 | done | Repository with MIT licence and the clean-room rule; `setup.sh` installs HiGHS, SCIP (PySCIPOpt), OR-Tools |
 | done | 30-model shortlist with sources, licences and measured sizes (`docs/base_models.md`) |
 | done | 14 base models ported and verified on HiGHS, SCIP and CBC, 3 of them also on CP-SAT; the last four also re-run against the original notebooks on Gurobi 13 |
-| done | Scenario DSL v0.1 with JSON Schema, two-stage validation, 10 worked examples, 22 planted bad scenarios |
+| done | Scenario DSL v0.1 with JSON Schema, two-stage validation, 12 worked examples, 26 planted bad scenarios; `relax` (remove a constraint family, in full or over a scope) and `logic` (at least k of several conditions, exact big-M from LP bounds) |
 | done | Oracle, scorer (relative 1e-3 on status, objective and scoring KPIs) and environment (ask + scenario, 3 turns) |
-| done | Six task families (`data_change`, `new_limit`, `relative_rule`, `objective_change`, `fixed_decision`, `under_specified`) with specific and schema-driven generic templates; 1500 tasks in 78 files over all 14 models, plus 78 verified natural-language paraphrases; trivial agents exact on every file |
+| done | Eight task families (`data_change`, `new_limit`, `relative_rule`, `objective_change`, `fixed_decision`, `relax_remove`, `logical_rule`, `under_specified`) with specific and schema-driven generic templates; 1822 tasks in 100 files over all 14 models, plus 78 verified natural-language paraphrases; trivial agents exact on every file, and two probe agents (`nearest_example`, `random_valid`) |
 | done | First frontier baseline on `factory_planning` data_change: Claude Sonnet 59/60, Claude Opus 60/60 |
 | done | First local open-model baseline: Qwen3 8B through Ollama on the 399 original tasks, 78.7 % (see `results/baselines/README.md` for the reading) |
 | next | The scaling ladder (Qwen3 4B–32B, gpt-oss 20B, thinking on/off) and the new families and paraphrases through the same runner; paraphrase at scale with a local model (`scripts/paraphrase_tasks.py`) |
 | next | Frontier baselines on the new files, through the API with pinned model ids |
-| next | Remaining families: logical either-or rules and relax/remove a constraint (both need a DSL extension), infeasible-request diagnosis, chained scenarios |
+| next | Remaining families: infeasible-request diagnosis, chained scenarios |
 | next | Port the remaining shortlisted models; hold some out for generalisation tests |
 | next | Small open models as RL policies trained against the environment reward |
 

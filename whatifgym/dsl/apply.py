@@ -1,19 +1,54 @@
 """Apply a validated scenario to a base model and solve it.
 
 ``apply_data_changes`` edits a deep copy of the model data; ``apply_scenario`` builds the model on the edited
-data, adds rules and fixed decisions as constraints, runs the objective stages lexicographically and returns a
-plain dict (status, objective, stage values, decisions, KPIs, sizes, timing). Solver libraries are imported
-lazily, as everywhere in whatifgym.
+data, removes relaxed constraints, adds rules, fixed decisions and logical rules as constraints, runs the
+objective stages lexicographically and returns a plain dict (status, objective, stage values, decisions, KPIs,
+sizes, timing). Solver libraries are imported lazily, as everywhere in whatifgym.
 """
 from __future__ import annotations
 
 import copy
 import hashlib
+import itertools
 import json
+import re
 import time
 from typing import Any
 
 REL_TOL_STAGE = 1e-6  # how tightly earlier lexicographic stages are held
+_ILLEGAL = re.compile(r"[-+\[\] >/]")  # characters PuLP replaces with "_" in constraint names (pulp.LpElement)
+
+
+def constraint_families(model) -> dict[str, tuple[str, ...]]:
+    """Constraint families of a base model and their index dimensions, from the ``constraints`` keys of its
+    schema.json (``"capacity[month, machine]"`` -> ``{"capacity": ("month", "machine")}``)."""
+    out: dict[str, tuple[str, ...]] = {}
+    for key in model.schema().get("constraints", {}):
+        family, _, rest = key.partition("[")
+        out[family.strip()] = tuple(d.strip() for d in rest.rstrip("]").split(",") if d.strip())
+    return out
+
+
+def relax_targets(model, prob, data: dict[str, Any], relaxation: dict[str, Any]) -> list[str] | None:
+    """Names of the constraints a relaxation removes, or ``None`` when the family cannot be resolved in this
+    model (a dimension that is not a key column of the data). Constraint ``family[i, j]`` is named
+    ``family_i_j`` by the base models (PuLP replaces ``-+[] ->/`` with ``_``)."""
+    dims = constraint_families(model).get(relaxation["constraint"])
+    if dims is None:
+        return None
+    index_sets = model.index_sets(data)
+    if any(d not in index_sets for d in dims):
+        return None
+    scope = relaxation.get("scope") or {}
+    values = []
+    for d in dims:
+        if d in scope:
+            values.append(scope[d] if isinstance(scope[d], list) else [scope[d]])
+        else:
+            values.append(index_sets[d])
+    names = (_ILLEGAL.sub("_", "_".join([relaxation["constraint"]] + [str(v) for v in combo]))
+             for combo in itertools.product(*values))
+    return [n for n in names if n in prob.constraints]
 
 
 def scenario_hash(scenario: dict) -> str:
@@ -96,6 +131,88 @@ def _fix_decisions(measures: dict, fixed: list[dict[str, Any]]) -> int:
     return n
 
 
+def _relax(model, prob, data: dict[str, Any], relaxations: list[dict[str, Any]]) -> int:
+    n = 0
+    for rx in relaxations:
+        names = relax_targets(model, prob, data, rx)
+        if not names:
+            raise ValueError(f"relaxation {rx} selects no constraint of {model.name}")
+        for name in names:
+            del prob.constraints[name]
+            n += 1
+    return n
+
+
+def _lp_range(prob, expr, need_max: bool, need_min: bool, solver: str, time_limit: float | None):
+    """Max and min of ``expr`` over the LP relaxation of ``prob`` as it stands. Every point of the MILP lies in
+    the relaxation, so these bound ``expr`` validly for big-M. Returns ``None`` when the relaxation is infeasible
+    (the scenario is infeasible anyway); raises when a needed side is unbounded.
+
+    The bounds are a property of the LP, not of the solver, so they come from HiGHS whenever it is installed (PuLP's
+    CBC interface fails on some re-targeted objectives with a KeyError while reading the solution back)."""
+    import pulp
+
+    from .. import solvers
+
+    if "highs" in solvers.available_solvers():
+        solver = "highs"
+
+    saved_obj, saved_sense = prob.objective, prob.sense
+    cats = {v.name: v.cat for v in prob.variables()}
+    for v in prob.variables():
+        v.cat = pulp.LpContinuous
+    try:
+        out = []
+        for want, sense in ((need_max, pulp.LpMaximize), (need_min, pulp.LpMinimize)):
+            if not want:
+                out.append(None)
+                continue
+            prob.setObjective(expr)
+            prob.sense = sense
+            status, value, _, _ = solvers.solve_pulp(prob, solver, time_limit=time_limit)
+            if status == "infeasible":
+                return None
+            if status != "optimal":
+                raise ValueError(f"a logical condition has no finite {'upper' if sense == pulp.LpMaximize else 'lower'} "
+                                 f"bound ({status}); bound the measure with a rule first")
+            out.append(value)
+        return out[0], out[1]
+    finally:
+        for v in prob.variables():
+            if v.name in cats:
+                v.cat = cats[v.name]
+        prob.setObjective(saved_obj)
+        prob.sense = saved_sense
+
+
+def _add_logic(prob, measures: dict, logic: list[dict[str, Any]], solver: str, time_limit: float | None) -> int:
+    """At least k of the conditions hold: one binary per condition, ``b = 1`` forces its condition, ``sum b >= k``.
+    Big-M is the exact LP range of the condition's sum, so no feasible plan is cut off."""
+    import pulp
+
+    n = 0
+    for i, lr in enumerate(logic):
+        indicators = []
+        for j, cond in enumerate(lr["of"]):
+            expr = _sum(measures[cond["measure"]].select(cond.get("scope")))
+            sense, v = cond["sense"], cond["value"]
+            bounds = _lp_range(prob, expr, sense in ("<=", "=="), sense in (">=", "=="), solver, time_limit)
+            if bounds is None:
+                return n  # the scenario is infeasible before the logic; the solve will say so
+            hi, lo = bounds
+            b = pulp.LpVariable(f"logic_{i}_{j}", cat=pulp.LpBinary)
+            indicators.append(b)
+            if hi is not None:
+                m_up = max(0.0, hi - v) * (1 + 1e-6) + 1e-6
+                prob += (expr - v <= m_up * (1 - b), f"logic_{i}_{j}_le")
+            if lo is not None:
+                m_lo = max(0.0, v - lo) * (1 + 1e-6) + 1e-6
+                prob += (v - expr <= m_lo * (1 - b), f"logic_{i}_{j}_ge")
+        prob += (pulp.lpSum(indicators) >= lr["at_least"], f"logic_{i}_at_least")
+        n += 1
+    return n
+
+
 def _stage_expression(measures: dict, stage: dict[str, Any], original):
     """``original`` = (expression, sense) of the model's own objective, captured before any stage replaced it."""
     if stage["measure"] == "original":
@@ -118,8 +235,10 @@ def apply_scenario(model, scenario: dict[str, Any], data: dict[str, Any] | None 
     new_data = apply_data_changes(base, scenario.get("data_changes", []))
     prob = model.build(new_data)
     measures = model.measures(prob)
+    n_relaxed = _relax(model, prob, new_data, scenario.get("relax", []))
     _add_rules(prob, measures, scenario.get("rules", []))
     n_fixed = _fix_decisions(measures, scenario.get("fixed_decisions", []))
+    n_logic = _add_logic(prob, measures, scenario.get("logic", []), solver, time_limit)
 
     stages = scenario.get("objective") or [{"sense": "original", "measure": "original"}]
     original = (prob.objective, "max" if prob.sense == pulp.LpMaximize else "min")   # before any stage replaces it
@@ -149,6 +268,7 @@ def apply_scenario(model, scenario: dict[str, Any], data: dict[str, Any] | None 
         "kpis": model.kpis(prob, new_data) if status == "optimal" else {},
         "decisions": {}, "n_vars": n_vars, "n_constraints": n_cons, "n_int_vars": n_int,
         "n_fixed_vars": n_fixed, "n_rules": len(scenario.get("rules", [])),
+        "n_relaxed_constraints": n_relaxed, "n_logical_rules": n_logic,
         "n_data_changes": len(scenario.get("data_changes", [])),
         "solve_time_s": elapsed_solve, "wall_time_s": time.perf_counter() - t0,
         "scenario_hash": scenario_hash(scenario), "message": message,
