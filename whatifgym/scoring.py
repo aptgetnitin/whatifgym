@@ -2,7 +2,8 @@
 
 Rules (from the paper plan):
 * reward 1.0 when status matches (optimal or infeasible) and, for optimal, the objective and the task family's
-  KPIs match the reference within relative tolerance 1e-3; otherwise 0;
+  KPIs match the reference within relative tolerance 1e-3; for infeasible, the conflict (the base-model
+  constraints the scenario clashes with) must match too; otherwise 0;
 * a syntactically and semantically valid scenario adds 0.1 even when wrong;
 * an unnecessary clarifying question costs 0.2; a needed question that was not asked scores 0;
 * route correctness (ask vs. answer) is reported separately, never folded into the number silently.
@@ -64,7 +65,13 @@ def compare_results(reference: dict[str, Any], candidate: dict[str, Any],
     """``reference`` / ``candidate`` are ScenarioResult dicts. ``kpi_keys`` = the family's KPIs (None = all)."""
     status_match = reference["status"] == candidate["status"]
     if reference["status"] != "optimal":
-        return Comparison(status_match=status_match, objective_match=status_match, rel_tol=rel_tol)
+        # an infeasible reference with a known conflict must be infeasible for the same reason: the same base-model
+        # constraints (else any absurd impossible scenario would score)
+        mismatches = {}
+        if status_match and reference.get("conflict") and candidate.get("conflict") != reference["conflict"]:
+            mismatches["conflict"] = (reference["conflict"], candidate.get("conflict"))
+        return Comparison(status_match=status_match, objective_match=status_match, kpi_mismatches=mismatches,
+                          kpi_checked=1 if reference.get("conflict") else 0, rel_tol=rel_tol)
     objective_match = status_match and close(reference.get("objective"), candidate.get("objective"), rel_tol)
     ref_k, cand_k = _flatten(reference.get("kpis", {})), _flatten(candidate.get("kpis", {}))
     keys = [k for k in ref_k if kpi_keys is None or any(k == kk or k.startswith(kk + ".") for kk in kpi_keys)]

@@ -4,14 +4,14 @@
 
 whatifgym is a clean-room benchmark and reinforcement-learning environment for **LLM what-if agents over optimization models**. A planner asks a question such as *"what if demand for Prod5 drops 20 % in May?"*. The agent translates the question into a formal scenario. A solver, not the agent, solves the model again. The agent gets a reward only when the new result matches a hidden reference.
 
-> **State on Oct 6, 2026**
+> **State on Oct 7, 2026**
 >
 > | Item | Now |
 > |---|---|
 > | Base models | 14 of 30, verified on HiGHS, SCIP and CBC |
-> | Task families | 8 of 10 |
-> | Tasks | 1,822 template tasks + 78 verified paraphrases |
-> | Tests | 411 pass, 7 slow tests skipped |
+> | Task families | 10 of 10 |
+> | Tasks | 2,290 template tasks + 78 verified paraphrases |
+> | Tests | 465 pass, 7 slow tests skipped |
 > | Running now | The local LLM ladder runs the under-specified tasks again, after the ask fix (section 11) |
 
 ---
@@ -46,7 +46,7 @@ Total time: about 10 minutes.
    git clone https://github.com/aptgetnitin/whatifgym && cd whatifgym
    ```
 2. Set up and check (about 5 minutes): `./setup.sh`, then `source .venv/bin/activate`.
-3. Run the tests (about 2 minutes): `python -m pytest -q`. Expect `411 passed, 7 skipped`.
+3. Run the tests (about 3 minutes): `python -m pytest -q`. Expect `465 passed, 7 skipped`.
 4. Score the trivial agents on one file (10 seconds):
    ```bash
    python scripts/run_baseline.py --tasks tasks/mining/new_limit_v0.jsonl --agent oracle   # mean reward 1.100
@@ -127,6 +127,8 @@ Each term has one meaning in this repository.
 | **template** | One question pattern in a family: `(rng, ctx) -> (question, scenario, slots, difficulty)` or `None`. |
 | **split** | `train` / `dev` / `test` (70/15/15), from a hash of the task id. A task never changes split. |
 | **trivial agent** | A fixed agent that checks the reward scale or probes for leaks (section 11). |
+| **conflict** | For an infeasible result: the irreducible set of base-model constraints the scenario clashes with. The scorer compares it. |
+| **history** | For a chained task: earlier questions with the scenarios already applied. The answer must be the complete scenario. |
 
 ---
 
@@ -146,7 +148,7 @@ whatifgym/                      the package
   oracle.py, scoring.py         solve_scenario(); compare_results() and the reward
   env.py                        WhatIfEnv: reset()/step(), ask handling, 3 turns
   tasks.py                      Task, JSONL I/O, deterministic splits
-  families/                     base.py (generator and filters) + one file per family (8)
+  families/                     base.py (generator and filters) + one file per family (10)
 scripts/
   make_tasks.py                 generate task files
   paraphrase_tasks.py           natural-language rewrites with a round-trip check
@@ -157,7 +159,7 @@ scripts/
   verify_models.py              every model x every solver vs reference.json
 tasks/<model>/*.jsonl           generated tasks; tasks/frozen.txt lists files that results cite
 results/                        trivial_baselines.md, baselines/ (frontier and local runs)
-tests/                          pytest, 418 tests
+tests/                          pytest, 472 tests
 docs/                           base_models.md (shortlist), PORTING_GUIDE.md
 ```
 
@@ -270,6 +272,8 @@ flowchart TD
 - `solve_scenario()` returns a `ScenarioResult`: status, objective, stage values, KPIs, sizes, timings and a scenario hash.
 - Status values: `optimal`, `infeasible`, `unbounded`, `not_solved`, `time_limit`, `error`, `invalid`, `ask`.
 - If the solve step fails on a scenario that passed validation, the episode scores as invalid. It does not stop the run.
+- **Infeasible results carry a `conflict`.** A deletion filter finds the base-model constraints the scenario clashes with: first whole families, then single constraints, in sorted order. The result is deterministic, and HiGHS computes it for every solver.
+- **For an infeasible reference, the conflict must match too.** Thus an unrelated impossible scenario scores 0.1, not 1.1.
 
 ---
 
@@ -283,6 +287,7 @@ flowchart TD
 | key values of every dimension, which rows exist | the gold scenario |
 | measures and their dimensions | the reference result |
 | DSL schema and 2 worked examples | |
+| history of applied scenarios (chained tasks only) | |
 | question, dialogue so far, turns left | |
 
 Actions:
@@ -297,7 +302,22 @@ An episode lasts at most 3 turns. `info` carries the full score breakdown and an
 
 ## 10. Task families and task files
 
-### How a task is made
+### How a family is built
+
+Building a family has three steps. Only step 2 is automatic.
+
+```mermaid
+flowchart LR
+    W["1. Write the family<br/>(by hand)<br/>templates in Python"] --> G["2. Generate<br/>(automatic)<br/>make_tasks.py + filters"]
+    G --> C["3. Check<br/>(automatic)<br/>trivial agents, probes, tests"]
+    C -- "a probe scores high,<br/>or a test fails" --> W
+```
+
+1. **Write.** A template is a Python function. It reads the base plan and draws one question with its gold scenario, so that a new limit binds and the question is not a no-op.
+2. **Generate.** `make_tasks.py` calls the templates many times. Every candidate goes through the filters below.
+3. **Check.** The trivial agents must score exactly on every new file, the probes must stay low, and the tests must pass.
+
+### Step 2: the filters
 
 Each candidate must pass every filter, in this order. A failed candidate is dropped and counted.
 
@@ -307,18 +327,30 @@ flowchart LR
     H -- yes --> X["drop: duplicate<br/>(no solve)"]
     H -- no --> V{"Valid?"}
     V -- no --> BUG["stop: template bug"]
-    V -- yes --> S{"Solves to<br/>optimal?"}
+    V -- yes --> S{"Solves to the<br/>family's status?"}
     S -- no --> X2["drop"]
-    S -- yes --> E{"KPIs move<br/>beyond 3 × 1e-3?"}
+    S -- yes --> E{"Result differs<br/>from the base plan?"}
     E -- no --> X3["drop: no effect"]
-    E -- yes --> C{"Same result on<br/>SCIP / CBC?"}
+    E -- yes --> C{"Same result on<br/>HiGHS, SCIP, CBC?"}
     C -- no --> X4["drop: solver disagreement"]
-    C -- yes --> D{"Outcome new?<br/>(relax, logic)"}
+    C -- yes --> D{"Outcome new?"}
     D -- no --> X5["drop: shared outcome"]
-    D -- yes --> K["keep: write the task"]
+    D -- yes --> F{"Family check"}
+    F -- no --> X6["drop: family filter"]
+    F -- yes --> K["keep: write the task"]
 ```
 
-The "outcome new" filter applies to the two newest families. It stops one answer from fitting several questions.
+How each family adjusts the filters:
+
+| Family | Status it needs | Extra family check |
+|---|---|---|
+| first five, `under_specified` | optimal | (`objective_change`: the plan must move) |
+| `relax_remove` | optimal | a two-part task: each part changes the result |
+| `logical_rule` | optimal | none; templates pick conditions the base plan violates |
+| `infeasible_request` | **infeasible** | the conflict is not empty |
+| `chained_scenario` | optimal | (inside the template) the history matters: see the family's rules below |
+
+"Outcome new" and "all three solvers" apply to the four newest families. The six older families check one second solver and do not filter shared outcomes yet (section 11).
 
 ### The ten families
 
@@ -332,38 +364,44 @@ The "outcome new" filter applies to the two newest families. It stops one answer
 | `relax_remove` | "Suppose the machine-hours limit is lifted for machine type borer only." | `relax` | built Oct 6 |
 | `logical_rule` | "The tons of ore extracted at Mine4 in Year4 must be either zero or at least 7,500,000." | `logic` | built Oct 6 |
 | `under_specified` | "What if the market limit for Prod7 in June changes?" Planner: "Demand for Prod7 is 40% lower in June." | `ask`, then any | built |
-| infeasible request | "Serve every customer with half the fleet." | to design | not started |
-| chained scenario | "On top of the previous change, cut inventory by 20%." | to design | not started |
+| `infeasible_request` | "Commit to exactly 12,500,000 tons of ore extracted at Mine2 in Year4." (conflict: `capacity_Year4_Mine2`) | any; must be infeasible for the same reason | built Oct 7 |
+| `chained_scenario` | Applied: "What if total stock may not exceed 800?" Now: "Correction: make that limit 1040, not 800." | any + `history` | built Oct 7 |
 
 Rules that keep the families honest:
 
-- **data_change** adds or removes rows only in *entity* tables (items, guests, mines). It never edits a column marked `"editable": false`.
-- **new_limit, relative_rule** take values from the base plan, so the new limit binds.
-- **relax_remove** lifts only *policy* constraints (capacities, specifications, targets, caps), from a per-model list. Bin packing, car rental and food supply have none.
-- **logical_rule** picks conditions that the base plan violates, so the rule binds.
-- **under_specified** reuses a precise task and hides what is needed. A guess without a question scores 0, even when right.
+| Family | Rule |
+|---|---|
+| `data_change` | adds or removes rows only in *entity* tables (items, guests, mines); never edits a column marked `"editable": false` |
+| `new_limit`, `relative_rule` | take values from the base plan, so the new limit binds |
+| `relax_remove` | lifts only *policy* constraints (capacities, specifications, targets, caps), from a per-model list |
+| `logical_rule` | picks conditions that the base plan violates, so the rule binds |
+| `infeasible_request` | asks for 2 to 10 times the base plan; keeps a task only if it is infeasible with a non-empty conflict that no other task has |
+| `chained_scenario` | *add*: the result differs from each change alone. *correct*: it differs from the old change and from both stacked. *replace*: it differs from both together |
+| `under_specified` | reuses a precise task and hides what is needed; a guess without a question scores 0 |
 
 ### The task files
 
 A dash means the family has nothing to say about that model.
 
-| base model | data_change | new_limit | relative_rule | objective_change | fixed_decision | relax_remove | logical_rule | under_specified | total |
-|---|---|---|---|---|---|---|---|---|---|
-| `battery_scheduling` | 20 | 20 | 20 | 16 | 20 | 1 | 20 | 20 | 137 |
-| `bin_packing` | 20 | 4 | 18 | – | – | – | – | 20 | 62 |
-| `car_rental` | 20 | 20 | 20 | 20 | 20 | – | 20 | 20 | 140 |
-| `car_rental_2` | 20 | 20 | 20 | 20 | 20 | 14 | 20 | 20 | 154 |
-| `factory_planning` | 60 | 20 | 20 | 3 | 20 | 20 | 20 | 20 | 183 |
-| `factory_planning_2` | 20 | 20 | 20 | 13 | 20 | 7 | 20 | 20 | 140 |
-| `farm_planning` | 20 | 20 | 20 | 20 | 20 | 7 | 20 | 20 | 147 |
-| `food_manufacture` | 20 | 20 | 20 | 20 | 20 | 1 | 20 | 20 | 141 |
-| `food_supply` | 20 | 20 | 20 | 4 | 20 | – | 20 | 20 | 124 |
-| `manpower_planning` | 20 | 20 | 20 | 20 | 20 | 12 | 20 | 20 | 152 |
-| `mining` | 20 | 20 | 20 | 11 | 20 | 20 | 20 | 20 | 151 |
-| `multiple_knapsack` | 20 | 15 | 20 | 1 | 15 | 1 | 18 | 20 | 110 |
-| `power_generation_hydro` | 20 | 20 | 20 | 20 | 20 | – | 20 | 20 | 140 |
-| `wedding_seating` | 20 | – | – | – | – | 1 | – | 20 | 41 |
-| **total** | 320 | 239 | 258 | 168 | 235 | 84 | 238 | 280 | **1822** |
+Column names: data = `data_change`, limit = `new_limit`, relative = `relative_rule`, objective = `objective_change`, fixed = `fixed_decision`, relax = `relax_remove`, logic = `logical_rule`, infeasible = `infeasible_request`, chained = `chained_scenario`, vague = `under_specified`.
+
+| base model | data | limit | relative | objective | fixed | relax | logic | infeasible | chained | vague | total |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `battery_scheduling` | 20 | 20 | 20 | 16 | 20 | 1 | 20 | 20 | 20 | 20 | 177 |
+| `bin_packing` | 20 | 4 | 18 | – | – | – | – | – | 20 | 20 | 82 |
+| `car_rental` | 20 | 20 | 20 | 20 | 20 | – | 20 | 2 | 20 | 20 | 162 |
+| `car_rental_2` | 20 | 20 | 20 | 20 | 20 | 14 | 20 | 20 | 20 | 20 | 194 |
+| `factory_planning` | 60 | 20 | 20 | 3 | 20 | 20 | 20 | 20 | 20 | 20 | 223 |
+| `factory_planning_2` | 20 | 20 | 20 | 13 | 20 | 7 | 20 | 20 | 20 | 20 | 180 |
+| `farm_planning` | 20 | 20 | 20 | 20 | 20 | 7 | 20 | 20 | 20 | 20 | 187 |
+| `food_manufacture` | 20 | 20 | 20 | 20 | 20 | 1 | 20 | 20 | 20 | 20 | 181 |
+| `food_supply` | 20 | 20 | 20 | 4 | 20 | – | 20 | 20 | 20 | 20 | 164 |
+| `manpower_planning` | 20 | 20 | 20 | 20 | 20 | 12 | 20 | 20 | 20 | 20 | 192 |
+| `mining` | 20 | 20 | 20 | 11 | 20 | 20 | 20 | 20 | 20 | 20 | 191 |
+| `multiple_knapsack` | 20 | 15 | 20 | 1 | 15 | 1 | 18 | – | 20 | 20 | 130 |
+| `power_generation_hydro` | 20 | 20 | 20 | 20 | 20 | – | 20 | 19 | 20 | 20 | 179 |
+| `wedding_seating` | 20 | – | – | – | – | 1 | – | – | 7 | 20 | 48 |
+| **total** | 320 | 239 | 258 | 168 | 235 | 84 | 238 | 201 | 267 | 280 | **2290** |
 
 - Command: `python scripts/make_tasks.py --family all --model all --n 20 --seed 0`.
 - The same seed gives the same file. `--force` regenerates a file.
@@ -392,7 +430,7 @@ Example: *"An overall cap of 55 applies to the damaged cars transferred in total
 
 ### Trivial agents: the reward scale is exact
 
-All 110 files, 1,900 tasks (`results/trivial_baselines.md`):
+All 135 files, 2,368 tasks (`results/trivial_baselines.md`):
 
 | Agent | What it does | Expected | Measured |
 |---|---|---|---|
@@ -400,9 +438,9 @@ All 110 files, 1,900 tasks (`results/trivial_baselines.md`):
 | `noop` | submits an empty valid scenario | 0.100 (0) | exact on every file |
 | `ask_then_oracle` | asks one question, then the gold scenario | 0.900 (1.100) | exact on every file |
 | `random_valid` | submits a random valid scenario | near 0 correct | 0.3 % correct |
-| `nearest_example` | copies the gold scenario of the most similar training task | low | 6.6 % correct |
+| `nearest_example` | copies the gold scenario of the most similar training task | low | 5.8 % correct (1.9 % on the two newest families) |
 
-Where `nearest_example` scores high, several questions share one scored outcome. Example: lift the weight limit on *any* knapsack, and all items fit. The two newest families filter this out. 18 older files still go above 10 %; regenerate them with the same filter.
+Where `nearest_example` scores high, several questions share one scored outcome. Example: lift the weight limit on *any* knapsack, and all items fit. The four newest families filter this out. 18 older files still go above 10 %; regenerate them with the same filter. One new file also does: `wedding_seating` chained (2 of 7), where a "replace" answer can equal an existing data-change task.
 
 ### Frontier models
 
@@ -466,7 +504,7 @@ After the fix, Qwen3 4B asked on 67 of 260 under-specified tasks, but answered o
 ### Tests and model checks (about 3 minutes)
 
 ```bash
-python -m pytest -q                       # 411 passed, 7 skipped
+python -m pytest -q                       # 465 passed, 7 skipped
 python scripts/verify_models.py           # every model x every solver vs reference.json
 ```
 
@@ -580,7 +618,7 @@ flowchart TB
         direction LR
         D1["14 models, 3 solvers"]
         D2["DSL v0.1 + relax + logic"]
-        D3["8 families, 1,822 tasks"]
+        D3["10 families"]
         D4["5 trivial agents"]
         D5["LLM ladder on 399 tasks"]
     end
@@ -591,9 +629,8 @@ flowchart TB
     end
     subgraph X["Next"]
         direction LR
-        X1["Ladder on relax + logic"]
+        X1["Ladder on the 4<br/>newest families"]
         X2["Regenerate 18 files<br/>with shared outcomes"]
-        X3["Infeasible + chained<br/>families"]
         X4["Port 11+ more models"]
         X5["RL on Qwen3 4B or 8B"]
     end
@@ -604,12 +641,13 @@ flowchart TB
 |---|---|
 | done | 14 base models on HiGHS, SCIP and CBC; 3 also on CP-SAT; 4 also against Gurobi 13 |
 | done | DSL v0.1: 12 examples, 26 planted bad scenarios, `relax` and `logic` |
-| done | 8 families, 1,822 tasks, 78 verified paraphrases |
+| done | 10 families, 2,290 tasks, 78 verified paraphrases |
 | done | Trivial agents exact on every file; probes at 0.3 % and 6.6 % |
 | done | Frontier baseline (Sonnet 59/60, Opus 60/60); LLM ladder on the first 399 tasks |
 | now | Under-specified re-run after the ask fix; gpt-oss 20B's last files |
-| next | Ladder on `relax_remove` and `logical_rule`; frontier APIs with pinned ids |
-| next | Regenerate the 18 files with shared outcomes; build the last two families |
+| next | Ladder on the four newest families; frontier APIs with pinned ids |
+| done | All 10 families: `infeasible_request` and `chained_scenario` built Oct 7 |
+| next | Regenerate the 18 files with shared outcomes |
 | next | Port more models; hold some out; RL on a 4B–8B model |
 
 ---

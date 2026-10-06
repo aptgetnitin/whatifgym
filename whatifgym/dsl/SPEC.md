@@ -135,6 +135,18 @@ sizes. The scorer compares status, objective and the task family's KPIs within r
 scenarios that spell the same change differently (`scale` by 0.8 versus `set` to the resulting numbers) earn
 the same reward. Validation errors come back as `{"path", "message"}` pairs an agent can act on.
 
+## Infeasible requests and chained questions
+
+Neither needs a new part of the DSL.
+
+- **Infeasible request.** Write the request as a normal scenario. The oracle finds that it is infeasible and
+  returns `conflict`: an irreducible set of base-model constraints the scenario clashes with (a deletion filter
+  over constraint families, then over single constraints, in sorted order). The scorer compares the status *and*
+  the conflict, so an unrelated impossible scenario does not score.
+- **Chained question.** The observation carries `history`: earlier questions with the scenarios already applied
+  for them. The answer is the *complete* scenario: every earlier change that still applies, plus the new one. A
+  correction replaces the earlier number; "forget that" drops the earlier change.
+
 ## Worked examples
 
 `examples/01_demand_scale.json` and `examples/02_new_limit_rule.json` are the two shown to agents in the

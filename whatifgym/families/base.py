@@ -310,9 +310,10 @@ class TaskFamily:
                 continue
             seen.add(ref.scenario_hash)
             clarification = slots.pop("_clarification", None) if isinstance(slots, dict) else None
+            history = slots.pop("_history", None) if isinstance(slots, dict) else None
             tid = f"{self.model.name}-{self.name}-{seed:03d}-{len(tasks):04d}"
             tasks.append(Task(id=tid, family=self.name, model=self.model.name, question=question, scenario=scenario,
                               reference=ref.to_dict(), kpi_keys=list(kpi_keys), difficulty=difficulty, template=tname,
-                              slots=slots, split=split_for(tid), clarification=clarification,
+                              slots=slots, split=split_for(tid), clarification=clarification, history=history,
                               tags=[tname, difficulty, ref.status] + (["ask"] if clarification else [])))
         return tasks

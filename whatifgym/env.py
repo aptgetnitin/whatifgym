@@ -2,7 +2,7 @@
 
 Observation (the OptiGuide stance: structure and keys, never raw numbers):
     model, description, schema, index_sets, table_keys (which rows exist), params (names), measures,
-    dsl_schema, examples, question, dialogue, turns_left
+    dsl_schema, examples, history (chained tasks only), question, dialogue, turns_left
 Actions:
     {"type": "ask", "text": "..."}                    one clarifying question (the simulator answers from the task)
     {"type": "scenario", "scenario": {...DSL...}}     ends the episode; the oracle solves and the scorer scores
@@ -71,6 +71,7 @@ class WhatIfEnv:
             "measures": {k: list(v) for k, v in model.MEASURE_DIMS.items()},
             "dsl_schema": SCHEMA,
             "examples": worked_examples(),
+            "history": list(self.task.history or []),   # chained tasks: earlier scenarios, already applied
             "question": self.task.question,
             "dialogue": list(self.dialogue),
             "turns_left": self.max_turns - self.turn,

@@ -112,7 +112,9 @@ def _add_rules(prob, measures: dict, rules: list[dict[str, Any]]) -> None:
         else:
             rhs = rule["value"]
         name = rule.get("name") or f"rule_{i}"
-        name = "".join(c if c.isalnum() or c in "_-" else "_" for c in name)[:60]
+        name = _ILLEGAL.sub("_", "".join(c if c.isalnum() or c in "_-" else "_" for c in name)[:60])  # as PuLP stores it
+        while name in prob.constraints:   # rule names are labels only: two rules may share one
+            name = f"{name}_{i}"
         if rule["sense"] == "<=":
             prob += (lhs <= rhs, name)
         elif rule["sense"] == ">=":
@@ -218,6 +220,70 @@ def _stage_expression(measures: dict, stage: dict[str, Any], original):
     if stage["measure"] == "original":
         return original
     return _sum(measures[stage["measure"]].select(stage.get("scope"))), stage["sense"]
+
+
+def conflict_set(model, scenario: dict[str, Any], data: dict[str, Any] | None = None,
+                 solver: str = "highs", time_limit: float | None = None) -> list[str] | None:
+    """Why an infeasible scenario is infeasible: the base-model constraints it clashes with.
+
+    A deletion filter in two passes, in a fixed (sorted) order so that the answer is deterministic. Pass 1 drops
+    whole constraint families that the infeasibility does not need; pass 2 drops single constraints inside the
+    families that remain. The scenario's own rules, fixed decisions and logic are never dropped. The result is an
+    irreducible set of base-model constraint names (sorted), or ``None`` when the scenario is feasible or a
+    feasibility check does not finish. Like the big-M bounds, the conflict is a property of the constraints, so
+    it comes from HiGHS whenever HiGHS is installed (PuLP's CBC interface fails on an empty objective).
+    """
+    import pulp
+
+    from .. import solvers
+
+    if "highs" in solvers.available_solvers():
+        solver = "highs"
+    base = data if data is not None else model.load_data()
+    new_data = apply_data_changes(base, scenario.get("data_changes", []))
+    prob = model.build(new_data)
+    model_names = set(prob.constraints)              # the base model's own constraints, before the scenario adds any
+    measures = model.measures(prob)
+    _relax(model, prob, new_data, scenario.get("relax", []))
+    model_names &= set(prob.constraints)
+    _add_rules(prob, measures, scenario.get("rules", []))
+    _fix_decisions(measures, scenario.get("fixed_decisions", []))
+    _add_logic(prob, measures, scenario.get("logic", []), solver, time_limit)
+    prob.setObjective(pulp.LpAffineExpression())
+    prob.sense = pulp.LpMinimize
+
+    def infeasible() -> bool | None:
+        status = solvers.solve_pulp(prob, solver, time_limit=time_limit)[0]
+        return True if status == "infeasible" else False if status == "optimal" else None
+
+    if infeasible() is not True:
+        return None
+    families = constraint_families(model)
+    groups: dict[str, list[str]] = {}
+    for name in sorted(model_names):
+        fam = next((f for f in sorted(families, key=len, reverse=True) if name == f or name.startswith(f + "_")), None)
+        groups.setdefault(fam or "", []).append(name)
+    removable_groups = [g for g in sorted(groups) if g]   # constraints outside any declared family always stay
+    for g in removable_groups:                            # pass 1: families
+        held = {n: prob.constraints.pop(n) for n in groups[g]}
+        verdict = infeasible()
+        if verdict is None:
+            return None
+        if not verdict:
+            prob.constraints.update(held)                 # needed: put the family back
+        else:
+            groups[g] = []
+    for g in removable_groups:                            # pass 2: members of the families still present
+        for name in list(groups[g]):
+            held = prob.constraints.pop(name)
+            verdict = infeasible()
+            if verdict is None:
+                return None
+            if not verdict:
+                prob.constraints[name] = held
+            else:
+                groups[g].remove(name)
+    return sorted(n for g in removable_groups for n in groups[g])
 
 
 def apply_scenario(model, scenario: dict[str, Any], data: dict[str, Any] | None = None,

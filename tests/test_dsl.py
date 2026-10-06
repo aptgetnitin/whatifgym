@@ -134,3 +134,10 @@ def test_relax_and_logic_semantic_errors():
     unresolvable = validate_scenario({"version": "0.1", "relax": [{"constraint": "refining"}]},
                                      get_model("food_manufacture"), raise_on_error=False)
     assert "cannot be relaxed" in unresolvable[0]["message"]
+
+
+def test_two_rules_may_share_a_name():
+    model = get_model("factory_planning")
+    rule = {"measure": "make", "scope": {"product": "Prod1"}, "sense": "<=", "value": 500, "name": "cap"}
+    r = _solve(model, rules=[rule, {**rule, "value": 400}, {**rule, "name": "cap-1"}, {**rule, "name": "cap_1"}])
+    assert r.status == "optimal" and r.n_rules == 4

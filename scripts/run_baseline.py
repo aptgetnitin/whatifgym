@@ -167,6 +167,10 @@ def build_prompt(obs: dict) -> str:
     ]
     for ex in obs["examples"]:
         parts += [f"Question: {ex['question']}", json.dumps(ex["scenario"], indent=1)]
+    if obs.get("history"):
+        parts += ["# Earlier questions and the scenarios already applied for them",
+                  json.dumps(obs["history"], indent=1),
+                  "Answer with the complete scenario: every earlier change that still applies, plus the new one."]
     if obs["dialogue"]:
         parts += ["# Dialogue so far", json.dumps(obs["dialogue"], indent=1)]
     parts += [f"# Planner's question\n{obs['question']}", "Answer with the JSON object only."]

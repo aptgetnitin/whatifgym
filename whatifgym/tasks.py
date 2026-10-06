@@ -22,6 +22,7 @@ class Task:
     slots: dict[str, Any] = field(default_factory=dict)
     split: str = "train"                      # train | dev | test
     clarification: dict[str, Any] | None = None  # {"question_hint", "answer"} for under-specified tasks
+    history: list[dict[str, Any]] | None = None   # chained tasks: earlier [{question, scenario}] already applied
     tags: list[str] = field(default_factory=list)
 
     @property

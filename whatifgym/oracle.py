@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from .dsl import apply_scenario, validate_scenario
+from .dsl.apply import conflict_set
 from .registry import get_model
 
 
@@ -31,6 +32,7 @@ class ScenarioResult:
     n_data_changes: int = 0
     n_relaxed_constraints: int = 0
     n_logical_rules: int = 0
+    conflict: list[str] | None = None   # infeasible only: base-model constraints the scenario clashes with
     solve_time_s: float = 0.0
     wall_time_s: float = 0.0
     scenario_hash: str = ""
@@ -59,7 +61,10 @@ def solve_scenario(model_or_name, scenario: dict[str, Any], data: dict[str, Any]
     if "ask" in scenario:
         return ScenarioResult(model=model.name, solver=solver, status="ask", objective=None, message=scenario["ask"])
     raw = apply_scenario(model, scenario, base, solver=solver, time_limit=time_limit, keep_decisions=keep_decisions)
-    return ScenarioResult(**raw)
+    result = ScenarioResult(**raw)
+    if result.status == "infeasible":
+        result.conflict = conflict_set(model, scenario, base, solver=solver, time_limit=time_limit)
+    return result
 
 
 def save_result(result: ScenarioResult, path: str | Path) -> None:

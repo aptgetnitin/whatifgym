@@ -21,7 +21,8 @@ FAST_MODELS = [m for m in list_models() if m != "wedding_seating"]
 
 def test_registry_has_all_families():
     assert set(FAMILIES) == {"data_change", "new_limit", "relative_rule", "objective_change", "fixed_decision",
-                             "relax_remove", "logical_rule", "under_specified"}
+                             "relax_remove", "logical_rule", "infeasible_request", "chained_scenario",
+                             "under_specified"}
     assert FAMILIES["data_change"] is DataChangeFamily and FAMILIES["new_limit"] is NewLimitFamily
 
 
@@ -42,6 +43,9 @@ MAY_BE_EMPTY |= {(m, "relax_remove") for m in ("bin_packing", "car_rental", "foo
 # ... and power generation's only one (the spinning reserve) never binds; bin packing's bins-used objective
 # ignores every either-or rule the templates can state
 MAY_BE_EMPTY |= {("power_generation_hydro", "relax_remove"), ("bin_packing", "logical_rule")}
+# infeasible_request skips whole-number measures, and these models have only those; car rental's free fleet size
+# makes almost every request feasible
+MAY_BE_EMPTY |= {(m, "infeasible_request") for m in ("bin_packing", "multiple_knapsack", "car_rental")}
 
 
 @pytest.mark.parametrize("model_name", FAST_MODELS)
@@ -59,7 +63,12 @@ def test_generate_small_batch(model_name, family_name):
     for t in tasks:
         assert t.family == family_name and t.model == model_name and t.split in ("train", "dev", "test")
         assert validate_scenario(t.scenario, model, data, raise_on_error=False) == []
-        assert t.reference["status"] == "optimal"
+        if FAMILIES[family_name].allow_infeasible:
+            assert t.reference["status"] == "infeasible" and t.reference["conflict"]
+        else:
+            assert t.reference["status"] == "optimal"
+        if family_name == "chained_scenario":
+            assert t.history and validate_scenario(t.history[0]["scenario"], model, data, raise_on_error=False) == []
         assert t.kpi_keys == model.SCORING_KPIS
         # the "no change" answer must not be accepted
         assert not compare_results(base, t.reference, t.kpi_keys, rel_tol=3 * REL_TOL).match

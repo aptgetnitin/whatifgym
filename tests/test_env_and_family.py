@@ -87,3 +87,36 @@ def test_env_ask_wrapped_as_scenario_is_a_question():
     assert not done and info["action"] == "ask" and obs["dialogue"][-1]["role"] == "planner"
     _, reward, done, info = env.step({"type": "scenario", "scenario": vague.scenario})
     assert done and reward == 1.1 and info["score"]["route_correct"]
+
+
+def test_infeasible_request_needs_the_same_conflict():
+    """An impossible scenario that clashes with other constraints is valid but wrong (0.1), not correct."""
+    from whatifgym.families import FAMILIES
+
+    task = FAMILIES["infeasible_request"]("factory_planning").generate(1, seed=0)[0]
+    env = WhatIfEnv([task])
+    env.reset(task)
+    _, reward, done, info = env.step({"type": "scenario", "scenario": task.scenario})
+    assert done and reward == 1.1
+    other = {"version": "0.1", "rules": [{"measure": "store", "scope": {"month": "Jan"}, "sense": ">=", "value": 10 ** 7}]}
+    env.reset(task)
+    _, reward, done, info = env.step({"type": "scenario", "scenario": other})
+    assert done and reward == 0.1 and "conflict" in info["score"]["comparison"]["kpi_mismatches"]
+
+
+def test_chained_task_shows_its_history_and_needs_it():
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+    from run_baseline import build_prompt
+    from whatifgym.families import FAMILIES
+
+    tasks = FAMILIES["chained_scenario"]("factory_planning").generate(4, seed=0)
+    task = tasks[0]
+    env = WhatIfEnv([task])
+    obs = env.reset(task)
+    assert obs["history"] and "Earlier questions" in build_prompt(obs)
+    _, reward, done, _ = env.step({"type": "scenario", "scenario": task.history[0]["scenario"]})
+    assert done and reward == 0.1          # the earlier change alone is not the answer
+    env.reset(task)
+    _, reward, done, _ = env.step({"type": "scenario", "scenario": task.scenario})
+    assert done and reward == 1.1
