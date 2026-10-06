@@ -14,11 +14,37 @@ gurobi  Gurobi via ``gurobipy`` — cross-checks only, never required
 """
 from __future__ import annotations
 
+import functools
 import importlib.util
+import shutil
+import subprocess
 import time
 
 OPEN_SOLVERS = ("highs", "scip", "cbc", "cpsat")
 _PULP_NAMES = {"highs": "HiGHS", "scip": "SCIP_PY", "cbc": "PULP_CBC_CMD", "gurobi": "GUROBI"}
+
+
+@functools.lru_cache(maxsize=1)
+def cbc_path() -> str | None:
+    """Path of a CBC binary that actually runs here, or None.
+
+    A ``cbc`` on PATH (e.g. ``brew install cbc``) wins; otherwise PuLP's bundled binary. The bundled
+    macOS binary is x86_64 only, so on Apple Silicon without Rosetta it exists but cannot execute.
+    """
+    candidates = [shutil.which("cbc")]
+    try:
+        import pulp  # lazy
+
+        candidates.append(pulp.PULP_CBC_CMD().path)
+    except Exception:
+        pass
+    for path in filter(None, candidates):
+        try:
+            subprocess.run([path, "-quit"], capture_output=True, timeout=10, check=False)
+            return path
+        except (OSError, subprocess.SubprocessError):
+            continue
+    return None
 
 
 def available_solvers(include_gurobi: bool = False) -> list[str]:
@@ -32,7 +58,8 @@ def available_solvers(include_gurobi: bool = False) -> list[str]:
             found.append("highs")
         if importlib.util.find_spec("pyscipopt") is not None:
             found.append("scip")
-        found.append("cbc")  # PuLP ships a CBC binary on most platforms; verified lazily when used
+        if cbc_path() is not None:
+            found.append("cbc")
     if importlib.util.find_spec("ortools") is not None:
         found.append("cpsat")
     if include_gurobi and importlib.util.find_spec("gurobipy") is not None:
@@ -46,11 +73,13 @@ def pulp_solver(name: str, time_limit: float | None = None, msg: bool = False):
 
     if name not in _PULP_NAMES:
         raise ValueError(f"unknown PuLP-backed solver {name!r}; choose from {sorted(_PULP_NAMES)}")
-    cls = getattr(pulp, _PULP_NAMES[name])
     kwargs = {"msg": msg}
     if time_limit is not None:
         kwargs["timeLimit"] = float(time_limit)
-    solver = cls(**kwargs)
+    if name == "cbc" and cbc_path() is not None:
+        solver = pulp.COIN_CMD(path=cbc_path(), **kwargs)
+    else:
+        solver = getattr(pulp, _PULP_NAMES[name])(**kwargs)
     if not solver.available():
         raise RuntimeError(f"solver {name!r} ({_PULP_NAMES[name]}) is not available in this environment")
     return solver

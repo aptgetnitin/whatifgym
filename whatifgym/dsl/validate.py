@@ -99,6 +99,10 @@ def validate_semantics(scenario: dict, model, data: dict) -> list[dict[str, str]
                 errors.append({"path": p + "/name", "message": f"unknown parameter {ch['name']!r}; parameters are {sorted(params) or sorted(data.get('params', {}))}"})
             elif op != "set_param" and not isinstance(data["params"].get(ch["name"]), (int, float)):
                 errors.append({"path": p + "/name", "message": f"parameter {ch['name']!r} is not numeric"})
+            elif op == "set_param" and isinstance(data.get("params", {}).get(ch["name"]), (int, float)) \
+                    and not isinstance(data["params"][ch["name"]], bool) \
+                    and (isinstance(ch.get("value"), bool) or not isinstance(ch.get("value"), (int, float))):
+                errors.append({"path": p + "/value", "message": f"parameter {ch['name']!r} is numeric; got {ch.get('value')!r}"})
             continue
         table = ch["table"]
         if table not in tables:

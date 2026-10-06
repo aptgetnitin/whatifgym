@@ -114,8 +114,12 @@ class WhatIfEnv:
             if errors:
                 info["validation_errors"] = errors
                 return self._finish(None, valid_dsl=False, info=info)
-            result = solve_scenario(model, payload, data, solver=self.solver, time_limit=self.time_limit,
-                                    keep_decisions=False)
+            try:
+                result = solve_scenario(model, payload, data, solver=self.solver, time_limit=self.time_limit,
+                                        keep_decisions=False)
+            except Exception as exc:  # a scenario the validator missed must cost the episode, not the run
+                info["error"] = f"{type(exc).__name__}: {exc}"
+                return self._finish(None, valid_dsl=False, info=info)
             info["result"] = result.to_dict()
             return self._finish(result.to_dict(), valid_dsl=True, info=info)
 

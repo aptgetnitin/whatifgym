@@ -10,6 +10,7 @@ from whatifgym.families.base import nice
 from whatifgym.oracle import solve_scenario
 from whatifgym.registry import get_model, list_models
 from whatifgym.scoring import REL_TOL, compare_results
+from whatifgym.solvers import available_solvers
 from whatifgym.tasks import load_tasks
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -143,7 +144,7 @@ def test_lexicographic_original_objective_in_a_later_stage():
     assert ref.status == "optimal" and len(ref.stage_values) == 2
     assert abs(ref.stage_values[0] - 350.0) < 1e-6                     # 7 products x 50 units of closing stock
     assert abs(ref.stage_values[1] - ref.kpis["profit"]) < 0.01        # stage two really optimised profit
-    for s in ("scip", "cbc"):
+    for s in [s for s in available_solvers() if s in ("scip", "cbc")]:
         other = solve_scenario(model, {"version": "0.1", "objective": [{"sense": "min", "measure": "make"},
                                                                        {"sense": "max", "measure": "original"}]}, solver=s)
         assert compare_results(ref.to_dict(), other.to_dict(), model.SCORING_KPIS).match

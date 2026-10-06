@@ -36,7 +36,7 @@ def slug(model: str) -> str:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--models", nargs="+", required=True, help="Ollama tags, e.g. qwen3:8b gpt-oss:20b")
-    ap.add_argument("--tasks", nargs="*", default=None, help="task files (default: tasks/*/*_v0.jsonl)")
+    ap.add_argument("--tasks", nargs="*", default=None, help="task files (default: tasks/*/*_v0.jsonl and the tasks/*/*_v0_nl.jsonl paraphrases)")
     ap.add_argument("--split", default=None, help="train | dev | test (default: all tasks)")
     ap.add_argument("--host", default=None)
     ap.add_argument("--num-ctx", type=int, default=16384)
@@ -49,7 +49,7 @@ def main(argv=None) -> int:
     ap.add_argument("--force", action="store_true", help="re-run pairs whose result file exists")
     args = ap.parse_args(argv)
 
-    files = [Path(p).resolve() for p in args.tasks] if args.tasks else sorted(ROOT.glob("tasks/*/*_v0.jsonl"))
+    files = [Path(p).resolve() for p in args.tasks] if args.tasks else sorted(ROOT.glob("tasks/*/*_v0.jsonl")) + sorted(ROOT.glob("tasks/*/*_v0_nl.jsonl"))
     out_root = ROOT / "results" / "baselines" / "local"
     t_all = time.time()
     for model in args.models:

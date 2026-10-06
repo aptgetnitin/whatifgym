@@ -65,3 +65,14 @@ def test_env_under_specified_task_requires_ask():
     assert info["answer"].startswith("Prod5")
     _, reward, done, _ = env.step(base.scenario)
     assert done and reward == 1.1
+
+
+def test_env_non_numeric_param_is_invalid_not_a_crash():
+    """qwen3:4b once set a numeric parameter to a word; that must score 0, not abort the run."""
+    task = load_tasks("tasks/battery_scheduling/under_specified_v0.jsonl")[0]
+    env = WhatIfEnv([task])
+    env.reset(task)
+    bad = {"version": "0.1", "base_model": "battery_scheduling",
+           "data_changes": [{"op": "set_param", "name": "energy_capacity_kwh", "value": "upper_limit"}]}
+    _, reward, done, info = env.step({"type": "scenario", "scenario": bad})
+    assert done and reward == 0.0 and info["validation_errors"][0]["path"] == "/data_changes/0/value"
