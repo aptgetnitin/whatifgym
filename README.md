@@ -308,12 +308,12 @@ Building a family has three steps. Only step 2 is automatic.
 
 ```mermaid
 flowchart LR
-    W["1. Write the family<br/>(by hand)<br/>templates in Python"] --> G["2. Generate<br/>(automatic)<br/>make_tasks.py + filters"]
+    W["1. Write the family<br/>(Claude coding agent,<br/>reviewed by the author)<br/>templates in Python"] --> G["2. Generate<br/>(automatic)<br/>make_tasks.py + filters"]
     G --> C["3. Check<br/>(automatic)<br/>trivial agents, probes, tests"]
     C -- "a probe scores high,<br/>or a test fails" --> W
 ```
 
-1. **Write.** A template is a Python function. It reads the base plan and draws one question with its gold scenario, so that a new limit binds and the question is not a no-op.
+1. **Write.** A template is a Python function. It reads the base plan and draws one question with its gold scenario, so that a new limit binds and the question is not a no-op. A Claude coding agent wrote every family in this repository; the author selected and reviewed them. No LLM runs during generation: the templates are deterministic code, so one seed always gives the same tasks.
 2. **Generate.** `make_tasks.py` calls the templates many times. Every candidate goes through the filters below.
 3. **Check.** The trivial agents must score exactly on every new file, the probes must stay low, and the tests must pass.
 
