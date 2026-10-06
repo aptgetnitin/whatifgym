@@ -1,0 +1,16 @@
+{
+ "source_file": "tasks/mining/new_limit_v0.jsonl",
+ "prompt_version": "paraphrase-v1 (2026-10-03)",
+ "paraphrase_system_prompt": "You rewrite what-if questions for a planning team. You are given the description of an\noptimization model a planner uses and one precise what-if question generated from a template. Rewrite it the way a\nreal planner would say it to a colleague \u2014 in an email, in a meeting, in a chat message \u2014 keeping EXACTLY the same\nmeaning: the same things (use the same product, month, depot or other names that appear in the question), the same\nnumbers, the same direction (higher/lower, at most/at least), the same scope (one row, several, or everything).\nNever add a condition, never drop one, never make it vaguer or more specific. Vary the style across rewrites\n(terse, chatty, formal), but never use table or column identifiers with underscores. Answer with JSON only:\n{\"paraphrases\": [\"...\", \"...\", \"...\"]}",
+ "paraphraser": "cowork-opus (Claude Opus via Cowork subagent, 2026-10-03, prompt paraphrase-v1)",
+ "verifier": "cowork-sonnet (Claude Sonnet via Cowork subagent, 2026-10-03)",
+ "verified": true,
+ "rewrites_requested_per_task": 3,
+ "source_tasks": 3,
+ "counts": {
+  "candidates": 9,
+  "kept": 9
+ },
+ "seconds": 0.6,
+ "date": "2026-10-02"
+}

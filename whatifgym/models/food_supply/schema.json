@@ -1,0 +1,233 @@
+{
+  "model": "food_supply",
+  "sense": "min",
+  "objective": "sum over foods and suppliers of purchase price * purchase + sum over foods and links of transport_cost * flow; the purchase price is the supplier's local price for the food, or the food's international price when local_prices has no row for the pair",
+  "tables": {
+    "suppliers": {
+      "key": [
+        "supplier"
+      ],
+      "label": "supplier cities",
+      "columns": {
+        "supplier": {
+          "type": "string",
+          "description": "City where food can be bought",
+          "label": "supplier"
+        },
+        "country": {
+          "type": "string",
+          "description": "Country of the supplier city (informational; not used by the model)",
+          "label": "country",
+          "editable": false
+        },
+        "supplier_type": {
+          "type": "string",
+          "description": "Supplier type code from the source data (informational; not used by the model): I for the three suppliers outside Syria (Amman, Beirut, Gaziantep), R and L for Syrian cities, L marking the three that also host a camp",
+          "label": "supplier type code",
+          "editable": false
+        }
+      }
+    },
+    "camps": {
+      "key": [
+        "camp"
+      ],
+      "label": "beneficiary camps",
+      "columns": {
+        "camp": {
+          "type": "string",
+          "description": "City hosting a beneficiary camp",
+          "label": "camp"
+        },
+        "country": {
+          "type": "string",
+          "description": "Country of the camp (informational; not used by the model)",
+          "label": "country",
+          "editable": false
+        },
+        "beneficiaries": {
+          "type": "int",
+          "unit": "people",
+          "description": "Number of people the camp feeds every day",
+          "label": "number of beneficiaries"
+        }
+      }
+    },
+    "arcs": {
+      "key": [
+        "from_city",
+        "to_city"
+      ],
+      "label": "transport links",
+      "columns": {
+        "from_city": {
+          "type": "string",
+          "description": "City the directed road link starts from (a supplier, a camp or a city food only passes through)",
+          "label": "origin city"
+        },
+        "to_city": {
+          "type": "string",
+          "description": "City the directed road link leads to",
+          "label": "destination city"
+        },
+        "transport_cost": {
+          "type": "number",
+          "unit": "USD per unit shipped",
+          "description": "Cost of shipping one unit (100 g) of any food along the link. The three links from a city to itself (Daraa, Dayr_Az_Zor, Hassakeh) cost 0 and carry nothing useful: they net out of the city's balance",
+          "label": "transport cost per unit"
+        }
+      }
+    },
+    "foods": {
+      "key": [
+        "food"
+      ],
+      "label": "foods",
+      "columns": {
+        "food": {
+          "type": "string",
+          "description": "Food commodity that can go into a ration",
+          "label": "food"
+        },
+        "international_price": {
+          "type": "number",
+          "unit": "USD per unit",
+          "description": "Price of the food at every supplier that has no local price for it (all foods at Amman, Beirut and Gaziantep)",
+          "label": "international price"
+        }
+      }
+    },
+    "nutrients": {
+      "key": [
+        "nutrient"
+      ],
+      "label": "nutrient requirements",
+      "columns": {
+        "nutrient": {
+          "type": "string",
+          "description": "Nutrient, with its unit in parentheses (NicacinB3 is niacin, spelled as in the source)",
+          "label": "nutrient"
+        },
+        "min_per_person": {
+          "type": "number",
+          "unit": "nutrient unit per person per day",
+          "description": "Minimum daily intake of the nutrient per person; intake may not exceed max_nutrient_factor times this value",
+          "label": "minimum daily intake per person"
+        }
+      }
+    },
+    "food_nutrients": {
+      "key": [
+        "food",
+        "nutrient"
+      ],
+      "label": "nutritional content of foods",
+      "columns": {
+        "food": {
+          "type": "string",
+          "ref": "foods.food",
+          "description": "Food",
+          "label": "food"
+        },
+        "nutrient": {
+          "type": "string",
+          "ref": "nutrients.nutrient",
+          "description": "Nutrient",
+          "label": "nutrient"
+        },
+        "amount": {
+          "type": "number",
+          "unit": "nutrient unit per 100 g",
+          "description": "Amount of the nutrient in 100 g of the food; a missing (food, nutrient) row counts as 0",
+          "label": "nutrient content per 100 g"
+        }
+      }
+    },
+    "local_prices": {
+      "key": [
+        "supplier",
+        "food"
+      ],
+      "label": "local procurement prices",
+      "columns": {
+        "supplier": {
+          "type": "string",
+          "ref": "suppliers.supplier",
+          "description": "Supplier city",
+          "label": "supplier"
+        },
+        "food": {
+          "type": "string",
+          "ref": "foods.food",
+          "description": "Food",
+          "label": "food"
+        },
+        "price": {
+          "type": "number",
+          "unit": "USD per unit",
+          "description": "Mean of the monthly procurement prices from January 2017 to October 2021 for the food at this supplier; without a row the supplier sells the food at its international price",
+          "label": "local price"
+        }
+      }
+    }
+  },
+  "params": {
+    "max_nutrient_factor": {
+      "type": "number",
+      "unit": "multiple of the minimum",
+      "description": "Upper limit on each nutrient's daily intake per person, as a multiple of its minimum requirement",
+      "label": "nutrient upper limit as a multiple of the minimum",
+      "min": 1
+    },
+    "max_purchase": {
+      "type": "number",
+      "unit": "units (100 g) per day",
+      "description": "Most units of one food that can be bought at one supplier; deliberately large in the original, so it never binds",
+      "label": "purchase limit per food and supplier",
+      "min": 0
+    }
+  },
+  "decision_variables": {
+    "ration[food, camp]": "units (100 g) of the food each person in the camp receives per day (>= 0)",
+    "purchase[food, supplier]": "units of the food bought at the supplier per day (0..max_purchase; fixed to 0 when the food has neither a local nor an international price)",
+    "flow[food, from_city, to_city]": "units of the food shipped along the link per day (>= 0); the flows on links from a city to itself are inert and not part of the flow measure",
+    "nutrient_surplus[nutrient, camp]": "daily intake per person above the minimum (0..(max_nutrient_factor - 1) * min_per_person): the range variable of the original's ranged nutrition row; not a measure"
+  },
+  "constraints": {
+    "nutrition[nutrient, camp]": "sum over foods of amount * ration - nutrient_surplus = min_per_person, i.e. min_per_person <= intake per person <= max_nutrient_factor * min_per_person",
+    "balance[food, city]": "inflow - outflow = beneficiaries * ration (if the city is a camp) - purchase (if the city is a supplier), for every city that is a supplier, a camp or the end of a link"
+  },
+  "kpis": [
+    "total_cost",
+    "procurement_cost",
+    "transport_cost",
+    "cost_per_beneficiary",
+    "food_bought",
+    "food_bought_by_supplier",
+    "ration_per_person"
+  ],
+  "measures": {
+    "ration": {
+      "dims": [
+        "food",
+        "camp"
+      ],
+      "label": "ration per person (units of 100 g a day)"
+    },
+    "purchase": {
+      "dims": [
+        "food",
+        "supplier"
+      ],
+      "label": "food bought (units of 100 g a day)"
+    },
+    "flow": {
+      "dims": [
+        "food",
+        "from_city",
+        "to_city"
+      ],
+      "label": "food shipped (units of 100 g a day)"
+    }
+  }
+}

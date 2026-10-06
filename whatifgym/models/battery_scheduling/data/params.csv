@@ -1,0 +1,8 @@
+name,value,description
+energy_capacity_kwh,13.5,Usable energy capacity of the battery
+max_charge_kw,5.0,Maximum charging power (power drawn from the grid)
+max_discharge_kw,5.0,Maximum discharging power (power exported to the grid)
+charge_efficiency,0.96,Share of the energy drawn for charging that is stored (0 to 1)
+discharge_efficiency,0.96,Share of the stored energy removed for discharging that reaches the grid (0 to 1)
+initial_soc_kwh,6.0,Energy stored in the battery at the start of the day
+terminal_soc_kwh,6.0,Least energy that must be stored at the end of the day

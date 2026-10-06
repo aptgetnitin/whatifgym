@@ -10,7 +10,8 @@ PULP_SOLVERS = [s for s in available_solvers() if s in ("highs", "scip", "cbc")]
 EXPECTED_SIZES = {"factory_planning": (126, 79, 0), "multiple_knapsack": (75, 20, 75), "wedding_seating": (3213, 18, 3213),
                   "factory_planning_2": (156, 84, 30), "food_manufacture": (96, 70, 0), "mining": (65, 71, 40),
                   "manpower_planning": (72, 30, 0), "power_generation_hydro": (75, 85, 50), "bin_packing": (132, 22, 132),
-                  "car_rental": (289, 97, 0)}
+                  "car_rental": (289, 97, 0), "farm_planning": (131, 116, 0), "battery_scheduling": (72, 25, 0),
+                  "car_rental_2": (294, 118, 5), "food_supply": (1397, 437, 0)}
 
 
 @pytest.mark.parametrize("solver", PULP_SOLVERS)

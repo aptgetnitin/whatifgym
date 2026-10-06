@@ -42,7 +42,7 @@ ROWS = [
          url=G + "food_program/food_supply.ipynb", license="Apache-2.0",
          n_vars=1397, n_cons=437, n_int=0, open_solver="HiGHS", open_time_s=0.025, reference_objective=400812394.0,
          hooks="Nutrient requirements, commodity nutritional values, procurement prices per supplier, transport cost per arc, beneficiaries per city",
-         notes="Reads seven CSV files shipped in the example folder."),
+         notes="PORTED: whatifgym/models/food_supply (verified on HiGHS, SCIP, CBC; original re-run on Gurobi 13). Reads six CSV files shipped in the example folder."),
     # ---------------------------------------------------------------- production planning
     dict(id="gurobi_factory_planning_1", title="Factory Planning I", domain="production_planning", type="LP",
          repo="Gurobi/modeling-examples", url=G + "factory_planning/factory_planning_1.ipynb", license="Apache-2.0",
@@ -66,7 +66,7 @@ ROWS = [
          url=G + "farm_planning/farm_planning.ipynb", license="Apache-2.0",
          n_vars=131, n_cons=116, n_int=0, open_solver="HiGHS", open_time_s=0.002, reference_objective=121719.17,
          hooks="Land area, herd dynamics, yields and prices, labour hours per activity, capital and loan limits, housing capacity",
-         notes=""),
+         notes="PORTED: whatifgym/models/farm_planning (verified on HiGHS, SCIP, CBC; original re-run on Gurobi 13)."),
     dict(id="gurobi_mining", title="Mining (multi-year mine operation and blending)",
          domain="production_planning", type="MILP", repo="Gurobi/modeling-examples",
          url=G + "mining/mining.ipynb", license="Apache-2.0",
@@ -110,7 +110,7 @@ ROWS = [
          url=G + "battery_scheduling/battery_scheduling.ipynb", license="Apache-2.0",
          n_vars=72, n_cons=25, n_int=0, open_solver="HiGHS", open_time_s=0.001, reference_objective=1.56625,
          hooks="Hourly import/export prices, load and PV profiles, battery energy capacity, charge/discharge limits and efficiencies, cycling cost",
-         notes="Default variant 'S'; the 'LGS' variant adds indicator constraints."),
+         notes="PORTED: whatifgym/models/battery_scheduling (verified on HiGHS, SCIP, CBC; original re-run on Gurobi 13). Default variant 'S'; the 'LGS' variant adds load/PV variables and a power-law cycling cost (nonlinear), not ported."),
     dict(id="gurobi_electrical_power_2", title="Electrical Power Generation 2 (thermal units plus pumped hydro)",
          domain="energy_power", type="MILP", repo="Gurobi/modeling-examples",
          url=G + "electrical_power_generation/electrical_power_2.ipynb", license="Apache-2.0",
@@ -198,7 +198,8 @@ ROWS = [
          domain="revenue_resource_planning", type="MILP", repo="Gurobi/modeling-examples",
          url=G + "car_rental/car_rental_2.ipynb", license="Apache-2.0",
          n_vars=294, n_cons=118, n_int=5, open_solver="HiGHS", open_time_s=0.020, reference_objective=132341.47,
-         hooks="Same tables as Car Rental 1 plus repair-capacity expansion options and costs", notes=""),
+         hooks="Same tables as Car Rental 1 plus repair-capacity expansion options and costs",
+         notes="PORTED: whatifgym/models/car_rental_2 (verified on HiGHS, SCIP, CBC; original re-run on Gurobi 13)."),
 ]
 
 # Candidates that did not make the strict cut but are worth knowing about.
@@ -251,7 +252,7 @@ def main() -> None:
              "open-solver solve time under 2 s. Every number was **measured** on 2026-10-02 by running the original "
              "public implementation and then timing an open solver on the same model (see `scripts/build_base_model_table.py` "
              "for the exact method per source). Times are single-run wall-clock seconds on one sandbox CPU core and are "
-             "indicative only. Ten models are already ported into `whatifgym/models/` (marked **(ported)**); the rest are the Phase 1-2 porting queue.", "",
+             "indicative only. Fourteen models are already ported into `whatifgym/models/` (marked **(ported)**); the rest are the Phase 1-2 porting queue.", "",
              f"Domains: {', '.join(f'{DOMAIN_LABELS[d]} ({c})' for d, c in counts.items())}.", ""]
     for domain, label in DOMAIN_LABELS.items():
         lines += [f"## {label}", "",

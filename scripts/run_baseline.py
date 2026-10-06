@@ -169,7 +169,7 @@ def _ollama_request(host: str, path: str, body: dict | None = None, timeout: flo
 
 def make_ollama_agent(model_name: str, host: str = "http://localhost:11434", num_ctx: int = 16384, think: str = "off",
                       max_tokens: int = 2000, temperature: float = 0.0, json_mode: bool = True,
-                      save_dir: str | None = None, timeout: float = 900.0):
+                      save_dir: str | None = None, timeout: float = 900.0, think_max_tokens: int = 8192):
     """A local open-weight model through Ollama's native /api/chat.
 
     Pre-flight: the server answers, the model is pulled, and its native context length is at least --num-ctx
@@ -191,12 +191,14 @@ def make_ollama_agent(model_name: str, host: str = "http://localhost:11434", num
     send_think = {"value": True}
     # distinct label so a thinking run is not merged with the plain run (both share the Ollama model id)
     label = f"ollama/{model_name}" + ("" if think == "off" else f"+think={think}")
+    # thinking tokens count against num_predict: give a thinking run room, or answers get cut off mid-JSON
+    budget = max_tokens if think == "off" else max(max_tokens, think_max_tokens)
 
     def agent(obs, task, state):
         prompt = build_prompt(obs)
         body = {"model": model_name, "stream": False,
                 "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": prompt}],
-                "options": {"num_ctx": num_ctx, "temperature": temperature, "num_predict": max_tokens, "seed": 0}}
+                "options": {"num_ctx": num_ctx, "temperature": temperature, "num_predict": budget, "seed": 0}}
         if json_mode:
             body["format"] = "json"
         if send_think["value"]:
@@ -231,7 +233,7 @@ def make_ollama_agent(model_name: str, host: str = "http://localhost:11434", num
         state["raw_output"] = text[:4000]
         if (resp.get("message") or {}).get("thinking"):
             state["thinking_chars"] = len(resp["message"]["thinking"])
-        if int(resp.get("prompt_eval_count") or 0) >= num_ctx - max_tokens:
+        if int(resp.get("prompt_eval_count") or 0) >= num_ctx - budget:
             state["truncated"] = True
             print(f"warning: {task.id}: prompt filled the context window ({resp.get('prompt_eval_count')} tokens); raise --num-ctx")
         if resp.get("done_reason") == "length":
@@ -298,7 +300,7 @@ def run(tasks, agent, solver="highs", verbose=False):
             actions.append(action)
             obs, reward, done, info = env.step(action)
         rec = {"task_id": task.id, "template": task.template, "difficulty": task.difficulty, "split": task.split,
-               "reward": reward, **{k: info["score"][k] for k in ("correct", "valid_dsl", "asked", "route_correct")},
+               "reward": reward, **{k: info["score"][k] for k in ("correct", "valid_dsl", "asked", "route_correct", "ask_needed")},
                "notes": info["score"].get("notes", ""), "validation_errors": info.get("validation_errors", []),
                "final_action": actions[-1], "agent_state": state}
         if "result" in info:
@@ -340,6 +342,9 @@ def summarise(records) -> str:
         lines.append(f"prompts that filled the context window (likely truncated): {truncated}")
     if cut_off:
         lines.append(f"answers cut off at max tokens: {cut_off}")
+    request_errors = sum(1 for r in records if r["agent_state"].get("request_error"))
+    if request_errors:
+        lines.append(f"server/request errors (scored as wrong): {request_errors}")
     parse_errors = sum(1 for r in records if r["agent_state"].get("parse_error"))
     missing = sum(1 for r in records if r["agent_state"].get("missing_answer"))
     if parse_errors:
@@ -363,6 +368,7 @@ def main(argv=None) -> int:
     ap.add_argument("--think", default="off", help="Ollama thinking: off | on | low | medium | high (gpt-oss levels)")
     ap.add_argument("--no-json-mode", action="store_true", help="do not constrain Ollama output to JSON")
     ap.add_argument("--max-tokens", type=int, default=2000, help="max output tokens per answer")
+    ap.add_argument("--think-max-tokens", type=int, default=8192, help="output budget when thinking is on (thinking tokens count against it)")
     ap.add_argument("--save-answers", default=None, metavar="DIR", help="save each raw model reply as DIR/<task_id>.json (re-score later with --agent answers)")
     ap.add_argument("--solver", default="highs")
     ap.add_argument("--limit", type=int, default=None)
@@ -382,7 +388,7 @@ def main(argv=None) -> int:
         agent = make_anthropic_agent(args.model, max_tokens=args.max_tokens)
     elif args.agent == "ollama":
         agent = make_ollama_agent(args.model, host=args.host, num_ctx=args.num_ctx, think=args.think, max_tokens=args.max_tokens,
-                                  json_mode=not args.no_json_mode, save_dir=args.save_answers)
+                                  json_mode=not args.no_json_mode, save_dir=args.save_answers, think_max_tokens=args.think_max_tokens)
     elif args.agent == "answers":
         if not args.answers_dir:
             raise SystemExit("--agent answers needs --answers-dir")

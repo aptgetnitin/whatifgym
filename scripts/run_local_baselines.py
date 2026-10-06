@@ -43,6 +43,7 @@ def main(argv=None) -> int:
     ap.add_argument("--think", default="off")
     ap.add_argument("--no-json-mode", action="store_true")
     ap.add_argument("--max-tokens", type=int, default=2000)
+    ap.add_argument("--think-max-tokens", type=int, default=8192, help="output budget when --think is not off")
     ap.add_argument("--label-suffix", default="", help="appended to the result folder name, e.g. -think")
     ap.add_argument("--limit", type=int, default=None, help="tasks per file (smoke test)")
     ap.add_argument("--force", action="store_true", help="re-run pairs whose result file exists")
@@ -61,7 +62,7 @@ def main(argv=None) -> int:
                 print(f"skip   {out.relative_to(ROOT)} (exists)")
                 continue
             argv_run = ["--tasks", str(path), "--agent", "ollama", "--model", model, "--num-ctx", str(args.num_ctx),
-                        "--think", args.think, "--max-tokens", str(args.max_tokens), "--out", str(out),
+                        "--think", args.think, "--max-tokens", str(args.max_tokens), "--think-max-tokens", str(args.think_max_tokens), "--out", str(out),
                         "--save-answers", str(folder / "raw_answers" / path.parent.name)]
             if args.host:
                 argv_run += ["--host", args.host]
