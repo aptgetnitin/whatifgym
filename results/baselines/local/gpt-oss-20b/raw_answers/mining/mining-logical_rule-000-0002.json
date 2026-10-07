@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","logic":[{"name":"blend_year3_requires_mine3_year2_extract","at_least":1,"of":[{"measure":"blend","scope":{"year":"Year3"},"sense":"==","value":0},{"measure":"extract","scope":{"year":"Year2","mine":"Mine3"},"sense":">=","value":1950000}]}]}

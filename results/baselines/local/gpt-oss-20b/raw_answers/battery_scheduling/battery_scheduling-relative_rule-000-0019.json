@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_21_22_min_75pct",
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "discharge"
+      },
+      "factor": 0.75
+    }
+  ]
+}

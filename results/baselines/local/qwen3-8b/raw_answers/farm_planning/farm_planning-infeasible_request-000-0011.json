@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "at_least_120_heifer_calves_sold_year2",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "value": 120
+  },
+  {
+   "name": "at_least_93_heifer_calves_sold_year1",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 93
+  }
+ ],
+ "note": "The scenario requires at least 120 heifer calves sold in Year2 and at least 93 heifer calves sold in Year1."
+}

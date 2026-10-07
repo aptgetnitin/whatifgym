@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_growth_cap",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year1",
+    "land_group": "Group1"
+   },
+   "sense": "<=",
+   "value": 400
+  }
+ ],
+ "note": "The total tons of sugar beet grown across all years and land groups is capped at 400."
+}

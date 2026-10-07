@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "day": "Friday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "The question asks for a constraint on the rentals for Friday compared to Monday. Since the model has a weekly cycle and the rentals are per day and depot, we need to scale the Friday demand by 0.5 relative to Monday's demand. However, the question specifies 'at most 50% of the cars rented out for day Monday', which implies a constraint on the sum of Friday rentals across all depots being <= 50% of the sum of Monday rentals across all depots. But the model's demand table has separate rows for each day and depot, so we can't directly scale Friday to Monday. Instead, we need to create a rule that bounds the sum of Friday rentals by 50% of Monday rentals."
+  }

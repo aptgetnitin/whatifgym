@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"birmingham_at_least_3x_manchester_repairs","measure":"repairs","scope":{"depot":"Birmingham"},"sense":">=","relative_to":{"measure":"repairs","scope":{"depot":"Manchester"}},"factor":3.0}],"note":"Cars repaired at Birmingham must be at least 3 times those at Manchester."}

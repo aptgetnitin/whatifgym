@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "logic": [
+    {
+      "name": "soc_min_00_01_and_01_02",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "soc",
+          "scope": {
+            "hour": "00-01"
+          },
+          "sense": ">=",
+          "value": 12
+        },
+        {
+          "measure": "soc",
+          "scope": {
+            "hour": "01-02"
+          },
+          "sense": ">=",
+          "value": 12
+        }
+      ]
+    }
+  ]
+}

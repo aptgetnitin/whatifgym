@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "repair_to_damaged_ratio",
+      "measure": "repairs",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "damaged_stock"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Total repaired cars may be at most 50% of the total damaged cars in the morning."
+}

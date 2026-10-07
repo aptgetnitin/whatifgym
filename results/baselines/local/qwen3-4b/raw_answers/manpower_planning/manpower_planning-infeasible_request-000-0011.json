@@ -1,0 +1,40 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retrain",
+      "column": "retrain",
+      "where": {
+        "year": 1,
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 680
+    },
+    {
+      "op": "set",
+      "table": "retrain",
+      "column": "retrain",
+      "where": {
+        "year": 3,
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 460
+    }
+  ],
+  "note": "The planner asks for minimum retraining levels per year and skill level. The retrain measure is defined by the year, from_skill, and to_skill."
+}

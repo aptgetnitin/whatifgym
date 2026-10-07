@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "store_mar_at_least_2_times_jun",
+   "measure": "store",
+   "scope": {
+    "month": "Mar"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Jun"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "A rule that enforces the store in March to be at least twice the store in June."
+}

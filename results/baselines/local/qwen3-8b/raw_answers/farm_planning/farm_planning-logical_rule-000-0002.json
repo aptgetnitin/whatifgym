@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "grain_grown_year4_group1",
+   "measure": "grow_grain",
+   "scope": {
+    "year": "Year4",
+    "land_group": "Group1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy_grain",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 46
+  }
+ ],
+ "note": "A rule that enforces the grain grown in Year4 for Group1 to be at least 46 times the grain bought in Year1."
+}

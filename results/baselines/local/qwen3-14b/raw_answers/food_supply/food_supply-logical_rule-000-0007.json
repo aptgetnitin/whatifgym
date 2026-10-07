@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "ration_limit_per_person",
+   "measure": "ration",
+   "scope": {
+    "food": [
+     "Oil",
+     "Wheat",
+     "Corn-soya blend (CSB)"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ]
+}

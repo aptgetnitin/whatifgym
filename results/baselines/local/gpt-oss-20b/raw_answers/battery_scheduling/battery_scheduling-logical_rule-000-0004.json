@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","logic":[{"name":"soc_not_both_positive","at_least":1,"of":[{"measure":"soc","scope":{"hour":"15-16"},"sense":"<=","value":0},{"measure":"soc","scope":{"hour":"03-04"},"sense":"<=","value":0}]}]}

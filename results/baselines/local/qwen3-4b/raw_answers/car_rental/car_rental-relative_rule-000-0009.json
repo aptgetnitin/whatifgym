@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "repaired_cars_limit",
+      "measure": "repairs",
+      "scope": {},
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "damaged_stock",
+        "scope": {}
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"measure":"undamaged_left","sense":"<=","value":540}],"note":"Cap on total undamaged cars kept overnight."}

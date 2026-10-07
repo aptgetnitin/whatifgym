@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "jun_production_min",
+      "measure": "make",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "value": 10250
+    }
+  ]
+}

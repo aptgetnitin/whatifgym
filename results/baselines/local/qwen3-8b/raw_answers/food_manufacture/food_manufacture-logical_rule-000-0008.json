@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "store_oil3_may_if_buy_jun",
+   "measure": "store",
+   "scope": {
+    "month": "May",
+    "oil": "OIL3"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "month": "Jun"
+    }
+   },
+   "factor": 1000
+  }
+ ],
+ "note": "If oil is bought in June, the storage of OIL3 in May must be at least 1000 tons."
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod4_min_make",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4"
+      },
+      "sense": ">=",
+      "value": 1300
+    },
+    {
+      "name": "prod6_min_make",
+      "measure": "make",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": ">=",
+      "value": 2600
+    }
+  ]
+}

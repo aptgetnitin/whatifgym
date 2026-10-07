@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","data_changes":[{"op":"set_param","name":"energy_capacity_kwh","value":210}],"note":"Set battery capacity to 210 kWh."}

@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "food": "Wheat",
+    "from_city": "Hassakeh",
+    "to_city": "Qamishli"
+   },
+   "value": 16350
+  }
+ ],
+ "rules": [
+  {
+   "name": "ration_dsm_dayr_az_zor",
+   "measure": "ration",
+   "scope": {
+    "food": "Dried skim milk (enriched) (DSM)",
+    "camp": "Dayr_Az_Zor"
+   },
+   "sense": ">=",
+   "value": 16350
+  }
+ ],
+ "note": "The scenario sets the flow of Wheat from Hassakeh to Qamishli to 16350 units and requires the ration of Dried skim milk (enriched) (DSM) in Dayr_Az_Zor to be at least 16350 units."
+}

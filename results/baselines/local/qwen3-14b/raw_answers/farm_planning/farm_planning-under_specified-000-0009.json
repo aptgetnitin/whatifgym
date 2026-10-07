@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "ask": "What is the new grain yield per acre for land group Group1?"
+}

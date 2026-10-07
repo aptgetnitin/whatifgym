@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_min",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "grow_grain",
+    "scope": {
+     "year": "Year1",
+     "land_group": "Group1"
+    }
+   },
+   "factor": 182
+  }
+ ],
+ "note": "A rule that enforces a minimum sugar beet grown based on the grain grown in a specific year and land group."
+}

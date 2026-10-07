@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "max_rentals_wed_sat_fri",
+   "measure": "rentals",
+   "scope": {
+    "day": [
+     "Wednesday",
+     "Saturday",
+     "Friday"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "A rule limits the total number of rentals across specified days to 2."
+}

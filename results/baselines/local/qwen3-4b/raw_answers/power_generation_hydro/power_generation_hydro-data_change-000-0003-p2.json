@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "startup_cost",
+      "where": {
+        "type": [
+          "Thermal0"
+        ]
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "The question asks for a 50% reduction in startup cost for Thermal0 units, which corresponds to scaling the startup_cost column by 0.5 for Thermal0 units."
+}

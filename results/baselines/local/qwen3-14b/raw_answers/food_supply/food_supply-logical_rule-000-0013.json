@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "minimum_ration_wheat_dayrazor",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat",
+    "camp": "Dayr_Az_Zor"
+   },
+   "sense": ">=",
+   "value": 3.9
+  }
+ ]
+}

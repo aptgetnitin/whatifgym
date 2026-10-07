@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_left_manchester_min",
+      "measure": "undamaged_left",
+      "scope": {
+        "depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 250
+    },
+    {
+      "name": "total_rentals_cap",
+      "measure": "rentals",
+      "scope": {
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 2250
+    }
+  ]
+}

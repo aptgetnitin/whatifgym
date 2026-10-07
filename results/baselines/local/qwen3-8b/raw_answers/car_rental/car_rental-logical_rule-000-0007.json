@@ -1,0 +1,49 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "repairs_monday_birmingham",
+   "measure": "repairs",
+   "scope": {
+    "day": "Monday",
+    "depot": "Birmingham"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "day": "Monday",
+     "depot": "Birmingham"
+    }
+   },
+   "factor": 50
+  }
+ ],
+ "logic": [
+  {
+   "name": "repairs_monday_birmingham_binary",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "repairs",
+     "scope": {
+      "day": "Monday",
+      "depot": "Birmingham"
+     },
+     "sense": "==",
+     "value": 0
+    },
+    {
+     "measure": "repairs",
+     "scope": {
+      "day": "Monday",
+      "depot": "Birmingham"
+     },
+     "sense": ">=",
+     "value": 50
+    }
+   ]
+  }
+ ]
+}

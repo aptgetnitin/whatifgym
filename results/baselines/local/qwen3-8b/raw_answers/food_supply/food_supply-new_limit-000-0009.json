@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "csb_ration_cap",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "sense": "<=",
+      "value": 2.4
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "oil_ration_min",
+   "measure": "ration",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "camp": "*"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "At least 25% of the total ration per person may go to oil."
+}

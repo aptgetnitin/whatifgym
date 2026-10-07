@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "logic": [
+    {
+      "name": "repair_wed_implies_tue_damaged_transfers",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "repairs",
+          "scope": {
+            "day": "Wednesday"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "damaged_transfers",
+          "scope": {
+            "day": "Tuesday"
+          },
+          "sense": ">=",
+          "value": 15
+        }
+      ]
+    }
+  ],
+  "note": "If any repairs occur on Wednesday, then at least 15 damaged transfers must occur on Tuesday."
+}

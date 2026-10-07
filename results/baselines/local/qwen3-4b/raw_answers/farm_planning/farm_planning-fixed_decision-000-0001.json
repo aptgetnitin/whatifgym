@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "sell_beet",
+      "column": "sell_beet",
+      "where": {
+        "year": "Year3"
+      },
+      "value": 49
+    },
+    {
+      "op": "set",
+      "table": "grow_grain",
+      "column": "grow_grain",
+      "where": {
+        "year": "Year4",
+        "land_group": "Group1"
+      },
+      "value": 0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "yearly_profit",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      }
+    }
+  ]
+  }

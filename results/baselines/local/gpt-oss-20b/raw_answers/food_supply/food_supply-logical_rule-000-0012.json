@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","logic":[{"name":"no_both_Daraa_Hassakeh","at_least":1,"of":[{"measure":"purchase","scope":{"supplier":"Daraa"},"sense":"<=","value":0},{"measure":"purchase","scope":{"supplier":"Hassakeh"},"sense":"<=","value":0}]}]}

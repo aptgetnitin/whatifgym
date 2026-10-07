@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "overmanned_unskilled_year_1",
+   "measure": "overmanned",
+   "scope": {
+    "year": 1,
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "year": 1,
+     "skill": "unskilled"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "overmanned_unskilled_year_1",
+   "measure": "overmanned",
+   "scope": {
+    "year": 1,
+    "skill": "unskilled"
+   },
+   "sense": "<=",
+   "value": 400
+  }
+ ],
+ "note": "The overmanned workers for unskilled in year 1 must be either zero or at least 400."
+}

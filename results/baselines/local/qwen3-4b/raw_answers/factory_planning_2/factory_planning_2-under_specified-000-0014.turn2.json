@@ -1,0 +1,4 @@
+{
+  "role": "agent",
+  "text": "What specific storage limit (max_inventory) are you referring to? The model has a parameter 'max_inventory' that defines the maximum stock of each product at the end of any month. Could you clarify if you mean a change to this parameter or a different aspect of storage?"
+  }

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "min_store_oil1",
+   "measure": "store",
+   "scope": {
+    "oil": "OIL1"
+   },
+   "sense": ">=",
+   "value": 4500
+  }
+ ],
+ "note": "If there is any tons of oil in storage for oil OIL1, it must be at least 4500."
+}

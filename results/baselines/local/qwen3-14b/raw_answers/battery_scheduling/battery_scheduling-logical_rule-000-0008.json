@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "logic": [
+    {
+      "name": "no_both_soc_15_16_and_18_19",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "soc",
+          "scope": {
+            "hour": "15-16"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "soc",
+          "scope": {
+            "hour": "18-19"
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

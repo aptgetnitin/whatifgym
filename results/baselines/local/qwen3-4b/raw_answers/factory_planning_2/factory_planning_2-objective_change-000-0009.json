@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "profit",
+      "scope": {
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "repair",
+      "scope": {
+        "month": "Mar",
+        "machine": [
+          "grinder",
+          "vertDrill",
+          "horiDrill",
+          "borer",
+          "planer"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner wants to keep profit at its maximum (first objective stage) and then minimise the number of machines down for maintenance in March (second objective stage)."
+}

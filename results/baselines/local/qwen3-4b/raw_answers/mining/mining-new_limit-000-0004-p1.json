@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_mines",
+      "where": {
+        "key": "max_mines"
+      },
+      "value": 7
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "price",
+      "where": {
+        "key": "price"
+      },
+      "value": 3280000
+    }
+  ],
+  "note": "The planner wants to set a new maximum number of mines worked per year (7 mine-years total) and a new maximum blend for Year5 (3,280,000 tons)."
+}

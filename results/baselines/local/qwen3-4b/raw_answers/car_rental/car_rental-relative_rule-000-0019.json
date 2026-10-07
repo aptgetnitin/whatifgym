@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "min_damaged_transfers_to_glasgow",
+      "measure": "damaged_transfers",
+      "scope": {
+        "to_depot": [
+          "Glasgow"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "damaged_transfers",
+        "scope": {
+          "to_depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

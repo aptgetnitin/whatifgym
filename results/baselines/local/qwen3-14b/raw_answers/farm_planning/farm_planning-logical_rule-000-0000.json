@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "logic": [
+    {
+      "name": "heifer_sales_beet_growth",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell_heifers",
+          "scope": {
+            "year": "Year1"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "grow_beet",
+          "scope": {
+            "year": "Year1"
+          },
+          "sense": ">=",
+          "value": 182
+        }
+      ]
+    }
+  ]
+}

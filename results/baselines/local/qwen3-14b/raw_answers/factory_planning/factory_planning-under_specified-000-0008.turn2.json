@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod5"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Profit contribution per unit for Prod5 is reduced by 20%."
+}

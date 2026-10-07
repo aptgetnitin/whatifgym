@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "fixed_decisions": [
+    {
+      "measure": "rentals",
+      "scope": {
+        "day": "Monday",
+        "depot": "Birmingham"
+      },
+      "value": 0
+    },
+    {
+      "measure": "damaged_left",
+      "scope": {
+        "day": "Wednesday",
+        "depot": "Plymouth"
+      },
+      "value": 1.5
+    }
+  ]
+}

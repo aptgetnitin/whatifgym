@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"total_flow_at_least_1.5_purchase","measure":"flow","sense":">=","relative_to":{"measure":"purchase"},"factor":1.5},{"name":"wheat_ration_at_most_0.75_milk","measure":"ration","scope":{"food":"Wheat"},"sense":"<=","relative_to":{"measure":"ration","scope":{"food":"Milk"}},"factor":0.75}]}

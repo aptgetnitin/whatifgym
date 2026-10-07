@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "min_buy_veg1",
+      "measure": "buy",
+      "scope": {
+        "oil": "VEG1"
+      },
+      "sense": ">=",
+      "value": 2000
+    },
+    {
+      "name": "min_buy_oil2",
+      "measure": "buy",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": ">=",
+      "value": 4500
+    }
+  ]
+}

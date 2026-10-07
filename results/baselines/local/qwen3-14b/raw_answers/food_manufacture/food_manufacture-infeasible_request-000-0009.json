@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "fixed_decisions": [
+    {
+      "measure": "produce",
+      "scope": {
+        "month": "Jan"
+      },
+      "value": 2250
+    }
+  ]
+}

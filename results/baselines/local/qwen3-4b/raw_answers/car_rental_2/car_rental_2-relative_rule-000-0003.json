@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "rentals_sat_at_most_75_of_thu",
+      "measure": "rentals",
+      "scope": {
+        "day": "Saturday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "rentals",
+        "scope": {
+          "day": "Thursday",
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+          "Plymouth"
+          ]
+        }
+      }
+    }
+  ]
+}

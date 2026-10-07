@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "items_in_bin1_at_most_80_of_bin2",
+   "measure": "x",
+   "scope": {
+    "bin": "bin1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "bin": "bin2"
+    }
+   },
+   "factor": 0.8
+  },
+  {
+   "name": "total_bins_used_at_least_80_of_items_packed",
+   "measure": "y",
+   "scope": {
+    "bin": "bin"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": "item"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "y"
+  }
+ ]
+}

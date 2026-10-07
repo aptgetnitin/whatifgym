@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "heifer_calves_sold_year5_at_least_50_percent",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell_heifers",
+    "scope": {
+     "year": [
+      "Year1",
+      "Year2",
+      "Year3",
+      "Year4",
+      "Year5"
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The rule ensures that the number of heifer calves sold in Year5 is at least 50% of the total heifer calves sold across all years."
+}

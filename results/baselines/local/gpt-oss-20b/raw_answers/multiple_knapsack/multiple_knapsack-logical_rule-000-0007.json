@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","logic":[{"name":"item4_presence_implies_item7_bin4_at_least_2","at_least":1,"of":[{"measure":"x","scope":{"item":"item4"},"sense":"<=","value":0},{"measure":"x","scope":{"item":"item7","bin":"bin4"},"sense":">=","value":2}]}]}

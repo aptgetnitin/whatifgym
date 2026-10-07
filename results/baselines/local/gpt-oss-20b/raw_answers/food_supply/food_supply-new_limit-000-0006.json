@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_ration_idleb","measure":"ration","scope":{"camp":"Idleb"},"sense":">=","value":6.1},{"name":"max_total_flow","measure":"flow","sense":"<=","value":121500}],"note":"Two new limits: Idleb ration per person >= 6.1, total food shipped <= 121500."}

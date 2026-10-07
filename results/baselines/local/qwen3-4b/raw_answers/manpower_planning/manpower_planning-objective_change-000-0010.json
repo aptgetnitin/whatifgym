@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "recruit",
+      "scope": {
+        "year": [
+          "2"
+        ]
+      }
+    }
+  ]
+}

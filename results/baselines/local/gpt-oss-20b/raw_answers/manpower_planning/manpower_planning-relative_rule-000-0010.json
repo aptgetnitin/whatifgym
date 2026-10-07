@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "short_time",
+      "scope": {
+        "skill": "unskilled"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "short_time"
+      },
+      "factor": 0.1
+    }
+  ]
+}

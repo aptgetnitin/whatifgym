@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_transfers_to_manchester",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "to_depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 78
+    }
+  ]
+}

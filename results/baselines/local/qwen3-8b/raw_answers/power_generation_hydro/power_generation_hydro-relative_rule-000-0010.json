@@ -1,0 +1,67 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "hydro_run_18_24_at_least_2_times_15_18",
+   "measure": "hydro_on",
+   "scope": {
+    "period": "18-24",
+    "hydro": [
+     "HydroA",
+     "HydroB"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "hydro_on",
+    "scope": {
+     "period": "15-18",
+     "hydro": [
+      "HydroA",
+      "HydroB"
+     ]
+    }
+   },
+   "factor": 2
+  },
+  {
+   "name": "thermal_run_at_most_50_percent_of_started",
+   "measure": "ngen",
+   "scope": {
+    "period": [
+     "00-06",
+     "06-09",
+     "09-15",
+     "15-18",
+     "18-24"
+    ],
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "nstart",
+    "scope": {
+     "period": [
+      "00-06",
+      "06-09",
+      "09-15",
+      "15-18",
+      "18-24"
+     ],
+     "type": [
+      "Thermal0",
+      "Thermal1",
+      "Thermal2"
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The first rule ensures that the number of hydro units running in period 18-24 is at least twice that in period 15-18. The second rule limits the total number of thermal units running to 50% of the total number started across all periods and thermal types."
+}

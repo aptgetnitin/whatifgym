@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "mar_sales_min_40_percent",
+      "measure": "sell",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 0.4
+    },
+    {
+      "name": "jan_stock_min_1_5_times_may_stock",
+      "measure": "store",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "May"
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

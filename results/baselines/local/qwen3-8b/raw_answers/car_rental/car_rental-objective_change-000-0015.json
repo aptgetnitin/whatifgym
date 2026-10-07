@@ -1,0 +1,41 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "weekly_profit_max",
+   "measure": "profit",
+   "scope": {},
+   "sense": "==",
+   "value": 121160.21
+  },
+  {
+   "name": "damaged_stock_plymouth_max",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Plymouth"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Plymouth"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Plymouth"
+   }
+  }
+ ],
+ "note": "First, ensure weekly profit remains at its maximum. Then, maximise the damaged cars at Plymouth in the morning."
+}

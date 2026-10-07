@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "repair_limit",
+   "measure": "repairs",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Glasgow"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Glasgow"
+    }
+   },
+   "factor": 0.5
+  }
+ ]
+}

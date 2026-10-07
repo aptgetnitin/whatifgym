@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "bins",
+      "column": "capacity",
+      "where": {
+        "bin": [
+          "bin0"
+        ]
+      },
+      "value": 150
+    }
+  ],
+  "note": "The planner wants to change the capacity of one bin (e.g., bin0) to a larger value, but the question doesn't specify which bin or the new capacity value."
+}

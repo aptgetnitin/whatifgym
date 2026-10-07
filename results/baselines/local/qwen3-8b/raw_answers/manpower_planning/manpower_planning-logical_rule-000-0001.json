@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "downgrade_skilled_to_semi_skilled_year_1_at_least_340",
+   "measure": "downgrade",
+   "scope": {
+    "year": 1,
+    "from_skill": "skilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 340
+  }
+ ],
+ "note": "A rule that enforces a minimum number of workers downgraded from skilled to semi-skilled in year 1."
+}

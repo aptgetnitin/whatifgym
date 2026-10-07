@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "year3_heifer_sales",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": ">=",
+      "value": 170
+    },
+    {
+      "name": "year4_heifer_sales",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": ">=",
+      "value": 170
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_calves_at_most_25_percent_grain",
+      "measure": "raise_heifers",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "grow_grain",
+        "scope": {
+          "year": [
+            "Year1",
+            "Year2",
+            "Year3",
+            "Year4",
+            "Year5"
+          ],
+          "land_group": [
+            "Group1",
+            "Group2",
+            "Group3",
+            "Group4"
+          ]
+        }
+      }
+    }
+  ]
+}

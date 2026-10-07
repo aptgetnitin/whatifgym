@@ -1,0 +1,48 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "saturday_rentals_min_twice_friday",
+      "measure": "rentals",
+      "scope": {
+        "day": "Saturday"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "rentals",
+        "scope": {
+          "day": "Friday"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "total_repairs_min_twice_undamaged_stock",
+      "measure": "repairs",
+      "scope": {
+        "day": "Saturday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "undamaged_stock",
+        "scope": {
+          "day": "Saturday",
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ]
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

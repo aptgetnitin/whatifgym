@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod7"
+      },
+      "factor": 1.3
+    }
+  ],
+  "note": "Profit per unit for Prod7 increased by 30%."
+}

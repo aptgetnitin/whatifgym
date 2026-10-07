@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"Jun_at_least_3x_May_store","measure":"store","scope":{"month":"Jun"},"sense":">=","relative_to":{"measure":"store","scope":{"month":"May"}},"factor":3.0}]}

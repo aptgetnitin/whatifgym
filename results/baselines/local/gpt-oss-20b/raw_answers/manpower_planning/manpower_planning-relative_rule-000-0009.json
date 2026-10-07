@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"skilled_at_least_2x_semi_skilled","measure":"retrain","scope":{"year":[1,2,3],"to_skill":"skilled"},"sense":">=","relative_to":{"measure":"retrain","scope":{"year":[1,2,3],"to_skill":"semi_skilled"}},"factor":2.0}]}

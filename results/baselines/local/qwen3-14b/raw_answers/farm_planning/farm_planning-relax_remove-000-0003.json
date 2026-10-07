@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "regular_labour_hours",
+   "value": 6000
+  }
+ ],
+ "note": "The regular labour hours are increased to 6000 for Year4 only."
+}

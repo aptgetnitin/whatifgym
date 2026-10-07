@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"measure":"x","scope":{"item":["item13","item3","item14"]},"sense":"<=","value":2}],"note":"Only two of the three items (item13, item3, item14) may be packed."}

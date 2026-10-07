@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "produce_min_mar",
+   "measure": "produce",
+   "scope": {
+    "month": "Mar"
+   },
+   "sense": ">=",
+   "value": 1350
+  }
+ ],
+ "note": "A minimum production requirement for March is added as a rule."
+}

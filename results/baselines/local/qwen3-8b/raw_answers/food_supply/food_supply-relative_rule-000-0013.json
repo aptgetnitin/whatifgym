@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "total_bought_at_most_half_shipped",
+   "measure": "purchase",
+   "scope": {
+    "food": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "*"
+    }
+   },
+   "factor": 0.5
+  },
+  {
+   "name": "csb_bought_at_least_1_5_times_milk_bought",
+   "measure": "purchase",
+   "scope": {
+    "food": "Corn-soya blend (CSB)"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "food": "Milk"
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "The first rule bounds the total food bought relative to the total food shipped. The second rule sets a relative minimum for the purchase of Corn-soya blend (CSB) compared to Milk."
+}

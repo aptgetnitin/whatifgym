@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_total_purchase","measure":"purchase","scope":{},"sense":">=","value":973150}],"note":"Check if total purchase can reach at least 973150 units of 100 g per day."}

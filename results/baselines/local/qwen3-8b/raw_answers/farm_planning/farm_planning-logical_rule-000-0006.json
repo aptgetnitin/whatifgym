@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "grain_grown_group1_year3_at_least_33",
+      "measure": "grow_grain",
+      "scope": {
+        "year": "Year3",
+        "land_group": "Group1"
+      },
+      "sense": ">=",
+      "value": 33
+    }
+  ],
+  "note": "The rule ensures that the tons of grain grown for Year3, Group1 is at least 33."
+}

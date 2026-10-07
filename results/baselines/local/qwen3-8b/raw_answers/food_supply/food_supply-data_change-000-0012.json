@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Jubb_al_Jarrah"
+      },
+      "factor": 1.3
+    }
+  ],
+  "note": "Scaling the beneficiaries of Jubb_al_Jarrah camp by 30% to reflect the increased number of people being served."
+}

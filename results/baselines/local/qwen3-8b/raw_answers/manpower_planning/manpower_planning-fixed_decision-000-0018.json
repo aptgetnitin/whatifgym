@@ -1,0 +1,46 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "downgrade",
+   "column": "downgrade",
+   "where": {
+    "year": 1,
+    "from_skill": "skilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 340
+  },
+  {
+   "op": "set",
+   "table": "short_time",
+   "column": "short_time",
+   "where": {
+    "year": 2,
+    "skill": "skilled"
+   },
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "downgrade",
+   "scope": {
+    "year": 1,
+    "from_skill": "skilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 340
+  },
+  {
+   "measure": "short_time",
+   "scope": {
+    "year": 2,
+    "skill": "skilled"
+   },
+   "value": 0
+  }
+ ]
+}

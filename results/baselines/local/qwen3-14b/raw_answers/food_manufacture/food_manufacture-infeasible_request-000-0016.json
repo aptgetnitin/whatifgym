@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","ask":"What is the minimum total storage across all oils in June?","note":"The question asks about total storage in June, but the model tracks storage per oil. The total would be the sum of store[Jun, oil] for all oils."}

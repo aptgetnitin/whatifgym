@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","fixed_decisions":[{"measure":"purchase","scope":{"food":"Maize meal","supplier":"Aleppo"},"value":23},{"measure":"ration","scope":{"food":"Wheat","camp":"Qamishli"},"value":0}],"note":"Fix purchase of Maize meal at Aleppo to 23 units and ration of Wheat at Qamishli to 0."}

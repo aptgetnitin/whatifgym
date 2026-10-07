@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal0_output_00-06",
+   "measure": "output",
+   "scope": {
+    "period": "00-06",
+    "type": "Thermal0"
+   },
+   "sense": ">=",
+   "value": 20400
+  },
+  {
+   "name": "thermal0_output_00-06_zero",
+   "measure": "output",
+   "scope": {
+    "period": "00-06",
+    "type": "Thermal0"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The thermal output for period 00-06, generator type Thermal0 must be either zero or at least 20400."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "raise_heifers",
+   "column": "raise_heifers",
+   "where": {
+    "year": "Year1"
+   },
+   "value": 21
+  }
+ ],
+ "note": "Limits the number of heifer calves raised in Year1 to 21."
+}

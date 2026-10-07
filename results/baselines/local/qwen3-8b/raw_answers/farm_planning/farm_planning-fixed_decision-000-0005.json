@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "sell_heifers",
+   "column": "sell_heifers",
+   "where": {
+    "year": "Year2"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixing the heifer calves sold in Year2 to 0 and optimising the rest."
+}

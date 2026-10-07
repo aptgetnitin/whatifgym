@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Feb",
+    "product": "Prod2"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixing the maximum sales for Prod2 in Feb to 0 effectively sets the upper bound on units sold to 0."
+}

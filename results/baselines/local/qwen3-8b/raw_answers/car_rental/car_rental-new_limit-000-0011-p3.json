@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_stock_limit",
+   "measure": "undamaged_stock",
+   "scope": {},
+   "sense": "<=",
+   "value": 1900
+  }
+ ],
+ "note": "Imposes an overall limit on the total number of undamaged cars present at the depots in the morning across all depots and days."
+}

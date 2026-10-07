@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "undamaged_stock",
+   "column": "undamaged_stock",
+   "where": {
+    "day": "Saturday",
+    "depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ]
+   },
+   "value": 45
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Set the undamaged_stock for Saturday at each depot to 45 and maximise the original objective."
+}

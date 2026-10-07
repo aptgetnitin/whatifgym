@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_limit",
+   "measure": "output",
+   "scope": {
+    "period": "15-18"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "output",
+    "scope": {
+     "period": "00-06"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The thermal output for period 15-18 is constrained to be at most equal to the thermal output for period 00-06."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"sell_at_most_2x_store","measure":"sell","sense":"<=","relative_to":{"measure":"store"},"factor":2.0}],"note":"Limit total sales to at most twice the total inventory across all months and products."}

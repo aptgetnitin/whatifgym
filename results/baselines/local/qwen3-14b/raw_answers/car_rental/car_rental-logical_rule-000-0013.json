@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "minimum_rentals_thursday_plymouth",
+      "measure": "rentals",
+      "scope": {
+        "day": "Thursday",
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 127
+    }
+  ]
+}

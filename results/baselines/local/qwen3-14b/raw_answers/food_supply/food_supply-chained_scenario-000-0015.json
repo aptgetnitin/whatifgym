@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "min_shipment_to_daraa",
+      "measure": "flow",
+      "scope": {
+        "to_city": "Daraa"
+      },
+      "sense": ">=",
+      "value": 12050
+    }
+  ]
+}

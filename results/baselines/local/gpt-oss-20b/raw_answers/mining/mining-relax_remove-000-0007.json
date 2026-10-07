@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "max_operating",
+      "scope": {
+        "year": ["Year1", "Year5"]
+      }
+    }
+  ],
+  "note": "Remove the maximum mines worked constraint for Year1 and Year5"
+}

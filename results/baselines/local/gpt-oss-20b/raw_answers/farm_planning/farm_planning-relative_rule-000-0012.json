@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "head_cattle_year4_at_least_1.5_year2",
+      "measure": "herd",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "herd",
+        "scope": {
+          "year": "Year2"
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

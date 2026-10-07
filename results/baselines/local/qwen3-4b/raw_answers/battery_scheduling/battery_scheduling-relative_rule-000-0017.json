@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "charge_02_03_at_least_3x_charge_03_04",
+      "measure": "charge",
+      "scope": {
+        "hour": "02-03"
+      },
+      "sense": ">=",
+      "value": 3,
+      "relative_to": {
+        "measure": "charge",
+        "scope": {
+          "hour": "03-04"
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "discharge_21_22_at_least_75_of_total_discharge",
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "discharge",
+        "scope": {
+          "hour": "*"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

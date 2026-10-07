@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "fixed_decisions": [
+    {
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "value": 3.8
+    }
+  ]
+}

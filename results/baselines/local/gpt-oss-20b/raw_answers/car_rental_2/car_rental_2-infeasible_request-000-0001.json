@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","fixed_decisions":[{"measure":"repairs","scope":{"day":"Friday","depot":"Plymouth"},"value":25}],"note":"Commit to exactly 25 cars repaired for day Friday, depot Plymouth, and plan the rest around it."}

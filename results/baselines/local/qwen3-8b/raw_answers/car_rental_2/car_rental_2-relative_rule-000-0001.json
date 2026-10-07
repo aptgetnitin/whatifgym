@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "plymouth_expansions_limit",
+   "measure": "expand",
+   "scope": {
+    "depot": "Plymouth"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "expand",
+    "scope": {
+     "depot": "Manchester"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The number of expansion options carried out at Plymouth is limited to 25% of those at Manchester."
+}

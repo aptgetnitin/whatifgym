@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","logic":[{"name":"Apr_refine_implies_May_store","at_least":1,"of":[{"measure":"consume","scope":{"month":"Apr"},"sense":"<=","value":0},{"measure":"store","scope":{"month":"May"},"sense":">=","value":2000}]}]}

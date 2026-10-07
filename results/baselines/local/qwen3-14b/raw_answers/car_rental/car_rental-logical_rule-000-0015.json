@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "birmingham_repair_zero_or_300",
+      "measure": "repairs",
+      "scope": {
+        "depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 300
+    }
+  ]
+}

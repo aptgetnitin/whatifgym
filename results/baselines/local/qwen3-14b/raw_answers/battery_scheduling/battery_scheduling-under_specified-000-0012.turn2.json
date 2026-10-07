@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "initial_soc_kwh",
+      "factor": 2
+    }
+  ]
+}

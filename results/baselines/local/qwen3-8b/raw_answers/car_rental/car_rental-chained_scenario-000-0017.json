@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_left_cap",
+   "measure": "undamaged_left",
+   "sense": "<=",
+   "value": 110
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ]
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "max_extract_mine4_mine2_mine3_mine1",
+   "measure": "extract",
+   "scope": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ]
+}

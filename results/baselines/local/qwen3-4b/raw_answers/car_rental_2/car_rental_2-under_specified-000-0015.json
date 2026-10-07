@@ -1,0 +1,27 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "repairs",
+      "column": "repairs",
+      "where": {
+        "day": "Monday",
+        "depot": "Glasgow"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "cap_repaired_cars",
+      "measure": "repairs",
+      "scope": {
+        "day": "Monday",
+        "depot": "Glasgow"
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

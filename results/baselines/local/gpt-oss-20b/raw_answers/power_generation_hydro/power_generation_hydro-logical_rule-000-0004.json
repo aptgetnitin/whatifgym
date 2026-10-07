@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","logic":[{"name":"thermal_output_min_batch","at_least":1,"of":[{"measure":"output","scope":{"period":"00-06"},"sense":"==","value":0},{"measure":"output","scope":{"period":"00-06"},"sense":">=","value":30900}]}]}

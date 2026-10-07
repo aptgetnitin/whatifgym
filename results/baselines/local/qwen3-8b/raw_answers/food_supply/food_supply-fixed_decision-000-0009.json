@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "fixed_decisions": [
+  {
+   "measure": "purchase",
+   "scope": {
+    "food": "*",
+    "supplier": "Homs"
+   },
+   "value": 250
+  },
+  {
+   "measure": "ration",
+   "scope": {
+    "food": "Milk",
+    "camp": "Dayr_Az_Zor"
+   },
+   "value": 0.15
+  }
+ ],
+ "note": "Fixed decisions set the purchase quantity for all foods at Homs to 250 units per day and fix the ration of Milk in Dayr_Az_Zor to 0.15 units per person per day."
+}

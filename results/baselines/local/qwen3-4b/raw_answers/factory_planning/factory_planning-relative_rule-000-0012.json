@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod2_at_most_10_of_total",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod2"
+      },
+      "sense": "<=",
+      "value": 0.1,
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod1"
+        }
+      }
+    },
+    {
+      "name": "prod6_at_most_90_of_prod3",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "value": 0.9,
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod3"
+        }
+      }
+    }
+  ]
+}

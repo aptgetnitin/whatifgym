@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "measure": "x",
+   "scope": {},
+   "sense": "<=",
+   "value": 10,
+   "name": "cap_x_total"
+  }
+ ]
+}

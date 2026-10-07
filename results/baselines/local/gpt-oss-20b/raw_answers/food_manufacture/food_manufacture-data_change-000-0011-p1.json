@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"scale_param","name":"final_stock","factor":1.25}],"note":"Increase closing stock target by 25% for each oil."}

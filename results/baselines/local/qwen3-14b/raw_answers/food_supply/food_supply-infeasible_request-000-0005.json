@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "fixed_decisions": [
+    {
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Daraa"
+      },
+      "value": 3.5
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "ask": "Please specify the new minimum product hardness value to proceed with the scenario."
+}

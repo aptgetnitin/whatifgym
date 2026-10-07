@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"plymouth_rental_share","measure":"rentals","scope":{"depot":"Plymouth"},"sense":">=","relative_to":{"measure":"rentals"},"factor":0.4}]}

@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "monday_undamaged_kept_at_least_40_percent",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "profit"
+    }
+  ],
+  "fixed_decisions": []
+}

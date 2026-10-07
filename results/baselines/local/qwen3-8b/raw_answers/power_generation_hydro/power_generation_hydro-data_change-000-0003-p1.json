@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "startup_cost",
+   "factor": 0.5,
+   "where": {
+    "type": "Thermal0"
+   }
+  }
+ ],
+ "note": "Thermal0 start-up cost per unit is reduced by 50%."
+}

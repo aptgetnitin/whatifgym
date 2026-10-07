@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg1_buy_at_least_680_of_veg2",
+   "measure": "buy",
+   "scope": {
+    "oil": "VEG1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "oil": "VEG2"
+    }
+   },
+   "factor": 680
+  }
+ ],
+ "note": "A rule that enforces the sum of buy for VEG1 to be at least 680 times the sum of buy for VEG2."
+}

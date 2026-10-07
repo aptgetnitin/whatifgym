@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_sold_year4_limit",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year4"
+   },
+   "sense": "<=",
+   "value": 38
+  }
+ ],
+ "note": "A limit on the total sugar beet sold in Year4."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_limit_03-04",
+   "measure": "soc",
+   "scope": {
+    "hour": "03-04"
+   },
+   "sense": "<=",
+   "value": 8
+  }
+ ],
+ "note": "A limit on the total stored energy during the 03-04 hour."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "Apr",
+        "product": "Prod1"
+      },
+      "value": 100
+    }
+  ],
+  "note": "The question specifies a minimum stock requirement for a specific product in a specific month, which is a fixed decision on the store variable."
+}

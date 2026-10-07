@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_01_02_to_charge_03_04",
+   "measure": "soc",
+   "scope": {
+    "hour": "01-02"
+   },
+   "sense": ">=",
+   "value": 6.2,
+   "relative_to": {
+    "measure": "charge",
+    "scope": {
+     "hour": "03-04"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that links the stored energy in hour 01-02 to the charging power in hour 03-04 through a relative constraint."
+}

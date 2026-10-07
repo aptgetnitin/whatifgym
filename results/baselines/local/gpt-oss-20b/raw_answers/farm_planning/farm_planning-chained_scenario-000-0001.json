@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "beet_sale_price",
+      "value": 29
+    },
+    {
+      "op": "set",
+      "table": "land_groups",
+      "column": "grain_yield",
+      "where": {
+        "land_group": "Group3"
+      },
+      "value": 0.4
+    }
+  ]
+}

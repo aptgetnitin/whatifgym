@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "years",
+      "where": {
+        "year": "Year3"
+      }
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "quality",
+      "scope": {
+        "year": "Year3"
+      }
+    }
+  ],
+  "note": "Removing the year 3 quality target and relaxing the quality constraint for that year."
+}

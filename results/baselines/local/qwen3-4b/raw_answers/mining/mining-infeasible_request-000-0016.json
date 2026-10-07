@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 15600000
+    }
+  ],
+  "note": "The question asks for a fixed decision on the extract measure for Mine3, which is a data change to set the value."
+}

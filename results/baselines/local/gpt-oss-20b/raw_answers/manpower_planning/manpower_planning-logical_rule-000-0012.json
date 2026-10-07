@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "logic": [
+    {
+      "name": "short_time_year1_unskilled",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "short_time",
+          "scope": {
+            "year": 1,
+            "skill": "unskilled"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "short_time",
+          "scope": {
+            "year": 1,
+            "skill": "unskilled"
+          },
+          "sense": ">=",
+          "value": 125
+        }
+      ]
+    }
+  ]
+}

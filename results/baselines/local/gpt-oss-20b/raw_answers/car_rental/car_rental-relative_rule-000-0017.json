@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"repair_vs_undamaged","measure":"repairs","sense":">=","relative_to":{"measure":"undamaged_left"},"factor":2}],"note":"Enforce total repairs >= 2 * total undamaged cars kept overnight."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"made_at_least_2x_sold","measure":"make","sense":">=","relative_to":{"measure":"sell"},"factor":2.0}],"note":"Ensure total production is at least twice total sales."}

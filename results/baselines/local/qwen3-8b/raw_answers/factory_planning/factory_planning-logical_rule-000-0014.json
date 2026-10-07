@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod5_stock_zero_or_500",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5"
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "prod5_stock_at_least_500",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5"
+   },
+   "sense": ">=",
+   "value": 500
+  }
+ ],
+ "note": "Logical rule: at least one of the two conditions must hold."
+}

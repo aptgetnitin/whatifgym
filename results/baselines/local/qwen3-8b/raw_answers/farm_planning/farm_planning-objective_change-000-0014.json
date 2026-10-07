@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "sell_beet",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "grow_beet",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  }
+ ],
+ "note": "The objective is structured to first maximise the five-year profit, then the total tons of sugar beet sold, and finally the total tons of sugar beet grown."
+}

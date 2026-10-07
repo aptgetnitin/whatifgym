@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": 1
+   },
+   "factor": 1
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": 2
+   },
+   "factor": 1
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": 3
+   },
+   "factor": 1
+  }
+ ],
+ "note": "The price for returning to another depot is scaled across all rental lengths."
+}

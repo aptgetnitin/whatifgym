@@ -1,0 +1,48 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "bins_used_at_least_90_percent_items",
+      "measure": "y",
+      "scope": {
+        "bin": {
+          "type": "string"
+        }
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": {
+            "type": "string"
+          },
+          "bin": {
+            "type": "string"
+          }
+        }
+      },
+      "factor": 0.9
+    },
+    {
+      "name": "bin1_items_at_most_15_percent_total_items",
+      "measure": "x",
+      "scope": {
+        "bin": "bin1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": {
+            "type": "string"
+          },
+          "bin": {
+            "type": "string"
+          }
+        }
+      },
+      "factor": 0.15
+    }
+  ]
+}

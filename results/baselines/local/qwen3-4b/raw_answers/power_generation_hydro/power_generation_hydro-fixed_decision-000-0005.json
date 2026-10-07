@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "ngen",
+      "where": {
+        "period": "00-06",
+        "type": "Thermal0"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fixing thermal output for period 00-06, Thermal0 to 0 units."
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "jan_sales_10pct",
+      "measure": "sell",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell"
+      },
+      "factor": 0.1
+    }
+  ],
+  "note": "January sales limited to at most 10% of total sales over the horizon."
+}

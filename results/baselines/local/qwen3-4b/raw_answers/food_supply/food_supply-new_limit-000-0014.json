@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": [
+          "Idleb"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "ration_cap_total",
+      "measure": "ration",
+      "scope": {
+        "camp": [
+          "Idleb"
+        ]
+      },
+      "sense": "<=",
+      "value": 30
+    }
+  ],
+  "note": "An overall cap of 30 applies to the ration per person (units of 100 g a day) in total."
+  }

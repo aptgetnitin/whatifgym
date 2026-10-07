@@ -1,0 +1,25 @@
+{
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "no_repair_tuesday_and_saturday",
+      "measure": "repairs",
+      "scope": {
+        "day": [
+          "Tuesday",
+          "Saturday"
+        ],
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ],
+  "note": "The planner wants to forbid repairs on both Tuesday and Saturday. This is a rule that sets the sum of repairs over Tuesday and Saturday to zero."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","fixed_decisions":[{"measure":"store","scope":{"month":"Feb","product":"Prod1"},"value":500}],"data_changes":[{"op":"set_param","name":"max_inventory","value":500}],"note":"Fix store[Feb,Prod1] to 500 and increase max_inventory to allow it."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","logic":[{"name":"at_most_one_food_bought","at_least":2,"of":[{"measure":"purchase","scope":{"food":"Maize meal"},"sense":"==","value":0},{"measure":"purchase","scope":{"food":"Oil"},"sense":"==","value":0},{"measure":"purchase","scope":{"food":"Milk"},"sense":"==","value":0}]}]}

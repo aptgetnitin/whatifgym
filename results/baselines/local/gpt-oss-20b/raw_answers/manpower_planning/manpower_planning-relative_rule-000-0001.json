@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "overmanned",
+      "scope": {
+        "year": 2
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "overmanned",
+        "scope": {
+          "year": [1, 2, 3]
+        }
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "Ensure year 2 accounts for at least 60% of all workers employed above requirement."
+}

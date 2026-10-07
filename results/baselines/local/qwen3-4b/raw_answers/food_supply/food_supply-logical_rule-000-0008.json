@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "amman_flow_min_ratio",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Amman",
+        "food": [
+          "Maize meal"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.22,
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Maize meal",
+          "camp": "Dayr_Az_Zor"
+        }
+      }
+    }
+  ],
+  "note": "A rule that requires a minimum ratio of flow to ration for a specific food and camp."
+  }

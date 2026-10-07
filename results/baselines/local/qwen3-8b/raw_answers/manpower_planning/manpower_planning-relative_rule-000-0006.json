@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "redundant_year1_at_most_1_5_year2",
+   "measure": "redundant",
+   "scope": {
+    "year": 1
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "redundant",
+    "scope": {
+     "year": 2
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "A rule that limits the sum of redundant workers in year 1 to be at most 1.5 times the sum in year 2."
+}

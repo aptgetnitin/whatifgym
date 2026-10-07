@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "hours_per_month",
+      "where": {
+        "name": "hours_per_month"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The question is ambiguous. It does not specify by how much the machine-hours limit for the borer is lifted."
+}

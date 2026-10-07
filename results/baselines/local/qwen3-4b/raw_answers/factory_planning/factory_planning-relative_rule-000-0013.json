@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod1_min_sales",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod1"
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "A relative rule comparing the total sales of Prod1 to itself (75% of total sales must be Prod1)."
+}

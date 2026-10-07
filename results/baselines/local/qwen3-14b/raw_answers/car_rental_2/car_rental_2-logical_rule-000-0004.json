@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "logic": [
+    {
+      "name": "no_both_steps",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "expand",
+          "scope": {
+            "depot": [
+              "Birmingham",
+              "Manchester",
+              "Plymouth"
+            ],
+            "step": 2
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "expand",
+          "scope": {
+            "depot": [
+              "Birmingham",
+              "Manchester",
+              "Plymouth"
+            ],
+            "step": 1
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

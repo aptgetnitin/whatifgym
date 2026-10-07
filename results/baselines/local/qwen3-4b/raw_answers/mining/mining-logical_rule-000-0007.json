@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "open",
+      "column": "open",
+      "where": {
+        "year": "Year5",
+        "mine": "Mine2"
+      },
+      "value": 1
+    }
+  ],
+  "rules": [
+    {
+      "name": "mine2_open_at_least_2_mine1_year4",
+      "measure": "open",
+      "scope": {
+        "year": "Year4",
+        "mine": "Mine1"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

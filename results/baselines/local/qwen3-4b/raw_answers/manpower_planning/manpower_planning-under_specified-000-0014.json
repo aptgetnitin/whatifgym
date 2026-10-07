@@ -1,0 +1,11 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "short_time_productivity",
+      "value": 0.6
+    }
+  ],
+  "note": "The planner's question refers to a change in short-time worker productivity, which is a parameter in the model. The scenario DSL requires specifying the parameter change as a set_param operation."
+  }

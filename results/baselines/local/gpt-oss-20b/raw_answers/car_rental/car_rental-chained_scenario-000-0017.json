@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"max_undamaged_left","measure":"undamaged_left","sense":"<=","value":110}]}

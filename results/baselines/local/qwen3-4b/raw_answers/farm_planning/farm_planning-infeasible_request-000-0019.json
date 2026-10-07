@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "at_least_170_heifer_calves_year3",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": ">=",
+      "value": 170
+    },
+    {
+      "name": "at_least_170_heifer_calves_year4",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": ">=",
+      "value": 170
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": "Wheat",
+        "from_city": "*",
+        "to_city": "*"
+      },
+      "value": 86400
+    }
+  ]
+}

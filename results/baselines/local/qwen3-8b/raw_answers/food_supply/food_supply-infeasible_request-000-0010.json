@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "min_oil_ration",
+   "measure": "ration",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "value": 17
+  },
+  {
+   "name": "min_wheat_ration",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": ">=",
+   "value": 55
+  }
+ ],
+ "note": "The planner requests minimum rations per person for Oil and Wheat. These are enforced as absolute lower bounds on the sum of the ration measure over the respective food scope."
+}

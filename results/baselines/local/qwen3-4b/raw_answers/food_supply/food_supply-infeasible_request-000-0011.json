@@ -1,0 +1,50 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase",
+      "column": "purchase",
+      "where": {
+        "food": "Wheat",
+        "supplier": [
+          "Aleppo",
+          "Amman",
+          "As_Suweida",
+          "Beirut",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Gaziantep",
+          "Hama",
+          "Hassakeh",
+          "Homs"
+        ]
+      },
+      "value": 262600
+    },
+    {
+      "op": "set",
+      "table": "purchase",
+      "column": "purchase",
+      "where": {
+        "food": "Milk",
+        "supplier": [
+          "Aleppo",
+          "Amman",
+          "As_Suweida",
+          "Beirut",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Gaziantep",
+          "Hama",
+          "Hassakeh",
+          "Homs"
+        ]
+      },
+      "value": 52500
+    }
+  ]
+}

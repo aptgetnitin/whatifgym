@@ -1,0 +1,22 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "Jun",
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "value": 5000
+    }
+  ],
+  "note": "The question asks for the store value in June for all oils to be at least 5000 tons. Since the model has a store variable per oil and month, we set the store for June to 5000 for all oils."
+}

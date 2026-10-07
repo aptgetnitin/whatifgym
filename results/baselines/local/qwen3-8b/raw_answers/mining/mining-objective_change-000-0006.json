@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "blend",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Prioritise minimising total blended ore sold, then maximise discounted profit."
+}

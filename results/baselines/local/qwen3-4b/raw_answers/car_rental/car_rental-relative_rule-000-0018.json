@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "damaged_transfers_mon_fri_ratio",
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": "<=",
+      "value": 0.6
+    },
+    {
+      "name": "damaged_transfers_mon_fri_ratio",
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Friday"
+      },
+      "sense": ">=",
+      "value": 0.6
+    }
+  ]
+}

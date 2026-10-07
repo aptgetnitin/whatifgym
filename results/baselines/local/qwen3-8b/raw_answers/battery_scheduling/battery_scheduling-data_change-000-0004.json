@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "initial_soc_kwh",
+   "value": 3
+  }
+ ],
+ "note": "The initial SOC is halved from 6 kWh to 3 kWh."
+}

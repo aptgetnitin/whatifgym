@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","fixed_decisions":[{"measure":"raise_heifers","scope":{"year":"Year1"},"value":11},{"measure":"grow_beet","scope":{"year":"Year3"},"value":0}],"note":"Fix raise_heifers in Year1 to 11 and grow_beet in Year3 to 0, then optimize the remaining decisions."}

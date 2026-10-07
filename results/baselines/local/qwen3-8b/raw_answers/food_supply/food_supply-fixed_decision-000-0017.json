@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase",
+   "column": "purchase",
+   "where": {
+    "food": "Milk",
+    "supplier": "Hassakeh"
+   },
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "purchase",
+   "scope": {
+    "food": "Milk",
+    "supplier": "Hassakeh"
+   },
+   "value": 0
+  }
+ ]
+}

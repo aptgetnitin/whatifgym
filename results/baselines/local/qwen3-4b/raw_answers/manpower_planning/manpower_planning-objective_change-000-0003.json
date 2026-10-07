@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "short_time",
+      "scope": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      }
+    }
+  ],
+  "note": "The planner wants to minimize short-time workers across all skill levels and years, among plans that have the minimum redundancy (which is a fixed value from the original model)."
+}

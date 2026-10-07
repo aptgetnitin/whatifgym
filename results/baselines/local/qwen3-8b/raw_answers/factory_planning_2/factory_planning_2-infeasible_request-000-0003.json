@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "may_make_min",
+   "measure": "make",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "value": 3000
+  },
+  {
+   "name": "mar_make_min",
+   "measure": "make",
+   "scope": {
+    "month": "Mar"
+   },
+   "sense": ">=",
+   "value": 3750
+  }
+ ],
+ "note": "Rules enforce minimum production levels for specific months."
+}

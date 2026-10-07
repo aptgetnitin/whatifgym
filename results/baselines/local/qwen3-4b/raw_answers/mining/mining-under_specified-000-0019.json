@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": "Mine4"
+      },
+      "value": 0.0
+    }
+  ],
+  "note": "The question asks for a change in ore quality for Mine4. The model schema shows that 'quality' is a column in the 'mines' table, and the key for the table is 'mine'. The change is specified for Mine4, so we set the quality to 0.0 (since it's not available at all)."
+}

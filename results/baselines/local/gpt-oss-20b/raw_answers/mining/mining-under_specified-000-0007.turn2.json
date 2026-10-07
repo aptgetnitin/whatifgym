@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"min_years_open_year5","measure":"open","scope":{"year":"Year5"},"sense":">=","value":4}],"note":"Require at least 4 mine-years open in Year5."}

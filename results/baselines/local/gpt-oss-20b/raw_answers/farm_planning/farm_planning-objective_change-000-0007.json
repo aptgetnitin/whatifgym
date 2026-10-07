@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "grow_beet"
+    },
+    {
+      "sense": "max",
+      "measure": "buy_grain"
+    }
+  ],
+  "note": "Keep the five‑year profit at its maximum, then maximize total sugar beet grown, and finally maximize total grain bought."
+}

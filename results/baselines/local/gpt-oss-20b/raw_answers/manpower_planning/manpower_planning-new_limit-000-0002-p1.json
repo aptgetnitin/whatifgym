@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "downgrade",
+      "sense": "<=",
+      "value": 130
+    }
+  ],
+  "note": "Cap total downgrades to 130 across all years and skill levels."
+}

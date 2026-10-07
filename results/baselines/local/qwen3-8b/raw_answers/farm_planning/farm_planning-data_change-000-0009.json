@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "land_groups",
+   "column": "grain_yield",
+   "where": {
+    "land_group": [
+     "Group1",
+     "Group2",
+     "Group3",
+     "Group4"
+    ]
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "Grain yield per acre in all land groups suitable for grain is increased by 10%."
+}

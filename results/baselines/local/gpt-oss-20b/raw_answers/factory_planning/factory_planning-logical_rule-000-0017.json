@@ -1,0 +1,7 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "jan_stock_minimum",
+      "at_least":

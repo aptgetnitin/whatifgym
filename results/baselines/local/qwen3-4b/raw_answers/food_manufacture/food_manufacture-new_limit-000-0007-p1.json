@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "total_production_cap",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 2150
+    },
+    {
+      "name": "jan_consume_limit",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Jan"
+        ],
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ],
+  "note": "The planner wants to cap total food production at 2150 tons and limit January oil consumption to 400 tons."
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "machines",
+      "where": {
+        "machine": "horiDrill"
+      }
+    }
+  ],
+  "note": "Retiring one horizontal drill means removing the row for horiDrill from the machines table."
+  }

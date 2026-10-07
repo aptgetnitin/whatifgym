@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","data_changes":[{"op":"scale","table":"depots","column":"repair_capacity","factor":1.2}],"rules":[{"measure":"repairs","scope":{"day":"Monday"},"sense":"<=","value":16,"name":"cap_repairs_Monday"}],"note":"Repair capacity in all depots increased by 20% and Monday repairs capped at 16."}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "wednesday_manchester_rentals",
+      "measure": "rentals",
+      "scope": {
+        "day": "Wednesday",
+        "depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 200
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "rentals",
+      "scope": {
+        "day": "Wednesday",
+        "depot": "Manchester"
+      },
+      "value": 0
+    }
+  ]
+}

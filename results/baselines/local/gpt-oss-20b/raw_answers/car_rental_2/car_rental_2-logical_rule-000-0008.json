@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","logic":[{"name":"damaged_to_undamaged_requirement","at_least":1,"of":[{"measure":"damaged_transfers","scope":{"day":"Wednesday","from_depot":"Glasgow","to_depot":"Manchester"},"sense":"<=","value":0},{"measure":"undamaged_transfers","scope":{"day":"Wednesday","to_depot":"Manchester"},"sense":">=","value":78}]}]}

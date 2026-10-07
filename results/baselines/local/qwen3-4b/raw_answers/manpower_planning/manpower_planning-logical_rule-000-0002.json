@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "retrain_unskilled_to_higher_year2_at_least_190_overmanned_year2_unskilled",
+      "measure": "retrain",
+      "scope": {
+        "year": 2,
+        "from_skill": "unskilled",
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "value": 190
+    },
+    {
+      "name": "overmanned_year2_unskilled_at_least_190",
+      "measure": "overmanned",
+      "scope": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 190
+    }
+  ],
+  "note": "The planner asks for a rule that links retrained workers (to higher skill) in year 2 with overmanned workers (unskilled) in year 2, requiring at least 190 each."
+}

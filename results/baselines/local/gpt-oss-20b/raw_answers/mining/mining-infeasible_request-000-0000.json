@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"min_blend","measure":"blend","scope":{},"sense":">=","value":130458350}]}

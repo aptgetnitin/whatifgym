@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"DSM_purchase_limit","measure":"purchase","scope":{"food":"Dried skim milk (enriched) (DSM)"},"sense":"<=","value":7950}],"note":"Upper limit on total DSM purchase."}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": [
+          "Prod1",
+          "Prod7",
+          "Prod5",
+          "Prod4"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "Only 2 of these may have units sold: product Prod1, Prod7, Prod5 and Prod4. Re-plan."
+}

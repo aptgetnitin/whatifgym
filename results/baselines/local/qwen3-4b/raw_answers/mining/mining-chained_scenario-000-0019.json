@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "shift_param",
+      "name": "discount_rate",
+      "delta": 0.25
+    }
+  ]
+}

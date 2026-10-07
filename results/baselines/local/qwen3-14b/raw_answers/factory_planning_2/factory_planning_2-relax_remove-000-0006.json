@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "hours_per_month",
+      "where": {
+        "machine": "planer"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The question implies increasing the machine-hours limit for the planer, but the exact factor is not specified. The default factor of 1.0 is used as a placeholder."
+}

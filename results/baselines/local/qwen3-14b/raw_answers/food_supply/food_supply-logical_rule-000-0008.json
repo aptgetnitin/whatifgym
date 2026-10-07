@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "ration_maize_meal_dayr_az_zor",
+   "measure": "ration",
+   "scope": {
+    "food": "Maize meal",
+    "camp": "Dayr_Az_Zor"
+   },
+   "sense": ">=",
+   "value": 0.22
+  }
+ ]
+}

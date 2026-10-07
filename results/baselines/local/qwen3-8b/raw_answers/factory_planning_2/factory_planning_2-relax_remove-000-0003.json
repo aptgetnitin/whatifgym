@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "maintenance",
+   "where": {
+    "product": [
+     "Prod1",
+     "Prod5"
+    ]
+   }
+  }
+ ],
+ "note": "The end-of-horizon stock target for Prod1 and Prod5 is removed by removing their rows from the maintenance table."
+}

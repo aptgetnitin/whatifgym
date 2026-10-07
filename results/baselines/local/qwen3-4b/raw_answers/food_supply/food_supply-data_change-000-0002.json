@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": [
+          "Ar Raqqa",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Idleb",
+          "Jubb_al_Jarrah",
+          "Qamishli"
+        ]
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "The beneficiary camps table has 7 rows, each with a 'beneficiaries' column. Scaling by 0.75 reduces each by 25%."
+}

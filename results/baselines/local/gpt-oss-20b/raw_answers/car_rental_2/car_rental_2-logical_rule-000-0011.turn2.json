@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "logic": [
+    {
+      "name": "Plymouth_Wednesday_rentals_batch",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Wednesday",
+            "depot": "Plymouth"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Wednesday",
+            "depot": "Plymouth"
+          },
+          "sense": ">=",
+          "value": 138
+        }
+      ]
+    }
+  ]
+}

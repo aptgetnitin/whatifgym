@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "recruit_floor_semi_skilled",
+   "measure": "recruit",
+   "scope": {
+    "skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 1650
+  }
+ ],
+ "note": "A floor on the total number of semi-skilled workers recruited."
+}

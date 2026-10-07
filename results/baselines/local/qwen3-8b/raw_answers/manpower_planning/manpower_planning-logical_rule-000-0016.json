@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_unskilled_to_semi_skilled_year_3",
+   "measure": "retrain",
+   "scope": {
+    "year": 3,
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 400
+  },
+  {
+   "name": "retrain_unskilled_to_semi_skilled_year_3",
+   "measure": "retrain",
+   "scope": {
+    "year": 3,
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The retrain decision for unskilled to semi-skilled in year 3 must be either zero or at least 400."
+}

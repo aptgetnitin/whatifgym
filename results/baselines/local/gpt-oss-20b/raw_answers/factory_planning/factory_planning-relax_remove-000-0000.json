@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "relax": [
+    {
+      "constraint": "capacity",
+      "scope": {
+        "machine": "borer"
+      }
+    }
+  ],
+  "note": "Lift machine-hours limit for borer only."
+}

@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "semi_skilled_employment",
+   "measure": "workforce",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3
+    ],
+    "skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 11900
+  }
+ ],
+ "note": "The scenario requires the total workforce for semi_skilled workers across all years to be at least 11900."
+}

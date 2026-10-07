@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"manchester_birmingham_repair_ratio","measure":"repairs","scope":{"depot":"Manchester"},"sense":"<=","relative_to":{"measure":"repairs","scope":{"depot":"Birmingham"}},"factor":0.5}],"note":"Limit Manchester repairs to at most 50% of Birmingham repairs."}

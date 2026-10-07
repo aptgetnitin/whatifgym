@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min_extraction_mine4",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine4"
+      },
+      "sense": ">=",
+      "value": 9562500
+    }
+  ],
+  "note": "Require at least 9,562,500 tons extracted from Mine4 over all years."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","objective":[{"sense":"min","measure":"soc"},{"sense":"max","measure":"original"}],"note":"Minimise total stored energy first, then maximise profit."}

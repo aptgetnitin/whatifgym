@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "fixed_decisions": [
+    {
+      "measure": "x",
+      "scope": {
+        "item": "item6",
+        "bin": "bin3"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Fixing the decision variable x[item6, bin3] to 1 ensures that item6 is placed in bin3."
+}

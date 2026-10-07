@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"undamaged_stock_vs_transfers","measure":"undamaged_stock","sense":"<=","relative_to":{"measure":"undamaged_transfers"},"factor":2.0},{"name":"friday_repair_share","measure":"repairs","scope":{"day":"Friday"},"sense":">=","relative_to":{"measure":"repairs"},"factor":0.3}]}

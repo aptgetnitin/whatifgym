@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "damaged_left",
+      "scope": {
+        "depot": "Plymouth"
+      }
+    }
+  ],
+  "note": "Lexicographic objective: first keep weekly profit at its maximum, then maximize the damaged cars kept overnight at Plymouth."
+}

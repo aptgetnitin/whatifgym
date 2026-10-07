@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "year2_workforce_min",
+      "measure": "workforce",
+      "scope": {
+        "year": 2,
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "value": 12600
+    },
+    {
+      "name": "year3_workforce_min",
+      "measure": "workforce",
+      "scope": {
+        "year": 3,
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "value": 14000
+    }
+  ]
+}

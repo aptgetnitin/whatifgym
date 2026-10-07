@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "fixed_decisions": [
+  {
+   "measure": "produce",
+   "scope": {
+    "month": "Mar"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixed decision to set food production to zero in March."
+}

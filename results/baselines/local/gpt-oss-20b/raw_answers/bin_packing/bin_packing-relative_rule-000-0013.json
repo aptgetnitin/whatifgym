@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","rules":[{"measure":"y","sense":">=","value":5.5}],"note":"Enforce that at least 50% of the 11 items are represented by used bins, i.e., at least 6 bins must be used."}

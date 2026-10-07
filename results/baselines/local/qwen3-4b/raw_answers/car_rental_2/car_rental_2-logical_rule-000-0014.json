@@ -1,0 +1,26 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "birmingham_tuesday_rentals_requiring_monday_repairs",
+      "measure": "rentals",
+      "scope": {
+        "day": "Tuesday",
+        "depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 94
+    },
+    {
+      "name": "birmingham_tuesday_rentals_requiring_monday_repairs",
+      "measure": "repairs",
+      "scope": {
+        "day": "Monday",
+        "depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 94
+    }
+  ]
+}

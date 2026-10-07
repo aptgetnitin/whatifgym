@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "fixed_decisions": [
+  {
+   "measure": "nstart",
+   "scope": {
+    "period": "06-09",
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "value": 2
+  },
+  {
+   "measure": "reservoir_level",
+   "scope": {
+    "period": "06-09"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixed decisions set the number of thermal units started and reservoir level for the specified period."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "blend"
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "Minimise total blended ore sold, then maximise discounted profit."
+}

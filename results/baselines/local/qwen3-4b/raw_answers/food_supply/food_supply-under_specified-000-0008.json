@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "local_prices",
+      "column": "price",
+      "where": {
+        "supplier": [
+          "Aleppo",
+          "Amman",
+          "As_Suweida",
+          "Beirut",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Gaziantep",
+          "Hama",
+          "Hassakeh",
+          "Homs"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The local price changes across the board, so we scale the price column for all suppliers by a factor of 1.0 (no change)."
+}

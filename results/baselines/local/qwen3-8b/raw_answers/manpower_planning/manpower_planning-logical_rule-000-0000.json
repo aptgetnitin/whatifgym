@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "short_time_to_overmanned",
+   "measure": "short_time",
+   "scope": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "year": 3,
+     "skill": "unskilled"
+    }
+   },
+   "factor": 220
+  }
+ ],
+ "note": "A rule that links the short-time working in year 2 for unskilled workers to the overmanned workers in year 3 for unskilled workers."
+}

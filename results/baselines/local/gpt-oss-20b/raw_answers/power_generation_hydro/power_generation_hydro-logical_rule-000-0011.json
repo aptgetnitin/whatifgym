@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","logic":[{"name":"thermal1_min_batch_31500","at_least":1,"of":[{"measure":"output","scope":{"period":"09-15","type":"Thermal1"},"sense":"<=","value":0},{"measure":"output","scope":{"period":"09-15","type":"Thermal1"},"sense":">=","value":31500}]}],"note":"If any Thermal1 output in period 09-15, it must be at least 31500 MW."}

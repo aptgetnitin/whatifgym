@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_output_0915_min_30pct",
+      "measure": "output",
+      "scope": {
+        "period": "09-15"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "output"
+      },
+      "factor": 0.3
+    }
+  ],
+  "note": "At least 30% of total thermal output must be supplied in period 09-15."
+}

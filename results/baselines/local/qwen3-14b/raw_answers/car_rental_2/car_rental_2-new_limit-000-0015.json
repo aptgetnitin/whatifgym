@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "glasgow_rental_cap",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Glasgow"
+      },
+      "sense": "<=",
+      "value": 420
+    }
+  ]
+}

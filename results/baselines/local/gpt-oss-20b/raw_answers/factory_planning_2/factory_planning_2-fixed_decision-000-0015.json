@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","fixed_decisions":[{"measure":"sell","scope":{"product":"Prod4"},"value":100}],"note":"Fix sell of Prod4 to 100 each month."}

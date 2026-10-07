@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "cost",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "nstart",
+      "scope": {}
+    },
+    {
+      "sense": "min",
+      "measure": "reservoir_level",
+      "scope": {}
+    }
+  ]
+}

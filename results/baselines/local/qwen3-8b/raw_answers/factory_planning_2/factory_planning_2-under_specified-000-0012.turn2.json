@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "store_target",
+   "where": {},
+   "value": 38
+  }
+ ],
+ "note": "The closing stock target is set to 38 units for all products."
+}

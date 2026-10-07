@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "cap_ngen_total",
+      "measure": "ngen",
+      "scope": {},
+      "sense": "<=",
+      "value": 80
+    },
+    {
+      "name": "hydrob_startups_min",
+      "measure": "hydro_start",
+      "scope": {
+        "hydro": "HydroB"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

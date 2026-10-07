@@ -1,0 +1,75 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_stock_limit",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Friday",
+    "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   },
+   "sense": "<=",
+   "value": 2,
+   "relative_to": {
+    "measure": "undamaged_transfers",
+    "scope": {
+      "day": "Friday",
+      "from_depot": [
+        "Glasgow",
+        "Manchester",
+        "Birmingham",
+        "Plymouth"
+      ],
+      "to_depot": [
+        "Glasgow",
+        "Manchester",
+        "Birmingham",
+        "Plymouth"
+      ]
+    }
+   },
+   "factor": 1
+  },
+  {
+   "name": "friday_repair_contribution",
+   "measure": "repairs",
+   "scope": {
+    "day": "Friday",
+    "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+      "day": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "depot": [
+        "Glasgow",
+        "Manchester",
+        "Birmingham",
+        "Plymouth"
+      ]
+    }
+   },
+   "factor": 0.3
+  }
+ ],
+ "note": "Two relative limits: total undamaged cars at the depot in the morning at or below 2 times the total undamaged cars transferred; and day Friday must account for at least 30% of all cars repaired."
+}

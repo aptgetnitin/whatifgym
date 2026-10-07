@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_at_least_125_charge",
+   "measure": "discharge",
+   "scope": {
+    "hour": "*"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "charge",
+    "scope": {
+     "hour": "*"
+    }
+   },
+   "factor": 1.25
+  },
+  {
+   "name": "charge_03-04_at_least_75_total_charge",
+   "measure": "charge",
+   "scope": {
+    "hour": "03-04"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "charge",
+    "scope": {
+     "hour": "*"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Rules enforce that total discharge is at least 1.25 times total charge, and that 03-04 accounts for at least 75% of all charging power."
+}

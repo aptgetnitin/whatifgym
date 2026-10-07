@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": [
+     "grinder",
+     "vertDrill",
+     "horiDrill",
+     "borer",
+     "planer"
+    ]
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "The installed machines table's installed column is scaled by 10% for all rows."
+}

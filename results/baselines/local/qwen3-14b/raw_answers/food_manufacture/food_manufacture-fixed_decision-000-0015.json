@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "fixed_decisions": [
+    {
+      "measure": "consume",
+      "scope": {
+        "oil": "VEG2",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "value": 113
+    }
+  ]
+}

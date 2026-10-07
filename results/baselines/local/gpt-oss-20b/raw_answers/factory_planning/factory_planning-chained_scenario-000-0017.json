@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"prod5_monthly_cap","measure":"make","scope":{"product":"Prod5"},"sense":"<=","value":550}]}

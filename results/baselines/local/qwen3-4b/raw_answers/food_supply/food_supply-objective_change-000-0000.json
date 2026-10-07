@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "Food Supply (World Food Programme, Syria)",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "ration",
+      "scope": {
+        "camp": [
+          "Ar Raqqa",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Idleb",
+          "Jubb_al_Jarrah",
+          "Qamishli"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "cost",
+      "scope": {
+        "camp": [
+          "Ar Raqqa",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Idleb",
+          "Jubb_al_Jarrah",
+          "Qamishli"
+        ]
+      }
+    }
+  ]
+}

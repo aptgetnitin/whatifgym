@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "logic": [
+    {
+      "name": "no_gaziantep_and_dayr_az_zor_purchases",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "purchase",
+          "sense": "<=",
+          "value": 0,
+          "scope": {
+            "food": "*",
+            "supplier": "Gaziantep"
+          }
+        },
+        {
+          "measure": "purchase",
+          "sense": "<=",
+          "value": 0,
+          "scope": {
+            "food": "*",
+            "supplier": "Dayr_Az_Zor"
+          }
+        }
+      ]
+    }
+  ]
+}

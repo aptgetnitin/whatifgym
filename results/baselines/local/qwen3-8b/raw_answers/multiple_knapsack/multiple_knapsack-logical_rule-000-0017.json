@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "item_placement_limit",
+   "measure": "x",
+   "scope": {
+    "item": [
+     "item7",
+     "item14",
+     "item8",
+     "item13",
+     "item4"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Limit the number of item placements to 1 for the specified items."
+}

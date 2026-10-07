@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"prod3_prod4_jan_cap","measure":"make","scope":{"month":"Jan","product":["Prod3","Prod4"]},"sense":"<=","value":550}],"note":"Upper limit on combined output of Prod3 and Prod4 in January to 550 units."}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "items",
+      "column": "weight",
+      "where": {
+        "item": [
+          "item0"
+        ]
+      },
+      "value": "80"
+    }
+  ],
+  "note": "A single item weight change is a set operation on the items table."
+}

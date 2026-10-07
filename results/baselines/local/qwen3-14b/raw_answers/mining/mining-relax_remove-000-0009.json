@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "params",
+      "where": {
+        "name": "max_mines"
+      }
+    },
+    {
+      "op": "remove",
+      "table": "years",
+      "where": {
+        "column": "quality_target"
+      }
+    }
+  ]
+}

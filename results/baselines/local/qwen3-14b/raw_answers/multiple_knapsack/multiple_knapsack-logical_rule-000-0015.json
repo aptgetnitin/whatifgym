@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin_capacity_limit",
+      "measure": "x",
+      "scope": {
+        "bin": [
+          "bin1",
+          "bin2",
+          "bin4",
+          "bin0",
+          "bin3"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

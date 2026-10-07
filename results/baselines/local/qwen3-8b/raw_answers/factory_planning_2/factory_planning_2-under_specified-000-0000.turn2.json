@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod5"
+   },
+   "value": 2950
+  }
+ ],
+ "note": "The upper limit on units made for Prod5 is set to 2950 across all months."
+}

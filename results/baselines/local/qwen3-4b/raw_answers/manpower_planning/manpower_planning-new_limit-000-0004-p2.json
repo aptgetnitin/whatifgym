@@ -1,0 +1,17 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_overmanned",
+      "value": 240
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_overmanned",
+      "value": 80
+    }
+  ]
+}

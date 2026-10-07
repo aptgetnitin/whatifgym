@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"damaged_transfers_cap","measure":"damaged_transfers","sense":"<=","value":59}],"note":"Upper limit on total damaged cars transferred"}

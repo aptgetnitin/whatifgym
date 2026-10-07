@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "machine": "horiDrill"
+   }
+  }
+ ],
+ "note": "The capacity constraint for horiDrill is relaxed, meaning the machine-hour limit no longer applies."
+}

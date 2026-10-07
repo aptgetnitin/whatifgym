@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "measure": "blend",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "value": 8200000
+    },
+    {
+      "measure": "blend",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 8625000
+    }
+  ],
+  "note": "Check feasibility of both blended ore sales requests."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_limit",
+   "measure": "soc",
+   "scope": {
+    "hour": [
+     "07-08",
+     "06-07",
+     "21-22",
+     "18-19",
+     "13-14"
+    ]
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "Restricting the stored energy (soc) to a maximum of 3 kWh in the specified hours."
+}

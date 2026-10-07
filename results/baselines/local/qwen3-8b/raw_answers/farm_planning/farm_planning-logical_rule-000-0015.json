@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "logic": [
+  {
+   "name": "no_grain_grown_in_year1_and_year5",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "grow_grain",
+     "scope": {
+      "year": "Year1"
+     },
+     "sense": "<=",
+     "value": 0
+    },
+    {
+     "measure": "grow_grain",
+     "scope": {
+      "year": "Year5"
+     },
+     "sense": "<=",
+     "value": 0
+    }
+   ]
+  }
+ ]
+}

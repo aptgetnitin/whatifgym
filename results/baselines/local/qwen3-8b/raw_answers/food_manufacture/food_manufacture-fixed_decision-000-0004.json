@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase_prices",
+   "column": "price",
+   "where": {
+    "month": "Jan",
+    "oil": "VEG2"
+   },
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "consume",
+   "scope": {
+    "month": "Jan",
+    "oil": "VEG2"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting the purchase price of VEG2 in January to zero and fixing the consumption of VEG2 in January to zero ensures no tons of oil are refined for that month."
+}

@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "logic": [
+  {
+   "name": "damaged_transfers_tuesday_at_least_15",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "damaged_transfers",
+     "sense": ">=",
+     "value": 15,
+     "scope": {
+      "day": "Tuesday"
+     }
+    },
+    {
+     "measure": "repairs",
+     "sense": ">=",
+     "value": 15,
+     "scope": {
+      "day": "Wednesday"
+     }
+    }
+   ]
+  }
+ ]
+}

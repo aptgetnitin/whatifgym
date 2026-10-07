@@ -1,0 +1,1 @@
+{"version": "0.1","base_model":"car_rental_2","rules":[{"name":"min_undamaged_stock","measure":"undamaged_stock","scope":{"depot":["Glasgow","Manchester","Birmingham","Plymouth"]},"sense":">=","value":100}]}

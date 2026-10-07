@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_left_saturday",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Saturday"
+   },
+   "sense": ">=",
+   "value": 1.9
+  },
+  {
+   "name": "total_manchester_damaged_stock",
+   "measure": "damaged_stock",
+   "scope": {
+    "depot": "Manchester"
+   },
+   "sense": "<=",
+   "value": 67
+  }
+ ],
+ "note": "The first rule ensures at least 1.9 damaged cars are kept overnight on Saturday across all depots. The second rule caps the total damaged cars in the morning at Manchester across all days to 67."
+}

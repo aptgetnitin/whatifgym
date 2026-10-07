@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","objective":[{"sense":"min","measure":"make"},{"sense":"max","measure":"original"}],"note":"First minimize total units made, then maximize profit."}

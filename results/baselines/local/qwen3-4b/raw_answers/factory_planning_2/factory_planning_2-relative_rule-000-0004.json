@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod5_at_least_40_percent",
+      "measure": "make",
+      "scope": {
+        "product": "Prod5"
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "note": "The rule specifies that at least 40% of the total units made (across all products) must go to product Prod5."
+  }

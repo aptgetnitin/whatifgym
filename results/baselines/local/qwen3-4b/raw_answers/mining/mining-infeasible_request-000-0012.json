@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine2"
+      },
+      "value": 21500000
+    }
+  ],
+  "note": "The planner asks if a specific mine's extraction target is achievable. This requires setting a fixed extraction value for Mine2."
+  }

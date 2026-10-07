@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod7_stock_min",
+   "measure": "store",
+   "scope": {
+    "product": "Prod7",
+    "month": [
+     "Jun"
+    ]
+   },
+   "sense": ">=",
+   "value": 500
+  }
+ ],
+ "note": "If there is any units in stock for product Prod7, it must be at least 500."
+}

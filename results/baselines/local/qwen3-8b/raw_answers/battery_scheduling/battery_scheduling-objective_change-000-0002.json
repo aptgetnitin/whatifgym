@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "soc",
+   "scope": {
+    "hour": "last"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "export",
+   "scope": {
+    "hour": "all"
+   }
+  }
+ ],
+ "note": "Prioritise minimising the final stored energy, then maximise the total export revenue."
+}

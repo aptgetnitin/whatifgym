@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "max_recruit",
+      "where": {
+        "year": 2,
+        "skill": "skilled"
+      },
+      "factor": 0.0
+    }
+  ]
+}

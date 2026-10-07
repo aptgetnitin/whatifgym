@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"measure":"buy","scope":{},"sense":"<=","value":1900,"name":"cap_buy_total"},{"measure":"store","scope":{"month":"Feb"},"sense":">=","value":2950,"name":"store_min_feb"}]}

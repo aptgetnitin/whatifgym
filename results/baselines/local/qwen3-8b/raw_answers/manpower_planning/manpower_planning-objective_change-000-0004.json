@@ -1,0 +1,55 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "recruit",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to first keep total redundancies at their minimum, then minimise the total workers made redundant, and only then maximise the total workers recruited."
+}

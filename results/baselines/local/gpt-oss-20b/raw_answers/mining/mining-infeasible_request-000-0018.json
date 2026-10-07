@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min4_extract_minimum",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine4"
+      },
+      "sense": ">=",
+      "value": 15300000
+    }
+  ],
+  "note": "Require at least 15.3 million tons extracted from Mine4 over the planning horizon."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","fixed_decisions":[{"measure":"grow_grain","scope":{"year":"Year2","land_group":"Group1"},"value":66}],"note":"Re-plan with grain growth fixed to 66 tons for Year2 Group1."}

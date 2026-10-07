@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_nutrient_factor",
+   "value": 3
+  }
+ ],
+ "note": "The question asks for a change in the nutrient upper limit as a multiple of the minimum, which is captured by modifying the `max_nutrient_factor` parameter."
+}

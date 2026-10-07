@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "OIL2_share_at_least_75",
+      "measure": "buy",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "At least 75% of the total oil bought must be OIL2."
+}

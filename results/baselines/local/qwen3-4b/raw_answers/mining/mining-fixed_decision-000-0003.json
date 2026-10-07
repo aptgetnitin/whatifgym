@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "fixed_decisions": [
+    {
+      "measure": "extract",
+      "scope": {
+        "year": "Year3",
+        "mine": "Mine1"
+      },
+      "value": 0
+    },
+    {
+      "measure": "open",
+      "scope": {
+        "year": "Year5",
+        "mine": "Mine4"
+      },
+      "value": 1
+    }
+  ]
+}

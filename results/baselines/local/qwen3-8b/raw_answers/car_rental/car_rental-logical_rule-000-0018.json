@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "sat_rentals_at_least_tue_man_rentals",
+   "measure": "rentals",
+   "scope": {
+    "day": "Saturday"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "day": "Tuesday",
+     "depot": "Manchester"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that enforces the sum of rentals on Saturday is at least equal to the sum of rentals on Tuesday at Manchester depot."
+}

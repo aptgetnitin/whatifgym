@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "min_herd_age2",
+      "measure": "herd",
+      "scope": {
+        "year": "Year1",
+        "age": 2
+      },
+      "sense": ">=",
+      "value": 149
+    }
+  ]
+}

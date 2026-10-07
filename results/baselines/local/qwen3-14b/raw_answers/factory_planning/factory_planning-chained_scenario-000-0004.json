@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "measure": "make",
+      "scope": {
+        "product": "Prod3",
+        "month": [
+          "Feb",
+          "Mar",
+          "Apr"
+        ]
+      },
+      "sense": "<=",
+      "value": 400,
+      "name": "cap_Prod3_Feb_Mar_Apr"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","logic":[{"name":"veg1_jun_min_batch","at_least":1,"of":[{"measure":"buy","scope":{"month":"Jun","oil":"VEG1"},"sense":"<=","value":0},{"measure":"buy","scope":{"month":"Jun","oil":"VEG1"},"sense":">=","value":1980}]}],"note":"Enforce that if any VEG1 is bought in June, the batch is at least 1980 tons."}

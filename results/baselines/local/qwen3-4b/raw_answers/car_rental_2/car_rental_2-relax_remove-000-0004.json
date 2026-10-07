@@ -1,0 +1,25 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "no_expansion_cap",
+      "measure": "expand",
+      "scope": {
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ],
+        "step": [
+          1,
+          2
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "note": "The cap on expansions is removed by setting the total number of expansions to be at least 0 (which is always true), but the question is about the cap not applying, meaning the constraint is removed."
+  }

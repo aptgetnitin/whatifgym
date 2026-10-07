@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_overnight_saturday",
+      "measure": "damaged_left",
+      "scope": {
+        "day": "Saturday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 1.9
+    },
+    {
+      "name": "damaged_stock_manchester",
+      "measure": "damaged_stock",
+      "scope": {
+        "depot": "Manchester",
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ]
+      },
+      "sense": "<=",
+      "value": 67
+    }
+  ]
+}

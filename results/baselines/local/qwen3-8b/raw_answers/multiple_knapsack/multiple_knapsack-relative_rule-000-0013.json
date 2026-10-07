@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "item8_placement_ratio",
+   "measure": "x",
+   "scope": {
+    "item": "item8"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": [
+      "item0",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5",
+      "item6",
+      "item7",
+      "item8",
+      "item9",
+      "item10",
+      "item11",
+      "item12",
+      "item13",
+      "item14"
+     ]
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "The rule ensures that the number of placements for item8 is at least 10% of the total number of item placements."
+}

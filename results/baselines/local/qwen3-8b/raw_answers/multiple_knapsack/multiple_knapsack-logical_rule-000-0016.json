@@ -1,0 +1,1 @@
+{"version": "0.1","base_model":"multiple_knapsack","rules":[{"name":"item_placement_limit","measure":"x","scope":{"item":["item5","item2","item10","item3"]},"sense":"==","value":1}],"note":"The rule enforces that each of the specified items is placed in exactly one bin."}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "blend",
+   "where": {
+    "year": "Year2"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the tons of blended ore sold for Year2 to 0 and optimise the rest."
+}

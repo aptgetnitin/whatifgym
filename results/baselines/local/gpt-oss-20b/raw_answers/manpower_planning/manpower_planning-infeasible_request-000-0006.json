@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"measure":"retrain","scope":{"from_skill":["unskilled","semi_skilled"],"to_skill":["semi_skilled","skilled"]},"sense":">=","value":10700}],"note":"Require at least 10,700 workers retrained to a higher skill level in total."}

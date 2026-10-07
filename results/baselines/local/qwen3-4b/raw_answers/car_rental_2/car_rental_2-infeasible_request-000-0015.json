@@ -1,0 +1,17 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_repair_plymouth_wed",
+      "measure": "repairs",
+      "scope": {
+        "day": "Wednesday",
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 15
+    }
+  ],
+  "note": "A minimum repair requirement for a specific day and depot."
+  }

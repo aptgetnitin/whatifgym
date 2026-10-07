@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_stock_cap",
+      "measure": "damaged_stock",
+      "scope": {},
+      "sense": "<=",
+      "value": 220
+    }
+  ],
+  "note": "Cap total damaged cars in the morning to 220."
+}

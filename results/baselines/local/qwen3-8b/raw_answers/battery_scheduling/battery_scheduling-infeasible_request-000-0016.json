@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "soc",
+   "where": {
+    "hour": [
+     "00-01",
+     "01-02"
+    ]
+   },
+   "value": 12
+  }
+ ],
+ "rules": [
+  {
+   "name": "soc_00-01_at_least_12",
+   "measure": "soc",
+   "scope": {
+    "hour": "00-01"
+   },
+   "sense": ">=",
+   "value": 12
+  },
+  {
+   "name": "soc_01-02_at_least_12",
+   "measure": "soc",
+   "scope": {
+    "hour": "01-02"
+   },
+   "sense": ">=",
+   "value": 12
+  }
+ ],
+ "note": "The scenario sets the stored energy for hours 00-01 and 01-02 to 12 kWh and enforces that these values are at least 12 kWh."
+}

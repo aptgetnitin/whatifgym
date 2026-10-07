@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "min_batch_00-06",
+      "measure": "output",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "value": 30900
+    }
+  ]
+}

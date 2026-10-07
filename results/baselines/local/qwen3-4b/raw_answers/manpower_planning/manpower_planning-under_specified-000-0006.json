@@ -1,0 +1,11 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_short_time",
+      "value": 100
+    }
+  ],
+  "note": "The planner's question asks about an upper limit on short-time workers, so we set the parameter max_short_time to 100 as a typical value for the upper limit."
+  }

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "rentals_to_birmingham_cap",
+   "measure": "rentals",
+   "scope": {
+    "depot": "Birmingham"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+     ]
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "Limits the total rentals to Birmingham to 25% of all rentals."
+}

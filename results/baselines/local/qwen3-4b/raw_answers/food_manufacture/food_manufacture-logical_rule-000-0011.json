@@ -1,0 +1,29 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_most_2_months_refined",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Feb",
+          "Jan",
+          "May",
+          "Mar"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

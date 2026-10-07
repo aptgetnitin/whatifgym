@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "total_buy_below_refine",
+   "measure": "buy",
+   "scope": {
+    "oil": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "oil": "*"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "jan_refine_at_least_20",
+   "measure": "consume",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "month": "*"
+    }
+   },
+   "factor": 0.2
+  }
+ ],
+ "note": "Two relative limits: total buy is at most 75% of total refine, and Jan refine is at least 20% of all refine."
+}

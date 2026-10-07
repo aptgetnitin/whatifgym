@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "logic": [
+    {
+      "name": "short_time_year2_unskilled_implies_overmanned_year3",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "short_time",
+          "scope": {
+            "year": 2,
+            "skill": "unskilled"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "overmanned",
+          "scope": {
+            "year": 3
+          },
+          "sense": ">=",
+          "value": 220
+        }
+      ]
+    }
+  ],
+  "note": "If any unskilled workers are on short‑time in year 2, then at least 220 workers must be overmanned in year 3."
+}

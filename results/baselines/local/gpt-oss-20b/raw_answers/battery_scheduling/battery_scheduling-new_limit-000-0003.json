@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "max_charge_02_03",
+      "measure": "charge",
+      "scope": {
+        "hour": "02-03"
+      },
+      "sense": "<=",
+      "value": 1.7
+    }
+  ]
+}

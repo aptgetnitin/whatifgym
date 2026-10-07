@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "rentals_below_damaged_stock",
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "depot"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "depot"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "The rule enforces that rentals are at most 80% of the damaged cars at each depot on Wednesday morning."
+}

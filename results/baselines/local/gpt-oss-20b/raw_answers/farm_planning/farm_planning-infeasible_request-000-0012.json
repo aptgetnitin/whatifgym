@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "min_age2_final",
+      "measure": "herd",
+      "scope": {
+        "year": "Year5",
+        "age": 2
+      },
+      "sense": ">=",
+      "value": 149
+    }
+  ],
+  "note": "Ensure at least 149 dairy cows of age 2 in the last year."
+}

@@ -1,0 +1,14 @@
+{
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "min_repaired_tuesday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Tuesday"
+      },
+      "sense": ">=",
+      "value": 70
+    }
+  ]
+}

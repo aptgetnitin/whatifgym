@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "measure": "flow",
+      "scope": {
+        "from_city": "Ar Raqqa"
+      },
+      "sense": "<=",
+      "value": 23950,
+      "name": "cap_flow_Ar Raqqa"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "jan_refine_equal",
+   "measure": "consume",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": "==",
+   "value": 45,
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "month": "Jan"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   }
+  }
+ ],
+ "note": "Ensure each oil is refined exactly 45 tons in January, then optimise the rest of the plan."
+}

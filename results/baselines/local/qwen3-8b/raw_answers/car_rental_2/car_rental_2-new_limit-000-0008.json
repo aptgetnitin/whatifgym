@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "manchester_undamaged_left_min",
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Monday",
+    "depot": "Manchester"
+   },
+   "sense": ">=",
+   "value": 250
+  },
+  {
+   "name": "total_rentals_cap",
+   "measure": "rentals",
+   "scope": {
+    "day": "Monday",
+    "depot": "Glasgow"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "day": "Monday",
+     "depot": "Manchester"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The first rule ensures Manchester has at least 250 undamaged cars kept overnight. The second rule caps total rentals at 2250 by comparing the sum of rentals across all depots."
+}

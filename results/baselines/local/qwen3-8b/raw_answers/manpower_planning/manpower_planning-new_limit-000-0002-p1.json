@@ -1,0 +1,41 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "value": 130
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_downgrades_cap",
+   "measure": "downgrade",
+   "scope": {
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": "<=",
+   "value": 130
+  }
+ ],
+ "note": "Cap total downgrades to 130 across all years and skill levels."
+}

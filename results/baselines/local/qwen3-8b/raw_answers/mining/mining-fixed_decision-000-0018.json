@@ -1,0 +1,60 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "open",
+   "where": {
+    "mine": "Mine4"
+   },
+   "value": 1
+  },
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "operate",
+   "where": {
+    "mine": "Mine4"
+   },
+   "value": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine4_worked_in_year5",
+   "measure": "operate",
+   "scope": {
+    "year": "Year5",
+    "mine": "Mine4"
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "open",
+   "scope": {
+    "year": "Year5",
+    "mine": "Mine4"
+   },
+   "value": 1
+  },
+  {
+   "measure": "operate",
+   "scope": {
+    "year": "Year5",
+    "mine": "Mine4"
+   },
+   "value": 1
+  }
+ ]
+}

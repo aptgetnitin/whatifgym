@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "at_least_25_percent_to_jun",
+   "measure": "make",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May"
+     ]
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "A relative rule compares the total units made in June to the total units made in the previous months."
+}

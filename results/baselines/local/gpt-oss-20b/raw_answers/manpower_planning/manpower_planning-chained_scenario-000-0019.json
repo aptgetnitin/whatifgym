@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "short_time_productivity",
+      "factor": 1.25
+    }
+  ],
+  "rules": [
+    {
+      "measure": "recruit",
+      "scope": {
+        "skill": "skilled"
+      },
+      "sense": "<=",
+      "value": 700
+    }
+  ],
+  "note": "Limit total recruits for skilled workers to 700 while keeping the short‑time productivity increased by 25 %."
+}

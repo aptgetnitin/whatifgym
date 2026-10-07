@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_redundant_year2_unskilled",
+      "measure": "redundant",
+      "scope": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 330
+    }
+  ],
+  "note": "A minimum redundancy requirement for year 2, unskilled workers."
+}

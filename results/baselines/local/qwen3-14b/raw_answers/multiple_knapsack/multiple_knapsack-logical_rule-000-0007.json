@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "item7_bin4_placement_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item4"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item7",
+            "bin": "bin4"
+          },
+          "sense": ">=",
+          "value": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "make_Jun_Prod4_disjunction",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jun",
+            "product": "Prod4"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jun",
+            "product": "Prod4"
+          },
+          "sense": ">=",
+          "value": 1050
+        }
+      ]
+    }
+  ],
+  "note": "Jun Prod4 must be either zero or at least 1050 units."
+}

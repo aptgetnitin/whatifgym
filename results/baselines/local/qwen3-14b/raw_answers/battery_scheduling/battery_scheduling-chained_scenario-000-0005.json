@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_total_cap",
+      "measure": "discharge",
+      "scope": {},
+      "sense": "<=",
+      "value": 5
+    }
+  ]
+}

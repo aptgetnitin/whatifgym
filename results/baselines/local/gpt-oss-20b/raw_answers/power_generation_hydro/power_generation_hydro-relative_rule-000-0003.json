@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal18_24_to_00_06_ratio",
+      "measure": "ngen",
+      "scope": {
+        "period": "18-24"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "ngen",
+        "scope": {
+          "period": "00-06"
+        }
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "Limit the number of thermal units running in period 18-24 to at most 60% of those running in period 00-06."
+}

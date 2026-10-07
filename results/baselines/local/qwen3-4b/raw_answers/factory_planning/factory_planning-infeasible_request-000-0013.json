@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "fixed_decisions": [
+    {
+      "measure": "make",
+      "scope": {
+        "product": "Prod5",
+        "month": "Feb"
+      },
+      "value": 5000
+    }
+  ]
+  
+    
+  }

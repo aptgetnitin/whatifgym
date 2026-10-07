@@ -1,0 +1,11 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "energy_capacity_kwh",
+      "value": "upper_limit"
+    }
+  ],
+  "note": "The planner's question is vague about what 'upper limit' means. It could refer to a specific value, a range, or a condition. Without a precise value or context, this scenario cannot be machine-checked."
+  }

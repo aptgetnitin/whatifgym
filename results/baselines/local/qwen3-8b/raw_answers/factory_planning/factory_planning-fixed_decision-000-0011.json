@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Jun",
+    "product": "Prod6"
+   },
+   "value": 1000
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "sell",
+   "scope": {
+    "month": "Jun",
+    "product": "Prod6"
+   },
+   "value": 1000
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fixed the sell quantity for Prod6 in June to 1000 and optimised the rest."
+}

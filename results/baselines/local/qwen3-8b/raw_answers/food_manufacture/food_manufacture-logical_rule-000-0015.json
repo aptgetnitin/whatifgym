@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "store_veg2_feb_zero_or_at_least_560",
+   "measure": "store",
+   "scope": {
+    "month": "Feb",
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "value": 0,
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Feb",
+     "oil": "VEG2"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "store_veg2_feb_at_least_560",
+   "measure": "store",
+   "scope": {
+    "month": "Feb",
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "value": 560
+  }
+ ],
+ "note": "The storage level for VEG2 in Feb must be either zero or at least 560."
+}

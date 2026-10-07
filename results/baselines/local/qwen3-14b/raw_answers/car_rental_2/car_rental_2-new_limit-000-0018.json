@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "max_expansions_rule",
+      "measure": "expand",
+      "scope": {},
+      "sense": "<=",
+      "value": 2
+    },
+    {
+      "name": "damaged_transfers_birmingham_rule",
+      "measure": "damaged_transfers",
+      "scope": {
+        "from_depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 40
+    }
+  ]
+}

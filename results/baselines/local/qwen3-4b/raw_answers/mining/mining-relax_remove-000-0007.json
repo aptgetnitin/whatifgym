@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "max_operating[year]",
+      "scope": {
+        "year": [
+          "Year5",
+          "Year1"
+        ]
+      }
+    }
+  ]
+  }

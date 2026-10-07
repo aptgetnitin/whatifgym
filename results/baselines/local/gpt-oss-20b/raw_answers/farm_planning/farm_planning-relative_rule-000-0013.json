@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"grain_year2_at_least_2x_year5","measure":"grow_grain","scope":{"year":"Year2"},"sense":">=","relative_to":{"measure":"grow_grain","scope":{"year":"Year5"}},"factor":2.0}],"note":"Ensure grain grown in Year2 is at least twice that in Year5."}

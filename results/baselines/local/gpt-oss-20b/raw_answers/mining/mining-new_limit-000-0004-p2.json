@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "measure": "operate",
+      "sense": "<=",
+      "value": 7
+    },
+    {
+      "measure": "blend",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": "<=",
+      "value": 3280000
+    }
+  ],
+  "note": "Cap total mine-years to 7 and Year5 blend to 3.28 million tons."
+}

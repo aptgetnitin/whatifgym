@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "logic": [
+  {
+   "name": "mine_years_worked_mine3_year2_at_least_mine4_year2",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "operate",
+     "scope": {
+      "year": "Year2",
+      "mine": "Mine3"
+     },
+     "sense": ">=",
+     "value": 2
+    },
+    {
+     "measure": "operate",
+     "scope": {
+      "year": "Year2",
+      "mine": "Mine4"
+     },
+     "sense": ">=",
+     "value": 2
+    }
+   ]
+  }
+ ]
+}

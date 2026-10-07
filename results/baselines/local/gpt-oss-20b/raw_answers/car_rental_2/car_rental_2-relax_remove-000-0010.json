@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "relax": [
+    {
+      "constraint": "repair_capacity",
+      "scope": {
+        "day": ["Friday", "Wednesday"]
+      }
+    }
+  ],
+  "note": "Relax repair capacity on Friday and Wednesday"
+}

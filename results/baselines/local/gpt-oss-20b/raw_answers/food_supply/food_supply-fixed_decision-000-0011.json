@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","fixed_decisions":[{"measure":"flow","scope":{"food":"Milk","from_city":"Homs","to_city":"Jubb_al_Jarrah"},"value":0}]}

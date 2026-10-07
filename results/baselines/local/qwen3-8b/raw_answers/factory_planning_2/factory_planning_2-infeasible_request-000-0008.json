@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod3_make_target",
+   "measure": "make",
+   "scope": {
+    "product": "Prod3"
+   },
+   "sense": ">=",
+   "value": 3750
+  }
+ ],
+ "note": "A minimum production target for product Prod3 across all months."
+}

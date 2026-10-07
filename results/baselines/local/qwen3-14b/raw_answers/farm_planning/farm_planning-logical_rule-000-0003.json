@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "grain_beet_link_year1_group1",
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "grow_grain",
+        "scope": {
+          "year": "Year1",
+          "land_group": "Group1"
+        }
+      },
+      "factor": 182
+    }
+  ]
+}

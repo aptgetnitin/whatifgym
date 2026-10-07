@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_overmanned",
+   "value": 0
+  }
+ ],
+ "relax": [
+  {
+   "constraint": "overmanning",
+   "scope": {
+    "year": [1, 2]
+   }
+  }
+ ],
+ "note": "The overmanning cap is removed for years 1 and 2, and the overmanning constraint is relaxed for these years."
+}

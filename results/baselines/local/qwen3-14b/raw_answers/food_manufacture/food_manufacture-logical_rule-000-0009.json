@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "min_veg2_storage",
+      "measure": "store",
+      "scope": {
+        "oil": "VEG2"
+      },
+      "sense": ">=",
+      "value": 3100
+    }
+  ]
+}

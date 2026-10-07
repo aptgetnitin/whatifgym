@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "land_groups",
+      "where": {
+        "land_group": "Group2"
+      }
+    }
+  ],
+  "note": "A land group suitable for grain dropping out means removing the row for Group2 from land_groups."
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "max_mines_operated",
+      "measure": "operate",
+      "scope": {
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

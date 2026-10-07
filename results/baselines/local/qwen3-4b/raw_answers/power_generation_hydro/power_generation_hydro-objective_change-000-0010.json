@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original",
+      "scope": {}
+    },
+    {
+      "sense": "min",
+      "measure": "reservoir_level",
+      "scope": {
+        "period": "15-18"
+      }
+    }
+  ]
+}

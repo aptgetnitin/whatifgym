@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "transfer_costs",
+      "column": "cost",
+      "where": {
+        "from_depot": "Manchester",
+        "to_depot": "Plymouth"
+      },
+      "factor": 18
+    },
+    {
+      "op": "scale_param",
+      "name": "weekly_cost",
+      "factor": 1.25
+    }
+  ]
+}

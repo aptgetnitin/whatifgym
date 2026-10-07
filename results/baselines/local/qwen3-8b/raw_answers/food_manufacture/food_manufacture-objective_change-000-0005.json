@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "profit"
+  },
+  {
+   "sense": "min",
+   "measure": "buy",
+   "scope": {
+    "month": "Feb"
+   }
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "produce",
+   "scope": {
+    "month": "Feb"
+   },
+   "value": 0
+  }
+ ]
+}

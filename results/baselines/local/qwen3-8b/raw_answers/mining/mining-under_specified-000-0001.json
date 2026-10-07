@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "discount_rate",
+   "value": 0.15
+  }
+ ],
+ "note": "The discount rate is changed to 15% to assess its effect on the optimal solution."
+}

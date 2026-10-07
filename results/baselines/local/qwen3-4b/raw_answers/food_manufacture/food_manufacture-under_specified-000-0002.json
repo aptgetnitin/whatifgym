@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is ambiguous because it doesn't specify how the hardness shifts. A shift could mean a percentage change, a fixed amount, or a different pattern for each oil. Without more details, it's impossible to translate this into a precise data change."
+}

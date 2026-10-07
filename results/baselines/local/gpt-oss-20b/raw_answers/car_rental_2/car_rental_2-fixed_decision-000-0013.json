@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","fixed_decisions":[{"measure":"repairs","scope":{"day":"Wednesday","depot":"Manchester"},"value":11}]}

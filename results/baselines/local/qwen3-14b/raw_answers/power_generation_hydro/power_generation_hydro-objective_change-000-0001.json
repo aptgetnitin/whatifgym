@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "hydro_on",
+      "scope": {
+        "hydro": [
+          "HydroA",
+          "HydroB"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "reservoir_level"
+    }
+  ]
+}

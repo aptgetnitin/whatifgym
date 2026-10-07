@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "thermal_types",
+   "column": "cost_per_hour",
+   "where": {
+    "type": "Thermal2"
+   },
+   "factor": 6000
+  }
+ ],
+ "note": "Scaling the hourly running cost per unit of Thermal2 type to 6000."
+}

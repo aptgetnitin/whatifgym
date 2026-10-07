@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine3"
+   },
+   "value": 1600000
+  }
+ ],
+ "rules": [
+  {
+   "name": "extract_mine3_at_least_15600000",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine3"
+   },
+   "sense": ">=",
+   "value": 15600000
+  }
+ ],
+ "note": "The question asks to set Mine3's capacity to 1.6 million tons and ensure at least 15.6 million tons of ore is extracted from it."
+}

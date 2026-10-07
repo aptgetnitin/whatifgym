@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "min_storage_may",
+      "measure": "store",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "value": 1100
+    }
+  ],
+  "note": "Require at least 1100 tons of oil in storage in May."
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "overmanned",
+      "scope": {},
+      "sense": "<=",
+      "value": 400,
+      "name": "cap_overmanned_total"
+    }
+  ]
+}

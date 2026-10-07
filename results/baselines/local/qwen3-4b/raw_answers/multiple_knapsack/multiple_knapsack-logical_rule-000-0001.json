@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "bins",
+      "column": "bin",
+      "where": {
+        "bin": [
+          "bin2",
+          "bin1",
+          "bin4",
+          "bin3"
+        ]
+      },
+      "value": 2
+    }
+  ],
+  "note": "The planner specifies that only 2 of the bins (bin2, bin1, bin4, bin3) may have item placements. This is a fixed decision on the number of bins that can be used."
+}

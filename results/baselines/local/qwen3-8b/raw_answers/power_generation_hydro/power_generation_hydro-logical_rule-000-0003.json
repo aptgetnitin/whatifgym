@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_units_started_at_least_14",
+   "measure": "nstart",
+   "scope": {
+    "period": "00-06"
+   },
+   "sense": ">=",
+    "value": 14
+  }
+ ],
+ "note": "The rule ensures that the number of thermal units started in the period 00-06 is at least 14."
+}

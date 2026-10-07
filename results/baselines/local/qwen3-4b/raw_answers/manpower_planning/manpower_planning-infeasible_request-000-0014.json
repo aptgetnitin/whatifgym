@@ -1,0 +1,16 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "value": 125000
+    }
+  ],
+  "note": "The planner asks if the model can meet a total employment target of 125000 workers. However, the model's requirements table specifies per-year and per-skill-level required workers. The total employment target is not directly a column in the model schema. The model requires a breakdown by year and skill level, so the question cannot be precisely formulated without specifying which year and skill level the target applies to."
+}

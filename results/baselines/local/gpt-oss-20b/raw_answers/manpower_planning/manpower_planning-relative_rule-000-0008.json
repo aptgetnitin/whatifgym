@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"measure":"redundant","scope":{"year":3},"sense":"<=","relative_to":{"measure":"redundant","scope":{"year":2}},"factor":0.6}],"note":"New policy: redundancies in year 3 must be at most 60% of redundancies in year 2."}

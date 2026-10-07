@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "logic": [
+  {
+   "name": "no_blend_in_year1_and_year2",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "blend",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "year": "Year1"
+     }
+    },
+    {
+     "measure": "blend",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "year": "Year2"
+     }
+    }
+   ]
+  }
+ ]
+}

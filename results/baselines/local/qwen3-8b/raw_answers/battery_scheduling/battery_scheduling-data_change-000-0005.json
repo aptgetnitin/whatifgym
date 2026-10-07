@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "export_price",
+   "where": {
+    "hour": "07-08"
+   },
+   "value": 0.2
+  }
+ ],
+ "note": "The export price for the hour 07-08 is set to 0.2 EUR/kWh."
+}

@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "rentals",
+   "column": "rentals",
+   "where": {
+    "depot": "Plymouth"
+   },
+   "value": 84
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "rentals",
+   "scope": {
+    "day": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "depot": "Plymouth"
+   }
+  }
+ ],
+ "note": "Fix the number of rentals at Plymouth to 84 per day and maximise the weekly profit."
+}

@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "may_refining_share",
+   "measure": "consume",
+ "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "The rule ensures that the total tons of oil refined in May is at least 40% of the total tons refined across all months."
+}

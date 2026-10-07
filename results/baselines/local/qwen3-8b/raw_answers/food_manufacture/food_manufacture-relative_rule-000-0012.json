@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "store_oil2_limit",
+   "measure": "store",
+   "scope": {
+    "oil": "OIL2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "oil": "VEG2"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The storage of OIL2 is limited to 25% of the storage of VEG2 across all months."
+}

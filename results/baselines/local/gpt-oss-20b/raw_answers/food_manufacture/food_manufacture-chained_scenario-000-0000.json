@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"scale","table":"purchase_prices","column":"price","where":{"month":"May","oil":"OIL3"},"factor":0.9}],"rules":[{"name":"veg1_min_refine","measure":"consume","scope":{"oil":"VEG1"},"sense":">=","value":730}]}

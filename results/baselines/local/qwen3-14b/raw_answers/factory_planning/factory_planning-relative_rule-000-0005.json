@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "feb_sales_limit",
+      "measure": "sell",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "Jan"
+        }
+      },
+      "factor": 0.6
+    },
+    {
+      "name": "total_sales_limit",
+      "measure": "sell",
+      "scope": {},
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {}
+      },
+      "factor": 0.75
+    }
+  ]
+}

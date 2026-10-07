@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "oils",
+   "column": "hardness",
+   "where": {
+    "oil": "OIL2"
+   },
+   "value": 6.5
+  }
+ ],
+ "note": "The oil hardness for OIL2 is changed to 6.5."
+}

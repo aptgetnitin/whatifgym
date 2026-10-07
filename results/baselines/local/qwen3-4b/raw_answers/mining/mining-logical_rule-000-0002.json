@@ -1,0 +1,71 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 0.6
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 1600000
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "royalty",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 6000000
+    },
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine4"
+      }
+    },
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "Mine5"
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "name": "year3_blend_min_year2_extract_mine3",
+      "measure": "blend",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": ">=",
+      "value": 1950000
+    },
+    {
+      "name": "year2_extract_mine3",
+      "measure": "extract",
+      "scope": {
+        "year": "Year2",
+        "mine": "Mine3"
+      },
+      "sense": ">=",
+      "value": 1950000
+    }
+  ],
+  "note": "The question specifies a minimum requirement on the blend sold in Year3 and the extract from Mine3 in Year2. The scenario sets the quality, capacity, and royalty for Mine3, removes Mine4, and adds Mine5 as per the what-if surface. Rules enforce the minimum blend and extract constraints."
+  }

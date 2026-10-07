@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "at_most_2_foods",
+      "measure": "ration",
+      "scope": {
+        "food": [
+          "Corn-soya blend (CSB)",
+          "Oil",
+          "Milk"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "hours_per_month",
+      "where": {
+        "machine": "borer"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The machine-hours limit for borer is lifted, meaning the available hours per month for borer machines is increased by a factor of 1.0 (i.e., unchanged). However, the question states 'lifted', which implies an increase, but the factor is not specified. Since the factor is not given, we assume it's a relative change of 1.0 (no change) or the question might be ambiguous. But the problem says 'the machine-hours limit is lifted for machine type borer only', which likely means the hours_per_month parameter for borer is increased. However, the parameter 'hours_per_month' is a single value for all machines (as per the model schema), so this is confusing. Wait, looking at the model schema, 'hours_per_month' is a parameter with a single value, not per machine. So the question might be misstated. Alternatively, the 'capacity' constraint is per machine type, and the 'hours_per_month' is a parameter that is the same for all machines. This suggests the question might not be precise. Let me re-read the question: 'Suppose the machine-hours limit is lifted for machine type borer only.' In the model, the 'hours_per_month' parameter is a single value (not per machine), so lifting the limit for borer only doesn't make sense. The model has a 'capacity' constraint that uses 'hours_per_month' as a parameter. The 'capacity' constraint is: sum_p hours_per_unit * make <= hours_per_month * (installed - repair). So 'hours_per_month' is a single parameter for the entire model. Therefore, the question is not precise because the model does not have a per-machine hours_per_month. The 'machines' table has 'installed' per machine type, and the 'capacity' constraint uses 'hours_per_month' as a single value. So the question might be referring to a different parameter. Alternatively, the 'hours_per_month' parameter is the same for all machines, so lifting the limit for borer only is not possible. Given this, the question cannot be made precise. So I should output an 'ask'."
+
+  }

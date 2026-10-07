@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "fixed_decisions": [
+    {
+      "measure": "grow_grain",
+      "scope": {
+        "year": "Year5",
+        "land_group": [
+          "Group1",
+          "Group2",
+          "Group3",
+          "Group4"
+        ]
+      },
+      "value": 5.5
+    },
+    {
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year3"
+      },
+      "value": 29
+    }
+  ]
+}

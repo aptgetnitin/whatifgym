@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"thermal_start_le_hydro_start","measure":"nstart","sense":"<=","relative_to":{"measure":"hydro_start"},"factor":1.0}],"note":"Enforce total thermal starts <= total hydro starts."}

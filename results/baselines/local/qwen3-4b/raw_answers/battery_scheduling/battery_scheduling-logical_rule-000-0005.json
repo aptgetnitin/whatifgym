@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "soc_19-20_at_least_7.5_charge_03-04",
+      "measure": "soc",
+      "scope": {
+        "hour": "19-20"
+      },
+      "sense": ">=",
+      "value": 7.5
+    },
+    {
+      "name": "charge_03-04_at_least_7.5",
+      "measure": "charge",
+      "scope": {
+        "hour": "03-04"
+      },
+      "sense": ">=",
+      "value": 7.5
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "profit"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "min_ration_per_person_in_idleb",
+   "measure": "ration",
+   "scope": {
+    "camp": "Idleb"
+   },
+   "sense": ">=",
+   "value": 6.1
+  }
+ ],
+ "note": "A floor on the total ration per person in Idleb."
+}

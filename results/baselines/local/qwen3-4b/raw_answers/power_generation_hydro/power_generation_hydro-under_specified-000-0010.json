@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "ask": "Which hydro output value (period, hydro) is intended to change? The model has two hydro units (HydroA and HydroB) and five periods (00-06, 06-09, 09-15, 15-18, 18-24). Please specify the exact period and hydro unit for the change."
+}

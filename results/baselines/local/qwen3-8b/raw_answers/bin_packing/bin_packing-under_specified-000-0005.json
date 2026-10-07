@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "bin_packing", "data_changes": [{"op": "add", "table": "items", "rows": [{"item": "item11", "weight": 0}]}], "note": "Adding a new item with zero weight to the items table."}

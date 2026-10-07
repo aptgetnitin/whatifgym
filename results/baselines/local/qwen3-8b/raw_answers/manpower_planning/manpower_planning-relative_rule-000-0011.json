@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "redundant_limit_year_3",
+   "measure": "redundant",
+   "scope": {
+    "year": 3
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "redundant",
+    "scope": {
+     "year": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "factor": 0.15
+  }
+ ],
+ "note": "A rule limits the sum of redundancies in year 3 to 15% of the total redundancies across all years."
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "no_production_in_both_feb_mar",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Feb",
+          "Mar"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+  }

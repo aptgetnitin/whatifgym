@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","fixed_decisions":[{"measure":"produce","scope":{"month":"Jun"},"value":220},{"measure":"consume","scope":{"oil":"VEG1"},"value":110}]}

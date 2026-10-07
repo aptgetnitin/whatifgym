@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "grain_purchase_price",
+      "value": 0
+    }
+  ],
+  "note": "A floor on grain bought would be a minimum price, but the question is vague. The model has a parameter for grain purchase price, so setting it to 0 implies no floor (since prices are positive). However, the question is unclear about what 'floor' means here."
+  }

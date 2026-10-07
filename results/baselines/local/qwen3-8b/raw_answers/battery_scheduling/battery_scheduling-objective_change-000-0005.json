@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "soc",
+   "scope": {
+    "hour": "21-22"
+   }
+  }
+ ],
+ "note": "Prioritise maintaining maximum profit, then maximise stored energy specifically during the 21-22 hour."
+}

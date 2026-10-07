@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "total_cattle_cap",
+      "measure": "herd",
+      "scope": {},
+      "sense": "<=",
+      "value": 470
+    }
+  ],
+  "note": "Cap total cattle headcount to 470."
+}

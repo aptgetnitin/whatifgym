@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_sold_year1_to_grain_bought_year2",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy_grain",
+    "scope": {
+     "year": "Year2"
+    }
+   },
+   "factor": 44
+  }
+ ],
+ "note": "A rule that links the sum of sugar beet sold in Year1 to the sum of grain bought in Year2 with a factor of 44."
+}

@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "fixed_decisions": [
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Monday",
+    "depot": "Birmingham"
+   },
+   "value": 102
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

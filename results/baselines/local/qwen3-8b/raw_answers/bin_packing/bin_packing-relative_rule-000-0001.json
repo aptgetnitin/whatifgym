@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","rules":[{"name":"total_items_at_most_bins_used","measure":"x","scope":{"bin":["bin0","bin1","bin2","bin3","bin4","bin5","bin6","bin7","bin8","bin9","bin10"]},"sense":"<=","value":11}],"note":"The rule ensures the total number of items packed is at most the number of bins used."}

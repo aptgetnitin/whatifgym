@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine4_extraction_total",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine4"
+      },
+      "sense": ">=",
+      "value": 9562500
+    }
+  ]
+}

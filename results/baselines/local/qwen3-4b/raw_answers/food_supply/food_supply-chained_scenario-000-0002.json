@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "floor_flow_Oil",
+      "measure": "flow",
+      "scope": {
+        "food": "Oil"
+      },
+      "sense": ">=",
+      "value": 78500
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original",
+      "scope": {}
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

@@ -1,0 +1,63 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "return_shares",
+   "column": "share",
+   "where": {
+    "from_depot": "Glasgow",
+    "to_depot": "Manchester"
+   },
+   "value": 0.25
+  },
+  {
+   "op": "set",
+   "table": "return_shares",
+   "column": "share",
+   "where": {
+    "from_depot": "Glasgow",
+    "to_depot": "Glasgow"
+   },
+   "value": 0.55
+  },
+  {
+   "op": "set",
+   "table": "rental_lengths",
+   "column": "share",
+   "where": {
+    "rental_days": 1
+   },
+   "value": 0.5
+  },
+  {
+   "op": "set",
+   "table": "rental_lengths",
+   "column": "share",
+   "where": {
+    "rental_days": 3
+   },
+   "value": 0.3
+  },
+  {
+   "op": "set",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": 2
+   },
+   "value": 110
+  },
+  {
+   "op": "set",
+   "table": "rental_lengths",
+   "column": "marginal_cost",
+   "where": {
+    "rental_days": 1
+   },
+   "value": 25
+  }
+ ],
+ "note": "The price, return to another depot shifts for every row of the rental-length mix and prices table."
+}

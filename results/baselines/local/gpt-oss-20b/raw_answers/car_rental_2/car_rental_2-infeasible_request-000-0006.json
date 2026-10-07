@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","fixed_decisions":[{"measure":"repairs","scope":{"day":"Friday","depot":"Manchester"},"value":66}],"note":"Fixed repairs to 66 on Friday at Manchester."}

@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_ration_per_person",
+   "measure": "ration",
+   "scope": {
+    "food": {
+     "all": true
+    },
+    "camp": {
+     "all": true
+    }
+   },
+   "sense": ">=",
+   "value": 102
+  }
+ ]
+}

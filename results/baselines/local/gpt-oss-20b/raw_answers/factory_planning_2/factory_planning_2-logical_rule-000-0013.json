@@ -1,0 +1,135 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "store_prod1_jan",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Jan",
+            "product": "Prod1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Jan",
+            "product": "Prod1"
+          },
+          "sense": ">=",
+          "value": 380
+        }
+      ]
+    },
+    {
+      "name": "store_prod1_feb",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Feb",
+            "product": "Prod1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Feb",
+            "product": "Prod1"
+          },
+          "sense": ">=",
+          "value": 380
+        }
+      ]
+    },
+    {
+      "name": "store_prod1_mar",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Mar",
+            "product": "Prod1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Mar",
+            "product": "Prod1"
+          },
+          "sense": ">=",
+          "value": 380
+        }
+      ]
+    },
+    {
+      "name": "store_prod1_apr",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Apr",
+            "product": "Prod1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Apr",
+            "product": "Prod1"
+          },
+          "sense": ">=",
+          "value": 380
+        }
+      ]
+    },
+    {
+      "name": "store_prod1_may",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "May",
+            "product": "Prod1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "month": "May",
+            "product": "Prod1"
+          },
+          "sense": ">=",
+          "value": 380
+        }
+      ]
+    },
+    {
+      "name": "store_prod1_jun",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Jun",
+            "product": "Prod1"
+          },
+          "

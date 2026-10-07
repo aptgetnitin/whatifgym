@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase_prices",
+   "column": "price",
+   "where": {
+    "month": "Jun"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "buy_cap_jun",
+   "measure": "buy",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": "<=",
+   "value": 1000
+  }
+ ],
+ "note": "A cap on oil purchases in June is implemented by setting the price to 0 (no purchase) and adding a rule to limit the total buy in June to 1000 tons."
+}

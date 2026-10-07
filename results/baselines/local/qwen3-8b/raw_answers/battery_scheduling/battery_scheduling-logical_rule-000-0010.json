@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_requirement_21-22",
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": ">=",
+   "value": 10
+  }
+ ],
+ "note": "A rule enforces a minimum discharge power of 10 kW during the 21-22 hour."
+}

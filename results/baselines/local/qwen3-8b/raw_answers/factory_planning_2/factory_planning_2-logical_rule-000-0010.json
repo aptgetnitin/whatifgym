@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "logic": [
+  {
+   "name": "prod3_feb_to_prod2_may",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "Feb",
+      "product": "Prod3"
+     },
+     "sense": ">=",
+     "value": 200
+    },
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "May",
+      "product": "Prod2"
+     },
+     "sense": ">=",
+     "value": 200
+    }
+   ]
+  }
+ ]
+}

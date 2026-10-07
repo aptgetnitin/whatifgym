@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"total_stock_may_cap","measure":"store","scope":{"month":"May"},"sense":"<=","value":220}],"note":"Cap on total units in stock across all products at end of May."}

@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "year2_worked_min_3x_year4",
+      "measure": "operate",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "year": "Year4"
+        }
+      },
+      "factor": 3.0
+    },
+    {
+      "name": "year1_blend_max_20_percent_total",
+      "measure": "blend",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "blend",
+        "scope": {
+          "year": [
+            "Year1",
+            "Year2",
+            "Year3",
+            "Year4",
+            "Year5"
+          ]
+        }
+      },
+      "factor": 0.2
+    }
+  ]
+}

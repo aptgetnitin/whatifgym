@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "logic": [
+    {
+      "name": "redundant_minimum_batch_year2_unskilled",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "redundant",
+          "scope": {
+            "year": 2,
+            "skill": "unskilled"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "redundant",
+          "scope": {
+            "year": 2,
+            "skill": "unskilled"
+          },
+          "sense": ">=",
+          "value": 330
+        }
+      ]
+    }
+  ]
+}

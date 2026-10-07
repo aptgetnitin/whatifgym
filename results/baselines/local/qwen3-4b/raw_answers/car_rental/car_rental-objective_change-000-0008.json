@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "fleet_size",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "damaged_left",
+      "scope": {
+        "depot": "Birmingham",
+        "day": "*"
+      }
+    }
+  ]
+}

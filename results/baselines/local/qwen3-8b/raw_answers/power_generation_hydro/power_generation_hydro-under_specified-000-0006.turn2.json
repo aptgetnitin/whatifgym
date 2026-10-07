@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_units_cap",
+   "measure": "ngen",
+   "scope": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "sense": "<=",
+   "value": 36
+  }
+ ],
+ "note": "A cap on the total number of thermal units running across all types."
+}

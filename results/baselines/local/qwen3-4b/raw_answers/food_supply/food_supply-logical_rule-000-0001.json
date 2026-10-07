@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "csb_flow_min",
+      "measure": "flow",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "from_city": "Dayr_Az_Zor",
+        "to_city": "Ar Raqqa"
+      },
+      "sense": ">=",
+      "value": 10500
+    }
+  ]
+}

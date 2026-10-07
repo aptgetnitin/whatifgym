@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "no_charging_in_both_02-03_and_03-04",
+   "measure": "charge",
+   "scope": {
+    "hour": [
+     "02-03",
+     "03-04"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "A new rule restricts charging power in both hours 02-03 and 03-04 to zero."
+}

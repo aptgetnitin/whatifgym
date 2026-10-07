@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_to_semi_skilled",
+   "measure": "retrain",
+   "scope": {
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": "<=",
+   "value": 100
+  },
+  {
+   "name": "retrain_to_semi_skilled",
+   "measure": "retrain",
+   "scope": {
+    "from_skill": "semi_skilled",
+    "to_skill": "skilled"
+   },
+   "sense": "<=",
+   "value": 100
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   }
+  }
+ ]
+}

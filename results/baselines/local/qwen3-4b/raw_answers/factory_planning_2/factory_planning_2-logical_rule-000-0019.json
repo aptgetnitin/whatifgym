@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "at_most_3_months_with_sales",
+      "measure": "sell",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr"
+        ]
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ]
+}

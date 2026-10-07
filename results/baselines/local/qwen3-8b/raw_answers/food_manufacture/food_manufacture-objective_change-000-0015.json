@@ -1,0 +1,61 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "profit"
+  },
+  {
+   "sense": "min",
+   "measure": "buy",
+   "scope": {
+    "oil": "OIL2"
+   }
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "produce",
+   "scope": {
+    "month": "Jun"
+   },
+   "value": 450
+  },
+  {
+   "measure": "produce",
+   "scope": {
+    "month": "Jan"
+   },
+   "value": 450
+  },
+  {
+   "measure": "produce",
+   "scope": {
+    "month": "Feb"
+   },
+   "value": 450
+  },
+  {
+   "measure": "produce",
+   "scope": {
+    "month": "Mar"
+   },
+   "value": 450
+  },
+  {
+   "measure": "produce",
+   "scope": {
+    "month": "Apr"
+   },
+   "value": 450
+  },
+  {
+   "measure": "produce",
+   "scope": {
+    "month": "May"
+   },
+   "value": 450
+  }
+ ]
+}

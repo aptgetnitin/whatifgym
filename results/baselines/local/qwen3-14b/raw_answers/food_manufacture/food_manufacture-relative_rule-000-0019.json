@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg2_refined_share",
+      "measure": "consume",
+      "scope": {
+        "oil": "VEG2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "oil": [
+            "VEG1",
+            "VEG2",
+            "OIL1",
+            "OIL2",
+            "OIL3"
+          ]
+        }
+      },
+      "factor": 0.4
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "terminal_soc_kwh",
+   "factor": 0.75
+  }
+ ],
+ "note": "The minimum battery charge at the end of the day is reduced by 25%."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "land_groups",
+   "column": "grow_grain",
+   "where": {
+    "land_group": "Group1"
+   },
+   "factor": 0.7
+  }
+ ],
+ "note": "The total tons of grain grown for land group Group1 is scaled by 0.7 to not exceed 70 tons."
+}

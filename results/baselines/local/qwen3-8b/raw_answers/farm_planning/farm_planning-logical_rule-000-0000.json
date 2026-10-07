@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_grown_min_year1",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell_heifers",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 182
+  }
+ ],
+ "note": "The sugar beet grown in Year1 must be at least 182 tons if heifer calves are sold in that year."
+}

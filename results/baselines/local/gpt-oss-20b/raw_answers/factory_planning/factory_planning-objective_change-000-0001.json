@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "sell"
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "Minimise total units sold first, then maximise profit."
+}

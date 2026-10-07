@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "may_refine_min_40pct",
+      "measure": "consume",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "consume",
+        "scope": {}
+      },
+      "factor": 0.4
+    }
+  ]
+}

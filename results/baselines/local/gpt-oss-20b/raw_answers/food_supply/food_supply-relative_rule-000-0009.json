@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_flow_at_most_60_percent_of_oil",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "food": "Oil"
+        }
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "Limit wheat shipments to at most 60% of oil shipments."
+}

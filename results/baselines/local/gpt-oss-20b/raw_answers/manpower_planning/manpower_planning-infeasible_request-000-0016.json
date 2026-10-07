@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"measure":"retrain","scope":{"year":3,"from_skill":"unskilled","to_skill":"semi_skilled"},"sense":">=","value":1000}],"note":"Enforce at least 1000 retraining from unskilled to semi_skilled in year 3."}

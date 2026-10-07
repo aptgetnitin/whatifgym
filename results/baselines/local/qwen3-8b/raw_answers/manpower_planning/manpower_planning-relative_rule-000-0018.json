@@ -1,0 +1,69 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 3,
+    "skill": "unskilled"
+   },
+   "value": 700
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "value": 700
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 1,
+    "skill": "semi_skilled"
+   },
+   "value": 1000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 2,
+    "skill": "semi_skilled"
+   },
+   "value": 1000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 3,
+    "skill": "semi_skilled"
+   },
+   "value": 1000
+  }
+ ],
+ "rules": [
+  {
+   "name": "recruit_to_year_3",
+   "measure": "recruit",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 600
+  }
+ ],
+ "note": "The scenario sets the required workers for unskilled in year 2 and 3 to 700, and max recruit for semi-skilled in each year to 1000. It also ensures that at least 60% of the total workers recruited go to year 3."
+}

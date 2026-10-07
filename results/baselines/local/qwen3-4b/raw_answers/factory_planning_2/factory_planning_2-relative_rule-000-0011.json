@@ -1,0 +1,25 @@
+{
+  "base_model": "factory_planning_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "stock_at_least_sold",
+      "measure": "store",
+      "scope": {
+        "product": "all"
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "profit",
+      "scope": {
+        "product": "all"
+      }
+    }
+  ],
+  "fixed_decisions": []
+  }

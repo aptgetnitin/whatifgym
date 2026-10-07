@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "total_undamaged_transfers_limit",
+      "measure": "undamaged_transfers",
+      "scope": {},
+      "sense": "<=",
+      "value": 56
+    }
+  ],
+  "note": "A rule that limits the total undamaged transfers across all days, depots, and transfer lanes."
+}

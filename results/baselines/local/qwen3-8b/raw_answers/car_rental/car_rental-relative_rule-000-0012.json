@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "friday_rentals_at_most_monday",
+   "measure": "rentals",
+   "scope": {
+    "day": "Friday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "day": "Monday"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Limits Friday rentals to 50% of Monday rentals."
+}

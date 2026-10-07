@@ -1,0 +1,47 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "produce_mar_limit",
+   "measure": "produce",
+   "scope": {
+    "month": "Mar"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "produce",
+    "scope": {
+     "month": "Jan"
+    }
+   },
+   "factor": 0.8
+  },
+  {
+   "name": "refined_oil_limit",
+   "measure": "consume",
+   "scope": {
+    "month": "Jan",
+    "oil": "VEG1",
+    "oil": "VEG2",
+    "oil": "OIL1",
+    "oil": "OIL2",
+    "oil": "OIL3"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "month": "Jan",
+     "oil": "VEG1",
+     "oil": "VEG2",
+     "oil": "OIL1",
+     "oil": "OIL2",
+     "oil": "OIL3"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

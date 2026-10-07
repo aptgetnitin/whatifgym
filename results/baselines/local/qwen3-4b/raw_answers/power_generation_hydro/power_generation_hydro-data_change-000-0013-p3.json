@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "cost_per_mwh_above_min",
+      "value": 6000
+    }
+  ],
+  "note": "The planner asked for the hourly running cost per unit of Thermal2, but the model's cost_per_mwh_above_min is a parameter for all thermal types, not specific to Thermal2. The question is ambiguous and needs clarification."
+  }

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "min_ration_for_idleb",
+   "measure": "ration",
+   "scope": {
+    "camp": "Idleb"
+   },
+   "sense": ">=",
+   "value": 7.3
+  }
+ ],
+ "note": "A minimum ration requirement for the Idleb camp is added as a rule."
+}

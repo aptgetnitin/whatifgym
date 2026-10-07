@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "measure": "original",
+      "sense": "max"
+    },
+    {
+      "measure": "sell_beet",
+      "sense": "max"
+    }
+  ],
+  "note": "Keep five‑year profit at its maximum, then maximise total tons of sugar beet sold."
+}

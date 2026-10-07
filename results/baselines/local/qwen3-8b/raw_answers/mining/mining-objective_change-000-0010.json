@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "open",
+   "scope": {
+    "mine": "*",
+    "year": "*"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "operate",
+   "scope": {
+    "mine": "*",
+    "year": "*"
+   }
+  }
+ ],
+ "note": "Prioritise discounted profit first, then the total number of mine-years kept open, and finally the total number of mine-years worked."
+}

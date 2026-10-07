@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "friday_rental_cap",
+      "measure": "rentals",
+      "scope": {
+        "day": "Friday"
+      },
+      "sense": "<=",
+      "value": 210
+    }
+  ],
+  "note": "Limit total rentals on Friday to 210 cars."
+}

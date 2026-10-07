@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_least_30_percent_items_in_bin0",
+      "measure": "x[item, bin]",
+      "scope": {
+        "bin": [
+          "bin0"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.3
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "y[bin]",
+      "scope": {}
+    }
+  ],
+  "fixed_decisions": []
+}

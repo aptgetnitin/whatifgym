@@ -1,0 +1,4 @@
+{
+  "base_model": "multiple_knapsack",
+  "ask": "Which capacity value is changing? Please specify which bin's capacity is being modified (e.g., bin0, bin1, etc.)."
+}

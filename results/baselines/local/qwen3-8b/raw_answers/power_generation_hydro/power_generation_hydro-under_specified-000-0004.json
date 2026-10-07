@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "ask": "Please specify the new predicted demand values for each period."
+}

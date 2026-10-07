@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "soc_min_01-02",
+      "measure": "soc",
+      "scope": {
+        "hour": "01-02"
+      },
+      "sense": ">=",
+      "value": 7.5
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"Mine1_open_at_least_2x_Mine3","measure":"open","scope":{"mine":"Mine1"},"sense":">=","relative_to":{"measure":"open","scope":{"mine":"Mine3"}},"factor":2.0}],"note":"Number of mine-years kept open for Mine1 at least twice that of Mine3."}

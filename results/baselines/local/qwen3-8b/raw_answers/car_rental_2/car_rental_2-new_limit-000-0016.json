@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "birmingham_undamaged_left_min",
+   "measure": "undamaged_left",
+   "scope": {
+    "depot": "Birmingham"
+   },
+   "sense": ">=",
+   "value": 650
+  }
+ ],
+ "note": "The rule ensures that the total undamaged cars kept at Birmingham overnight meets the minimum requirement."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "minimum_ration_idleb",
+      "measure": "ration",
+      "scope": {
+        "camp": "Idleb"
+      },
+      "sense": ">=",
+      "value": 6.1
+    }
+  ]
+}

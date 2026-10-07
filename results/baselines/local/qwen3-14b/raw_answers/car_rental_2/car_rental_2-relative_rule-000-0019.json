@@ -1,0 +1,81 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_transfers_vs_repairs",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "from_depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ],
+        "to_depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ],
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "repairs",
+        "scope": {
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ],
+          "day": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ]
+        }
+      },
+      "factor": 3.0
+    },
+    {
+      "name": "manchester_expansion_share",
+      "measure": "expand",
+      "scope": {
+        "depot": "Manchester",
+        "step": [
+          1,
+          2
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "expand",
+        "scope": {
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ],
+          "step": [
+            1,
+            2
+          ]
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

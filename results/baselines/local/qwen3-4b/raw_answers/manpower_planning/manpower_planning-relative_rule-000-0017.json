@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "short_time",
+      "column": "short_time",
+      "where": {
+        "skill": "semi_skilled",
+        "year": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "factor": 0.95
+    }
+  ],
+  "note": "A relative constraint on short-time workers by skill level is a scale over the matching rows."
+}

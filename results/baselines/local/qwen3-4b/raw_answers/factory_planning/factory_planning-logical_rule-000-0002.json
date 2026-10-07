@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "mar_jun_make_relation",
+      "measure": "make",
+      "scope": {
+        "month": [
+          "Mar"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": [
+            "Jun"
+          ]
+        }
+      },
+      "factor": 4000
+    }
+  ]
+}

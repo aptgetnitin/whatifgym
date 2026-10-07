@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "buy_limit",
+   "measure": "buy",
+   "scope": {
+    "oil": [
+     "VEG2",
+     "OIL2",
+     "VEG1"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Restrict the total tons of oil bought for VEG2, OIL2, and VEG1 to 2."
+}

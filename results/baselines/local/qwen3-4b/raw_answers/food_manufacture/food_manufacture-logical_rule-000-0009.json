@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "min_batch_veg2_storage",
+      "measure": "store",
+      "scope": {
+        "oil": "VEG2",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": ">=",
+      "value": 3100
+    }
+  ]
+}

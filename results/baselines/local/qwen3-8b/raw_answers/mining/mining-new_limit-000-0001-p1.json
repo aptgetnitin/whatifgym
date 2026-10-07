@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine4"
+   },
+   "value": 9562500
+  }
+ ],
+ "note": "Setting the capacity of Mine4 to 9562500 tons ensures the total extraction over all years meets the requirement."
+}

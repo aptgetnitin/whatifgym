@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"measure":"sell","sense":"<=","value":6450}],"note":"Upper limit on total units sold across all products and months."}

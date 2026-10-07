@@ -1,0 +1,55 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "fixed_decisions": [
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Monday",
+    "depot": "Manchester"
+   },
+   "value": 1.7
+  },
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Tuesday",
+    "depot": "Manchester"
+   },
+   "value": 1.7
+  },
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Manchester"
+   },
+   "value": 1.7
+  },
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Thursday",
+    "depot": "Manchester"
+   },
+   "value": 1.7
+  },
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Friday",
+    "depot": "Manchester"
+   },
+   "value": 1.7
+  },
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Saturday",
+    "depot": "Manchester"
+   },
+   "value": 1.7
+  }
+ ],
+ "note": "Fixing the undamaged cars kept at Manchester overnight for each day to 1.7."
+}

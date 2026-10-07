@@ -1,0 +1,4 @@
+{
+  "role": "agent",
+  "text": "What specific value for max_tables do you want to change to? The model has a parameter max_tables with a minimum of 1, but the question is too vague to specify a precise scenario."
+  }

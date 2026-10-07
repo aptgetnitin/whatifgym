@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"set_param","name":"max_nutrient_factor","value":4.0}],"note":"Multiply the nutrient upper limit by a factor of 2.0."}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "max_sales_prod4_prod5_prod2_prod6_prod1",
+   "measure": "sell",
+   "scope": {
+    "product": [
+     "Prod4",
+     "Prod5",
+     "Prod2",
+     "Prod6",
+     "Prod1"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "A rule limiting the total sales of specified products to 1 unit across all months."
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "repaired_monday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": ">=",
+      "value": 140
+    },
+    {
+      "name": "repaired_tuesday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Tuesday"
+      },
+      "sense": ">=",
+      "value": 140
+    }
+  ]
+}

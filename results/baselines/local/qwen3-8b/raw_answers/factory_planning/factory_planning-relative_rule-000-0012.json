@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod2_sales_limit",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod1",
+     "product": "Prod3",
+     "product": "Prod4",
+     "product": "Prod5",
+     "product": "Prod6",
+     "product": "Prod7"
+    }
+   },
+   "factor": 0.1
+  },
+  {
+   "name": "prod6_sales_limit",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod3"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

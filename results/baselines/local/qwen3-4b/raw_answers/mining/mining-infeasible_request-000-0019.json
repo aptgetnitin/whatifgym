@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "year": "Year1"
+      },
+      "value": 11500000
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "year": "Year3"
+      },
+      "value": 6500000
+    }
+  ],
+  "note": "The planner is asking if the model can satisfy two minimum extraction amounts for specific years. This requires setting the extract values for Year1 and Year3 to the specified amounts."
+}

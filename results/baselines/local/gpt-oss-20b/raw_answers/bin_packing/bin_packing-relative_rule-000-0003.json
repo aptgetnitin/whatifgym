@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","rules":[{"name":"items_to_bins_ratio","measure":"x","scope":{},"sense":"<=","relative_to":{"measure":"y","scope":{}},"factor":1.5}],"note":"Enforce that total items packed <= 1.5 * total bins used."}

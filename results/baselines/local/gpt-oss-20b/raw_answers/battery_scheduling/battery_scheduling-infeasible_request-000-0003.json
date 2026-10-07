@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","data_changes":[{"op":"set_param","name":"energy_capacity_kwh","value":135}],"fixed_decisions":[{"measure":"soc","scope":{"hour":"12-13"},"value":135}],"note":"Enforce exactly 135 kWh stored at hour 12‑13 and adjust capacity accordingly."}

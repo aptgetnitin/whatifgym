@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "refined_oil_may_at_least_40_percent",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "May"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.4,
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

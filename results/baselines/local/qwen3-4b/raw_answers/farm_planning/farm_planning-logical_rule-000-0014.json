@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "beet_sold_at_least_grain_bought",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy_grain",
+        "scope": {
+          "year": "Year2"
+        }
+      },
+      "factor": 44
+    }
+  ]
+}

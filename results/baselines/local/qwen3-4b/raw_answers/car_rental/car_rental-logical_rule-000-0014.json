@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "logic": [
+    {
+      "name": "damaged_transfers_tuesday_constraint",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "damaged_transfers",
+          "scope": {
+            "day": "Tuesday",
+            "from_depot": [
+              "Glasgow",
+              "Manchester",
+              "Birmingham",
+              "Plymouth"
+            ]
+          },
+          "sense": ">=",
+          "value": 15
+        }
+      ]
+    }
+  ]
+}

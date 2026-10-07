@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "ngen",
+      "where": {
+        "type": "Thermal2"
+      },
+      "value": 1
+    }
+  ],
+  "note": "A fixed decision for Thermal2 to run exactly 1 unit per period."
+}

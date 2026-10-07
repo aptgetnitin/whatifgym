@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_units_18_24_at_most_half_09_15",
+      "measure": "ngen",
+      "scope": {
+        "period": "18-24"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "ngen",
+        "scope": {
+          "period": "09-15"
+        }
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Running thermal units in period 18-24 must be at most 50% of those in period 09-15."
+}

@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "ask": "Which item value is changing? What is the new value? How does this change affect the model?"
+}

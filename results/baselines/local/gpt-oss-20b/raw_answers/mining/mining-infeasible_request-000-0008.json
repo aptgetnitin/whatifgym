@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min_extract_year2",
+      "measure": "extract",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "value": 60000000
+    }
+  ],
+  "note": "Require at least 60 million tons extracted in Year2."
+}

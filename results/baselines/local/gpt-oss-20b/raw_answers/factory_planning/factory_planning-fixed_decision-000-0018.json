@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "fixed_decisions": [
+    {
+      "measure": "sell",
+      "scope": {
+        "month": "Jun",
+        "product": "Prod4"
+      },
+      "value": 220
+    }
+  ],
+  "note": "Fixed sell quantity for Jun Prod4 to 220 units."
+}

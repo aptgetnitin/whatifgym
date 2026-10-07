@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "at_most_4_bins",
+      "measure": "x",
+      "scope": {
+        "bin": [
+          "bin1",
+          "bin2",
+          "bin3",
+          "bin4",
+          "bin0"
+        ]
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ]
+}

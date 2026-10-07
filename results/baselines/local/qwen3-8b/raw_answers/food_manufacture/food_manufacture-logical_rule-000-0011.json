@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "refining_months_limit",
+   "measure": "consume",
+ "scope": {
+    "month": ["Feb", "Jan", "May", "Mar"]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "At most 2 of the specified months may have any tons of oil refined."
+}

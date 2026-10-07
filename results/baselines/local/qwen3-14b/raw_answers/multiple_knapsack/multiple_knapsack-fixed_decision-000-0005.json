@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "fixed_decisions": [
+    {
+      "measure": "x",
+      "scope": {
+        "item": "item0",
+        "bin": "bin1"
+      },
+      "value": 1
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_flow_Qamishli","measure":"flow","scope":{"to_city":"Qamishli"},"sense":">=","value":72600},{"name":"min_flow_Idleb","measure":"flow","scope":{"to_city":"Idleb"},"sense":">=","value":72600}],"note":"Check feasibility of shipping at least 72600 units to Qamishli and Idleb."}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "damaged_left",
+   "column": "damaged_left",
+   "where": {
+    "day": "Monday",
+    "depot": "Birmingham"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "damaged_left",
+   "column": "damaged_left",
+   "where": {
+    "day": "Wednesday",
+    "depot": "Plymouth"
+   },
+   "value": 1.5
+  }
+ ],
+ "note": "Fixed the damaged cars kept overnight at specific depot and day."
+}

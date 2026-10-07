@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "grow_grain",
+   "column": "grow_grain",
+   "where": {
+    "land_group": "Group2"
+   },
+   "factor": 0.42
+  }
+ ],
+ "note": "Fixing the tons of grain grown for land group Group2 at 0.42 for every year is achieved by scaling the grow_grain column for Group2 by 0.42."
+}

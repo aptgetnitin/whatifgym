@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "heifer_acres",
+      "factor": 2.0
+    }
+  ]
+}

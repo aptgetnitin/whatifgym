@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "extract",
+      "column": "extract",
+      "where": {
+        "year": "Year1",
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "extract",
+      "column": "extract",
+      "where": {
+        "year": "Year1",
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "value": 8625000
+    }
+  ]
+}

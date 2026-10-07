@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "csb_ration_limit",
+   "measure": "ration",
+   "scope": {
+    "food": "Corn-soya blend (CSB)"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "camp": "*"
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "Limits the proportion of Corn-soya blend (CSB) in the total ration per person across all camps to 5%."
+}

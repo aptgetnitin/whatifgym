@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "charge_03-04_if_soc_17-18",
+   "measure": "charge",
+   "scope": {
+    "hour": "03-04"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "soc",
+    "scope": {
+     "hour": "17-18"
+    }
+   },
+   "factor": 0.0
+  }
+ ]
+}

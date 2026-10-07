@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_expansions",
+   "value": 2
+  }
+ ],
+ "rules": [
+  {
+   "name": "birmingham_undamaged_stock_min",
+   "measure": "undamaged_stock",
+   "scope": {
+    "depot": "Birmingham"
+   },
+   "sense": ">=",
+   "value": 1450
+  }
+ ],
+ "note": "The scenario sets the maximum number of expansions to 2 and enforces a minimum undamaged stock at Birmingham across all days."
+}

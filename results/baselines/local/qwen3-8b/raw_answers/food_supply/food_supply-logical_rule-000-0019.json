@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "at_most_one_of_selected_foods",
+      "measure": "ration",
+      "scope": {
+        "food": [
+          "Wheat",
+          "Corn-soya blend (CSB)",
+          "Oil",
+          "Dried skim milk (enriched) (DSM)",
+          "Milk"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ],
+  "note": "This rule ensures that at most one of the specified foods has any ration per person."
+}

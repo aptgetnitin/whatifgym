@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "min_plymouth_rentals",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "note": "The rule ensures that at least 40% of total rentals go to Plymouth. However, the percentage is relative to the total rentals, so the rule should be expressed as a relative constraint."
+  }

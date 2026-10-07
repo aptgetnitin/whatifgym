@@ -1,0 +1,44 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "downgrade",
+   "column": "downgrade",
+   "where": {
+    "year": 1,
+    "from_skill": "skilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "overmanned",
+   "scope": {
+    "year": 2
+   },
+   "value": 25
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "year": [
+      1,
+      2,
+      3
+    ],
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ]
+   }
+  }
+ ]
+}

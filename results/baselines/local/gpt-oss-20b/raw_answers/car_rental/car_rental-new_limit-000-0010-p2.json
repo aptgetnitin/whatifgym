@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"max_damaged_transfers","measure":"damaged_transfers","sense":"<=","value":55}]}

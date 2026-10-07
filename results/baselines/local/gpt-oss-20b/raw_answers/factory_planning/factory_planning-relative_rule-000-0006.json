@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "store_at_least_2x_make",
+      "measure": "store",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make"
+      },
+      "factor": 2.0
+    }
+  ],
+  "note": "Enforce that the total inventory across all months and products is at least twice the total production."
+}

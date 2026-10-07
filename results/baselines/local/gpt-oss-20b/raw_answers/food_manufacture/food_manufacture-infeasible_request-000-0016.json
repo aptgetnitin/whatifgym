@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"measure":"store","scope":{"month":"Jun"},"sense":">=","value":5000}],"note":"Check feasibility of at least 5000 tons of oil in storage in June."}

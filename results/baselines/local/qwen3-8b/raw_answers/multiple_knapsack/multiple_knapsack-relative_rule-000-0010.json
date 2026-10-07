@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin2_placement_limit",
+      "measure": "x",
+      "scope": {
+        "bin": "bin2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "bin": "bin3"
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "item7_placement_min",
+      "measure": "x",
+      "scope": {
+        "item": "item7"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": "*"
+        }
+      },
+      "factor": 0.15
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "plymouth_rental_limit",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "rentals",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ]
+}

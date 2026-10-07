@@ -1,0 +1,66 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "skill": [
+          "semi_skilled"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "semi_skilled_overmanned_min_50",
+      "measure": "overmanned",
+      "scope": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "skill": [
+          "semi_skilled"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "semi_skilled_overmanned_total",
+      "measure": "overmanned",
+      "scope": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.5
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ]
+      }
+    }
+  ]
+}

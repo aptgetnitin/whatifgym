@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "repair_in_feb",
+   "measure": "repair",
+   "scope": {
+    "machine": "*"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repair",
+    "scope": {
+     "month": "Feb"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "At least 50% of the total number of machines down for maintenance may go to month Feb."
+}

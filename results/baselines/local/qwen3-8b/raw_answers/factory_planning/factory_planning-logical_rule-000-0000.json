@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod6_sell_mar",
+   "measure": "sell",
+   "scope": {
+    "month": "Mar",
+    "product": "Prod6"
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "prod6_sell_mar_min",
+   "measure": "sell",
+   "scope": {
+    "month": "Mar",
+    "product": "Prod6"
+   },
+   "sense": ">=",
+   "value": 600
+  }
+ ],
+ "note": "Logical rule: either the units sold for Prod6 in March is zero or at least 600."
+}

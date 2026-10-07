@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": "Milk",
+        "from_city": [
+          "any"
+        ],
+        "to_city": [
+          "any"
+        ]
+      },
+      "factor": 0.15
+    }
+  ],
+  "note": "A relative limit on the total flow of a specific food is a scale over the matching rows."
+}

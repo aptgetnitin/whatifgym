@@ -1,0 +1,11 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_discharge_kw",
+      "value": 0
+    }
+  ],
+  "note": "A floor on discharging power means setting the maximum discharge power to zero, which effectively disables discharging."
+  }

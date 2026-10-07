@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_mines",
+      "value": 3
+    }
+  ],
+  "rules": [
+    {
+      "name": "max_mines_year1",
+      "measure": "operate",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "value": 3
+    },
+    {
+      "name": "max_mines_year5",
+      "measure": "operate",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ],
+  "note": "The maximum number of mines that may operate in Year1 and Year5 is set to 3, removing the constraint for these years."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "blend_year1_at_least_2_year4",
+   "measure": "blend",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "blend",
+    "scope": {
+     "year": "Year4"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "A rule that enforces the blended ore sold in Year1 to be at least twice the blended ore sold in Year4."
+}

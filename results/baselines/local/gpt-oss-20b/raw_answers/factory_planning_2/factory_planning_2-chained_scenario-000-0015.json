@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","data_changes":[{"op":"scale","table":"machines","column":"installed","factor":1.1}],"rules":[{"measure":"make","scope":{"month":"Feb"},"sense":"<=","value":1600}],"note":"Keep the 10% increase in installed machines and add a February production cap of 1600 units."}

@@ -1,0 +1,21 @@
+{
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "maintenance",
+      "column": "machines_to_maintain",
+      "where": {
+        "machine": [
+          "grinder",
+          "vertDrill",
+          "horiDrill",
+          "borer",
+          "planer"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The maintenance requirement is removed by setting machines_to_maintain to 0 for all machine types."
+}

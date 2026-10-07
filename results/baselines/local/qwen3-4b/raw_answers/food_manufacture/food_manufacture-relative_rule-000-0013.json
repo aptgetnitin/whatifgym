@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "May"
+      },
+      "factor": 0.2
+    }
+  ],
+  "note": "A relative storage requirement over a subset of periods is a scale over the matching rows."
+}

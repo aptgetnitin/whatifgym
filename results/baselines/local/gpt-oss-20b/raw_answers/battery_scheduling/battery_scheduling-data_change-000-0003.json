@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","data_changes":[{"op":"scale_param","name":"max_discharge_kw","factor":2}],"note":"Double the maximum discharging power."}

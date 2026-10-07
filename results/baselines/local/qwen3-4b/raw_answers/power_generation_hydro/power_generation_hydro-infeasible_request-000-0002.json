@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": "15-18"
+      },
+      "value": 681600
+    }
+  ],
+  "note": "The planner asks for a total thermal output of at least 681600 MW. However, the model's output measure is per period and per thermal type, and the total thermal output is not a single measure. The question is ambiguous because it does not specify whether it's the total over all periods, all types, or a specific period. The model's output[period, type] is the total output of the type's running units in that period, so the total thermal output would be the sum over all periods and types. But the planner's question does not specify the time frame or the type of thermal output. This is not a precise what-if scenario."
+}

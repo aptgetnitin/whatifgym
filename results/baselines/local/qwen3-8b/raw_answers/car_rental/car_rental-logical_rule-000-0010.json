@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "relax": [
+  {
+   "constraint": "damaged_out",
+   "scope": {
+    "day": [
+      "Monday",
+      "Tuesday",
+      "Friday"
+    ],
+    "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   }
+  }
+ ],
+ "note": "Relaxing the damaged_out constraint for specific days and depots to allow only one of these days to have cars repaired."
+}

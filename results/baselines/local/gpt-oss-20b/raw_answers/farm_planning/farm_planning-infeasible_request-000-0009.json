@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","fixed_decisions":[{"measure":"grow_grain","scope":{"year":"Year1","land_group":"Group1"},"value":110}],"note":"Commit to exactly 110 tons of grain grown for year Year1, land group Group1, and plan the rest around it."}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "fixed_decisions": [
+    {
+      "measure": "make",
+      "scope": {
+        "month": "May",
+        "product": "Prod3"
+      },
+      "value": 450
+    },
+    {
+      "measure": "sell",
+      "scope": {
+        "month": "Apr"
+      },
+      "value": 120
+    }
+  ],
+  "note": "Fixed production of 450 units of Prod3 in May and fixed sales of 120 units per product in April."
+}

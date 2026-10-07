@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_sold_year2_zero_or_at_least_41",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell_beet",
+    "scope": {
+     "year": "Year2"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "sugar_beet_sold_year2_zero_or_at_least_41",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The sugar beet sold in Year2 must be either zero or at least 41."
+}

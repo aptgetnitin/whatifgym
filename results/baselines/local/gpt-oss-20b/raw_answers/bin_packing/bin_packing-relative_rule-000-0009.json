@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "bin1_at_most_80_percent_bin2",
+      "measure": "x",
+      "scope": {
+        "bin": "bin1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "bin": "bin2"
+        }
+      },
+      "factor": 0.8
+    },
+    {
+      "name": "bins_used_at_least_80_percent_items",
+      "measure": "y",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x"
+      },
+      "factor": 0.8
+    }
+  ]
+}

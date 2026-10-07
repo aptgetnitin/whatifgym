@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "quality",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year5"
+        ]
+      }
+    }
+  ]
+}

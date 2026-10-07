@@ -1,0 +1,63 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_inventory",
+   "value": 200
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "store",
+   "scope": {
+    "product": "Prod2"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "store",
+   "scope": {
+    "product": "Prod3"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "store",
+   "scope": {
+    "product": "Prod4"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "store",
+   "scope": {
+    "product": "Prod6"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "store",
+   "scope": {
+    "product": "Prod7"
+   }
+  }
+ ],
+ "note": "The storage limit is changed to 200, and the objective is to maximise the store for each product."
+}

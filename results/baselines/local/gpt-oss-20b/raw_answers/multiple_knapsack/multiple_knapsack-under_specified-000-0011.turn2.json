@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","data_changes":[{"op":"scale","table":"items","column":"value","where":{"item":["item0","item1","item2","item3","item4","item5","item6","item7","item8","item9","item10","item11","item12","item13","item14"]},"factor":0.75}],"note":"All item values reduced by 25%."}

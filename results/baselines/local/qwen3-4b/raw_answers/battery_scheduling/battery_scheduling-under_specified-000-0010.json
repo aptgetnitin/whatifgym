@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "import_price",
+      "where": {
+        "hour": "06-07"
+      },
+      "delta": 0
+    }
+  ],
+  "note": "The grid import price for hour 06-07 changes, but the question does not specify the change amount. The delta is not defined, so the scenario is not precise."
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "recruit",
+      "scope": {
+        "year": 3
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "recruit",
+        "scope": {}
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "At least 60% of total recruits must be in year 3."
+}

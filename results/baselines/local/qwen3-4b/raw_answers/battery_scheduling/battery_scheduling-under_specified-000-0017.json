@@ -1,0 +1,10 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_discharge_kw",
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "relax": [
+    {
+      "constraint": "end_stock",
+      "scope": {
+        "product": [
+          "Prod6",
+          "Prod1"
+        ]
+      }
+    }
+  ],
+  "note": "Lift end-of-horizon stock target for Prod6 and Prod1."
+}

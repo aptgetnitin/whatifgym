@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "cost_per_hour",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "cost_per_mwh_above_min",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 1.1
+    }
+  ],
+  "note": "The hourly running cost per unit for all thermal generator types is increased by 10%."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","logic":[{"name":"min_batch_thursday_plymouth","at_least":1,"of":[{"measure":"rentals","scope":{"day":"Thursday","depot":"Plymouth"},"sense":"<=","value":0},{"measure":"rentals","scope":{"day":"Thursday","depot":"Plymouth"},"sense":">=","value":127}]}]}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "undamaged_transfers",
+   "scope": {}
+  },
+  {
+   "sense": "max",
+   "measure": "weekly_profit",
+   "scope": {}
+  }
+ ],
+ "note": "Prioritise minimising undamaged transfers first, then maximising weekly profit."
+}

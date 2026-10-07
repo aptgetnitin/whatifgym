@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "oil2_purchase_share",
+   "measure": "buy",
+   "scope": {
+    "oil": "OIL2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "oil": [
+      "VEG1",
+      "VEG2",
+      "OIL1",
+      "OIL2",
+      "OIL3"
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "At least 60% of the total oil purchased must be OIL2."
+}

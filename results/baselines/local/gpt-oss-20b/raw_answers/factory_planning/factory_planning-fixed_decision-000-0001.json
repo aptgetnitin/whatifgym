@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","fixed_decisions":[{"measure":"sell","scope":{"month":"Feb","product":"Prod5"},"value":0}]}

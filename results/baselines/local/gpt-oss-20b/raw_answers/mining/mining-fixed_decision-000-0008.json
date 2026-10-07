@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "fixed_decisions": [
+    {
+      "measure": "operate",
+      "scope": {
+        "year": "Year1",
+        "mine": "Mine2"
+      },
+      "value": 1
+    }
+  ],
+  "rules": [
+    {
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "note": "Commit to working Mine2 in Year1 and ensure it is worked only in that year."
+}

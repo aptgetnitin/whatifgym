@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"min_repair_friday","measure":"repairs","scope":{"day":"Friday"},"sense":">=","value":94},{"name":"min_repair_thursday","measure":"repairs","scope":{"day":"Thursday"},"sense":">=","value":94}]}

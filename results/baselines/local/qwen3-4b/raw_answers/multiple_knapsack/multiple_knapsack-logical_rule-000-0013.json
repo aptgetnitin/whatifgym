@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "items",
+      "where": {
+        "item": [
+          "item9",
+          "item4",
+          "item3",
+          "item8"
+        ]
+      }
+    }
+  ],
+  "note": "The planner specifies that only one of these items can be placed, but the model requires each item to be placed at most once. Since the model already enforces that each item is placed in at most one bin (via assign_once[item]), the condition is automatically satisfied. However, the planner's question implies that one of these items must be excluded from the set of items to be packed. The most precise interpretation is that one of these items is removed from the model (i.e., not available for packing)."
+  }

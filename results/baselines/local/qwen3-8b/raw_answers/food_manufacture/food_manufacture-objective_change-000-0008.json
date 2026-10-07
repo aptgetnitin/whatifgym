@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "profit"
+  },
+  {
+   "sense": "min",
+   "measure": "store",
+   "scope": {
+    "month": "Mar"
+   }
+  }
+ ],
+ "note": "Prioritise maintaining maximum profit, then minimise storage in March."
+}

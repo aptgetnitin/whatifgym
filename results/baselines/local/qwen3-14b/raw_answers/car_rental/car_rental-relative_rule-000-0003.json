@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "repair_ratio_manchester_birmingham",
+      "measure": "repairs",
+      "scope": {
+        "depot": "Manchester"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "repairs",
+        "scope": {
+          "depot": "Birmingham"
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

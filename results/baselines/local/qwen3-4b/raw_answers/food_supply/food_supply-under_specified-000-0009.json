@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Hassakeh"
+      },
+      "factor": 0.0
+    }
+  ],
+  "note": "The question is about changing the number of beneficiaries for camp Hassakeh, which is a column in the camps table. The factor of 0 implies a scale change to zero, but the question is open-ended. However, the scenario DSL requires precise data changes. Since the question is vague, we need to ask for clarification."
+}

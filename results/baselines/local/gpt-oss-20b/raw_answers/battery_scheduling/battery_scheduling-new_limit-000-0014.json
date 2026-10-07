@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "total_charge_cap",
+      "measure": "charge",
+      "sense": "<=",
+      "value": 3.9
+    }
+  ],
+  "note": "Cap on total charging power over the day."
+}

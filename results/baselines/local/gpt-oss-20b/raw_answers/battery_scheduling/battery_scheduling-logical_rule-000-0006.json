@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"measure":"soc","scope":{"hour":["07-08","06-07","21-22","18-19","13-14"]},"sense":"<=","value":40.5}],"note":"Only 3 of the specified hours may have stored energy."}

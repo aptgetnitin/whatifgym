@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "ask": "What scope should the recruitment limit apply to? For example, total across all years and skills, per year, per skill, or per skill-year?"
+}

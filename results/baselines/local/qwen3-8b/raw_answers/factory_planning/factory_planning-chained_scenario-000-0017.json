@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": "grinder",
+    "product": "Prod5"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "prod5_production_limit",
+   "measure": "make",
+   "scope": {
+    "product": "Prod5"
+   },
+   "sense": "<=",
+   "value": 550
+  }
+ ],
+ "note": "Prod5 production is limited to 550 units per month across all months."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[{"op":"scale_param","name":"max_short_time","factor":1.25}],"note":"Increase the short‑time working limit per skill level by 25 %."}

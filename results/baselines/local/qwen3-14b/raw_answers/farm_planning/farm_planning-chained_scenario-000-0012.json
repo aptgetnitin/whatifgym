@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "beet_per_cow",
+      "value": 1.4
+    },
+    {
+      "op": "set",
+      "table": "land_groups",
+      "column": "area",
+      "where": {
+        "land_group": "Group1"
+      },
+      "value": 40
+    }
+  ]
+}

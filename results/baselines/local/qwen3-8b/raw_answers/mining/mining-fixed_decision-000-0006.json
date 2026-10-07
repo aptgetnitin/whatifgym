@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "order",
+   "where": {
+    "year": "Year2"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine2_worked_years",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine2"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Remove Year2 from the planning horizon and ensure Mine2 is not operated in any year."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Jan",
+    "product": "Prod1"
+   },
+   "value": 100
+  }
+ ],
+ "note": "The question is about the impact of an upper limit on units sold, so a scenario is created by setting an upper limit on units sold for a specific product and month."
+}

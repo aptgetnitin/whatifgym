@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "at_most_one_of_items",
+      "measure": "x",
+      "scope": {
+        "item": [
+          "item5",
+          "item7",
+          "item14",
+          "item4",
+          "item2"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

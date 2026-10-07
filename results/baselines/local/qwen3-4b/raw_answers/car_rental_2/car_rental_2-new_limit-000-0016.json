@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "birmingham_undamaged_left_min",
+      "measure": "undamaged_left",
+      "scope": {
+        "depot": "Birmingham",
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ]
+      },
+      "sense": ">=",
+      "value": 650
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "profit"
+    }
+  ],
+  "fixed_decisions": []
+}

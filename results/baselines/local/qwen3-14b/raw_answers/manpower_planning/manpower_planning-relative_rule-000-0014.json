@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "redundancy_year2_limit",
+      "measure": "redundant",
+      "scope": {
+        "year": 2,
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "redundant",
+        "scope": {
+          "year": 1,
+          "skill": [
+            "unskilled",
+            "semi_skilled",
+            "skilled"
+          ]
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "logic": [
+    {
+      "name": "repairs_tuesday_plymouth_disjunction",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "repairs",
+          "scope": {
+            "day": "Tuesday",
+            "depot": "Plymouth"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "repairs",
+          "scope": {
+            "day": "Tuesday",
+            "depot": "Plymouth"
+          },
+          "sense": ">=",
+          "value": 12.5
+        }
+      ]
+    }
+  ],
+  "note": "Repairs on Tuesday at Plymouth must be either zero or at least 12.5."
+}

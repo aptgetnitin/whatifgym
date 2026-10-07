@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "cap_produce_total",
+   "measure": "produce",
+   "scope": {},
+   "sense": "<=",
+   "value": 2450
+  },
+  {
+   "name": "cap_produce_feb",
+   "measure": "produce",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 340
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope."
+}

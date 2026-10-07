@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "mine",
+   "where": {
+    "mine": "Mine4"
+   },
+   "value": "Mine4"
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine4_total_extraction",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine4"
+   },
+   "sense": ">=",
+   "value": 9562500
+  }
+ ],
+ "note": "A rule is added to ensure Mine4 extracts at least 9562500 tons across all years."
+}

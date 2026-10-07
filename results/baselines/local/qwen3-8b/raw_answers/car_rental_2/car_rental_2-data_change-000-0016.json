@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "transfer_costs",
+   "column": "cost",
+   "where": {
+    "from_depot": "Manchester",
+    "to_depot": "Plymouth"
+   },
+   "value": 18
+  },
+  {
+   "op": "scale_param",
+   "name": "weekly_cost",
+   "factor": 1.25
+  }
+ ],
+ "note": "The transfer cost between Manchester and Plymouth is set to 18, and the weekly cost of all expansion options is increased by 25%."
+}

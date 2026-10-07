@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retrain",
+      "column": "retrain",
+      "where": {
+        "year": 1,
+        "from_skill": "semi_skilled",
+        "to_skill": "skilled"
+      },
+      "value": 510
+    }
+  ]
+}

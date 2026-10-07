@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","rules":[{"name":"bins_at_least_60pct_items","measure":"y[bin]","sense":">=","relative_to":{"measure":"x[item, bin]"},"factor":0.6}]}

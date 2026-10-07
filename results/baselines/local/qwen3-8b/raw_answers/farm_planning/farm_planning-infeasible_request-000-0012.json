@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "dairy_cows_age_2_min",
+   "measure": "herd",
+   "scope": {
+    "age": 2
+   },
+   "sense": ">=",
+   "value": 149
+  }
+ ],
+ "note": "A rule to ensure the number of cattle in age 2 meets the minimum requirement."
+}

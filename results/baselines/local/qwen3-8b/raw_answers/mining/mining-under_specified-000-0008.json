@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "mining","rules": [{"name": "mine_years_open_cap","measure": "open","scope": {"mine": ["Mine1","Mine2","Mine3","Mine4"]},"sense": "<=","value": 5}],"note": "A cap on the total number of mine-years kept open across all mines."}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "damaged_left",
+      "scope": {
+        "day": "*",
+        "depot": "*"
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "profit",
+      "scope": {
+        "day": "*",
+        "depot": "*"
+      }
+    }
+  ]
+}

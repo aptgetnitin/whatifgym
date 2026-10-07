@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_sales_limit_year1",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "value": 25
+    }
+  ]
+}

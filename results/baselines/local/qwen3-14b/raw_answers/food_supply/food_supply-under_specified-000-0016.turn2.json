@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "ration_floor_hassakeh",
+   "measure": "ration",
+   "scope": {
+    "camp": "Hassakeh"
+   },
+   "sense": ">=",
+   "value": 6.1
+  }
+ ],
+ "note": "A floor on the ration per person in Hassakeh is enforced by a rule that bounds the sum of the ration measure over the specified scope."
+}

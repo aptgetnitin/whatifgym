@@ -1,0 +1,15 @@
+{
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "output",
+      "where": {
+        "type": "Thermal1"
+      },
+      "value": 136500
+    }
+  ],
+  "note": "The planner asks for a minimum thermal output of 136500 MW for Thermal1. This is a fixed decision for the model to check."
+}

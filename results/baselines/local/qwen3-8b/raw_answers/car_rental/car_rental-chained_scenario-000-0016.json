@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_same_depot",
+   "factor": 2.0
+  }
+ ],
+ "note": "Every price, return to same depot in the rental-length mix and prices table rises by 100%. Effect?"
+}

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "camps",
+   "column": "beneficiaries",
+   "where": {
+    "camp": "Ar Raqqa"
+   },
+   "value": 20000
+  }
+ ]
+}

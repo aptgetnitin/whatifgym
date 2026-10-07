@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "stock_at_least_twice_make",
+   "measure": "store",
+   "scope": {
+    "month": [
+     "Jun"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": [
+      "Jun"
+     ]
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "A rule that enforces the total stock to be at least twice the total units made."
+}

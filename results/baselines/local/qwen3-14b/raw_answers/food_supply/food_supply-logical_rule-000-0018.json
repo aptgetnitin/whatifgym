@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "ration_limit_csb_daraa",
+   "measure": "ration",
+   "scope": {
+    "food": "Corn-soya blend (CSB)",
+    "camp": "Daraa"
+   },
+   "sense": ">=",
+   "value": 1.05
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","fixed_decisions":[{"measure":"ration","scope":{"food":"Oil","camp":"Dayr_Az_Zor"},"value":4}],"note":"Commit to exactly 4 units of Oil per person in Dayr_Az_Zor."}

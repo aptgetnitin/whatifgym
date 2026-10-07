@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "damaged_stock",
+      "scope": {
+        "depot": "Plymouth"
+      }
+    }
+  ],
+  "note": "First keep weekly profit at its maximum, then maximize the total number of damaged cars at Plymouth in the morning across the week."
+}

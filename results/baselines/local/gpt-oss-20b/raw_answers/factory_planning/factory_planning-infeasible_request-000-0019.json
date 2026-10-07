@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "min_make_Feb",
+      "measure": "make",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "value": 3700
+    },
+    {
+      "name": "min_make_Apr",
+      "measure": "make",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "value": 2550
+    }
+  ],
+  "note": "At least 3700 units made in Feb and at least 2550 units made in Apr."
+}

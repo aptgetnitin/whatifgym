@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "total_food_bought_below_50_percent_of_shipped",
+      "measure": "purchase",
+      "scope": {
+        "food": [
+          "All"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.5
+    },
+    {
+      "name": "corn_soja_blend_at_least_1_5_times_milk",
+      "measure": "purchase",
+      "scope": {
+        "food": [
+          "Corn-soya blend (CSB)"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": [
+            "Milk"
+          ]
+        }
+      },
+      "factor": 1.5
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

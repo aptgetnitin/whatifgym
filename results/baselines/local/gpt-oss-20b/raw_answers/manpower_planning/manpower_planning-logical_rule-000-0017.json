@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","logic":[{"name":"redundant_unskilled_year3","at_least":1,"of":[{"measure":"redundant","scope":{"year":3,"skill":"unskilled"},"sense":"==","value":0},{"measure":"redundant","scope":{"year":3,"skill":"unskilled"},"sense":">=","value":580}]}]}

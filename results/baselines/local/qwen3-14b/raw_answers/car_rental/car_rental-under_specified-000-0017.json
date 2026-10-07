@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","ask":"Which price (price_same_depot or price_other_depot) and for which rental length (1 day) is being changed?"}

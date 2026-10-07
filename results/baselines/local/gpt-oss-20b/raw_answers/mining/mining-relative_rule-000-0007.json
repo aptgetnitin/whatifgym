@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Year5_worked_fraction",
+      "measure": "operate",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {}
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Year5 must account for at least 50% of all mine-years worked."
+}

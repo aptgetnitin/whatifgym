@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "fixed_decisions": [
+    {
+      "measure": "short_time",
+      "scope": {
+        "year": 1,
+        "skill": "skilled"
+      },
+      "value": 62
+    }
+  ],
+  "note": "Fix short‑time workers for skilled in year 1 to exactly 62."
+}

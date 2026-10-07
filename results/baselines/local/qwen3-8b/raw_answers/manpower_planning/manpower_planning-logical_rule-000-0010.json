@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_to_higher_skill_year_1",
+   "measure": "retrain",
+   "scope": {
+    "year": 1,
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "year": 1,
+     "skill": "unskilled"
+    }
+   },
+   "factor": 860
+  }
+ ],
+ "note": "A rule that links the retraining to higher skill levels in year 1 with the overmanned workers for unskilled skill level in year 1."
+}

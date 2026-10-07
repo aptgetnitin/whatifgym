@@ -1,0 +1,61 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod1_at_least_40_percent_of_total_make",
+   "measure": "make",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "product": [
+      "Prod1",
+      "Prod2",
+      "Prod3",
+      "Prod4",
+      "Prod5",
+      "Prod6",
+      "Prod7"
+     ]
+    }
+   },
+   "factor": 0.4
+  },
+  {
+   "name": "total_sold_at_most_60_percent_of_total_stock",
+   "measure": "sell",
+   "scope": {
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": [
+      "Prod1",
+      "Prod2",
+      "Prod3",
+      "Prod4",
+      "Prod5",
+      "Prod6",
+      "Prod7"
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "Rules enforce that Prod1 accounts for at least 40% of total production and total sales are at most 60% of total stock."
+}

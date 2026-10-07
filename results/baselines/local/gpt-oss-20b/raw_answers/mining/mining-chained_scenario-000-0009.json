@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"add","table":"mines","rows":[{"mine":"new_mine","royalty":4000000,"capacity":2000000,"quality":1.5}]},{"op":"set","table":"years","column":"quality_target","where":{"year":"Year4"},"value":1.2}]}

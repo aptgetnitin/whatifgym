@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","data_changes":[{"op":"scale","table":"periods","column":"demand_mw","where":{"period":["00-06","06-09","09-15","15-18","18-24"]},"factor":0.9}]}

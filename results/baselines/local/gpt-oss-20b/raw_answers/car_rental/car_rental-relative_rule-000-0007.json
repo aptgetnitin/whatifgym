@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "friday_undamaged_min_40pct",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Friday"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "undamaged_stock",
+        "scope": {}
+      },
+      "factor": 0.4
+    }
+  ],
+  "note": "Friday morning undamaged stock must be at least 40% of the total undamaged stock across all days and depots."
+}

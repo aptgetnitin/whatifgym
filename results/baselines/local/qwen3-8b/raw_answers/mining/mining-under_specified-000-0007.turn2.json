@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "minimum_mine_years_open",
+   "measure": "open",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "value": 4
+  }
+ ],
+ "note": "A rule to enforce a minimum number of mine-years kept open in Year5."
+}

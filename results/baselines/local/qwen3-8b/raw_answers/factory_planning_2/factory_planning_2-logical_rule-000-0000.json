@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "logic": [
+  {
+   "name": "prod1_stock_at_least_300_if_prod2_stock_positive",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "store",
+     "sense": ">=",
+     "value": 300,
+     "scope": {
+      "product": "Prod1"
+     }
+    },
+    {
+     "measure": "store",
+     "sense": "==",
+     "value": 0,
+     "scope": {
+      "product": "Prod2"
+     }
+    }
+   ]
+  }
+ ]
+}

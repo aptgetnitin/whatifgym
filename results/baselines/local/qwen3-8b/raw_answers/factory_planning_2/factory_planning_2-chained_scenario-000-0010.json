@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "measure": "sell",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": "<=",
+   "value": 1100,
+   "name": "cap_sell_Prod1"
+  }
+ ],
+ "note": "The total units sold for product Prod1 is capped at 1100."
+}

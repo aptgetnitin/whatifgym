@@ -1,0 +1,11 @@
+{
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_mines",
+      "value": 1
+    }
+  ],
+  "note": "The planner's question 'Suppose the number of mine-years worked gets capped' is ambiguous. 'Capped' could mean a fixed maximum number of mines that can be worked per year (e.g., max_mines = 1), but the exact cap value is not specified. The model's parameter 'max_mines' is the maximum number of mines that may be worked in any one year, so setting it to a specific value (e.g., 1) would be a data change. However, without knowing the exact cap value, this scenario cannot be precisely defined. The planner needs to specify the exact cap (e.g., 'at most 1 mine per year')."
+}

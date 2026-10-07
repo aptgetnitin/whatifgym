@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","objective":[{"measure":"original","sense":"max"},{"measure":"repairs","sense":"min"},{"measure":"damaged_stock","sense":"max"}],"note":"Lexicographic objective: profit, then repairs, then damaged stock."}

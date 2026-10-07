@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_limit_13-14",
+   "measure": "soc",
+   "scope": {
+    "hour": "13-14"
+   },
+   "sense": "<=",
+   "value": 8
+  },
+  {
+   "name": "charge_min_02-03",
+   "measure": "charge",
+   "scope": {
+    "hour": "02-03"
+   },
+   "sense": ">=",
+   "value": 4.2
+  }
+ ],
+ "note": "The scenario imposes a limit on the total stored energy during the 13-14 hour and a minimum charging power during the 02-03 hour."
+}

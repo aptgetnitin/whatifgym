@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "camps",
+   "where": {
+    "camp": "Hassakeh"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "corn_soya_blend_shipment_limit",
+   "measure": "flow",
+   "scope": {
+    "food": "Corn-soya blend (CSB)"
+   },
+   "sense": "<=",
+   "value": 12300
+  }
+ ],
+ "note": "The total food shipped for Corn-soya blend (CSB) is limited to 12300 units per day."
+}

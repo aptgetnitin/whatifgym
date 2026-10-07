@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"item_placement_limit","measure":"x","scope":{"bin":["bin2","bin1","bin4","bin3"]},"sense":"<=","value":2}]}

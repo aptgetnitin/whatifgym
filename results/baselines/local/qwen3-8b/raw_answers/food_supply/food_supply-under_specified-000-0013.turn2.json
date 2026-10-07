@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": "Qamishli"
+      }
+    }
+  ],
+  "note": "Removing the Qamishli camp from the camps table."
+}

@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_transfers_to_birmingham",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Monday",
+    "from_depot": "Plymouth",
+    "to_depot": "Birmingham"
+   },
+   "sense": ">=",
+   "value": 25
+  }
+ ],
+ "note": "The rule ensures that at least 25 damaged cars are transferred to Birmingham on Monday, which affects the damaged_stock at Birmingham on Tuesday."
+}

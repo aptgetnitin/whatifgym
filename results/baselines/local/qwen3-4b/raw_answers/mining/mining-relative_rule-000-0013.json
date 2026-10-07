@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine4_at_least_75_of_mine_years",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "mine": [
+            "Mine1",
+            "Mine2",
+            "Mine3",
+            "Mine4"
+          ]
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

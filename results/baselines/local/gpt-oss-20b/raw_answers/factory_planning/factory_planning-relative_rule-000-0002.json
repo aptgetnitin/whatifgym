@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"sell_to_store_ratio","measure":"sell","sense":"<=","relative_to":{"measure":"store"},"factor":1.5}],"note":"Total units sold may be at most 1.5 times total units in stock."}

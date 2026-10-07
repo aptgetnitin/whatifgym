@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"mar_sales_5pct","measure":"sell","scope":{"month":"Mar"},"sense":"<=","relative_to":{"measure":"sell"},"factor":0.05}],"note":"Limit total sales in March to at most 5% of overall sales."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"measure":"ration","scope":{"food":"Corn-soya blend (CSB)","camp":"Daraa"},"sense":">=","value":1.05}],"note":"Enforce a minimum ration of 1.05 units per person for CSB in Daraa whenever CSB is purchased."}

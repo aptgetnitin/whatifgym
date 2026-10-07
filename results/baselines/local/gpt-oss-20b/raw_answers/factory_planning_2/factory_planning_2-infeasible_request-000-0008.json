@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod3_min_made",
+      "measure": "make",
+      "scope": {
+        "product": "Prod3"
+      },
+      "sense": ">=",
+      "value": 3750
+    }
+  ],
+  "note": "Require at least 3750 units of Prod3 to be manufactured over the horizon."
+}

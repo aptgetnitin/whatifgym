@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "value": 2950,
+      "name": "min_store_feb"
+    }
+  ]
+}

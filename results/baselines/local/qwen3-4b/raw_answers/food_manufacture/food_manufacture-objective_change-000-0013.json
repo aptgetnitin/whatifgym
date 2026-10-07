@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "profit",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "consume",
+      "scope": {}
+    },
+    {
+      "sense": "min",
+      "measure": "store",
+      "scope": {}
+    }
+  ]
+}

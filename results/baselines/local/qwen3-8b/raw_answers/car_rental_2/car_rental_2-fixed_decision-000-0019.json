@@ -1,0 +1,67 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "damaged_stock",
+   "column": "damaged_stock",
+   "where": {
+    "day": "Monday",
+    "depot": "Plymouth"
+   },
+   "value": 3.8
+  },
+  {
+   "op": "set",
+   "table": "damaged_stock",
+   "column": "damaged_stock",
+   "where": {
+    "day": "Tuesday",
+    "depot": "Plymouth"
+   },
+   "value": 3.8
+  },
+  {
+   "op": "set",
+   "table": "damaged_stock",
+   "column": "damaged_stock",
+   "where": {
+    "day": "Wednesday",
+    "depot": "Plymouth"
+   },
+   "value": 3.8
+  },
+  {
+   "op": "set",
+   "table": "damaged_stock",
+   "column": "damaged_stock",
+   "where": {
+    "day": "Thursday",
+    "depot": "Plymouth"
+   },
+   "value": 3.8
+  },
+  {
+   "op": "set",
+   "table": "damaged_stock",
+   "column": "damaged_stock",
+   "where": {
+    "day": "Friday",
+    "depot": "Plymouth"
+   },
+   "value": 3.8
+  },
+  {
+   "op": "set",
+   "table": "damaged_stock",
+   "column": "damaged_stock",
+   "where": {
+    "day": "Saturday",
+    "depot": "Plymouth"
+   },
+   "value": 3.8
+  }
+ ],
+ "note": "Fixing the damaged_stock for Plymouth for every day to 3.8."
+}

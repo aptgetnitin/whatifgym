@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "short_time",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to first keep total redundancy at its minimum, then maximise the total workers on short-time working."
+}

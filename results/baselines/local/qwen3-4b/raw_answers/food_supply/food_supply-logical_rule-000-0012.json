@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "no_both_daraa_hassakeh",
+      "measure": "purchase",
+      "scope": {
+        "food": [
+          "any"
+        ],
+        "supplier": [
+          "Daraa",
+          "Hassakeh"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

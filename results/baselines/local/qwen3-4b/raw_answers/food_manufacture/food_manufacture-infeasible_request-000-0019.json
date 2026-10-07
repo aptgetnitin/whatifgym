@@ -1,0 +1,37 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "jan_produce_at_least_900",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jan"
+        ]
+      },
+      "sense": ">=",
+      "value": 900
+    },
+    {
+      "name": "jun_produce_at_least_900",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jun"
+        ]
+      },
+      "sense": ">=",
+      "value": 900
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

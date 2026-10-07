@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "consume",
+      "column": "consume",
+      "where": {
+        "month": "Mar",
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "factor": 0.95
+    }
+  ],
+  "note": "The question refers to the total tons of oil refined in March, which is the sum of consume over all oils for that month."
+}

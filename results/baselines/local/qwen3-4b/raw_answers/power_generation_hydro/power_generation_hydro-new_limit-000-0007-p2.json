@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The planner's question refers to the total number of thermal units running across all periods and types. This is a sum over the decision variable `ngen` (period, type). To express a constraint on this sum, we need to scale the `units_available` parameter for all thermal types to reflect the reduced capacity. However, the question asks for a constraint on the running units, not the available units. The correct approach is to add a rule that bounds the sum of `ngen` over all periods and types. But the question says 'couldn't go above 80', which is a hard constraint on the sum of running units. Since the model's decision variables are `ngen[period, type]`, the sum over all periods and types is a single measure. We can create a rule that sets a limit on this sum. However, the question is phrased as a 'what-if' scenario, meaning it's a change to the model. The planner might mean that the maximum number of thermal units running (across all periods and types) is capped at 80. This is a rule, not a data change. But the question says 'the number of thermal units running, added up over every period and every generator type, couldn't go above 80'. This is a constraint on the sum of `ngen` over all periods and types. In the DSL, rules are used for such constraints. However, the question is phrased as a 'what-if' scenario, which typically changes data or parameters. The planner might be asking for a new constraint. But the problem states: 'turns a planner's what-if question into a machine-checkable scenario for an existing optimization model'. The scenario can be a rule. Let's check the DSL: rules are for new linear limits on sums of a decision measure. The sum of `ngen` over all periods and types is a measure. We can create a rule that says: sum(ngen) <= 80. But the question says 'couldn't go above 80', which is a hard constraint. However, the problem says: 'only when the question cannot be made precise from the information available, {"}

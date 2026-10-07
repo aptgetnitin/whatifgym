@@ -1,0 +1,11 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_charge_kw",
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'capped' could mean a hard limit (e.g., 0 kW) or a soft limit (e.g., 5 kW). Without specifying the exact value, the scenario cannot be machine-checked."
+  }

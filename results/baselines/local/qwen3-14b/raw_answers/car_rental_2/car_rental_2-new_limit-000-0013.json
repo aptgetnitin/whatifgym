@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_stock_total_limit",
+      "measure": "undamaged_stock",
+      "scope": {},
+      "sense": "<=",
+      "value": 2650
+    },
+    {
+      "name": "undamaged_transfers_thursday_limit",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "day": "Thursday"
+      },
+      "sense": "<=",
+      "value": 45
+    }
+  ]
+}

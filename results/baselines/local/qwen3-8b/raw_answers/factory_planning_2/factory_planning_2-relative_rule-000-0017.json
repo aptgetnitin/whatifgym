@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod7_at_least_prod4",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod4"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A relative rule compares the sum of units sold for Prod7 to the sum of units sold for Prod4."
+}

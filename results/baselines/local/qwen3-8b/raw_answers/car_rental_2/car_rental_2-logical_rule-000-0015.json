@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "max_rentals_per_day",
+   "measure": "rentals",
+   "scope": {
+    "day": [
+     "Monday",
+     "Friday",
+     "Tuesday",
+     "Saturday"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "Restrict rentals to at most one day among Monday, Friday, Tuesday, and Saturday."
+}

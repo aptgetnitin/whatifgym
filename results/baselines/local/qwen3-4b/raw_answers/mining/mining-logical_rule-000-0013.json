@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine1",
+        "year": "Year1"
+      },
+      "value": 5000000
+    }
+  ],
+  "note": "A minimum batch constraint for a specific year and mine."
+}

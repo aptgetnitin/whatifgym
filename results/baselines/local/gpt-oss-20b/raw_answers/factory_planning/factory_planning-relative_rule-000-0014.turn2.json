@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "May_Jun_inventory_ratio",
+      "measure": "store",
+      "scope": {
+        "month": "May"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Jun"
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Ensure total inventory in May does not exceed 75% of total inventory in June."
+}

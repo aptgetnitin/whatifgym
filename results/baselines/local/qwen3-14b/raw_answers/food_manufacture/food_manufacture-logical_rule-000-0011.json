@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "refining_months_limit",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "consume",
+          "scope": {
+            "month": "Feb"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "consume",
+          "scope": {
+            "month": "Jan"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "consume",
+          "scope": {
+            "month": "May"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "consume",
+          "scope": {
+            "month": "Mar"
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

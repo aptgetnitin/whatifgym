@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_expansions",
+   "value": 9999
+  }
+ ],
+ "note": "Removing the cap on workshop expansions by setting max_expansions to a large value."
+}

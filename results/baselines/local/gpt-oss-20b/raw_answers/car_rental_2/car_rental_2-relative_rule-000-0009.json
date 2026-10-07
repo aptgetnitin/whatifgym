@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "step1_to_step2_ratio",
+      "measure": "expand",
+      "scope": {
+        "step": 1
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "expand",
+        "scope": {
+          "step": 2
+        }
+      },
+      "factor": 0.25
+    },
+    {
+      "name": "damaged_to_Glasgow_ratio",
+      "measure": "damaged_transfers",
+      "scope": {
+        "to_depot": "Glasgow"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "damaged_transfers",
+        "scope": {}
+      },
+      "factor": 0.5
+    }
+  ]
+}

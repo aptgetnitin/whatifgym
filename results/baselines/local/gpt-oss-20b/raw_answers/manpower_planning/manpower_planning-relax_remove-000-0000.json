@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "relax": [
+    {
+      "constraint": "overmanning",
+      "scope": {
+        "year": 2
+      }
+    }
+  ],
+  "note": "Lift the overmanning cap for year 2 only."
+}

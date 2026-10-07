@@ -1,0 +1,65 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_mines",
+   "where": {
+    "name": "max_mines"
+   },
+   "value": 7
+  },
+  {
+   "op": "set",
+   "table": "years",
+   "column": "quality_target",
+   "where": {
+    "year": "Year5"
+   },
+   "value": 3280000
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_mine_years",
+   "measure": "operate",
+   "scope": {
+    "mine": [
+      "Mine1",
+      "Mine2",
+      "Mine3",
+      "Mine4"
+    ],
+    "year": [
+      "Year1",
+      "Year2",
+      "Year3",
+      "Year4",
+      "Year5"
+    ]
+   },
+   "sense": "<=",
+   "value": 7
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "blend",
+   "scope": {
+    "year": "Year5"
+   }
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "blend",
+   "scope": {
+    "year": "Year5"
+   },
+   "value": 3280000
+  }
+ ]
+}

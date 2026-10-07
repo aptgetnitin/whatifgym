@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","relax":[{"constraint":"housing","scope":{"year":["Year1","Year3"]}}],"note":"Lift housing capacity limit for Year1 and Year3 only."}

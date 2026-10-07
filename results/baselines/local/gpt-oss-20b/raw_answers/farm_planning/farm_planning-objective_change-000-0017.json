@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","objective":[{"sense":"max","measure":"original"},{"sense":"min","measure":"grow_grain","scope":{"land_group":"Group2"}}]}

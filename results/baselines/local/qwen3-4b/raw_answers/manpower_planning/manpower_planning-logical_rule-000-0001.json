@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "downgrade_min_340",
+      "measure": "downgrade",
+      "scope": {
+        "year": 1,
+        "from_skill": "skilled",
+        "to_skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "value": 340
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      }
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+  }

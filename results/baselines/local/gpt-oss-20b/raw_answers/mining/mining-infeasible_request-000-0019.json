@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min_extract_year1",
+      "measure": "extract",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 11500000
+    },
+    {
+      "name": "min_extract_year3",
+      "measure": "extract",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": ">=",
+      "value": 6500000
+    }
+  ],
+  "note": "Enforce minimum extraction totals for Year1 and Year3."
+}

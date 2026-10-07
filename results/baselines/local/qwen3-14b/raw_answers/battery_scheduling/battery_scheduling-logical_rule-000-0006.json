@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "soc_restrictions",
+      "measure": "soc",
+      "scope": {
+        "hour": [
+          "06-07",
+          "07-08",
+          "13-14",
+          "18-19",
+          "21-22"
+        ]
+      },
+      "sense": "==",
+      "value": 3
+    }
+  ]
+}

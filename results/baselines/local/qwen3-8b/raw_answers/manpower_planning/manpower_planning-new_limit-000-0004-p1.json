@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_short_time",
+   "value": 240
+  }
+ ],
+ "rules": [
+  {
+   "name": "redundant_cap_year_2",
+   "measure": "redundant",
+   "scope": {
+    "year": 2
+   },
+   "sense": "<=",
+   "value": 80
+  }
+ ],
+ "note": "The scenario sets the max_short_time parameter to 240 and adds a rule to limit total redundancies in year 2 to 80."
+}

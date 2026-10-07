@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "ask": "What specific damage excess charged value are you referring to? The parameter `damage_excess` is a scalar, but the question implies a change in value. Please specify the new value or the change (e.g., 'increases by 100') to make the scenario precise."
+}

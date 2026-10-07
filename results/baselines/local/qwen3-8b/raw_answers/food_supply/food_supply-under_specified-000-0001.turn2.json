@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "nutrients",
+   "column": "min_per_person",
+   "where": {
+    "nutrient": "NicacinB3(mg)"
+   },
+   "factor": "scale"
+  }
+ ],
+ "rules": [
+  {
+   "name": "nicacin_b3_nutrition",
+   "measure": "ration",
+   "scope": {
+    "nutrient": "NicacinB3(mg)"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "nutrient": "NicacinB3(mg)"
+    }
+   },
+   "factor": "max_nutrient_factor"
+  }
+ ],
+ "note": "The minimum daily intake per person for nutrient NicacinB3(mg) is scaled, and the nutrition constraint is updated to reflect the new minimum."
+}

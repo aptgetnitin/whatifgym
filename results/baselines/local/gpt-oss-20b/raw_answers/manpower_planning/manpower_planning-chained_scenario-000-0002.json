@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "max_overmanned",
+      "factor": 1.25
+    },
+    {
+      "op": "scale_param",
+      "name": "short_time_productivity",
+      "factor": 1.5
+    }
+  ],
+  "note": "Keep that change. In addition: The short-time worker productivity changes by a factor of 1.5."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_transfers_to_manchester_at_least_78_undamaged_transfers_to_manchester",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Wednesday",
+    "from_depot": "Glasgow",
+    "to_depot": "Manchester"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "undamaged_transfers",
+    "scope": {
+     "day": "Wednesday",
+     "to_depot": "Manchester"
+    }
+   },
+   "factor": 78
+  }
+ ],
+ "note": "A rule that enforces a relationship between the sum of damaged transfers and undamaged transfers for a specific day and depot pair."
+}

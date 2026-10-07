@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "semi_skilled"
+      },
+      "value": 10700
+    }
+  ],
+  "note": "The planner asks if the total retrained workers (to a higher skill level) can be 10700. However, the model's retrain measure is defined as `retrain[year, from_skill, to_skill]` which is a 3D measure (year, from_skill, to_skill). The total retrained workers would be the sum over all years, from_skills, and to_skills. But the planner's question is about the target being 10700 retrained workers in total. The model's retrain measure is not directly a scalar value but a 3D measure. The question is ambiguous because it doesn't specify the scope of the retrain measure. The model's retrain measure is defined as `retrain[year, from_skill, "  }

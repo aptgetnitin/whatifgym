@@ -1,0 +1,15 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "relax",
+      "constraint": "retraining_limit",
+      "scope": {
+        "year": [
+          "1",
+          "2"
+        ]
+      }
+    }
+  ]
+}

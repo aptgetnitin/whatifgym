@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod2_at_most_10pct",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell"
+      },
+      "factor": 0.1
+    },
+    {
+      "name": "prod6_at_most_90pct_of_prod3",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod3"
+        }
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "Two relative limits: Prod2 <=10% of total sales; Prod6 <=90% of Prod3 sales."
+}

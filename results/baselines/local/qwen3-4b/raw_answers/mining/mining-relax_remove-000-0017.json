@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "stay_closed[year, mine]",
+      "scope": {
+        "mine": "Mine4"
+      }
+    }
+  ],
+  "note": "Lifting the stay_closed rule for Mine4 only means removing the constraint that Mine4 cannot reopen, but only for Mine4."
+}

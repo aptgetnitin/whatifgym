@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "food": "Wheat"
+   },
+   "value": 86400
+  }
+ ],
+ "note": "Setting the total flow of Wheat to 86400 units per day."
+}

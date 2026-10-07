@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod6_max_10_percent_of_total_make",
+   "measure": "make",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "product": [
+      "Prod1",
+      "Prod2",
+      "Prod3",
+      "Prod4",
+      "Prod5",
+      "Prod6",
+      "Prod7"
+     ]
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "A rule that limits the proportion of total production attributed to a specific product."
+}

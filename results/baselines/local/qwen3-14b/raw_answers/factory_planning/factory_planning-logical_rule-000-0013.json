@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "no_both_prod3_and_prod4_sales",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "product": "Prod3"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "product": "Prod4"
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

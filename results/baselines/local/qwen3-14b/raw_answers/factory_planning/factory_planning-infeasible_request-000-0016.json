@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod7_feb_make_min",
+      "measure": "make",
+      "scope": {
+        "month": "Feb",
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "value": 500
+    }
+  ]
+}

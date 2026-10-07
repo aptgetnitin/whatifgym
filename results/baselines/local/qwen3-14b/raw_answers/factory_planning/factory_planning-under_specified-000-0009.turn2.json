@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod1_total_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod1"
+      },
+      "sense": "<=",
+      "value": 1350
+    }
+  ],
+  "note": "A total cap on units made for Prod1 is added as a rule."
+}

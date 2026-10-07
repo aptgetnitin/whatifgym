@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "feb_make_to_apr_prod4_sell",
+   "measure": "make",
+   "scope": {
+    "month": "Feb",
+    "product": "Prod4"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": "Apr",
+     "product": "Prod4"
+    }
+   },
+   "factor": 150
+  }
+ ],
+ "note": "A rule that enforces a relationship between the sum of make and sell over specific months and products."
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal2_min_fraction",
+      "measure": "ngen",
+      "scope": { "type": "Thermal2" },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "ngen",
+        "scope": {}
+      },
+      "factor": 0.4
+    }
+  ],
+  "note": "At least 40% of total thermal units running must be Thermal2."
+}

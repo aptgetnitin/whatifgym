@@ -1,0 +1,47 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "oil_ration_min",
+   "measure": "ration",
+   "scope": {
+    "food": "Oil",
+    "camp": {
+     "camp": [
+      "Ar Raqqa",
+      "Daraa",
+      "Dayr_Az_Zor",
+      "Hassakeh",
+      "Idleb",
+      "Jubb_al_Jarrah",
+      "Qamishli"
+     ]
+    }
+   },
+   "sense": ">=",
+   "value": 17
+  },
+  {
+   "name": "wheat_ration_min",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat",
+    "camp": {
+     "camp": [
+      "Ar Raqqa",
+      "Daraa",
+      "Dayr_Az_Zor",
+      "Hassakeh",
+      "Idleb",
+      "Jubb_al_Jarrah",
+      "Qamishli"
+     ]
+    }
+   },
+   "sense": ">=",
+   "value": 55
+  }
+ ],
+ "note": "Rules enforce minimum ration levels for Oil and Wheat across all camps."
+}

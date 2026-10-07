@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "food": [
+          "all"
+        ],
+        "camp": [
+          "all"
+        ]
+      },
+      "value": 3
+    }
+  ],
+  "note": "The planner wants to keep the total food bought at or above 3 times the total food shipped. However, the model's decision variables are 'purchase' and 'flow', so this condition needs to be expressed as a rule rather than a data change."
+  }

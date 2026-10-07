@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "logic": [
+    {
+      "name": "heifer_raised_zero_or_at_least_34",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "raise_heifers",
+          "scope": {
+            "year": "Year1"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "raise_heifers",
+          "scope": {
+            "year": "Year1"
+          },
+          "sense": ">=",
+          "value": 34
+        }
+      ]
+    }
+  ]
+}

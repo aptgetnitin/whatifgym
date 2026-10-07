@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": "grinder"
+      },
+      "value": 1
+    },
+    {
+      "op": "set",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": "borer"
+      },
+      "value": 2
+    }
+  ],
+  "note": "The planner's question specifies that only one of May, Feb, or Jan may have units made. This implies a constraint on the production (make) for these months. However, the question is ambiguous about which month has units made. The scenario DSL requires precise data changes or rules. Since the question is unclear about the specific month, it's better to ask for clarification."
+}

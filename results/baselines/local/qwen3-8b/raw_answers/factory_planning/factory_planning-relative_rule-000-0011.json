@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "stock_at_least_three_times_make",
+   "measure": "store",
+   "scope": {
+    "month": [
+     "Jun"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": [
+      "Jun"
+     ]
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "The rule enforces that the total units in stock in the last month is at least three times the total units made in the same month."
+}

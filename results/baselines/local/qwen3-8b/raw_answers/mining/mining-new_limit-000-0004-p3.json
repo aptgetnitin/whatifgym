@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "quality_target",
+   "where": {
+    "year": "Year5"
+   },
+   "value": 3280000
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_mine_years_worked",
+   "measure": "operate",
+   "scope": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ],
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "<=",
+   "value": 7
+  }
+ ],
+ "note": "The total number of mine-years worked is constrained to 7, and the blended ore sold in Year5 is capped at 3280000 tons."
+}

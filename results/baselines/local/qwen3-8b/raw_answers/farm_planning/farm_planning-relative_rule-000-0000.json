@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "grain_grown_year3_limit",
+   "measure": "grow_grain",
+   "scope": {
+    "year": "Year3"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "grow_grain",
+    "scope": {
+     "year": "Year2"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "The rule limits the total grain grown in Year3 to 80% of the total grain grown in Year2."
+}

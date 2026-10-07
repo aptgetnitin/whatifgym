@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "food_nutrients",
+   "column": "amount",
+   "factor": 0.5
+  }
+ ],
+ "note": "A relative change to the nutritional content of all foods is a scale over the entire food_nutrients table."
+}

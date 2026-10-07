@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_food_shipped_at_least_1_5_times_total_food_bought",
+   "measure": "flow",
+   "scope": {
+    "food": "*"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "food": "*"
+    }
+   },
+   "factor": 1.5
+  },
+  {
+   "name": "wheat_ration_at_most_75_percent_of_milk_ration",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat",
+    "camp": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "food": "Milk",
+     "camp": "*"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Two relative limits: total food shipped is at least 1.5 times total food bought; wheat ration is at most 75% of milk ration."
+}

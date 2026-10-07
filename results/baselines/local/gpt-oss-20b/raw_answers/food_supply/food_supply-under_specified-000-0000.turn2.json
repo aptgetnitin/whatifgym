@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"arcs","column":"transport_cost","where":{"from_city":"Ar Raqqa","to_city":"Dayr_Az_Zor"},"factor":0.7}],"note":"Transport cost for link Ar Raqqa → Dayr_Az_Zor reduced by 30%."}

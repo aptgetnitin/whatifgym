@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "relax": [
+  {
+   "constraint": "max_hardness",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   }
+  }
+ ],
+ "note": "The maximum hardness constraint is relaxed for all months."
+}

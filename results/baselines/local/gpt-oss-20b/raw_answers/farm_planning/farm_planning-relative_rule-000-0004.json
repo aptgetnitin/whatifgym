@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"grain_ratio_rule","measure":"grow_grain","scope":{"year":"Year2"},"sense":">=","relative_to":{"measure":"grow_grain","scope":{"year":"Year5"}},"factor":1.25}]}

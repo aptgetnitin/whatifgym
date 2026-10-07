@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "energy_capacity_kwh",
+      "factor": 1.5
+    }
+  ],
+  "note": "Battery energy capacity increased by 50%."
+}

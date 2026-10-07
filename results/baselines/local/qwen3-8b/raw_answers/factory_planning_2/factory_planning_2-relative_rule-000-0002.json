@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "total_make_at_least_twice_total_sell",
+   "measure": "make",
+   "scope": {
+    "product": "Prod1",
+    "product": "Prod2",
+    "product": "Prod3",
+    "product": "Prod4",
+    "product": "Prod5",
+    "product": "Prod6",
+    "product": "Prod7"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod1",
+     "product": "Prod2",
+     "product": "Prod3",
+     "product": "Prod4",
+     "product": "Prod5",
+     "product": "Prod6",
+     "product": "Prod7"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "A rule that enforces the total units made to be at least twice the total units sold across all products."
+}

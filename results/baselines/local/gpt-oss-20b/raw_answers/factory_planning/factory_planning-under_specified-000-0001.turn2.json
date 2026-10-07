@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "total_stock_limit",
+      "measure": "store",
+      "sense": "<=",
+      "value": 900
+    }
+  ],
+  "note": "Add a total inventory limit of 900 unit‑months across all products and months."
+}

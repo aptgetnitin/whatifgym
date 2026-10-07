@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "storage_in_may",
+   "measure": "store",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "value": 1100
+  }
+ ],
+ "note": "A constraint on the total storage in May across all oils."
+}

@@ -1,0 +1,130 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [
+          1
+        ],
+        "skill": [
+          "skilled"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [
+          2
+        ],
+        "skill": [
+          "skilled"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [
+          3
+        ],
+        "skill": [
+          "skilled"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "skilled_recruit_min_50",
+      "measure": "recruit",
+      "scope": {
+        "year": [
+          1
+        ],
+        "skill": [
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "skilled_recruit_min_50",
+      "measure": "recruit",
+      "scope": {
+        "year": [
+          2
+        ],
+        "skill": [
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "skilled_recruit_min_50",
+      "measure": "recruit",
+      "scope": {
+          "year": [
+            3
+          ],
+          "skill": [
+            "skilled"
+          ]
+        },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {
+        "year": [
+          1
+        ],
+        "skill": [
+          "unskilled"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {
+        "year": [
+          2
+        ],
+        "skill": [
+          "unskilled"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {
+        "year": [
+          3
+        ],
+        "skill": [
+          "unskilled"
+        ]
+      }
+    }
+  ]
+}

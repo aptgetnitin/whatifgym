@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_transfers_limit",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "all",
+    "from_depot": "all",
+    "to_depot": "all"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "damaged_left",
+    "scope": {
+     "day": "all",
+     "depot": "all"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The rule limits the total damaged transfers to 75% of the total damaged cars kept at depots overnight."
+}

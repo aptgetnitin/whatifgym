@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_discharge_kw",
+      "where": {
+        "hour": "21-22"
+      },
+      "value": 2.5
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "energy_capacity_kwh",
+      "where": {
+        "hour": "all"
+      },
+      "value": 140
+    }
+  ],
+  "note": "The planner's question specifies two constraints: a limit on discharging power for hour 21-22 and a limit on total stored energy. However, the model's parameters are not indexed by hour, so the 'energy_capacity_kwh' parameter is a single value for the whole day. The 'max_discharge_kw' parameter is also a single value for the whole day, not per hour. Therefore, the scenario cannot be directly expressed as data changes on the model's parameters. The question likely intends to set a rule on the discharge measure for hour 21-22 and a rule on the total soc measure."
+  }

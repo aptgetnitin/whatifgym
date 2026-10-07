@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "inventory_at_least_sales",
+      "measure": "store",
+      "scope": {
+        "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Ensure that at each month the total inventory (sum over all products) is at least the total sales."
+}

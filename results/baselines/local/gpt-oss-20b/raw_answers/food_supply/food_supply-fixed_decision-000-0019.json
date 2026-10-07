@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","fixed_decisions":[{"measure":"purchase","scope":{"food":"Corn-soya blend (CSB)","supplier":["Aleppo","Amman","As_Suweida","Beirut","Damascus","Daraa","Dayr_Az_Zor","Gaziantep","Hama","Hassakeh","Homs"]},"value":5350}],"note":"Set CSB purchase to 5350 units per supplier."}

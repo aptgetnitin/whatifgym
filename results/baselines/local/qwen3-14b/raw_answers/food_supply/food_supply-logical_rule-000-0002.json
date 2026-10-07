@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "ration_dsm_dayr_az_zor",
+   "measure": "ration",
+   "scope": {
+    "food": "Dried skim milk (enriched) (DSM)",
+    "camp": "Dayr_Az_Zor"
+   },
+   "sense": ">=",
+   "value": 16350
+  },
+  {
+   "name": "flow_wheat_hassakeh_qamishli",
+   "measure": "flow",
+   "scope": {
+    "food": "Wheat",
+    "from_city": "Hassakeh",
+    "to_city": "Qamishli"
+   },
+   "sense": ">=",
+   "value": 16350
+  }
+ ]
+}

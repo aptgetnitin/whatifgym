@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "min_overmanned_year3",
+      "measure": "overmanned",
+      "scope": {
+        "year": 3
+      },
+      "sense": ">=",
+      "value": 300
+    }
+  ]
+}

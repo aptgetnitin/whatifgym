@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "relax": [
+    {
+      "constraint": "labour",
+      "scope": {
+        "year": "Year3"
+      }
+    }
+  ],
+  "note": "Labour limit removed for Year3"
+}

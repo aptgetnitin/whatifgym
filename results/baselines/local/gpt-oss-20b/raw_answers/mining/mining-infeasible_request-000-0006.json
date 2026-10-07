@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min_total_extract",
+      "measure": "extract",
+      "sense": ">=",
+      "value": 130458350
+    }
+  ],
+  "note": "Check feasibility of achieving at least 130,458,350 tons of total extraction."
+}

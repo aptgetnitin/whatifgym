@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "min_oil_purchase",
+   "measure": "purchase",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "value": 64550
+  }
+ ],
+ "note": "A minimum purchase requirement for oil across all suppliers."
+}

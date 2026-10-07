@@ -1,0 +1,92 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "store",
+   "column": "store",
+   "where": {
+    "month": "Mar",
+    "product": "Prod4"
+   },
+   "value": 120
+  },
+  {
+   "op": "set",
+   "table": "sell",
+   "column": "sell",
+   "where": {
+    "month": "Jan",
+    "product": "Prod1"
+   },
+   "value": 570
+  },
+  {
+   "op": "set",
+   "table": "sell",
+   "column": "sell",
+   "where": {
+    "month": "Jan",
+    "product": "Prod2"
+   },
+   "value": 570
+  },
+  {
+   "op": "set",
+   "table": "sell",
+   "column": "sell",
+   "where": {
+    "month": "Jan",
+    "product": "Prod3"
+   },
+   "value": 570
+  },
+  {
+   "op": "set",
+   "table": "sell",
+   "column": "sell",
+   "where": {
+    "month": "Jan",
+    "product": "Prod4"
+   },
+   "value": 570
+  },
+  {
+   "op": "set",
+   "table": "sell",
+   "column": "sell",
+   "where": {
+    "month": "Jan",
+    "product": "Prod5"
+   },
+   "value": 570
+  },
+  {
+   "op": "set",
+   "table": "sell",
+   "column": "sell",
+   "where": {
+    "month": "Jan",
+    "product": "Prod6"
+   },
+   "value": 570
+  },
+  {
+   "op": "set",
+   "table": "sell",
+   "column": "sell",
+   "where": {
+    "month": "Jan",
+    "product": "Prod7"
+   },
+   "value": 570
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

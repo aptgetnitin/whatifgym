@@ -1,0 +1,15 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "skills",
+      "column": "current_strength",
+      "where": {
+        "skill": "semi_skilled"
+      },
+      "value": "200"
+    }
+  ],
+  "note": "The current workforce for skill level semi_skilled is changed to 200 workers."
+}

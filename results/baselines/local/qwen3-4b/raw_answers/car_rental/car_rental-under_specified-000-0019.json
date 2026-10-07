@@ -1,0 +1,32 @@
+{
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "share",
+      "where": {
+        "rental_days": 2
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "price_other_depot",
+      "where": {
+        "rental_days": 2
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "marginal_cost",
+      "where": {
+        "rental_days": 2
+      },
+      "factor": 0.8
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_to_higher_skill_year_2",
+   "measure": "retrain",
+   "scope": {
+    "year": 2,
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": ">=",
+   "value": 190
+  }
+ ],
+ "note": "The rule ensures that the total number of workers retrained to a higher skill level in year 2 is at least 190."
+}

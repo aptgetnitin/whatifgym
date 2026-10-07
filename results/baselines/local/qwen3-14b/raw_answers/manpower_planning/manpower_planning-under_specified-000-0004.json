@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "overmanning_cap",
+      "measure": "overmanned",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": "<=",
+      "value": 250
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": [
+          "Idleb"
+        ]
+      },
+      "factor": 2.0
+    },
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": [
+          "Qamishli"
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "table": "camps",
+      "rows": [
+        {
+          "camp": "Homs",
+          "beneficiaries": 3000
+        }
+      ]
+    }
+  ],
+  "note": "The question asks for a change in beneficiaries, which is a column in the camps table. The scenario surface specifies: Idleb's population doubles to 10,000 (scale by 2), Qamishli camp closes (remove row), and a camp of 3,000 people opens in Homs (add row)."
+}

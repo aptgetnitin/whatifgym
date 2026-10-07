@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "open_mine_years_at_least_1_5_times_worked",
+   "measure": "open",
+   "scope": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "mine": [
+      "Mine1",
+      "Mine2",
+      "Mine3",
+      "Mine4"
+     ]
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "A rule that enforces the total number of mine-years kept open is at least 1.5 times the total number of mine-years worked."
+}

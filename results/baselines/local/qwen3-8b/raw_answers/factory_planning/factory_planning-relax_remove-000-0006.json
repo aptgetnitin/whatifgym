@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "end_stock",
+   "scope": {
+    "product": "*"
+   }
+  }
+ ],
+ "note": "The end-of-horizon stock target constraint is relaxed for all products."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "charge"
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "Lexicographic objective: first minimize total charging power, then maximize profit."
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "min_flow_dayr_az_zor_to_ar_raqqa_csb",
+      "measure": "flow",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "from_city": "Dayr_Az_Zor",
+        "to_city": "Ar Raqqa"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "Corn-soya blend (CSB)",
+          "supplier": "Aleppo"
+        }
+      },
+      "factor": 10500
+    }
+  ]
+}

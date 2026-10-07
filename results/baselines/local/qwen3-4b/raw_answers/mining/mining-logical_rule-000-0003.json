@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "at_least_4_mine_years_open",
+      "at_least": 4,
+      "of": [
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year1"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year2"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year3"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year4"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year5"
+          },
+          "sense": ">=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","fixed_decisions":[{"measure":"store","scope":{"month":"Mar","product":"Prod1"},"value":150}],"note":"Fix store for Mar, Prod1 to 150 units."}

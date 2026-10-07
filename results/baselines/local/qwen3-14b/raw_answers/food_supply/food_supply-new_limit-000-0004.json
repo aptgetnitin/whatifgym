@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_ration_min",
+      "measure": "ration",
+      "scope": {
+        "food": "Oil"
+      },
+      "sense": ">=",
+      "value": 6.7
+    }
+  ]
+}

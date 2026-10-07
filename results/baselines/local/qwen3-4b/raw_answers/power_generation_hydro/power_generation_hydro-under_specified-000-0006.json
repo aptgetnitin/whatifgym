@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_on_at_start",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is vague: 'capped' could mean different things. The model has a fixed initial state for thermal units (units_on_at_start), which is set to 5 for all types in the original model. If the planner means that the number of thermal units running is capped at a certain level, this would require a rule or parameter change. However, without specifying the cap value or the context, it's unclear how to translate this into a machine-checkable scenario."
+}

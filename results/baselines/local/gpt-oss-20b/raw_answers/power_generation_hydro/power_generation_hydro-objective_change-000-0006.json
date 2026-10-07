@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","objective":[{"sense":"min","measure":"original"},{"sense":"max","measure":"pump"}],"note":"Maximize total pumping power while keeping total generating cost optimal."}

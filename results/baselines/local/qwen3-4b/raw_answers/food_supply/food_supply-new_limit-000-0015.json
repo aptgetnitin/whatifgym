@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "from_city": "Aleppo"
+      },
+      "factor": 0.9999999999999999
+    }
+  ],
+  "note": "A relative change to a single city's flow is a scale over the matching rows."
+}

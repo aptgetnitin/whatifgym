@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "max_one_supplier",
+   "measure": "purchase",
+   "scope": {
+    "food": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "supplier": [
+      "Hassakeh",
+      "Homs",
+      "Daraa",
+      "Aleppo"
+     ]
+    }
+   },
+   "factor": 1
+  }
+ ],
+ "note": "At most one of the suppliers Hassakeh, Homs, Daraa and Aleppo can have any food bought."
+}

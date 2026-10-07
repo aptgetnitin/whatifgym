@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "overmanned_year2_at_most_80_year1",
+      "measure": "overmanned",
+      "scope": {
+        "year": 2
+      },
+      "sense": "<=",
+      "value": 0.8,
+      "relative_to": {
+        "measure": "overmanned",
+        "scope": {
+          "year": 1
+        }
+      }
+    }
+  ]
+}

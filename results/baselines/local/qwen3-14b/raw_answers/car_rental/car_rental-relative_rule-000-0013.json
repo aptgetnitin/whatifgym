@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "monday_undamaged_left_min",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "undamaged_left",
+        "scope": {}
+      },
+      "factor": 0.4
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "nutrients",
+      "column": "min_per_person",
+      "where": {
+        "nutrient": "Fat(g)"
+      },
+      "value": 134
+    }
+  ],
+  "note": "Updated minimum daily intake for Fat(g) to 134."
+}

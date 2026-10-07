@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "open"
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "Minimise total number of mine-years kept open, then maximise discounted profit."
+}

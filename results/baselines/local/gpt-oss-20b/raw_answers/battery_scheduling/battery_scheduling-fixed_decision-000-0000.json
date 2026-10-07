@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","fixed_decisions":[{"measure":"soc","scope":{"hour":"09-10"},"value":7},{"measure":"discharge","scope":{"hour":"19-20"},"value":0}],"note":"Fix soc at 7 kWh for 09-10 and discharge at 0 kW for 19-20"}

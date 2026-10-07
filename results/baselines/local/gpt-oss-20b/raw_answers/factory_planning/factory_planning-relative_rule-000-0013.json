@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"prod1_min_75_percent_of_sales","measure":"sell","scope":{"product":"Prod1"},"sense":">=","relative_to":{"measure":"sell","scope":{}},"factor":0.75}],"note":"At least 75% of total units sold must be Prod1."}

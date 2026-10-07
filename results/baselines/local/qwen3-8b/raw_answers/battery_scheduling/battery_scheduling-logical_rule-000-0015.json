@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_limit",
+   "measure": "soc",
+   "scope": {
+    "hour": [
+     "16-17",
+     "19-20",
+     "02-03",
+     "23-24",
+     "13-14"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Only two of the specified hours can have battery stored energy (soc) by setting their soc to 0."
+}

@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "thermal_types",
+   "column": "max_output_mw",
+   "where": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "hydro_units",
+   "column": "output_mw",
+   "where": {
+    "hydro": [
+     "HydroA",
+     "HydroB"
+    ]
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "A relative change to the maximum output per unit across all thermal and hydro units."
+}

@@ -1,0 +1,66 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": "semi_skilled",
+        "to_skill": "skilled"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "retraining_limit",
+      "measure": "retrain",
+      "scope": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      }
+    }
+  ]
+}

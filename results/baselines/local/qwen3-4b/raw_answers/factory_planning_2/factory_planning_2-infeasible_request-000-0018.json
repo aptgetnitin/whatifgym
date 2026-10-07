@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original",
+      "scope": {
+        "make": [
+          "total"
+        ]
+      }
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "make",
+      "scope": {
+        "month": [
+          "total"
+        ]
+      },
+      "value": 26500
+    }
+  ]
+  }

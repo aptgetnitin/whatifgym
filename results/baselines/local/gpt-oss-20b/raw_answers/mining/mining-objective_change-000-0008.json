@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "blend"
+    },
+    {
+      "sense": "max",
+      "measure": "operate"
+    }
+  ],
+  "note": "Lexicographic objective: maximize discounted profit, then minimize total blended ore sold, then maximize total mine-years worked."
+}

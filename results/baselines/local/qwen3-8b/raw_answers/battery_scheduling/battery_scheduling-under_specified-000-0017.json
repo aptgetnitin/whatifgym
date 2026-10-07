@@ -1,0 +1,1 @@
+{"version": "0.1","base_model":"battery_scheduling","data_changes":[{"op":"set_param","name":"max_discharge_kw","value":3}],"note":"Capping the maximum discharging power to 3 kW."}

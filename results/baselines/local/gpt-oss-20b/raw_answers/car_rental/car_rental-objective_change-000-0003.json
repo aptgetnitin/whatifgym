@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "objective": [
+    {
+      "measure": "undamaged_left",
+      "sense": "min"
+    },
+    {
+      "measure": "original",
+      "sense": "max"
+    }
+  ],
+  "note": "Minimise the total undamaged cars kept at the depot overnight first; among those plans, take the one with the maximum weekly profit."
+}

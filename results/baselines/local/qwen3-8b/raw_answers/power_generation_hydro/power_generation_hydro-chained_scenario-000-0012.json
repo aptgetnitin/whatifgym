@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "measure": "hydro_start",
+   "scope": {
+    "hydro": "HydroB"
+   },
+   "sense": ">=",
+   "value": 2,
+   "name": "hydroB_startups_at_least_2"
+  }
+ ],
+ "note": "A rule to enforce the minimum number of start-ups for HydroB units."
+}

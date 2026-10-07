@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "relax": [
+    {
+      "constraint": "overmanning",
+      "scope": {
+        "year": [
+          1,
+          2
+        ]
+      }
+    }
+  ]
+}

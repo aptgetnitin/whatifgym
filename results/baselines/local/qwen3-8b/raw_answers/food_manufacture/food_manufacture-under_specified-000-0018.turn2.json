@@ -1,0 +1,49 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "oils",
+   "column": "hardness",
+   "where": {
+    "oil": "VEG2"
+   },
+   "value": 6.5
+  }
+ ],
+ "rules": [
+  {
+   "name": "hardness_bound",
+   "measure": "consume",
+   "scope": {
+    "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+    ],
+    "oil": "VEG2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+      "month": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun"
+      ],
+      "oil": "VEG2"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The oil hardness of VEG2 is changed to 6.5, and a rule is added to ensure the hardness constraint is maintained."
+}

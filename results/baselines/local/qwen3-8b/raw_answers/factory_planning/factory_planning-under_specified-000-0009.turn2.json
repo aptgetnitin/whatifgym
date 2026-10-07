@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod1"
+   },
+   "value": 1350
+  }
+ ],
+ "note": "A cap on the units made is set as the max_sales for Prod1."
+}

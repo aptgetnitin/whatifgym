@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "discount_rate",
+      "factor": 2.0
+    }
+  ],
+  "note": "The annual discount rate is doubled, so the factor for the parameter is 2.0."
+}

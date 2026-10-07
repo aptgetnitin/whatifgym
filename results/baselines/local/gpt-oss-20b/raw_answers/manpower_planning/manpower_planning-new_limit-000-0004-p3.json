@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "max_total_short_time",
+      "measure": "short_time",
+      "sense": "<=",
+      "value": 240
+    },
+    {
+      "name": "max_redundant_year2",
+      "measure": "redundant",
+      "scope": {
+        "year": 2
+      },
+      "sense": "<=",
+      "value": 80
+    }
+  ]
+}

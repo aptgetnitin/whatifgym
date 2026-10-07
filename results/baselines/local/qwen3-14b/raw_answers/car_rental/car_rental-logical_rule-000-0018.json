@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "sat_rental_vs_tue_manchester",
+      "measure": "rentals",
+      "scope": {
+        "day": "Saturday",
+        "depot": "Manchester"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "rentals",
+        "scope": {
+          "day": "Tuesday",
+          "depot": "Manchester"
+        }
+      },
+      "factor": 1.18
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "min_discharge_21_22",
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": ">=",
+      "value": 10
+    }
+  ],
+  "note": "Enforce at least 10 kW discharge in hour 21-22."
+}

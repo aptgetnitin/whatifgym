@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "camps",
+   "column": "beneficiaries",
+   "where": {
+    "camp": "Ar Raqqa"
+   },
+   "value": 20000
+  }
+ ],
+ "note": "The number of beneficiaries for Ar Raqqa camp is updated to 20000."
+}

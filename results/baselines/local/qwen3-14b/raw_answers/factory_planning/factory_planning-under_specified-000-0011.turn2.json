@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod2_production_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod2"
+      },
+      "sense": "<=",
+      "value": 1700
+    }
+  ],
+  "note": "A cap on the total units made for Prod2 over the entire horizon."
+}

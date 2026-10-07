@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "ask": "What transport link row has a different cost per unit?"
+}

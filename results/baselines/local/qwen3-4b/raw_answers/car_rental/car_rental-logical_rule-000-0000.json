@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "rentals",
+      "column": "rentals",
+      "where": {
+        "depot": [
+          "Plymouth",
+          "Manchester",
+          "Birmingham",
+          "Glasgow"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A constraint that at most 2 depots have rentals is not directly expressible as a data change; the question is ambiguous about whether it's a limit on the number of depots with positive rentals or the number of cars rented in those depots."
+}

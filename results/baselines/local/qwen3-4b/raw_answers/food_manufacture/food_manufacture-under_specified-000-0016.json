@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "ask": "What is the minimum number of tons of oil that must be refined each month to satisfy the product hardness constraints?"
+}

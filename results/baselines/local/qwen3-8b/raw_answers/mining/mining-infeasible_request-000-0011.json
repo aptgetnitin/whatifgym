@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "extract_mine3_year2",
+   "measure": "extract",
+   "scope": {
+    "year": "Year2",
+    "mine": "Mine3"
+   },
+   "sense": ">=",
+   "value": 6500000
+  }
+ ],
+ "note": "A rule to ensure at least 6500000 tons of ore is extracted from Mine3 in Year2."
+}

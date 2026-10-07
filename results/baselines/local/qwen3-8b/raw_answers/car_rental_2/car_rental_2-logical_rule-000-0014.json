@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_repairs_monday",
+   "measure": "repairs",
+   "scope": {
+    "day": "Monday",
+    "depot": "Birmingham"
+   },
+   "sense": ">=",
+   "value": 94
+  }
+ ],
+ "note": "A rule to enforce a minimum number of repairs at Birmingham on Monday."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "max_flow_to_daraa",
+   "measure": "flow",
+   "scope": {
+    "to_city": "Daraa"
+   },
+   "sense": "<=",
+   "value": 5650
+  },
+  {
+   "name": "min_flow_maize_meal",
+   "measure": "flow",
+   "scope": {
+    "food": "Maize meal"
+   },
+   "sense": ">=",
+   "value": 74
+  }
+ ],
+ "note": "New limits on total food shipped to Daraa and total food shipped for Maize meal."
+}

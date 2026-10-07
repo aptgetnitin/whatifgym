@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "blend_year1_min",
+   "measure": "blend",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 8625000
+  },
+  {
+   "name": "blend_year5_min",
+   "measure": "blend",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "value": 8200000
+  }
+ ],
+ "note": "The scenario requires at least 8,625,000 tons of blended ore sold in Year1 and at least 8,200,000 tons sold in Year5."
+}

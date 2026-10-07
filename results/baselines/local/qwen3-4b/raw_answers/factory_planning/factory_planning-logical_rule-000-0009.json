@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "Feb",
+        "product": "Prod7"
+      },
+      "value": 75
+    },
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "Jun",
+        "product": "Prod3"
+      },
+      "value": 75
+    }
+  ]
+}

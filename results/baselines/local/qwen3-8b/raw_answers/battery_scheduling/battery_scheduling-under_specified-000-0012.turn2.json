@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "initial_soc_kwh",
+   "where": {
+    "name": "initial_soc_kwh"
+   },
+   "value": 12
+  }
+ ],
+ "note": "The initial SOC is doubled from 6 kWh to 12 kWh."
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "arcs",
+      "column": "transport_cost",
+      "where": {},
+      "delta": 0.25
+    }
+  ],
+  "note": "A uniform shift in transport costs across all rows of the arcs table."
+}

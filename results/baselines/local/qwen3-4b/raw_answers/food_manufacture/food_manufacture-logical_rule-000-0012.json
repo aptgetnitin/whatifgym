@@ -1,0 +1,17 @@
+{
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "no_both_veg1_oil2",
+      "measure": "buy",
+      "scope": {
+        "oil": [
+          "VEG1",
+          "OIL2"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

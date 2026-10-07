@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_06-09",
+   "measure": "output",
+   "scope": {
+    "period": "06-09"
+   },
+   "sense": ">=",
+   "value": 60000
+  },
+  {
+   "name": "thermal_output_15-18",
+   "measure": "output",
+   "scope": {
+    "period": "15-18"
+   },
+   "sense": ">=",
+   "value": 77200
+  }
+ ],
+ "note": "The planner asks if the model can meet the specified thermal output requirements for the 06-09 and 15-18 periods."
+}

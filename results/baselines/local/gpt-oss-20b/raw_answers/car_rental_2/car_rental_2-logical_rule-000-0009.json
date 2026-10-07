@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","logic":[{"name":"wednesday_manchester_rentals_zero_or_at_least_200","at_least":1,"of":[{"measure":"rentals","scope":{"day":"Wednesday","depot":"Manchester"},"sense":"==","value":0},{"measure":"rentals","scope":{"day":"Wednesday","depot":"Manchester"},"sense":">=","value":200}]}]}

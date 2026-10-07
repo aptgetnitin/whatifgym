@@ -1,0 +1,11 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "discharge_efficiency",
+      "value": 0.9
+    }
+  ],
+  "note": "The planner mentions revisiting discharging efficiency, so we set it to 0.9 as a specific value. The question is vague about the exact change, so we assume a common scenario where efficiency drops from 0.96 to 0.9."
+  }

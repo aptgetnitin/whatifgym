@@ -1,0 +1,15 @@
+{
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "Mine5"
+        }
+      ]
+    }
+  ],
+  "note": "A new mine joins the mines table."
+}

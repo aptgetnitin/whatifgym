@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","fixed_decisions":[{"measure":"consume","scope":{"month":"Jun","oil":"VEG1"},"value":1590}],"note":"Enforce that 1590 tons of VEG1 are refined in June."}

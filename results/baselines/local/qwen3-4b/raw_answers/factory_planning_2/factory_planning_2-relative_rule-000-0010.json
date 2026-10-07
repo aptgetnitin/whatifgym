@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod6_at_most_10_of_make",
+      "measure": "make",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "value": 0.1
+    }
+  ],
+  "note": "A relative rule would be needed for a percentage of total units made, but the question specifies 'at most 10% of all units made', which requires a relative_to scope for the total make."
+  }

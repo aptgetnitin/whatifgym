@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "extract",
+   "scope": {
+    "mine": "*",
+    "year": "*"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "operate",
+   "scope": {
+    "mine": "*",
+    "year": "*"
+   }
+  }
+ ],
+ "note": "Prioritizes maximizing discounted profit first, then minimizing total tons of ore extracted, and finally maximizing the total number of mine-years worked."
+}

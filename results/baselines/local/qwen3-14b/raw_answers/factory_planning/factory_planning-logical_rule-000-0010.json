@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod3_feb_to_prod3_mar",
+      "measure": "make",
+      "scope": {
+        "month": "Mar",
+        "product": "Prod3"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "Feb",
+          "product": "Prod3"
+        }
+      },
+      "factor": 800
+    }
+  ]
+}

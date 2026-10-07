@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"thermal_output_00_06_min_20pct","measure":"output","scope":{"period":"00-06"},"sense":">=","relative_to":{"measure":"output"},"factor":0.2}],"note":"Ensure period 00-06 accounts for at least 20% of total thermal output."}

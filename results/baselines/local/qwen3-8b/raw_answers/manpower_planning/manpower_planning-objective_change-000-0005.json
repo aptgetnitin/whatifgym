@@ -1,0 +1,58 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "retrain",
+   "scope": {
+    "from_skill": [
+      "unskilled",
+      "semi_skilled"
+    ],
+    "to_skill": [
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "short_time",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  }
+ ],
+ "note": "Prioritise minimising total redundancies first, then maximising total retraining to higher skill levels, and finally maximising total short-time workers."
+}

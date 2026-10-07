@@ -1,0 +1,61 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "total_items_limit",
+   "measure": "x",
+   "scope": {
+    "bin": [
+     "bin0",
+     "bin1",
+     "bin2",
+     "bin3",
+     "bin4",
+     "bin5",
+     "bin6",
+     "bin7",
+     "bin8",
+     "bin9",
+     "bin10"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "y",
+    "scope": {
+     "bin": [
+      "bin0",
+      "bin1",
+      "bin2",
+      "bin3",
+      "bin4",
+      "bin5",
+      "bin6",
+      "bin7",
+      "bin8",
+      "bin9",
+      "bin10"
+     ]
+    }
+   },
+   "factor": 1.5
+  },
+  {
+   "name": "bin10_bins_used_limit",
+   "measure": "y",
+   "scope": {
+    "bin": "bin10"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "y",
+    "scope": {
+     "bin": "bin0"
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "Two relative limits are applied: the total number of items packed is at most 1.5 times the total number of bins used, and the number of bins used for bin10 is at least 3 times the number of bins used for bin0."
+}

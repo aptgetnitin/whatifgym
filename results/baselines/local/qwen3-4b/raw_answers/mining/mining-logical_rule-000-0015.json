@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "no_both_mine1_mine2",
+      "measure": "operate",
+      "scope": {
+        "mine": [
+          "Mine1",
+          "Mine2"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

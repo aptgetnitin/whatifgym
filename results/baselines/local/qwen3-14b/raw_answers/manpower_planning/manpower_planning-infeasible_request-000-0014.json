@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "total_workforce_target",
+      "measure": "workforce",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": "==",
+      "value": 125000
+    }
+  ]
+}

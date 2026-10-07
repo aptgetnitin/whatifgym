@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_short_time",
+   "value": 90
+  }
+ ],
+ "note": "Setting the max_short_time parameter to 90 introduces an upper limit on workers on short-time working for each skill level in each year."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","data_changes":[{"op":"scale","table":"rental_lengths","column":"price_same_depot","factor":1.0},{"op":"scale","table":"rental_lengths","column":"price_other_depot","factor":1.0}]}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "beet_growth_ratio_year2_year4",
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "grow_beet",
+        "scope": {
+          "year": "Year4"
+        }
+      },
+      "factor": 2.0
+    }
+  ],
+  "note": "Ensure sugar beet grown in Year2 is at least twice that in Year4."
+}

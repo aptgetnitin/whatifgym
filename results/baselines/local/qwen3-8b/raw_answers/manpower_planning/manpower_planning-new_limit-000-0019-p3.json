@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "redundant_year_1_min",
+   "measure": "redundant",
+   "scope": {
+    "year": 1
+   },
+   "sense": ">=",
+   "value": 530
+  }
+ ],
+ "note": "A constraint requiring the total number of workers made redundant in year 1 to be no less than 530."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"measure":"produce","scope":{"month":"Jan"},"sense":">=","value":900},{"measure":"produce","scope":{"month":"Jun"},"sense":">=","value":900}],"note":"Check feasibility of producing at least 900 tons in Jan and Jun."}

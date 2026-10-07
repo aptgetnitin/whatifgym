@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod5_jan_sell_zero_or_high",
+      "measure": "sell",
+      "scope": {
+        "month": "Jan",
+        "product": "Prod5"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "prod5_jan_sell_zero_or_high",
+      "measure": "sell",
+      "scope": {
+        "month": "Jan",
+        "product": "Prod5"
+      },
+      "sense": ">=",
+      "value": 1200
+    }
+  ]
+}

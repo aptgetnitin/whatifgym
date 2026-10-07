@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "measure": "undamaged_left",
+      "scope": {},
+      "sense": "<=",
+      "value": 590,
+      "name": "cap_undamaged_left_total"
+    }
+  ]
+}

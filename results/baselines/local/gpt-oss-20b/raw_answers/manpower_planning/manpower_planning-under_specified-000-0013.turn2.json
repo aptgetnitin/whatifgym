@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "max_recruit",
+      "where": {
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "25% lower manpower requirement and recruitment limits across all rows."
+}

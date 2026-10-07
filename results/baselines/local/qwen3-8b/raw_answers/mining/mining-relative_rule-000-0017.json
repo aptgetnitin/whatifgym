@@ -1,0 +1,61 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "open_mine_years_limit",
+   "measure": "open",
+   "scope": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ],
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "mine": [
+      "Mine1",
+      "Mine2",
+      "Mine3",
+      "Mine4"
+     ],
+     "year": [
+      "Year1",
+      "Year2",
+      "Year3",
+      "Year4",
+      "Year5"
+     ]
+    }
+   },
+   "factor": 0.5
+  },
+  {
+   "name": "blend_year1_at_least_2_year3",
+   "measure": "blend",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "blend",
+    "scope": {
+     "year": "Year3"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

@@ -1,0 +1,67 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_transfers_from_glasgow",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Monday",
+    "from_depot": "Glasgow"
+   },
+   "sense": ">=",
+   "value": 133
+  },
+  {
+   "name": "damaged_transfers_from_glasgow",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Tuesday",
+    "from_depot": "Glasgow"
+   },
+   "sense": ">=",
+   "value": 133
+  },
+  {
+   "name": "damaged_transfers_from_glasgow",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Wednesday",
+    "from_depot": "Glasgow"
+   },
+   "sense": ">=",
+   "value": 133
+  },
+  {
+   "name": "damaged_transfers_from_glasgow",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Thursday",
+    "from_depot": "Glasgow"
+   },
+   "sense": ">=",
+   "value": 133
+  },
+  {
+   "name": "damaged_trans, transfers_from_glasgow",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Friday",
+    "from_depot": "Glasgow"
+   },
+   "sense": ">=",
+   "value": 133
+  },
+  {
+   "name": "damaged_transfers_from_glasgow",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Saturday",
+    "from_depot": "Glasgow"
+   },
+   "sense": ">=",
+   "value": 133
+  }
+ ],
+ "note": "The scenario requires at least 133 damaged cars to be transferred from Glasgow each day."
+}

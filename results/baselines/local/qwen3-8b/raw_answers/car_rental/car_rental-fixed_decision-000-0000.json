@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "plymouth_rentals_per_day",
+   "measure": "rentals",
+   "scope": {
+    "depot": "Plymouth"
+   },
+   "sense": "==",
+   "value": 52
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Ensure Plymouth has exactly 52 rentals per day while maximising weekly profit."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "damaged_transfer_limit",
+      "measure": "damaged_transfers",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "damaged_left"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Limit total damaged cars transferred to at most 75% of damaged cars kept overnight."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "charge",
+      "where": {
+        "hour": "02-03"
+      },
+      "value": 0.2
+    }
+  ],
+  "note": "A rule that limits the charging power to 20% of the total battery charging power for a specific hour."
+}

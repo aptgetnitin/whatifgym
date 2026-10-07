@@ -1,0 +1,44 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "reservoir_level_period_15_18",
+   "measure": "reservoir_level",
+   "scope": {
+    "period": "15-18"
+   },
+   "sense": "<=",
+   "value": 0.75,
+   "relative_to": {
+    "measure": "reservoir_level",
+    "scope": {
+     "period": [
+      "00-06",
+      "06-09",
+      "09-15",
+      "18-24"
+     ]
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "thermal_start_00_06_vs_15_18",
+   "measure": "nstart",
+   "scope": {
+    "period": "00-06"
+   },
+   "sense": "<=",
+   "value": 0.6,
+   "relative_to": {
+    "measure": "nstart",
+    "scope": {
+     "period": "15-18"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The reservoir level for period 15-18 is at most 75% of the total reservoir level across all other periods. The number of thermal units started in period 00-06 is at most 60% of those started in period 15-18."
+}

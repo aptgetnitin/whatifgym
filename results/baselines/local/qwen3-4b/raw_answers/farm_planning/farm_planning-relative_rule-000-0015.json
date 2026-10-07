@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "sugar_beet_year2_at_least_2x_year4",
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "grow_beet",
+        "scope": {
+          "year": "Year4"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

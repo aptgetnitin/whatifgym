@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "open",
+   "scope": {
+    "mine": "*"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "open",
+   "scope": {
+    "mine": "*"
+   },
+   "relative_to": {
+    "measure": "open",
+    "scope": {
+     "mine": "*"
+    }
+   },
+   "factor": 1
+  }
+ ],
+ "note": "Prioritise minimising the number of mine-years kept open, then maximise discounted profit among those plans."
+}

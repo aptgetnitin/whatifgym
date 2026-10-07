@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"measure":"purchase","sense":">=","value":1621950}],"note":"Check feasibility of total purchase >= 1621950"}

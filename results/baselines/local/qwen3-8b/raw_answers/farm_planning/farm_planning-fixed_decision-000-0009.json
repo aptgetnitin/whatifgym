@@ -1,0 +1,56 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "grow_grain",
+   "column": "grow_grain",
+   "where": {
+    "year": "Year5",
+    "land_group": "Group1"
+   },
+   "value": 5.5
+  },
+  {
+   "op": "set",
+   "table": "grow_grain",
+   "column": "grow_grain",
+   "where": {
+    "year": "Year5",
+    "land_group": "Group2"
+   },
+   "value": 5.5
+  },
+  {
+   "op": "set",
+   "table": "grow_grain",
+   "column": "grow_grain",
+   "where": {
+    "year": "Year5",
+    "land_group": "Group3"
+   },
+   "value": 5.5
+  },
+  {
+   "op": "set",
+   "table": "grow_grain",
+   "column": "grow_grain",
+   "where": {
+    "year": "Year5",
+    "land,group": "Group4"
+   },
+   "value": 5.5
+  },
+  {
+   "op": "set",
+   "table": "sell_heifers",
+   "column": "sell_heifers",
+   "where": {
+    "year": "Year3"
+   },
+   "value": 29
+  }
+ ],
+ "rules": []
+}

@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "workforce",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "downgrade",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "unskilled",
+          "semi_skilled"
+        ]
+      }
+    }
+  ]
+}

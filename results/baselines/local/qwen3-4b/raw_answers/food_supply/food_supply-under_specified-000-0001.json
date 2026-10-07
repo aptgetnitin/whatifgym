@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "Food Supply (World Food Programme, Syria)",
+  "ask": "What specific change is intended for the minimum daily intake per person for nutrient NicacinB3(mg)? How much does it change, and in which direction (increase or decrease)?"
+  }

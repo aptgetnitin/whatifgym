@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "total_buy",
+   "measure": "buy",
+   "scope": {
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   },
+   "sense": ">=",
+   "value": 13500
+  }
+ ],
+ "note": "A rule to ensure the total amount of oil bought meets the specified threshold."
+}

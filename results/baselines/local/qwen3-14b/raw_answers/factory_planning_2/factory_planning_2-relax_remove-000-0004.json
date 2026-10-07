@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "maintenance",
+      "where": {
+        "machine": [
+          "grinder",
+          "vertDrill",
+          "horiDrill",
+          "borer",
+          "planer"
+        ]
+      }
+    }
+  ],
+  "note": "Removing all maintenance requirements by deleting all rows from the maintenance table."
+}

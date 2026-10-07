@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","relax":[{"constraint":"labour","scope":{"year":"Year4"}}],"note":"Lift labour limit for Year4 only."}

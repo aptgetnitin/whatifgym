@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_purchase",
+   "value": 973150
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "purchase",
+   "scope": {
+    "food": "*",
+    "supplier": "*"
+   }
+  }
+ ],
+ "note": "The question asks to reach a total of at least 973150 units of food bought, which is set as the parameter max_purchase and the objective is to minimize the purchase."
+}

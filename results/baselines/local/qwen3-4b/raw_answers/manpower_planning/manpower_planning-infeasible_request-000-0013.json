@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "value": 2300
+    }
+  ],
+  "note": "The planner wants to fix the workforce for year 1, unskilled level to 2300, which is a data change in the requirements table."
+}

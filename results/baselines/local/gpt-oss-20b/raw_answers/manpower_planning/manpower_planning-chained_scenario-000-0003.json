@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[{"op":"scale","table":"skills","column":"current_strength","factor":1.1}],"rules":[{"name":"overall_short_time_cap","measure":"short_time","sense":"<=","value":150}],"note":"Keep previous change. Add overall cap of 150 workers on short-time working."}

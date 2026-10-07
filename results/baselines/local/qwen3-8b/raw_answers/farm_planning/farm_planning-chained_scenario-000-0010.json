@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "grain_bought_year2_limit",
+   "measure": "buy_grain",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": "<=",
+   "value": 26
+  }
+ ],
+ "note": "A limit on the total grain bought in Year2."
+}

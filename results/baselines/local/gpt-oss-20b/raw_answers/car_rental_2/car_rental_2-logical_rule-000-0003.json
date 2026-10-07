@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","logic":[{"name":"repair_requires_undamaged","at_least":1,"of":[{"measure":"repairs","scope":{"day":"Thursday","depot":"Birmingham"},"sense":"<=","value":0},{"measure":"undamaged_stock","scope":{"day":"Thursday","depot":"Birmingham"},"sense":">=","value":250}]}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","data_changes":[{"op":"remove","table":"land_groups","where":{"land_group":"Group2"}}],"note":"Remove Group2 from the land groups suitable for grain."}

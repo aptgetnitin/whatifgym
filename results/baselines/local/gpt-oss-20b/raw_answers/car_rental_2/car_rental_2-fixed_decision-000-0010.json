@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","fixed_decisions":[{"measure":"expand","scope":{"depot":"Birmingham","step":2},"value":1},{"measure":"undamaged_transfers","scope":{"day":"Saturday","from_depot":"Birmingham","to_depot":"Manchester"},"value":3}]}

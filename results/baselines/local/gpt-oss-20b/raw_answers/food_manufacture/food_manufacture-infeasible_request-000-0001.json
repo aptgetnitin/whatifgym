@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","fixed_decisions":[{"measure":"buy","scope":{"month":"Jun","oil":"VEG2"},"value":1620}],"note":"Promised 1620 tons of VEG2 in June, fixed."}

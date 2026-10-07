@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"discharge_at_least_3x_charge","measure":"discharge","sense":">=","relative_to":{"measure":"charge"},"factor":3.0}],"note":"Require total discharge power to be at least three times total charging power."}

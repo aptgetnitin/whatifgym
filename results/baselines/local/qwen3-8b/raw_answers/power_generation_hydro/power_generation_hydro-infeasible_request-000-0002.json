@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_total",
+   "measure": "output",
+   "scope": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "sense": ">=",
+   "value": 681600
+  }
+ ],
+ "note": "The scenario requires the total thermal output across all types to be at least 681600 MW."
+}

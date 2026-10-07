@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","data_changes":[{"op":"scale","table":"transfer_costs","column":"cost","factor":0.75}],"note":"All transfer costs reduced by 25%."}

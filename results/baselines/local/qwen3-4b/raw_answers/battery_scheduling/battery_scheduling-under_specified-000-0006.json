@@ -1,0 +1,15 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "energy_capacity_kwh",
+      "where": {
+        "label": "battery energy capacity (kWh)"
+      },
+      "value": "13.5"
+    }
+  ],
+  "note": "The battery stored energy (kWh) gets capped at the original capacity of 13.5 kWh."
+}

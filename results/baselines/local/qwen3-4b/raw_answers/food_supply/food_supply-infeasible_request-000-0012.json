@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": "Wheat",
+        "from_city": "Hassakeh",
+        "to_city": "Qamishli"
+      },
+      "value": 39250
+    }
+  ],
+  "note": "A fixed decision on the flow measure for a specific food and city pair."
+}

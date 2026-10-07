@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "sell_jun_at_least_6100_if_make_jan",
+   "measure": "sell",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": "Jan"
+    }
+   },
+   "factor": 6100
+  }
+ ],
+ "note": "A rule that enforces a minimum sales requirement in June if production occurs in January."
+}

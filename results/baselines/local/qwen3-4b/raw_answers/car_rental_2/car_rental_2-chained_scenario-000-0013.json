@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "marginal_cost",
+      "where": {
+        "rental_days": 3
+      },
+      "factor": 1.3
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "redundant_year_1_min",
+   "measure": "redundant",
+   "scope": {
+    "year": 1
+   },
+   "sense": ">=",
+   "value": 530
+  }
+ ],
+ "note": "A rule to enforce a minimum number of redundancies in year 1 across all skill levels."
+}

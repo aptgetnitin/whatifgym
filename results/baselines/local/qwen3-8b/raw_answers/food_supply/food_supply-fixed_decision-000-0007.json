@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "ration",
+   "column": "ration",
+   "where": {
+    "food": "Wheat",
+    "camp": "Jubb_al_Jarrah"
+   },
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat",
+    "camp": "Jubb_al_Jarrah"
+   },
+   "value": 0
+  }
+ ]
+}

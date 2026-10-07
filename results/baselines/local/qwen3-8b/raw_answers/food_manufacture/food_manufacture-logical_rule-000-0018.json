@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "jan_produce_at_least_mar_produce",
+   "measure": "produce",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "produce",
+    "scope": {
+     "month": "Mar"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that enforces the produce of January to be at least equal to the produce of March."
+}

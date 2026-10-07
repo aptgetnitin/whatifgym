@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"glasgow_undamaged_share","measure":"undamaged_stock","scope":{"depot":"Glasgow"},"sense":"<=","relative_to":{"measure":"undamaged_stock","scope":{}},"factor":0.15}]}

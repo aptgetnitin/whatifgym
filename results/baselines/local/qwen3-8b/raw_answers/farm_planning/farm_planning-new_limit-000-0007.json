@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "min_grain_grown_group2",
+   "measure": "grow_grain",
+   "scope": {
+    "land_group": "Group2"
+   },
+   "sense": ">=",
+   "value": 4.2
+  }
+ ],
+ "note": "A minimum requirement on the total grain grown across all years on Group2."
+}

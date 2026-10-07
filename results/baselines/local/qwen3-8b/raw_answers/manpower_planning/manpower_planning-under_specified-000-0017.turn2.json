@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_upper_limit",
+   "measure": "retrain",
+   "scope": {
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": "<=",
+   "value": 750
+  }
+ ],
+ "note": "A new rule limits the total number of workers retrained to a higher skill level across all skill levels and years."
+}

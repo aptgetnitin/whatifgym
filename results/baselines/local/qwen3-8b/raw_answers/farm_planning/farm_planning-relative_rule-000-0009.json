@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sell_heifers_year1_limit",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "sell_heifers",
+    "scope": {
+     "year": "Year5"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The rule limits the sum of heifer calves sold in Year1 to 25% of the sum sold in Year5."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "years",
+      "where": {
+        "year": [
+          "Year1",
+          "Year2"
+        ]
+      }
+    }
+  ],
+  "note": "The blend-quality target constraint (quality[year]) does not apply for Year1 and Year2, so those years are removed from the planning horizon."
+}

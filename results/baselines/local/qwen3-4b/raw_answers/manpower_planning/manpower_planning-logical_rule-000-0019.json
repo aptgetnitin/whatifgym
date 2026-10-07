@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "unskilled_overmanned_year2_at_least_210_downgrades",
+      "measure": "downgrade",
+      "scope": {
+        "year": 1,
+        "from_skill": "skilled",
+        "to_skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "value": 210
+    }
+  ],
+  "note": "The question specifies that the overmanned workers for year 2, unskilled level must be at least 210 downgrades from skilled to semi_skilled in year 1."
+  }

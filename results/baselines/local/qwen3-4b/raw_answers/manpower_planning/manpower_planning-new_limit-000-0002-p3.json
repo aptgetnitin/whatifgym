@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retrain",
+      "column": "retrain",
+      "where": {
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 130
+    }
+  ],
+  "note": "The planner wants to limit the total number of workers downgraded to a lower skill level, summed over all years and skill levels, to at most 130. However, the model's decision variable for downgrading is `downgrade[year, from_skill, to_skill]`, not `retrain`. The question refers to downgrading, but the model uses `retrain` for upward moves and `downgrade` for downward moves. This is a critical confusion in terminology."
+}

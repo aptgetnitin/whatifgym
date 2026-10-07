@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "bin2_at_least_30_percent",
+      "measure": "x",
+      "scope": {
+        "item": "*",
+        "bin": "bin2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": "*"
+        }
+      },
+      "factor": 0.3
+    }
+  ]
+}

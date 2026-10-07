@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "overmanned_year_1",
+   "measure": "overmanned",
+   "scope": {
+    "year": 1
+   },
+   "sense": ">=",
+   "value": 450
+  },
+  {
+   "name": "overmanned_year_3",
+   "measure": "overmanned",
+   "scope": {
+    "year": 3
+   },
+   "sense": ">=",
+   "value": 450
+  }
+ ],
+ "note": "Rules enforce minimum overmanning requirements for year 1 and year 3."
+}

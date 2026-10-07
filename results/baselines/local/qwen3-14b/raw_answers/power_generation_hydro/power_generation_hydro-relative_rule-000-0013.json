@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_start_limit",
+      "measure": "nstart",
+      "scope": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "hydro_start",
+        "scope": {
+          "hydro": [
+            "HydroA",
+            "HydroB"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

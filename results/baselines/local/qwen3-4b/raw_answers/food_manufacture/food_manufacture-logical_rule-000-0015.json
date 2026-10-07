@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg2_feb_store_constraint",
+      "measure": "store",
+      "scope": {
+        "month": "Feb",
+        "oil": "VEG2"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "veg2_feb_store_constraint",
+      "measure": "store",
+      "scope": {
+        "month": "Feb",
+        "oil": "VEG2"
+      },
+      "sense": ">=",
+      "value": 560
+    }
+  ]
+}

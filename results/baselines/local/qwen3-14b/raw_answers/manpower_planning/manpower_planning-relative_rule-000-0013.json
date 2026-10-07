@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "overmanned_semi_skilled_ratio",
+      "measure": "overmanned",
+      "scope": {
+        "skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "overmanned",
+        "scope": {
+          "skill": [
+            "unskilled",
+            "semi_skilled",
+            "skilled"
+          ]
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

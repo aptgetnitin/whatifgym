@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "value": 2600
+    }
+  ],
+  "note": "Require at least 2600 tons of oil in storage in February."
+}

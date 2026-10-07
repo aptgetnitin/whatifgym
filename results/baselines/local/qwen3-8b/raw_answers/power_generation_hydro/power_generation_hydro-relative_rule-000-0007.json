@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal0_output_share",
+   "measure": "output",
+   "scope": {
+    "type": "Thermal0"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "output",
+    "scope": {
+     "type": [
+      "Thermal0",
+      "Thermal1",
+      "Thermal2"
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "The rule ensures that Thermal0's output is at least 60% of the total thermal output across all types."
+}

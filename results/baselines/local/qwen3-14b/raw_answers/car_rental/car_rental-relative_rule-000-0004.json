@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "undamaged_stock_glasgow_cap",
+      "measure": "undamaged_stock",
+      "scope": {
+        "depot": "Glasgow"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "undamaged_stock",
+        "scope": {
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ]
+        }
+      },
+      "factor": 0.15
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "rentals",
+   "column": "rentals",
+   "where": {
+    "day": "Friday",
+    "depot": "Manchester"
+   },
+   "value": 260
+  },
+  {
+   "op": "set",
+   "table": "undamaged_left",
+   "column": "undamaged_left",
+   "where": {
+    "day": "Friday",
+    "depot": "Manchester"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixed the number of rentals and undamaged cars kept at Manchester on Friday."
+}

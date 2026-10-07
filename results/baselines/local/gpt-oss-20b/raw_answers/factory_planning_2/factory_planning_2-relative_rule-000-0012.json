@@ -1,0 +1,66 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "store_prod2_le_90pct_prod7_Jan",
+      "measure": "store",
+      "scope": {
+        "month": "Jan",
+        "product": "Prod2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Jan",
+          "product": "Prod7"
+        }
+      },
+      "factor": 0.9
+    },
+    {
+      "name": "store_prod2_le_90pct_prod7_Feb",
+      "measure": "store",
+      "scope": {
+        "month": "Feb",
+        "product": "Prod2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Feb",
+          "product": "Prod7"
+        }
+      },
+      "factor": 0.9
+    },
+    {
+      "name": "store_prod2_le_90pct_prod7_Mar",
+      "measure": "store",
+      "scope": {
+        "month": "Mar",
+        "product": "Prod2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Mar",
+          "product": "Prod7"
+        }
+      },
+      "factor": 0.9
+    },
+    {
+      "name": "store_prod2_le_90pct_prod7_Apr",
+      "measure": "store",
+      "scope": {
+        "month": "Apr",
+        "product": "Prod2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope

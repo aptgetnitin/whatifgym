@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"min_stock_May","measure":"store","scope":{"month":"May"},"sense":">=","value":450},{"name":"min_stock_Jun","measure":"store","scope":{"month":"Jun"},"sense":">=","value":520}],"note":"Enforce minimum total inventory at month end for May and June."}

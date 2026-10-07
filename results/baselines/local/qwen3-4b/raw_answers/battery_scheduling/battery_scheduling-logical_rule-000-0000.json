@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "no_charge_both_hours",
+      "measure": "charge",
+      "scope": {
+        "hour": [
+          "02-03",
+          "03-04"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

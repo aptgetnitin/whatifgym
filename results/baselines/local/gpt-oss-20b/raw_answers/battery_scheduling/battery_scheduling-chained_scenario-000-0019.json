@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"measure":"discharge","scope":{"hour":"21-22"},"sense":"<=","value":4.5,"name":"cap_discharge_21-22"}]}

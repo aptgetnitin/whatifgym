@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "OIL2_vs_VEG2_storage_ratio",
+      "measure": "store",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "oil": "VEG2"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

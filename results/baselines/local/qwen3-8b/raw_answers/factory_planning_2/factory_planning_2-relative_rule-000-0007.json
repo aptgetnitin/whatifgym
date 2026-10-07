@@ -1,0 +1,43 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "may_production_share",
+   "measure": "make",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.5
+  },
+  {
+   "name": "feb_sales_1_5_times_jan",
+   "measure": "sell",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": "Jan"
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "Rules enforce that May's production accounts for at least 50% of total production and February's sales are at least 1.5 times January's sales."
+}

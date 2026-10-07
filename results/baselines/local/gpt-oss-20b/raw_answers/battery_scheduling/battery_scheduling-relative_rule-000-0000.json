@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"charge_75pct_03_04","measure":"charge","scope":{"hour":"03-04"},"sense":">=","relative_to":{"measure":"charge"},"factor":0.75}],"note":"At least 75% of total charging power must be in hour 03-04."}

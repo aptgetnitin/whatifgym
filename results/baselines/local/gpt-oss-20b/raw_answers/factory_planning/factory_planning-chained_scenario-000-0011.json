@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod1_prod3_may_cap",
+      "measure": "make",
+      "scope": {
+        "month": "May",
+        "product": ["Prod3", "Prod1"]
+      },
+      "sense": "<=",
+      "value": 450
+    }
+  ],
+  "note": "Production of Prod1 and Prod3 in May limited to 450 units."
+}

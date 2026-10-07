@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "grain_year3_max_80_year2",
+      "measure": "grow_grain",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "grow_grain",
+        "scope": {
+          "year": "Year2"
+        }
+      },
+      "factor": 0.8
+    }
+  ]
+}

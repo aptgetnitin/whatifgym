@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "ask": "What specific storage limit change are you referring to? The model has parameters holding_cost, max_inventory, store_target, and hours_per_month. Please specify whether you mean max_inventory (storage limit), holding_cost (storage cost), store_target (closing stock target), or hours_per_month (machine hours per month)."
+}

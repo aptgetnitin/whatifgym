@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "year": 3
+   },
+   "value": 210
+  }
+ ],
+ "note": "Setting the maximum number of retrainings in year 3 to 210 across all skill levels."
+}

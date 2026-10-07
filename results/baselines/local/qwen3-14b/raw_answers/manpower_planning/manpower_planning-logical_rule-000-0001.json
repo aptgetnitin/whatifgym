@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "logic": [
+    {
+      "name": "recruit_year3_downgrade_year1",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "recruit",
+          "scope": {
+            "year": 3
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "downgrade",
+          "scope": {
+            "year": 1,
+            "from_skill": "skilled",
+            "to_skill": "semi_skilled"
+          },
+          "sense": ">=",
+          "value": 340
+        }
+      ]
+    }
+  ]
+}

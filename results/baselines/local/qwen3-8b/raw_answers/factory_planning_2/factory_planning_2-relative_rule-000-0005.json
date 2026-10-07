@@ -1,0 +1,40 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "total_sold_limit",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod1",
+    "product": "Prod2",
+    "product": "Prod3",
+    "product": "Prod4",
+    "product": "Prod5",
+    "product": "Prod6",
+    "product": "Prod7"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod1",
+     "product": "Prod2",
+     "product": "Prod3",
+     "product": "Prod4",
+     "product": "Prod5",
+     "product": "Prod6",
+     "product": "Prod7"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "profit"
+  }
+ ],
+ "note": "The rule enforces that total units sold is at most twice the total units in stock across all products. The objective remains to maximise profit."
+}

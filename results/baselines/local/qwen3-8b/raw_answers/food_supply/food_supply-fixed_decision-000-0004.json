@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "food": "Corn-soya blend (CSB)",
+    "from_city": "Ar Raqqa",
+    "to_city": "Dayr_Az_Zor"
+   },
+   "value": 25000
+  }
+ ],
+ "rules": [
+  {
+   "name": "ration_csb_jubb_al_jarrah_zero",
+   "measure": "ration",
+   "scope": {
+    "food": "Corn-soya blend (CSB)",
+    "camp": "Jubb_al_Jarrah"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Fixed the ration of Corn-soya blend (CSB) in Jubb_al_Jarrah to zero and fixed the flow of Corn-soya blend (CSB) from Ar Raqqa to Dayr_Az_Zor to 25000, with all other variables optimised."
+}

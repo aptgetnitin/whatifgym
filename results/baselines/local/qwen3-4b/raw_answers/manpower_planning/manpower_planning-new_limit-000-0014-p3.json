@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_short_time",
+      "where": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "value": 220
+    }
+  ],
+  "note": "The planner wants a total limit of 220 workers on short-time working across all years and skill levels. The `max_short_time` parameter is defined per skill level per year, so we set it to 220 for all years to achieve the total limit."
+}

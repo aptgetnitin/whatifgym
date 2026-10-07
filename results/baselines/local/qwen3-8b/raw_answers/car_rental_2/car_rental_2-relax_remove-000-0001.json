@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "relax": [
+  {
+   "constraint": "repair_capacity",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "*"
+   }
+  }
+ ],
+ "note": "The repair capacity constraint is relaxed for Wednesday at all depots, removing the daily repair-capacity limit for that day."
+}

@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal1_06-09_to_hydrob_15-18",
+   "measure": "hydro_on",
+   "scope": {
+    "hydro": "HydroB",
+    "period": "15-18"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "ngen",
+    "scope": {
+     "type": "Thermal1",
+     "period": "06-09"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "A rule that requires at least twice the number of hydro unit-periods running for period 15-18, hydro unit HydroB, compared to the number of thermal units running for period 06-09, generator type Thermal1."
+}

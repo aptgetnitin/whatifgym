@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"set","table":"nutrients","column":"min_per_person","where":{"nutrient":"NicacinB3(mg)"},"value":24}],"note":"Set minimum daily intake for NicacinB3(mg) to 24."}

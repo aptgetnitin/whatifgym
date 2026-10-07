@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "car_rental","rules": [{"name": "damaged_stock_floor","measure": "damaged_stock","scope": {"depot": "Glasgow"},"sense": ">=","value": 10}],"note": "A floor on the damaged cars at the depot in the morning."}

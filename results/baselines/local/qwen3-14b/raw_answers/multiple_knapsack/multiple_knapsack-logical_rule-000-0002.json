@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "item12_placement_rule",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item12"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item1",
+            "bin": "bin0"
+          },
+          "sense": ">=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

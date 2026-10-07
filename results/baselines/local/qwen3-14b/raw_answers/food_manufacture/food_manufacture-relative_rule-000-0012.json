@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "oil2_storage_limit_relative_to_veg2",
+      "measure": "store",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "oil": "VEG2"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

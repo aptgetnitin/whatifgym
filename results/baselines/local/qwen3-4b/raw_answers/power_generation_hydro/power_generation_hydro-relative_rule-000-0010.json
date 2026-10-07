@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "hydro_period_1824_at_least_2x_1518",
+      "measure": "hydro_on",
+      "scope": {
+        "period": "18-24"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "hydro_on",
+        "scope": {
+          "period": "15-18"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "thermal_units_running_below_50_start",
+      "measure": "ngen",
+      "scope": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.5
+    }
+  ]
+}

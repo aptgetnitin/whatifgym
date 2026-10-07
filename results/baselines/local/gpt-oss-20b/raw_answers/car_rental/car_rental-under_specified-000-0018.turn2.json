@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"damaged_left_cap","measure":"damaged_left","sense":"<=","value":3.8}],"note":"Cap on total damaged cars kept overnight"}

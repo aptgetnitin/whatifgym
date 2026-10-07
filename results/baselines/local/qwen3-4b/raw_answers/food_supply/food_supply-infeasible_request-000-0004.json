@@ -1,0 +1,60 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": [
+          "Idleb"
+        ]
+      },
+      "factor": 2.0
+    },
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": [
+          "Qamishli"
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "table": "camps",
+      "rows": [
+        {
+          "camp": "Homs",
+          "beneficiaries": 3000
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_ration_at_least_169",
+      "measure": "ration",
+      "scope": {
+        "camp": [
+          "Idleb"
+        ]
+      },
+      "sense": ">=",
+      "value": 169
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "cost",
+      "scope": {
+        "camp": [
+          "Idleb"
+        ]
+      }
+    }
+  ]
+}

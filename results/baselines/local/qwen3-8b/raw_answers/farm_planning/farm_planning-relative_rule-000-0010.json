@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_sold_year3_limit",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year3"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "sell_beet",
+    "scope": {
+     "year": [
+      "Year1",
+      "Year2",
+      "Year4",
+      "Year5"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "A rule limits the sum of sugar beet sold in Year3 to at most 5% of the total sugar beet sold in other years."
+}

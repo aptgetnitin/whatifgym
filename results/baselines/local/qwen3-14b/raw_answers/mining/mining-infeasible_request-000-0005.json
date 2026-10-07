@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "fixed_decisions": [
+    {
+      "measure": "extract",
+      "scope": {
+        "year": "Year5",
+        "mine": "Mine2"
+      },
+      "value": 10833350
+    }
+  ]
+}

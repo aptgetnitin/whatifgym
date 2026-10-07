@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "min_stock_may",
+      "measure": "store",
+      "scope": {
+        "month": "May",
+        "product": "Prod1"
+      },
+      "sense": ">=",
+      "value": 450
+    },
+    {
+      "name": "min_stock_jun",
+      "measure": "store",
+      "scope": {
+        "month": "Jun",
+        "product": "Prod1"
+      },
+      "sense": ">=",
+      "value": 520
+    }
+  ]
+}

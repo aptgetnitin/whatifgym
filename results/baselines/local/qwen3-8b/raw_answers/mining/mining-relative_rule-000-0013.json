@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine4_mine_years_worked",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine4"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "mine": [
+      "Mine1",
+      "Mine2",
+      "Mine3"
+     ]
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The rule ensures that Mine4 accounts for at least 75% of the total mine-years worked across all mines."
+}

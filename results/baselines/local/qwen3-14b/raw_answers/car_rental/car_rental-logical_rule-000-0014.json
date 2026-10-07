@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "logic": [
+    {
+      "name": "damaged_transfers_wednesday_rule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "repairs",
+          "scope": {
+            "day": "Wednesday",
+            "depot": {
+              "depot": [
+                "Glasgow",
+                "Manchester",
+                "Birmingham",
+                "Plymouth"
+              ]
+            }
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "damaged_transfers",
+          "scope": {
+            "day": "Tuesday",
+            "from_depot": {
+              "depot": [
+                "Glasgow",
+                "Manchester",
+                "Birmingham",
+                "Plymouth"
+              ]
+            },
+            "to_depot": {
+              "depot": [
+                "Glasgow",
+                "Manchester",
+                "Birmingham",
+                "Plymouth"
+              ]
+            }
+          },
+          "sense": ">=",
+          "value": 15
+        }
+      ]
+    }
+  ]
+}

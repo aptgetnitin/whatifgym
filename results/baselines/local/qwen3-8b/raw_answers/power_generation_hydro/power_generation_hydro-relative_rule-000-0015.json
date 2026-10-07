@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_units_limit_18-24",
+   "measure": "ngen",
+   "scope": {
+    "period": "18-24"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "ngen",
+    "scope": {
+     "period": "09-15"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The rule limits the number of thermal units running in period 18-24 to 50% of those running in period 09-15."
+}

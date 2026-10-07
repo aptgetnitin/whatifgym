@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "make",
+      "scope": {
+        "month": "Apr"
+      }
+    }
+  ],
+  "note": "Keep profit at its maximum, then maximise the units made for month Apr."
+}

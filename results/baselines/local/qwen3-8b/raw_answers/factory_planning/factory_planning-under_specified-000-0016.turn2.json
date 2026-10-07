@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "make_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod4"
+   },
+   "sense": "<=",
+   "value": 250
+  }
+ ],
+ "note": "A cap on the total units made of Prod4 across all months."
+}

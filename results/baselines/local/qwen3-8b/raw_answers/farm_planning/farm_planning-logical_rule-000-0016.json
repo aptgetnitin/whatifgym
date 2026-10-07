@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "heifer_calves_raised_year2_sold_year1",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "raise_heifers",
+    "scope": {
+     "year": "Year2"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that requires the number of heifer calves sold in Year1 to be at least equal to the number of heifer calves raised in Year2."
+}

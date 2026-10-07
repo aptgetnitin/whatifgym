@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": "15-18"
+      },
+      "value": 48250
+    }
+  ],
+  "note": "The planner wants to set the demand for the 15-18 period to 48250 MW to meet the requirement of at least 48250 MW in that period."
+}

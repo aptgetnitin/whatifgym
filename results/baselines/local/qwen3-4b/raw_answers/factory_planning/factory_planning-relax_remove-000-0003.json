@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "store_target",
+      "where": {
+        "product": "Prod4"
+      },
+      "value": 0
+    }
+  ]
+  
+    
+  }

@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine2"
+   },
+   "value": 1083350
+  }
+ ],
+ "rules": [
+  {
+   "name": "extract_mine2_year5",
+   "measure": "extract",
+   "scope": {
+    "year": "Year5",
+    "mine": "Mine2"
+   },
+   "sense": "==",
+   "value": 1083350
+  }
+ ],
+ "note": "Fix the extracted amount for Mine2 in Year5 to 1083350 tons and optimise the rest."
+}

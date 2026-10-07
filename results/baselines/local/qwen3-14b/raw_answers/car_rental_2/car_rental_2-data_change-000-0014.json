@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "rental_lengths",
+   "column": "price_same_depot",
+   "where": {
+    "rental_days": 3
+   },
+   "value": 60
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "cap_purchase_total",
+   "measure": "purchase",
+   "scope": {},
+   "sense": "<=",
+   "value": 291950
+  },
+  {
+   "name": "cap_flow_total",
+   "measure": "flow",
+   "scope": {},
+   "sense": "<=",
+   "value": 86800
+  }
+ ],
+ "note": "An overall cap is applied to both the food bought and the food shipped."
+}

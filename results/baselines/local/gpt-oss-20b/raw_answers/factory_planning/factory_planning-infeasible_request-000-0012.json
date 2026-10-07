@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"measure":"make","scope":{"month":"Feb","product":"Prod2"},"sense":">=","value":1200}],"note":"Check feasibility of at least 1200 units made for Feb Prod2."}

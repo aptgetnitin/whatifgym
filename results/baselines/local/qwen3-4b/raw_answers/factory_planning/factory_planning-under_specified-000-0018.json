@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_inventory",
+      "where": {
+        "product": "Prod1"
+      },
+      "value": 100
+    }
+  ],
+  "note": "A cap on units in stock would be a new parameter for max_inventory per product."
+}

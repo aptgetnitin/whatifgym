@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Year1_extract_fraction",
+      "measure": "extract",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "extract"
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "Year2_open_fraction",
+      "measure": "open",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "open",
+        "scope": {
+          "year": "Year1"
+        }
+      },
+      "factor": 0.9
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "repairs_saturday_limit",
+   "measure": "repairs",
+   "scope": {
+    "day": "Saturday",
+    "depot": "depot"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "day": "Tuesday",
+     "depot": "depot"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "The repair capacity on Saturday is capped to 60% of the repair capacity on Tuesday for each depot."
+}

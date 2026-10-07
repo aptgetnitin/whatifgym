@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "gla_undamaged_min_25",
+      "measure": "undamaged_stock",
+      "scope": {
+        "depot": "Glasgow"
+      },
+      "sense": ">=",
+      "value": 0.25
+    }
+  ],
+  "note": "A rule that requires at least 25% of undamaged cars at Glasgow in the morning."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sell_heifers_year2_cap",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": "<=",
+   "value": 37
+  },
+  {
+   "name": "sell_beet_year1_min",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 34
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope."
+}

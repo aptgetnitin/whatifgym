@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "oils",
+   "column": "hardness",
+   "where": {
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "Scaling the hardness of all oils by 20% to reflect the new oil hardness values."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_left_min_monday",
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": ">=",
+   "value": 290
+  }
+ ],
+ "note": "A rule enforces a minimum sum of undamaged cars kept overnight at all depots on Monday."
+}

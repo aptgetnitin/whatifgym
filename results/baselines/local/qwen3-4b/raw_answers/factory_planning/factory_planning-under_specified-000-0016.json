@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "ask": "What does 'units made gets capped' mean? What specific cap is intended? Which product and time period?"
+}

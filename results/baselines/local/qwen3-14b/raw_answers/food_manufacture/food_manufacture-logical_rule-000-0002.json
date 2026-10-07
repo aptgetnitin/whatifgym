@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "storage_after_refining_apr",
+      "measure": "store",
+      "scope": {
+        "month": "May",
+        "oil": {
+          "$in": ["VEG1", "VEG2", "OIL1", "OIL2", "OIL3"]
+        }
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "month": "Apr",
+          "oil": {
+            "$in": ["VEG1", "VEG2", "OIL1", "OIL2", "OIL3"]
+          }
+        }
+      },
+      "factor": 2000
+    }
+  ]
+}

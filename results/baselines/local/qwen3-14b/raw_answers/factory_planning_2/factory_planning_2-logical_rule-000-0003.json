@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "exclusive_sales",
+      "measure": "sell",
+      "scope": {
+        "product": [
+          "Prod3",
+          "Prod4",
+          "Prod5"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

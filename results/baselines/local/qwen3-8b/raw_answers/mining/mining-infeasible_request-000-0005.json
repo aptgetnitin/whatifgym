@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "fixed_decisions": [
+  {
+   "measure": "extract",
+   "scope": {
+    "year": "Year5",
+    "mine": "Mine2"
+   },
+   "value": 10833350
+  }
+ ],
+ "note": "Fix the extracted tons for Mine2 in Year5 to exactly 10833350 tons."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "value": 300
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "overmanned",
+   "scope": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "value": 300
+  }
+ ],
+ "note": "Fixed the overmanned level for year 2, unskilled to exactly 300 and adjusted the required level to align with this."
+}

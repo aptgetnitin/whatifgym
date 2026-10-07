@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "jan_mar_production_link",
+      "measure": "produce",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "produce",
+        "scope": {
+          "month": "Mar"
+        }
+      },
+      "factor": 0.68
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","fixed_decisions":[{"measure":"store","scope":{"month":"Mar","product":"Prod2"},"value":500}],"note":"Commit to exactly 500 units in stock for month Mar, product Prod2."}

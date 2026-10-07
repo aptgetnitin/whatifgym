@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "camps",
+   "where": {
+    "camp": "Qamishli"
+   }
+  },
+  {
+   "op": "scale",
+   "table": "local_prices",
+   "column": "price",
+   "where": {
+    "supplier": "Damascus",
+    "food": "Dates"
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "Remove the Qamishli camp and scale the price of Dates at Damascus by 0.8."
+}

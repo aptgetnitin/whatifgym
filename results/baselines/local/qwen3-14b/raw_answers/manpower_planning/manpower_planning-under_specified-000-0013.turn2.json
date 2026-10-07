@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {},
+      "factor": 0.75
+    },
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "max_recruit",
+      "where": {},
+      "factor": 0.75
+    }
+  ],
+  "note": "A 25% reduction in manpower requirements and recruitment limits across all rows of the requirements table."
+}

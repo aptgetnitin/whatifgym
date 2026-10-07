@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "min_batch_oil1",
+      "measure": "store",
+      "scope": {
+        "oil": "OIL1"
+      },
+      "sense": ">=",
+      "value": 4500
+    }
+  ]
+}

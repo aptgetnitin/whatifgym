@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "blend",
+   "scope": {
+    "year": "year"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "operate",
+   "scope": {
+    "mine": "mine",
+    "year": "year"
+   }
+  }
+ ],
+ "note": "Prioritise maximum discounted profit first, then minimise total blended ore sold, and finally maximise total mine-years worked."
+}

@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "at_most_2_items",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "item": [
+              "item13",
+              "item10",
+              "item3",
+              "item2",
+              "item7"
+            ]
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": [
+              "item13",
+              "item10",
+              "item3",
+              "item2",
+              "item7"
+            ]
+          },
+          "sense": "<=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

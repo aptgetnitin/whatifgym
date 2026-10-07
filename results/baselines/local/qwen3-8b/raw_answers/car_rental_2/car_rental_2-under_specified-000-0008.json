@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"damaged_stock_cap","measure":"damaged_stock","scope":{"depot":["Glasgow","Manchester","Birmingham","Plymouth"]},"sense":"<=","value":100}],"note":"Capping the damaged cars at each depot in the morning."}

@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "end_stock",
+   "scope": {
+    "product": "*"
+   }
+  },
+  {
+   "constraint": "capacity",
+   "scope": {
+    "machine": "*",
+    "month": "*"
+   }
+  }
+ ],
+ "note": "The end-of-horizon stock target and machine-hour capacity constraints are relaxed."
+}

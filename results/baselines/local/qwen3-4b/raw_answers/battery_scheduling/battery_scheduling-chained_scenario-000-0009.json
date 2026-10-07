@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "export_price",
+      "factor": 1.1
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "charge",
+      "scope": {
+        "hour": [
+          "02-03"
+        ]
+      },
+      "value": 1.4
+    }
+  ]
+  }

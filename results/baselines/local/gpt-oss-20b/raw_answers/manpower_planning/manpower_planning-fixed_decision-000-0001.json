@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "fixed_decisions": [
+    {
+      "measure": "retrain",
+      "scope": {
+        "year": 3,
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "value": 0
+    }
+  ]
+}

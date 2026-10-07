@@ -1,0 +1,69 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Saturday",
+    "depot": "Glasgow"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Wednesday",
+    "depot": "Birmingham"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Wednesday",
+    "depot": "Manchester"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Wednesday",
+    "depot": "Plymouth"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "rentals_limit",
+   "measure": "rentals",
+   "scope": {
+    "day": [
+      "Monday",
+      "Tuesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "ration_cap",
+      "measure": "ration",
+      "scope": {
+        "food": "all",
+        "camp": "all"
+      },
+      "sense": "<=",
+      "value": 30
+    }
+  ]
+}

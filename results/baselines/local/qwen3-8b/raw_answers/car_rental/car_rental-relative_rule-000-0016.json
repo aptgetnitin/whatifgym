@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "plymouth_rentals_share",
+   "measure": "rentals",
+   "scope": {
+    "depot": "Plymouth"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+     ]
+    }
+   },
+   "factor": 0.5
+  },
+  {
+   "name": "manchester_repairs_at_least_birmingham",
+   "measure": "repairs",
+   "scope": {
+    "depot": "Manchester"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "depot": "Birmingham"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

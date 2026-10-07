@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": "vertDrill"
+      },
+      "delta": -1
+    }
+  ],
+  "rules": [
+    {
+      "name": "prod4_monthly_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 300
+    }
+  ]
+}

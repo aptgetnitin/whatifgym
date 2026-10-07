@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 130
+    }
+  ],
+  "note": "The question specifies a total limit of 130 workers for downgrading across all years and skill levels. However, the model's `retraining` table only handles upward retraining (to a higher skill level), not downward moves (downgrading). Downgrading is a separate decision variable (`downgrade[year, from_skill, to_skill]`), so the limit on downgrading must be set in the `downgrade` decision variables, not the `retraining` table. The question likely refers to the `downgrade` measure, but the model schema shows that downgrading is not captured in the `retraining` table. This indicates a misunderstanding in the question: downgrading is not a retraining move but a separate process with its own constraints. The correct approach would be to set a limit on the total `downgrade` across all years and skill levels, but the model does not have a direct parameter for this. The question may be conflating `retraining` with `downgrade`."
+}

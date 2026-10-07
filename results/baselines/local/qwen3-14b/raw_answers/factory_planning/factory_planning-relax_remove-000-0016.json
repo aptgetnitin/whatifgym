@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours_per_month",
+      "column": "hours_per_month",
+      "where": {
+        "month": [
+          "Feb",
+          "Jun"
+        ]
+      },
+      "factor": 1000000
+    }
+  ],
+  "note": "Lifting the machine-hours limit for Feb and Jun by scaling the hours_per_month parameter to a very large value."
+}

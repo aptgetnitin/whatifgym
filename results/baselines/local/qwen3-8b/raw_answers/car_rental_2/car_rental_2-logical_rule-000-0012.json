@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_rentals_monday",
+   "measure": "rentals",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": ">=",
+   "value": 960
+  }
+ ],
+ "note": "Ensures that the total number of rentals on Monday is at least 960."
+}

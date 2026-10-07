@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine4"
+      },
+      "sense": "<=",
+      "value": 3825000
+    }
+  ],
+  "note": "Cap total extraction from Mine4 at 3,825,000 tons."
+}

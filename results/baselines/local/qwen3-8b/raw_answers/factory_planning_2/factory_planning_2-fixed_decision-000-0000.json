@@ -1,0 +1,86 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "May",
+    "product": "Prod1"
+   },
+   "value": 210
+  },
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "May",
+    "product": "Prod2"
+   },
+   "value": 210
+  },
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "May",
+    "product": "Prod3"
+   },
+   "value": 210
+  },
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "May",
+    "product": "Prod4"
+   },
+   "value": 210
+  },
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "May",
+    "product": "Prod5"
+   },
+   "value": 210
+  },
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "May",
+    "product": "Prod6"
+   },
+   "value": 210
+  },
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "May",
+    "product": "Prod7"
+   },
+   "value": 210
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "sell",
+   "scope": {
+    "month": "May"
+   }
+  }
+ ],
+ "note": "Fix the max_sales for each product in May to 210 and optimise the rest."
+}

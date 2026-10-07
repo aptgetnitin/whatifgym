@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_stock_min",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Thursday",
+    "depot": "Birmingham"
+   },
+   "sense": ">=",
+   "value": 250
+  }
+ ],
+ "note": "A rule to ensure that the undamaged stock at Birmingham on Thursday is at least 250."
+}

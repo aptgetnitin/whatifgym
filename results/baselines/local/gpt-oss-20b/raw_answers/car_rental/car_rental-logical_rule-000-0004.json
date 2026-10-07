@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","logic":[{"at_least":1,"of":[{"measure":"damaged_transfers","scope":{"day":"Monday","from_depot":"Plymouth","to_depot":"Birmingham"},"sense":"<=","value":0},{"measure":"damaged_stock","scope":{"day":"Tuesday","depot":"Birmingham"},"sense":">=","value":25}]}]}

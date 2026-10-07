@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","relax":[{"constraint":"expansion_limit"}],"note":"Remove the cap on how many workshop expansions may be ordered."}

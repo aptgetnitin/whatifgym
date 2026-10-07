@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"measure":"flow","sense":"<=","value":138900},{"measure":"purchase","scope":{"food":"Milk"},"sense":"<=","value":17500}],"note":"Total flow limited to 138900 units and Milk purchase limited to 17500 units."}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "bins_used_at_least_half_items",
+   "measure": "y",
+   "scope": {
+    "bin": "bin0"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "y",
+    "scope": {
+     "bin": "bin0"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The rule ensures the number of bins used is at least 50% of the total number of items packed."
+}

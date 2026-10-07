@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "undamaged_stock",
+   "column": "undamaged_stock",
+   "where": {
+    "day": "Monday",
+    "depot": "Manchester"
+   },
+   "value": 200
+  },
+  {
+   "op": "set",
+   "table": "repairs",
+   "column": "repairs",
+   "where": {
+    "day": "Tuesday",
+    "depot": "Plymouth"
+   },
+   "value": 3.8
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "weekly_profit",
+   "scope": {}
+  }
+ ]
+}

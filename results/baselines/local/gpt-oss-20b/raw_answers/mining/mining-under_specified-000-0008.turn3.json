@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "max_open_mine_years",
+      "measure": "open",
+      "sense": "<=",
+      "value": 14
+    }
+  ],
+  "note": "Cap on total mine-years kept open."
+}

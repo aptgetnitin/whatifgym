@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"sell_beet_year2_zero_or_at_least_41","at_least":1,"of":[{"measure":"sell_beet","scope":{"year":"Year2"},"sense":"<=","value":0},{"measure":"sell_beet","scope":{"year":"Year2"},"sense":">=","value":41}]}]}

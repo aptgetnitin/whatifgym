@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod7",
+        "month": "Feb"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The question asks if the plan can deliver at least 500 units made for month Feb, product Prod7. However, the question is about 'made' (production) not 'sold'. The model's decision variables are 'make', 'sell', and 'store'. The question is asking about the production level for Prod7 in February, which is a decision variable 'make[month, product]'. The question is not a what-if scenario but a direct question about the model's decision variable. The model does not have a fixed value for 'make' in the base model, so this question cannot be directly answered as a scenario. The planner is asking if the plan can deliver at least 500 units made for Feb, Prod7. This is a question about the feasibility of a fixed decision for the 'make' variable. Since the model does not have a fixed decision for 'make' in the base model, this question cannot be made precise as a scenario. The question is not a what-if scenario but a direct question about the model's decision variable. The model's decision variables are 'make', 'sell', and 'store'. The question is asking about the production level for Prod7 in February, which is a decision variable 'make[month, product]'. The question is not a what-if scenario but a direct question about the model's decision variable. The model does not have a fixed value for 'make' in the base model, so this question cannot be directly answered as a scenario. The question is asking if the plan can deliver at least 500 units made for Feb, product Prod7. This is a question about the feasibility of a fixed decision for the 'make' variable. Since the model does not have a fixed decision for 'make' in the base model, this question cannot be made precise as a scenario. The question is not a what-if scenario but a direct question about the model's decision variable. The model does not have a fixed value for 'make' in the base model, so this question cannot be directly answered as a scenario."
+  }

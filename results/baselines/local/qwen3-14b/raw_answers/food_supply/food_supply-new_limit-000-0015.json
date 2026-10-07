@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "aleppo_shipment_limit",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Aleppo"
+      },
+      "sense": "<=",
+      "value": 19350
+    }
+  ]
+}

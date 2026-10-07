@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"max_prod4_per_month","measure":"make","scope":{"product":"Prod4"},"sense":"<=","value":300}],"note":"Limit production of Prod4 to 300 units per month."}

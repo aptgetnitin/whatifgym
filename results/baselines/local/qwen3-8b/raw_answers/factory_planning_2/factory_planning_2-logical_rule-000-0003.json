@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "limit_one_product_sold",
+   "measure": "sell",
+   "scope": {
+    "product": [
+     "Prod3",
+     "Prod4",
+     "Prod5"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Only one of the products Prod3, Prod4, or Prod5 can have units sold."
+}

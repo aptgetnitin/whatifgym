@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"Dayr_Az_Zor_purchase_limit","measure":"purchase","scope":{"supplier":"Dayr_Az_Zor"},"sense":"<=","value":116450}],"note":"Limit total purchase from Dayr_Az_Zor to 116,450 units of 100 g per day."}

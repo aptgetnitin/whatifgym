@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "store",
+      "scope": {
+        "oil": "VEG2"
+      }
+    }
+  ],
+  "note": "First maximize profit, then maximize the total amount of VEG2 stored across all months."
+}

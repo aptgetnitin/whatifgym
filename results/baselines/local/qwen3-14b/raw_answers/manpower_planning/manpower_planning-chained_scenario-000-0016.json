@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "short_time_productivity",
+      "factor": 0.5
+    },
+    {
+      "op": "set_param",
+      "name": "max_overmanned",
+      "value": 110
+    }
+  ]
+}

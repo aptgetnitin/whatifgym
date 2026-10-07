@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "wedding_seating",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_tables",
+   "value": 4
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "unhappiness"
+  }
+ ],
+ "note": "Changing the maximum number of tables to 4 and minimizing the total unhappiness."
+}

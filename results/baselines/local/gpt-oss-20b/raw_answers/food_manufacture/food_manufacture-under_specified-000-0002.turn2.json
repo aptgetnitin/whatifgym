@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"scale","table":"oils","column":"hardness","where":{"oil":["VEG1","VEG2","OIL1","OIL2","OIL3"]},"factor":0.9}],"note":"Hardness of all oils reduced by 10%."}

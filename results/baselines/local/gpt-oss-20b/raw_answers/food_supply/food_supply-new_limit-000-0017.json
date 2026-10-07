@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"measure":"ration","scope":{"camp":"Jubb_al_Jarrah"},"sense":">=","value":7.3},{"measure":"flow","scope":{"from_city":"Hassakeh"},"sense":"<=","value":57900}]}

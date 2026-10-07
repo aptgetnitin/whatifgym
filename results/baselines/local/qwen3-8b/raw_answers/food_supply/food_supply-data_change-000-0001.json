@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "nutrients",
+      "column": "min_per_person",
+      "where": {
+        "nutrient": [
+          "Energy(kcal)",
+          "Protein(g)",
+          "Fat(g)",
+          "Calcium(mg)",
+          "Iron(mg)",
+          "VitaminA(ug)",
+          "ThiamineB1(mg)",
+          "RiboflavinB2(mg)",
+          "NicacinB3(mg)",
+          "Folate(ug)",
+          "VitaminC(mg)"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "A relative change in the minimum daily intake per person across all nutrients is achieved by scaling the min_per_person column for all nutrient rows."
+}

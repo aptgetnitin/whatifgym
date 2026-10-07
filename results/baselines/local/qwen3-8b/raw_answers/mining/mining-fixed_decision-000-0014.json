@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "order",
+   "where": {
+    "year": "Year1"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine1_worked_years",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine1"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Set Year1's order to 0 to exclude it from the planning horizon and fix Mine1's operate variable to 0 across all years."
+}

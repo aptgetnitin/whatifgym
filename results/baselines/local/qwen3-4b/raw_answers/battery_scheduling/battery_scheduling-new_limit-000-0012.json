@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "decision_variables",
+      "column": "discharge",
+      "where": {
+        "hour": "21-22"
+      },
+      "value": 3
+    }
+  ]
+  }

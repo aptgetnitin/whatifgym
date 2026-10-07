@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "factor": 1.25
+  }
+ ],
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "store_target",
+   "value": 100
+  }
+ ]
+}

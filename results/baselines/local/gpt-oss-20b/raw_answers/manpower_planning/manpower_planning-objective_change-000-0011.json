@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "retrain"
+    },
+    {
+      "sense": "min",
+      "measure": "redundant"
+    }
+  ],
+  "note": "Minimize total retraining first, then total redundancy."
+}

@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "ask": "Please specify which row in the rental demand table is different and the new value."
+}

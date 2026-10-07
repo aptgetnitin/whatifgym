@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "min_batch_prod2_jan",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Jan",
+            "product": "Prod2"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Jan",
+            "product": "Prod2"
+          },
+          "sense": ">=",
+          "value": 1500
+        }
+      ]
+    }
+  ]
+}

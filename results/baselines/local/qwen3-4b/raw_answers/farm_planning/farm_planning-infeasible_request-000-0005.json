@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "raise_heifers",
+      "column": "Year2",
+      "value": 35
+    },
+    {
+      "op": "set",
+      "table": "raise_heifers",
+      "column": "Year1",
+      "value": 68
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "may_units_at_least_75pct",
+      "measure": "make",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {}
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "prod4_at_most_60pct_of_prod3",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "product": "Prod3"
+        }
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "May must produce at least 75% of total units, and Prod4 production capped at 60% of Prod3 production."
+}

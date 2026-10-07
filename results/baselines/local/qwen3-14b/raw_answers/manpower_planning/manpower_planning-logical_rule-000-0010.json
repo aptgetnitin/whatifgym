@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "retrain_to_higher_skill_year1_unskilled",
+      "measure": "retrain",
+      "scope": {
+        "year": 1,
+        "from_skill": "unskilled",
+        "to_skill": {
+          "enum": ["semi_skilled", "skilled"]
+        }
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "overmanned",
+        "scope": {
+          "year": 1,
+          "skill": "unskilled"
+        }
+      },
+      "factor": 860
+    }
+  ]
+}

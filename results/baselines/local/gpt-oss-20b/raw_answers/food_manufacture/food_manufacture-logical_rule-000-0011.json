@@ -1,0 +1,1 @@
+{"ask":"Could you clarify how to enforce that at most two of the months Jan, Feb, Mar, and May may have any refined oil? For example, do you want a cardinality constraint on the number of months with positive consumption, or a limit on total consumption across those months?"}

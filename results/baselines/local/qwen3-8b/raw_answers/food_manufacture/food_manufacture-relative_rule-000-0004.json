@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "storage_to_may_limit",
+   "measure": "store",
+   "scope": {
+    "month": "May"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "At most 5% of the total tons of oil in storage across all months (except May) may be stored in May."
+}

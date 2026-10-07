@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine3_extraction_limit",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine3"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "extract",
+    "scope": {
+     "mine": [
+      "Mine1",
+      "Mine2",
+      "Mine3",
+      "Mine4"
+     ]
+    }
+   },
+   "factor": 0.15
+  }
+ ],
+ "note": "A relative rule limits the sum of extraction from Mine3 to 15% of the total extraction across all mines."
+}

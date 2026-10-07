@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "repair_cap",
+   "measure": "repairs",
+   "scope": {
+    "day": "Monday",
+    "depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ]
+   },
+   "sense": "<=",
+   "value": 200
+  }
+ ],
+ "note": "A cap on the total number of cars repaired across all depots and days."
+}

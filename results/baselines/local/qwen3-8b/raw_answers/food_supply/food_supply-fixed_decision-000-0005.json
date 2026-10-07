@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "arcs",
+      "column": "transport_cost",
+      "where": {
+        "from_city": "Homs",
+        "to_city": "Homs"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "flow_from_homs",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Homs"
+      },
+      "sense": "==",
+      "value": 170
+    },
+    {
+      "name": "flow_to_homs",
+      "measure": "flow",
+      "scope": {
+        "to_city": "Homs"
+      },
+      "sense": "==",
+      "value": 170
+    }
+  ],
+  "note": "Set transport cost for self-loop from Homs to Homs to 0 and enforce that exactly 170 units of each food are shipped from and to Homs."
+}

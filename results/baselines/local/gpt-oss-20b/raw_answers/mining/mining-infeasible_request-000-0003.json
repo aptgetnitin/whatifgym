@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "blend_year3_min",
+      "measure": "blend",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": ">=",
+      "value": 9750000
+    }
+  ],
+  "note": "Require at least 9.75 million tons of blended ore sold in Year3."
+}

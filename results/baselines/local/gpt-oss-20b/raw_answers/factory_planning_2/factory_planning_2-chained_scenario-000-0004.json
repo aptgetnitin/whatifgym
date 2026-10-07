@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"measure":"make","scope":{"month":"Jan"},"sense":">=","value":3850,"name":"floor_make_Jan"},{"measure":"make","scope":{"product":"Prod7"},"sense":"<=","value":280,"name":"max_make_Prod7"}]}

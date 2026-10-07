@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"plymouth_at_manhattan_25pct","measure":"expand","scope":{"depot":"Plymouth"},"sense":"<=","relative_to":{"measure":"expand","scope":{"depot":"Manchester"}},"factor":0.25}]}

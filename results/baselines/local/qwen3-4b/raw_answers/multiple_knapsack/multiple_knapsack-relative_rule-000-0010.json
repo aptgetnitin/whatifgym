@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin2_at_most_75_bin3",
+      "measure": "x",
+      "scope": {
+        "bin": "bin2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "bin": "bin3"
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "at_least_15_total_item7",
+      "measure": "x",
+      "scope": {
+        "item": "item7"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": [
+            "item0",
+            "item1",
+            "item2",
+            "item3",
+            "item4",
+            "item5",
+            "item6",
+            "item7",
+            "item8",
+            "item9",
+            "item10",
+            "item11",
+            "item12",
+            "item13",
+            "item14"
+          ]
+        }
+      },
+      "factor": 0.15
+    }
+  ]
+}

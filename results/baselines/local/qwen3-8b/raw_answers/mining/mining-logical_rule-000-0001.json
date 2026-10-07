@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "extract_mine4_year4_zero_or_at_least_7500000",
+   "measure": "extract",
+   "scope": {
+    "year": "Year4",
+    "mine": "Mine4"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extract",
+    "scope": {
+     "year": "Year4",
+     "mine": "Mine4"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "extract_mine4_year4_zero_or_at_least_7500000",
+   "measure": "extract",
+   "scope": {
+    "year": "Year4",
+    "mine": "Mine4"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A logical rule that enforces the extract for Mine4 in Year4 to be either zero or at least 7500000."
+}

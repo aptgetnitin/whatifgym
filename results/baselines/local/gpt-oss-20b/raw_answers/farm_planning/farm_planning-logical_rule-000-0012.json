@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"grain_buy_if_beet_grown","at_least":1,"of":[{"measure":"grow_beet","scope":{"year":"Year5"},"sense":"==","value":0},{"measure":"buy_grain","scope":{"year":"Year5"},"sense":">=","value":42}]}]}

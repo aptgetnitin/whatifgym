@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "hours",
+   "column": "import_price",
+   "factor": 0.6
+  }
+ ],
+ "note": "A relative change to the import price across all hours is a scale over the matching rows."
+}

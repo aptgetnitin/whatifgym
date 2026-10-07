@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","logic":[{"name":"retraining_requires_overmanning","at_least":1,"of":[{"measure":"retrain

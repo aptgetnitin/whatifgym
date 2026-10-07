@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "ask": "What does 'the total number of bins used' mean? The model uses `y[bin]` for bin usage, so the total number of bins used is `sum y[bin]`. But the question says 'the total number of items packed'—is this `sum x[item, bin]` (which is always 11) or something else? The phrase 'may be at least the same as' suggests a constraint: `sum y[bin] >= sum x[item, bin]` (which is always true since 11 items require at least 11 bins, but the model only has 11 bins available). This seems confusing and possibly infeasible or trivial."
+}

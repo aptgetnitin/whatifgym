@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_nutrient_factor",
+   "value": 3
+  }
+ ],
+ "rules": [
+  {
+   "name": "ration_cap_total",
+   "measure": "ration",
+   "scope": {
+    "camp": [
+      "Ar Raqqa"
+    ]
+   },
+   "sense": "<=",
+   "value": 58650
+  }
+ ],
+ "note": "A cap on total ration per person in Ar Raqqa and a limit on total food shipped to Ar Raqqa."
+}

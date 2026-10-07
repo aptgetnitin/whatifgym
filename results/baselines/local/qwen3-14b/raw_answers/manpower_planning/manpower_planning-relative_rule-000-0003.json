@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "short_time_year1_vs_year3",
+      "measure": "short_time",
+      "scope": {
+        "year": 1
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "short_time",
+        "scope": {
+          "year": 3
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

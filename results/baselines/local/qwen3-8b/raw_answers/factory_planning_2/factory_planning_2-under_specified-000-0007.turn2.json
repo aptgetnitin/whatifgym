@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Mar"
+   },
+   "value": 1900
+  }
+ ],
+ "note": "The upper limit on units made is applied to the max_sales column for the month of March."
+}

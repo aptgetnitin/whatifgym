@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "min_output_mw",
+      "where": {
+        "type": "Thermal1"
+      },
+      "value": 14
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "ngen",
+      "scope": {
+        "period": "00-06",
+        "type": "Thermal1"
+      },
+      "value": 14
+    }
+  ]
+}

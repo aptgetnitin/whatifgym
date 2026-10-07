@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "shift_param",
+      "name": "damaged_share",
+      "delta": 0.05
+    }
+  ],
+  "note": "The planner's question refers to revisiting the damage rate of returned cars, which corresponds to the parameter `damaged_share` in the model. A shift of 0.05 (5 percentage points) is assumed as a typical change for such a question."
+}

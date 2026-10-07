@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "years",
+      "column": "housing_capacity",
+      "where": {
+        "year": [
+          "Year1",
+          "Year3"
+        ]
+      },
+      "factor": 1.0
+    }
+  ]
+}

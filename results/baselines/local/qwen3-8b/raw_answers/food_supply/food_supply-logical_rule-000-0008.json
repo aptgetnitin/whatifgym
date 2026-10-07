@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "flow_to_ammans_food",
+      "measure": "flow",
+      "scope": {
+        "food": "Maize meal",
+        "from_city": "Amman"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Maize meal",
+          "camp": "Dayr_Az_Zor"
+        }
+      },
+      "factor": 0.22
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"min2_extraction_min","measure":"extract","scope":{"mine":"Mine2"},"sense":">=","value":21500000}],"note":"Check feasibility of extracting at least 21.5 million tons from Mine2."}

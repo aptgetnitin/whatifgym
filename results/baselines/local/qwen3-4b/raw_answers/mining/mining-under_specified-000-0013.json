@@ -1,0 +1,25 @@
+{
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine4"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "mine4_closed",
+      "measure": "open",
+      "scope": {
+        "mine": "Mine4",
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is vague: which mine is lost? The model has four mines (Mine1-Mine4). The scenario assumes Mine4 is lost, but the question doesn't specify. To be machine-checkable, we need to know which mine is lost. The reference optimum uses all four mines, so losing one mine could mean different things (e.g., Mine4 is closed after Year4, so it's not available in Year5)."
+}

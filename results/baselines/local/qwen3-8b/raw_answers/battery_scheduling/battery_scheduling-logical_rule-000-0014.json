@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_21-22_if_soc_16-17",
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "soc",
+    "scope": {
+     "hour": "16-17"
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "A logical rule that enforces a minimum discharge power in 21-22 if there is stored energy in 16-17."
+}

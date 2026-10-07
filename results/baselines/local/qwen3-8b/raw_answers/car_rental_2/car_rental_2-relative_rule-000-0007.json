@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_stock_monday_limit",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Friday"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "Limits the sum of damaged_stock on Monday to 25% of the sum on Friday."
+}

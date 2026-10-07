@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "rentals_upper_limit_plymouth",
+   "measure": "rentals",
+   "scope": {
+    "depot": "Plymouth"
+   },
+   "sense": "<=",
+   "value": 190
+  }
+ ],
+ "note": "A new rule caps the total number of cars rented out from Plymouth at 190."
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "VEG2_min_batch",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "consume",
+          "scope": {
+            "oil": "VEG2"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "consume",
+          "scope": {
+            "oil": "VEG2"
+          },
+          "sense": ">=",
+          "value": 1080
+        }
+      ]
+    }
+  ],
+  "note": "If any VEG2 is refined, total must be at least 1080."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","logic":[{"name":"overmanned_year2_requires_retrain_year1","at_least":1,"of":[{"measure":"overmanned","scope":{"year":2},"sense":"<=","value":0},{"measure":"retrain","scope":{"year":1,"from_skill":"unskilled","to_skill":"semi_skilled"},"sense":">=","value":300}]}]}

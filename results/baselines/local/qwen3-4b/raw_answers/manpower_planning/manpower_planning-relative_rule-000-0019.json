@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "max_recruit",
+      "where": {
+        "year": 1
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}

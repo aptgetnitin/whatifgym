@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "year": "Year1"
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "scale",
+      "table": "open",
+      "column": "open",
+      "where": {
+        "year": "Year2"
+      },
+      "factor": 0.9
+    }
+  ],
+  "rules": [
+    {
+      "name": "extract_year1_75%",
+      "measure": "extract",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 0.75
+    },
+    {
+      "name": "open_year2_90%",
+      "measure": "open",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "value": 0.9
+    }
+  ]
+}

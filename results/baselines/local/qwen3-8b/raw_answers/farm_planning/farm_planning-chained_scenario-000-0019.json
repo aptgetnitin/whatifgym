@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "measure": "raise_heifers",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": "<=",
+   "value": 6,
+   "name": "cap_raise_heifers_Year2"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_purchase",
+   "where": {
+    "food": "Milk"
+   },
+   "value": 17500
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_food_shipped_limit",
+   "measure": "flow",
+   "scope": {
+    "food": "*"
+   },
+   "sense": "<=",
+   "value": 138900
+  }
+ ],
+ "note": "The total food shipped is capped at 138900 units per day, and the purchase of Milk is limited to 17500 units per day."
+}

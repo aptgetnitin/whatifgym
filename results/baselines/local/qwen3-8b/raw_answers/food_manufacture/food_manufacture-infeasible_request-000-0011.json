@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "consume_apr_min",
+   "measure": "consume",
+   "scope": {
+    "month": "Apr"
+   },
+   "sense": ">=",
+   "value": 1350
+  },
+  {
+   "name": "consume_jan_min",
+   "measure": "consume",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": ">=",
+   "value": 1350
+  }
+ ],
+ "note": "Rules enforce minimum consumption (refining) for April and January."
+}

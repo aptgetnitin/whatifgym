@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "measure": "x",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "y"
+      },
+      "factor": 1.5
+    },
+    {
+      "measure": "y",
+      "scope": {
+        "bin": "bin10"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "y",
+        "scope": {
+          "bin": "bin0"
+        }
+      },
+      "factor": 3.0
+    }
+  ]
+}

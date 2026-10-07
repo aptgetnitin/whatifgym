@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase",
+   "column": "purchase",
+   "where": {
+    "food": "Maize meal",
+    "supplier": "Aleppo"
+   },
+   "value": 23
+  }
+ ],
+ "rules": [
+  {
+   "name": "ration_wheat_qamishli_zero",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat",
+    "camp": "Qamishli"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Fixed the purchase of Maize meal from Aleppo to exactly 23 units per day and set the ration of Wheat in Qamishli camp to 0, with the rest of the variables optimised."
+}

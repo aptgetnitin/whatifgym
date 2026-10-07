@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_left_at_least_3_times_repairs",
+   "measure": "undamaged_left",
+   "scope": {
+    "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+      "depot": [
+        "Glasgow",
+        "Manchester",
+        "Birmingham",
+        "Plymouth"
+      ]
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "The rule ensures that the total undamaged cars kept at all depots overnight is at least three times the total cars repaired across all depots."
+}

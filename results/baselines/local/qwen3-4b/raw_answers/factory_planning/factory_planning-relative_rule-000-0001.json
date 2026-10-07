@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ],
+        "month": [
+          "Mar"
+        ]
+      },
+      "factor": 0.95
+    }
+  ],
+  "note": "The question states 'at most 5% of the total units sold may go to month Mar'. This implies that the total sales in March (across all products) is at most 95% of the total sales over all months. However, the model's max_sales table defines per-product monthly sales limits. The question is ambiguous because it does not specify whether it refers to the total sales in March or the total sales across all months. Given the context of the model, it's likely intended to mean that the total sales in March (across all products) is at most 95% of the total sales over all months. But the model does not have a 'total sales' measure that can be directly compared across months. The most precise interpretation is that the max_sales for March is scaled down by 5% relative to the original max_sales for March. However, this interpretation is not fully precise because the question does not specify the reference point for the 5% (e.g., total sales in March vs. total sales over all months). Given the model's structure, the most actionable change is to scale the max_sales for March by 0.95, assuming the question means that the March sales limit is 95% of the original limit. This is a common interpretation in such contexts."
+}

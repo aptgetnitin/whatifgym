@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "import_price",
+   "where": {
+    "hour": "03-04"
+   },
+   "value": 0.28
+  }
+ ],
+ "note": "The import price for the hour 03-04 is set to 0.28."
+}

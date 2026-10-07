@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_at_most_60_of_charge",
+   "measure": "discharge",
+   "scope": {
+    "hour": "all"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "charge",
+    "scope": {
+     "hour": "all"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "The total discharging power is constrained to be at most 60% of the total charging power across all hours."
+}

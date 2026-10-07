@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "no_production_in_jun_and_apr",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jun",
+          "Apr"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+  }

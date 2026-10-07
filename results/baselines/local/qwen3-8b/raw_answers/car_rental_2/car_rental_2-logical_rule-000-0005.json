@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_rentals_saturday_glasgow",
+   "measure": "rentals",
+   "scope": {
+    "day": "Saturday",
+    "depot": "Glasgow"
+   },
+   "sense": ">=",
+   "value": 310
+  }
+ ],
+ "note": "A minimum rental requirement for Saturday at Glasgow depot."
+}

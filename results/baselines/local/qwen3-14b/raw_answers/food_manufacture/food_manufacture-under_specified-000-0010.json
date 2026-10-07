@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"oil_buy_cap","measure":"buy","scope":{"month":"*","oil":"*"},"sense":"<=","value":1000}]}

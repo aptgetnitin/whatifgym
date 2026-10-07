@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_ration_idleb","measure":"ration","scope":{"camp":"Idleb"},"sense":">=","value":7.3}],"note":"Requirement that total ration per person in Idleb is at least 7.3 units."}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "thermal_units_15-18_at_most_90_of_09-15",
+      "measure": "ngen",
+      "scope": {
+        "period": "15-18",
+        "type": "Thermal1"
+      },
+      "sense": "<=",
+      "value": 0.9
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

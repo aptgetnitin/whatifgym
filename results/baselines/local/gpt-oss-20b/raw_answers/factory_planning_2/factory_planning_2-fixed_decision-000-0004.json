@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","fixed_decisions":[{"measure":"store","scope":{"month":"Mar","product":"Prod4"},"value":50}],"note":"Fix inventory of Prod4 at end of March to 50 units."}

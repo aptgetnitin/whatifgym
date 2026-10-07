@@ -1,0 +1,50 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "refined_oil_at_least_1_25_times_bought",
+   "measure": "consume",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ],
+     "oil": [
+      "VEG1",
+      "VEG2",
+      "OIL1",
+      "OIL2",
+      "OIL3"
+     ]
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The rule enforces that the total tons of oil refined is at least 1.25 times the total tons of oil bought."
+}

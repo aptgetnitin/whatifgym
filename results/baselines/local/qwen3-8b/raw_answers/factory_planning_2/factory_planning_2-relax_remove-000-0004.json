@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "relax": [
+  {
+   "constraint": "maintenance",
+   "scope": {
+    "machine": "*"
+   }
+  }
+ ],
+ "note": "The maintenance requirement is relaxed, meaning no machines need to be down for maintenance in any month."
+}

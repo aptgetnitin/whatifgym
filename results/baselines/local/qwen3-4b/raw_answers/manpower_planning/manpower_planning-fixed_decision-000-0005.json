@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "fixed_decisions": [
+    {
+      "measure": "short_time",
+      "scope": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "value": 62
+    },
+    {
+      "measure": "retrain",
+      "scope": {
+        "year": 1,
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "value": 0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      }
+    }
+  ]
+  }

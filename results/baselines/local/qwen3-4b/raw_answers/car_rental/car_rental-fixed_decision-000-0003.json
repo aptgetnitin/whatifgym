@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "undamaged_left",
+      "column": "undamaged_left",
+      "where": {
+        "day": "*",
+        "depot": "Manchester"
+      },
+      "value": 1.7
+    }
+  ]
+}

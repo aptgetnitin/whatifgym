@@ -1,0 +1,126 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "Jun_at_least_75_of_Mar_Prod1",
+      "measure": "store",
+      "scope": {
+        "product": "Prod1",
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod1",
+          "month": "Mar"
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "Jun_at_least_75_of_Mar_Prod2",
+      "measure": "store",
+      "scope": {
+        "product": "Prod2",
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod2",
+          "month": "Mar"
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "Jun_at_least_75_of_Mar_Prod3",
+      "measure": "store",
+      "scope": {
+        "product": "Prod3",
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod3",
+          "month": "Mar"
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "Jun_at_least_75_of_Mar_Prod4",
+      "measure": "store",
+      "scope": {
+        "product": "Prod4",
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod4",
+          "month": "Mar"
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "Jun_at_least_75_of_Mar_Prod5",
+      "measure": "store",
+      "scope": {
+        "product": "Prod5",
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod5",
+          "month": "Mar"
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "Jun_at_least_75_of_Mar_Prod6",
+      "measure": "store",
+      "scope": {
+        "product": "Prod6",
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod6",
+          "month": "Mar"
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "Jun_at_least_75_of_Mar_Prod7",
+      "measure": "store",
+      "scope": {
+        "product": "Prod7",
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod7",
+          "month": "Mar"
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Each product's stock in June must be at least 75% of its stock in March."
+}

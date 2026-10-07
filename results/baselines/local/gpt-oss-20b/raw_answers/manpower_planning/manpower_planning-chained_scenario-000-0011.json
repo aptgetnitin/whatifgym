@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"measure":"redundant","scope":{"year":3},"sense":">=","value":300,"name":"floor_redundant_3"}]}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "ration_floor_for_Daraa",
+   "measure": "ration",
+   "scope": {
+    "camp": "Daraa"
+   },
+   "sense": ">=",
+   "value": 6.1
+  }
+ ],
+ "note": "A floor on the total ration per person in Daraa camp."
+}

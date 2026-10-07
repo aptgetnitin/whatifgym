@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "oil2_purchase_limit",
+      "measure": "buy",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "oil": {
+            "VEG1": true,
+            "VEG2": true,
+            "OIL1": true,
+            "OIL2": true,
+            "OIL3": true
+          }
+        }
+      },
+      "factor": 0.6
+    }
+  ]
+}

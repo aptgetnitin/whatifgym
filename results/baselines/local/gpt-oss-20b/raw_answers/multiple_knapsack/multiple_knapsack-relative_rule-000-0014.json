@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin3_10percent",
+      "measure": "x",
+      "scope": {
+        "bin": "bin3"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {}
+      },
+      "factor": 0.1
+    }
+  ],
+  "note": "Bin3 must account for at most 10% of all item placements."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "cap_downgrade_skilled",
+      "measure": "downgrade",
+      "scope": {
+        "from_skill": "skilled"
+      },
+      "sense": "<=",
+      "value": 104
+    }
+  ]
+}

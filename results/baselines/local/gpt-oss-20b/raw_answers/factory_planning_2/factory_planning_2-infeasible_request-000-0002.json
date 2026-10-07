@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "measure": "make",
+      "scope": {},
+      "sense": ">=",
+      "value": 66300
+    }
+  ],
+  "note": "Check feasibility of producing at least 66300 units."
+}

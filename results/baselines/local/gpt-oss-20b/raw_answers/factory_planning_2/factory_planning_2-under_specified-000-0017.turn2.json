@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","data_changes":[{"op":"set_param","name":"store_target","value":100}],"note":"Closing stock target changed to 100."}

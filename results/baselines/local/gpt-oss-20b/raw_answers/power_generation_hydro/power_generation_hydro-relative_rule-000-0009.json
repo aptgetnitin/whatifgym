@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "Thermal1_output_limit",
+      "measure": "output",
+      "scope": {
+        "type": "Thermal1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "output",
+        "scope": {
+          "type": "Thermal0"
+        }
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Thermal1 output must be at most 25% of Thermal0 output."
+}

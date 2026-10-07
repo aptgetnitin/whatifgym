@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "foods",
+   "column": "international_price",
+   "where": {
+    "food": "Dried skim milk (enriched) (DSM)"
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "International prices rise 10 % for the food Dried skim milk (enriched) (DSM)."
+}

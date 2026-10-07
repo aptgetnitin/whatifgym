@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_floor_birmingham",
+      "measure": "damaged_stock",
+      "scope": {
+        "depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 150
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "fixed_decisions": [
+  {
+   "measure": "make",
+   "scope": {
+    "month": "May",
+    "product": "Prod6"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the make variable for May and Prod6 to 0 and optimise the rest."
+}

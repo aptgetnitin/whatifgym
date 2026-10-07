@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "storage_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "May",
+            "oil": "OIL3"
+          },
+          "sense": ">=",
+          "value": 1000
+        }
+      ]
+    }
+  ]
+}

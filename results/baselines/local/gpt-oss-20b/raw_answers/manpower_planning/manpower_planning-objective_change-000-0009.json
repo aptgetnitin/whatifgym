@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","objective":[{"sense":"min","measure":"redundant"},{"sense":"max","measure":"workforce"},{"sense":"max","measure":"retrain"}],"note":"Priorities: minimize total redundancy, then maximize total workforce, then maximize total retraining."}

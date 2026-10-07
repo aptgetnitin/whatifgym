@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_left_thursday_min",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Thursday"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "damaged_left",
+    "scope": {
+     "day": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Friday",
+      "Saturday"
+     ]
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The rule ensures that damaged cars kept overnight on Thursday account for at least 75% of the total damaged cars kept overnight across all other days."
+}

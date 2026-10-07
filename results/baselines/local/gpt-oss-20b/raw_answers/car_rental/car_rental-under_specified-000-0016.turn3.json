@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"undamaged_floor_plymouth","measure":"undamaged_stock","scope":{"depot":"Plymouth"},"sense":">=","value":270}],"note":"Floor on undamaged cars at Plymouth in the morning."}

@@ -1,0 +1,57 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_purchase",
+      "value": 20000
+    }
+  ],
+  "rules": [
+    {
+      "name": "equal_purchase_of_corn_soya_blend",
+      "measure": "purchase",
+      "scope": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "sense": "==",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "Corn-soya blend (CSB)"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "purchase",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "supplier": [
+          "Aleppo",
+          "Amman",
+          "As_Suweida",
+          "Beirut",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Gaziantep",
+          "Hama",
+          "Hassakeh",
+          "Homs"
+        ]
+      },
+      "value": 5350
+    }
+  ],
+  "note": "The objective is to optimise the rest of the model while ensuring that each supplier buys exactly 5350 units of Corn-soya blend (CSB) per day."
+}

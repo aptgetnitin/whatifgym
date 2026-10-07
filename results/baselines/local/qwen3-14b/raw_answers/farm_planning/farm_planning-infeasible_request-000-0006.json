@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "total_grain_grown_target",
+      "measure": "grow_grain",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "land_group": [
+          "Group1",
+          "Group2",
+          "Group3",
+          "Group4"
+        ]
+      },
+      "sense": ">=",
+      "value": 560
+    }
+  ]
+}

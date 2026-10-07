@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "ration_cap_total",
+      "measure": "ration",
+      "scope": {
+        "camp": "*"
+      },
+      "sense": "<=",
+      "value": 30
+    },
+    {
+      "name": "flow_cap_ar_rakka",
+      "measure": "flow",
+      "scope": {
+        "to_city": "Ar Raqqa"
+      },
+      "sense": "<=",
+      "value": 58650
+    }
+  ]
+}

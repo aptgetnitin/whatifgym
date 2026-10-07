@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_plymouth_rentals",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "note": "The planner wants at least 40% of total rentals to go to Plymouth. This requires a rule that bounds the sum of rentals at Plymouth relative to total rentals."
+  }

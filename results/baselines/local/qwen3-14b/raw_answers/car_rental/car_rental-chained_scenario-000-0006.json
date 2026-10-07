@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Friday"
+      },
+      "sense": "<=",
+      "value": 250,
+      "name": "cap_undamaged_stock_Friday"
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "damage_excess",
+      "value": 80
+    }
+  ]
+}

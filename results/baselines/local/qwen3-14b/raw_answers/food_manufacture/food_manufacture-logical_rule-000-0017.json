@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "min_storage_OIL1_Mar",
+      "measure": "store",
+      "scope": {
+        "month": "Mar",
+        "oil": "OIL1"
+      },
+      "sense": ">=",
+      "value": 750
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "produce_jan_min",
+   "measure": "produce",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": ">=",
+   "value": 900
+  },
+  {
+   "name": "produce_jun_min",
+   "measure": "produce",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "value": 900
+  }
+ ],
+ "note": "Rules enforce minimum production requirements for January and June."
+}

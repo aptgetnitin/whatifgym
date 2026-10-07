@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": [
+          "Idleb"
+        ]
+      },
+      "factor": 2.0
+    },
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": [
+          "Qamishli"
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "table": "camps",
+      "rows": [
+        {
+          "camp": "Homs",
+          "beneficiaries": 3000
+        }
+      ]
+    }
+  ],
+  "note": "The planner's question refers to changing the number of beneficiaries for one camp row. The scenario specifies Idleb's population doubling (scale by 2), Qamishli camp closing (remove row), and a new camp in Homs with 3,000 beneficiaries (add row)."
+}

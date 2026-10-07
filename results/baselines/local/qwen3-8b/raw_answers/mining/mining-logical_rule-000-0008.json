@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine1_mine3_exclusive",
+   "measure": "extract",
+   "scope": {
+    "mine": [
+     "Mine1",
+     "Mine3"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "A new rule that restricts the total extraction from Mine1 and Mine3 to zero, enforcing exclusivity."
+}

@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "min_yearly_profit",
+   "value": -1e9
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_grain_grown",
+   "measure": "grow_grain",
+   "scope": {
+    "land_group": [
+      "Group1",
+      "Group2",
+      "Group3",
+      "Group4"
+    ]
+   },
+   "sense": ">=",
+   "value": 560
+  }
+ ],
+ "note": "The question asks if the plan can meet a target of 560 tons of grain grown in total. To check this, we relax the minimum yearly profit constraint and add a rule to ensure the total grain grown meets the target."
+}

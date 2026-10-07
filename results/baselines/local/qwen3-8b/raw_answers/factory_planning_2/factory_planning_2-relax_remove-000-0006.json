@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "machine": "planer"
+   }
+  }
+ ],
+ "note": "Lifting the machine-hour limit for the planer means removing the capacity constraint for that machine type."
+}

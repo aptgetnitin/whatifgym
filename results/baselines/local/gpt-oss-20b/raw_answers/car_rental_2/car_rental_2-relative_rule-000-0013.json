@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"plymouth_at_least_2x_birmingham","measure":"repairs","scope":{"depot":"Plymouth"},"sense":">=","relative_to":{"measure":"repairs","scope":{"depot":"Birmingham"}},"factor":2.0}]}

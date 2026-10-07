@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_food_production_limit",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 2150
+    },
+    {
+      "name": "jan_refining_limit",
+      "measure": "consume",
+      "scope": {
+        "month": "Jan",
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ]
+}

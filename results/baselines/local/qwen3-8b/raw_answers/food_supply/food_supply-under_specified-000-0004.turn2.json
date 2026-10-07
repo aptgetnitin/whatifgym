@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "camps",
+   "where": {
+    "camp": "Jubb_al_Jarrah"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "measure": "ration",
+   "scope": {
+    "camp": "Jubb_al_Jarrah"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Removing the camp and setting ration to 0 ensures no resources are allocated to the non-existent camp."
+}

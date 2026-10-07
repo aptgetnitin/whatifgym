@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "short_time_unskilled_year2_to_overmanned_year3",
+      "measure": "short_time",
+      "scope": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 220
+    },
+    {
+      "name": "overmanned_year3",
+      "measure": "overmanned",
+      "scope": {
+        "year": 3
+      },
+      "sense": ">=",
+      "value": 220
+    }
+  ],
+  "note": "The planner's question is about a condition on short_time for year 2, unskilled workers requiring overmanned for year 3 to be at least 220. This is a rule that links two decision measures across years and skills."
+  }

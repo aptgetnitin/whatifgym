@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "output",
+   "scope": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "cost_per_hour",
+   "scope": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   }
+  }
+ ],
+ "note": "Prioritise minimising thermal output first, then minimising generating cost among those plans."
+}

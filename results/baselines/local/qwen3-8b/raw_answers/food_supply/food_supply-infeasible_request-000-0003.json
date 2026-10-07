@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "min_csb_ration",
+   "measure": "ration",
+   "scope": {
+    "food": "Corn-soya blend (CSB)",
+    "camp": "*"
+   },
+   "sense": ">=",
+   "value": 15
+  },
+  {
+   "name": "min_dsm_ration",
+   "measure": "ration",
+   "scope": {
+    "food": "Dried skim milk (enriched) (DSM)",
+    "camp": "*"
+   },
+   "sense": ">=",
+   "value": 1.2
+  }
+ ],
+ "note": "The planner requests minimum rations per person for two specific foods across all camps."
+}

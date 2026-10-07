@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","data_changes":[{"op":"scale","table":"rental_lengths","column":"price_other_depot","where":{"rental_days":1},"factor":0.7}],"note":"The price for one‑day rentals returned to another depot falls by 30%."}

@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "mar_prod6_sell_either_zero_or_600",
+      "measure": "sell",
+      "scope": {
+        "month": "Mar",
+        "product": "Prod6"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "Mar",
+          "product": "Prod6"
+        }
+      },
+      "factor": 0
+    },
+    {
+      "name": "mar_prod6_sell_either_zero_or_600",
+      "measure": "sell",
+      "scope": {
+        "month": "Mar",
+        "product": "Prod6"
+      },
+      "sense": ">=",
+      "value": 600
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "march_to_june_rule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Mar"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jun"
+          },
+          "sense": ">=",
+          "value": 4000
+        }
+      ]
+    }
+  ],
+  "note": "If any units are made in March, then total units made in June must be at least 4000."
+}

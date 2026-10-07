@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "no_extract_both_mine1_and_mine3",
+      "measure": "extract",
+      "scope": {
+        "mine": [
+          "Mine1",
+          "Mine3"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "extract",
+        "scope": {
+          "mine": [
+            "Mine1",
+            "Mine3"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

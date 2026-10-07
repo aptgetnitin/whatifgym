@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "total_soc_limit",
+   "measure": "soc",
+   "scope": {},
+   "sense": "<=",
+   "value": 140
+  }
+ ],
+ "note": "The total stored energy across all hours is limited to 140 kWh."
+}

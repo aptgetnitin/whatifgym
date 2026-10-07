@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "max_output_mw",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "The planner's question is vague: 'across the board' could mean different things. The model has three thermal types, so I scaled all max_output_mw by 0.9 to represent a 10% reduction. If the planner meant something else (e.g., per type), they should clarify."
+}

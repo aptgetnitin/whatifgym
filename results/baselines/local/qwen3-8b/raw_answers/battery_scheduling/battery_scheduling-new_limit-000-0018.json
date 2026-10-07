@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "min_soc_01-02",
+   "measure": "soc",
+   "scope": {
+    "hour": "01-02"
+   },
+   "sense": ">=",
+   "value": 7.5
+  }
+ ],
+ "note": "The rule ensures the battery's stored energy at the end of hour 01-02 is at least 7.5 kWh."
+}

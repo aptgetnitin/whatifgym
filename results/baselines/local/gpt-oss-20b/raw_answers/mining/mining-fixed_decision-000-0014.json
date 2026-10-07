@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","fixed_decisions":[{"measure":"operate","scope":{"year":"Year1","mine":"Mine1"},"value":0}],"note":"Set operate[Year1, Mine1] to 0 (do not work Mine1 in Year1)."}

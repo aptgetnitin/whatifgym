@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","logic":[{"name":"no_both_wed_mon_repairs","at_least":1,"of":[{"measure":"repairs","scope":{"day":"Wednesday"},"sense":"<=","value":0},{"measure":"repairs","scope":{"day":"Monday"},"sense":"<=","value":0}]}]}

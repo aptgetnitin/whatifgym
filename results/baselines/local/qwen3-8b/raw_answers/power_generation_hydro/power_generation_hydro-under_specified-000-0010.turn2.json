@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hydro_units",
+   "column": "output_mw",
+   "where": {
+    "hydro": "HydroA"
+   },
+   "value": 1800
+  }
+ ],
+ "note": "The hydro output of hydro unit HydroA is set to 1800."
+}

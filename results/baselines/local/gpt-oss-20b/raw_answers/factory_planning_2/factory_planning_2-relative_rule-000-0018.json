@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"prod5_at_least_2x_prod7_stock","measure":"store","scope":{"product":"Prod5"},"sense":">=","relative_to":{"measure":"store","scope":{"product":"Prod7"}},"factor":2.0}],"note":"Ensure total stock of Prod5 is at least twice total stock of Prod7."}

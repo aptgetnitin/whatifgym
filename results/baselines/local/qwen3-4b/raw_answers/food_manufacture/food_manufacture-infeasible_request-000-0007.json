@@ -1,0 +1,62 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "month": "Jun",
+        "oil": "VEG1"
+      },
+      "value": 1.2
+    },
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "month": "Mar",
+        "oil": [
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "value": 0.9
+    },
+    {
+      "op": "remove",
+      "table": "purchase_prices",
+      "where": {
+        "month": "Feb",
+        "oil": "OIL2"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_buy_at_least_13500",
+      "measure": "buy",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "sense": ">=",
+      "value": 13500
+    }
+  ]
+}

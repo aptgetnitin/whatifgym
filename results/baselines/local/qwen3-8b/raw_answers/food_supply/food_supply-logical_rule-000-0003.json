@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "max_2_foods",
+   "measure": "ration",
+   "scope": {
+    "food": [
+     "Corn-soya blend (CSB)",
+     "Oil",
+     "Milk"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "At most 2 of the foods may have any ration per person, so the ration for each of these foods is set to 0."
+}

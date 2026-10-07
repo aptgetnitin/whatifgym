@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "logic": [
+    {
+      "name": "min_batch_sugar_beet_year3",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell_beet",
+          "scope": {
+            "year": "Year3"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell_beet",
+          "scope": {
+            "year": "Year3"
+          },
+          "sense": ">=",
+          "value": 49
+        }
+      ]
+    }
+  ]
+}

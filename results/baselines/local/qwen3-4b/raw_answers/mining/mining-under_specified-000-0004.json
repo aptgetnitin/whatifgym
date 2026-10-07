@@ -1,0 +1,31 @@
+{
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": [
+          "Mine4"
+        ]
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "mine4_closed",
+      "measure": "open",
+      "scope": {
+        "mine": [
+          "Mine4"
+        ],
+        "year": [
+          "Year5"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "note": "The planner says 'we lose a mine', but the model has four mines. The scenario removes Mine4 from the mines table and fixes its open status in Year5 to 0 (closed)."
+}

@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "fixed_decisions": [
+  {
+   "measure": "store",
+   "scope": {
+    "month": "Feb"
+   },
+   "value": 57
+  }
+ ],
+ "note": "Fixing the store (stock) for Feb to 57 for all products."
+}

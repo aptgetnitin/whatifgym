@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","objective":[{"sense":"max","measure":"original"},{"sense":"max","measure":"repair","scope":{"month":"Jun"}}],"note":"First maximize profit, then maximize the total number of machines down for maintenance in June."}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "year5_mine_years_worked",
+   "measure": "operate",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "year": [
+      "Year1",
+      "Year2",
+      "Year3",
+      "Year4"
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The rule ensures that the number of mine-years worked in Year5 is at least 50% of the total mine-years worked in the previous four years."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "discharge",
+   "where": {
+    "hour": "21-22"
+   },
+   "value": 3.8
+  }
+ ],
+ "note": "Fixed discharge power for hour 21-22 to 3.8 kW and optimise the rest."
+}

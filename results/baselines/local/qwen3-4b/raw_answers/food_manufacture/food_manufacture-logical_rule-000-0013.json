@@ -1,0 +1,33 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "months",
+      "column": "month",
+      "where": {
+        "month": [
+          "Jun",
+          "Feb",
+          "May"
+        ]
+      },
+      "value": "refined"
+    }
+  ],
+  "rules": [
+    {
+      "name": "only_two_months_refined",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Jun",
+          "Feb",
+          "May"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

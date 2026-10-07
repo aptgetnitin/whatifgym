@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "store_target",
+   "value": 0
+  }
+ ],
+ "note": "The closing stock target is set to zero to simulate the change in the plan."
+}

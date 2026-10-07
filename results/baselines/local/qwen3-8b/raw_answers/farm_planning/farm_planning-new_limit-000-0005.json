@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "max_total_sugar_beet_grown",
+   "measure": "grow_beet",
+   "scope": {
+    "year": ["Year1", "Year2", "Year3", "Year4", "Year5"]
+   },
+   "sense": "<=",
+   "value": 400
+  }
+ ],
+ "note": "A hard cap on the total sugar beet grown across all years."
+}

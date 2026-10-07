@@ -1,0 +1,64 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "camps",
+   "column": "beneficiaries",
+   "where": {
+    "camp": "Idleb"
+   },
+   "value": 10000
+  }
+ ],
+ "rules": [
+  {
+   "name": "idleb_ration_min",
+   "measure": "ration",
+   "scope": {
+    "camp": "Idleb"
+   },
+   "sense": ">=",
+   "value": 6.1
+  },
+  {
+   "name": "total_food_shipped_max",
+   "measure": "flow",
+   "scope": {
+    "from_city": [
+      "Aleppo",
+      "Amman",
+      "As_Suweida",
+      "Beirut",
+      "Damascus",
+      "Daraa",
+      "Dayr_Az_Zor",
+      "Gaziantep",
+      "Hama",
+      "Hassakeh",
+      "Homs",
+      "Idleb",
+      "Jubb_al_Jarrah"
+    ],
+    "to_city": [
+      "Ar Raqqa",
+      "Idleb",
+      "As_Suweida",
+      "Daraa",
+      "Aleppo",
+      "Dayr_Az_Zor",
+      "Hassakeh",
+      "Damascus",
+      "Homs",
+      "Jubb_al_Jarrah",
+      "Qamishli",
+      "Hama"
+    ]
+   },
+   "sense": "<=",
+   "value": 121500
+  }
+ ],
+ "note": "The first rule ensures the total ration per person in Idleb is at least 6.1 units. The second rule limits the total food shipped across all links to 121500 units."
+}

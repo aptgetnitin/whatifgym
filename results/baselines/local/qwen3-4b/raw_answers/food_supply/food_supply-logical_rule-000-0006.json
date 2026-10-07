@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_rideb_min_purchase_amman",
+      "measure": "purchase",
+      "scope": {
+        "food": "Oil",
+        "supplier": "Amman"
+      },
+      "sense": ">=",
+      "value": 12050
+    }
+  ]
+}

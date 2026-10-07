@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "make",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to maximise the total units made across all months."
+}

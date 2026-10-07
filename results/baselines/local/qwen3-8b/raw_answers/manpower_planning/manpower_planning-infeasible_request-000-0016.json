@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 1000
+  }
+ ],
+ "rules": [
+  {
+   "name": "retrain_upper_bound",
+   "measure": "retrain",
+   "scope": {
+    "year": 3,
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": "<=",
+   "value": 1000
+  }
+ ],
+ "note": "Set the max_per_year for unskilled to semi-skilled retraining in year 3 to 1000 and add a rule to ensure the retrain count does not exceed this limit."
+}

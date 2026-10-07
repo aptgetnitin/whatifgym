@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "fixed_decisions": [
+    {
+      "measure": "sell",
+      "scope": {
+        "month": "Apr",
+        "product": "Prod3"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fix units sold for Apr, Prod3 to 0 and optimise the rest."
+}

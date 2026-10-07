@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "price",
+      "value": 8
+    }
+  ]
+}

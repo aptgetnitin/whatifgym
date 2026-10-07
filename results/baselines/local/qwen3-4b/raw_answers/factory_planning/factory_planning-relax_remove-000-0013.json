@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "hours_per_month",
+      "where": {
+        "month": [
+          "May",
+          "Jun"
+        ]
+      },
+      "factor": 1.0
+    }
+  ]
+}

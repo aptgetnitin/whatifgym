@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"store_at_least_3x_make","measure":"store","sense":">=","relative_to":{"measure":"make"},"factor":3}],"note":"Total units in stock may be at least 3 times the total units made."}

@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "expand",
+   "column": "expand",
+   "where": {
+    "depot": "Birmingham",
+    "step": 2
+   },
+   "value": 1
+  },
+  {
+   "op": "set",
+   "table": "undamaged_transfers",
+   "column": "undamaged_transfers",
+   "where": {
+    "day": "Saturday",
+    "from_depot": "Birmingham",
+    "to_depot": "Manchester"
+   },
+   "value": 3
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fixes the expansion option for Birmingham step 2 and sets the undamaged transfers from Birmingham to Manchester on Saturday to 3, then maximises the original objective."
+}

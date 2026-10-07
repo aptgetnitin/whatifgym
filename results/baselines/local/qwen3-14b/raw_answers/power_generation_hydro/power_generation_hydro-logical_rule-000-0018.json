@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal0_output_00-06",
+      "measure": "output",
+      "scope": {
+        "period": "00-06",
+        "type": "Thermal0"
+      },
+      "sense": ">=",
+      "value": 20400
+    }
+  ],
+  "logic": [
+    {
+      "name": "thermal0_output_00-06_zero_or_above",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "output",
+          "scope": {
+            "period": "00-06",
+            "type": "Thermal0"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "output",
+          "scope": {
+            "period": "00-06",
+            "type": "Thermal0"
+          },
+          "sense": ">=",
+          "value": 20400
+        }
+      ]
+    }
+  ]
+}

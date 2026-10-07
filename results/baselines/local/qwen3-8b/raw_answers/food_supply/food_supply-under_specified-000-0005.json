@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "food_supply","data_changes": [{"op": "scale","table": "arcs","column": "transport_cost","where": {"from_city": "Aleppo","to_city": "Idleb"},"factor": 1.25}],"note": "Transport cost for the link from Aleppo to Idleb is increased by 25%."}

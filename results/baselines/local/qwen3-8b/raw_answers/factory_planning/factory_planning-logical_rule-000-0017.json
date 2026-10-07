@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "min_stock_jan",
+   "measure": "store",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": ">=",
+   "value": 124
+  }
+ ],
+ "note": "A minimum stock requirement for the first month."
+}

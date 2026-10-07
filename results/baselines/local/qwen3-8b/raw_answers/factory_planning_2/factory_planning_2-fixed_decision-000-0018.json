@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "store",
+   "column": "store",
+   "where": {
+    "month": "Jun",
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ]
+   },
+   "value": 50
+  },
+  {
+   "op": "set",
+   "table": "make",
+   "column": "make",
+   "where": {
+    "month": "Jan",
+    "product": "Prod6"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the closing stock for all products in June to 50 units and set the production of Prod6 in January to zero."
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "min_batch_wheat",
+      "measure": "ration",
+      "scope": {
+        "food": "Wheat",
+        "camp": [
+          "Ar Raqqa",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Idleb",
+          "Jubb_al_Jarrah",
+          "Qamishli"
+        ]
+      },
+      "sense": ">=",
+      "value": 55
+    }
+  ]
+}

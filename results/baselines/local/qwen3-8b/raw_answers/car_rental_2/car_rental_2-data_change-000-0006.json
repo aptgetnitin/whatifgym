@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": 1
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "The price for returning to another depot for 1-day rentals is scaled down by 10%."
+}

@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "machine": "grinder"
+   }
+  }
+ ],
+ "note": "The capacity constraint for the grinder machine is relaxed, meaning the machine-hour limit no longer applies."
+}

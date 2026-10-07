@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "items",
+      "column": "value",
+      "where": {
+        "item": "item4"
+      },
+      "factor": 0.9
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_item_placements_cap",
+      "measure": "x",
+      "scope": {
+        "item": "item0",
+        "item10": "item14"
+      },
+      "sense": "<=",
+      "value": 8
+    }
+  ]
+}

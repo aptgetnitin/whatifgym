@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "Jun_at_most_75_percent_of_Mar",
+      "measure": "make",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": "Mar"
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Units made in June must not exceed 75% of units made in March."
+}

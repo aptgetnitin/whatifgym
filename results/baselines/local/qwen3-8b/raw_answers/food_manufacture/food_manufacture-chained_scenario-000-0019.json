@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "purchase_prices",
+   "column": "price",
+   "factor": 0.6
+  }
+ ],
+ "note": "A relative change to all purchase prices is a scale over all rows of the purchase_prices table."
+}

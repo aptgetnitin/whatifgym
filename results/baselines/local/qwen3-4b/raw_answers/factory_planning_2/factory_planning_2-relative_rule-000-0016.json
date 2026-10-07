@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "may_75_percent_of_all_units",
+      "measure": "make",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "prod4_at_most_60_percent_of_prod3",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4"
+      },
+      "sense": "<=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "product": "Prod3"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "open_at_least_1.5_times_operate",
+      "measure": "open",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {}
+      },
+      "factor": 1.5
+    }
+  ],
+  "note": "Total open mine-years must be at least 1.5 times total operated mine-years."
+}

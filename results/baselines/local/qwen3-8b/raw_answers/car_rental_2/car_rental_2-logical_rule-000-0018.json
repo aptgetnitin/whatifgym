@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_transfers_to_glasgow",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Friday",
+    "from_depot": "Glasgow",
+    "to_depot": "Plymouth"
+   },
+   "sense": ">=",
+   "value": 7.5
+  }
+ ],
+ "note": "A rule that enforces a minimum number of damaged cars transferred from Glasgow to Plymouth on Friday."
+}

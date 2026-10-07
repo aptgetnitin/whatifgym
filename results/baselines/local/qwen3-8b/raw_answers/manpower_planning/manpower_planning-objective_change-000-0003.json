@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "min_redundancy",
+   "measure": "redundant",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   },
+   "sense": "==",
+   "value": 841.80
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "short_time",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   }
+  }
+ ],
+ "note": "The scenario requires keeping total redundancy at its minimum and minimising the total number of workers on short-time working."
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item14_at_most_50_of_item7",
+      "measure": "x",
+      "scope": {
+        "item": "item14"
+      },
+      "sense": "<=",
+      "factor": 0.5,
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": "item7"
+        }
+      }
+    }
+  ]
+}

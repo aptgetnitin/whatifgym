@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "semi_skilled_overmanned_share",
+   "measure": "overmanned",
+   "scope": {
+    "skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "A rule that enforces the overmanned workers at semi_skilled level to be at least 50% of the total overmanned workers across all skill levels."
+}

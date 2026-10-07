@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "blend",
+      "column": "blend",
+      "where": {
+        "year": "Year4"
+      },
+      "value": 8437500
+    },
+    {
+      "op": "set",
+      "table": "blend",
+      "column": "blend",
+      "where": {
+        "year": "Year1"
+      },
+      "value": 8625000
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "blend",
+      "scope": {
+        "year": "Year4"
+      },
+      "value": 8437500
+    },
+    {
+      "measure": "blend",
+      "scope": {
+        "year": "Year1"
+      },
+      "value": 8625000
+    }
+  ]
+}

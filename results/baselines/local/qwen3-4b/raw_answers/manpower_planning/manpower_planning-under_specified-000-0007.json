@@ -1,0 +1,4 @@
+{
+  "base_model": "manpower_planning",
+  "ask": "What is the floor on the workers recruited? How is it defined (e.g., minimum number per year, per skill level, or a percentage of requirements)?"
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","relax":[{"constraint":"quality"}],"note":"Drop blend-quality target"}

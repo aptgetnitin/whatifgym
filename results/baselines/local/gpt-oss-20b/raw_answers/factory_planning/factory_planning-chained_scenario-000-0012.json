@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"measure":"store","scope":{"month":"Jan"},"sense":"<=","value":41,"name":"stock_cap_Jan"}],"data_changes":[{"op":"shift","table":"machines","column":"installed","where":{"machine":"grinder"},"delta":-1}],"note":"Retire one grinder by reducing installed count by 1."}

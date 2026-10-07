@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","logic":[{"name":"Manchester_step2_implies_all_step1","at_least":1,"of":[{"measure":"expand","scope":{"depot":"Manchester","step":2},"sense":"<=","value":0},{"measure":"expand","scope":{"step":1},"sense":">=","value":3}]}]}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": "Ar Raqqa"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "min_flow_from_Beirut",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Beirut"
+      },
+      "sense": ">=",
+      "value": 2400
+    }
+  ],
+  "note": "Require total flow out of Beirut to be at least 2400 units."
+}

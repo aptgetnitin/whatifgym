@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "herd",
+      "column": "herd",
+      "where": {
+        "year": "Year1",
+        "age": [
+          "1"
+        ]
+      },
+      "value": "0.75 * (raise_heifers[Year1] + raise_heifers[Year2] + raise_heifers[Year3] + raise_heifers[Year4] + raise_heifers[Year5])"
+    }
+  ],
+  "note": "The question asks for Year1 to account for at least 75% of all heifer calves raised. This implies that the herd at age 1 in Year1 (heifers) must be at least 75% of the total heifer calves raised over all years."
+}

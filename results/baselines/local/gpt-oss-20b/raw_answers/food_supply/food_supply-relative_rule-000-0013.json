@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "purchase_vs_flow",
+      "measure": "purchase",
+      "scope": {},
+      "sense": "<=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {}
+      },
+      "factor": 0.5
+    },
+    {
+      "name": "csb_vs_milk",
+      "measure": "purchase",
+      "scope": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "Milk"
+        }
+      },
+      "factor": 1.5
+    }
+  ],
+  "note": "Total purchase at most half of total flow; CSB purchase at least 1.5 times Milk purchase."
+}

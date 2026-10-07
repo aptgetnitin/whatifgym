@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_glasgow_at_least_2x_plymouth",
+      "measure": "undamaged_stock",
+      "scope": {
+        "depot": "Glasgow"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "undamaged_stock",
+        "scope": {
+          "depot": "Plymouth"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

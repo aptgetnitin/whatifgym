@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "limit_sales_to_jun_may_apr",
+   "measure": "sell",
+   "scope": {
+    "month": [
+     "Jun",
+     "May",
+     "Apr"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "Restrict sales to only the months of Jun, May, and Apr by setting an upper bound of 0 on sales for other months."
+}

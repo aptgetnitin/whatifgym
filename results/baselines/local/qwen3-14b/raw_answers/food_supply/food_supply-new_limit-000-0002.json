@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_food_shipped_to_daraa_limit",
+   "measure": "flow",
+   "scope": {
+    "to_city": "Daraa"
+   },
+   "sense": "<=",
+   "value": 5650
+  },
+  {
+   "name": "total_food_shipped_maize_meal_limit",
+   "measure": "flow",
+   "scope": {
+    "food": "Maize meal"
+   },
+   "sense": ">=",
+   "value": 74
+  }
+ ]
+}

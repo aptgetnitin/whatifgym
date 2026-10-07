@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_unskilled_to_semi_skilled_year_1",
+   "measure": "retrain",
+   "scope": {
+    "year": 1,
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 300
+  },
+  {
+   "name": "overmanned_year_2",
+   "measure": "overmanned",
+   "scope": {
+    "year": 2
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "year": 2
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that enforces a minimum retrain count for a specific retraining move and links overmanning in year 2 to the retrain count."
+}

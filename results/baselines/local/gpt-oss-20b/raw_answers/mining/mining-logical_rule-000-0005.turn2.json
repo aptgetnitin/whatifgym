@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "Year1_extract_zero_or_min",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year1"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year1"
+          },
+          "sense": ">=",
+          "value": 8625000
+        }
+      ]
+    }
+  ]
+}

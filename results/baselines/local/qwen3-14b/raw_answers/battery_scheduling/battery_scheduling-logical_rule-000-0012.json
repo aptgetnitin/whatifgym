@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "charging_power_soc_rule",
+      "measure": "soc",
+      "scope": {
+        "hour": "01-02"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "charge",
+        "scope": {
+          "hour": "03-04"
+        }
+      },
+      "factor": 6.2
+    }
+  ]
+}

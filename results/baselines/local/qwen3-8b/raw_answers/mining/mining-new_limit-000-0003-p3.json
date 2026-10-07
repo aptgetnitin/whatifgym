@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine2_worked_min_4_years",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine2"
+   },
+   "sense": ">=",
+   "value": 4
+  },
+  {
+   "name": "total_ore_extraction_limit",
+   "measure": "extract",
+   "scope": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ],
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "<=",
+   "value": 20873350
+  }
+ ],
+ "note": "The scenario applies two constraints: Mine2 must be operated in at least 4 years, and total extraction across all mines and years is capped at 20,873,350 tons."
+}

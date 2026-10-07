@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine4_extraction_share",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine4"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extract",
+    "scope": {
+     "mine": [
+      "Mine1",
+      "Mine2",
+      "Mine3",
+      "Mine4"
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "A rule to ensure that at least 60% of the total ore extracted is from Mine4."
+}

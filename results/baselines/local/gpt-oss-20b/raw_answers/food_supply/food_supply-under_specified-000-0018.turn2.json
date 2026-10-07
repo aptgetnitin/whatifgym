@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"camps","column":"beneficiaries","where":{"camp":"Jubb_al_Jarrah"},"factor":0.7}],"note":"Beneficiary count for Jubb_al_Jarrah falls by 30%."}

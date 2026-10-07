@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "minimum_ration_wheat",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": ">=",
+   "value": 55
+  }
+ ]
+}

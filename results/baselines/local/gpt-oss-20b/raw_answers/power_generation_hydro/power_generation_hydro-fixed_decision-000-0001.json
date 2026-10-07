@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "fixed_decisions": [
+    {
+      "measure": "ngen",
+      "scope": {
+        "period": "00-06",
+        "type": "Thermal1"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fix Thermal1 units to 0 in period 00-06 and optimise the rest of the model."
+}

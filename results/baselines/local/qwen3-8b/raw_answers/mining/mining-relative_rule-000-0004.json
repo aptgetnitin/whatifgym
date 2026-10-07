@@ -1,0 +1,43 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "blend_ore_year2_at_least_75_percent",
+   "measure": "blend",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "blend",
+    "scope": {
+     "year": [
+      "Year1",
+      "Year2",
+      "Year3",
+      "Year4",
+      "Year5"
+     ]
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "mine_years_worked_year2_at_least_1_25_times_year5",
+   "measure": "operate",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "year": "Year5"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "Two relative limits: Year2's blended ore must be at least 75% of total, and Year2's mine-years worked must be at least 1.25 times Year5's."
+}

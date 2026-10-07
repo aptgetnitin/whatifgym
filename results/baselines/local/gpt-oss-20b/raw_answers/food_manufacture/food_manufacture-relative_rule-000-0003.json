@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"veg2_min_60_percent_of_buys","measure":"buy","scope":{"oil":"VEG2"},"sense":">=","relative_to":{"measure":"buy"},"factor":0.6}]}

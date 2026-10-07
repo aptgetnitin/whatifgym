@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","fixed_decisions":[{"measure":"x","scope":{"item":"item11","bin":"bin2"},"value":1}]}

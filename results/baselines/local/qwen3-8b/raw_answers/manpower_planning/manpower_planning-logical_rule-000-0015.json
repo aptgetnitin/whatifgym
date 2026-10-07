@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "no_overmanned_semi_and_unskilled",
+   "measure": "overmanned",
+   "scope": {
+    "skill": [
+     "semi_skilled",
+     "unskilled"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "A rule that prevents having both overmanned semi-skilled and unskilled workers."
+}

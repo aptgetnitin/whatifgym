@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "max_discharge_21_22",
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": "<=",
+      "value": 2.5
+    },
+    {
+      "name": "max_total_soc",
+      "measure": "soc",
+      "sense": "<=",
+      "value": 140
+    }
+  ],
+  "note": "Limit discharge in 21-22 to 2.5 kW and total stored energy to 140 kWh."
+}

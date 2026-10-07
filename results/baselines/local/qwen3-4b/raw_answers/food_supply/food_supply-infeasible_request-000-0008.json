@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase",
+      "column": "purchase",
+      "where": {
+        "food": "Oil",
+        "supplier": "Hassakeh"
+      },
+      "value": 200550
+    }
+  ],
+  "note": "A fixed decision on the purchase of Oil from Hassakeh."
+}

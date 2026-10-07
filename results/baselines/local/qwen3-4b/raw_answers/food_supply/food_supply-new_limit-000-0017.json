@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "camp": "Jubb_al_Jarrah"
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "scale",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "from_city": "Hassakeh"
+      },
+      "factor": 1.0
+    }
+  ],
+  "rules": [
+    {
+      "name": "ration_min_jubb_al_jarrah",
+      "measure": "ration",
+      "scope": {
+        "camp": "Jubb_al_Jarrah"
+      },
+      "sense": ">=",
+      "value": 7.3
+    },
+    {
+      "name": "flow_max_hassakeh",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Hassakeh"
+      },
+      "sense": "<=",
+      "value": 57900
+    }
+  ]
+}

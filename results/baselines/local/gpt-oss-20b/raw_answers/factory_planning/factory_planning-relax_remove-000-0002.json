@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","relax":[{"constraint":"capacity","scope":{"machine":["grinder","horiDrill"]}}],"note":"Lift machine-hour limits for grinder and horiDrill only."}

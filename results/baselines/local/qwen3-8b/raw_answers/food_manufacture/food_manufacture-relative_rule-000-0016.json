@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "may_refining_at_least_twice_feb",
+   "measure": "consume",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "month": "Feb"
+    }
+   },
+   "factor": 2
+  },
+  {
+   "name": "total_buy_at_least_1_25_times_total_refining",
+   "measure": "buy",
+   "scope": {
+    "month": "all",
+    "oil": "all"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "month": "all",
+     "oil": "all"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "Two relative limits: May refining at least twice Feb refining, and total buy at least 1.25 times total refining."
+}

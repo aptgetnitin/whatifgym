@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "short_time",
+      "scope": {
+        "year": [1, 2, 3],
+        "skill": ["unskilled", "semi_skilled", "skilled"]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

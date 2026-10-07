@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "monday_rentals_need_undamaged_stock",
+      "measure": "rentals",
+      "scope": {
+        "day": "Monday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "monday_undamaged_stock_at_least_710",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": ">=",
+      "value": 710
+    }
+  ]
+}

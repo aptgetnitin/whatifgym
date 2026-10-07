@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_left_saturday_vs_tuesday",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Saturday"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "undamaged_left",
+        "scope": {
+          "day": "Tuesday"
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "undamaged_transfers_thursday_limit",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "day": "Thursday"
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

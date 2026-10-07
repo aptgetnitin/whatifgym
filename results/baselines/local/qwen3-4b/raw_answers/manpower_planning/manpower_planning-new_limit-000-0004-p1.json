@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "overmanned",
+      "column": "overmanned",
+      "where": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 0.0
+    },
+    {
+      "op": "scale",
+      "table": "redundant",
+      "column": "redundant",
+      "where": {
+        "year": [
+          "2"
+        ]
+      },
+      "factor": 0.0
+    }
+  ],
+  "note": "The planner wants to cap total short-time workers across all years and skill levels, and cap total redundancies in year 2. The data changes are applied to the overmanned and redundant measures with scale operations to set their sums to zero, effectively creating hard caps."
+}

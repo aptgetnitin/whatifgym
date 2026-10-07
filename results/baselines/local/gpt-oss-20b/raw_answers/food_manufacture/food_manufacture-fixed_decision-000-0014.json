@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "fixed_decisions": [
+    {
+      "measure": "consume",
+      "scope": {
+        "oil": "VEG2"
+      },
+      "value": 113
+    },
+    {
+      "measure": "buy",
+      "scope": {
+        "month": "Feb",
+        "oil": "OIL2"
+      },
+      "value": 560
+    }
+  ],
+  "note": "Fix refined VEG2 to 113 tons each month and buy 560 tons of OIL2 in February."
+}

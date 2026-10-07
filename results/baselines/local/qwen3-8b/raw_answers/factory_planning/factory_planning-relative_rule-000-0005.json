@@ -1,0 +1,47 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "feb_sales_at_most_jan",
+   "measure": "sell",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": "Jan"
+    }
+   },
+   "factor": 0.6
+  },
+  {
+   "name": "total_sold_at_most_stock",
+   "measure": "sell",
+   "scope": {
+    "month": "Jan",
+    "month": "Feb",
+    "month": "Mar",
+    "month": "Apr",
+    "month": "May",
+    "month": "Jun"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Jan",
+     "month": "Feb",
+     "month": "Mar",
+     "month": "Apr",
+     "month": "May",
+     "month": "Jun"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Two relative limits are applied to the sales measure: one comparing sales across months and another comparing total sales to total stock."
+}

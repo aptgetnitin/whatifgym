@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "factory_planning", "data_changes": [{"op": "set", "table": "params", "column": "max_inventory", "value": 150}], "note": "A cap on the units in stock is set by changing the max_inventory parameter."}

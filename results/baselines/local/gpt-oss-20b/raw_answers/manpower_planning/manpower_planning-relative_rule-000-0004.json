@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "short_time_year1_min60",
+      "measure": "short_time",
+      "scope": { "year": 1 },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "short_time"
+      },
+      "factor": 0.6
+    },
+    {
+      "name": "overmanned_max50_redundant",
+      "measure": "overmanned",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "redundant"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Relative limits: year 1 short‑time >= 60% of total short‑time; overmanned <= 50% of total redundancies."
+}

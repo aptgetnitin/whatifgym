@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","relax":[{"constraint":"capacity","scope":{"month":["Jan","Jun"]}}],"note":"Remove capacity constraints for Jan and Jun."}

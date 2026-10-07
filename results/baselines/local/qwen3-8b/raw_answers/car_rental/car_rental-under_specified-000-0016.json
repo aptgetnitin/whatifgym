@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "car_rental","rules": [{"name": "undamaged_stock_floor","measure": "undamaged_stock","scope": {"depot": "Glasgow"},"sense": ">=","value": 100}],"note": "A floor on undamaged cars at Glasgow depot in the morning."}

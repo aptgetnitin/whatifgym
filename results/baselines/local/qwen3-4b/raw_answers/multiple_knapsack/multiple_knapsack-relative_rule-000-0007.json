@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item4_placement_limit",
+      "measure": "x",
+      "scope": {
+        "item": "item4"
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ],
+  "note": "The rule ensures that the number of placements for item4 is at most 5% of the total placements."
+  }

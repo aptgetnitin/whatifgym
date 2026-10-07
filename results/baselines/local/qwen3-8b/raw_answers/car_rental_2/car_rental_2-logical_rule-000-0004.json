@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "no_step_2_without_step_1",
+   "measure": "expand",
+   "scope": {
+    "depot": "Plymouth",
+    "step": 2
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "no_step_2_without_step_1",
+   "measure": "expand",
+   "scope": {
+    "depot": "Manchester",
+    "step": 2
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "no_step_2_without_step_1",
+   "measure": "expand",
+   "scope": {
+    "depot": "Birmingham",
+    "step": 2
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "This rule ensures that expansion step 2 cannot be carried out without expansion step 1 at any depot."
+}

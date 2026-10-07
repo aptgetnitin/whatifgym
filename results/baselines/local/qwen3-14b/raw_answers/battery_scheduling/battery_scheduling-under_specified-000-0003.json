@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_charge_kw",
+      "value": 0
+    }
+  ],
+  "note": "Setting max_charge_kw to 0 caps the battery charging power to zero."
+}

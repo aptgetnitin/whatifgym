@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "only_one_oil_bought",
+      "measure": "buy",
+      "scope": {
+        "oil": [
+          "VEG2",
+          "VEG1",
+          "OIL2"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "oil": [
+            "VEG2",
+            "VEG1",
+            "OIL2"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "item_bin_ratio",
+   "measure": "x",
+   "scope": {
+    "bin": [
+     "bin0",
+     "bin1",
+     "bin2",
+     "bin3",
+     "bin4",
+     "bin5",
+     "bin6",
+     "bin7",
+     "bin8",
+     "bin9",
+     "bin10"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "y",
+    "scope": {
+     "bin": [
+      "bin0",
+      "bin1",
+      "bin2",
+      "bin3",
+      "bin4",
+      "bin5",
+      "bin6",
+      "bin7",
+      "bin8",
+      "bin9",
+      "bin10"
+     ]
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "y",
+   "scope": {
+    "bin": [
+     "bin0",
+     "bin1",
+     "bin2",
+     "bin3",
+     "bin4",
+     "bin5",
+     "bin6",
+     "bin7",
+     "bin8",
+     "bin9",
+     "bin10"
+    ]
+   }
+  }
+ ],
+ "note": "The rule enforces that the total number of items packed is at most twice the number of bins used, and the objective minimises the number of bins used."
+}

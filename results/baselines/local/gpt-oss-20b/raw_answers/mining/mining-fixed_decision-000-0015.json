@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","fixed_decisions":[{"measure":"blend","scope":{"year":"Year5"},"value":0}],"note":"Set blended ore sold in Year5 to zero and optimize the remaining decisions."}

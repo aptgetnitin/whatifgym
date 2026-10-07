@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "Year5_heifer_sales_share",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell_heifers"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Year5 must account for at least 50% of all heifer calves sold."
+}

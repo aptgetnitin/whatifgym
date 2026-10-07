@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "april_refining_at_least_1_25_jun_refining",
+   "measure": "consume",
+   "scope": {
+    "month": "Apr"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "month": "Jun"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The rule enforces that the total tons of oil refined in April is at least 1.25 times the total tons of oil refined in June."
+}

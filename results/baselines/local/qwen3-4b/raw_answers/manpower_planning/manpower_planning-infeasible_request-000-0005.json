@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "skilled"
+      },
+      "value": 9100
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "semi_skilled"
+      },
+      "value": 11900
+    }
+  ],
+  "note": "The planner asks if both minimum workforce levels for skilled and semi-skilled can be met in year 1 (the only year mentioned)."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "food": "Dried skim milk (enriched) (DSM)",
+        "camp": "Idleb"
+      },
+      "value": 49550
+    }
+  ],
+  "note": "The question asks for a minimum delivery of 49550 units of Dried skim milk (enriched) (DSM) to Idleb camp. This is a fixed decision on the ration measure for that specific food and camp."
+}

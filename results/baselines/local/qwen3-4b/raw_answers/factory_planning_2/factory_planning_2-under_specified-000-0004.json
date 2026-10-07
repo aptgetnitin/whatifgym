@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "ask": "What specific holding cost change are you referring to? The holding cost parameter can be scaled, shifted, or set to a specific value. Please clarify whether you mean a percentage change, a fixed amount, or a specific value."
+}

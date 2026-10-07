@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "max_undamaged_left_saturday",
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Saturday"
+   },
+   "sense": "<=",
+   "value": 130
+  }
+ ],
+ "note": "Limits the total undamaged cars kept overnight at all depots on Saturday."
+}

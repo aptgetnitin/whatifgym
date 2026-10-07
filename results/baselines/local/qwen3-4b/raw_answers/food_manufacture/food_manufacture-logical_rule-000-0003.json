@@ -1,0 +1,22 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_most_one_month_production",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jun",
+          "Feb",
+          "Apr",
+          "May",
+          "Mar"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "The rule ensures that at most one month among Jun, Feb, Apr, May, and Mar has any food production."
+  }

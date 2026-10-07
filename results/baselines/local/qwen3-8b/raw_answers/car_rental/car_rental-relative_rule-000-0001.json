@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_transfers_to_manchester",
+   "measure": "damaged_transfers",
+   "scope": {
+    "from_depot": [
+     "Glasgow",
+     "Birmingham",
+     "Plymouth"
+    ],
+    "to_depot": "Manchester"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "damaged_transfers",
+    "scope": {
+     "from_depot": [
+      "Glasgow",
+      "Birmingham",
+      "Plymouth"
+     ],
+     "to_depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+     ]
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "A rule that enforces the proportion of damaged transfers to Manchester relative to all damaged transfers."
+}

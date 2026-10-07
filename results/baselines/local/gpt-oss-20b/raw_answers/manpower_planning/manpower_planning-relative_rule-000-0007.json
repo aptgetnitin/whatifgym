@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "skilled_recruit_min_half",
+      "measure": "recruit",
+      "scope": {
+        "skill": "skilled"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "recruit"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Ensure that at least 50% of all recruits are skilled."
+}

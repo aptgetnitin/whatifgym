@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_period_18-24",
+   "measure": "output",
+   "scope": {
+    "period": "18-24"
+   },
+   "sense": ">=",
+   "value": 77850
+  }
+ ],
+ "note": "The rule ensures that the total thermal output for the period 18-24 meets the specified minimum requirement."
+}

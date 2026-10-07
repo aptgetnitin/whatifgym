@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "sales_limit",
+      "measure": "sell",
+      "scope": {
+        "product": [
+          "Prod1",
+          "Prod7",
+          "Prod5",
+          "Prod4"
+        ]
+      },
+      "sense": "==",
+      "value": 2
+    }
+  ]
+}

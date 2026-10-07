@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "no_rentals_man_glas",
+      "measure": "rentals",
+      "scope": {
+        "depot": [
+          "Manchester",
+          "Glasgow"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "year2_extract_limit",
+   "measure": "extract",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "extract",
+    "scope": {
+     "year": [
+      "Year1",
+      "Year3",
+      "Year4",
+      "Year5"
+     ]
+    }
+   },
+   "factor": 0.05
+  },
+  {
+   "name": "extract_blend_limit",
+   "measure": "extract",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "blend",
+    "scope": {
+     "year": [
+      "Year1",
+      "Year2",
+      "Year3",
+      "Year4",
+      "Year5"
+     ]
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "Two relative limits on the total tons of ore extracted: one for Year2 and one for the entire horizon."
+}

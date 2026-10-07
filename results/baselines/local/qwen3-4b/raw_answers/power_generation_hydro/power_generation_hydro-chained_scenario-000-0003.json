@@ -1,0 +1,103 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ]
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "shift",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": [
+          "Thermal1"
+        ]
+      },
+      "delta": -2
+    },
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "cost_per_mwh_above_min",
+      "where": {
+        "type": [
+          "Thermal0"
+        ]
+      },
+      "factor": 2.5
+    },
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_on_at_start",
+      "where": {
+        "type": [
+          "Thermal0"
+        ]
+      },
+      "value": 2
+    },
+    {
+      "op": "set",
+      "table": "hydro_units",
+      "column": "on_at_start",
+      "where": {
+        "hydro": [
+          "HydroA"
+        ]
+      },
+      "value": 1
+    },
+    {
+      "op": "scale",
+      "table": "hydro_units",
+      "column": "depletion_m_per_hour",
+      "where": {
+        "hydro": [
+          "HydroA"
+        ]
+      },
+      "factor": 1.2
+    },
+    {
+      "op": "set_param",
+      "name": "reserve_margin",
+      "value": 0.2
+    },
+    {
+      "op": "scale_param",
+      "name": "pump_mwh_per_m",
+      "factor": 3.5
+    }
+  ],
+  "rules": [
+    {
+      "name": "pump_total_cap",
+      "measure": "pump",
+      "scope": {
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ]
+      },
+      "sense": "<=",
+      "value": 1600
+    }
+  ]
+}

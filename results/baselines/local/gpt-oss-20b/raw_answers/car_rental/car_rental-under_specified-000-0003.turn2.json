@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","data_changes":[{"op":"scale_param","name":"damage_excess","factor":2}],"note":"Damage excess charged is doubled."}

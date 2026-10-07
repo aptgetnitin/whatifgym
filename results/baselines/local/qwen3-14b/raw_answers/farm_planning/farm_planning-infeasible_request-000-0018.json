@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","objective":[{"sense":"max","measure":"yearly_profit","scope":{}}],"rules":[{"name":"total_profit_target","measure":"yearly_profit","scope":{},"sense":"==","value":608600}]}

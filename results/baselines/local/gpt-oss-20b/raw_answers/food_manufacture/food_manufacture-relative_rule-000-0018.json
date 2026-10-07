@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"measure":"produce","sense":"<=","relative_to":{"measure":"consume"},"factor":0.5}]}

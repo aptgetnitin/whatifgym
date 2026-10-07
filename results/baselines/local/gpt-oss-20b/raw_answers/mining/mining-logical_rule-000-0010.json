@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "open_requires_two_worked_years",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year5",
+            "mine": "Mine3"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "operate",
+          "scope": {
+            "year": [
+              "Year1",
+              "Year2",
+              "Year3",
+              "Year4",
+              "Year5"
+            ],
+            "mine": "Mine3"
+          },
+          "sense": ">=",
+          "value": 2
+        }
+      ]
+    }
+  ]
+}

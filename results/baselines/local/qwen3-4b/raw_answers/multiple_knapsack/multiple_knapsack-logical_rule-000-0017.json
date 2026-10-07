@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "items",
+      "column": "x",
+      "where": {
+        "item": [
+          "item7",
+          "item14",
+          "item8",
+          "item13",
+          "item4"
+        ]
+      },
+      "value": 1
+    }
+  ],
+  "note": "The planner specifies that only one of these items can be placed in a bin (i.e., exactly one of the items is selected)."
+}

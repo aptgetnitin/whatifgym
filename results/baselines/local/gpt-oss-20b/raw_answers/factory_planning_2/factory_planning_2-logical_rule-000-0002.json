@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "Jan_make_implies_Jun_sell",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jan"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Jun"
+          },
+          "sense": ">=",
+          "value": 6100
+        }
+      ]
+    }
+  ],
+  "note": "If any units are made in Jan, then at least 6100 units must be sold in Jun."
+}

@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "quality_target",
+   "where": {
+    "year": "Year3"
+   },
+   "value": 1.0
+  }
+ ],
+ "rules": [
+  {
+   "name": "blend_year3_require_extract_year2_mine3",
+   "measure": "extract",
+   "scope": {
+    "year": "Year2",
+    "mine": "Mine3"
+   },
+   "sense": ">=",
+   "value": 1950000
+  }
+ ],
+ "note": "The quality target for Year3 is relaxed to 1.0, and a rule enforces that at least 1950000 tons of ore must be extracted from Mine3 in Year2."
+}

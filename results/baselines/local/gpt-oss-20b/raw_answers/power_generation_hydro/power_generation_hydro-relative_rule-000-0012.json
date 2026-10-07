@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal1_start_limit",
+      "measure": "nstart",
+      "scope": {
+        "type": "Thermal1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "nstart",
+        "scope": {}
+      },
+      "factor": 0.10
+    },
+    {
+      "name": "period_start_balance",
+      "measure": "nstart",
+      "scope": {
+        "period": "15-18"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "nstart",
+        "scope": {
+          "period": "00-06"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

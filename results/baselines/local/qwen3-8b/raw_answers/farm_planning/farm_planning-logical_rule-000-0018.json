@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "max_one_year_grain_bought",
+   "measure": "buy_grain",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year3",
+     "Year4"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "At most one of the specified years may have any tons of grain bought."
+}

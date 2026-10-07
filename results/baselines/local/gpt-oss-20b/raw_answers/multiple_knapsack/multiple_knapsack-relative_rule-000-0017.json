@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"item4_min_fraction","measure":"x","scope":{"item":"item4"},"sense":">=","relative_to":{"measure":"x"},"factor":0.75},{"name":"item14_at_least_3x_item12","measure":"x","scope":{"item":"item14"},"sense":">=","relative_to":{"measure":"x","scope":{"item":"item12"}},"factor":3.0}]}

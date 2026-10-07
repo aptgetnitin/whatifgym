@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "make_jun_at_least_4000_if_make_mar",
+   "measure": "make",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": "Mar"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that enforces a conditional relationship between the make quantities of months Mar and Jun."
+}

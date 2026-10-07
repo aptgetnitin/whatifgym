@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"min_made_may","measure":"make","scope":{"month":"May"},"sense":">=","value":6900}],"note":"Check feasibility of at least 6900 units made in May."}

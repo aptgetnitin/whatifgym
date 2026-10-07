@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "max_total_short_time",
+      "measure": "short_time",
+      "sense": "<=",
+      "value": 220
+    }
+  ],
+  "note": "Limit total short-time workers across all years to 220."
+}

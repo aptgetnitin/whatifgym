@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "logic": [
+  {
+   "name": "no_open_mine_years_in_year2_and_year4",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "open",
+     "sense": "==",
+     "value": 0,
+     "scope": {
+      "year": "Year2"
+     }
+    },
+    {
+     "measure": "open",
+     "sense": "==",
+     "value": 0,
+     "scope": {
+      "year": "Year4"
+     }
+    }
+   ]
+  }
+ ]
+}

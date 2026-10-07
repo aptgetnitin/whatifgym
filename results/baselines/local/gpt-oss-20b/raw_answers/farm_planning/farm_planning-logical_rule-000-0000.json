@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"if_sell_heifers_year1_then_grow_beet_at_least_182","at_least":1,"of":[{"measure":"sell_heifers","scope":{"year":"Year1"},"sense":"==","value":0},{"measure":"grow_beet","scope":{"year":"Year1"},"sense":">=","value":182}]}]}

@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_00-06",
+   "measure": "output",
+   "scope": {
+    "period": "00-06",
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "sense": ">=",
+   "value": 154500
+  }
+ ],
+ "note": "The scenario requires the total thermal output for the period 00-06 to be at least 154500 MW."
+}

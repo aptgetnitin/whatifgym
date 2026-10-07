@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"camps","column":"beneficiaries","factor":0.7}],"note":"Every number of beneficiaries in the beneficiary camps table falls by 30%. Effect?"}

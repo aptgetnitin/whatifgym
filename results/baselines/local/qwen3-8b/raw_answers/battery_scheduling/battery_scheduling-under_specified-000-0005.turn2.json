@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_discharge_kw",
+   "value": 3.6
+  }
+ ],
+ "note": "Setting the maximum discharge power to 3.6 kW to simulate an upper limit on battery discharging power."
+}

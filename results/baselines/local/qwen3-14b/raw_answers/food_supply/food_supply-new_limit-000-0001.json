@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "oil_purchase_requirement",
+   "measure": "purchase",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "value": 64550
+  }
+ ]
+}

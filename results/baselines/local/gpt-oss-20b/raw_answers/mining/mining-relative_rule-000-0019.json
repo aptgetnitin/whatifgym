@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"blend_year4_at_most_75_percent_of_year3","measure":"blend","scope":{"year":"Year4"},"sense":"<=","relative_to":{"measure":"blend","scope":{"year":"Year3"}},"factor":0.75}]}

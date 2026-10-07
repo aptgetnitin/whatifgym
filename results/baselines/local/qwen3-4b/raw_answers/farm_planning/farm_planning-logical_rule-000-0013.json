@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "sell_beet_year2_zero_or_at_least_41",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "sell_beet_year2_at_least_41",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "value": 41
+    }
+  ]
+}

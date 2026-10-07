@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "AprProd5_requires_MayProd4",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Apr",
+            "product": "Prod5"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "May",
+            "product": "Prod4"
+          },
+          "sense": ">=",
+          "value": 200
+        }
+      ]
+    }
+  ],
+  "note": "If any units of Prod5 are sold in April, then at least 200 units of Prod4 must be sold in May."
+}

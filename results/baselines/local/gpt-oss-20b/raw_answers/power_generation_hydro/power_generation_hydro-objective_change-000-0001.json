@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","objective":[{"sense":"min","measure":"original"},{"sense":"max","measure":"hydro_on"},{"sense":"min","measure":"reservoir_level"}],"note":"Lexicographic objective: minimize total generating cost, maximize total hydro unit‑periods running, then minimize total reservoir level."}

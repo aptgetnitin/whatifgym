@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "min_sell_mar_prod1",
+   "measure": "sell",
+   "scope": {
+    "month": "Mar",
+    "product": "Prod1"
+   },
+   "sense": ">=",
+   "value": 200
+  }
+ ],
+ "note": "A minimum sales requirement for a specific product and month."
+}

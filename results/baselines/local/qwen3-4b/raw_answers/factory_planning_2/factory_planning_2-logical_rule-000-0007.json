@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "at_most_2_products_sold",
+      "measure": "sell",
+      "scope": {
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod4",
+          "Prod5",
+          "Prod6"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

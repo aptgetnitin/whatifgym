@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "repair_limit_saturday_vs_tuesday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Saturday"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "repairs",
+        "scope": {
+          "day": "Tuesday"
+        }
+      },
+      "factor": 0.6
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "relax": [
+  {
+   "constraint": "housing",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2"
+    ]
+   }
+  }
+ ],
+ "note": "Relaxing the housing constraint for Year1 and Year2 only."
+}

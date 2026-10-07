@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "min_stock_prod2_mar",
+   "measure": "store",
+   "scope": {
+    "month": "Mar",
+    "product": "Prod2"
+   },
+   "sense": ">=",
+   "value": 200
+  }
+ ],
+ "note": "A minimum stock requirement for a specific product and month."
+}

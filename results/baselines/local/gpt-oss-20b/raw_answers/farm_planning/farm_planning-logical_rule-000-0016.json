@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"raise_year2_requires_sell_year1","at_least":1,"of":[{"measure":"raise_heifers","scope":{"year":"Year2"},"sense":"<=","value":0},{"measure":"sell_heifers","scope":{"year":"Year1"},"sense":">=","value":39}]}]}

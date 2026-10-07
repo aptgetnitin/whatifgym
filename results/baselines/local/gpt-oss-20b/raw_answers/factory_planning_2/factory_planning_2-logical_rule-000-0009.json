@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "mar_sell_disjunction",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Mar"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Mar"
+          },
+          "sense": ">=",
+          "value": 4750
+        }
+      ]
+    }
+  ],
+  "note": "Enforce that total sales in March are either zero or at least 4750."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"measure":"consume","scope":{"month":"Jan","oil":"VEG2"},"sense":">=","value":360}],"note":"Check feasibility of refining at least 360 tons of VEG2 in January."}

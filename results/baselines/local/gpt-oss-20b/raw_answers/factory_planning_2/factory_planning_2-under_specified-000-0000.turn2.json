@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod5_make_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod5"
+      },
+      "sense": "<=",
+      "value": 2950
+    }
+  ],
+  "note": "Upper limit on total units made of Prod5."
+}

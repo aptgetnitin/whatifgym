@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "max_food_mar",
+   "measure": "produce",
+   "scope": {
+    "month": "Mar"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "produce",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "The total food produced in March is limited to 5% of the total food produced in the other months."
+}

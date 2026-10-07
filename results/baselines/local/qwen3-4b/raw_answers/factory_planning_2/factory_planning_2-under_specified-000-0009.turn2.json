@@ -1,0 +1,4 @@
+{
+  "role": "agent",
+  "text": "Which row in the products table has a different profit per unit? Please specify the product identifier."
+  }

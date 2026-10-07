@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "max_total_raise_heifers",
+      "measure": "raise_heifers",
+      "sense": "<=",
+      "value": 26
+    },
+    {
+      "name": "max_buy_grain_year1",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "value": 29
+    }
+  ],
+  "note": "Limit total raised heifers to 26 and grain bought in Year1 to 29."
+}

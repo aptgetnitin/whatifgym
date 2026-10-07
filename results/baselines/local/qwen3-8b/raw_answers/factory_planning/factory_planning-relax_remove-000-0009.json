@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "month": [
+     "Jan",
+     "Jun"
+    ]
+   }
+  }
+ ],
+ "note": "The capacity constraints for January and June are relaxed, meaning the machine-hour limits do not apply for these months."
+}

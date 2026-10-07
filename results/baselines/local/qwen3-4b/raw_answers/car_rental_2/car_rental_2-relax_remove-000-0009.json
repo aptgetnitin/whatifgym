@@ -1,0 +1,33 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "depots",
+      "column": "repair_capacity",
+      "where": {
+        "depot": [
+          "Manchester"
+        ],
+        "repair_capacity": [
+          "Monday"
+        ]
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "scale",
+      "table": "depots",
+      "column": "repair_capacity",
+      "where": {
+        "depot": [
+          "Manchester"
+        ],
+        "repair_capacity": [
+          "Thursday"
+        ]
+      },
+      "factor": 1.0
+    }
+  ]
+}

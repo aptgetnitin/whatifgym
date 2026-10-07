@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "at_most_5_percent_to_bin4",
+      "measure": "x",
+      "scope": {
+        "bin": "bin4"
+      },
+      "sense": "<=",
+      "factor": 0.05,
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "bin": [
+            "bin0",
+            "bin1",
+            "bin2",
+            "bin3",
+            "bin4"
+          ]
+        }
+      }
+    }
+  ]
+}

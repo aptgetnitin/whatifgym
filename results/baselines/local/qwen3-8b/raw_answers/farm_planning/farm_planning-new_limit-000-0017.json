@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "total_cattle_cap",
+   "measure": "herd",
+   "scope": {
+    "age": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   "sense": "<=",
+   "value": 470
+  }
+ ],
+ "note": "A total cattle cap applies to the sum of all cattle across all ages in each year."
+}

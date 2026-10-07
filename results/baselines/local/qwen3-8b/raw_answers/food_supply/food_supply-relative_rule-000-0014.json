@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "oil_at_least_three_times_milk",
+   "measure": "flow",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "Milk"
+    }
+   },
+   "factor": 3
+  },
+  {
+   "name": "wheat_at_least_half_of_all_food_shipped",
+   "measure": "flow",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "*"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Two relative limits on the flow of food: oil at least three times milk, and wheat at least 50% of all food shipped."
+}

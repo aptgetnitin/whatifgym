@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "cap_worked_total",
+      "measure": "operate",
+      "scope": {},
+      "sense": "<=",
+      "value": 13
+    }
+  ]
+  }

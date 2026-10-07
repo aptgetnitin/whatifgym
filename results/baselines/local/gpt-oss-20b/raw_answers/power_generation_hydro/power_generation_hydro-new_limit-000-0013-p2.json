@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"thermal_output_min_15-18","measure":"output","scope":{"period":"15-18"},"sense":">=","value":48250}],"note":"Enforce minimum total thermal output in the 15-18 period."}

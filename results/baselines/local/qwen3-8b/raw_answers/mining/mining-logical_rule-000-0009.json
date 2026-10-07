@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine4_min_extract",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine4"
+   },
+   "sense": ">=",
+   "value": 15300000
+  }
+ ],
+ "note": "A minimum extraction requirement for Mine4 if it is extracted at all."
+}

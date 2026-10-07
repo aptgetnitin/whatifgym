@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","logic":[{"name":"limit_short_time_skill_levels","at_least":1,"of":[{"measure":"short_time","scope":{"skill":"skilled"},"sense":"==","value":0},{"measure":"short_time","scope":{"skill":"unskilled"},"sense":"==","value":0},{"measure":"short_time","scope":{"skill":"semi_skilled"},"sense":"==","value":0}]}]}

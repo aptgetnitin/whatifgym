@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "max_soc_18-19",
+   "measure": "soc",
+   "scope": {
+    "hour": "18-19"
+   },
+   "sense": "<=",
+   "value": 8
+  }
+ ],
+ "note": "Limits the maximum stored energy in the battery during the 18-19 hour to 8 kWh."
+}

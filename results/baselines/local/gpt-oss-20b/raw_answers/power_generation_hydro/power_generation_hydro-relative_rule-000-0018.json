@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"thermal_units_15-18_at_most_90_percent_of_09-15","measure":"ngen","scope":{"period":"15-18"},"sense":"<=","relative_to":{"measure":"ngen","scope":{"period":"09-15"}},"factor":0.9}],"note":"Policy: running units in period 15-18 must be at most 90% of the running units in period 09-15."}

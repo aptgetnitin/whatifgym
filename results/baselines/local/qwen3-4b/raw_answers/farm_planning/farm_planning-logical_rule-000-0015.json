@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "grow_grain",
+      "column": "grow_grain",
+      "where": {
+        "year": [
+          "Year1",
+          "Year5"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

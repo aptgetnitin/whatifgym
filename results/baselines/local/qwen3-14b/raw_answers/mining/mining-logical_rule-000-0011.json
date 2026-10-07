@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "max_open_mines_in_years_1_3_4",
+      "measure": "open",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year3",
+          "Year4"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

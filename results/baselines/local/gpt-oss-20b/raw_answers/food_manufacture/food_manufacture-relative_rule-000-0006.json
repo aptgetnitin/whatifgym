@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "oil2_min_60_percent",
+      "measure": "buy",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy",
+        "scope": {}
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "At least 60% of total oil bought must be OIL2."
+}

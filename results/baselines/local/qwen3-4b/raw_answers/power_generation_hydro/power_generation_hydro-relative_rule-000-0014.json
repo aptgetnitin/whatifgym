@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "pump_00-06_at_least_50",
+      "measure": "pump",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "value": 0.5
+    },
+    {
+      "name": "ngen_00-06_at_most_50_of_15-18",
+      "measure": "ngen",
+      "scope": {
+        "period": "00-06",
+        "type": "Thermal0"
+      },
+      "sense": "<=",
+      "value": 0.5
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

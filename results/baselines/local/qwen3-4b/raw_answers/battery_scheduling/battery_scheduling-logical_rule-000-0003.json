@@ -1,0 +1,35 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "soc",
+      "where": {
+        "hour": [
+          "02-03",
+          "06-07",
+          "18-19",
+          "07-08",
+          "04-05"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "soc",
+      "scope": {
+        "hour": [
+          "02-03",
+          "06-07",
+          "18-19",
+          "07-08",
+          "04-05"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

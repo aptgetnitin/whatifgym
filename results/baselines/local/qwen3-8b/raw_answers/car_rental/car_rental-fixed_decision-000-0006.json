@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "fixed_decisions": [
+  {
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday"
+   },
+   "value": 99
+  }
+ ],
+ "note": "Fixing the number of cars rented out on Wednesday at each depot to 99."
+}

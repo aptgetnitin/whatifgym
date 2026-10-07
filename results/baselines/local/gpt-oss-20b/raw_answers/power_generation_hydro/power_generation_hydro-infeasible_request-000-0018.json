@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "min_thermal_output_0915",
+      "measure": "output",
+      "scope": {
+        "period": "09-15"
+      },
+      "sense": ">=",
+      "value": 131550
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "logic": [
+    {
+      "name": "no_both_overmanned_year1_year3",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "overmanned",
+          "scope": {
+            "year": 1,
+            "skill": [
+              "unskilled",
+              "semi_skilled",
+              "skilled"
+            ]
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "overmanned",
+          "scope": {
+            "year": 3,
+            "skill": [
+              "unskilled",
+              "semi_skilled",
+              "skilled"
+            ]
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

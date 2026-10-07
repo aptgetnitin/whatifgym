@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg2_buy_share",
+   "measure": "buy",
+   "scope": {
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "oil": [
+      "VEG1",
+      "VEG2",
+      "OIL1",
+      "OIL2",
+      "OIL3"
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "Rule enforces that VEG2 must account for at least 60% of all oil bought."
+}

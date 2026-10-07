@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "blend",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      }
+    }
+  ],
+  "note": "The objective is first to minimize the original model's objective, then to maximize the total tons of blended ore sold to reach at least 130,458,350 tons."
+}

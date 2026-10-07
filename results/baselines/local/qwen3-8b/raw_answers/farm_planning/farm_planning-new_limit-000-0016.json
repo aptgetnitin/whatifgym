@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "min_grain_bought_year3",
+   "measure": "buy_grain",
+   "scope": {
+    "year": "Year3"
+   },
+   "sense": ">=",
+   "value": 45
+  }
+ ],
+ "note": "A rule to ensure the total tons of grain bought in Year3 is at least 45."
+}

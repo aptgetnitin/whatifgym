@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "fixed_decisions": [
+    {
+      "measure": "output",
+      "scope": {
+        "period": "18-24",
+        "type": "Thermal0"
+      },
+      "value": 102000
+    }
+  ],
+  "note": "Commit to exactly 102000 MW output from Thermal0 in period 18-24."
+}

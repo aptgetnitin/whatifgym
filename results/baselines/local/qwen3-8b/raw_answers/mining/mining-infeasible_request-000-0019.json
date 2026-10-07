@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mining_rule_year1_extract",
+   "measure": "extract",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 11500000
+  },
+  {
+   "name": "mining_rule_year3_extract",
+   "measure": "extract",
+   "scope": {
+    "year": "Year3"
+   },
+   "sense": ">=",
+   "value": 6500000
+  }
+ ],
+ "note": "The planner is asking if it is possible to extract at least 11,500,000 tons of ore in Year1 and at least 6,500,000 tons of ore in Year3."
+}

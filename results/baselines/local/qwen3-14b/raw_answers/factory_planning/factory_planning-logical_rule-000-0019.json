@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "only_may_feb_jan_make",
+      "measure": "make",
+      "scope": {
+        "month": [
+          "May",
+          "Feb",
+          "Jan"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "no_other_months_make",
+      "measure": "make",
+      "scope": {
+        "month": [
+          "Apr",
+          "Jun",
+          "Mar"
+        ]
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ]
+}

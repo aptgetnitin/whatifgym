@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"wedding_seating","data_changes":[{"op":"add","table":"guests","rows":[{"guest":"new_guest","rank":19}]}],"note":"Add a new guest to the guest list."}

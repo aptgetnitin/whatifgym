@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "output"
+    },
+    {
+      "sense": "min",
+      "measure": "reservoir_level"
+    }
+  ],
+  "note": "Priorities: minimize total generating cost, maximize total thermal output, minimize total reservoir level."
+}

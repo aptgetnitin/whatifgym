@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "bins",
+      "rows": [
+        {
+          "bin": "new_bin",
+          "capacity": 60
+        }
+      ]
+    }
+  ],
+  "note": "The planner wants to add a new bin with capacity 60 and see the effect on the plan. The earlier change (scaling item6's value) is dropped."
+  }

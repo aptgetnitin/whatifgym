@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "milk_flow_at_most_25_wheat_flow",
+      "measure": "flow",
+      "scope": {
+        "food": "Milk"
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "food": "Wheat"
+        }
+      }
+    }
+  ]
+}

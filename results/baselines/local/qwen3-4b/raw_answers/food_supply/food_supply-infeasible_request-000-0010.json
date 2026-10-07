@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_min_17",
+      "measure": "ration",
+      "scope": {
+        "food": "Oil",
+        "camp": [
+          "Ar Raqqa",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Idleb",
+          "Jubb_al_Jarrah",
+          "Qamishli"
+        ]
+      },
+      "sense": ">=",
+      "value": 17
+    },
+    {
+      "name": "wheat_min_55",
+      "measure": "ration",
+      "scope": {
+        "food": "Wheat",
+        "camp": [
+          "Ar Raqqa",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Idleb",
+          "Jubb_al_Jarrah",
+          "Qamishli"
+        ]
+      },
+      "sense": ">=",
+      "value": 55
+    }
+  ]
+}

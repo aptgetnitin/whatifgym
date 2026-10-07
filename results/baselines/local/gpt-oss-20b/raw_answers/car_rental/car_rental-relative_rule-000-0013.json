@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "monday_undamaged_left_share",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "undamaged_left"
+      },
+      "factor": 0.4
+    }
+  ],
+  "note": "Monday must account for at least 40% of all undamaged cars kept overnight."
+}

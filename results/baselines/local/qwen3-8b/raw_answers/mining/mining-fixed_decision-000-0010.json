@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "years",
+   "where": {
+    "year": "Year4"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine4_worked_years",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine4"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Remove Year4 and ensure Mine4 is not operated in any year."
+}

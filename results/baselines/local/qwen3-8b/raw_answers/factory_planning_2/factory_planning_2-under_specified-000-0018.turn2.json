@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "vertDrill"
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The installed count for vertDrill is reduced by 25%."
+}

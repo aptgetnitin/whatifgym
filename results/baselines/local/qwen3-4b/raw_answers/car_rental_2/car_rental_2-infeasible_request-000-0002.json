@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "repaired_saturday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Saturday",
+        "depot": [
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 141
+    }
+  ],
+  "note": "The planner asks for a minimum of 141 cars repaired on Saturday. The repairs are indexed by day and depot, so we fix the scope to Saturday and all repair depots (which are Manchester, Birmingham, Plymouth based on the model schema)."
+}

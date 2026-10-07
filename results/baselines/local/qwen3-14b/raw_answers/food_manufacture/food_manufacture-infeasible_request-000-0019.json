@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "jan_produce_min",
+      "measure": "produce",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "value": 900
+    },
+    {
+      "name": "jun_produce_min",
+      "measure": "produce",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "value": 900
+    }
+  ]
+}

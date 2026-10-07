@@ -1,0 +1,25 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "consume",
+      "column": "consume",
+      "where": {
+        "month": "Jan",
+        "oil": "VEG2"
+      },
+      "value": 360
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "consume",
+      "scope": {
+        "month": "Jan",
+        "oil": "VEG2"
+      },
+      "value": 360
+    }
+  ]
+}

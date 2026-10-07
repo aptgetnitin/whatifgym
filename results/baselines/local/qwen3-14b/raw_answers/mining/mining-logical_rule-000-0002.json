@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "year3_blend_year2_mine3_extract",
+      "measure": "blend",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "extract",
+        "scope": {
+          "year": "Year2",
+          "mine": "Mine3"
+        }
+      },
+      "factor": 1950000
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "value": 1000
+    }
+  ],
+  "note": "The planner asks if at least 1000 workers can be retrained to semi-skilled in year 3 from unskilled. This requires setting the required workforce for unskilled in year 3 to 1000 to check feasibility."
+}

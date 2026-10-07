@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","fixed_decisions":[{"measure":"undamaged_left","scope":{"day":"Friday","depot":"Birmingham"},"value":0}]}

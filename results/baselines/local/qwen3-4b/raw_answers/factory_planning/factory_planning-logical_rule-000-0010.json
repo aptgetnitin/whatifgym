@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "rule_for_feb_prod3_impact",
+      "measure": "make",
+      "scope": {
+        "month": "Mar",
+        "product": "Prod3"
+      },
+      "sense": ">=",
+      "value": 800
+    }
+  ]
+}

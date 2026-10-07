@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","fixed_decisions":[{"measure":"make","scope":{"month":"Jan","product":"Prod3"},"value":600}],"note":"Commit to exactly 600 units made for month Jan, product Prod3."}

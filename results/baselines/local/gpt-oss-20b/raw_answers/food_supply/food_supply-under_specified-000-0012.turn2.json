@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "nutrients",
+      "column": "min_per_person",
+      "where": {
+        "nutrient": "VitaminA(ug)"
+      },
+      "value": 250
+    }
+  ],
+  "note": "Set minimum daily intake for VitaminA(ug) to 250."
+}

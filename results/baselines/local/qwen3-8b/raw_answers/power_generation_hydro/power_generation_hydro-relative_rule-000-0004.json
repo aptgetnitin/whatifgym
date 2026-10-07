@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_start_cap_00-06",
+   "measure": "nstart",
+   "scope": {
+    "period": "00-06"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "nstart",
+    "scope": {
+     "period": [
+      "00-06",
+      "06-09",
+      "09-15",
+      "15-18",
+      "18-24"
+     ]
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "At least 75% of the total number of thermal units started across all periods must be started in the 00-06 period."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "min_batch_prod2_jan",
+      "measure": "sell",
+      "scope": {
+        "month": "Jan",
+        "product": "Prod2"
+      },
+      "sense": ">=",
+      "value": 1500
+    }
+  ]
+}

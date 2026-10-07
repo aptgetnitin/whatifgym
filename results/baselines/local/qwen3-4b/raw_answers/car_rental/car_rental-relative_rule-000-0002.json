@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "damaged_overnight_at_least_75%",
+      "measure": "damaged_left",
+      "scope": {
+        "day": "Thursday"
+      },
+      "sense": ">=",
+      "value": 0.75
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "profit"
+    }
+  ],
+  "fixed_decisions": []
+}

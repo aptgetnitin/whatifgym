@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "maintenance_feb_limit",
+      "measure": "repair",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "repair",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

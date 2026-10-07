@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "reservoir_level",
+   "scope": {
+    "period": "15-18"
+   }
+  }
+ ],
+ "note": "First, minimize the total generating cost as per the original objective. Then, minimize the reservoir level for the 15-18 period."
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "retrain_skilled_to_skilled_min",
+      "measure": "retrain",
+      "scope": {
+        "to_skill": "skilled"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "retrain",
+        "scope": {
+          "to_skill": "semi_skilled"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

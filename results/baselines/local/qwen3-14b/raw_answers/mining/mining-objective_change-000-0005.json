@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "sum",
+      "scope": {
+        "mine": {
+          "type": "string"
+        },
+        "year": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "sum",
+      "scope": {
+        "mine": {
+          "type": "string"
+        },
+        "year": {
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

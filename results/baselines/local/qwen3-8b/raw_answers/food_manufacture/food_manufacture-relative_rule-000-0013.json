@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "storage_in_may_at_least_20_percent",
+   "measure": "store",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.2
+  }
+ ],
+ "note": "The rule ensures that the total storage in May is at least 20% of the total storage across all months."
+}

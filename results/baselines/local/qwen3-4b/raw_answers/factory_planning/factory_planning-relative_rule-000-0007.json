@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "jun_make_at_most_75_of_mar",
+      "measure": "make",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": "Mar"
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

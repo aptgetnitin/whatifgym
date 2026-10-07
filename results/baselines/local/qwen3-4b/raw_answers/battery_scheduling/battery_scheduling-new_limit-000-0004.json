@@ -1,0 +1,98 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "charge_efficiency",
+      "where": {
+        "name": "charge_efficiency"
+      },
+      "value": 0.96
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "discharge_efficiency",
+      "where": {
+        "name": "discharge_efficiency"
+      },
+      "value": 0.96
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "energy_capacity_kwh",
+      "where": {
+        "name": "energy_capacity_kwh"
+      },
+      "value": 13.5
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "initial_soc_kwh",
+      "where": {
+        "name": "initial_soc_kwh"
+      },
+      "value": 6
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "terminal_soc_kwh",
+      "where": {
+        "name": "terminal_soc_kwh"
+      },
+      "value": 6
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_charge_limit",
+      "measure": "charge",
+      "scope": {
+        "hour": [
+          "00-01",
+          "01-02",
+          "02-03",
+          "03-04",
+          "04-05",
+          "05-06",
+          "06-07",
+          "07-08",
+          "08-09",
+          "09-10",
+          "10-11",
+          "11-12",
+          "12-13",
+          "13-14",
+          "14-15",
+          "15-16",
+          "16-17",
+          "17-18",
+          "18-19",
+          "19-20",
+          "20-21",
+          "21-22",
+          "22-23",
+          "23-24"
+        ]
+      },
+      "sense": "<=",
+      "value": 3.9
+    },
+    {
+      "name": "soc_22-23_limit",
+      "measure": "soc",
+      "scope": {
+        "hour": [
+          "22-23"
+        ]
+      },
+      "sense": "<=",
+      "value": 4.8
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_repair_thursday",
+   "measure": "repairs",
+   "scope": {
+    "day": "Thursday",
+    "depot": [
+     "Manchester",
+     "Birmingham"
+    ]
+   },
+   "sense": ">=",
+   "value": 94
+  },
+  {
+   "name": "min_repair_friday",
+   "measure": "repairs",
+   "scope": {
+    "day": "Friday",
+    "depot": [
+     "Manchester",
+     "Birmingham"
+    ]
+   },
+   "sense": ">=",
+   "value": 94
+  }
+ ],
+ "note": "The scenario requires at least 94 cars to be repaired on both Thursday and Friday, considering only Manchester and Birmingham as repair depots."
+}

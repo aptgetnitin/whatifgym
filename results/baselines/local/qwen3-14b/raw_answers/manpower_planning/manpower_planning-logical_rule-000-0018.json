@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "overmanned_unskilled_year1",
+      "measure": "overmanned",
+      "scope": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "sense": "==",
+      "value": 0
+    },
+    {
+      "name": "overmanned_unskilled_year1_min",
+      "measure": "overmanned",
+      "scope": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 400
+    }
+  ]
+}

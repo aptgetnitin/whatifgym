@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine3"
+      },
+      "factor": 0.85
+    }
+  ],
+  "note": "The constraint 'at most 15% of the total tons of ore extracted may go to mine Mine3' implies scaling the capacity of Mine3 by 0.85 to reflect that only 85% of its original capacity is used (since 100% - 15% = 85%)."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "jun_stock_at_least_1_5_times_mar",
+   "measure": "store",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Mar"
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "The rule enforces that the total stock in June is at least 1.5 times the total stock in March."
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_ration_limit_relative_to_dsm",
+      "measure": "ration",
+      "scope": {
+        "food": "Oil"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Dried skim milk (enriched) (DSM)"
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

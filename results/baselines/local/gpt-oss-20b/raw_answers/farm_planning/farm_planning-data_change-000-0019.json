@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "grain_purchase_price",
+      "factor": 1.5
+    }
+  ],
+  "note": "Scale grain purchase price by 1.5."
+}

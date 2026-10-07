@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "min_batch_prod2_jan",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod2",
+    "month": "Jan"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod2",
+     "month": "Jan"
+    }
+   },
+   "factor": 1500
+  }
+ ],
+ "note": "A minimum batch rule ensures that if there is any units sold for month Jan, product Prod2, it must be at least 1500."
+}

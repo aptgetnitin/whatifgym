@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "fixed_decisions": [
+  {
+   "measure": "blend",
+   "scope": {
+    "year": "Year5"
+   },
+   "value": 4100000
+  }
+ ],
+ "note": "Fixing the tons of blended ore sold in Year5 to 4100000."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","objective":[{"measure":"grow_beet","sense":"min","scope":{"year":["Year1","Year2","Year3","Year4","Year5"]}},{"measure":"yearly_profit","sense":"max","scope":{"year":["Year1","Year2","Year3","Year4","Year5"]}}]}

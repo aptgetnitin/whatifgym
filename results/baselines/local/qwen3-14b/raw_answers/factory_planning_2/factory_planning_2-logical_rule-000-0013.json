@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod1_stock_rule",
+      "measure": "store",
+      "scope": {
+        "product": "Prod1"
+      },
+      "sense": ">=",
+      "value": 380
+    }
+  ],
+  "logic": [
+    {
+      "name": "prod1_stock_either_zero_or_380",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "product": "Prod1"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "product": "Prod1"
+          },
+          "sense": ">=",
+          "value": 380
+        }
+      ]
+    }
+  ]
+}

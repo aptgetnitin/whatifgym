@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_DSM_purchase","measure":"purchase","scope":{"food":"Dried skim milk (enriched) (DSM)"},"sense":">=","value":49550}],"note":"Check feasibility of at least 49,550 units of DSM purchased."}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "purchase",
+      "scope": {
+        "food": "*",
+        "supplier": "*"
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "cost",
+      "scope": {
+        "food": "*",
+        "supplier": "*"
+      }
+    }
+  ]
+}

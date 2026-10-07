@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": 2
+   },
+   "value": 50
+  }
+ ],
+ "note": "The price for returning to another depot for 2-day rentals is set to 50."
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "no_both_gaziantep_dayr_azor",
+      "measure": "purchase",
+      "scope": {
+        "food": [
+          "any"
+        ],
+        "supplier": [
+          "Gaziantep",
+          "Dayr_Az_Zor"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

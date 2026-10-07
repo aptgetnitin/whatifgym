@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "thermal1_06-09_at_least_2_hydro_periods_15-18",
+      "measure": "ngen",
+      "scope": {
+        "period": "06-09",
+        "type": "Thermal1"
+      },
+      "sense": ">=",
+      "value": 2
+    },
+    {
+      "name": "hydro_b_15-18_running",
+      "measure": "hydro_on",
+      "scope": {
+        "period": "15-18",
+        "hydro": "HydroB"
+      },
+      "sense": ">=",
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

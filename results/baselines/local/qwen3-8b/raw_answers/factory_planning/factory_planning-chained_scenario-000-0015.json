@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod5",
+    "month": "May"
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod5",
+    "month": "Jun"
+   },
+   "factor": 0.8
+  }
+ ],
+ "rules": [
+  {
+   "name": "prod5_prod1_cap_feb",
+   "measure": "make",
+   "scope": {
+    "product": [
+     "Prod5",
+     "Prod1"
+    ],
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 600
+  }
+ ],
+ "note": "A relative demand change over a subset of periods is a scale over the matching rows. A production cap on two products over a specific month is a rule."
+}

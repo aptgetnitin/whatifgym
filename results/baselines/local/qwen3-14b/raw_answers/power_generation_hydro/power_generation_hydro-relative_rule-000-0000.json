@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal2_percentage",
+      "measure": "ngen",
+      "scope": {
+        "type": "Thermal2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "ngen",
+        "scope": {
+          "type": [
+            "Thermal0",
+            "Thermal1",
+            "Thermal2"
+          ]
+        }
+      },
+      "factor": 0.4
+    }
+  ]
+}

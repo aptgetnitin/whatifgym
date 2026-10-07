@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "rentals_wed_man",
+      "measure": "rentals",
+      "scope": {
+        "day": "Wednesday",
+        "depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 200
+    },
+    {
+      "name": "rentals_wed_man_zero",
+      "measure": "rentals",
+      "scope": {
+        "day": "Wednesday",
+        "depot": "Manchester"
+      },
+      "sense": "<=",
+      "value": 200
+    }
+  ]
+}

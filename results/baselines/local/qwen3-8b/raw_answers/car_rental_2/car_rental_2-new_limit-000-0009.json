@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_transfers_to_birmingham_cap",
+   "measure": "damaged_transfers",
+   "scope": {
+    "to_depot": "Birmingham"
+   },
+   "sense": "<=",
+   "value": 25
+  },
+  {
+   "name": "undamaged_transfers_total_cap",
+   "measure": "undamaged_transfers",
+   "scope": {},
+   "sense": "<=",
+   "value": 31
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; the first rule caps damaged transfers to Birmingham, the second caps total undamaged transfers."
+}

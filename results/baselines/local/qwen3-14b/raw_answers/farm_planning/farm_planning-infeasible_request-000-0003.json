@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "year3_profit",
+   "measure": "yearly_profit",
+   "scope": {
+    "year": "Year3"
+   },
+   "sense": ">=",
+   "value": 77450
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_to_semi_skilled_cap",
+   "measure": "retrain",
+   "scope": {
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": "<=",
+   "value": 150
+  },
+  {
+   "name": "retrain_to_semi_skilled_cap_2",
+   "measure": "retrain",
+   "scope": {
+    "from_skill": "semi_skilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": "<=",
+   "value": 150
+  }
+ ],
+ "note": "Fixing the retrain to semi_skilled at 150 per year for all from_skill levels."
+}

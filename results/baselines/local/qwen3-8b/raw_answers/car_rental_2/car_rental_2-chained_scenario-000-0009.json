@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "demand",
+   "column": "demand",
+   "factor": 0.75
+  }
+ ],
+ "note": "A relative demand change over all periods and depots is a scale over the entire table."
+}

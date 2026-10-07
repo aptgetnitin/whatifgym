@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "export_price",
+      "factor": 1.1
+    }
+  ],
+  "rules": [
+    {
+      "name": "max_charge_02_03",
+      "measure": "charge",
+      "scope": {
+        "hour": "02-03"
+      },
+      "sense": "<=",
+      "value": 1.4
+    }
+  ],
+  "note": "Keep the 10% export price increase and add a limit of 1.4 kW on charging during hour 02-03."
+}

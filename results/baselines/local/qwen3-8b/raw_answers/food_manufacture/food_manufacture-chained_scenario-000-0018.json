@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "purchase_prices",
+   "column": "price",
+   "where": {
+    "month": "Apr",
+    "oil": "VEG2"
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "A relative purchase price change over a subset of periods is a scale over the matching rows."
+}

@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "camps",
+   "column": "beneficiaries",
+   "where": {
+    "camp": "Idleb"
+   },
+   "factor": 0.5
+  },
+  {
+   "op": "scale",
+   "table": "nutrients",
+   "column": "min_per_person",
+   "where": {
+    "nutrient": [
+     "Energy(kcal)",
+     "Protein(g)",
+     "Fat(g)",
+     "Calcium(mg)",
+     "Iron(mg)",
+     "VitaminA(ug)",
+     "ThiamineB1(mg)",
+     "RiboflavinB2(mg)",
+     "NicacinB3(mg)",
+     "Folate(ug)",
+     "VitaminC(mg)"
+    ]
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "The number of beneficiaries for camp Idleb is reduced by 50%, and all minimum nutrient requirements are increased by 20%."
+}

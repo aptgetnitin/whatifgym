@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "logic": [
+    {
+      "name": "ration_limit",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Wheat"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Corn-soya blend (CSB)"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Oil"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Dried skim milk (enriched) (DSM)"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Milk"
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": [
+          "all"
+        ]
+      },
+      "factor": 2.0
+    }
+  ],
+  "note": "The planner wants to keep the total food shipped at or above 2 times the total food bought. This is a scaling of the flow measure relative to the purchase measure."
+  }

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","fixed_decisions":[{"measure":"repair","scope":{"month":"May"},"value":1}],"note":"Fix the number of machines down for maintenance in May to 1 for every machine type."}

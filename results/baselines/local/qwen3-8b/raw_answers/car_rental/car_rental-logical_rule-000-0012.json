@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "logic": [
+  {
+   "name": "no_rentals_in_man_and_glasgow",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "rentals",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "day": "Monday",
+      "depot": "Manchester"
+     }
+    },
+    {
+     "measure": "rentals",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "day": "Monday",
+      "depot": "Glasgow"
+     }
+    }
+   ]
+  }
+ ]
+}

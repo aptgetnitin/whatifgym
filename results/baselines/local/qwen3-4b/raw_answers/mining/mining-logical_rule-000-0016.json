@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "at_least_1_of_4_mines_open",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "open",
+          "scope": {
+            "mine": [
+              "Mine1"
+            ]
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "open",
+          "scope": {
+            "mine": [
+              "Mine2"
+            ]
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "open",
+          "scope": {
+            "mine": [
+              "Mine3"
+            ]
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "open",
+          "scope": {
+            "mine": [
+              "Mine4"
+            ]
+          },
+          "sense": ">=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

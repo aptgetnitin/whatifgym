@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "at_least_2_placements",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item4"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item7"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "bin": "bin4"
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

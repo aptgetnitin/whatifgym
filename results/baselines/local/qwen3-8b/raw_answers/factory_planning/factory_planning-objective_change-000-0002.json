@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "store",
+   "scope": {
+    "product": "all"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "sell",
+   "scope": {
+    "product": "all"
+   }
+  }
+ ],
+ "note": "The objective prioritises minimising total stock across all products, followed by maximising total sales across all products."
+}

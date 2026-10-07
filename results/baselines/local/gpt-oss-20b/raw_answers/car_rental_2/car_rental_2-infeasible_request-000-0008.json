@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"min_repairs_Sat_Manchester","measure":"repairs","scope":{"day":"Saturday","depot":"Manchester"},"sense":">=","value":66}],"note":"Require at least 66 repairs on Saturday at Manchester."}

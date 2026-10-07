@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "storage_may_min",
+   "measure": "store",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "month": "Apr"
+    }
+   },
+   "factor": 2000
+  }
+ ],
+ "note": "A logical rule that enforces a minimum storage requirement in May based on the amount of oil refined in April."
+}

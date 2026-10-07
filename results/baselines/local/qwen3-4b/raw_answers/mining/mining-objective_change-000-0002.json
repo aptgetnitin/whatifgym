@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "open",
+      "scope": {
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ],
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "profit",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      }
+    }
+  ],
+  "note": "The planner wants to minimise the total number of mine-years kept open first (a lexicographic objective), then maximise discounted profit."
+  }

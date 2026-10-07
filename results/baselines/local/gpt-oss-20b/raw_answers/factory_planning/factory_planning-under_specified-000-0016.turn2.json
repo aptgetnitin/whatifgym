@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"prod4_monthly_cap","measure":"make","scope":{"product":"Prod4"},"sense":"<=","value":250}],"note":"Cap production of Prod4 at 250 units per month."}

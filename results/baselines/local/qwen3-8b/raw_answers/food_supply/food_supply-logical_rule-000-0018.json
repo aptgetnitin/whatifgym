@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "cornsoyblend_ration_requirement",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Daraa"
+      },
+      "sense": ">=",
+      "value": 1.05
+    }
+  ],
+  "note": "The ration of Corn-soya blend (CSB) in Daraa must be at least 1.05 units per person per day."
+}

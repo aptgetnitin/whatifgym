@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_flow_beirut_to_homs_at_least_dayr_az_zor",
+      "measure": "flow",
+      "scope": {
+        "food": "Oil",
+        "from_city": "Beirut",
+        "to_city": "Homs"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "from_city": "Dayr_Az_Zor"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The rule ensures that the flow of oil from Beirut to Homs is at least equal to the total flow of food from Dayr_Az_Zor."
+}

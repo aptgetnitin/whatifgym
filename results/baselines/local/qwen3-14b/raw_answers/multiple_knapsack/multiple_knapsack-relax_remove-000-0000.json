@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "bins",
+      "column": "capacity",
+      "where": {
+        "bin": "bin3"
+      },
+      "value": 1000
+    }
+  ],
+  "note": "Increased the capacity of bin3 to a high value to simulate lifting the weight limit for bin3 only."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "energy_capacity_kwh",
+   "where": {
+    "name": "energy_capacity_kwh"
+   },
+   "value": 7
+  }
+ ],
+ "rules": [
+  {
+   "name": "soc_cap_hour_15-16",
+   "measure": "soc",
+   "scope": {
+    "hour": "15-16"
+   },
+   "sense": "<=",
+   "value": 7
+  }
+ ],
+ "note": "The battery stored energy (kWh) for hour 15-16 is capped at 7 kWh."
+}

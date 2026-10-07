@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "fixed_decisions": [
+  {
+   "measure": "x",
+   "scope": {
+    "item": [
+     "item13",
+     "item4",
+     "item12"
+    ]
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixed decisions set the number of item placements to zero for the specified items."
+}

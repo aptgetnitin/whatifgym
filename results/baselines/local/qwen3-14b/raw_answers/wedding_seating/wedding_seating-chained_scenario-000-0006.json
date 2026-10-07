@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "wedding_seating",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "guests",
+      "where": {
+        "guest": "N"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "max_tables_10",
+      "measure": "x",
+      "scope": {
+        "table": {
+          "type": "string"
+        }
+      },
+      "sense": "<=",
+      "value": 10
+    }
+  ]
+}

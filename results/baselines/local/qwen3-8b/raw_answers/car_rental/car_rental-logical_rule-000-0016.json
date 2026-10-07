@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "rentals_limit",
+   "measure": "rentals",
+   "scope": {
+    "day": [
+      "Thursday",
+      "Wednesday",
+      "Saturday"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "Only one of the specified days can have rentals, so the sum of rentals on these days is capped at zero."
+}

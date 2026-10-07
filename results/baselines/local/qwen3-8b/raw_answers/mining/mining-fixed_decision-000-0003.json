@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine1"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine4"
+   },
+   "value": 1
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "extract",
+   "scope": {
+    "year": "Year3",
+    "mine": "Mine1"
+   },
+   "value": 0
+  },
+  {
+   "measure": "open",
+   "scope": {
+    "year": "Year5",
+    "mine": "Mine4"
+   },
+   "value": 1
+  }
+ ]
+}

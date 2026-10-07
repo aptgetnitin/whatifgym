@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "logic": [
+    {
+      "name": "grain_group2_implies_group1_at_least_33",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "grow_grain",
+          "scope": {
+            "year": "Year3",
+            "land_group": "Group2"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "grow_grain",
+          "scope": {
+            "year": "Year3",
+            "land_group": "Group1"
+          },
+          "sense": ">=",
+          "value": 33
+        }
+      ]
+    }
+  ],
+  "note": "If any grain is grown in Group2 in Year3, then at least 33 tons must be grown in Group1 in Year3."
+}

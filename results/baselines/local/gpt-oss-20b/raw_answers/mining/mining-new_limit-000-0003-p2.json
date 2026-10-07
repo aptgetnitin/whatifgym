@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Mine2_min_worked_years",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 4
+    },
+    {
+      "name": "Total_extract_limit",
+      "measure": "extract",
+      "scope": {},
+      "sense": "<=",
+      "value": 20873350
+    }
+  ]
+}

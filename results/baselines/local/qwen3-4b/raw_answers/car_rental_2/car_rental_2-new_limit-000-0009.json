@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "damaged_transfers_birmingham_return",
+      "measure": "damaged_transfers",
+      "scope": {
+        "to_depot": "Birmingham"
+      },
+      "sense": "<=",
+      "value": 25
+    },
+    {
+      "name": "undamaged_transfers_total_cap",
+      "measure": "undamaged_transfers",
+      "scope": {},
+      "sense": "<=",
+      "value": 31
+    }
+  ],
+  "note": "The rules specify that damaged transfers with return depot Birmingham must stay at or below 25, and undamaged transfers total must stay at or below 31."
+}

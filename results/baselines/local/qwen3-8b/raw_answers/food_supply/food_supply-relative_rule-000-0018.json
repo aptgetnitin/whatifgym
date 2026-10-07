@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "idleb_ration_at_least_twice_daraa",
+   "measure": "ration",
+   "scope": {
+    "camp": "Idleb"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "camp": "Daraa"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The ration per person in Idleb must be at least twice that in Daraa."
+}

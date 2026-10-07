@@ -1,0 +1,15 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "terminal_soc_kwh",
+      "where": {
+        "key": "terminal_soc_kwh"
+      },
+      "value": 13.5
+    }
+  ],
+  "note": "A cap on stored energy would be a terminal_soc_kwh constraint, but the model already has a terminal_soc_kwh parameter that sets the minimum stored energy at the end of the day. The question is vague about whether it means a hard cap (max) or a minimum (terminal_soc_kwh). The model uses terminal_soc_kwh as a minimum, so setting it to 13.5 would mean the battery must end the day at 13.5 kWh (full)."
+}

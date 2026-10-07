@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "ask": "Which machine type's installed count is changing? What is the specific change (e.g., increase by X, decrease by Y, set to Z)?"
+}

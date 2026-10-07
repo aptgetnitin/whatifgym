@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "ask": "What is the new recruitment limit for year 2, skilled workers?"
+}

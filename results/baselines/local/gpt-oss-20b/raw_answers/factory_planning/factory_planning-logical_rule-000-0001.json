@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","logic":[{"name":"min_batch_prod7","at_least":1,"of":[{"measure":"store","scope":{"product":"Prod7"},"sense":"<=","value":0},{"measure":"store","scope":{"product":"Prod7"},"sense":">=","value":500}]}],"note":"If any units of Prod7 are in stock, they must be at least 500."}

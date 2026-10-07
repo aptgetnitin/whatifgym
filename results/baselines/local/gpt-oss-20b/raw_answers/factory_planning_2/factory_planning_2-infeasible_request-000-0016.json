@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"min_make_mar","measure":"make","scope":{"month":"Mar"},"sense":">=","value":12500}],"note":"Check if at least 12,500 units can be produced in March."}

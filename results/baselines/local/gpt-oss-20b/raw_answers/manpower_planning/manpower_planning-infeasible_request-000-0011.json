@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","logic":[{"name":"both_retrain_requests","at_least":2,"of":[{"measure":"retrain","scope":{"year":1},"sense":">=","value":680},{"measure":"retrain","scope":{"year":3},"sense":">=","value":460}]}]}

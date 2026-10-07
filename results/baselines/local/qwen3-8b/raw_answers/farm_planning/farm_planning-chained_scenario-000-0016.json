@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "measure": "sell_beet",
+   "scope": {},
+   "sense": "<=",
+   "value": 160,
+   "name": "cap_sell_beet_total"
+  }
+ ]
+}

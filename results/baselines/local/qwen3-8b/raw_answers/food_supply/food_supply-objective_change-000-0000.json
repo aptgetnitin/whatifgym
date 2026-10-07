@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "ration",
+   "scope": {
+    "camp": [
+      "Ar Raqqa",
+      "Daraa",
+      "Dayr_Az_Zor",
+      "Hassakeh",
+      "Idleb",
+      "Jubb_al_Jarrah",
+      "Qamishli"
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "total_cost",
+   "scope": {
+    "camp": [
+      "Ar Raqqa",
+      "Daraa",
+      "Dayr_Az_Zor",
+      "Hassakeh",
+      "Idleb",
+      "Jubb_al_Jarrah",
+      "Qamishli"
+    ]
+   }
+  }
+ ],
+ "note": "Prioritise minimising the total ration per person across all camps, then minimising the total cost."
+}

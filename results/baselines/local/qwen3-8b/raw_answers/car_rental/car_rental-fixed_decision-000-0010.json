@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "manchester_repair_cap",
+   "measure": "repairs",
+   "scope": {
+    "depot": "Manchester"
+   },
+   "sense": "==",
+   "value": 9
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "rentals",
+   "scope": {
+    "day": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"measure":"purchase","scope":{"food":"Oil","supplier":"Hassakeh"},"sense":">=","value":200550}],"note":"Check feasibility of buying at least 200,550 units of Oil from Hassakeh."}

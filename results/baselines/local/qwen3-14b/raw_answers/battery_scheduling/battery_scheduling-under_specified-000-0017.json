@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_discharge_kw",
+      "value": 0
+    }
+  ],
+  "note": "Setting max_discharge_kw to 0 caps the battery discharging power (kW)."
+}

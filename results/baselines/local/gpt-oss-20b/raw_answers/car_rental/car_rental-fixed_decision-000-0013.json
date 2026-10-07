@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","fixed_decisions":[{"measure":"damaged_transfers","scope":{"day":"Wednesday","from_depot":"Glasgow","to_depot":"Manchester"},"value":3.8},{"measure":"rentals","scope":{"depot":"Glasgow"},"value":68}]}

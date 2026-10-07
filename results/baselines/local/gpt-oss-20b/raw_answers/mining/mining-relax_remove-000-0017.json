@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "stay_closed",
+      "scope": {
+        "mine": "Mine4"
+      }
+    }
+  ],
+  "note": "Lift the stay_closed rule for Mine4 only."
+}

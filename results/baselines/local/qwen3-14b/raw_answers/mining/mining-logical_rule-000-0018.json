@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine4_worked_min_2_if_mine3_worked",
+      "measure": "operate",
+      "scope": {
+        "year": "Year2",
+        "mine": "Mine4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "year": "Year2",
+          "mine": "Mine3"
+        }
+      },
+      "factor": 2
+    }
+  ]
+}

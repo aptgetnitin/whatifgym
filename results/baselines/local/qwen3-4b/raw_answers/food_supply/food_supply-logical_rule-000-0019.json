@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "at_most_one_healthy_food",
+      "measure": "ration",
+      "scope": {
+        "food": [
+          "Wheat",
+          "Corn-soya blend (CSB)",
+          "Oil",
+          "Dried skim milk (enriched) (DSM)",
+          "Milk"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

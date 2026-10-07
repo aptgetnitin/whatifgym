@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "stay_closed",
+      "scope": {
+        "year": "Year2"
+      }
+    }
+  ],
+  "note": "The stay_closed constraint is relaxed for Year2 only, allowing a closed mine to potentially reopen in that year."
+}

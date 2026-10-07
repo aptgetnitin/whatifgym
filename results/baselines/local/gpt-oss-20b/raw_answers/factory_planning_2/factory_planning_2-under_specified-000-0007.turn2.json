@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"mar_make_cap","measure":"make","scope":{"month":"Mar"},"sense":"<=","value":1900}],"note":"Upper limit on total units made in March."}

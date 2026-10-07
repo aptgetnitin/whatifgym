@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod3_make_total",
+      "measure": "make",
+      "scope": {
+        "product": "Prod3"
+      },
+      "sense": ">=",
+      "value": 15000
+    }
+  ]
+}

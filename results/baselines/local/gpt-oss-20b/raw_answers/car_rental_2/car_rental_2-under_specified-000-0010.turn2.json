@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"min_undamaged_transfers_thursday","measure":"undamaged_transfers","scope":{"day":"Thursday"},"sense":">=","value":62}]}

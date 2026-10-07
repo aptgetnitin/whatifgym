@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_purchase",
+   "value": 1700
+  }
+ ],
+ "rules": [
+  {
+   "name": "purchase_limit_per_food_per_supplier",
+   "measure": "purchase",
+   "scope": {
+    "supplier": "Daraa"
+   },
+   "sense": "<=",
+   "value": 1700
+  }
+ ],
+ "note": "Fixing the purchase limit for Daraa to 1700 units per food and enforcing the same through a rule ensures all foods purchased from Daraa are capped at 1700 units per day."
+}

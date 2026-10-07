@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_upper_limit",
+   "measure": "soc",
+   "scope": {
+    "hour": [
+     "05-06"
+    ]
+   },
+   "sense": "<=",
+   "value": 10
+  }
+ ],
+ "note": "A new upper limit on battery stored energy (kWh) for hour 05-06 is introduced."
+}

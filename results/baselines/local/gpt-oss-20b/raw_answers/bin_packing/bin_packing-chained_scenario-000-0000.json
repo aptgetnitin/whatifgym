@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","data_changes":[{"op":"scale","table":"items","column":"weight","factor":0.75},{"op":"add","table":"items","rows":[{"item":"new_item","weight":24}]}]}

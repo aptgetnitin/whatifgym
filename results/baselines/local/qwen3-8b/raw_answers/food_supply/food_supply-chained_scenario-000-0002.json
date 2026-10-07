@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "floor_flow_Oil",
+   "measure": "flow",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "value": 78500
+  },
+  {
+   "name": "floor_purchase_DSM",
+   "measure": "purchase",
+   "scope": {
+    "food": "Dried skim milk (enriched) (DSM)"
+   },
+   "sense": ">=",
+   "value": 14850
+  }
+ ],
+ "note": "Add a requirement: the food bought (units of 100 g a day), summed over everything with food = Dried skim milk (enriched) (DSM), must be at least 14850."
+}

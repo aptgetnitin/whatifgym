@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_01-02_at_most_25_of_soc_08-09",
+   "measure": "soc",
+   "scope": {
+    "hour": "01-02"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "soc",
+    "scope": {
+     "hour": "08-09"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The rule limits the stored energy in hour 01-02 to 25% of the stored energy in hour 08-09."
+}

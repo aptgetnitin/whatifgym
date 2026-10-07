@@ -1,0 +1,48 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "year1_workforce_limit",
+   "measure": "workforce",
+   "scope": {
+    "year": 1
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "workforce",
+    "scope": {
+     "year": 3
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "short_time_limit",
+   "measure": "short_time",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "retrain",
+    "scope": {
+     "from_skill": [
+      "unskilled",
+      "semi_skilled"
+     ],
+     "to_skill": [
+      "semi_skilled",
+      "skilled"
+     ]
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "Two relative limits: workforce in year 1 is at most 75% of workforce in year 3; total short-time working is at most 25% of total retrained workers."
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "price_other_depot",
+      "factor": 0.8
+    }
+  ],
+  "note": "Scaling the 'price_other_depot' column in the 'rental_lengths' table by a factor of 0.8 to reflect a 20% reduction across the board."
+}

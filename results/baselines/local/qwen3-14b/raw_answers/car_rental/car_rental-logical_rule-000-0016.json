@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "restrict_rentals_to_specific_days",
+      "measure": "rentals",
+      "scope": {
+        "day": [
+          "Thursday",
+          "Wednesday",
+          "Saturday"
+        ]
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "store_target",
+      "where": {
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "value": 0.6
+    }
+  ],
+  "note": "The planner's question specifies a stock-to-make ratio of 60%, which is a relative target for the closing stock. However, the model's store_target is a fixed value per product, not a ratio. This scenario requires a new rule to enforce the stock-to-make ratio constraint across the entire planning horizon."
+  }

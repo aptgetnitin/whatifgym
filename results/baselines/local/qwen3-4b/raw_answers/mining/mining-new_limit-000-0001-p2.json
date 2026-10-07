@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract_total",
+      "where": {
+        "mine": "Mine4"
+      },
+      "value": 9562500
+    }
+  ],
+  "note": "The planner asks for a minimum total extraction of Mine4 across all years. However, the model does not have a pre-existing 'extract_total' column in the 'mines' table. The 'extract' decision variable is per year and mine, so we need to fix the sum of 'extract[year, mine]' for Mine4 over all years to 9562500. This requires a fixed decision on the sum of a decision measure, not a data change on an existing column."
+  }

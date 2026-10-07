@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "max_5pct_discharge_21_22",
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "discharge",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "Limit discharge in hour 21-22 to at most 5% of total discharge."
+}

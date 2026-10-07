@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "birmingham_undamaged_stock_min",
+      "measure": "undamaged_stock",
+      "scope": {
+        "depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 1450
+    },
+    {
+      "name": "max_expansions_cap",
+      "measure": "expand",
+      "scope": {},
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

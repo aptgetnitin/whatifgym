@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "arcs",
+   "column": "transport_cost",
+   "where": {
+    "from_city": "Aleppo",
+    "to_city": "Idleb"
+   },
+   "value": 3.5
+  }
+ ],
+ "note": "Transport cost for the link from Aleppo to Idleb is set to 3.5 USD per unit."
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "soc_21_22_at_most_25pct_of_16_17",
+      "measure": "soc",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "soc",
+        "scope": {
+          "hour": "16-17"
+        }
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Limit stored energy at 21-22 to at most 25% of stored energy at 16-17."
+}

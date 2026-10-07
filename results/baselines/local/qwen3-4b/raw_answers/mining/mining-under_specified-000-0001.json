@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "shift_param",
+      "name": "discount_rate",
+      "delta": 0.05
+    }
+  ],
+  "note": "The planner mentions the annual discount rate needs revisiting, so we shift the discount rate by 5 percentage points (from 0.1 to 0.15)."
+}

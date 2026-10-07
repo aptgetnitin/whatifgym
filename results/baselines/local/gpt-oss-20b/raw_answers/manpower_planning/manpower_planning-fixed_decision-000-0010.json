@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "fixed_decisions": [
+    {
+      "measure": "retrain",
+      "scope": {
+        "year": [1, 2, 3],
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "value": 150
+    }
+  ],
+  "note": "Fix retraining to semi_skilled at 150 workers per year."
+}

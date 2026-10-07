@@ -1,0 +1,19 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [
+          1,
+          2,
+          3
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is vague: 'across the board' could mean different things. I assumed a uniform scaling factor of 1.0 (no change) for all years, but this is not precise. The question needs clarification on what 'changes' means (e.g., percentage change, specific values)."
+}

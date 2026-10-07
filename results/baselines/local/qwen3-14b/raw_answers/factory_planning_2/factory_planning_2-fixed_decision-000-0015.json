@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod4_sales_equal_100_per_month",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod4"
+      },
+      "sense": "==",
+      "value": 100
+    }
+  ],
+  "note": "Enforces exactly 100 units of Prod4 sold in each month."
+}

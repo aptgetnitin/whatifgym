@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"measure":"x","scope":{"item":["item2","item7","item5","item3"]},"sense":"<=","value":2}],"note":"At most two of the specified items may be placed in any bins."}

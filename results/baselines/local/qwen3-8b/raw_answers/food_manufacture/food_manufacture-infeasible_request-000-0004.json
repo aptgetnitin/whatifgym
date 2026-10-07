@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg1_buy_min",
+   "measure": "buy",
+   "scope": {
+    "month": "*",
+    "oil": "VEG1"
+   },
+   "sense": ">=",
+   "value": 2000
+  },
+  {
+   "name": "oil2_buy_min",
+   "measure": "buy",
+   "scope": {
+    "month": "*",
+    "oil": "OIL2"
+   },
+   "sense": ">=",
+   "value": 4500
+  }
+ ],
+ "note": "Fixed decisions to ensure minimum purchase quantities for VEG1 and OIL2 across the entire planning horizon."
+}

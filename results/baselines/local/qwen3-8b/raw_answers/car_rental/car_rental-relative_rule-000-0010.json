@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_stock_saturday_limit",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Saturday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "undamaged_stock",
+    "scope": {
+     "day": "Wednesday"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "Limits the undamaged stock on Saturday to 90% of the undamaged stock on Wednesday."
+}

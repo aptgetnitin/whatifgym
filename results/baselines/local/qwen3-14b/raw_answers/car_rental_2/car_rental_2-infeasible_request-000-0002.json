@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "sat_repair_cap",
+      "measure": "repairs",
+      "scope": {
+        "day": "Saturday"
+      },
+      "sense": ">=",
+      "value": 141
+    }
+  ]
+}

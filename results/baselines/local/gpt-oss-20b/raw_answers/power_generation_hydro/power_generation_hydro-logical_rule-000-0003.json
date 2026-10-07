@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","logic":[{"name":"start_min_14_if_running","at_least":1,"of":[{"measure":"nstart","scope":{"period":"00-06"},"sense":">=","value":14},{"measure":"ngen","scope":{"period":"00-06"},"sense":"==","value":0}]}]}

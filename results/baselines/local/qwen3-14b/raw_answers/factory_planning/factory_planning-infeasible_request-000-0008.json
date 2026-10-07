@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "jan_production_min",
+      "measure": "make",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "value": 6150
+    }
+  ]
+}

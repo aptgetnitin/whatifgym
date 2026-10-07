@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "store_target",
+      "value": 0
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "end_stock",
+      "scope": {
+        "product": "Prod4"
+      }
+    }
+  ]
+}

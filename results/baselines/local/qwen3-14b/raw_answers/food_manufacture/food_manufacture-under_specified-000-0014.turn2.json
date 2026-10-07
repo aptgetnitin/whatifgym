@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {},
+      "factor": 0.75
+    }
+  ],
+  "note": "All oil hardness values are reduced by 25%."
+}

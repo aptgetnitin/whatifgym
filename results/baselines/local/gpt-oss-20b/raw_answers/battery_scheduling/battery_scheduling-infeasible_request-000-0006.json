@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","fixed_decisions":[{"measure":"charge","scope":{"hour":"02-03"},"value":28.1}],"note":"Fixed charging power for hour 02-03 to 28.1 kW."}

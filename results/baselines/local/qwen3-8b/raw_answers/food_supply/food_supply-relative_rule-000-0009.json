@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "wheat_flow_at_most_60_percent_of_oil_flow",
+   "measure": "flow",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "Oil"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "The rule limits the total flow of Wheat to 60% of the total flow of Oil."
+}

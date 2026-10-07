@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "oil2_buy_at_least_3_times_veg1",
+   "measure": "buy",
+   "scope": {
+    "oil": "OIL2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "oil": "VEG1"
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "The total amount of OIL2 bought must be at least three times the total amount of VEG1 bought."
+}

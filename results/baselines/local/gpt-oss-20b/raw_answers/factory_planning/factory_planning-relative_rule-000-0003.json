@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod7_min_share",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell"
+      },
+      "factor": 0.2
+    },
+    {
+      "name": "feb_vs_may_sales",
+      "measure": "sell",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "May"
+        }
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Prod7 sales must be at least 20% of total sales; Feb sales at most 50% of May sales."
+}

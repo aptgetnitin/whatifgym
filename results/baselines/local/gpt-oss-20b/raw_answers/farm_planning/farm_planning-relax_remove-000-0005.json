@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "relax": [
+    {
+      "constraint": "labour"
+    }
+  ],
+  "note": "Remove the labour-hours limit constraint"
+}

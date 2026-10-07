@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "logic": [
+    {
+      "name": "Thermal0_06-09_output_constraint",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "output",
+          "scope": {
+            "period": "06-09",
+            "type": "Thermal0"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "output",
+          "scope": {
+            "period": "06-09",
+            "type": "Thermal0"
+          },
+          "sense": ">=",
+          "value": 42750
+        }
+      ]
+    }
+  ],
+  "note": "Thermal0 output in period 06-09 must be either zero or at least 42750 MW."
+}

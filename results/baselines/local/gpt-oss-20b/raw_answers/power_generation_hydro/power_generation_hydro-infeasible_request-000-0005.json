@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"thermal0_min_output","measure":"output","scope":{"type":"Thermal0"},"sense":">=","value":199700}],"note":"Check feasibility of delivering at least 199700 MW of Thermal0 output."}

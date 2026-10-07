@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "short_time_overmanned_link",
+      "measure": "overmanned",
+      "scope": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "short_time",
+        "scope": {
+          "year": 2,
+          "skill": "unskilled"
+        }
+      },
+      "factor": 220
+    }
+  ]
+}

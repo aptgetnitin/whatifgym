@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "max_one_food_bought",
+   "measure": "purchase",
+   "scope": {
+    "food": [
+     "Maize meal",
+     "Oil",
+     "Milk"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "At most 1 of the foods Maize meal, Oil and Milk may have any food bought (units of 100 g a day)."
+}

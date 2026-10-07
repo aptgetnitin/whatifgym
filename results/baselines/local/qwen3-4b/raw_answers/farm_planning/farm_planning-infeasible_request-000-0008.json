@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "grow_beet",
+      "column": "grow_beet",
+      "where": {
+        "year": "Year4"
+      },
+      "value": 340
+    },
+    {
+      "op": "set",
+      "table": "grow_beet",
+      "column": "grow_beet",
+      "where": {
+        "year": "Year5"
+      },
+      "value": 390
+    }
+  ]
+}

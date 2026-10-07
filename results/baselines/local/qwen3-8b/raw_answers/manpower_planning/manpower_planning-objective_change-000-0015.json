@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "downgrade",
+   "scope": {
+    "from_skill": [
+      "unskilled",
+      "semi_skilled"
+    ],
+    "to_skill": [
+      "semi_skilled",
+      "unskilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to first keep total redundancies at their minimum, then maximise the total number of workers downgraded to a lower skill level across all years and skill levels."
+}

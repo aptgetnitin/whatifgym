@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"local_prices","column":"price","where":{"supplier":["Aleppo","Amman","As_Suweida","Beirut","Damascus","Daraa","Dayr_Az_Zor","Gaziantep","Hama","Hassakeh","Homs"]},"factor":0.8},{"op":"remove","table":"camps","where":{"camp":"Idleb"}}]}

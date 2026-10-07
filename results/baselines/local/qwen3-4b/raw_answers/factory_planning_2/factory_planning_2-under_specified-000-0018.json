@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "ask": "What does 'machines installed for machine type vertDrill moves' mean? The planner needs to specify whether they mean the number of machines installed (installed) changes, or the maintenance requirement (machines_to_maintain) changes, or something else."
+}

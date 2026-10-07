@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "factory_planning","rules": [{"name": "inventory_cap","measure": "store","scope": {"product": "all","month": "all"},"sense": "<=","value": 550}],"note": "A new rule caps the total inventory across all products and months."}

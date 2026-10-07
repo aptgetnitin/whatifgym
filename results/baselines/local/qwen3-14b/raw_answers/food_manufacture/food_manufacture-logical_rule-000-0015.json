@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "veg2_feb_storage_rule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Feb",
+            "oil": "VEG2"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Feb",
+            "oil": "VEG2"
+          },
+          "sense": ">=",
+          "value": 560
+        }
+      ]
+    }
+  ]
+}

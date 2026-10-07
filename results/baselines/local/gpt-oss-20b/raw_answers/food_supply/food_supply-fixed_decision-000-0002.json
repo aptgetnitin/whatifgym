@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","fixed_decisions":[{"measure":"flow","scope":{"food":"Oil","from_city":"Beirut","to_city":"Homs"},"value":0}],"note":"Set flow of Oil from Beirut to Homs to zero."}

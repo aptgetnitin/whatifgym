@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "max_operating",
+      "scope": {
+        "year": "all"
+      }
+    },
+    {
+      "constraint": "stay_closed",
+      "scope": {
+        "year": "all",
+        "mine": "all"
+      }
+    }
+  ]
+}

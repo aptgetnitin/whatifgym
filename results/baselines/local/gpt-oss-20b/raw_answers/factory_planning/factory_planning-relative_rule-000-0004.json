@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod5_make_fraction",
+      "measure": "make",
+      "scope": {
+        "product": "Prod5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make"
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "sell_vs_store_ratio",
+      "measure": "sell",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store"
+      },
+      "factor": 2.0
+    }
+  ]
+}

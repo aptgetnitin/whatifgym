@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "open_to_work_ratio",
+      "measure": "open",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate"
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "Limit total mine-years kept open to at most 90% of total mine-years worked."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "extract_year2_min",
+   "measure": "extract",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "value": 60000000
+  }
+ ],
+ "note": "A minimum requirement on the total ore extracted in Year2."
+}

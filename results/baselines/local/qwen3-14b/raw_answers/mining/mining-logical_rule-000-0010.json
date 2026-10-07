@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine3_worked_in_year5",
+      "measure": "operate",
+      "scope": {
+        "year": "Year5",
+        "mine": "Mine3"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

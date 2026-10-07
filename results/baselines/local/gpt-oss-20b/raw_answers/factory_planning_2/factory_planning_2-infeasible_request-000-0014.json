@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"measure":"make","sense":"==","value":132600}],"note":"Check feasibility of meeting total production target of 132600 units."}

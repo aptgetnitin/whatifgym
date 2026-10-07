@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_calves_raise_year1_impact",
+      "measure": "grow_grain",
+      "scope": {
+        "year": "Year3",
+        "land_group": "Group2"
+      },
+      "sense": ">=",
+      "value": 4.2
+    }
+  ]
+}

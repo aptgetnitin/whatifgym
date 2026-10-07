@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg2_store_min",
+   "measure": "store",
+   "scope": {
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "value": 3100
+  }
+ ],
+ "note": "If there is any tons of oil in storage for oil VEG2, it must be at least 3100."
+}

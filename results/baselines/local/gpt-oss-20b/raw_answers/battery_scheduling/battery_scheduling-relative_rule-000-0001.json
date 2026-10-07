@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "soc_09_10_le_80pct_soc_04_05",
+      "measure": "soc",
+      "scope": {
+        "hour": "09-10"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "soc",
+        "scope": {
+          "hour": "04-05"
+        }
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Enforce that stored energy at 09-10 is at most 80% of stored energy at 04-05."
+}

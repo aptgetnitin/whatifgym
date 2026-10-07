@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_21-22_binary",
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "discharge_21-22_min_15",
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": ">=",
+   "value": 15
+  }
+ ],
+ "note": "The discharge power for hour 21-22 must be either zero or at least 15 kW."
+}

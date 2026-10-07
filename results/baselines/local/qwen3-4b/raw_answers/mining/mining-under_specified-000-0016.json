@@ -1,0 +1,21 @@
+{
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "blend",
+      "column": "blend",
+      "where": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The tons of blended ore sold gets capped at 0, meaning no ore is sold in any year."
+}

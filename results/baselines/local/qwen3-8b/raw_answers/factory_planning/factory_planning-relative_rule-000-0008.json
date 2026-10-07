@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "total_make_limit",
+   "measure": "make",
+   "scope": {
+    "month": "all",
+    "product": "all"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "all",
+     "product": "all"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "A relative rule comparing the total units made to the total units in stock."
+}

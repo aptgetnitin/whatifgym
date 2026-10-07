@@ -1,0 +1,66 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "hydro_run_ratio",
+      "measure": "hydro_on",
+      "scope": {
+        "period": "18-24",
+        "hydro": [
+          "HydroA",
+          "HydroB"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "hydro_on",
+        "scope": {
+          "period": "15-18",
+          "hydro": [
+            "HydroA",
+            "HydroB"
+          ]
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "thermal_run_start_ratio",
+      "measure": "ngen",
+      "scope": {
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ],
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "nstart",
+        "scope": {
+          "period": [
+            "00-06",
+            "06-09",
+            "09-15",
+            "15-18",
+            "18-24"
+          ],
+          "type": [
+            "Thermal0",
+            "Thermal1",
+            "Thermal2"
+          ]
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

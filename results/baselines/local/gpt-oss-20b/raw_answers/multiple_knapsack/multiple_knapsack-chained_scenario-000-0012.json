@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","data_changes":[{"op":"set","table":"items","column":"weight","where":{"item":"item10"},"value":22},{"op":"add","table":"bins","rows":[{"bin":"new_bin","capacity":100}]}]}

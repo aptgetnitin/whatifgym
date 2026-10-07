@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"measure":"grow_beet","sense":"<=","value":400}],"note":"Total sugar beet grown across all years limited to 400 tons."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","fixed_decisions":[{"measure":"sell","scope":{"month":"Feb","product":"Prod6"},"value":0}],"note":"Fix units sold for Feb Prod6 to 0."}

@@ -1,0 +1,49 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "short_time_year1_at_least_60_percent",
+   "measure": "short_time",
+   "scope": {
+    "year": 1
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "short_time",
+    "scope": {
+     "year": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "factor": 0.6
+  },
+  {
+   "name": "overmanned_at_most_50_percent_of_redundant",
+   "measure": "overmanned",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "redundant",
+    "scope": {
+     "year": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Rules enforce relative limits on the total workers on short-time working and the total workers employed above requirements compared to the total workers made redundant."
+}

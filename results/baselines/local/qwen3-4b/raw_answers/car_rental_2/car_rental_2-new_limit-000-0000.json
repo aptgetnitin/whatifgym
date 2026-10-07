@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "plymouth_rentals_min",
+      "measure": "rentals",
+      "scope": {
+        "depot": [
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 600
+    }
+  ]
+}

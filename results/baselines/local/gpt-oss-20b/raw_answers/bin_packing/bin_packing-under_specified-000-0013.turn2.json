@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","data_changes":[{"op":"scale","table":"items","column":"weight","where":{"item":"item2"},"factor":0.5}],"note":"Weight of item2 reduced by 50%."}

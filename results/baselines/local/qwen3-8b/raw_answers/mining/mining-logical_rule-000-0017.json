@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "min1_year4_min_extract",
+   "measure": "extract",
+   "scope": {
+    "year": "Year4",
+    "mine": "Mine1"
+   },
+   "sense": ">=",
+   "value": 312500
+  }
+ ],
+ "note": "A minimum extraction requirement for a specific mine and year."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal1_output_min",
+   "measure": "output",
+   "scope": {
+    "type": "Thermal1"
+   },
+   "sense": ">=",
+   "value": 136500
+  }
+ ],
+ "note": "The rule ensures that the total output of Thermal1 across all periods meets the minimum required thermal output."
+}

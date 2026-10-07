@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "expansion_step_1_at_most_25_of_step_2",
+      "measure": "expand",
+      "scope": {
+        "step": 1
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "expand",
+        "scope": {
+          "step": 2
+        }
+      }
+    },
+    {
+      "name": "at_least_50_percent_of_damaged_transfers_to_glasgow",
+      "measure": "damaged_transfers",
+      "scope": {
+        "to_depot": "Glasgow"
+      },
+      "sense": ">=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "damaged_transfers",
+        "scope": {
+          "to_depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ]
+        }
+      }
+    }
+  ]
+}

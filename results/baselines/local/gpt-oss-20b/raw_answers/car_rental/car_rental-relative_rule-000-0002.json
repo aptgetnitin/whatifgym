@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "Thursday_damaged_left_75pct",
+      "measure": "damaged_left",
+      "scope": {
+        "day": "Thursday"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "damaged_left",
+        "scope": {
+          "day": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ]
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Ensure Thursday accounts for at least 75% of all damaged cars kept overnight."
+}

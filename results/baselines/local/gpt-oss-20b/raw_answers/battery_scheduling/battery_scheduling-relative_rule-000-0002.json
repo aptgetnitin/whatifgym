@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"charge_02_03_max_25_percent","measure":"charge","scope":{"hour":"02-03"},"sense":"<=","relative_to":{"measure":"charge"},"factor":0.25}]}

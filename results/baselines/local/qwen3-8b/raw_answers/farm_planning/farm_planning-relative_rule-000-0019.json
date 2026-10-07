@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_year5_at_least_30_percent_total",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "grow_beet",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 0.6
+  },
+  {
+   "name": "sugar_beet_year1_at_most_60_percent_year5",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "grow_beet",
+    "scope": {
+     "year": "Year5"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "Two relative limits on the total sugar beet grown for specific years."
+}

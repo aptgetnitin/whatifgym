@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "total_cost",
+      "scope": {}
+    },
+    {
+      "sense": "min",
+      "measure": "flow",
+      "scope": {
+        "food": "Maize meal"
+      }
+    }
+  ]
+}

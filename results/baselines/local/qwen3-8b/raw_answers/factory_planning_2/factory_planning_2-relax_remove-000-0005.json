@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "relax": [
+  {
+   "constraint": "end_stock",
+   "scope": {
+    "product": "*"
+   }
+  },
+  {
+   "constraint": "maintenance",
+   "scope": {
+    "machine": "*"
+   }
+  }
+ ],
+ "note": "The end-of-horizon stock target and maintenance requirement constraints are relaxed."
+}

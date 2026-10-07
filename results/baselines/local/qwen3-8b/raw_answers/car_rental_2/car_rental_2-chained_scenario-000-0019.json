@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "marginal_cost",
+   "factor": 1.1
+  },
+  {
+   "op": "set",
+   "table": "depots",
+   "column": "repair_capacity",
+   "where": {
+    "depot": "Manchester"
+   },
+   "value": 6
+  }
+ ],
+ "note": "The base repair capacity for Manchester is set to 6, and the marginal cost of all rental lengths is increased by 10%."
+}

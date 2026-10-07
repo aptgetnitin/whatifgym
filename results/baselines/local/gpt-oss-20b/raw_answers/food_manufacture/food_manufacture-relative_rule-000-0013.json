@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"May_storage_min_20pct","measure":"store","scope":{"month":"May"},"sense":">=","relative_to":{"measure":"store"},"factor":0.2}]}

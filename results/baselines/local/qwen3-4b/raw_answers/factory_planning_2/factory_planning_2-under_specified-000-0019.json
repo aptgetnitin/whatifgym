@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "ask": "Which market limit value (max_sales) is changing? What specific product and month are affected?"
+}

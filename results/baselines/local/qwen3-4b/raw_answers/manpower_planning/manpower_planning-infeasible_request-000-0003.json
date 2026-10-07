@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "overmanned",
+      "where": {
+        "year": 1
+      },
+      "value": 450
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "overmanned",
+      "where": {
+        "year": 3
+      },
+      "value": 450
+    }
+  ],
+  "note": "The planner asks for minimum overmanned workers in year 1 and year 3. The model's `requirements` table has `overmanned` as a column, so we set the values for year 1 and year 3 to 450."
+}

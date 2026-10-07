@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "repairs",
+      "column": "repairs",
+      "where": {
+        "day": [
+          "Friday",
+          "Wednesday",
+          "Thursday",
+          "Tuesday",
+          "Saturday"
+        ],
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_stock_monday_glasgow",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Monday",
+        "depot": "Glasgow"
+      },
+      "sense": ">=",
+      "value": 1260
+    }
+  ]
+}

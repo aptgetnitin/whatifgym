@@ -1,0 +1,33 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "rentals",
+      "column": "rentals",
+      "where": {
+        "depot": [
+          "Birmingham",
+          "Plymouth",
+          "Glasgow",
+          "Manchester"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "rentals",
+      "scope": {
+        "depot": [
+          "Birmingham",
+          "Plymouth",
+          "Glasgow",
+          "Manchester"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "discount_rate",
+      "factor": 1.25
+    }
+  ]
+}

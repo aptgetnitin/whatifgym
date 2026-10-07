@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "cattle_head_year4_vs_year2",
+      "measure": "herd",
+      "scope": {
+        "year": "Year4",
+        "age": {
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true,
+          "7": true,
+          "8": true,
+          "9": true,
+          "10": true,
+          "11": true
+        }
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "herd",
+        "scope": {
+          "year": "Year2",
+          "age": {
+            "2": true,
+            "3": true,
+            "4": true,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": true,
+            "9": true,
+            "10": true,
+            "11": true
+          }
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

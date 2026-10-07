@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod5_min_half_of_total_make",
+      "measure": "make",
+      "scope": {
+        "product": "Prod5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {}
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "At least 50% of total production must be Prod5."
+}

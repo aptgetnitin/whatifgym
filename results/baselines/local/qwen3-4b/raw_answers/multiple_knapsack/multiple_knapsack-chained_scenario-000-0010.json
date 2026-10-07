@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "fixed_decisions": [
+    {
+      "measure": "x",
+      "scope": {},
+      "value": 8
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "x",
+      "column": "x",
+      "where": {},
+      "value": 9
+    }
+  ]
+  }

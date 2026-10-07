@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "total_mine_years_worked",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      }
+    }
+  ],
+  "note": "The planner wants to maximise the total number of mine-years worked (sum of operate over all years and mines) while maintaining the original objective (discounted profit) as the primary constraint. However, the scenario DSL does not support constraints on the objective function directly. The question asks for a scenario that keeps the original objective (discounted profit) unchanged while maximising mine-years worked. This requires a fixed decision on the objective function, but the DSL does not allow this. The question is ambiguous because it asks for a scenario that 'without giving up any discounted profit' implies the original objective must be achieved, which is not a standard scenario change. The planner needs to clarify what they mean by 'without giving up any discounted profit'—does it mean the same discounted profit as the reference optimum, or that the discounted profit is not reduced? The question is not precise enough to be machine-checked."
+}

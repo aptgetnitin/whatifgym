@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 1,
+    "skill": "unskilled"
+   },
+   "value": 530
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "year": 1
+   }
+  }
+ ],
+ "note": "Set the required workforce in year 1 to 530 unskilled workers and minimize redundancies in year 1."
+}

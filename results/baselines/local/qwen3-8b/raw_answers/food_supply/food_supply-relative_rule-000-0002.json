@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "maize_meal_share",
+   "measure": "flow",
+   "scope": {
+    "food": "Maize meal"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "*"
+    }
+   },
+   "factor": 0.3
+  }
+ ],
+ "note": "The rule ensures that the total flow of Maize meal is at least 30% of the total flow of all foods."
+}

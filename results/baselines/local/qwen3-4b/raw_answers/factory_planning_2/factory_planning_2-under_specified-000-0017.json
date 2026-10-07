@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "ask": "What specific closing stock target value is being referred to? The model has a parameter `store_target` which is a number of units, but the question does not specify whether it's a change to the current value or a new value, or how it's changing."
+}

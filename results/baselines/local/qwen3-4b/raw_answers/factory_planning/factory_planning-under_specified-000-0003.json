@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "ask": "What specific market limit change (e.g., percentage drop, absolute value) are you referring to for product Prod1 in months Jan, Feb, and Mar? The model requires precise data changes (e.g., scale, shift, set) to be machine-checkable."
+}

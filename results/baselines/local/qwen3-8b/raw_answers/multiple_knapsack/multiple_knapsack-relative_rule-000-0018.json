@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "bin0_placement_limit",
+   "measure": "x",
+   "scope": {
+    "bin": "bin0"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "bin": "bin1"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "The number of item placements in bin0 is limited to 60% of the number in bin1."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "fixed_decisions": [
+  {
+   "measure": "make",
+   "scope": {
+    "month": "May",
+    "product": "Prod3"
+   },
+   "value": 450
+  },
+  {
+   "measure": "sell",
+   "scope": {
+    "month": "Apr"
+   },
+   "value": 120
+  }
+ ],
+ "note": "Fixed decisions set exact values for make and sell across specific months and products."
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "max_overmanned",
+      "factor": 1.25
+    },
+    {
+      "op": "set",
+      "table": "redundant",
+      "column": "redundant",
+      "where": {
+        "year": 2
+      },
+      "value": 120
+    }
+  ]
+}

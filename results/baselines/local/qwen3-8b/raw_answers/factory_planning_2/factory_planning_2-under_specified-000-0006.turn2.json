@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": "grinder",
+    "product": "Prod6"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "cap_on_units_made_prod6",
+   "measure": "make",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": "<=",
+   "value": 1300
+  }
+ ],
+ "note": "A cap on the units made for Prod6 is enforced through a rule limiting the sum of the make decision measure over the scope of product = Prod6."
+}

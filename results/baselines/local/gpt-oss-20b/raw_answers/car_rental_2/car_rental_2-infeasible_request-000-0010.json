@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","fixed_decisions":[{"measure":"repairs","scope":{"day":"Saturday","depot":"Birmingham"},"value":60}],"note":"Enforce exactly 60 repairs at Birmingham on Saturday."}

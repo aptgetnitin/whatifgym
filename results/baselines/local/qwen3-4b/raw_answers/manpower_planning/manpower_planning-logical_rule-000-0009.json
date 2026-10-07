@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "min_batch_year3",
+      "measure": "overmanned",
+      "scope": {
+        "year": 3
+      },
+      "sense": ">=",
+      "value": 300
+    }
+  ]
+}

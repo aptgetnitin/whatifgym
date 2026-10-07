@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": "Dayr_Az_Zor"
+      }
+    }
+  ],
+  "note": "Remove Dayr_Az_Zor camp from beneficiary camps."
+}

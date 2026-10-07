@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": [
+          "Year3",
+          "Year4"
+        ]
+      },
+      "value": 1.2
+    }
+  ],
+  "note": "The blend-quality target for Year3 and Year4 is set to 1.2, lifting the target from the original value."
+}

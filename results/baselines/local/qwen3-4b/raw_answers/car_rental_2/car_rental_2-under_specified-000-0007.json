@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "undamaged_stock",
+      "column": "undamaged_stock",
+      "where": {
+        "day": "Monday",
+        "depot": "Glasgow"
+      },
+      "value": 0
+    }
+  ],
+  "note": "A minimum undamaged cars at the depot in the morning is a fixed decision for a specific day and depot."
+}

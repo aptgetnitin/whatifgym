@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "at_most_one_month_produce",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Jun",
+     "Feb",
+     "Apr",
+     "May",
+     "Mar"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "A rule limiting the total food production across specified months to at most 1 ton."
+}

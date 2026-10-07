@@ -1,0 +1,40 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "herd",
+   "scope": {
+    "age": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "year": "Year1"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "yearly_profit",
+   "scope": {
+    "year": [
+      "Year1",
+      "Year2",
+      "Year3",
+      "Year4",
+      "Year5"
+    ]
+   }
+  }
+ ],
+ "note": "The objective prioritises minimising the total head of cattle in the first year, followed by maximising the five-year profit."
+}

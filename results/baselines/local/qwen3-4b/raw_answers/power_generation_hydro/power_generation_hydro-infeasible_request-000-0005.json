@@ -1,0 +1,16 @@
+{
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ngen",
+      "column": "ngen",
+      "where": {
+        "period": "00-06",
+        "type": "Thermal0"
+      },
+      "value": 199700
+    }
+  ],
+  "note": "The planner asks for a minimum thermal output of 199700 MW for Thermal0 in the first period (00-06). However, the model's decision variable `ngen` is the number of thermal units running per type, not the output in MW. The output for Thermal0 is `output[period, type]`, which is the total output in MW. The question is asking for a minimum output of 199700 MW for Thermal0 in the first period, but the model does not have a direct `ngen` output in MW. The planner likely meant to ask for a minimum output of 199700 MW for Thermal0 in the first period, but the model's `output` measure is the total output in MW. The question is not precise enough to be machine-checked because it mixes the number of units with the output in MW."
+}

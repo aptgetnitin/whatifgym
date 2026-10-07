@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "rentals_saturday_at_least_118_tuesday_manchester",
+      "measure": "rentals",
+      "scope": {
+        "day": "Saturday",
+        "depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 118
+    }
+  ],
+  "note": "A rule that requires at least 118 cars rented out for Saturday to be rented out for Tuesday in Manchester."
+  }

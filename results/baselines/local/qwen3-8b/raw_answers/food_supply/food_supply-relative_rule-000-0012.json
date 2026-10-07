@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "oil_purchase_limit",
+   "measure": "purchase",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "food": "Corn-soya blend (CSB)"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The purchase of Oil is limited to 25% of the purchase of Corn-soya blend (CSB)."
+}

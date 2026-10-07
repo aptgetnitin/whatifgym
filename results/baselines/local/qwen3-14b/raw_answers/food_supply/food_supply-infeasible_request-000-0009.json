@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "fixed_decisions": [
+    {
+      "measure": "purchase",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "supplier": "Hassakeh"
+      },
+      "value": 105000
+    }
+  ]
+}

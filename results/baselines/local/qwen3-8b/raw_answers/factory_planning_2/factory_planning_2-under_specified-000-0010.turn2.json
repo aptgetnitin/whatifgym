@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Feb"
+   },
+   "value": 1600
+  }
+ ],
+ "note": "A cap on units sold for the month of February is set to 1600."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_15-18_thermal1",
+   "measure": "output",
+   "scope": {
+    "period": "15-18",
+    "type": "Thermal1"
+   },
+   "sense": ">=",
+   "value": 78750
+  }
+ ],
+ "note": "A minimum thermal output requirement for Thermal1 in the 15-18 period."
+}

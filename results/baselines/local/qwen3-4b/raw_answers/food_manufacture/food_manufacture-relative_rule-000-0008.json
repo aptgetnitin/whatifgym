@@ -1,0 +1,80 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "buy_at_most_75_percent_refined",
+      "measure": "buy",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ],
+          "oil": [
+            "VEG1",
+            "VEG2",
+            "OIL1",
+            "OIL2",
+            "OIL3"
+          ]
+        }
+      }
+    },
+    {
+      "name": "jan_at_least_20_percent_refined",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Jan"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.2,
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ],
+          "oil": [
+            "VEG1",
+            "VEG2",
+            "OIL1",
+            "OIL2",
+            "OIL3"
+          ]
+        }
+      }
+    }
+  ]
+}

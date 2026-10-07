@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod1_stock_zero_or_380",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": "==",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod1"
+    }
+   },
+   "factor": 0.0
+  },
+  {
+   "name": "prod1_stock_at_least_380",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": ">=",
+   "value": 380
+  }
+ ],
+ "note": "Logical rule to enforce that the stock for Prod1 is either zero or at least 380."
+}

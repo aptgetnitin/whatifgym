@@ -1,0 +1,16 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is about changing the manpower requirement for year 2, skill level unskilled. Since the question is vague about the specific change (e.g., how much it moves), I set it to 0 as a minimal change to test the scenario. This is a data change to the requirements table for the specified year and skill level."
+}

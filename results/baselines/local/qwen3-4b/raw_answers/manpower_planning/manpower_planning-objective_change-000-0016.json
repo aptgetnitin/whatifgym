@@ -1,0 +1,39 @@
+{
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "recruit",
+      "scope": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      }
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "redundant",
+      "scope": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 841.80
+    }
+  ]
+}

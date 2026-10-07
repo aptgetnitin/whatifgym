@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "friday_undamaged_stock_min_40",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Friday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "profit",
+      "scope": {}
+    }
+  ],
+  "fixed_decisions": []
+}

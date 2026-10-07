@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "fixed_decisions": [
+    {
+      "measure": "store",
+      "scope": {
+        "month": "Jan"
+      },
+      "value": 9
+    },
+    {
+      "measure": "make",
+      "scope": {
+        "month": "Feb",
+        "product": "Prod1"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fix Jan store to 9 for all products and Feb Prod1 make to 0."
+}

@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "extract_year4_mine4_rule",
+      "measure": "extract",
+      "scope": {
+        "year": "Year4",
+        "mine": "Mine4"
+      },
+      "sense": ">=",
+      "value": 7500000
+    }
+  ],
+  "logic": [
+    {
+      "name": "extract_year4_mine4_logic",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year4",
+            "mine": "Mine4"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year4",
+            "mine": "Mine4"
+          },
+          "sense": ">=",
+          "value": 7500000
+        }
+      ]
+    }
+  ]
+}

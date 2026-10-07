@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine1_open_years_vs_mine3_open_years",
+      "measure": "open",
+      "scope": {
+        "mine": "Mine1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "open",
+        "scope": {
+          "mine": "Mine3"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

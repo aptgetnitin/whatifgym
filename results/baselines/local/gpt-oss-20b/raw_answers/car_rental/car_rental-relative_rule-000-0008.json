@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"sat_vs_fri_rentals","measure":"rentals","scope":{"day":"Saturday"},"sense":">=","relative_to":{"measure":"rentals","scope":{"day":"Friday"}},"factor":2.0},{"name":"repairs_vs_undamaged_stock","measure":"repairs","sense":">=","relative_to":{"measure":"undamaged_stock"},"factor":2.0}]}

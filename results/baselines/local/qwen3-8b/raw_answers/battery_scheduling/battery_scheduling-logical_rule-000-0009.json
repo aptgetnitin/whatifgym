@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_12_13_discharge_21_22",
+   "measure": "soc",
+   "scope": {
+    "hour": "12-13"
+   },
+   "sense": ">=",
+   "value": 6.2,
+   "relative_to": {
+    "measure": "discharge",
+    "scope": {
+     "hour": "21-22"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that links the stored energy in hour 12-13 to the discharging power in hour 21-22."
+}

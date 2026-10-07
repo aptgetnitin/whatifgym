@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "output",
+   "where": {
+    "type": "Thermal0"
+   },
+   "value": 52800
+  }
+ ],
+ "rules": [
+  {
+   "name": "thermal0_output_09-15",
+   "measure": "output",
+   "scope": {
+    "period": "09-15",
+    "type": "Thermal0"
+   },
+   "sense": "==",
+   "value": 52800
+  }
+ ],
+ "note": "Fixed the output of Thermal0 for period 09-15 to 52800 MW and plan the rest around it."
+}

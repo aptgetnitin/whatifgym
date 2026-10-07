@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_oil_purchase","measure":"purchase","scope":{"food":"Oil"},"sense":">=","value":64550}],"note":"Require at least 64,550 units of Oil purchased per day."}

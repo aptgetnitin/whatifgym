@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "fixed_decisions": [
+    {
+      "measure": "purchase",
+      "scope": {
+        "food": "Oil"
+      },
+      "value": 2450
+    }
+  ]
+}

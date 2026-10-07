@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "redundant_year_2_unskilled_at_least_250",
+   "measure": "redundant",
+   "scope": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "value": 250
+  }
+ ],
+ "note": "A rule to ensure that the number of unskilled workers made redundant in year 2 is at least 250."
+}

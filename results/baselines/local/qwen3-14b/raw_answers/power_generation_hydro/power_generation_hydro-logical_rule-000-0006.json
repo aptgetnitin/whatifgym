@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal1_units_running_06-09",
+      "measure": "ngen",
+      "scope": {
+        "period": "06-09",
+        "type": "Thermal1"
+      },
+      "sense": ">=",
+      "value": 2
+    },
+    {
+      "name": "hydrob_running_15-18",
+      "measure": "hydro_on",
+      "scope": {
+        "period": "15-18",
+        "hydro": "HydroB"
+      },
+      "sense": ">=",
+      "value": 1
+    }
+  ]
+}

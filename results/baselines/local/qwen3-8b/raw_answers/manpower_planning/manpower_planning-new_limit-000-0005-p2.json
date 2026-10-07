@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_cap_year_3",
+   "measure": "retrain",
+   "scope": {
+    "year": 3
+   },
+   "sense": "<=",
+   "value": 210
+  }
+ ],
+ "note": "A cap on the total retraining across all skill levels in year 3."
+}

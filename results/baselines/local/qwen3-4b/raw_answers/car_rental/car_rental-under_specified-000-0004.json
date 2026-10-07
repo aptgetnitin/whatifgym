@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "rentals",
+      "column": "rentals",
+      "where": {
+        "day": "Monday",
+        "depot": "Glasgow"
+      },
+      "value": 0
+    }
+  ],
+  "note": "A floor on cars rented out means setting the minimum value for rentals to zero."
+}

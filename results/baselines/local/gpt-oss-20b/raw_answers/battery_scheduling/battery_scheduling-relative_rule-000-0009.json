@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_21_22_at_most_25pct_of_19_20",
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "discharge",
+        "scope": {
+          "hour": "19-20"
+        }
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Limit discharge in 21-22 to 25% of discharge in 19-20."
+}

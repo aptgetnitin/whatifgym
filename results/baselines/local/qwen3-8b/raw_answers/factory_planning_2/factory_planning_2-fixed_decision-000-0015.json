@@ -1,0 +1,48 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod4",
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "value": 100
+  }
+ ],
+ "rules": [
+  {
+   "name": "prod4_sales_equal",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod4"
+   },
+   "sense": "==",
+   "value": 100
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod4"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix the sales of Prod4 to exactly 100 units per month and optimise the rest."
+}

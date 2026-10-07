@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "short_time_unskilled_year_1",
+   "measure": "short_time",
+   "scope": {
+    "year": 1,
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "value": 125
+  },
+  {
+   "name": "short_time_unskilled_year_1",
+   "measure": "short_time",
+   "scope": {
+    "year": 1,
+    "skill": "unskilled"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The short-time working for unskilled workers in year 1 must be either zero or at least 125."
+}

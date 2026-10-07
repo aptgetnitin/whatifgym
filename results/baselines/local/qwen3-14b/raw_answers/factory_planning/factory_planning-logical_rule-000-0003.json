@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"limit_sales_in_apr_may_jun","measure":"sell","scope":{"month":["Apr","May","Jun"]},"sense":"<=","value":2}]}

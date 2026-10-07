@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "thermal2_min_share",
+      "measure": "ngen",
+      "scope": {
+        "type": "Thermal2"
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

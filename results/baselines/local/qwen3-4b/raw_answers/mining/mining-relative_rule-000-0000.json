@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine4"
+      },
+      "value": 0.6
+    }
+  ],
+  "note": "The planner's question specifies a minimum percentage of total extracted ore that must go to Mine4. However, the model's decision variables are `extract[year, mine]` and the constraint `quality[year]` requires blending. The question is ambiguous because it doesn't specify the time period (year) for the extraction. The model's `extract` measure is per year and mine, so the total extracted ore is over all years and mines. The question likely means that at least 60% of the total extracted ore (across all years) must be from Mine4. But the model's `extract` is a decision variable per year and mine, so the total extracted ore is `sum_{year, mine} extract[year, mine]`. The question is not precise enough to be machine-checked without clarifying the time scope."
+}

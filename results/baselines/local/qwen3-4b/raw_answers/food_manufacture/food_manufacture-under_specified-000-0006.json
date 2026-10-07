@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": [
+          "OIL2"
+        ],
+        "month": [
+          "Feb"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A cap on the tons of oil bought would be a rule that sets an upper bound on the sum of buy over a scope. However, the question is vague about which oil, which month, and the cap value. The scenario DSL requires specific values for the cap. Since the question does not specify the cap value or the scope, it cannot be made precise."
+}

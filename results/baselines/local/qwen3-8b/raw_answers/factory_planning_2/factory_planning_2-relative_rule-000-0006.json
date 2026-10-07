@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "jun_make_at_least_3x_may_make",
+   "measure": "make",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": "May"
+    }
+   },
+   "factor": 3.0
+  },
+  {
+   "name": "total_stock_at_least_2x_total_sales",
+   "measure": "store",
+   "scope": {
+    "month": "all"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": "all"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "Two relative limits: units made in June at least 3 times those in May; total stock at least 2 times total sales."
+}

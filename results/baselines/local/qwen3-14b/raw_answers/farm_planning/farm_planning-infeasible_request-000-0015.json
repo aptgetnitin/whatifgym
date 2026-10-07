@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "year5_profit_min",
+      "measure": "yearly_profit",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "value": 75850
+    },
+    {
+      "name": "year2_profit_min",
+      "measure": "yearly_profit",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "value": 65650
+    }
+  ]
+}

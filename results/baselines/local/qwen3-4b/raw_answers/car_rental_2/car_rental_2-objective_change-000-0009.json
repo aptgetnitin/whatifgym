@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "repairs",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "damaged_stock",
+      "scope": {}
+    }
+  ]
+}

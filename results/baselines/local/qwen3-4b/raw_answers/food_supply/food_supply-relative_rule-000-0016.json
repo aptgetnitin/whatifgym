@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_oil_ration",
+      "measure": "ration",
+      "scope": {
+        "food": "Oil"
+      },
+      "sense": ">=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "camp": "*"
+        }
+      }
+    }
+  ],
+  "note": "The rule ensures that at least 25% of the total ration per person (units of 100 g a day) may go to food Oil."
+}

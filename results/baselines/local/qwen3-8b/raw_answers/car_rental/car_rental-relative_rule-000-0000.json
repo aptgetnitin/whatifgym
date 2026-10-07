@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "plymouth_rentals_at_least_40_percent",
+   "measure": "rentals",
+   "scope": {
+    "to_depot": "Plymouth"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "to_depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "A rule that enforces the sum of rentals going to Plymouth to be at least 40% of the total rentals."
+}

@@ -1,0 +1,60 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "beet_yield",
+   "where": {
+    "name": "beet_yield"
+   },
+   "factor": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "maximize_sugar_beet_grown",
+   "measure": "grow_beet",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "max",
+   "relative_to": {
+    "measure": "yearly_profit",
+    "scope": {
+     "year": [
+      "Year1",
+      "Year2",
+      "Year3",
+      "Year4",
+      "Year5"
+     ]
+    }
+   },
+   "factor": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "grow_beet",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to maximize the total sugar beet grown over the five years while maintaining the same five-year profit as the original plan."
+}

@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "battery_scheduling", "ask": "What is the exact nature of the cap on the battery stored energy (kWh)? For example, is there a maximum limit, a minimum limit, or a specific value it should be set to?"}

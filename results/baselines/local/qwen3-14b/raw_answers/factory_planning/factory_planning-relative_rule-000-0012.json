@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod2_sales_limit",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": [
+            "Prod1",
+            "Prod2",
+            "Prod3",
+            "Prod4",
+            "Prod5",
+            "Prod6",
+            "Prod7"
+          ]
+        }
+      },
+      "factor": 0.1
+    },
+    {
+      "name": "prod6_sales_limit",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod3"
+        }
+      },
+      "factor": 0.9
+    }
+  ]
+}

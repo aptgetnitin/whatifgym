@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"max_grain_group1","measure":"grow_grain","scope":{"land_group":"Group1"},"sense":"<=","value":70}]}

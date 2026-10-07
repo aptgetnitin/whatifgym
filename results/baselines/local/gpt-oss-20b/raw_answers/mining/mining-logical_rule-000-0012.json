@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","logic":[{"name":"extract_mine1_year5_disjunction","at_least":1,"of":[{"measure":"extract","scope":{"year":"Year5","mine":"Mine1"},"sense":"<=","value":0},{"measure":"extract","scope":{"year":"Year5","mine":"Mine1"},"sense":">=","value":6000000}]}]}

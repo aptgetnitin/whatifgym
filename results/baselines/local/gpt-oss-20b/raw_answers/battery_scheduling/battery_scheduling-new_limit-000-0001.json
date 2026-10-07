@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"total_discharge_cap","measure":"discharge","sense":"<=","value":5.4}],"note":"Cap total discharging power to 5.4 kW."}

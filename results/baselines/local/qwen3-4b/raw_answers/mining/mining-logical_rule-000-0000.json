@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": [
+          "Mine4",
+          "Mine2",
+          "Mine3",
+          "Mine1"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question specifies that at most 2 of the mines may have any tons of ore extracted. This is interpreted as setting the extract for the other two mines to 0, which is a valid data change in the model."
+}

@@ -1,0 +1,61 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "max_expansions",
+   "factor": 1.2
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "marginal_cost",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 0.75
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_same_depot",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 1
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 1
+  },
+  {
+   "op": "scale",
+   "table": "expansion_options",
+   "column": "weekly_cost",
+   "where": {
+    "depot": "Manchester",
+    "step": 2
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "The weekly cost of the expansion option for Manchester step 2 is increased by 20%, and the marginal cost of rentals is reduced by 25% across all rental lengths."
+}

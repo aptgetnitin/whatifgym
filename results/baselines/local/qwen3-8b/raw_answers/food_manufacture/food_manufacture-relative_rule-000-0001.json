@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "max_refined_to_mar",
+   "measure": "consume",
+   "scope": {
+    "month": [
+     "Mar"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "At most 5% of the total tons of oil refined may go to month Mar."
+}

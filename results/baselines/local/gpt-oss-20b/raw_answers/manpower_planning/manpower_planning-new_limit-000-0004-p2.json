@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "short_time",
+      "scope": {},
+      "sense": "<=",
+      "value": 240
+    },
+    {
+      "measure": "redundant",
+      "scope": {
+        "year": 2
+      },
+      "sense": "<=",
+      "value": 80
+    }
+  ],
+  "note": "Cap short-time overall at 240 workers and limit redundancies in year 2 to 80."
+}

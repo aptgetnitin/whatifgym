@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","relax":[{"constraint":"stay_closed"}],"note":"Removed stay_closed constraint to allow mines to reopen."}

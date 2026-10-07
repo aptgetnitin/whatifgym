@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "short_time",
+      "scope": {
+        "year": 1
+      },
+      "sense": "<=",
+      "value": 90
+    }
+  ],
+  "note": "Upper limit on total short-time workers in year 1."
+}

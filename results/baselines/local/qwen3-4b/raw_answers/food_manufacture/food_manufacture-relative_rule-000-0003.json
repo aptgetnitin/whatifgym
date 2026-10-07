@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "veg2_at_least_60_percent_of_buy",
+      "measure": "buy",
+      "scope": {
+        "oil": [
+          "VEG2"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "oil": [
+            "VEG1",
+            "VEG2",
+            "OIL1",
+            "OIL2",
+            "OIL3"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

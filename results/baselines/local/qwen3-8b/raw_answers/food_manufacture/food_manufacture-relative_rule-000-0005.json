@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "refined_feb_at_least_1_25_refined_jun",
+   "measure": "consume",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "month": "Jun"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The rule enforces that the total tons of oil refined in February is at least 1.25 times the total tons of oil refined in June."
+}

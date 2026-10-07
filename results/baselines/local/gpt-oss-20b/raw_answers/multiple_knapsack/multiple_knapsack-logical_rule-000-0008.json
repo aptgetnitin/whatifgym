@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"measure":"x","scope":{"item":["item9","item3"]},"sense":"<=","value":1}],"note":"Ensure items 9 and 3 cannot both be packed."}

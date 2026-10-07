@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "items",
+   "column": "value",
+   "where": {
+    "item": "item3"
+   },
+   "value": 38
+  }
+ ],
+ "note": "The item value for item item3 is set to 38."
+}

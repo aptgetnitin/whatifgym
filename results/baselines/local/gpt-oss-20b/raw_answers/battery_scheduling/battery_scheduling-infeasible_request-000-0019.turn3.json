@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","fixed_decisions":[{"measure":"soc","scope":{"hour":"16-17"},"value":68}],"note":"Requested stored energy of 68 kWh at hour 16-17."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"measure":"rentals","sense":"<=","relative_to":{"measure":"damaged_stock"},"factor":0.8}],"note":"Limit total rentals to 80% of total damaged cars in the morning."}

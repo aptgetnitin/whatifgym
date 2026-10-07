@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "milk_flow_min",
+      "measure": "flow",
+      "scope": {
+        "food": "Milk"
+      },
+      "sense": ">=",
+      "value": 43800
+    }
+  ],
+  "note": "A requirement on the total flow of Milk across all links."
+  }

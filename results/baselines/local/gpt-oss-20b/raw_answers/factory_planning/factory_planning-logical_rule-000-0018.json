@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "sell_prod4_apr_requires_make_prod3_apr",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Apr",
+            "product": "Prod4"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Apr",
+            "product": "Prod3"
+          },
+          "sense": ">=",
+          "value": 800
+        }
+      ]
+    }
+  ],
+  "note": "If any units of Prod4 are sold in April, at least 800 units of Prod3 must be made in April."
+}

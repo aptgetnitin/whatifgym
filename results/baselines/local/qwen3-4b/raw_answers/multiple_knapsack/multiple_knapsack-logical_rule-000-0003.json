@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "items",
+      "column": "x",
+      "where": {
+        "item": [
+          "item13",
+          "item4",
+          "item12"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner specifies that only one of these items can be placed (i.e., their x values are set to 0). This is a fixed decision."
+  }

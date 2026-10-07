@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_09-15_thermal1",
+   "measure": "output",
+   "scope": {
+    "period": "09-15",
+    "type": "Thermal1"
+   },
+   "sense": "==",
+   "value": 157500
+  }
+ ],
+ "note": "Fixed the total output of Thermal1 units during the 09-15 period to exactly 157500 MW and let the rest of the model adjust accordingly."
+}

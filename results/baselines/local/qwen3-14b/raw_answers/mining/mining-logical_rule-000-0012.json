@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "extract_year5_mine1_min_or_zero",
+      "measure": "extract",
+      "scope": {
+        "year": "Year5",
+        "mine": "Mine1"
+      },
+      "sense": ">=",
+      "value": 6000000
+    }
+  ],
+  "logic": [
+    {
+      "name": "either_zero_or_at_least_6m",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year5",
+            "mine": "Mine1"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year5",
+            "mine": "Mine1"
+          },
+          "sense": ">=",
+          "value": 6000000
+        }
+      ]
+    }
+  ]
+}

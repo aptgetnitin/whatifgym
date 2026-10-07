@@ -1,0 +1,25 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 2
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "year2_overmanned_ratio",
+      "measure": "overmanned",
+      "scope": {
+        "year": 2
+      },
+      "sense": ">=",
+      "value": 0.6
+    }
+  ]
+}

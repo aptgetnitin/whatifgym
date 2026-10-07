@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "qamishli_shipment",
+   "measure": "flow",
+   "scope": {
+    "to_city": "Qamishli"
+   },
+   "sense": ">=",
+   "value": 72600
+  },
+  {
+   "name": "idleb_shipment",
+   "measure": "flow",
+   "scope": {
+    "to_city": "Idleb"
+   },
+   "sense": ">=",
+   "value": 72600
+  }
+ ],
+ "note": "The planner requests at least 72600 units of food shipped to Qamishli and Idleb respectively. These are absolute minimum shipment requirements for each destination city."
+}

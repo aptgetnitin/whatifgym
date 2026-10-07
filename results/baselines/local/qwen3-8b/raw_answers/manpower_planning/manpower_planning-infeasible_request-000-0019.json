@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 3,
+    "skill": "skilled"
+   },
+   "value": 20000
+  }
+ ],
+ "rules": [
+  {
+   "name": "workforce_skilled_year_3",
+   "measure": "workforce",
+   "scope": {
+    "year": 3,
+    "skill": "skilled"
+   },
+   "sense": ">=",
+   "value": 20000
+  }
+ ],
+ "note": "The question asks whether it is possible to have at least 20000 skilled workers in year 3. This is achieved by setting the required workforce for skilled workers in year 3 to 20000 and adding a rule to enforce this constraint."
+}

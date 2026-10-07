@@ -1,0 +1,66 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "camps",
+   "where": {
+    "camp": "Qamishli"
+   }
+  },
+  {
+   "op": "add",
+   "table": "camps",
+   "rows": [
+    {
+     "camp": "Homs",
+     "beneficiaries": 3000
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "name": "Idleb_population_increase",
+   "measure": "ration",
+   "scope": {
+    "camp": "Idleb"
+   },
+   "sense": ">=",
+   "value": 20000
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "ration",
+   "scope": {
+    "camp": "Idleb",
+    "food": "oil"
+   },
+   "value": 0.5
+  }
+ ],
+ "logic": [
+  {
+   "name": "flow_to_Daraa",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "flow",
+     "scope": {
+      "to_city": "Daraa"
+     },
+     "sense": ">=",
+     "value": 12050
+    }
+   ]
+  }
+ ]
+}

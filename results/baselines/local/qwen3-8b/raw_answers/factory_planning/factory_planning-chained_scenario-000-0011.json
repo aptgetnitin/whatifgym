@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod1_prod3_cap_may",
+   "measure": "make",
+   "scope": {
+    "month": "May"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "product": [
+      "Prod1",
+      "Prod3"
+     ]
+    }
+   },
+   "factor": 450
+  }
+ ],
+ "note": "A relative production cap over a subset of products in a specific month is a relative rule over the matching scope."
+}

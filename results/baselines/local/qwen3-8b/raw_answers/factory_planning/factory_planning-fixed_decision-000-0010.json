@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "fixed_decisions": [
+  {
+   "measure": "store",
+   "scope": {
+    "month": "May",
+    "product": "Prod3"
+   },
+   "value": 120
+  }
+ ],
+ "note": "Fixing the store value for May and Prod3 to 120 units."
+}

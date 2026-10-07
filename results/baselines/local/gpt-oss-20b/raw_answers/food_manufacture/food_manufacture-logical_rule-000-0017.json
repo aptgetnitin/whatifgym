@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "min_batch_mar_oil1",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Mar",
+            "oil": "OIL1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Mar",
+            "oil": "OIL1"
+          },
+          "sense": ">=",
+          "value": 750
+        }
+      ]
+    }
+  ]
+}

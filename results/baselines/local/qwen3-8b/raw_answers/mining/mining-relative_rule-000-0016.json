@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "extract_to_year1",
+   "measure": "extract",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extract",
+    "scope": {
+     "year": [
+      "Year2",
+      "Year3",
+      "Year4",
+      "Year5"
+     ]
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "open_mine_years_year2",
+   "measure": "open",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "open",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "Rules enforce that at least 75% of total extracted ore goes to Year1 and that the number of mine-years kept open in Year2 is at most 90% of that in Year1."
+}

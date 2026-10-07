@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "sell_prod4_at_least_make_prod3",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod4",
+    "month": "Apr"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "product": "Prod3",
+     "month": "Apr"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that enforces the sum of sell for Prod4 in April to be at least the sum of make for Prod3 in April."
+}

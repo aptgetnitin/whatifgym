@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_transfers_vs_repairs",
+   "measure": "undamaged_transfers",
+   "scope": {},
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {}
+   },
+   "factor": 3
+  },
+  {
+   "name": "manchester_expansions_ratio",
+   "measure": "expand",
+   "scope": {
+    "depot": "Manchester"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "expand",
+    "scope": {}
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The first rule ensures that the total undamaged transfers are at least three times the total repairs. The second rule ensures that at least 75% of the total expansion options are carried out at Manchester."
+}

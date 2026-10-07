@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "heifer_acres",
+   "where": {
+    "name": "heifer_acres"
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "The acres needed per heifer is scaled by a factor of 2.0."
+}

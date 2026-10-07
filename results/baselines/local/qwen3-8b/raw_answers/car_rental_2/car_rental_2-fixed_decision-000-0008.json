@@ -1,0 +1,68 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "fixed_decisions": [
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Monday",
+    "depot": "Manchester"
+   },
+   "value": 26
+  },
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Tuesday",
+    "depot": "Manchester"
+   },
+   "value": 26
+  },
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Manchester"
+   },
+   "value": 26
+  },
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Thursday",
+    "depot": "Manchester"
+   },
+   "value": 26
+  },
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Friday",
+    "depot": "Manchester"
+   },
+   "value": 26
+  },
+  {
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Saturday",
+    "depot": "Manchester"
+   },
+   "value": 26
+  },
+  {
+   "measure": "rentals",
+   "scope": {
+    "day": "Friday",
+    "depot": "Plymouth"
+   },
+   "value": 0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "profit"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": "00-06"
+      },
+      "factor": 0.8
+    }
+  ],
+  "rules": [
+    {
+      "name": "thermal_output_00-06_at_least_20%",
+      "measure": "output",
+      "scope": {
+        "period": "00-06",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.2
+    }
+  ],
+  "note": "The question asks for at least 20% of all thermal output to be in period 00-06. This is a rule that sets a minimum proportion of thermal output in the first period."
+  }

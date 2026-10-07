@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "produce",
+      "column": "produce",
+      "where": {
+        "month": "Mar"
+      },
+      "factor": 0.05
+    }
+  ]
+}

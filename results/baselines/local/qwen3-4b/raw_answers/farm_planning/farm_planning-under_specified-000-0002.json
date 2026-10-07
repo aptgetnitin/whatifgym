@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "ask": "What is the minimum number of heifer calves that must be raised each year to meet the requirement?"
+}

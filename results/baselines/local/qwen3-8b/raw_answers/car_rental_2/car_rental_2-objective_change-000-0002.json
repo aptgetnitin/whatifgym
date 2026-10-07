@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "expand",
+   "scope": {}
+  },
+  {
+   "sense": "max",
+   "measure": "rentals",
+   "scope": {}
+  }
+ ],
+ "note": "Prioritise minimising the number of expansion options first, then maximise weekly profit."
+}

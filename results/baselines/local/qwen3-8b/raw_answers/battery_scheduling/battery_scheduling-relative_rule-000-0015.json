@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_21-22_limit",
+   "measure": "soc",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "soc",
+    "scope": {
+     "hour": "16-17"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The stored energy in hour 21-22 is limited to 25% of the stored energy in hour 16-17."
+}

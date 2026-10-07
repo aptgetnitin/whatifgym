@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","logic":[{"name":"Wheat_flow_if_ration","at_least":1,"of":[{"measure":"ration","scope":{"food":"Wheat","camp":"Idleb"},"sense":"==","value":0},{"measure":"flow","scope":{"food":"Wheat"},"sense":">=","value":86400}]}],"note":"If Wheat ration for Idleb is positive, total Wheat flow must be at least 86400."}

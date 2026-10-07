@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "camps",
+   "where": {
+    "camp": "Qamishli"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "nutrient_upper_limit",
+   "measure": "ration",
+   "scope": {
+    "nutrient": "Energy(kcal)",
+    "camp": "Ar Raqqa"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "nutrient": "Energy(kcal)",
+     "camp": "Ar Raqqa"
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "The nutrient upper limit is set to 1.5 times the minimum for all nutrients and camps."
+}

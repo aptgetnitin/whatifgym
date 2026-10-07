@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "short_time",
+      "sense": "<=",
+      "value": 220
+    }
+  ],
+  "note": "Overall limit of 220 workers on short-time working across all years and skill levels."
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "mar_sales_zero_or_min",
+      "measure": "sell",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "Mar"
+        }
+      },
+      "factor": 0
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_purchase",
+   "value": 50450
+  }
+ ],
+ "rules": [
+  {
+   "name": "min_purchase_from_daraa",
+   "measure": "purchase",
+   "scope": {
+    "supplier": "Daraa"
+   },
+   "sense": ">=",
+   "value": 50450
+  }
+ ],
+ "note": "The total food bought from Daraa is constrained to be at least 50450 units per day."
+}

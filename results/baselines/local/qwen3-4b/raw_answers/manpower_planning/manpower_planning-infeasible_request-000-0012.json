@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "value": 880
+    }
+  ],
+  "note": "The planner specifies a fixed requirement for year 3, unskilled workers: exactly 880."
+}

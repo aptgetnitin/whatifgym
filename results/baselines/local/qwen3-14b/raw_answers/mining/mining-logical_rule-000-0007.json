@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine2_open_years_year4",
+      "measure": "open",
+      "scope": {
+        "year": "Year4",
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 2
+    },
+    {
+      "name": "mine1_open_years_year5",
+      "measure": "open",
+      "scope": {
+        "year": "Year5",
+        "mine": "Mine1"
+      },
+      "sense": ">=",
+      "value": 1
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg2_min_40pct",
+      "measure": "consume",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "consume"
+      },
+      "factor": 0.4
+    }
+  ]
+}

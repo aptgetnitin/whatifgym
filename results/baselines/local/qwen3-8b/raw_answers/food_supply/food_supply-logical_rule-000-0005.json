@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_ration_daraa_min",
+      "measure": "ration",
+      "scope": {
+        "food": "Wheat",
+        "camp": "Daraa"
+      },
+      "sense": ">=",
+      "value": 7.9
+    }
+  ]
+}

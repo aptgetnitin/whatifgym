@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_food_shipped_cap",
+   "measure": "flow",
+   "scope": {
+    "food": "*",
+    "from_city": "*",
+    "to_city": "*"
+   },
+   "sense": "<=",
+   "value": 121500
+  }
+ ],
+ "note": "The total food shipped is capped at 121500 units (100 g) per day across all foods and links."
+}

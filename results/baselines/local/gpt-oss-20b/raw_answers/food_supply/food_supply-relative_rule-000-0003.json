@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "aleppo_flow_limit",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Aleppo"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "from_city": "Hassakeh"
+        }
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Limit Aleppo shipments to 25% of Hassakeh shipments."
+}

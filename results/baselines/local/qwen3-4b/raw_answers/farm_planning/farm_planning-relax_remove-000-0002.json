@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "years",
+      "where": {
+        "key": "housing_capacity"
+      }
+    }
+  ]
+}

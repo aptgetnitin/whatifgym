@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "only_one_month_with_production",
+   "measure": "make",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "May"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "A rule limiting the total production across specified months to 1 unit."
+}

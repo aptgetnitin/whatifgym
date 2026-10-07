@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase",
+   "column": "purchase",
+   "where": {
+    "food": "Dried skim milk (enriched) (DSM)",
+    "supplier": "Aleppo"
+   },
+   "value": 49550
+  }
+ ],
+ "note": "Set the purchase of Dried skim milk (enriched) (DSM) from Aleppo to 49550 units."
+}

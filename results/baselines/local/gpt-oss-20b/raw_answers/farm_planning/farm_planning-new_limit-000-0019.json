@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"max_sell_heifers_year2","measure":"sell_heifers","scope":{"year":"Year2"},"sense":"<=","value":37},{"name":"min_sell_beet_year1","measure":"sell_beet","scope":{"year":"Year1"},"sense":">=","value":34}],"note":"Heifer calves sold in Year2 capped at 37; sugar beet sold in Year1 at least 34."}

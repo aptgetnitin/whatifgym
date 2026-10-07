@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "relax": [
+    {
+      "constraint": "refining",
+      "scope": {
+        "month": [
+          "Jan",
+          "Mar",
+          "Apr",
+          "Jun"
+        ]
+      }
+    }
+  ],
+  "note": "Relaxing refining capacity constraints for all months except Jun, Feb, and May."
+}

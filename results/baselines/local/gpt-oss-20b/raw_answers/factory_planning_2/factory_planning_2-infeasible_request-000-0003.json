@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "min_make_May",
+      "measure": "make",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "value": 3000
+    },
+    {
+      "name": "min_make_Mar",
+      "measure": "make",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": ">=",
+      "value": 3750
+    }
+  ],
+  "note": "Minimum production requests for May and March."
+}

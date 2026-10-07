@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "only_one_placement",
+      "measure": "x",
+      "scope": {
+        "item": [
+          "item13",
+          "item4",
+          "item12"
+        ]
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ]
+}

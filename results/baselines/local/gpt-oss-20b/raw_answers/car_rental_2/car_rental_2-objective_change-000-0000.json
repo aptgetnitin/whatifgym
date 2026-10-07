@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","objective":[{"sense":"max","measure":"original"},{"sense":"min","measure":"damaged_left"}],"note":"Among all profit‑maximising plans, choose one with minimal total damaged cars kept overnight."}

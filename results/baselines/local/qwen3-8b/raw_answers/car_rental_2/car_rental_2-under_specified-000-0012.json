@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "ask": "What is the weekly cost of owning a car currently?"
+}

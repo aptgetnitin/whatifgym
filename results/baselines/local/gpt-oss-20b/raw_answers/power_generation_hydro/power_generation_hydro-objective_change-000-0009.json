@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","objective":[{"sense":"min","measure":"original"},{"sense":"min","measure":"hydro_start"},{"sense":"max","measure":"pump"}]}

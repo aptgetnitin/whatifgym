@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "Food Supply (World Food Programme, Syria)",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_nutrient_factor",
+      "value": 3
+    }
+  ],
+  "note": "A floor on the ration per person would require a new parameter to set the maximum intake per nutrient, but the model uses max_nutrient_factor for the upper limit on intake per person per nutrient. The question is ambiguous about whether it refers to a per-nutrient floor or a global floor, but the model's parameters only include max_nutrient_factor for this purpose."
+  }

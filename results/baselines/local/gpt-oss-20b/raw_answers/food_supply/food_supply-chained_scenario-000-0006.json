@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"camps","column":"beneficiaries","factor":0.6}],"note":"Scale beneficiaries by 0.6 (40% lower)."}

@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "store",
+   "scope": {
+    "oil": "OIL2"
+   }
+  }
+ ],
+ "note": "First, maximise profit as per the original objective. Then, maximise the storage of OIL2 under the same constraints."
+}

@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "pump_power_00-06",
+   "measure": "pump",
+   "scope": {
+    "period": "00-06"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "pump",
+    "scope": {
+     "period": "all"
+    }
+   },
+   "factor": 0.5
+  },
+  {
+   "name": "thermal_units_00-06",
+   "measure": "ngen",
+   "scope": {
+    "period": "00-06"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "ngen",
+    "scope": {
+     "period": "15-18"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Rules enforce that at least 50% of total pumping power is allocated to period 00-06 and that the number of thermal units running in period 00-06 is at most 50% of those in period 15-18."
+}

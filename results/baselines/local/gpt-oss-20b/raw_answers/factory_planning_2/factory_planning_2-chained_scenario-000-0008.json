@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"measure":"make","scope":{"month":"May"},"sense":"<=","value":1600,"name":"cap_make_May"}]}

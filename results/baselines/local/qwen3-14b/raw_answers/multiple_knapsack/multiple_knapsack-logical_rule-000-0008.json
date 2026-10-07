@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"item9_and_item3_exclusion","measure":"x","scope":{"item":["item9","item3"],"bin":"*"},"sense":"<=","value":1,"relative_to":{"measure":"x","scope":{"item":["item9","item3"],"bin":"*"}},"factor":0.5}]}

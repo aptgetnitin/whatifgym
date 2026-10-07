@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_stock_monday_limit",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": "<=",
+   "value": 47
+  }
+ ],
+ "note": "Limits the total damaged cars at any depot on Monday morning to 47."
+}

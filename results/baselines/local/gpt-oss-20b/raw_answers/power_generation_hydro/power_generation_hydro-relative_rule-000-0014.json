@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "pump_00_06_at_least_half_total",
+      "measure": "pump",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "pump",
+        "scope": {}
+      },
+      "factor": 0.5
+    },
+    {
+      "name": "ngen_00_06_at_most_half_15_18",
+      "measure": "ngen",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "ngen",
+        "scope": {
+          "period": "15-18"
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

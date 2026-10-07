@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","data_changes":[{"op":"add","table":"thermal_types","rows":[{"type":"new_type","units_available":12,"min_output_mw":1060,"max_output_mw":2500,"cost_per_hour":600,"cost_per_mwh_above_min":3,"startup_cost":1200,"units_on_at_start":5}]}]}

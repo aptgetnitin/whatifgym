@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "short_time_unskilled_year1_zero_or_125",
+      "measure": "short_time",
+      "scope": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "short_time_unskilled_year1_zero_or_125",
+      "measure": "short_time",
+      "scope": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 125
+    }
+  ],
+  "note": "The planner wants a logical rule that short_time for year 1, unskilled is either 0 or at least 125. This requires two rules: one for >=0 and one for >=125. However, the DSL does not support 'either/or' directly; it requires two separate rules to enforce the condition. The condition is satisfied if short_time is 0 or >=125, which is equivalent to (short_time == 0) OR (short_time >= 125). In the DSL, we can model this with two rules: one that sets a lower bound of 0 and another that sets a lower bound of 125. The solver will then find a value that satisfies at least one of the conditions (but the DSL doesn't have an 'either/or' rule)."
+  }

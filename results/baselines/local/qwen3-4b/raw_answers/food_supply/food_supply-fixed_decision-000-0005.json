@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": "all",
+        "from_city": "Homs",
+        "to_city": "all"
+      },
+      "value": 170
+    }
+  ],
+  "note": "The planner wants to fix the flow from Homs to all destination cities at exactly 170 units per food per day."
+}

@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine1"
+   },
+   "value": 62500
+  }
+ ],
+ "rules": [
+  {
+   "name": "extract_mine1_year4",
+   "measure": "extract",
+   "scope": {
+    "year": "Year4",
+    "mine": "Mine1"
+   },
+   "sense": "==",
+   "value": 62500
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

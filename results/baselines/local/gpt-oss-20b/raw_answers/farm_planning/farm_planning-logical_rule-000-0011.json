@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "logic": [
+    {
+      "name": "grain3_requires_beet2",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "buy_grain",
+          "scope": {
+            "year": "Year3"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell_beet",
+          "scope": {
+            "year": "Year2"
+          },
+          "sense": ">=",
+          "value": 55
+        }
+      ]
+    }
+  ]
+}

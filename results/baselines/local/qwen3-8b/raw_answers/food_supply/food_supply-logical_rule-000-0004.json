@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_ration_min",
+      "measure": "ration",
+      "scope": {
+        "food": "Wheat"
+      },
+      "sense": ">=",
+      "value": 55
+    }
+  ],
+  "note": "Ensures that if there is any ration for Wheat, it must be at least 55 units per person per day."
+}

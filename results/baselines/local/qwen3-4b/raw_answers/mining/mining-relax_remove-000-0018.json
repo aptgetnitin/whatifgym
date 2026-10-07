@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_mines",
+      "where": {
+        "year": "Year2"
+      },
+      "value": "inf"
+    }
+  ],
+  "note": "Lifting the limit on how many mines may operate in a year for Year2 means setting max_mines to infinity for that year."
+}

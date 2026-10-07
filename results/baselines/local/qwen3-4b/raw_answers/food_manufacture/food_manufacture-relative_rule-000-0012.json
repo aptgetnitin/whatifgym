@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "oil2_storage_at_most_25_of_oil2",
+      "measure": "store",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "oil": "VEG2"
+        }
+      }
+    }
+  ]
+}

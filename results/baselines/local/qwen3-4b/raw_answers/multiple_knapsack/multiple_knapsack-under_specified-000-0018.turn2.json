@@ -1,0 +1,4 @@
+{
+  "role": "agent",
+  "text": "Which capacity value is changing? Please specify which bin's capacity is modified (e.g., bin0, bin1, etc.)."
+  }

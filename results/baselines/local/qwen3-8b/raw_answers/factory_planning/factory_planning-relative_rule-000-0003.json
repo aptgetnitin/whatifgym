@@ -1,0 +1,45 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod7_at_least_20_percent_total",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": [
+      "Prod1",
+      "Prod2",
+      "Prod3",
+      "Prod4",
+      "Prod5",
+      "Prod6",
+      "Prod7"
+     ]
+    }
+   },
+   "factor": 0.2
+  },
+  {
+   "name": "feb_sales_at_most_50_percent_may",
+   "measure": "sell",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": "May"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

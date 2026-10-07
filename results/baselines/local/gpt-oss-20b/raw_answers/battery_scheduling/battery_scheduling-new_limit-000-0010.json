@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "measure": "soc",
+      "scope": {
+        "hour": "01-02"
+      },
+      "sense": ">=",
+      "value": 9
+    }
+  ],
+  "note": "Require stored energy at the end of hour 01-02 to be at least 9 kWh."
+}

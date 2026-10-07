@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "charge_at_least_25_percent_soc",
+      "measure": "charge",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "soc"
+      },
+      "factor": 0.25
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","logic":[{"name":"prod3_feb_sold_implies_mar_make","at_least":1,"of":[{"measure":"sell","scope":{"month":"Feb","product":"Prod3"},"sense":"<=","value":0},{"measure":"make","scope":{"month":"Mar","product":"Prod3"},"sense":">=","value":800}]}]}

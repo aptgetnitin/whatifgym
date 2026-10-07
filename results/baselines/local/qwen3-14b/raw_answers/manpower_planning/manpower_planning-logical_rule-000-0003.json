@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "short_time_limit_per_year",
+      "measure": "short_time",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

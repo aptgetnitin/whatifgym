@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "consume",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "month": "Feb"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "measure": "buy",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "consume"
+      },
+      "factor": 1.25
+    }
+  ],
+  "note": "Relative limits: May refined ≥ 2×Feb refined; total buy ≥ 1.25×total refine."
+}

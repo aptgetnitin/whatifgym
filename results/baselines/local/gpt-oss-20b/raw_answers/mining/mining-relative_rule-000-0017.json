@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"open_vs_operate_ratio","measure":"open","sense":"<=","relative_to":{"measure":"operate"},"factor":0.5},{"name":"blend_year1_vs_year3","measure":"blend","scope":{"year":"Year1"},"sense":">=","relative_to":{"measure":"blend","scope":{"year":"Year3"}},"factor":2.0}]}

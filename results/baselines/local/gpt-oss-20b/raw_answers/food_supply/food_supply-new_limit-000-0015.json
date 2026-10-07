@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"aleppo_flow_cap","measure":"flow","scope":{"from_city":"Aleppo"},"sense":"<=","value":19350}],"note":"Total flow out of Aleppo limited to 19350 units."}

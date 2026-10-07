@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "undamaged_stock",
+      "column": "undamaged_stock",
+      "where": {
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A floor on undamaged cars at the depot in the morning would set the undamaged stock to zero for all days and depots."
+}

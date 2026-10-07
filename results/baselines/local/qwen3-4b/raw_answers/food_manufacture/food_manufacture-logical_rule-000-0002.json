@@ -1,0 +1,14 @@
+{
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "storage_min_apr_to_may",
+      "measure": "store",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "value": 2000
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "logic": [
+    {
+      "name": "no_both_rentals",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "rentals",
+          "scope": {
+            "depot": "Manchester"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "rentals",
+          "scope": {
+            "depot": "Glasgow"
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

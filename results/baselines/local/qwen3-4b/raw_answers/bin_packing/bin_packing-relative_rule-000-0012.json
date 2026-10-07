@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "y[bin]",
+      "scope": {
+        "bin": [
+          "bin0",
+          "bin1",
+          "bin2",
+          "bin3",
+          "bin4",
+          "bin5",
+          "bin6",
+          "bin7",
+          "bin8",
+          "bin9",
+          "bin10"
+        ]
+      }
+    }
+  ],
+  "note": "The planner wants to know if the number of bins used (y[bin]) is at least 90% of the total number of items packed (11)."
+}

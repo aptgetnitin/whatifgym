@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine3"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_mine_years_worked_cap",
+      "measure": "operate",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine4"
+        ]
+      },
+      "sense": "<=",
+      "value": 7
+    }
+  ]
+}

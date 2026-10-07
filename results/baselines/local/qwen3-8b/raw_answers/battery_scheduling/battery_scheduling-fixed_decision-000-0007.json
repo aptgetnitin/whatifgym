@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "max_discharge_kw",
+   "where": {
+    "hour": "21-22"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixing the maximum discharge power for hour 21-22 to zero prevents any discharging during that hour."
+}

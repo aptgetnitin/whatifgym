@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "store",
+      "scope": {
+        "oil": [
+          "VEG2"
+        ]
+    }
+    }
+  ]
+}

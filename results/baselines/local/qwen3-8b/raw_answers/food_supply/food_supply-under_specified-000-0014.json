@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "ask": "Please specify how the number of beneficiaries for camp Jubb_al_Jarrah changes (e.g., increase, decrease, new value) to proceed with the scenario analysis."
+}

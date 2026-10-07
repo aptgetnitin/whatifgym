@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"oil_csb_ratio","measure":"purchase","scope":{"food":"Oil"},"sense":"<=","relative_to":{"measure":"purchase","scope":{"food":"Corn-soya blend (CSB)"},"factor":0.25} },"note"  ]}

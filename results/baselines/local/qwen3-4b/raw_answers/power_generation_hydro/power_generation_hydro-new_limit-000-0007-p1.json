@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The planner wants to cap the total number of running thermal units across all periods and types at 80. This is a scale change on the units_available column for all thermal types, reducing the available units by 80%."
+}

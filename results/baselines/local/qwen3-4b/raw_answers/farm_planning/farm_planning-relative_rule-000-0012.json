@@ -1,0 +1,49 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "year4_at_least_1_5_year2",
+      "measure": "herd",
+      "scope": {
+        "year": "Year4",
+        "age": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "sense": ">=",
+      "value": 1.5,
+      "relative_to": {
+        "measure": "herd",
+        "scope": {
+          "year": "Year2",
+          "age": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
+          ]
+        }
+      }
+    }
+  ]
+}

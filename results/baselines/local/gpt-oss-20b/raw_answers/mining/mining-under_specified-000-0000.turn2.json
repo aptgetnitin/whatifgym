@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"measure":"extract","scope":{"mine":"Mine4"},"sense":"<=","value":5737500}],"note":"Add upper limit on total ore extracted from Mine4."}

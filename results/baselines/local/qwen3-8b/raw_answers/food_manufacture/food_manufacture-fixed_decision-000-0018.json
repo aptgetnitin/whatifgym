@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase_prices",
+   "column": "price",
+   "where": {
+    "month": "Jun",
+    "oil": "OIL2"
+   },
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "buy",
+   "scope": {
+    "month": "Jun",
+    "oil": "OIL2"
+   },
+   "value": 0
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "max_one_of_oil_wheat_csb",
+   "measure": "ration",
+   "scope": {
+    "food": [
+     "Oil",
+     "Wheat",
+     "Corn-soya blend (CSB)"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "At most one of the foods Oil, Wheat, and Corn-soya blend (CSB) can have any ration per person."
+}

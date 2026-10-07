@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "floor_output_Thermal0",
+      "measure": "output",
+      "scope": {
+        "type": "Thermal0"
+      },
+      "sense": ">=",
+      "value": 74900
+    }
+  ]
+}

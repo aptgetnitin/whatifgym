@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "jan_50pct_of_total_make",
+      "measure": "make",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "At least 50% of total units made must be produced in January."
+}

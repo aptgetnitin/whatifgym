@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "max_recruit",
+      "where": {
+        "year": [1, 2, 3],
+        "skill": ["unskilled", "semi_skilled", "skilled"]
+      },
+      "factor": 1.5
+    }
+  ],
+  "note": "Scaling the recruitment limits for all skill levels and years by 1.5."
+}

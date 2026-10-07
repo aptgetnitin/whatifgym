@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "stock_jun_prod4_based_on_sell_apr_prod1",
+      "measure": "store",
+      "scope": {
+        "month": "Jun",
+        "product": "Prod4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "Apr",
+          "product": "Prod1"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "open",
+      "scope": {
+        "year": ["Year1", "Year2", "Year3", "Year4", "Year5"],
+        "mine": ["Mine1", "Mine2", "Mine3", "Mine4"]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ]
+}

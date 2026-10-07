@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "min_oil_ration_per_person",
+   "measure": "ration",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "value": 6.7
+  }
+ ],
+ "note": "The total ration per person for Oil must be at least 6.7 units (100 g) per day."
+}

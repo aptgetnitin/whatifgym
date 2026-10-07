@@ -1,0 +1,135 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "royalty",
+      "where": {
+        "mine": "Mine1"
+      },
+      "value": 6000000
+    },
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine3"
+      },
+      "factor": 1.6
+    },
+    {
+      "op": "shift",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": "Mine2"
+      },
+      "delta": -0.2
+    },
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine4"
+      }
+    },
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "Mine5",
+          "royalty": 3000000,
+          "capacity": 1000000,
+          "quality": 1.2
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "name": "year3_quality_target_relaxed",
+      "measure": "quality_target",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": "<=",
+      "value": 1.0
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year3"
+      },
+      "delta": -0.2
+    },
+    {
+      "op": "add",
+      "table": "years",
+      "rows": [
+        {
+          "year": "Year6",
+          "order": 6,
+          "quality_target": 0.9
+        }
+      ]
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "shift_param",
+      "name": "price",
+      "delta": -1
+    },
+    {
+      "op": "set_param",
+      "name": "max_mines",
+      "value": 2
+    },
+    {
+      "op": "shift_param",
+      "name": "discount_rate",
+      "delta": 0.05
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "open",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "operate",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      }
+    }
+  ],
+  "fixed_decisions": []
+}

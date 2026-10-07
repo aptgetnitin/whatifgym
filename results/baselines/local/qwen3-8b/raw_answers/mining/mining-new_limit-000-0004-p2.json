@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_mines",
+   "value": 7
+  },
+  {
+   "op": "set",
+   "table": "years",
+   "column": "quality_target",
+   "where": {
+    "year": "Year5"
+   },
+   "value": 3280000
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_mine_years",
+   "measure": "operate",
+   "scope": {
+    "year": "Year1",
+    "mine": "Mine1"
+   },
+   "sense": "<=",
+   "value": 7
+  }
+ ]
+}

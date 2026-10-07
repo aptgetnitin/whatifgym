@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "blend_exactly_one_year",
+      "measure": "blend",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4"
+        ]
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ]
+}

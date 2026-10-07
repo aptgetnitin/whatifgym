@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "terminal_soc_kwh",
+   "where": {
+    "name": "terminal_soc_kwh"
+   },
+   "value": 140
+  }
+ ],
+ "rules": [
+  {
+   "name": "discharge_limit_21-22",
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": "<=",
+   "value": 2.5
+  }
+ ],
+ "note": "The total battery stored energy is capped at 140 kWh, and the discharge power for hour 21-22 is limited to 2.5 kW."
+}

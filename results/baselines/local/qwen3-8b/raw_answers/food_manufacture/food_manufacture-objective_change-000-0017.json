@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "profit"
+  },
+  {
+   "sense": "max",
+   "measure": "store",
+   "scope": {
+    "oil": "OIL3"
+   }
+  }
+ ],
+ "note": "Prioritise maintaining maximum profit, then maximise the storage of OIL3."
+}

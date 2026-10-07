@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_food_shipped_limit",
+   "measure": "flow",
+   "scope": {},
+   "sense": "<=",
+   "value": 138900
+  },
+  {
+   "name": "milk_purchase_limit",
+   "measure": "purchase",
+   "scope": {
+    "food": "Milk"
+   },
+   "sense": "<=",
+   "value": 17500
+  }
+ ]
+}

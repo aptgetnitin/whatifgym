@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "fixed_decisions": [
+    {
+      "measure": "x",
+      "scope": {
+        "item": "item0",
+        "bin": "bin2"
+      },
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "value",
+      "scope": {
+        "item": "*"
+      }
+    }
+  ]
+}

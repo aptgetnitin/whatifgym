@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "store_may_min",
+   "measure": "store",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "value": 450
+  },
+  {
+   "name": "store_jun_min",
+   "measure": "store",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "value": 520
+  }
+ ],
+ "note": "Rules enforce minimum stock levels for specific months."
+}

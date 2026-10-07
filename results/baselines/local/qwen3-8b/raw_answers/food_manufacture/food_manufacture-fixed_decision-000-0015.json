@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg2_refine_per_month",
+   "measure": "consume",
+   "scope": {
+    "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "oil": "VEG2"
+   },
+   "sense": "==",
+   "value": 113
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "produce",
+   "scope": {
+    "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+   }
+  }
+ ],
+ "note": "Fix the amount of VEG2 refined per month and optimise the rest of the production."
+}

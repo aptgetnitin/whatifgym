@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "milk_at_most_2_times_dsm",
+   "measure": "ration",
+   "scope": {
+    "food": "Milk"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "food": "Dried skim milk (enriched) (DSM)"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The new policy limits the ration of Milk to twice the ration of Dried skim milk (enriched) (DSM)."
+}

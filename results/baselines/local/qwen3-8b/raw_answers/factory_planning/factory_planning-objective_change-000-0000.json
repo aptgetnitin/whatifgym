@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "make",
+   "scope": {
+    "product": "all"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "profit_per_unit",
+   "scope": {
+    "product": "all"
+   }
+  }
+ ],
+ "note": "The objective prioritises minimising total units made first, followed by maximising profit."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","objective":[{"sense":"min","measure":"herd"},{"sense":"max","measure":"yearly_profit"}],"note":"First minimize total head of cattle, then maximize total profit."}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "FebProd3_requires_MayProd2",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Feb",
+            "product": "Prod3"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "May",
+            "product": "Prod2"
+          },
+          "sense": ">=",
+          "value": 200
+        }
+      ]
+    }
+  ],
+  "note": "If any units sold for Feb Prod3, then at least 200 units sold for May Prod2."
+}

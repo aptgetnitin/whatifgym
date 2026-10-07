@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "fixed_decisions": [
+  {
+   "measure": "flow",
+   "scope": {
+    "food": "Milk",
+    "from_city": "Hassakeh",
+    "to_city": "Ar Raqqa"
+   },
+   "value": 6050
+  },
+  {
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat",
+    "camp": "Idleb"
+   },
+   "value": 0
+  }
+ ]
+}

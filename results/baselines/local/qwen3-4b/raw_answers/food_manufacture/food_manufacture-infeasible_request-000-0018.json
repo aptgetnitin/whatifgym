@@ -1,0 +1,17 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "buy",
+      "where": {
+        "oil": "OIL2",
+        "month": [
+          "Jun"
+        ]
+      },
+      "value": 3000
+    }
+  ],
+  "note": "The planner asks for a fixed amount of oil bought for OIL2 in June. However, the model's decision variable `buy[month, oil]` is defined as 'tons of raw oil bought', so the question refers to a fixed decision on `buy` for the specific (month, oil) pair. The `purchase_prices` table contains the price per ton for each (month, oil) pair, but the question is about the quantity bought, not the price. This is a critical distinction: the model's `buy` variable is constrained by the `purchase_prices` table (i.e., no purchase if no row exists), but the question is about the quantity, not the price. The scenario DSL requires data changes to be on the model's decision variables or parameters, not on the `purchase_prices` table. The `purchase_prices` table is a source of data that affects the model's constraints, but the question is about a fixed decision on `buy`, which is a decision variable. The correct approach is to model this as a fixed decision on the `buy` measure, not a data change on `purchase_prices`. The planner's question is ambiguous: it says 'must reach 3000 tons of oil bought for oil OIL2', which could mean the total bought over the horizon or in a specific month. Given the context, it's likely the total bought over the horizon (since the model has a horizon of 6 months). However, the question does not specify a time period. The model's `buy` variable is defined per month and oil, so the total bought for OIL2 would be the sum over months. The scenario DSL does not have a direct way to set a total sum without specifying the scope. The question is not precise enough to be machine-checked without clarification. The answer should be a clarifying question: 'What time period does "}

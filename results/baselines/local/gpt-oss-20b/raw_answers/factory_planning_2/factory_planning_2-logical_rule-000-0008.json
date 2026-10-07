@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "store_at_least_190_per_prod1_sold",
+      "measure": "store",
+      "scope": {
+        "month": "Jun",
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "Jun",
+          "product": "Prod1"
+        }
+      },
+      "factor": 190
+    }
+  ],
+  "note": "For each unit of Prod1 sold in June, at least 190 units of Prod7 must be in stock at month end."
+}

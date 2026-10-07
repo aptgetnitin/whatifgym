@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","data_changes":[{"op":"remove","table":"items","where":{"item":"item7"}},{"op":"scale","table":"items","column":"weight","where":{"item":["item0","item1","item2","item3","item4","item5","item6","item8","item9","item10"]},"factor":1.25}]}

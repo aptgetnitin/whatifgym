@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal1_00-06_at_least_thermal1_18-24",
+   "measure": "ngen",
+   "scope": {
+    "period": "00-06",
+    "type": "Thermal1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "ngen",
+    "scope": {
+     "period": "18-24",
+     "type": "Thermal1"
+    }
+   },
+   "factor": 14
+  }
+ ],
+ "note": "A relative rule ensures that the sum of ngen for Thermal1 in period 00-06 is at least 14 times the sum of ngen for Thermal1 in period 18-24."
+}

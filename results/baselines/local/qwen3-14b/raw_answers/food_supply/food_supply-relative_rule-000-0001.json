@@ -1,0 +1,54 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "min_food_shipped_to_daraa",
+   "measure": "flow",
+   "scope": {
+    "to_city": "Daraa"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "from_city": {
+      "from_city": [
+       "Aleppo",
+       "Amman",
+       "Ar Raqqa",
+       "As_Suweida",
+       "Beirut",
+       "Damascus",
+       "Daraa",
+       "Dayr_Az_Zor",
+       "Gaziantep",
+       "Hama",
+       "Hassakeh",
+       "Homs",
+       "Idleb",
+       "Jubb_al_Jarrah"
+      ]
+     },
+     "to_city": {
+      "to_city": [
+       "Ar Raqqa",
+       "Idleb",
+       "As_Suweida",
+       "Daraa",
+       "Aleppo",
+       "Dayr_Az_Zor",
+       "Hassakeh",
+       "Damascus",
+       "Homs",
+       "Jubb_al_Jarrah",
+       "Qamishli",
+       "Hama"
+      ]
+     }
+    }
+   },
+   "factor": 0.1
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "min_make_may",
+   "measure": "make",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "value": 6900
+  }
+ ],
+ "note": "A rule enforces a minimum total production for May."
+}

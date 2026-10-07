@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "max_downgrade_total",
+   "measure": "downgrade",
+   "scope": {
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "unskilled",
+     "semi_skilled"
+    ]
+   },
+   "sense": "<=",
+   "value": 130
+  }
+ ],
+ "note": "Limits the total number of workers downgraded across all years and skill levels to 130."
+}

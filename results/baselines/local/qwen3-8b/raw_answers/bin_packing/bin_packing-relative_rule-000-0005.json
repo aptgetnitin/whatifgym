@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "item_bin_ratio",
+   "measure": "x",
+   "scope": {
+    "item": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "y",
+    "scope": {
+     "bin": "*"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "y",
+   "scope": {
+    "bin": "*"
+   }
+  }
+ ],
+ "note": "The rule enforces that the total number of items packed is at most 1.25 times the total number of bins used, while the objective remains to minimize the number of bins used."
+}

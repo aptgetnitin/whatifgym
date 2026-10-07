@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"plymouth_rentals_min_50pct","measure":"rentals","scope":{"depot":"Plymouth"},"sense":">=","relative_to":{"

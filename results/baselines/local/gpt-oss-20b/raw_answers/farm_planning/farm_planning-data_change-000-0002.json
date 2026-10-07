@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "land_groups",
+      "column": "area",
+      "factor": 0.75
+    }
+  ],
+  "note": "Reduce grain-suitable acres by 25% for all land groups."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "undamaged_stock",
+   "scope": {
+    "depot": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "damaged_left",
+   "scope": {
+    "depot": "*"
+   }
+  }
+ ],
+ "note": "Prioritise maximising weekly profit, then minimising total undamaged cars at all depots in the morning, and finally minimising total damaged cars kept at all depots overnight."
+}

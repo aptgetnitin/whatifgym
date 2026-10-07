@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "grow_grain",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ],
+    "land_group": [
+     "Group1",
+     "Group2",
+     "Group3",
+     "Group4"
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "yearly_profit",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  }
+ ],
+ "note": "The objective prioritises minimising the total tons of grain grown first, followed by maximising the five-year profit."
+}

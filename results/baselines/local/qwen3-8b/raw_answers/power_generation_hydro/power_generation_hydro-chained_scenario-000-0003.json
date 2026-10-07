@@ -1,0 +1,160 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "periods",
+   "column": "demand_mw",
+   "where": {
+    "period": [
+     "00-06",
+     "06-09",
+     "09-15",
+     "15-18",
+     "18-24"
+    ]
+   },
+   "value": 15000
+  },
+  {
+   "op": "set",
+   "table": "periods",
+   "column": "demand_mw",
+   "where": {
+    "period": [
+     "15-18"
+    ]
+   },
+   "value": 50000
+  },
+  {
+   "op": "set",
+   "table": "periods",
+   "column": "demand_mw",
+   "where": {
+    "period": [
+     "06-09"
+    ]
+   },
+   "value": 33000
+  },
+  {
+   "op": "scale",
+   "table": "thermal_types",
+   "column": "units_available",
+   "where": {
+    "type": [
+     "Thermal1"
+    ]
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "thermal_types",
+   "column": "startup_cost",
+   "where": {
+    "type": [
+     "Thermal2"
+    ]
+   },
+   "factor": 2
+  },
+  {
+   "op": "scale",
+   "table": "thermal_types",
+   "column": "cost_per_mwh_above_min",
+   "where": {
+    "type": [
+     "Thermal0"
+    ]
+   },
+   "factor": 1.25
+  },
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "units_on_at_start",
+   "where": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "value": 2
+  },
+  {
+   "op": "scale",
+   "table": "hydro_units",
+   "column": "output_mw",
+   "where": {
+    "hydro": [
+     "HydroB"
+    ]
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "hydro_units",
+   "column": "startup_cost",
+   "where": {
+    "hydro": [
+     "HydroA"
+    ]
+   },
+   "factor": 0.5
+  },
+  {
+   "op": "scale",
+   "table": "hydro_units",
+   "column": "depletion_m_per_hour",
+   "where": {
+    "hydro": [
+     "HydroA"
+    ]
+   },
+   "factor": 1.2
+  },
+  {
+   "op": "set",
+   "table": "hydro_units",
+   "column": "on_at_start",
+   "where": {
+    "hydro": [
+     "HydroA"
+    ]
+   },
+   "value": 1
+  },
+  {
+   "op": "scale_param",
+   "name": "pump_mwh_per_m",
+   "factor": 1.1667
+  },
+  {
+   "op": "scale_param",
+   "name": "reserve_margin",
+   "factor": 2
+  }
+ ],
+ "rules": [
+  {
+   "name": "pump_cap",
+   "measure": "pump",
+   "scope": {
+    "period": [
+     "00-06",
+     "06-09",
+     "09-15",
+     "15-18",
+     "18-24"
+    ]
+   },
+   "sense": "<=",
+   "value": 1600
+  }
+ ]
+}

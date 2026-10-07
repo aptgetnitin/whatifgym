@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_skilled_at_least_twice_retrain_semi_skilled",
+   "measure": "retrain",
+   "scope": {
+    "from_skill": "unskilled",
+    "to_skill": "skilled"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "retrain",
+    "scope": {
+     "from_skill": "unskilled",
+     "to_skill": "semi_skilled"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "A rule that enforces the retrainings to skilled level are at least twice the retrainings to semi-skilled level."
+}

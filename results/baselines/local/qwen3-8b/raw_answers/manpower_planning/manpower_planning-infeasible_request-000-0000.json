@@ -1,0 +1,79 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 3,
+    "skill": "skilled"
+   },
+   "value": 2200
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "value": 700
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 1,
+    "skill": "semi_skilled"
+   },
+   "value": 1000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 2,
+    "skill": "semi_skilled"
+   },
+   "value": 1000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 3,
+    "skill": "semi_skilled"
+   },
+   "value": 1000
+  }
+ ],
+ "rules": [
+  {
+   "name": "redundant_total",
+   "measure": "redundant",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   },
+   "sense": ">=",
+   "value": 4210
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   }
+  }
+ ],
+ "note": "The scenario sets the required workforce for skilled workers in year 3 and unskilled workers in year 2, and caps the recruitment of semi-skilled workers each year. It also enforces a minimum total of 4210 workers made redundant."
+}

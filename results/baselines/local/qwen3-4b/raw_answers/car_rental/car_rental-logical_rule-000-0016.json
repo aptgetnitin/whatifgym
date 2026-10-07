@@ -1,0 +1,51 @@
+{
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "day": "Thursday",
+        "depot": "Glasgow"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "day": "Wednesday",
+        "depot": "Glasgow"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "day": "Saturday",
+        "depot": "Glasgow"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "only_one_day_rentals",
+      "measure": "rentals",
+      "scope": {
+        "day": [
+          "Thursday",
+          "Wednesday",
+          "Saturday"
+        ],
+        "depot": "Glasgow"
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

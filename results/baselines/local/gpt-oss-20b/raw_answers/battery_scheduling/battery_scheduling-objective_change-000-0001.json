@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","objective":[{"sense":"max","measure":"original"},{"sense":"max","measure":"soc"}],"note":"Keep daily profit at its maximum, then maximise the total battery stored energy."}

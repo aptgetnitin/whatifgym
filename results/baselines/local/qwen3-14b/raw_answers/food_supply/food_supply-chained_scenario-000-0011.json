@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "measure": "flow",
+      "scope": {
+        "food": "Oil"
+      },
+      "sense": ">=",
+      "value": 85650,
+      "name": "min_flow_Oil"
+    }
+  ]
+}

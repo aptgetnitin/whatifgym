@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "units_on_at_start",
+   "where": {
+    "type": "Thermal0"
+   },
+   "value": 2
+  },
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "units_on_at_start",
+   "where": {
+    "type": "Thermal1"
+   },
+   "value": 2
+  },
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "units_on_at_start",
+   "where": {
+    "type": "Thermal2"
+   },
+   "value": 2
+  }
+ ],
+ "note": "Setting the units_on_at_start for all thermal types to 2."
+}

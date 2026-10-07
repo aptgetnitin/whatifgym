@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "sat_rentals_limit",
+   "measure": "rentals",
+   "scope": {
+    "day": "Saturday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "day": "Thursday"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Limits Saturday rentals to 75% of Thursday rentals."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_at_least_1.25_soc",
+      "measure": "discharge",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "soc"
+      },
+      "factor": 1.25
+    }
+  ],
+  "note": "Enforce total discharge power at least 1.25 times total stored energy."
+}

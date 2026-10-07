@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "dairy_cows_year4_at_least_1_5_times_year2",
+   "measure": "herd",
+   "scope": {
+    "year": "Year4",
+    "age": 2
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "herd",
+    "scope": {
+     "year": "Year2",
+     "age": 2
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "The rule ensures that the dairy cows in Year4 are at least 1.5 times the dairy cows in Year2."
+}

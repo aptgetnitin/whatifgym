@@ -1,0 +1,43 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "may_production_share",
+   "measure": "make",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "prod4_prod3_ratio",
+   "measure": "make",
+   "scope": {
+    "product": "Prod4"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "product": "Prod3"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "Rules enforce that May accounts for at least 75% of total production and that Prod4 production is at most 60% of Prod3 production."
+}

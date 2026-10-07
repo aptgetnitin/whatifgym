@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine3_worked_in_year5",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine3",
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "value": 2
+  }
+ ],
+ "note": "The rule ensures that Mine3 is worked in at least 2 years within the Year5 planning horizon."
+}

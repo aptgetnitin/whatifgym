@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "only_one_oil_bought",
+   "measure": "buy",
+   "scope": {
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL2"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Only one of the oils VEG1, VEG2, or OIL2 can have non-zero buy quantities across all months."
+}

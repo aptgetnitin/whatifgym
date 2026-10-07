@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg1_buy_floor",
+   "measure": "buy",
+   "scope": {
+    "oil": "VEG1"
+   },
+   "sense": ">=",
+   "value": 820
+  }
+ ],
+ "note": "A floor on the total tons of VEG1 oil bought across all months."
+}

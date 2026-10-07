@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "land_area",
+   "where": {
+    "name": "land_area"
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "Scaling the farm area parameter by 1.5 to reflect a 50% increase."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"total_make_min_23900","measure":"make","sense":">=","value":23900}],"note":"Check feasibility of producing at least 23900 units in total."}

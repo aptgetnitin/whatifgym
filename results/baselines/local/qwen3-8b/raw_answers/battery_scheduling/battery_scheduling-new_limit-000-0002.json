@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_charge_kw",
+   "value": 7
+  }
+ ],
+ "rules": [
+  {
+   "name": "soc_limit_19-20",
+   "measure": "soc",
+   "scope": {
+    "hour": [
+     "19-20"
+    ]
+   },
+   "sense": "<=",
+   "value": 8
+  }
+ ],
+ "note": "A cap on total charging power and a limit on stored energy during 19-20 hours."
+}

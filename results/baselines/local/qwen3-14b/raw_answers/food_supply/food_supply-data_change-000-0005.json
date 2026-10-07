@@ -1,0 +1,53 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "foods",
+   "column": "international_price",
+   "where": {
+    "food": {
+     "not": {
+      "in": [
+       "Beans",
+       "Bulgur",
+       "Cheese",
+       "Fish",
+       "Meat",
+       "Corn-soya blend (CSB)",
+       "Dates",
+       "Dried skim milk (enriched) (DSM)",
+       "Milk",
+       "Lentils",
+       "Maize",
+       "Maize meal",
+       "Chickpeas",
+       "Rice",
+       "Sorghum/millet",
+       "Soya-fortified bulgur wheat",
+       "Soya-fortified maize meal",
+       "Soya-fortified sorghum grits",
+       "Soya-fortified wheat flour",
+       "Sugar",
+       "Oil",
+       "Wheat",
+       "Wheatflour",
+       "WSB"
+      ]
+     }
+    }
+   },
+   "factor": 1.25
+  },
+  {
+   "op": "scale",
+   "table": "nutrients",
+   "column": "min_per_person",
+   "where": {
+    "nutrient": "Protein(g)"
+   },
+   "factor": 1.2
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","fixed_decisions":[{"measure":"x","scope":{"item":"item11","bin":"bin1"},"value":1}],"note":"Fix x[item11, bin1] to 1"}

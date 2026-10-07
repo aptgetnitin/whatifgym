@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [1, 2, 3]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Reduce all manpower requirements by 20% for each skill level in each year."
+}

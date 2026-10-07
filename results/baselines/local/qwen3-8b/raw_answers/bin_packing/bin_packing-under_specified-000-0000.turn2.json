@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "items",
+   "column": "weight",
+   "where": {
+    "item": "item8"
+   },
+   "value": 24
+  }
+ ],
+ "note": "The weight of item item8 is set to 24."
+}

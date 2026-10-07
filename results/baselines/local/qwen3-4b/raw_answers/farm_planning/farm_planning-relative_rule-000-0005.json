@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "raise_heifers",
+      "column": "raise_heifers",
+      "where": {
+        "year": "Year2"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "A relative constraint on the total heifer calves raised in a specific year is a scale over the matching rows."
+}

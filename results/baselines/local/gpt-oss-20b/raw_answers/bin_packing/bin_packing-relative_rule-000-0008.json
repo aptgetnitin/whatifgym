@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","rules":[{"name":"min_bins_80pct_items","measure":"y","sense":">=","relative_to":{"measure":"x"},"factor":0.8}]}

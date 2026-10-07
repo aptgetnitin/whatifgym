@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "retrain_to_higher_skill_requires_overmanning",
+      "measure": "retrain",
+      "scope": {
+        "year": 2,
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "overmanned",
+        "scope": {
+          "year": 2,
+          "skill": "unskilled"
+        }
+      },
+      "factor": 190
+    }
+  ]
+}

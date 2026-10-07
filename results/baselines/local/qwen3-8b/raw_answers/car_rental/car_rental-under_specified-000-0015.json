@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Wednesday",
+    "depot": "Birmingham"
+   },
+   "value": 100
+  }
+ ],
+ "rules": [
+  {
+   "name": "rentals_cap",
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Birmingham"
+   },
+   "sense": "<=",
+   "value": 100
+  }
+ ],
+ "note": "A cap on the cars rented out in Birmingham on Wednesday."
+}

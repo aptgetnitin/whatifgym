@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod4_jun_make_rule",
+      "measure": "make",
+      "scope": {
+        "month": "Jun",
+        "product": "Prod4"
+      },
+      "sense": ">=",
+      "value": 1050
+    }
+  ],
+  "logic": [
+    {
+      "name": "either_or_prod4_jun",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jun",
+            "product": "Prod4"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jun",
+            "product": "Prod4"
+          },
+          "sense": ">=",
+          "value": 1050
+        }
+      ]
+    }
+  ]
+}

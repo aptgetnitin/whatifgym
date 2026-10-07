@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "total_undamaged_stock_limit",
+      "measure": "undamaged_stock",
+      "scope": {},
+      "sense": "<=",
+      "value": 2650
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_mines",
+      "value": 5
+    }
+  ],
+  "note": "The maximum number of mines that may be worked per year is set to 5, removing the original limit."
+}

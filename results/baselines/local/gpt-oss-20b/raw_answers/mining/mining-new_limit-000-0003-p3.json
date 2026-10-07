@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Mine2_operate_min_4",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 4
+    },
+    {
+      "name": "Total_extract_max",
+      "measure": "extract",
+      "sense": "<=",
+      "value": 20873350
+    }
+  ],
+  "note": "Added constraints: at least 4 years of operation for Mine2 and total extraction limit."
+}

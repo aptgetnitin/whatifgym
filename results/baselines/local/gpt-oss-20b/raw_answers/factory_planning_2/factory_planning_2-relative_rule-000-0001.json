@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "measure": "store",
+      "scope": {
+        "product": "Prod1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store"
+      },
+      "factor": 0.15
+    }
+  ],
+  "note": "At most 15% of total stock may be Prod1."
+}

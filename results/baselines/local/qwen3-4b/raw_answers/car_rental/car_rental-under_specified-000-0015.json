@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "depot": "Glasgow",
+        "day": "Saturday"
+      },
+      "value": 0.8
+    }
+  ],
+  "note": "A cap on cars rented out would be a rule that sets a maximum on the sum of rentals over a scope."
+}

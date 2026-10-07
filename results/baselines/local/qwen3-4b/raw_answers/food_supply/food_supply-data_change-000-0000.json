@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "Food Supply (World Food Programme, Syria)",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "max_nutrient_factor",
+      "where": {
+        "name": "max_nutrient_factor"
+      },
+      "factor": 2.0
+    }
+  ]
+}

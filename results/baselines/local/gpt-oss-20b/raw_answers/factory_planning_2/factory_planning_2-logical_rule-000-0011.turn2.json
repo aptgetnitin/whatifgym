@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "at_most_one_month_sales",
+      "at_least": 4,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": { "month": "Jan" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": { "month": "Feb" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": { "month": "Mar" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": { "month": "Apr" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": { "month": "May" },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "note": "At most one of the specified months may have any sales."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "min_wheat_shipment_to_idleb",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat",
+        "from_city": "Hama",
+        "to_city": "Idleb"
+      },
+      "sense": ">=",
+      "value": 86400
+    }
+  ]
+}

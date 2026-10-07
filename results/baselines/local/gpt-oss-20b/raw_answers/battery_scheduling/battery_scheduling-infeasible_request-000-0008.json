@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","fixed_decisions":[{"measure":"soc","scope":{"hour":"11-12"},"value":135}],"note":"Commit to exactly 135 kWh at hour 11-12."}

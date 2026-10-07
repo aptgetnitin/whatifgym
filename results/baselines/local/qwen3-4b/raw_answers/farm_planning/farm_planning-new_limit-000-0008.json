@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_calves_raise_min_year1",
+      "measure": "raise_heifers",
+      "scope": {
+        "year": [
+          "Year1"
+        ]
+      },
+      "sense": ">=",
+      "value": 34
+    }
+  ]
+}

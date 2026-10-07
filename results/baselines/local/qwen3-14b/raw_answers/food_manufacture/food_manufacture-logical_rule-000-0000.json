@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"buy_limit_veg2_oil2_veg1","measure":"buy","scope":{"oil":["VEG2","OIL2","VEG1"]},"sense":"<=","value":2}]}

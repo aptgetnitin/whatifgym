@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "sell",
+   "column": "sell",
+   "where": {
+    "month": "Apr",
+    "product": "Prod3"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "make",
+   "column": "make",
+   "where": {
+    "month": "Feb",
+    "product": "Prod3"
+   },
+   "value": 250
+  }
+ ],
+ "note": "Fixed the sell quantity for Apr, Prod3 to 0 and the make quantity for Feb, Prod3 to 250."
+}

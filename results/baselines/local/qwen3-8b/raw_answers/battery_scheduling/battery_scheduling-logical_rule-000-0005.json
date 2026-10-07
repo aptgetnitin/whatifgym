@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_19-20_min",
+   "measure": "soc",
+   "scope": {
+    "hour": "19-20"
+   },
+   "sense": ">=",
+   "value": 7.5
+  },
+  {
+   "name": "charge_03-04_min",
+   "measure": "charge",
+   "scope": {
+    "hour": "03-04"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "soc",
+    "scope": {
+     "hour": "19-20"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "A rule ensures that the stored energy in hour 19-20 is at least 7.5 kWh, and the charging power in hour 03-04 is at least half of that value."
+}

@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "ask": "What is the specific upper limit on units sold that the planner is referring to? The question is too vague to be turned into a machine-checkable scenario without knowing which product, which month, and how the limit is defined (e.g., absolute max, percentage change, etc.)."
+}

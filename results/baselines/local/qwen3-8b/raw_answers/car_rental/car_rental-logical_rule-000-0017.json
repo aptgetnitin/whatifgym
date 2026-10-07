@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "logic": [
+  {
+   "name": "no_repair_tuesday_and_saturday",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "repairs",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "day": "Tuesday",
+      "depot": "*"
+     }
+    },
+    {
+     "measure": "repairs",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "day": "Saturday",
+      "depot": "*"
+     }
+    }
+   ]
+  }
+ ]
+}

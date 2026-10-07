@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_share_of_target",
+      "where": {
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'downgraded to a lower skill level gets capped' likely refers to the retraining limit for downward moves (downgrading), but the model has a separate 'retraining' table for upward moves and a 'downgrade' decision variable for downward moves. The model's retraining table only handles upward moves (retraining to a higher skill level), so there's no direct 'retraining' table for downward moves. The 'downgrade' decision variable is constrained by the 'downgrade_attrition' parameter and the 'max_overmanned' parameter, but the question is unclear whether it refers to a cap on the number of downgrades or the attrition rate of downgraded workers. Given the model schema, the most precise interpretation is that the planner means the downward moves (downgrades) are capped by a fixed number per year, but the model doesn't have a 'retraining' table for downward moves. The 'retraining' table in the model only has rows for upward moves (e.g., unskilled->semi_skilled, semi_skilled->skilled), so the 'downgrade' decision variable is not bounded by a 'retraining' table row. The model has a 'downgrade' decision variable with no explicit cap in the constraints, so the question might be referring to the 'downgrade_attrition' parameter (the share of downgraded workers who leave) or the 'max_overmanned' parameter. However, the question says 'downgraded to a lower skill level gets capped', which likely means the number of downgrades is capped. Since the model doesn't have a cap on the number of downgrades (only on the number of workers on short-time working and overmanning), the most precise change would be to set the 'max_share_of_target' for retraining to 0, but this is for upward moves. Alternatively, the question might be referring to the 'downgrade' decision variable itself being capped, but the model doesn't have a cap on it. Given the ambiguity, the answer is to ask for clarification."
+  }

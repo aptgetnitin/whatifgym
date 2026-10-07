@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "downtime",
+      "rows": [
+        {
+          "month": "Jun",
+          "machine": "vertDrill",
+          "machines_down": 1
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "measure": "make",
+      "scope": {
+        "product": "Prod1",
+        "month": [
+          "Jan",
+          "Feb"
+        ]
+      },
+      "sense": "<=",
+      "value": 600,
+      "name": "cap_Prod1_Jan_Feb"
+    }
+  ],
+  "note": "Add vertical drill downtime in June and cap Prod1 production in Jan-Feb."
+}

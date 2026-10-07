@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "only_one_month_with_sales",
+   "measure": "sell",
+   "scope": {
+    "month": [
+     "Apr",
+     "Jan",
+     "Mar"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Only one of the months Apr, Jan, and Mar can have units sold."
+}

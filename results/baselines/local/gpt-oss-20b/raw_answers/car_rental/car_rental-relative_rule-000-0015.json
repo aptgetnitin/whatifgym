@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"sat_tue_repair_ratio","measure":"repairs","scope":{"day":"Saturday"},"sense":"<=","relative_to":{"measure":"repairs","scope":{"day":"Tuesday"}},"factor":0.6}],"note":"Cars repaired on Saturday must be at most 60% of those repaired on Tuesday."}

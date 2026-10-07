@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_overmanned",
+   "value": 999999
+  },
+  {
+   "op": "set_param",
+   "name": "max_overmanned",
+   "value": 500
+  },
+  {
+   "op": "scale_param",
+   "name": "max_overmanned",
+   "factor": 0
+  },
+  {
+   "op": "set_param",
+   "name": "max_overmanned",
+   "value": 500
+  }
+ ],
+ "relax": [
+  {
+   "constraint": "overmanning",
+   "scope": {
+    "year": 3
+   }
+  }
+ ],
+ "note": "The overmanning cap is lifted for year 3 only by setting it to a large value and then scaling it to zero, and relaxing the overmanning constraint for year 3."
+}

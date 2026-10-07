@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "blend_year1_at_least_2x_year4",
+      "measure": "blend",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "blend",
+        "scope": {
+          "year": "Year4"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "royalty",
+      "where": {
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'yearly royalty shifts' could mean a percentage change or a specific new value. Without knowing the shift amount or direction, the scenario cannot be precisely defined."
+}

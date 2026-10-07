@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": "Mine1"
+      },
+      "value": 0.8
+    }
+  ],
+  "note": "The question asks for a change in Mine1's ore grade to 0.8, which corresponds to setting the 'quality' column for Mine1 in the 'mines' table."
+}

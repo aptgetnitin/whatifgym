@@ -1,0 +1,4 @@
+{
+  "base_model": "manpower_planning",
+  "ask": "What specific change to the short-time working limit per skill level are you referring to? The parameter `max_short_time` is a scalar value (workers per skill level), but the question doesn't specify whether it's a change in the absolute limit, a relative change, or a change in the number of skill levels affected."
+}

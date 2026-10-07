@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine4"
+      },
+      "value": 15300000
+    }
+  ],
+  "note": "A minimum batch for a mine means that if it is extracted, it must be at least that amount."
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_overmanned",
+      "where": {
+        "year": [
+          1,
+          2,
+          3
+        ]
+      },
+      "value": 220
+    }
+  ],
+  "note": "The planner wants to cap total short-time working at 220 workers across all years and skill levels. However, the model's `max_overmanned` parameter is for overmanning allowance, not short-time working. The correct parameter for short-time working is `max_short_time`, which is per skill level. The question mentions 'all years and skill levels combined', but the model's `max_short_time` is a per-skill-level limit. The planner likely meant to cap total short-time workers across all skill levels, but the model doesn't have a combined cap on short-time workers. The `max_overmanned` parameter is for overmanning, not short-time working. This is a misinterpretation of the model's parameters."
+  }

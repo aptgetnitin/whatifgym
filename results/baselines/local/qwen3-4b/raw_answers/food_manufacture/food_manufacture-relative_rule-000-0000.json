@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "oils_bought_at_least_75_oil2",
+      "measure": "buy",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "oil": [
+            "OIL2",
+            "VEG1",
+            "VEG2",
+            "OIL1",
+            "OIL3"
+          ]
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

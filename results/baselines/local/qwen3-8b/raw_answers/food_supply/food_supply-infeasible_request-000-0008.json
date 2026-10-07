@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase",
+   "column": "purchase",
+   "where": {
+    "food": "Oil",
+    "supplier": "Hassakeh"
+   },
+   "value": 200550
+  }
+ ],
+ "rules": [
+  {
+   "name": "min_purchase_oil_hassakeh",
+   "measure": "purchase",
+   "scope": {
+    "food": "Oil",
+    "supplier": "Hassakeh"
+   },
+   "sense": ">=",
+   "value": 200550
+  }
+ ],
+ "note": "Set the purchase of Oil from Hassakeh to 200550 and enforce it as a minimum."
+}

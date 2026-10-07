@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "stay_closed[year, mine]",
+      "scope": {
+        "year": [
+          "Year4",
+          "Year5"
+        ]
+      }
+    }
+  ]
+  
+    
+  }

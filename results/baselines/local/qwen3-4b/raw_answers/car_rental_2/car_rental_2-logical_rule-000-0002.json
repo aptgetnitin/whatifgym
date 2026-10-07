@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "rule_for_plymouth_thursday_rentals",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Monday",
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 1260
+    }
+  ]
+}

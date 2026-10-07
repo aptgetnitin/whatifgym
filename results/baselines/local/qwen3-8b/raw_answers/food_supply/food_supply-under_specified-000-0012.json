@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "nutrients",
+   "column": "min_per_person",
+   "where": {
+    "nutrient": "VitaminA(ug)"
+   },
+   "factor": 0.5
+  },
+  {
+   "op": "scale",
+   "table": "nutrients",
+   "column": "min_per_person",
+   "where": {
+    "nutrient": "VitaminA(ug)"
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The minimum daily intake per person for nutrient VitaminA(ug) is changed by scaling it by 0.5 and 2 to represent a change in the minimum requirement."
+}

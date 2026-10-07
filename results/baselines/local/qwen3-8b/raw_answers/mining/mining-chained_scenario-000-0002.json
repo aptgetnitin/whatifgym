@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine3"
+      }
+    }
+  ],
+  "note": "Removing Mine3 from the mines table effectively deletes the mine and re-plans the scenario."
+}

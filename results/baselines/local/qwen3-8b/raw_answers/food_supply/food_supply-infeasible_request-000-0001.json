@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "food": "Wheat",
+        "camp": "Qamishli"
+      },
+      "value": 13.1
+    }
+  ],
+  "note": "Fix the ration of Wheat in Qamishli to exactly 13.1 units per person per day."
+}

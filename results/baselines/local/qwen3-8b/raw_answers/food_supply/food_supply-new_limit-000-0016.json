@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "arcs",
+   "rows": [
+    {
+     "from_city": "Homs",
+     "to_city": "Idleb",
+     "transport_cost": 25
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "name": "milk_shipment_min",
+   "measure": "flow",
+   "scope": {
+    "food": "Milk"
+   },
+   "sense": ">=",
+   "value": 36500
+  }
+ ],
+ "note": "A new requirement is added to ensure the total shipment of milk meets the specified minimum."
+}

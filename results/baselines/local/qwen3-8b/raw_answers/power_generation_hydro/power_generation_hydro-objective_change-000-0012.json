@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "cost",
+   "scope": {
+    "type": "thermal"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "output",
+   "scope": {
+    "period": "09-15",
+    "type": "thermal"
+   }
+  }
+ ],
+ "note": "First, keep the total generating cost at its minimum. Then, minimise the thermal output for the 09-15 period."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"Daraa_flow_minimum","measure":"flow","scope":{"to_city":"Daraa"},"sense":">=","relative_to":{"measure":"flow"},"factor":0.1}],"note":"At least 10% of all food shipped must arrive at Daraa."}

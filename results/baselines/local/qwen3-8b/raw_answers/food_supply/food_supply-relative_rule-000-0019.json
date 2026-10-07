@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "purchase_homs_at_least_twice_hassakeh",
+   "measure": "purchase",
+   "scope": {
+    "supplier": "Homs"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "supplier": "Hassakeh"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The purchase volume for Homs must be at least twice that of Hassakeh."
+}

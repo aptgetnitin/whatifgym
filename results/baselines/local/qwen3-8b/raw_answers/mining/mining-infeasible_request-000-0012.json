@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "royalty",
+   "where": {
+    "mine": "Mine2"
+   },
+   "value": 6
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine2_extract_min",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine2"
+   },
+   "sense": ">=",
+   "value": 21500000
+  }
+ ],
+ "note": "The question asks to set Mine2's royalty and enforce a minimum extraction amount."
+}

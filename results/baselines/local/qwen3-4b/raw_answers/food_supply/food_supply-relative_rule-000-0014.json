@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_at_least_3x_milk",
+      "measure": "flow",
+      "scope": {
+        "food": "Oil"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "food": "Milk"
+        }
+      },
+      "factor": 3.0
+    },
+    {
+      "name": "wheat_at_least_50_percent",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat"
+      },
+      "sense": ">=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "food": "all"
+        }
+      }
+    }
+  ]
+}

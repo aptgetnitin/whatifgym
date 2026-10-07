@@ -1,0 +1,25 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "semi_skilled"
+      },
+      "value": 11900
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "workforce",
+      "scope": {
+        "year": 3,
+        "skill": "semi_skilled"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "all",
+    "from_depot": "all",
+    "to_depot": "all"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "all",
+    "depot": "all"
+   }
+  }
+ ],
+ "note": "Prioritise maximising weekly profit, then minimising total damaged cars transferred, and finally minimising total damaged cars kept overnight at depots."
+}

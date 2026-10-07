@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "fixed_decisions": [
+    {
+      "measure": "sell",
+      "scope": {
+        "month": "Apr",
+        "product": "Prod3"
+      },
+      "value": 0
+    },
+    {
+      "measure": "make",
+      "scope": {
+        "month": "Feb",
+        "product": "Prod3"
+      },
+      "value": 250
+    }
+  ],
+  "note": "Set Apr Prod3 sales to 0 and Feb Prod3 production to exactly 250."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "Food Supply (World Food Programme, Syria)",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Jubb_al_Jarrah"
+      },
+      "factor": 0.0
+    }
+  ],
+  "note": "The question asks about a change in beneficiaries for a specific camp, but the exact change is not specified. The scenario DSL requires a precise change (e.g., scale, shift, set). Since the question is vague about the magnitude of the change, we cannot form a precise scenario. The planner needs to specify the exact change (e.g., 'doubles', 'decreases by 1000 people')."
+  }

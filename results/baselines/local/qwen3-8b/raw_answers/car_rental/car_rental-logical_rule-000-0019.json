@@ -1,0 +1,52 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "logic": [
+  {
+   "name": "at_most_one_repair_day",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "repairs",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "day": "Friday"
+     }
+    },
+    {
+     "measure": "repairs",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "day": "Wednesday"
+     }
+    },
+    {
+     "measure": "repairs",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "day": "Thursday"
+     }
+    },
+    {
+     "measure": "repairs",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "day": "Tuesday"
+     }
+    },
+    {
+     "measure": "repairs",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "day": "Saturday"
+     }
+    }
+   ]
+  }
+ ]
+}

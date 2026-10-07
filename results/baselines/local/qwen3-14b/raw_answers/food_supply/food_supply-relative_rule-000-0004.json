@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "milk_shipment_limit",
+      "measure": "flow",
+      "scope": {
+        "food": "Milk"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {}
+      },
+      "factor": 0.15
+    }
+  ]
+}

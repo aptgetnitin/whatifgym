@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "land_groups",
+      "column": "grain_yield",
+      "where": {
+        "land_group": "Group1"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Grain yield per acre for land group Group1 is 20% lower."
+}

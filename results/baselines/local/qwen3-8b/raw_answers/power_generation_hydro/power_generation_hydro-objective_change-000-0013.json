@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "cost"
+  },
+  {
+   "sense": "min",
+   "measure": "ngen",
+   "scope": {
+    "type": [
+      "Thermal0",
+      "Thermal1",
+      "Thermal2"
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "pump",
+   "scope": {
+    "period": [
+      "00-06",
+      "06-09",
+      "09-15",
+      "15-18",
+      "18-24"
+    ]
+   }
+  }
+ ],
+ "note": "Prioritise minimising total generating cost, then the least total number of thermal units running, and finally the most total pumping power."
+}

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "fixed_decisions": [
+  {
+   "measure": "ration",
+   "scope": {
+    "food": "Milk",
+    "camp": "Hassakeh"
+   },
+   "value": 7.16
+  }
+ ],
+ "note": "Fix the ration of Milk in Hassakeh to exactly 7.16 units per person per day."
+}

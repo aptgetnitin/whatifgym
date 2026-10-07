@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "no_repair_saturday_wednesday",
+      "measure": "repairs",
+      "scope": {
+        "day": [
+          "Saturday",
+          "Wednesday"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "total_items_at_most_1_5_bins",
+      "measure": "x[item, bin]",
+      "scope": {
+        "item": [
+          "item0",
+          "item1",
+          "item2",
+          "item3",
+          "item4",
+          "item5",
+          "item6",
+          "item7",
+          "item8",
+          "item9",
+          "item10"
+        ]
+      },
+      "sense": "<=",
+      "value": 1.5
+    },
+    {
+      "name": "bins_used_bin10_at_least_3_bins_used_bin0",
+      "measure": "y[bin]",
+      "scope": {
+        "bin": [
+          "bin10"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "y[bin]",
+        "scope": {
+          "bin": [
+            "bin0"
+          ]
+        }
+      },
+      "factor": 3.0
+    }
+  ]
+}

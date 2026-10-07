@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "min_75pct_start_00_06",
+      "measure": "nstart",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "nstart"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "At least 75% of all thermal units started must be in period 00-06."
+}

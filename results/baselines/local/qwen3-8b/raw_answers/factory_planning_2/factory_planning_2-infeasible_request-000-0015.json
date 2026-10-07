@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "min_make_prod7_feb",
+   "measure": "make",
+   "scope": {
+    "month": "Feb",
+    "product": "Prod7"
+   },
+   "sense": ">=",
+   "value": 750
+  }
+ ],
+ "note": "A rule enforces a minimum production level for a specific product and month."
+}

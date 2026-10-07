@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","logic":[{"name":"thermal_output_min_batch_06_09","at_least":1,"of":[{"measure":"output","scope":{"period":"06-09"},"sense":"==","value":0},{"measure":"output","scope":{"period":"06-09"},"sense":">=","value":45000}]}],"note":"If any thermal output occurs in period 06-09, it must be at least 45,000 MW."}

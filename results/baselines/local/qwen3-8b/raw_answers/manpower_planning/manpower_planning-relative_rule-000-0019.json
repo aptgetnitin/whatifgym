@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "short_time_limit_year_1",
+   "measure": "short_time",
+   "scope": {
+    "year": 1
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "short_time",
+    "scope": {
+     "year": [
+      2,
+      3
+     ]
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The short-time working in year 1 is limited to 25% of the total short-time working in years 2 and 3."
+}

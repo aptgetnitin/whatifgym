@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","data_changes":[{"op":"scale","table":"transfer_costs","column":"cost","where":{"from_depot":"Glasgow","to_depot":"Birmingham"},"factor":0.5}],"note":"Glasgow-to-Birmingham transfer cost reduced by 50%."}

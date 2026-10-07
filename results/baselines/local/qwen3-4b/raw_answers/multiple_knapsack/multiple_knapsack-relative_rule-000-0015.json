@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item8_at_least_2x_item13",
+      "measure": "x",
+      "scope": {
+        "item": "item8"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": "item13"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

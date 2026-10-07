@@ -1,0 +1,21 @@
+{
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": [
+          "grinder",
+          "vertDrill",
+          "horiDrill",
+          "borer",
+          "planer"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is unclear. 'Shifts for every row' is ambiguous. It could mean scaling the installed count by 1.0 (no change), or it could mean adding a new row for each machine type with a different installed count. Without more context, it's impossible to determine the precise data change."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod1",
+        "month": "Mar"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The question asks for the total units made in March, which is a decision variable. The model does not have a direct 'make' measure for a single month without a product, so the question is ambiguous and cannot be precisely formulated."
+}

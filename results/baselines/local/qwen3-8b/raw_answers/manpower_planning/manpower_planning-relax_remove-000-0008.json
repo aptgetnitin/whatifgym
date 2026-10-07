@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "year": 2
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_share_of_target",
+   "where": {
+    "year": 2
+   },
+   "value": 0
+  }
+ ],
+ "note": "Lift the retraining limit for year 2 by setting max_per_year and max_share_of_target to 0."
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "food": "Wheat",
+        "camp": "Dayr_Az_Zor"
+      },
+      "value": 5.2
+    }
+  ],
+  "rules": [
+    {
+      "name": "ration_wheat_dayr_az_zor",
+      "measure": "ration",
+      "scope": {
+        "food": "Wheat",
+        "camp": "Dayr_Az_Zor"
+      },
+      "sense": "==",
+      "value": 5.2
+    }
+  ],
+  "note": "Fix the ration of Wheat in Dayr_Az_Zor to exactly 5.2 units per person per day and ensure the rule enforces this constraint."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "foods",
+      "column": "international_price",
+      "where": {
+        "food": "Dried skim milk (enriched) (DSM)"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The international price for food Dried skim milk (enriched) (DSM) changes, but the question does not specify the change. This scenario requires a specific change (e.g., percentage increase/decrease) to be machine-checkable."
+}

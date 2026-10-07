@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "fixed_decisions": [
+    {
+      "measure": "flow",
+      "scope": {
+        "food": "Oil",
+        "from_city": "Ar Raqqa",
+        "to_city": "Dayr_Az_Zor"
+      },
+      "value": 40000
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "max_expansions_plymouth",
+      "measure": "expand",
+      "scope": {
+        "depot": "Plymouth",
+        "step": [
+          "1",
+          "2"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.25
+    },
+    {
+      "name": "max_expansions_manchester",
+      "measure": "expand",
+      "scope": {
+        "depot": "Manchester",
+        "step": [
+          "1",
+          "2"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.25
+    }
+  ]
+}

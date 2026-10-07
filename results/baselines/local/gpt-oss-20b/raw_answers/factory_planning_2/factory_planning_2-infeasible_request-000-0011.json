@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"prod7_min_make","measure":"make","scope":{"product":"Prod7"},"sense":">=","value":2800}]}

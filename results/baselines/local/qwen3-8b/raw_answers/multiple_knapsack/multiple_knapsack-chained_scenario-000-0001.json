@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "items",
+   "where": {
+    "item": "item13"
+   }
+  },
+  {
+   "op": "scale",
+   "table": "bins",
+   "column": "capacity",
+   "where": {
+    "bin": [
+     "bin0",
+     "bin1",
+     "bin2",
+     "bin3",
+     "bin4"
+    ]
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The capacity of each bin is reduced by 25%, and item13 is removed from the items table."
+}

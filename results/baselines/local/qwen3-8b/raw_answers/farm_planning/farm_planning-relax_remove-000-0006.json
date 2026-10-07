@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "housing_capacity",
+   "where": {
+    "year": [
+     "Year1",
+     "Year2"
+    ]
+   },
+   "value": 130
+  }
+ ],
+ "note": "Lifting the housing-capacity limit for Year1 and Year2 only by setting it to 130."
+}

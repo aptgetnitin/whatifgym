@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "store",
+   "column": "store",
+   "where": {
+    "month": "Mar",
+    "product": "Prod2"
+   },
+   "value": 500
+  }
+ ],
+ "note": "Fixing the store value for Mar and Prod2 to 500 units."
+}

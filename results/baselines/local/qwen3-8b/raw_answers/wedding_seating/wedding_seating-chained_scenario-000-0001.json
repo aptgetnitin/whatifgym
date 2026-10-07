@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "wedding_seating",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "guests",
+   "where": {
+    "guest": "Q"
+   }
+  },
+  {
+   "op": "scale_param",
+   "name": "max_tables",
+   "factor": 1.5
+  }
+ ],
+ "note": "Keep the removal of guest Q and scale the maximum number of tables by 1.5."
+}

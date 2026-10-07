@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "ask": "Which transfer cost per car value is changing? Please specify the from_depot and to_depot for the transfer cost you want to change."
+}

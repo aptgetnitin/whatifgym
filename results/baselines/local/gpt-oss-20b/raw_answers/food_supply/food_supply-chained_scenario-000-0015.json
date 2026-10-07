@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"remove","table":"camps","where":{"camp":"Dayr_Az_Zor"}}],"rules":[{"name":"min_flow_to_Daraa","measure":"flow","scope":{"to_city":"Daraa"},"sense":">=","value":12050}],"note":"Require total food shipped to Daraa at least 12050 units."}

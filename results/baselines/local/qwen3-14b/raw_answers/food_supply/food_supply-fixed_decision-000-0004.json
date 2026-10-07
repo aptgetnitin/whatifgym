@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "fixed_decisions": [
+    {
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Jubb_al_Jarrah"
+      },
+      "value": 0
+    },
+    {
+      "measure": "flow",
+      "scope": {
+        "food": "Oil",
+        "from_city": "Ar Raqqa",
+        "to_city": "Dayr_Az_Zor"
+      },
+      "value": 25000
+    }
+  ]
+}

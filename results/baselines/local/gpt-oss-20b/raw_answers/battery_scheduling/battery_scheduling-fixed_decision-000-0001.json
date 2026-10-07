@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","fixed_decisions":[{"measure":"charge","scope":{"hour":"02-03"},"value":0},{"measure":"discharge","scope":{"hour":"19-20"},"value":1.1}],"note":"Fixed charge at 02-03 to 0 kW and discharge at 19-20 to 1.1 kW."}

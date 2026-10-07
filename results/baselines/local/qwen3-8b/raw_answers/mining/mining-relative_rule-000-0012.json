@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine2_at_least_2x_mine1",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extract",
+    "scope": {
+     "mine": "Mine1"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "A rule that enforces the extracted tons of Mine2 to be at least twice that of Mine1."
+}

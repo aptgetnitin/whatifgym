@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"heifer_sale_batch_year1","at_least":1,"of":[{"measure":"sell_heifers","scope":{"year":"Year1"},"sense":"<=","value":0},{"measure":"sell_heifers","scope":{"year":"Year1"},"sense":">=","value":46}]}],"note":"If any heifer calves are sold in Year1, the number sold must be at least 46."}

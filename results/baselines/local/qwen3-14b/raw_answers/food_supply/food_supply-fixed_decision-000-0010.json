@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "food": "Corn-soya blend (CSB)",
+    "from_city": "Hassakeh",
+    "to_city": "Qamishli"
+   },
+   "value": 4400
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat",
+    "camp": "Jubb_al_Jarrah"
+   },
+   "value": 0
+  }
+ ]
+}

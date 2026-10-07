@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod7",
+        "month": "Mar"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The question asks for the minimum production of Prod7 in March, which is a fixed decision. However, the model does not have a direct 'make' decision for a specific month and product without a market limit. The question is about the capability of the model to deliver at least 2000 units made for March, product Prod7, which implies a constraint on the production capacity. Since the model's decision variables include 'make[month, product]', the question is asking if the model can produce at least 2000 units of Prod7 in March. However, the model's constraints and parameters do not directly allow for a fixed production target without a market limit. The question might be better phrased as a rule or a fixed decision, but the current question is about the model's capability to deliver a certain amount, which is not directly a data change or rule in the model. The answer is that the question cannot be made precise from the information available."
+  }

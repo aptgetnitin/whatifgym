@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "factory_planning","data_changes": [{"op": "set_param","name": "max_inventory","value": 900}],"note": "Setting the max_inventory parameter to 900 units per product per month."}

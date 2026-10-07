@@ -1,0 +1,37 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "months",
+      "column": "month",
+      "where": {
+        "month": [
+          "Feb",
+          "Mar",
+          "Jun",
+          "Jan",
+          "May"
+        ]
+      },
+      "value": "1"
+    }
+  ],
+  "rules": [
+    {
+      "name": "only_one_month_produced",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Feb",
+          "Mar",
+          "Jun",
+          "Jan",
+          "May"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

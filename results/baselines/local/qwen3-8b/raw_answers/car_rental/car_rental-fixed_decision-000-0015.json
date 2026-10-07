@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "fixed_decisions": [
+  {
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Monday",
+    "depot": "Birmingham"
+   },
+   "value": 180
+  }
+ ],
+ "note": "Fixing the undamaged stock at Birmingham on Monday morning to 180."
+}

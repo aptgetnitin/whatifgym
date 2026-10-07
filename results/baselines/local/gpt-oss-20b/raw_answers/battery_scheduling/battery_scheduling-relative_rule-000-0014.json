@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"max_20pct_charge_02-03","measure":"charge","scope":{"hour":"02-03"},"sense":"<=","relative_to":{"measure":"charge","scope":{}},"factor":0.2}],"note":"At most 20% of the total charging power may be allocated to hour 02-03."}

@@ -1,0 +1,11 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_overmanned",
+      "value": 250
+    }
+  ],
+  "note": "The planner mentions revisiting the overmanning allowance per year, so we set the parameter max_overmanned to 250 as per the key values provided."
+}

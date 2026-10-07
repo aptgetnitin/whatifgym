@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "ask": "What is the upper limit on units made? Which decision measure is being bounded? What is the scope of the bound?"
+}

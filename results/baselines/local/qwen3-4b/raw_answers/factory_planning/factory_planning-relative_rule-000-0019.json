@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "month": "Jan"
+      },
+      "factor": 0.1
+    }
+  ],
+  "note": "The question asks for Jan to account for at most 10% of all units sold. This implies scaling the max_sales for Jan by 0.1 to reflect a 90% reduction (since 10% of total sales). However, the question is ambiguous: it doesn't specify what 'all units sold' refers to (total across products or per product). But given the context of the model, it's likely total sales across all products. The scenario DSL requires precise data changes, so we interpret it as scaling the max_sales for Jan by 0.1 to represent a 90% reduction in Jan's max sales (so Jan's max sales become 10% of the original total)."
+}

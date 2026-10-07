@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "measure": "retrain",
+   "scope": {},
+   "sense": "<=",
+   "value": 780,
+   "name": "cap_retrain_total"
+  }
+ ]
+}

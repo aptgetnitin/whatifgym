@@ -1,0 +1,58 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "total_items_to_bins_ratio",
+      "measure": "x",
+      "scope": {
+        "item": [
+          "item0",
+          "item1",
+          "item2",
+          "item3",
+          "item4",
+          "item5",
+          "item6",
+          "item7",
+          "item8",
+          "item9",
+          "item10"
+        ],
+        "bin": [
+          "bin0",
+          "bin1",
+          "bin2",
+          "bin3",
+          "bin4",
+          "bin5",
+          "bin6",
+          "bin7",
+          "bin8",
+          "bin9",
+          "bin10"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "y",
+        "scope": {
+          "bin": [
+            "bin0",
+            "bin1",
+            "bin2",
+            "bin3",
+            "bin4",
+            "bin5",
+            "bin6",
+            "bin7",
+            "bin8",
+            "bin9",
+            "bin10"
+          ]
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod5_stock_at_least_2_prod7",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod7"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "A relative rule comparing the sum of store for Prod5 to twice the sum of store for Prod7."
+}

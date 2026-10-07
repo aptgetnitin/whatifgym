@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_shipped_at_most_25_of_total_bought",
+   "measure": "flow",
+   "scope": {
+    "food": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "food": "*"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The total food shipped (sum of flow) is constrained to be at most 25% of the total food bought (sum of purchase)."
+}

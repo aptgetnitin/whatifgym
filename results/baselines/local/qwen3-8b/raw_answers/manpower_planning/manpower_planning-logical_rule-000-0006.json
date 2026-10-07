@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "max_short_time_workers",
+   "measure": "short_time",
+   "scope": {
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Limit the total number of workers on short-time working across all skill levels to 2."
+}

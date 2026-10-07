@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "fixed_decisions": [
+  {
+   "measure": "soc",
+   "scope": {
+    "hour": "23-24"
+   },
+   "value": 7.5
+  },
+  {
+   "measure": "charge",
+   "scope": {
+    "hour": "02-03"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixed decisions set the stored energy (soc) for hour 23-24 to 7.5 kWh and the charging power (charge) for hour 02-03 to 0 kW."
+}

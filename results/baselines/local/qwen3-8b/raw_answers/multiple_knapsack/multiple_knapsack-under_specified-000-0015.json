@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "bins",
+   "where": {
+    "bin": "bin0"
+   }
+  }
+ ],
+ "note": "Removing a bin reduces the number of available bins for packing items."
+}

@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "extract_year1_zero_or_at_least_8625000",
+   "measure": "extract",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 0,
+   "relative_to": {
+    "measure": "extract",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "extract",
+   "scope": {
+    "year": "Year1"
+   },
+   "value": 0
+  }
+ ]
+}

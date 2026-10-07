@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "factory_planning_2", "ask": "Please specify which market limit (e.g., a particular product, month, or all) is changing and by how much."}

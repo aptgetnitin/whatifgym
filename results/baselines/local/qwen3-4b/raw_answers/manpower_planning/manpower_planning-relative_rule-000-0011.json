@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3
+      },
+      "value": 0.15
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'at most 15% of all workers made redundant' refers to a percentage of the total redundancies across all years and skills, but the model only tracks redundancies per year and skill. Without specifying the scope (e.g., total redundancies in year 3, or across all years), it's unclear how to interpret this constraint."
+}

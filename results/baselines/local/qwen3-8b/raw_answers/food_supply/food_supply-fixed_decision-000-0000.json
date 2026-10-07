@@ -1,0 +1,80 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase",
+   "column": "purchase",
+   "where": {
+    "food": "Oil",
+    "supplier": [
+     "Aleppo",
+     "Amman",
+     "As_Suweida",
+     "Beirut",
+     "Damascus",
+     "Daraa",
+     "Dayr_Az_Zor",
+     "Gaziantep",
+     "Hama",
+     "Hassakeh",
+     "Homs"
+    ]
+   },
+   "value": 3650
+  }
+ ],
+ "rules": [
+  {
+   "name": "oil_purchase_per_supplier",
+   "measure": "purchase",
+   "scope": {
+    "food": "Oil",
+    "supplier": [
+     "Aleppo",
+     "Amman",
+     "As_Suweida",
+     "Beirut",
+     "Damascus",
+     "Daraa",
+     "Dayr_Az_Zor",
+     "Gaziantep",
+     "Hama",
+     "Hassakeh",
+     "Homs"
+    ]
+   },
+   "sense": "==",
+   "value": 3650
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "purchase",
+   "scope": {
+    "food": "Oil",
+    "supplier": [
+     "Aleppo",
+     "Amman",
+     "As_Suweida",
+     "Beirut",
+     "Damascus",
+     "Daraa",
+     "Day, Az_Zor",
+     "Gaziantep",
+     "Hama",
+     "Hassakeh",
+     "Homs"
+    ]
+   },
+   "value": 3650
+  }
+ ]
+}

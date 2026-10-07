@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "price_same_depot",
+      "factor": 0.9
+    }
+  ],
+  "note": "The price for return to same depot is scaled down by 10% for all rental lengths."
+}

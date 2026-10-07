@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "logic": [
+  {
+   "name": "stock_prod2_condition",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "store",
+     "sense": ">=",
+     "value": 220,
+     "scope": {
+      "product": "Prod2"
+     }
+    },
+    {
+     "measure": "make",
+     "sense": ">",
+     "value": 0,
+     "scope": {
+      "month": "Jun",
+      "product": "Prod3"
+     }
+    }
+   ]
+  }
+ ]
+}

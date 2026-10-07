@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","logic":[{"name":"Birmingham_repair_rule","at_least":1,"of":[{"measure":"repairs","scope":{"depot":"Birmingham"},"sense":"==","value":0},{"measure":"repairs","scope":{"depot":"Birmingham"},"sense":">=","value":300}]}],"note":"Cars repaired at Birmingham must be either zero or at least 300 over the week."}

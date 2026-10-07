@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg1_jun_min_batch",
+   "measure": "buy",
+   "scope": {
+    "month": "Jun",
+    "oil": "VEG1"
+   },
+   "sense": ">=",
+   "value": 1980
+  }
+ ],
+ "note": "A minimum batch requirement on the purchase of VEG1 in June."
+}

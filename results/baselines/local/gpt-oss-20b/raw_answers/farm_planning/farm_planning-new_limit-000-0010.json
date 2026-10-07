@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"max_heifer_calf_sales_year1","measure":"sell_heifers","scope":{"year":"Year1"},"sense":"<=","value":25}]}

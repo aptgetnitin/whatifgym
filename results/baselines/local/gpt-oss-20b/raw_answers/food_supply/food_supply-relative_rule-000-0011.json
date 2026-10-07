@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"shipped_below_25pct_bought","measure":"flow","scope":{},"sense":"<=","relative_to":{"measure":"purchase","scope":{}},"factor":0.25}],"note":"Keep total food shipped at or below 25% of total food bought."}

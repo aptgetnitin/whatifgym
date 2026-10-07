@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "max_unskilled_short_time",
+   "measure": "short_time",
+   "scope": {
+    "skill": "unskilled"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "short_time",
+    "scope": {
+     "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+     ]
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "Limits the proportion of short-time workers at the unskilled skill level to 10% of the total short-time workers."
+}

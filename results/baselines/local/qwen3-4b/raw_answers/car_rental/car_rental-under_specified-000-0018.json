@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "damaged_left",
+      "column": "damaged_left",
+      "where": {
+        "day": "*",
+        "depot": "*"
+      },
+      "value": 0
+    }
+  ]
+}

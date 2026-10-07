@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "items",
+      "column": "item",
+      "where": {
+        "item": [
+          "item10",
+          "item8",
+          "item9"
+        ]
+      },
+      "value": "1"
+    }
+  ],
+  "note": "The planner's question states that only one of these items can be placed, which translates to a rule that the sum of their placements is at most 1."
+  }

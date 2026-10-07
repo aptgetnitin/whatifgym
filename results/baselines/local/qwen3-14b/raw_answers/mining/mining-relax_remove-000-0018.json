@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_mines",
+      "value": 5
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "max_operating",
+      "scope": {
+        "year": "Year2"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "max_discharge_21-22",
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "Limits the total discharging power in the 21-22 hour to 3 kW."
+}

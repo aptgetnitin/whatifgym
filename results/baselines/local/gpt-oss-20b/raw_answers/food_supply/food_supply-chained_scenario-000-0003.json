@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": "Hassakeh"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "max_flow_CSB",
+      "measure": "flow",
+      "scope": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "sense": "<=",
+      "value": 12300
+    }
+  ],
+  "note": "Keep that change. In addition: total food shipped for CSB may not exceed 12300."
+}

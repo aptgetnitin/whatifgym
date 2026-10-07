@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod5_stock_rule",
+      "measure": "store",
+      "scope": {
+        "product": "Prod5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod5"
+        }
+      },
+      "factor": 0
+    }
+  ],
+  "logic": [
+    {
+      "name": "prod5_stock_logic",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "product": "Prod5"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "product": "Prod5"
+          },
+          "sense": ">=",
+          "value": 500
+        }
+      ]
+    }
+  ]
+}

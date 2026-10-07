@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "horiDrill"
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "Retiring one horizontal drill reduces the installed count by 10%."
+}

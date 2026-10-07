@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"measure":"charge","sense":"<=","value":7},{"measure":"soc","scope":{"hour":"19-20"},"sense":"<=","value":8}]}

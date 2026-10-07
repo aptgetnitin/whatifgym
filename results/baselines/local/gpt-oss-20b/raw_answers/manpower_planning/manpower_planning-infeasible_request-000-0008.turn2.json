@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"measure":"workforce","scope":{"skill":"semi_skilled"},"sense":">=","value":11900}],"note":"Check feasibility of having at least 11,900 semi‑skilled workers across all years."}

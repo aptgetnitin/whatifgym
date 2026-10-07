@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "fixed_ration_csb_jubb_al_jarrah",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Jubb_al_Jarrah"
+      },
+      "sense": "==",
+      "value": 7
+    }
+  ],
+  "note": "Fix the ration of Corn-soya blend (CSB) in Jubb_al_Jarrah to exactly 7 units per person per day."
+}

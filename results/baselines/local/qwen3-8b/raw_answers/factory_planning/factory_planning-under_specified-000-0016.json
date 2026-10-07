@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "factory_planning","ask": "What is the maximum cap on units made that would still allow the original optimal solution to be feasible?"}

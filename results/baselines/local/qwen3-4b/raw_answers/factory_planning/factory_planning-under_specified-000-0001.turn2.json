@@ -1,0 +1,4 @@
+{
+  "role": "agent",
+  "text": "What is the specific upper limit on units in stock that the planner is referring to? The model has a parameter `max_inventory` which defines the storage limit per product per month, but the question is vague about whether this is the limit being changed or if there's another constraint."
+  }

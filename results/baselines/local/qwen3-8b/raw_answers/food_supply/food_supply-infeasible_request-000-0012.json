@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "arcs",
+      "column": "transport_cost",
+      "where": {
+        "from_city": "Hassakeh",
+        "to_city": "Qamishli"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "min_flow_hassakeh_to_qamishli",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat",
+        "from_city": "Hassakeh",
+        "to_city": "Qamishli"
+      },
+      "sense": ">=",
+      "value": 39250
+    }
+  ],
+  "note": "Set transport cost to 0 to ensure the flow is not constrained by cost, and enforce a minimum flow of 39250 units of Wheat from Hassakeh to Qamishli."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"max_mine_years_worked","measure":"operate","scope":{},"sense":"<=","value":13}]}

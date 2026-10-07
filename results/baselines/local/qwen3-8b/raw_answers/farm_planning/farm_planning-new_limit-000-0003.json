@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "max_cattle_head_year4",
+   "measure": "herd",
+   "scope": {
+    "year": "Year4"
+   },
+   "sense": "<=",
+   "value": 100
+  }
+ ],
+ "note": "The total head of cattle in Year4 is limited to 100."
+}

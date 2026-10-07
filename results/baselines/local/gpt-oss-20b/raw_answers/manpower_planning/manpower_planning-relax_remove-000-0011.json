@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","relax":[{"constraint":"retraining_limit","scope":{"year":[1,3]}}],"note":"Lift retraining limits for years 1 and 3 only."}

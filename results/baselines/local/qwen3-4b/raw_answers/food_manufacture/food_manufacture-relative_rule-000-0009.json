@@ -1,0 +1,50 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "mar_prod_at_most_80_of_jan",
+      "measure": "produce",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": "<=",
+      "value": 0.8,
+      "relative_to": {
+        "measure": "produce",
+        "scope": {
+          "month": "Jan"
+        }
+      }
+    },
+    {
+      "name": "total_refined_at_most_75_of_bought",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      }
+    }
+  ]
+}

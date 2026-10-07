@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "expand",
+   "column": "expand",
+   "where": {
+    "depot": "Manchester",
+    "step": 2
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the expansion option for Manchester step 2 to 0."
+}

@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "rentals_cap",
+   "measure": "rentals",
+   "scope": {},
+   "sense": "<=",
+   "value": 2550
+  }
+ ],
+ "note": "A global cap on the total number of cars rented out across all days and depots."
+}

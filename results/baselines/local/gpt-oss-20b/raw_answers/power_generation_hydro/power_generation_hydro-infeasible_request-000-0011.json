@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"min_output_06-09","measure":"output","scope":{"period":"06-09"},"sense":">=","value":60000},{"name":"min_output_15-18","measure":"output","scope":{"period":"15-18"},"sense":">=","value":77200}],"note":"Check feasibility of the two thermal output requests."}

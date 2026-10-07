@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "Jan_to_Mar_requirement",
+      "measure": "produce",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "produce",
+        "scope": {
+          "month": "Jan"
+        }
+      },
+      "factor": 680
+    }
+  ],
+  "note": "Ensures that production in March is at least 680 times production in January."
+}

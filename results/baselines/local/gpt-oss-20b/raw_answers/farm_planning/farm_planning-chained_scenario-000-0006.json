@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","data_changes":[{"op":"remove","table":"land_groups","where":{"land_group":"Group1"}}],"rules":[{"measure":"grow_grain","scope":{"land_group":"Group2"},"sense":"<=","value":2.5,"name":"cap_grow_grain_Group2"}],"note":"Remove land group Group1 and cap grain growth on Group2 to 2.5 tons."}

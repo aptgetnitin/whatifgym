@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod7",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "value": 2800
+    }
+  ],
+  "note": "The question asks for the total units made for product Prod7 across all months. However, the model's decision variable 'make' tracks production per month and product, so the total made for Prod7 is sum(make[month, Prod7] over months). The question is about the production capacity, not sales. The model does not have a direct measure for total made across all months, so the question is ambiguous and cannot be precisely formulated."
+}

@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_excl",
+   "measure": "soc",
+   "scope": {
+    "hour": [
+     "22-23",
+     "07-08",
+     "11-12"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Only one of the specified hours can have battery stored energy (soc) at 0 kWh."
+}

@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "power_generation_hydro","ask": "Please specify which hourly running cost per unit (e.g., Thermal0, Thermal1, Thermal2) and by how much it changes across the board."}

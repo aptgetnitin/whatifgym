@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min_extract_year2_mine3",
+      "measure": "extract",
+      "scope": {
+        "year": "Year2",
+        "mine": "Mine3"
+      },
+      "sense": ">=",
+      "value": 6500000
+    }
+  ],
+  "note": "Check feasibility of extracting at least 6.5 million tons from Mine3 in Year2."
+}

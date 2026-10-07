@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "charge",
+   "where": {
+    "hour": [
+     "02-03"
+    ]
+   },
+   "value": 1.4
+  }
+ ],
+ "note": "Fixed the charge power for hour 02-03 to 1.4 kW and optimise the rest."
+}

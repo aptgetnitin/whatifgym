@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "max_beet_year2",
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "value": 66
+    }
+  ]
+}

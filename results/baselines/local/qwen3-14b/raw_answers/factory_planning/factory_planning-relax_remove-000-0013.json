@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours_per_month",
+      "column": "hours_per_month",
+      "where": {
+        "month": [
+          "May",
+          "Jun"
+        ]
+      },
+      "factor": 0
+    }
+  ],
+  "note": "Lifting the machine-hours limit for May and June by scaling the hours_per_month parameter to 0 effectively removes the constraint for those months."
+}

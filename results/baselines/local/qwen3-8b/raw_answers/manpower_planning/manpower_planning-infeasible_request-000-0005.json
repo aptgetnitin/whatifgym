@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "skilled_employment",
+   "measure": "workforce",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": "skilled"
+   },
+   "sense": ">=",
+   "value": 9100
+  },
+  {
+   "name": "semi_skilled_employment",
+   "measure": "workforce",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 11900
+  }
+ ],
+ "note": "The scenario requires at least 9100 skilled workers and 11900 semi-skilled workers across all years."
+}

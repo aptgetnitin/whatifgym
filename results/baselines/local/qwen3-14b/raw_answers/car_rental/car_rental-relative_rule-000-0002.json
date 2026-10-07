@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_overnight_thursday",
+      "measure": "damaged_left",
+      "scope": {
+        "day": "Thursday"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "damaged_left",
+        "scope": {}
+      },
+      "factor": 0.75
+    }
+  ]
+}

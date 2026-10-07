@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "grow_beet",
+   "column": "grow_beet",
+   "where": {
+    "year": "Year1"
+   },
+   "value": 137
+  }
+ ],
+ "note": "Fixed the amount of sugar beet grown in Year1 to 137 tons."
+}

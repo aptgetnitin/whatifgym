@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "thermal_types",
+   "rows": [
+    {
+     "type": "Thermal3",
+     "units_available": 8,
+     "min_output_mw": 1000,
+     "max_output_mw": 1400,
+     "cost_per_hour": 1550,
+     "cost_per_mwh_above_min": 2,
+     "startup_cost": 1000,
+     "units_on_at_start": 5
+    }
+   ]
+  }
+ ],
+ "note": "Adding a new generator type requires adding a row to the thermal_types table with the specified attributes."
+}

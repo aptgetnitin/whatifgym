@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "items_le_bins",
+      "measure": "x",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "y"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Ensures the total number of items packed is at most the total number of bins used."
+}

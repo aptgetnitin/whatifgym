@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_batch_year4_mine1",
+      "measure": "extract",
+      "scope": {
+        "year": "Year4",
+        "mine": "Mine1"
+      },
+      "sense": ">=",
+      "value": 312500
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

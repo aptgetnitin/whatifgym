@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_milk_flow","measure":"flow","scope":{"food":"Milk"},"sense":">=","value":43800}],"note":"Require at least 43800 units of Milk shipped per day."}

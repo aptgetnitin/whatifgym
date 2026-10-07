@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod4_at_least_10_percent",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod1",
+          "product": "Prod2",
+          "product": "Prod3",
+          "product": "Prod4",
+          "product": "Prod5",
+          "product": "Prod6",
+          "product": "Prod7"
+          }
+      },
+      "factor": 0.1
+    }
+  ]
+}

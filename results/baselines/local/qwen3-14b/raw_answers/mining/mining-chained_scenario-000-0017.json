@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "royalty",
+      "where": {},
+      "factor": 0.75
+    }
+  ],
+  "rules": [
+    {
+      "name": "cap_open_total",
+      "measure": "open",
+      "scope": {},
+      "sense": "<=",
+      "value": 10
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "open",
+   "where": {
+    "mine": "Mine2"
+   },
+   "value": 1
+  },
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "operate",
+   "where": {
+    "mine": "Mine2"
+   },
+   "value": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine2_worked_only_in_year1",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine2",
+    "year": [
+     "Year1"
+    ]
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "open",
+   "scope": {
+    "mine": "Mine2",
+    "year": [
+     "Year1"
+    ]
+   },
+   "value": 1
+  },
+  {
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine2",
+    "year": [
+     "Year1"
+    ]
+   },
+   "value": 1
+  }
+ ]
+}

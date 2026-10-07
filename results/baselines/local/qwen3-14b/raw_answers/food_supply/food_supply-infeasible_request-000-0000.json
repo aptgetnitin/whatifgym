@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "total_food_purchased",
+      "measure": "purchase",
+      "scope": {
+        "food": "all",
+        "supplier": "all"
+      },
+      "sense": ">=",
+      "value": 1621950
+    }
+  ]
+}

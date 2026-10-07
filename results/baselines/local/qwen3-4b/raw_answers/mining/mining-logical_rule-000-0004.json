@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "no_open_mines_in_year2_and_year4",
+      "measure": "open",
+      "scope": {
+        "year": [
+          "Year2",
+          "Year4"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+  }

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "fixed_decisions": [
+  {
+   "measure": "open",
+   "scope": {
+    "year": "Year5",
+    "mine": "Mine4"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fix the open decision for Mine4 in Year5 to 1."
+}

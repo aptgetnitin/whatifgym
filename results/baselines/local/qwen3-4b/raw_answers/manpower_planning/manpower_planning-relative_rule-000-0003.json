@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "short_time_year1_at_most_25_of_year3",
+      "measure": "short_time",
+      "scope": {
+        "year": 1
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "short_time",
+        "scope": {
+          "year": 3
+        }
+      }
+    }
+  ],
+  "note": "A rule that short_time in year 1 is at most 25% of short_time in year 3."
+  }

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","objective":[{"sense":"max","measure":"original"},{"sense":"min","measure":"store","scope":{"oil":"OIL2"}}],"note":"Maximize profit first, then minimize total storage of OIL2."}

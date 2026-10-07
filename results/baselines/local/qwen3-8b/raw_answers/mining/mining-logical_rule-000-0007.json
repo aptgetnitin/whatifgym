@@ -1,0 +1,47 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "open",
+   "where": {
+    "mine": "Mine2"
+   },
+   "value": 1
+  },
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "open",
+   "where": {
+    "mine": "Mine1"
+   },
+   "value": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine2_open_years",
+   "measure": "open",
+   "scope": {
+    "mine": "Mine2",
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "value": 1
+  },
+  {
+   "name": "mine1_open_years",
+   "measure": "open",
+   "scope": {
+    "mine": "Mine1",
+    "year": "Year4"
+   },
+   "sense": ">=",
+   "value": 2
+  }
+ ],
+ "note": "The question is interpreted as: Mine2 must be kept open in Year5, Mine1 must be kept open in Year4 for at least 2 mine-years."
+}

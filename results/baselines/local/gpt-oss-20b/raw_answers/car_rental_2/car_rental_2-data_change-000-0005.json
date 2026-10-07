@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","data_changes":[{"op":"set","table":"depots","column":"repair_capacity","where":{"depot":"Manchester"},"value":18}]}

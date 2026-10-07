@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "output",
+      "where": {
+        "type": "Thermal1",
+        "period": "18-24"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner wants to set the output of Thermal1 for the 18-24 period to zero."
+}

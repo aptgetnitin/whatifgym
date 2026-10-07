@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "ask": "By how much and in what direction (increase or decrease) should the yearly royalty change across the board?"
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "store_jun_at_least_3_times_store_may",
+   "measure": "store",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "May"
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "The storage in June must be at least three times the storage in May."
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "damaged_stock",
+      "column": "damaged_stock",
+      "where": {
+        "day": "Monday"
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "scale",
+      "table": "damaged_stock",
+      "column": "damaged_stock",
+      "where": {
+        "day": "Friday"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "The question asks for a constraint on the ratio of damaged cars at different days. Since the model uses the damaged_stock as a decision variable, we need to express the constraint as a ratio between two values. However, the model does not directly support ratio constraints in the data_changes format. Instead, we can scale the damaged_stock for Monday and Friday to 75% of their original values, which would make them equal if the original values were equal. But this is not the correct approach for a ratio constraint."
+  }

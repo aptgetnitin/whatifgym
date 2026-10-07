@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","data_changes":[{"op":"remove","table":"items","where":{"item":"item1"}}],"note":"Removing item1 from the items table to simulate losing an item."}

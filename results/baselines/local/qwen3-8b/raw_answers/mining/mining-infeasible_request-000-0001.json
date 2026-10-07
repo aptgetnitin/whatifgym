@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "extract",
+   "where": {
+    "mine": "Mine2",
+    "year": "Year4"
+   },
+   "value": 12500000
+  }
+ ],
+ "note": "Fix the extract amount for Mine2 in Year4 to exactly 12500000 tons."
+}

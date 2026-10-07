@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","logic":[{"name":"only_one_month_sales","at_least":2,"of":[{"measure":"sell","scope":{"month":"Jan"},"sense":"<=","value":0},{"measure":"sell","scope":{"month":"Apr"},"sense":"<=","value":0},{"measure":"sell","scope":{"month":"Mar"},"sense":"<=","value":0}]}],"note":"Only one of Jan, Apr, Mar may have any sales."}

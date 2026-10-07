@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"scale_param","name":"initial_stock","factor":1.5}],"note":"Opening stock per oil increased by 50%."}

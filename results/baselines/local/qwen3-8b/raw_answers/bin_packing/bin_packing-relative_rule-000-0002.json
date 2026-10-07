@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "min_bins_same_as_items",
+   "measure": "y",
+   "scope": {
+    "bin": "bin0"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "y",
+    "scope": {
+     "bin": "bin0"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The rule enforces that the number of bins used is at least the same as the number of items packed."
+}

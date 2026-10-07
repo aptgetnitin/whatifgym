@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "repair",
+   "scope": {
+    "month": "Jun"
+   }
+  }
+ ],
+ "note": "First, maximise profit as per the original objective. Then, maximise the number of machines down for maintenance in June."
+}

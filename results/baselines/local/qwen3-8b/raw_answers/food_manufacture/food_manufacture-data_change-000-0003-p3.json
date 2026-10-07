@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "holding_cost",
+   "factor": 2
+  }
+ ],
+ "note": "Doubling the storage cost affects the objective by increasing the holding cost per ton of oil stored each month."
+}

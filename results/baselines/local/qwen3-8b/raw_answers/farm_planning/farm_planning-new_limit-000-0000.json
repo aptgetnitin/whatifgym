@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "min_grain_bought_year5",
+   "measure": "buy_grain",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "value": 40
+  }
+ ],
+ "note": "A requirement to ensure the total grain bought in Year5 meets the specified minimum."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "min_buy_grain_year1",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 46
+    }
+  ],
+  "note": "Require at least 46 tons of grain bought in Year1 if any grain is grown in Year4 Group1."

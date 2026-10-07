@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "year5_profit_cap",
+      "measure": "yearly_profit",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": "<=",
+      "value": 17700
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"short_time_year2_at_least_3x_year1","measure":"short_time","scope":{"year":2},"sense":">=","relative_to":{"measure":"short_time","scope":{"year":1}},"factor":3.0}],"note":"Ensure short‑time workers in year 2 are at least 3 times those in year 1."}

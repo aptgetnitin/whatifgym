@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "logic": [
+  {
+   "name": "conditional_make_prod3",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "Feb",
+      "product": "Prod3"
+     },
+     "sense": ">",
+     "value": 0
+    },
+    {
+     "measure": "make",
+     "scope": {
+      "month": "Mar",
+      "product": "Prod3"
+     },
+     "sense": ">=",
+     "value": 800
+    }
+   ]
+  }
+ ],
+ "note": "Logical rule: at least 1 of the conditions hold. If units are sold for Feb, Prod3, then make for Mar, Prod3 must be at least 800."
+}

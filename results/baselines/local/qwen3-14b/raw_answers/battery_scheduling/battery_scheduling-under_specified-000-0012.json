@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "ask": "What is the new value for the battery charge at the start of the day (kWh)?"
+}

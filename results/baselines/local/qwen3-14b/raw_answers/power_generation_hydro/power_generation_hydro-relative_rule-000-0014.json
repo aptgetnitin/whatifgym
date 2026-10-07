@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "pump_power_00-06_limit",
+      "measure": "pump",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "pump",
+        "scope": {
+          "period": [
+            "00-06",
+            "06-09",
+            "09-15",
+            "15-18",
+            "18-24"
+          ]
+        }
+      },
+      "factor": 0.5
+    },
+    {
+      "name": "thermal_units_00-06_limit",
+      "measure": "ngen",
+      "scope": {
+        "period": "00-06",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "ngen",
+        "scope": {
+          "period": "15-18",
+          "type": [
+            "Thermal0",
+            "Thermal1",
+            "Thermal2"
+          ]
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

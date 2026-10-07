@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "output",
+   "where": {
+    "type": "Thermal0"
+   },
+   "value": 102000
+  }
+ ],
+ "rules": [
+  {
+   "name": "thermal0_output_fixed",
+   "measure": "output",
+   "scope": {
+    "period": "18-24",
+    "type": "Thermal0"
+   },
+   "sense": "==",
+   "value": 102000
+  }
+ ],
+ "note": "Fixed the output of Thermal0 for period 18-24 to 102000 MW and ensure it remains fixed in the model."
+}

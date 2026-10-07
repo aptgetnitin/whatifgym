@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod1_stock_limit",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": [
+      "Prod2",
+      "Prod3",
+      "Prod4",
+      "Prod5",
+      "Prod6",
+      "Prod7"
+     ]
+    }
+   },
+   "factor": 0.15
+  }
+ ],
+ "note": "A rule limiting the proportion of total stock allocated to Prod1 relative to other products."
+}

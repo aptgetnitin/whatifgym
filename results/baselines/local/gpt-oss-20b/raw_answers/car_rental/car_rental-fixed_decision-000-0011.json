@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","fixed_decisions":[{"measure":"damaged_left","scope":{"day":"Thursday","depot":"Birmingham"},"value":0.9},{"measure":"rentals","scope":{"day":"Saturday","depot":"Plymouth"},"value":0}],"note":"Fix damaged_left at 0.9 for Thursday Birmingham and rentals at 0 for Saturday Plymouth."}

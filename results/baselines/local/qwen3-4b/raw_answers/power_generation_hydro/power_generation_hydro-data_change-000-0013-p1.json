@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "cost_per_mwh_above_min",
+      "value": 6000
+    }
+  ],
+  "note": "The planner asked for the impact of setting Thermal2's hourly running cost per unit to 6000. However, the model schema shows that `cost_per_mwh_above_min` is a parameter for `thermal_types`, not a global parameter. The question refers to Thermal2 specifically, so we need to apply this change to the Thermal2 type."
+  }

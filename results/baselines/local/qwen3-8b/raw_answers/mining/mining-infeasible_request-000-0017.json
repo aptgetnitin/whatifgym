@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "extract",
+   "where": {
+    "mine": "Mine1",
+    "year": "Year1"
+   },
+   "value": 10000000
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine1",
+    "year": "Year1"
+   },
+   "value": 10000000
+  }
+ ]
+}

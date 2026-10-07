@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "min_short_time_unskilled",
+   "measure": "short_time",
+   "scope": {
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "value": 220
+  }
+ ],
+ "note": "If there are any workers on short-time working for the unskilled skill level, the total must be at least 220."
+}

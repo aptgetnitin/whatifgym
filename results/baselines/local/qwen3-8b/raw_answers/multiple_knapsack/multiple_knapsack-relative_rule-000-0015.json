@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "item8_placement_at_least_twice_item13",
+   "measure": "x",
+   "scope": {
+    "item": "item8"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": "item13"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "The number of item placements for item8 is constrained to be at least twice that of item13."
+}

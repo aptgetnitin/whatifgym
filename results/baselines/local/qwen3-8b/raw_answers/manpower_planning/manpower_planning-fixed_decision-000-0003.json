@@ -1,0 +1,55 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "short_time",
+   "column": "short_time",
+   "where": {
+    "year": 2,
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "value": 42
+  }
+ ],
+ "rules": [
+  {
+   "name": "short_time_fixed_year_2",
+   "measure": "short_time",
+   "scope": {
+    "year": 2,
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": "==",
+   "value": 42
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3
+    ],
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   }
+  }
+ ],
+ "note": "Fix the short-time working levels for year 2 and optimise for minimum redundancies."
+}

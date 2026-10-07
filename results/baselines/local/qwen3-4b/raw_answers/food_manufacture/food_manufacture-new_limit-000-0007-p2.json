@@ -1,0 +1,51 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "produce",
+      "column": "produce",
+      "where": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "value": 2150
+    }
+  ],
+  "rules": [
+    {
+      "name": "max_oil_refine_jan",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Jan"
+        ]
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "profit",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      }
+    }
+  ]
+}

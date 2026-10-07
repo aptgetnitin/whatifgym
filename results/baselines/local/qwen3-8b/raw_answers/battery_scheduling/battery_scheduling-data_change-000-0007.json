@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "export_price",
+   "where": {
+    "hour": "15-16"
+   },
+   "value": 0.3
+  }
+ ]
+}

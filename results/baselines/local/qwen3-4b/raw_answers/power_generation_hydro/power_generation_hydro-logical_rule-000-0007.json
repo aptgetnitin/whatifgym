@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "min_batch_thermal0",
+      "measure": "output",
+      "scope": {
+        "type": "Thermal0"
+      },
+      "sense": ">=",
+      "value": 99850
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "max_shipment_from_aleppo",
+   "measure": "flow",
+   "scope": {
+    "from_city": "Aleppo"
+   },
+   "sense": "<=",
+   "value": 19350
+  }
+ ],
+ "note": "Limits the total food shipped from Aleppo to all destinations to 19350 units per day."
+}

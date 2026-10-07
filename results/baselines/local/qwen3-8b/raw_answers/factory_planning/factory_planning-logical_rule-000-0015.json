@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "logic": [
+  {
+   "name": "stock_in_feb_sold_prod7_jun",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "store",
+     "sense": ">",
+     "value": 0,
+     "scope": {
+      "month": "Feb"
+     }
+    },
+    {
+     "measure": "sell",
+     "sense": ">=",
+     "value": 100,
+     "scope": {
+      "month": "Jun",
+      "product": "Prod7"
+     }
+    }
+   ]
+  }
+ ]
+}

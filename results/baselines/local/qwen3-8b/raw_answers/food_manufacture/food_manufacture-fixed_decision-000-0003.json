@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "fixed_decisions": [
+  {
+   "measure": "store",
+   "scope": {
+    "month": "Mar"
+   },
+   "value": 280
+  }
+ ],
+ "note": "Fixing the storage quantity for March for all oils."
+}

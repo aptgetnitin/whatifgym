@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"min_raise_heifers_year1","measure":"raise_heifers","scope":{"year":"Year1"},"sense":">=","value":34}],"note":"Require at least 34 heifer calves raised in Year1."}

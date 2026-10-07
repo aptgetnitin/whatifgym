@@ -1,0 +1,55 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_food_bought_limit",
+   "measure": "purchase",
+   "scope": {
+    "food": {
+     "type": "string"
+    },
+    "supplier": {
+     "type": "string"
+    }
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": {
+      "type": "string"
+     },
+     "from_city": {
+      "type": "string"
+     },
+     "to_city": {
+      "type": "string"
+     }
+    }
+   },
+   "factor": 0.5
+  },
+  {
+   "name": "csb_purchase_min_milk",
+   "measure": "purchase",
+   "scope": {
+    "food": "Corn-soya blend (CSB)",
+    "supplier": {
+     "type": "string"
+    }
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "food": "Milk",
+     "supplier": {
+      "type": "string"
+     }
+    }
+   },
+   "factor": 1.5
+  }
+ ]
+}

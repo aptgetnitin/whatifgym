@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "year2_min_workforce",
+      "measure": "workforce",
+      "scope": {
+        "year": 2
+      },
+      "sense": ">=",
+      "value": 12600
+    },
+    {
+      "name": "year3_min_workforce",
+      "measure": "workforce",
+      "scope": {
+        "year": 3
+      },
+      "sense": ">=",
+      "value": 14000
+    }
+  ],
+  "note": "Check feasibility of workforce constraints for year 2 and 3."
+}

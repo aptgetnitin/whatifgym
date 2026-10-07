@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "at_most_two_months_with_refinement",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "consume",
+          "scope": { "month": "Jan" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "consume",
+          "scope":

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {},
+      "factor": 1.25
+    }
+  ],
+  "rules": [
+    {
+      "measure": "consume",
+      "scope": {
+        "oil": "VEG2"
+      },
+      "sense": "<=",
+      "value": 490,
+      "name": "cap_consume_VEG2"
+    }
+  ]
+}

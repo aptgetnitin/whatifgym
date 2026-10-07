@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "wheat_shipment_idleb",
+   "measure": "flow",
+   "scope": {
+    "food": "Wheat",
+    "from_city": {
+     "camp": "Idleb"
+    }
+   },
+   "sense": ">=",
+   "value": 86400
+  }
+ ]
+}

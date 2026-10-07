@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "year4_profit_fixed",
+   "measure": "yearly_profit",
+   "scope": {
+    "year": "Year4"
+   },
+   "sense": "==",
+   "value": 134150
+  }
+ ],
+ "note": "Fix the yearly profit for Year4 to exactly 134150 USD."
+}

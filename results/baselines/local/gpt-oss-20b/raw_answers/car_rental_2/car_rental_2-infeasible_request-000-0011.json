@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"measure":"repairs","scope":{"day":"Monday"},"sense":">=","value":140},{"measure":"repairs","scope":{"day":"Tuesday"},"sense":">=","value":140}],"note":"Check if both repair requests can be satisfied simultaneously."}

@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "camps",
+   "where": {
+    "camp": "Qamishli"
+   }
+  },
+  {
+   "op": "scale",
+   "table": "local_prices",
+   "column": "price",
+   "where": {
+    "supplier": "Damascus",
+    "food": "Dates"
+   },
+   "factor": 0.8
+  }
+ ]
+}

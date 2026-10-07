@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "birmingham_rental_limit",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Birmingham"
+      },
+      "sense": "<=",
+      "value": 0.25
+    }
+  ],
+  "note": "A rule that caps the rentals at Birmingham to 25% of the total rentals."
+  }

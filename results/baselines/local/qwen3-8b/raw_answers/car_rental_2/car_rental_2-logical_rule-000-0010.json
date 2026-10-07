@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "manchester_step_2_requires_step_1",
+   "measure": "expand",
+   "scope": {
+    "depot": "Manchester",
+    "step": 2
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "expand",
+    "scope": {
+     "depot": "Manchester",
+     "step": 1
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "A logical rule that enforces the expansion step 2 at Manchester requires at least 3 expansions at step 1 at the same depot."
+}

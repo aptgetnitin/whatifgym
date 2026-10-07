@@ -1,0 +1,52 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "output",
+   "where": {
+    "type": "Thermal1",
+    "period": "00-06"
+   },
+   "value": 7900
+  },
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "nstart",
+   "where": {
+    "type": "Thermal0",
+    "period": "15-18"
+   },
+   "value": 1
+  },
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "nstart",
+   "where": {
+    "type": "Thermal1",
+    "period": "15-18"
+   },
+   "value": 1
+  },
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "nstart",
+   "where": {
+    "type": "Thermal2",
+    "period": "15-18"
+   },
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

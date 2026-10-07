@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": "00-06"
+      },
+      "value": 51000
+    }
+  ],
+  "note": "The planner wants to fix the thermal output for period 00-06 (midnight to 6 am) of Thermal0 to exactly 51000 MW. This is a data change to the demand_mw column for the specific period."
+}

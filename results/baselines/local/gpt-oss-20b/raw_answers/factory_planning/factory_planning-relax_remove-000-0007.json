@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","relax":[{"constraint":"end_stock"},{"constraint":"capacity"}],"note":"Neither end-of-horizon stock target nor machine-hours limit applied."}

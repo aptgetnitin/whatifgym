@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","fixed_decisions":[{"measure":"sell","scope":{"month":"Jun","product":"Prod1"},"value":0}],"note":"Fix sell[Jun, Prod1] to zero."}

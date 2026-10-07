@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "arcs",
+      "column": "transport_cost",
+      "where": {
+        "from_city": [
+          "Aleppo",
+          "Amman",
+          "As_Suweida",
+          "Beirut",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Gaziantep",
+          "Hama",
+          "Hassakeh",
+          "Homs",
+          "Idleb",
+          "Jubb_al_Jarrah"
+        ],
+        "to_city": [
+          "Ar Raqqa",
+          "Idleb",
+          "As_Suweida",
+          "Daraa",
+          "Aleppo",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Damascus",
+          "Homs",
+          "Jubb_al_Jarrah",
+          "Qamishli",
+          "Hama"
+        ]
+      },
+      "factor": 1.1
+    }
+  ]
+}

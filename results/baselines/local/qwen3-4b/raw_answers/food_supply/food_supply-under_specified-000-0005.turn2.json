@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "arcs",
+      "column": "transport_cost",
+      "where": {
+        "from_city": "Aleppo",
+        "to_city": "Idleb"
+      },
+      "value": 100
+    }
+  ],
+  "note": "The transport cost per unit for origin city Aleppo, destination city Idleb becomes 100."
+}

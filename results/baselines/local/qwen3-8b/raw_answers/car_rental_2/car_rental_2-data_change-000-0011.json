@@ -1,0 +1,83 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_same_depot",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "return_shares",
+   "column": "share",
+   "where": {
+    "from_depot": "Glasgow",
+    "to_depot": "Manchester"
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "return_shares",
+   "column": "share",
+   "where": {
+    "from_depot": "Manchester",
+    "to_depot": "Manchester"
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "return_shares",
+   "column": "share",
+   "where": {
+    "from_depot": "Birmingham",
+    "to_depot": "Manchester"
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "return_shares",
+   "column": "share",
+   "where": {
+    "from_depot": "Plymouth",
+    "to_depot": "Manchester"
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Tuesday",
+    "depot": "Manchester"
+   },
+   "value": 290
+  }
+ ],
+ "note": "The prices and return shares are scaled by 10% across all rental lengths and return destinations, and the demand for Tuesday at Manchester is set to 290."
+}

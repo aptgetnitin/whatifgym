@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"scale","table":"mines","column":"royalty","where":{"mine":["Mine1","Mine2","Mine3","Mine4"]},"factor":0.75}],"rules":[{"measure":"open","scope":{},"sense":"<=","value":10,"name":"cap_open_total"}],"note":"Royalty reduced by 25% across all mines; open mine-years capped at 10."}

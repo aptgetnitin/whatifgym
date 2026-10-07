@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "jubb_al_jarrah_ration_min",
+   "measure": "ration",
+   "scope": {
+    "camp": "Jubb_al_Jarrah"
+   },
+   "sense": ">=",
+   "value": 7.3
+  },
+  {
+   "name": "hassakeh_flow_max",
+   "measure": "flow",
+   "scope": {
+    "from_city": "Hassakeh"
+   },
+   "sense": "<=",
+   "value": 57900
+  }
+ ],
+ "note": "The scenario enforces a minimum ration sum for Jubb_al_Jarrah camp and a maximum flow sum for shipments originating from Hassakeh."
+}

@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "Feb_make_implies_AprProd4_sales",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Feb"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Apr",
+            "product": "Prod4"
+          },
+          "sense": ">=",
+          "value": 150
+        }
+      ]
+    }
+  ],
+  "note": "If any units are made in February, at least 150 units of Prod4 must be sold in April."
+}

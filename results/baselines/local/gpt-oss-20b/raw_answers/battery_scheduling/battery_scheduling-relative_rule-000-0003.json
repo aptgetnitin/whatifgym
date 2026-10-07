@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"discharge_below_60_percent_of_charge","measure":"discharge","sense":"<=","relative_to":{"measure":"charge"},"factor":0.6}],"note":"Limit total discharge to 60% of total charge."}

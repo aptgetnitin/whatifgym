@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "total_rentals_cap",
+   "measure": "rentals",
+   "scope": {
+    "day": "*",
+    "depot": "*"
+   },
+   "sense": "<=",
+   "value": 2250
+  }
+ ],
+ "note": "A total cap on rentals across all days and depots."
+}

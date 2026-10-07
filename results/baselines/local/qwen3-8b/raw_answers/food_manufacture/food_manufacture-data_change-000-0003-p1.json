@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "holding_cost",
+   "factor": 2
+  }
+ ],
+ "note": "Doubling the oil storage cost affects the trade-off between purchase and storage costs."
+}

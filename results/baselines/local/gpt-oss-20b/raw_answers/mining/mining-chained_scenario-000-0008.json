@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"add","table":"mines","rows":[{"mine":"new_mine","royalty":3000000,"capacity":3000000,"quality":0.4}]}],"rules":[{"measure":"blend","scope":{},"sense":"<=","value":23482500,"name":"cap_blend_total"}]}

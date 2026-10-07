@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "ask": "Only 1 of these may have units sold: product Prod5, Prod4 and Prod3. Re-plan."
+}

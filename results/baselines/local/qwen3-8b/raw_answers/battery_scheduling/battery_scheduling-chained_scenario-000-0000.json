@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "initial_soc_kwh",
+   "where": {},
+   "value": 12
+  }
+ ],
+ "note": "The initial_soc_kwh parameter is set to 12 kWh."
+}

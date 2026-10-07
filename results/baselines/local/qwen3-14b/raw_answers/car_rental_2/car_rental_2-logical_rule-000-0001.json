@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "plymouth_tuesday_repair_rule",
+      "measure": "repairs",
+      "scope": {
+        "day": "Tuesday",
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 12.5
+    }
+  ]
+}

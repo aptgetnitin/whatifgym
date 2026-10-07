@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"item4_5percent","measure":"x","scope":{"item":"item4"},"sense":"<=","relative_to":{"measure":"x","scope":{}},"factor":0.05}]}

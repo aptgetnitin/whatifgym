@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","fixed_decisions":[{"measure":"undamaged_left","scope":{"depot":"Manchester"},"value":1.7}]}

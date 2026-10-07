@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant"
+    },
+    {
+      "sense": "min",
+      "measure": "short_time",
+      "scope": {
+        "year": 2
+      }
+    }
+  ],
+  "note": "First minimize total redundancy, then minimize short‑time workers in year 2."
+}

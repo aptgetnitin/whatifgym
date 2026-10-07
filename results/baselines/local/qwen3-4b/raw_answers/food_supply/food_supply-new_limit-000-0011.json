@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": [
+          "Beans",
+          "Bulgur",
+          "Cheese",
+          "Fish",
+          "Meat",
+          "Corn-soya blend (CSB)",
+          "Dates",
+          "Dried skim milk (enriched) (DSM)",
+          "Milk",
+          "Lentils",
+          "Maize",
+          "Maize meal",
+          "Chickpeas",
+          "Rice",
+          "Sorghum/millet",
+          "Soya-fortified bulgur wheat",
+          "Soya-fortified maize meal",
+          "Soya-fortified sorghum grits",
+          "Soya-fortified wheat flour",
+          "Sugar",
+          "Oil",
+          "Wheat",
+          "Wheatflour",
+          "WSB"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The total food shipped is the sum of all flow variables across all foods and links. Since the flow measure is defined as `flow[food, from_city, to_city]`, the sum over all foods and links is the total flow. The question asks for a constraint that the total flow does not exceed 121500, so we scale the flow measure by a factor of 1.0 (meaning the total flow is capped at 121500)."
+}

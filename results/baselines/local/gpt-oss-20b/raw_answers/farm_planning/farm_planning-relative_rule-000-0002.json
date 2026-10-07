@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"grain_bought_limit","measure":"buy_grain","sense":"<=","relative_to":{"measure":"grow_beet"},"factor":0.25}],"note":"Limit total grain bought to at most 25% of total sugar beet grown."}

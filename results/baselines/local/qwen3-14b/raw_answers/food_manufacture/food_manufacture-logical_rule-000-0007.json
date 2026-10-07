@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "produce_only_in_selected_months",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Feb",
+          "Mar",
+          "Jun",
+          "Jan",
+          "May"
+        ]
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ]
+}

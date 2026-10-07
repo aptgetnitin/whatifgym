@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "wedding_seating",
+ "relax": [
+  {
+   "constraint": "max_tables",
+   "scope": {
+    "dimension": "max_tables"
+   }
+  }
+ ],
+ "note": "Removing the limit on the number of tables allows the model to use as many tables as needed."
+}

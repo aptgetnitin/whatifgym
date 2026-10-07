@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"plymouth_rentals_limit","measure":"rentals","scope":{"depot":"Plymouth"},"sense":"<=","relative_to":{"measure":"rentals"},"factor":0.05}],"note":"At most 5% of total rentals may be from depot Plymouth."}

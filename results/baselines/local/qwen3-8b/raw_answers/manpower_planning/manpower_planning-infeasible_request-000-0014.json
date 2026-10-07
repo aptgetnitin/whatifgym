@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_overmanned",
+   "value": 125000
+  }
+ ],
+ "note": "Setting the overmanning allowance to 125000 workers to check if the plan can meet the target."
+}

@@ -1,0 +1,54 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retrain",
+      "column": "retrain",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled",
+        "year": [
+          1,
+          2,
+          3
+        ]
+      },
+      "value": 100
+    },
+    {
+      "op": "set",
+      "table": "retrain",
+      "column": "retrain",
+      "where": {
+        "from_skill": "semi_skilled",
+        "to_skill": "skilled",
+        "year": [
+          1,
+          2,
+          3
+        ]
+      },
+      "value": 100
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      }
+    }
+  ]
+}

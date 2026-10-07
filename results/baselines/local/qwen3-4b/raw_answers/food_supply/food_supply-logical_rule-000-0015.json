@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "suppliers",
+      "column": "supplier",
+      "where": {
+        "supplier": [
+          "Hassakeh",
+          "Homs",
+          "Daraa",
+          "Aleppo"
+        ]
+      },
+      "value": "0"
+    }
+  ],
+  "note": "A set operation on the supplier table with a value of 0 for the specified suppliers would indicate that no food is bought at those suppliers."
+}

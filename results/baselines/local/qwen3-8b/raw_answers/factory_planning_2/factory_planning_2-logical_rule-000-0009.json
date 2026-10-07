@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "logic": [
+  {
+   "name": "mar_sell_zero_or_at_least_4750",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "Mar"
+     },
+     "sense": "==",
+     "value": 0
+    },
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "Mar"
+     },
+     "sense": ">=",
+     "value": 4750
+    }
+   ]
+  }
+ ]
+}

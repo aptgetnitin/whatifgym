@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "soc_0910_max",
+      "measure": "soc",
+      "scope": {
+        "hour": "09-10"
+      },
+      "sense": "<=",
+      "value": 7
+    }
+  ],
+  "note": "Limit stored energy at hour 09-10 to 7 kWh."
+}

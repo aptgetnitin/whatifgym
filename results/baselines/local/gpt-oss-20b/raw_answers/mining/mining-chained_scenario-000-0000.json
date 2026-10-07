@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": "Mine1"
+      },
+      "factor": 1.25
+    }
+  ],
+  "note": "Ore quality for Mine1 increased by 25%."
+}

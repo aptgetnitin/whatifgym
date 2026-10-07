@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "min_purchase_amman_oil",
+      "measure": "purchase",
+      "scope": {
+        "food": "Oil",
+        "supplier": "Amman"
+      },
+      "sense": ">=",
+      "value": 12050
+    }
+  ]
+}

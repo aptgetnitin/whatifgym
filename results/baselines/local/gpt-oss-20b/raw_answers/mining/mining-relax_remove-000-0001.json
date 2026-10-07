@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "stay_closed",
+      "scope": {
+        "year": "Year2"
+      }
+    }
+  ],
+  "note": "Lift the stay_closed rule for Year2 only, allowing mines to reopen in Year2 even if closed in Year1."
+}

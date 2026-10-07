@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "relax": [
+    {
+      "constraint": "capacity",
+      "scope": {
+        "machine": ["borer", "planer"]
+      }
+    }
+  ],
+  "note": "Remove machine-hour capacity constraints for borer and planer."
+}

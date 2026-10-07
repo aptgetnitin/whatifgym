@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "charge_02_03_min_3x_03_04",
+      "measure": "charge",
+      "scope": { "hour": "02-03" },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "charge",
+        "scope": { "hour": "03-04" }
+      },
+      "factor": 3.0
+    },
+    {
+      "name": "discharge_21_22_min_75pct_total",
+      "measure": "discharge",
+      "scope": { "hour": "21-22" },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "discharge"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Enforce charging ratio and discharge proportion constraints."
+}

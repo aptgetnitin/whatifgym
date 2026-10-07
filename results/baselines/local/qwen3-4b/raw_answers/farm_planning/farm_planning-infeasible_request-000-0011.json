@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_heifers_sold_year1",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 93
+    },
+    {
+      "name": "min_heifers_sold_year2",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "value": 120
+    }
+  ],
+  "note": "The planner asks if both minimum sales for Year1 and Year2 can be met simultaneously. This translates to two rules: one for Year1 and one for Year2."
+}

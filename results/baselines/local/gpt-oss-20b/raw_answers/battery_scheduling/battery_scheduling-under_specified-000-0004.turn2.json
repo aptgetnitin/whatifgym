@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "import_price",
+      "where": {
+        "hour": "10-11"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Import price for hour 10-11 reduced by 20%."
+}

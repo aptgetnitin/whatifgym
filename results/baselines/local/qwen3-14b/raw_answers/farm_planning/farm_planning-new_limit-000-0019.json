@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "heifer_sales_year2_cap",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": "<=",
+   "value": 37
+  },
+  {
+   "name": "sugar_beet_sales_year1_min",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 34
+  }
+ ]
+}

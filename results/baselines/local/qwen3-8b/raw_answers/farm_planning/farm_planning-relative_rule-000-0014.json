@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_limit",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "raise_heifers",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The total tons of sugar beet grown in Year1 is limited to 1.25 times the total heifer calves raised in the same year."
+}

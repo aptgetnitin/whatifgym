@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","logic":[{"at_least":1,"of":[{"measure":"repairs","scope":{"day":"Tuesday","depot":"Manchester"},"sense":"<=","value":0},{"measure":"repairs","scope":{"day":"Tuesday","depot":"Manchester"},"sense":">=","value":30}]}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","rules":[{"measure":"y","sense":">=","relative_to":{"measure":"x","scope":{}},"factor":0.9}],"note":"Require at least 90% of items to be represented by bins used."}

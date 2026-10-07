@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","data_changes":[{"op":"scale","table":"land_groups","column":"grain_yield","where":{"land_group":["Group1","Group2","Group3","Group4"]},"factor":0.9}],"note":"grain yield per acre falls by 10% across all land groups."}

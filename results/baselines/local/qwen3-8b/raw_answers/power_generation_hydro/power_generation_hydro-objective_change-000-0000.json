@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "ngen",
+   "scope": {
+    "type": [
+      "Thermal0",
+      "Thermal1",
+      "Thermal2"
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "cost",
+   "scope": {
+    "type": [
+      "Thermal0",
+      "Thermal1",
+      "Thermal2"
+    ]
+   }
+  }
+ ],
+ "note": "Prioritise minimising the total number of thermal units running, then total generating cost."
+}

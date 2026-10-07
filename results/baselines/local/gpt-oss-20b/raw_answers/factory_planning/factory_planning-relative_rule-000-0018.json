@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "mar_sales_share",
+      "measure": "sell",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {}
+      },
+      "factor": 0.4
+    },
+    {
+      "name": "jan_stock_vs_may",
+      "measure": "store",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "May"
+        }
+      },
+      "factor": 1.5
+    }
+  ],
+  "note": "At least 40% of total sales in March; Jan stock at least 1.5× May stock."
+}

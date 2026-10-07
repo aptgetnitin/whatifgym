@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "wheat_to_oil_ratio",
+   "measure": "flow",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "Oil"
+    }
+   },
+   "factor": 0.6
+  }
+ ]
+}

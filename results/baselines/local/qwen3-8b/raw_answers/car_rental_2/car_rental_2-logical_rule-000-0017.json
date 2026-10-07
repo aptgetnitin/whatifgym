@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_repair_saturday_manchester",
+   "measure": "repairs",
+   "scope": {
+    "day": "Saturday",
+    "depot": "Manchester"
+   },
+   "sense": ">=",
+   "value": 44
+  }
+ ],
+ "note": "A minimum repair requirement on Saturday at Manchester depot."
+}

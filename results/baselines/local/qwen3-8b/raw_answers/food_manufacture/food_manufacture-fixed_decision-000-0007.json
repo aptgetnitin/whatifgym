@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "consume_cap_may",
+   "measure": "consume",
+   "scope": {
+    "month": "May"
+   },
+   "sense": "==",
+   "value": 45
+  }
+ ],
+ "note": "Fix the amount of oil refined in May to 45 tons for every oil."
+}

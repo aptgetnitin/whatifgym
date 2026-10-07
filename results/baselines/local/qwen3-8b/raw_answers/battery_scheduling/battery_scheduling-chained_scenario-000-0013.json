@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "measure": "charge",
+   "scope": {
+    "hour": "02-03"
+   },
+   "sense": "<=",
+   "value": 2.2,
+   "name": "cap_charge_02-03"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "units_on_at_start",
+   "where": {
+    "type": "Thermal2"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "thermal2_1_unit_per_period",
+   "measure": "ngen",
+   "scope": {
+    "type": "Thermal2"
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "output",
+   "scope": {
+    "type": "Thermal0",
+    "type": "Thermal1"
+   }
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "ngen",
+   "scope": {
+    "type": "Thermal2"
+   },
+   "value": 1
+  }
+ ]
+}

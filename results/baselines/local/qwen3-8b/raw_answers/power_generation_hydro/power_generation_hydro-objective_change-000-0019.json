@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "hydro_start",
+   "scope": {
+    "hydro": [
+     "HydroA",
+     "HydroB"
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "pump",
+   "scope": {
+    "period": [
+     "00-06",
+     "06-09",
+     "09-15",
+     "15-18",
+     "18-24"
+    ]
+   }
+  }
+ ],
+ "note": "Optimise first by keeping total cost at its minimum, then maximise the total number of hydro unit start-ups, and finally maximise the total pumping power."
+}

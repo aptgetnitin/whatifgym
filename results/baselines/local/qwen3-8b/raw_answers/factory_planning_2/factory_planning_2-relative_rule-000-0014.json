@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "store_jun_at_least_75_of_mar",
+   "measure": "store",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Mar"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "A rule that enforces the store in June to be at least 75% of the store in March."
+}

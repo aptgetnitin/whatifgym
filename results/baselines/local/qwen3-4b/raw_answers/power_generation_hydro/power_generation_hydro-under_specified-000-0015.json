@@ -1,0 +1,10 @@
+{
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "shift_param",
+      "name": "pump_mwh_per_m",
+      "delta": 0.5
+    }
+  ]
+}

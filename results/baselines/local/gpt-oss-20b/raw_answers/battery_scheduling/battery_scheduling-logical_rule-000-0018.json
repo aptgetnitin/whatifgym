@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","logic":[{"name":"soc_14-15_implies_discharge_19-20","at_least":1,"of":[{"measure":"discharge","scope":{"hour":"19-20"},"sense":">=","value":3.3},{"measure":"soc","scope":{"hour":"14-15"},"sense":"<=","value":0}]}]}

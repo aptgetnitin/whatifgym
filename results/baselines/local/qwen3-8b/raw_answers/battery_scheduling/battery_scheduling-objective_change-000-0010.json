@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "charge",
+   "scope": {
+    "hour": "03-04"
+   }
+  }
+ ],
+ "note": "First maximise daily profit, then minimise charging power in hour 03-04."
+}

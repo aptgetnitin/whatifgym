@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "items",
+      "column": "weight",
+      "where": {
+        "item": [
+          "item0"
+        ]
+      },
+      "value": "80"
+    }
+  ],
+  "note": "The planner's question specifies that the weight of one item is different. The example in the what-if surface shows that item0 now weighs 80 units."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "overmanned_year_3_min",
+   "measure": "overmanned",
+   "scope": {
+    "year": 3
+   },
+   "sense": ">=",
+   "value": 300
+  }
+ ],
+ "note": "A rule ensures that the total overmanned workers in year 3 is at least 300."
+}

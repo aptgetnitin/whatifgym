@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "camps",
+   "where": {
+    "camp": "Ar Raqqa"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "min_shipment_from_beirut",
+   "measure": "flow",
+   "scope": {
+    "from_city": "Beirut"
+   },
+   "sense": ">=",
+   "value": 2400
+  }
+ ],
+ "note": "A new requirement is added to ensure the total food shipped from Beirut meets the minimum threshold."
+}

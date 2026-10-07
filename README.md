@@ -12,7 +12,7 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 > | Task families | 10 of 10 |
 > | Tasks | 2,290 template tasks + 78 verified paraphrases |
 > | Tests | 465 pass, 7 slow tests skipped |
-> | Running now | The local LLM ladder runs the under-specified tasks again, after the ask fix (section 11) |
+> | Latest result | Untrained LLMs on all 2,290 tasks: Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % (section 11) |
 
 ---
 
@@ -462,25 +462,41 @@ xychart-beta
 - Reasoning at inference closes most of the remaining gap.
 - Thus the RL target is a 4B to 8B model.
 
-All families, accuracy (number of tasks). gpt-oss 20B is part-way through its run:
+All ten families, complete run (Oct 7). Accuracy; every family has the same tasks for every LLM:
 
-| Family | Qwen3 4B | Qwen3 8B | Qwen3 14B | gpt-oss 20B |
-|---|---|---|---|---|
-| data_change | 57 % (320) | 87 % (320) | 84 % (320) | 97 % (300) |
-| new_limit | 41 % (239) | 67 % (239) | 91 % (239) | 98 % (239) |
-| relative_rule | 26 % (258) | 60 % (258) | 81 % (258) | 92 % (98) |
-| objective_change | 23 % (168) | 45 % (168) | 74 % (168) | 96 % (136) |
-| fixed_decision | 28 % (235) | 46 % (235) | 91 % (235) | 100 % (140) |
-| data_change, paraphrased | 42 % (33) | 79 % (33) | 88 % (33) | – |
-| new_limit, paraphrased | 27 % (30) | 67 % (45) | 93 % (45) | – |
+| Family | Tasks | Qwen3 4B | Qwen3 8B | Qwen3 14B | gpt-oss 20B |
+|---|---|---|---|---|---|
+| data_change | 320 | 57 % | 87 % | 84 % | 98 % |
+| new_limit | 239 | 41 % | 67 % | 91 % | 98 % |
+| relative_rule | 258 | 26 % | 60 % | 81 % | 92 % |
+| objective_change | 168 | 23 % | 45 % | 74 % | 96 % |
+| fixed_decision | 235 | 28 % | 46 % | 91 % | 99 % |
+| relax_remove | 84 | 10 % | 56 % | 82 % | 100 % |
+| **logical_rule** | 238 | **18 %** | **24 %** | **30 %** | **70 %** |
+| infeasible_request | 201 | 12 % | 69 % | 92 % | 89 % |
+| chained_scenario | 267 | 48 % | 70 % | 75 % | 97 % |
+| under_specified | 280 | 1 % | 41 % | 41 % | 58 % |
+| **all 2,290 template tasks** | | **28.6 %** | **57.7 %** | **73.0 %** | **88.4 %** |
+| data_change, paraphrased | 33 | 42 % | 79 % | 88 % | 100 % |
+| new_limit, paraphrased | 45 | 22 % | 67 % | 93 % | 100 % |
+
+```mermaid
+xychart-beta
+    title "Accuracy on all 2,290 template tasks (%)"
+    x-axis ["Qwen3 4B", "Qwen3 8B", "Qwen3 14B", "gpt-oss 20B"]
+    y-axis "accuracy (%)" 0 --> 100
+    bar [28.6, 57.7, 73.0, 88.4]
+```
 
 What this shows:
 
-1. The new families are harder for small models: 23 to 28 % for Qwen3 4B.
-2. Natural wording costs Qwen3 4B 14 to 15 points.
-3. Qwen3 14B is the first size that stays at or above 74 % on every family.
+1. **The full benchmark separates the models.** The first two families did not: 14B and 32B scored the same there. On all ten families, the scores spread from 29 % to 88 %.
+2. **`logical_rule` is the hardest family.** Qwen3 14B gets 30 %, gpt-oss 20B 70 %. It is the family that can separate a strong open model from a frontier one.
+3. **Qwen3 4B fails most of the new families** (10 to 12 % on relax and infeasible). This is the headroom for RL.
+4. **Natural wording costs the small models.** Qwen3 4B loses 15 to 18 points on paraphrases; 14B and gpt-oss lose nothing.
+5. **gpt-oss 20B is weaker than 14B on one family:** infeasible requests, 89 % against 92 %.
 
-### Asking: a correction, and the first real numbers
+### Asking: a correction, and the real numbers
 
 ```mermaid
 flowchart LR
@@ -488,14 +504,20 @@ flowchart LR
     F["Fix 6c76e54:<br/>an ask-only object is a question<br/>in any wrapper"] --> OK["The planner answers;<br/>the agent gets a second turn"]
 ```
 
-An earlier report said that the LLMs never asked. That was this harness bug. First-turn ask rates on the under-specified tasks, from the raw answers:
+An earlier report said that the LLMs never asked. That was this harness bug. With the fix, on the 280 under-specified tasks:
 
 | | Qwen3 4B | Qwen3 8B | Qwen3 14B | gpt-oss 20B |
 |---|---|---|---|---|
-| Asked first | 25 % (71/280) | 62 % (173/280) | 43 % (121/280) | 99 % (179/180) |
-| Asked when the question was clear | ≤ 2 tasks | 0 | 0 | ≤ 9 tasks |
+| Asked first | 25 % | 62 % | 50 % | 99 % |
+| Correct after asking | 3 % | 66 % | 83 % | 58 % |
+| Correct overall | 1 % | 41 % | 41 % | 58 % |
+| Needless questions (of 2,088 clear tasks) | 3 | 0 | 3 | 35 |
 
-After the fix, Qwen3 4B asked on 67 of 260 under-specified tasks, but answered only 2 correctly after the planner's reply. The other LLMs are running again now. Claude, Qwen3 32B and Qwen3 8B with thinking never asked, so their results do not change.
+1. **The decision to ask and the answer after it are two skills.** gpt-oss asks almost always, but answers well only 58 % of the time. Qwen3 14B asks half the time, but answers well 83 % of the time.
+2. **Qwen3 4B almost never benefits from asking.** It asks on 25 % of the tasks and then answers 3 % of them correctly.
+3. **Asking is cheap to get right on clear tasks:** at most 35 needless questions in 2,088.
+
+Claude, Qwen3 32B and Qwen3 8B with thinking never asked, so their earlier results do not change.
 
 ---
 
@@ -618,23 +640,18 @@ flowchart TB
         direction LR
         D1["14 models, 3 solvers"]
         D2["DSL v0.1 + relax + logic"]
-        D3["10 families"]
+        D3["10 families, 2,290 tasks"]
         D4["5 trivial agents"]
-        D5["LLM ladder on 399 tasks"]
-    end
-    subgraph N["Now"]
-        direction LR
-        N1["Re-run under-specified<br/>after the ask fix"]
-        N2["gpt-oss 20B: last files"]
+        D5["4 LLMs on every task"]
     end
     subgraph X["Next"]
         direction LR
-        X1["Ladder on the 4<br/>newest families"]
+        X1["Frontier APIs on<br/>all 10 families"]
         X2["Regenerate 18 files<br/>with shared outcomes"]
         X4["Port 11+ more models"]
         X5["RL on Qwen3 4B or 8B"]
     end
-    D --> N --> X
+    D --> X
 ```
 
 | State | Item |
@@ -644,8 +661,8 @@ flowchart TB
 | done | 10 families, 2,290 tasks, 78 verified paraphrases |
 | done | Trivial agents exact on every file; probes at 0.3 % and 6.6 % |
 | done | Frontier baseline (Sonnet 59/60, Opus 60/60); LLM ladder on the first 399 tasks |
-| now | Under-specified re-run after the ask fix; gpt-oss 20B's last files |
-| next | Ladder on the four newest families; frontier APIs with pinned ids |
+| done | Untrained LLM ladder on all 10 families: Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % |
+| next | Frontier APIs on all 10 families, with pinned ids |
 | done | All 10 families: `infeasible_request` and `chained_scenario` built Oct 7 |
 | next | Regenerate the 18 files with shared outcomes |
 | next | Port more models; hold some out; RL on a 4B–8B model |

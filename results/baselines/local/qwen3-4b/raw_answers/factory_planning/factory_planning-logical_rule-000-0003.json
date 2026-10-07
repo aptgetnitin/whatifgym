@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "at_least_2_months",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Jun"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": [
+              "May",
+              "Apr"
+            ]
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

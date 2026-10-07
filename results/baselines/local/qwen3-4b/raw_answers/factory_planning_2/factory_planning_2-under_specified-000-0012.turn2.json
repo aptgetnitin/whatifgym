@@ -1,0 +1,4 @@
+{
+  "role": "agent",
+  "text": "What specific closing stock target value is being referred to? The model has a parameter `store_target` which is a number (units) for each product, but the question doesn't specify which product or what value."
+  }

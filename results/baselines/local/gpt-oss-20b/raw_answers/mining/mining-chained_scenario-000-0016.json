@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "new_mine",
+          "royalty": 2400000,
+          "capacity": 1950000,
+          "quality": 1.5
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "name": "Year1_blend_limit",
+      "measure": "blend",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "value": 4600000
+    }
+  ]
+}

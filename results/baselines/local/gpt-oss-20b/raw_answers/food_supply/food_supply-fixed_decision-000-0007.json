@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","fixed_decisions":[{"measure":"ration","scope":{"food":"Wheat","camp":"Jubb_al_Jarrah"},"value":0}]}

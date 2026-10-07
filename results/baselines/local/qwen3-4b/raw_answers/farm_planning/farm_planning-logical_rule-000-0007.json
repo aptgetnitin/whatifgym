@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_calves_year1_impact",
+      "measure": "raise_heifers",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "grain_buy_year4_min",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": ">=",
+      "value": 80
+    }
+  ]
+}

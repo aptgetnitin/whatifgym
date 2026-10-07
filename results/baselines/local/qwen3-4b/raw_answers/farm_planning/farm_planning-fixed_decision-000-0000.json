@@ -1,0 +1,47 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "grow_grain",
+      "column": "grow_grain",
+      "where": {
+        "year": "Year5",
+        "land_group": "Group1"
+      },
+      "value": 4.1
+    },
+    {
+      "op": "set",
+      "table": "grow_grain",
+      "column": "grow_grain",
+      "where": {
+        "year": "Year5",
+        "land_group": "Group2"
+      },
+      "value": 4.1
+    },
+    {
+      "op": "set",
+      "table": "grow_grain",
+      "column": "grow_grain",
+      "where": {
+        "year": "Year5",
+        "land_group": "Group3"
+      },
+      "value": 4.1
+    },
+    {
+      "op": "set",
+      "table": "grow_grain",
+      "column": "grow_grain",
+      "where": {
+        "year": "Year5",
+        "land_group": "Group4"
+      },
+      "value": 4.1
+    }
+  ],
+  "note": "Year5 gets exactly 4.1 tons of grain grown in each land group."
+}

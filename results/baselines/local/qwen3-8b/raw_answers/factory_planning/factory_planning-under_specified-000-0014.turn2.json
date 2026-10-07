@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "ask": "What is the new market limit (units) for product Prod2, month Jan?"
+}

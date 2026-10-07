@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_shipment_csb_shipment",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat",
+        "from_city": "Aleppo",
+        "to_city": "Idleb"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "food": "Corn-soya blend (CSB)",
+          "from_city": "Aleppo",
+          "to_city": "Idleb"
+        }
+      },
+      "factor": 7000
+    }
+  ],
+  "note": "A relative rule compares the sum of the flow of Wheat from Aleppo to Idleb with 7000 times the sum of the flow of Corn-soya blend (CSB) from Aleppo to Idleb."
+}

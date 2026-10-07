@@ -1,0 +1,4 @@
+{
+  "base_model": "manpower_planning",
+  "ask": "What specific row in the skills table is different? Which skill level and what is the new current_strength value?"
+}

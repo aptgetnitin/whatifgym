@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "grain_grow_group2_min",
+      "measure": "grow_grain",
+      "scope": {
+        "land_group": "Group2"
+      },
+      "sense": ">=",
+      "value": 4.2
+    }
+  ]
+}

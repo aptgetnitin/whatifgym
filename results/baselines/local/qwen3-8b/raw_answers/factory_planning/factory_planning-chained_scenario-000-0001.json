@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "make",
+   "column": "make",
+   "where": {
+    "product": "Prod4"
+   },
+   "value": 300
+  }
+ ],
+ "note": "A hard cap on monthly production of Prod4."
+}

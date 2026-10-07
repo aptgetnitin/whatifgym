@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "redundant_unskilled_year3",
+      "measure": "redundant",
+      "scope": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "sense": "==",
+      "value": 0
+    },
+    {
+      "name": "redundant_unskilled_year3_min",
+      "measure": "redundant",
+      "scope": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 350
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "relax": [
+    {
+      "constraint": "retraining_limit",
+      "scope": {
+        "year": [
+          2
+        ]
+      }
+    }
+  ],
+  "note": "Relaxing the retraining limit for year 1 and 3 only means removing the retraining_limit constraint for year 2."
+}

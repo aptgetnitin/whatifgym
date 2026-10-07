@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin0_placement_limit",
+      "measure": "x",
+      "scope": {
+        "bin": "bin0"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "bin": "bin1"
+        }
+      },
+      "factor": 0.6
+    }
+  ]
+}

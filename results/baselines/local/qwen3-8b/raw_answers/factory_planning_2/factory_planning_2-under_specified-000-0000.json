@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "factory_planning_2","ask": "Please specify the upper limit on units made, the product(s) affected, and the time period(s) for the constraint."}

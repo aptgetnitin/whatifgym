@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "machine": [
+     "borer",
+     "planer"
+    ]
+   }
+  }
+ ],
+ "note": "The capacity constraints for borer and planer machines are relaxed, meaning the machine-hour limits no longer apply for these machines."
+}

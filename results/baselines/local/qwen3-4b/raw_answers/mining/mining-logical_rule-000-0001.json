@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "extract_mine4_year4_zero_or_7500000",
+      "measure": "extract",
+      "scope": {
+        "year": "Year4",
+        "mine": "Mine4"
+      },
+      "sense": "<=",
+      "value": 7500000
+    },
+    {
+      "name": "extract_mine4_year4_at_least_7500000",
+      "measure": "extract",
+      "scope": {
+        "year": "Year4",
+        "mine": "Mine4"
+      },
+      "sense": ">=",
+      "value": 7500000
+    }
+  ]
+}

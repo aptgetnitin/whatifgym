@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "downgrade",
+   "column": "downgrade",
+   "where": {
+    "year": 1,
+    "from_skill": "skilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 0
+  }
+ ],
+ "note": "No workers are downgraded from skilled to semi_skilled in year 1."
+}

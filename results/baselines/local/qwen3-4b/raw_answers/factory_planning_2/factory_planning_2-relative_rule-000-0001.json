@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod1_stock_limit",
+      "measure": "store",
+      "scope": {
+        "product": "Prod1"
+      },
+      "sense": "<=",
+      "value": 0.15
+    }
+  ],
+  "note": "The rule specifies that the total stock of product Prod1 is at most 15% of the total units in stock (interpreted as 15% of the sum of all products' stock). However, the rule as written is ambiguous because it does not specify the denominator for the percentage. The rule should clarify whether it's 15% of the total stock across all products or 15% of the stock for a specific product. Without this clarification, the scenario cannot be precisely defined."
+}

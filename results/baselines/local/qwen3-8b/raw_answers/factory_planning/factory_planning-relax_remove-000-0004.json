@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "machine": "*"
+   }
+  }
+ ],
+ "note": "Removing the machine-hour capacity constraints across all machines."
+}

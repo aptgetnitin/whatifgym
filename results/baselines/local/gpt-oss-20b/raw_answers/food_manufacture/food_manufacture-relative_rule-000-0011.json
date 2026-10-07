@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"refine_at_least_1.25_bought","measure":"consume","sense":">=","relative_to":{"measure":"buy","scope":{}},"factor":1.25}]}

@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "max_sales_mar",
+   "measure": "sell",
+   "scope": {
+    "month": "Mar"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "A relative rule limits the total sales in March to 5% of the total sales in other months."
+}

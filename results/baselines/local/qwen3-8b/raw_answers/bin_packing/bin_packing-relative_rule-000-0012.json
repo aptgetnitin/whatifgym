@@ -1,0 +1,61 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "min_bins_at_least_90_percent_items",
+   "measure": "y",
+   "scope": {
+    "bin": "bin0",
+    "bin": "bin1",
+    "bin": "bin2",
+    "bin": "bin3",
+    "bin": "bin4",
+    "bin": "bin5",
+    "bin": "bin6",
+    "bin": "bin7",
+    "bin": "bin8",
+    "bin": "bin9",
+    "bin": "bin10"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "y",
+    "scope": {
+     "bin": "bin0",
+     "bin": "bin1",
+     "bin": "bin2",
+     "bin": "bin3",
+     "bin": "bin4",
+     "bin": "bin5",
+     "bin": "bin6",
+     "bin": "bin7",
+     "bin": "bin8",
+     "bin": "bin9",
+     "bin": "bin10"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "y",
+   "scope": {
+    "bin": "bin0",
+    "bin": "bin1",
+    "bin": "bin2",
+    "bin": "bin3",
+    "bin": "bin4",
+    "bin": "bin5",
+    "bin": "bin6",
+    "bin": "bin7",
+    "bin": "bin8",
+    "bin": "bin9",
+    "bin": "bin10"
+   }
+  }
+ ],
+ "note": "The total number of bins used must be at least 90% of the total number of items packed."
+}

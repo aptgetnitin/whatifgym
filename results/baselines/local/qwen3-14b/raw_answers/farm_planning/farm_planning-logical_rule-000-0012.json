@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "grain_buy_dependency_year5",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "grow_beet",
+        "scope": {
+          "year": "Year5"
+        }
+      },
+      "factor": 42
+    }
+  ]
+}

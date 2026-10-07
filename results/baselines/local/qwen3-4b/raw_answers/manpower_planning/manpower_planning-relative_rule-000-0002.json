@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "year1_workforce_at_most_75_of_year3",
+      "measure": "workforce",
+      "scope": {
+        "year": 1
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "workforce",
+        "scope": {
+          "year": 3
+        }
+      }
+    },
+    {
+      "name": "short_time_at_most_25_of_retrain",
+      "measure": "short_time",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ]
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "retrain",
+        "scope": {
+          "year": [
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    }
+  ]
+}

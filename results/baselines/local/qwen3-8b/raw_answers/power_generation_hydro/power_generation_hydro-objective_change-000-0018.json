@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "pump",
+   "scope": {
+    "period": "18-24"
+   }
+  }
+ ],
+ "note": "First, minimize the total generating cost. Then, maximize the pumping power for the period 18-24."
+}

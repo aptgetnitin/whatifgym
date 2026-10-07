@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "maize_meal_shipment_fraction",
+      "measure": "flow",
+      "scope": {
+        "food": "Maize meal"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {}
+      },
+      "factor": 0.3
+    }
+  ]
+}

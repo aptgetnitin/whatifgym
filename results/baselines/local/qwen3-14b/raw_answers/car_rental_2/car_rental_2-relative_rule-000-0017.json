@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "damaged_stock_wednesday_limit",
+      "measure": "damaged_stock",
+      "scope": {
+        "day": "Wednesday"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "damaged_stock",
+        "scope": {
+          "day": [
+            "Monday",
+            "Tuesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ]
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_transfers_monday_limit",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "damaged_transfers",
+    "scope": {
+     "day": "Friday"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "Limits the sum of damaged transfers on Monday to 60% of the sum on Friday."
+}

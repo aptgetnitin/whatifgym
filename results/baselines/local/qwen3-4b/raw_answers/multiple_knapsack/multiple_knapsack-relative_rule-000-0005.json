@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "at_least_30_percent_to_bin4",
+      "measure": "x",
+      "scope": {
+        "bin": "bin4"
+      },
+      "sense": ">=",
+      "factor": 0.3
+    }
+  ],
+  "note": "The rule ensures that at least 30% of the total item placements go to bin4."
+  }

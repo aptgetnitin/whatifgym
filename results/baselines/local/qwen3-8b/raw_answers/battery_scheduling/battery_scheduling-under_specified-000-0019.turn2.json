@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "import_price",
+   "where": {
+    "hour": "03-04"
+   },
+   "value": 0.1
+  }
+ ],
+ "note": "The grid import price for hour 03-04 is set to 0.1 EUR/kWh."
+}

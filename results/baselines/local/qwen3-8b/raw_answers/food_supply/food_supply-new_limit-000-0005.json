@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_food_shipped_cap",
+   "measure": "flow",
+   "scope": {
+    "food": "*",
+    "from_city": "*",
+    "to_city": "*"
+   },
+   "sense": "<=",
+   "value": 130200
+  }
+ ],
+ "note": "A global cap on total food shipped across all foods and links."
+}

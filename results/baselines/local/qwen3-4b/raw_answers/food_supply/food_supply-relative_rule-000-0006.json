@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "total_bought_at_most_75_percent_of_shipped",
+      "measure": "purchase",
+      "scope": {
+        "food": "*"
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "from_city": "*"
+        }
+      }
+    },
+    {
+      "name": "amman_shipped_at_most_60_percent_of_gaziantep_shipped",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Amman"
+      },
+      "sense": "<=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "from_city": "Gaziantep"
+        }
+      }
+    }
+  ]
+}

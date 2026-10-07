@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "daraa_min_10_percent",
+      "measure": "flow",
+      "scope": {
+        "from_city": [
+          "Daraa"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "cost",
+      "scope": {
+        "food": [
+          "all"
+        ],
+        "from_city": [
+          "Daraa"
+        ]
+      }
+    }
+  ],
+  "fixed_decisions": []
+}

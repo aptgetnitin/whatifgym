@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","fixed_decisions":[{"measure":"nstart","scope":{"period":"00-06","type":"Thermal0"},"value":0},{"measure":"hydro_on","scope":{"period":"15-18","hydro":"HydroA"},"value":1}],"note":"Commit to no Thermal0 starts in 00-06 and HydroA running in 15-18."}

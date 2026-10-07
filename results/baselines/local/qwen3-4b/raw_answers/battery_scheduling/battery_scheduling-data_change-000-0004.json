@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "initial_soc_kwh",
+      "where": {
+        "key": "initial_soc_kwh"
+      },
+      "value": 0.5
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","logic":[{"name":"at_most_two_foods_nonzero","at_least":1,"of":[{"measure":"ration","scope":{"food":"Corn-soya blend (CSB)"},"sense":"<=","value":0},{"measure":"ration","scope":{"food":"Oil"},"sense":"<=","value":0},{"measure":"ration","scope":{"food":"Milk"},"sense":"<=","value":0}]}]}

@@ -1,0 +1,74 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "thermal_output_1518_le_0006",
+      "measure": "output",
+      "scope": {
+        "period": "15-18",
+        "type": "Thermal0"
+      },
+      "sense": "<=",
+      "value": 0
+    },
+    {
+      "name": "thermal_output_1518_le_0006",
+      "measure": "output",
+      "scope": {
+        "period": "15-18",
+        "type": "Thermal1"
+      },
+      "sense": "<=",
+      "value": 0
+    },
+    {
+      "name": "thermal_output_1518_le_0006",
+      "measure": "output",
+      "scope": {
+        "period": "15-18",
+        "type": "Thermal2"
+      },
+      "sense": "<=",
+      "value": 0
+    },
+    {
+      "name": "thermal_output_1518_le_0006",
+      "measure": "output",
+      "scope": {
+        "period": "00-06",
+        "type": "Thermal0"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "thermal_output_1518_le_0006",
+      "measure": "output",
+      "scope": {
+        "period": "00-06",
+        "type": "Thermal1"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "thermal_output_1518_le_0006",
+      "measure": "output",
+      "scope": {
+        "period": "00-06",
+        "type": "Thermal2"
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

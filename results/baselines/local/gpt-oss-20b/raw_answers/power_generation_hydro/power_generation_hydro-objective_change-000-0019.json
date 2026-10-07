@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","objective":[{"sense":"min","measure":"original"},{"sense":"max","measure":"hydro_start"},{"sense":"max","measure":"pump"}],"note":"Keep total generating cost at its minimum, then maximize the total number of hydro unit start‑ups, and finally maximize total pumping power."}

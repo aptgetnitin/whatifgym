@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_transfers_cap",
+   "measure": "damaged_transfers",
+   "scope": {},
+   "sense": "<=",
+   "value": 55
+  }
+ ],
+ "note": "Limits the total number of damaged cars transferred between depots across all days and origin-destination pairs."
+}

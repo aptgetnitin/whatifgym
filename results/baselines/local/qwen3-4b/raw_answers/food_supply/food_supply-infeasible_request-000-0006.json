@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "to_city": "Qamishli"
+      },
+      "value": 72600
+    },
+    {
+      "op": "set",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "to_city": "Idleb"
+      },
+      "value": 72600
+    }
+  ],
+  "note": "The planner asks if both flow targets for Qamishli and Idleb can be met simultaneously."
+}

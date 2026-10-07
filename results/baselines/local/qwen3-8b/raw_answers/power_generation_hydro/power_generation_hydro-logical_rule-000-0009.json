@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal0_output_min_00-06",
+   "measure": "output",
+   "scope": {
+    "period": "00-06",
+    "type": "Thermal0"
+   },
+   "sense": ">=",
+   "value": 15300
+  }
+ ],
+ "note": "Ensures that if there is any thermal output for period 00-06 and type Thermal0, it must be at least 15300 MW."
+}

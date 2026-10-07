@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "manchester_repairs_limit",
+   "measure": "repairs",
+   "scope": {
+    "depot": "Manchester"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "depot": "Birmingham"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "A relative rule limits the sum of repairs at Manchester to 50% of the sum at Birmingham."
+}

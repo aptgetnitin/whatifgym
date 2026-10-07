@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Saturday",
+    "depot": "Glasgow"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "weekly_profit",
+   "scope": {}
+  }
+ ],
+ "note": "Prioritise minimising damaged cars kept overnight at Glasgow on Saturday, then maximising weekly profit."
+}

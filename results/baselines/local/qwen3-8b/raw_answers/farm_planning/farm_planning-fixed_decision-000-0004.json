@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "raise_heifers",
+   "column": "raise_heifers",
+   "where": {
+    "year": "Year1"
+   },
+   "value": 11
+  },
+  {
+   "op": "set",
+   "table": "grow_beet",
+   "column": "grow_beet",
+   "where": {
+    "year": "Year3"
+   },
+   "value": 0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "yearly_profit",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  }
+ ]
+}

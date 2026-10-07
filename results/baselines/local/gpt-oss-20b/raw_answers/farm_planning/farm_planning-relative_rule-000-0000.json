@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"grain_growth_year3_le_80_percent_year2","measure":"grow_grain","scope":{"year":"Year3"},"sense":"<=","relative_to":{"measure":"grow_grain","scope":{"year":"Year2"}},"factor":0.8}]}

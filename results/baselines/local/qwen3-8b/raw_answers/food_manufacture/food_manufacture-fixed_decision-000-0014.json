@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "fixed_decisions": [
+  {
+   "measure": "consume",
+   "scope": {
+    "month": "*",
+    "oil": "VEG2"
+   },
+   "value": 113
+  },
+  {
+   "measure": "buy",
+   "scope": {
+    "month": "Feb",
+    "oil": "OIL2"
+   },
+   "value": 560
+  }
+ ],
+ "note": "Fixed decisions set specific values for the consume of VEG2 across all months and the buy of OIL2 in February."
+}

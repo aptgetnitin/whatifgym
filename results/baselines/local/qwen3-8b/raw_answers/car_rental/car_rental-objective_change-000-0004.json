@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "weekly_profit"
+  },
+  {
+   "sense": "max",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Saturday"
+   }
+  }
+ ],
+ "note": "Prioritise maintaining maximum weekly profit, then maximise damaged transfers on Saturday."
+}

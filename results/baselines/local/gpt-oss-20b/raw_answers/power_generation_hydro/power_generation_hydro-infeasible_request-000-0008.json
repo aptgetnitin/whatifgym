@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal1_min_output",
+      "measure": "output",
+      "scope": {
+        "type": "Thermal1"
+      },
+      "sense": ">=",
+      "value": 136500
+    }
+  ],
+  "note": "Require at least 136,500 MW total output from Thermal1 across all periods."
+}

@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "machine": "borer"
+   }
+  }
+ ],
+ "note": "The capacity constraint for the borer machine is relaxed, effectively lifting the machine-hours limit for that machine type."
+}

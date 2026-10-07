@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "years",
+      "column": "blend",
+      "where": {
+        "year": "Year2"
+      },
+      "factor": 0.1
+    }
+  ],
+  "note": "A relative change in the blend for a specific year is a scale over the matching rows."
+}

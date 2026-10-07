@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "repair_capacity",
+      "factor": 1.2
+    }
+  ],
+  "rules": [
+    {
+      "measure": "repairs",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": "<=",
+      "value": 16,
+      "name": "cap_repairs_Monday"
+    }
+  ]
+}

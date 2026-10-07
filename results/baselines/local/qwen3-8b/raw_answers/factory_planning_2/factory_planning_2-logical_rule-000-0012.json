@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "at_most_one_month_with_sales",
+   "measure": "sell",
+   "scope": {
+    "month": [
+     "Mar",
+     "Apr",
+     "May"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "The rule limits the total sales across the specified months to zero, effectively restricting sales to at most one of these months."
+}

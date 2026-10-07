@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "max_inventory",
+   "where": {
+    "param": "max_inventory"
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The storage limit is scaled by a factor of 1.25."
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "sugar_beet_sell_year5_at_most_25_year1",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "sell_beet",
+        "scope": {
+          "year": "Year1"
+        }
+      }
+    }
+  ]
+}

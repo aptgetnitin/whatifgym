@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "undamaged_stock",
+      "column": "undamaged_stock",
+      "where": {
+        "day": "Saturday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "value": 45
+    }
+  ],
+  "note": "Set undamaged_stock to 45 for Saturday in all depots to level out the morning stock."
+}

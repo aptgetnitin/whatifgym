@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "year2_overmanned_retrain_req",
+      "measure": "overmanned",
+      "scope": {
+        "year": 2
+      },
+      "sense": ">=",
+      "value": 300
+    },
+    {
+      "name": "year1_unskilled_to_semi_skilled_retrain",
+      "measure": "retrain",
+      "scope": {
+        "year": 1,
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "note": "The question asks for a rule that links overmanned workers in year 2 to retrained workers in year 1. The rule requires that the overmanned count in year 2 is at least 300, and there is at least 0 retrained workers from unskilled to semi_skilled in year 1."
+}

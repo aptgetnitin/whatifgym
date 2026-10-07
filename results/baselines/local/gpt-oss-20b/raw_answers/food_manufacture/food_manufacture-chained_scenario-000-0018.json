@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"set","table":"purchase_prices","column":"price","where":{"month":"Jan","oil":"VEG2"},"value":60},{"op":"scale","table":"purchase_prices","column":"price","where":{"month":"Apr","oil":"VEG2"},"factor":0.5}]}

@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "bin0_item_limit",
+      "measure": "x",
+      "scope": {
+        "bin": "bin0"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "bin": {
+            "type": "string",
+            "description": "All bins"
+          }
+        }
+      },
+      "factor": 0.3
+    },
+    {
+      "name": "bin_usage_limit",
+      "measure": "y",
+      "scope": {
+        "bin": {
+          "type": "string",
+          "description": "All bins"
+        }
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "bin": {
+            "type": "string",
+            "description": "All bins"
+          }
+        }
+      },
+      "factor": 0.8
+    }
+  ]
+}

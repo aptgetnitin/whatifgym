@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "to_skill": "semi_skilled"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_share_of_target",
+   "where": {
+    "to_skill": "semi_skilled"
+   },
+   "value": 0
+  }
+ ],
+ "note": "The retraining limit for semi_skilled is removed by setting both max_per_year and max_share_of_target to 0."
+}

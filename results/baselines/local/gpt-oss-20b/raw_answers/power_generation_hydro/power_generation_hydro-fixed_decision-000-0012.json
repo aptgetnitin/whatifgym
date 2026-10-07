@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "fixed_decisions": [
+    {
+      "measure": "output",
+      "scope": {
+        "period": "09-15",
+        "type": "Thermal0"
+      },
+      "value": 5300
+    }
+  ]
+}

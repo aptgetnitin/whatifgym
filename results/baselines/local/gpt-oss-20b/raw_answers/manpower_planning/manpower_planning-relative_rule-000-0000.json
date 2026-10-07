@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "overmanning_year2_at_most_80_percent_year1",
+      "measure": "overmanned",
+      "scope": {
+        "year": 2
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "overmanned",
+        "scope": {
+          "year": 1
+        }
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "New policy: overmanning in year 2 must be at most 80% of overmanning in year 1."
+}

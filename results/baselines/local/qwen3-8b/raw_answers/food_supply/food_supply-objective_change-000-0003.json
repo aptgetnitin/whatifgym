@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "purchase",
+   "scope": {
+    "supplier": [
+      "Aleppo",
+      "Amman",
+      "As_Suweida",
+      "Beirut",
+      "Damascus",
+      "Daraa",
+      "Dayr_Az_Zor",
+      "Gaziantep",
+      "Hama",
+      "Hassakeh",
+      "Homs"
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "total_cost",
+   "scope": {}
+  }
+ ],
+ "note": "The new priority is to minimize the total units of food purchased across all suppliers, followed by minimizing the total cost."
+}

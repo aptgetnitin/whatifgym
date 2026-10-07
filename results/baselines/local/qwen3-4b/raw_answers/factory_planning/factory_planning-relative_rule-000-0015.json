@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "max_sales_jun",
+      "measure": "sell",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 0.05
+    },
+    {
+      "name": "prod3_at_most_25_prod1",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod3"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod1"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

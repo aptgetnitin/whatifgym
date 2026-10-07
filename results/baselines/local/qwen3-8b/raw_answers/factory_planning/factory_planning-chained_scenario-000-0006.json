@@ -1,0 +1,346 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1",
+    "month": "Jan"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1",
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1",
+    "month": "Mar"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1",
+    "month": "Apr"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1",
+    "month": "May"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1",
+    "month": "Jun"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod2",
+    "month": "Jan"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod2",
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod2",
+    "month": "Mar"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod2",
+    "month": "Apr"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod2",
+    "month": "May"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod2",
+    "month": "Jun"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod3",
+    "month": "Jan"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod3",
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod3",
+    "month": "Mar"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod3",
+    "month": "Apr"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod3",
+    "month": "May"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod3",
+    "month": "Jun"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod4",
+    "month": "Jan"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod4",
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod4",
+    "month": "Mar"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod4",
+    "month": "Apr"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod4",
+    "month": "May"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod4",
+    "month": "Jun"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5",
+    "month": "Jan"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5",
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5",
+    "month": "Mar"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5",
+    "month": "Apr"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5",
+    "month": "May"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5",
+    "month": "Jun"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod6",
+    "month": "Jan"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod6",
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod6",
+    "month": "Mar"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name": "total_inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "Prod6",
+    "month": "Apr"
+   },
+   "sense": "<=",
+   "value": 900
+  },
+  {
+   "name":

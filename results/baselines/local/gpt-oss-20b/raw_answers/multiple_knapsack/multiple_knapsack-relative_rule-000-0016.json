@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item2_at_most_60_percent_item12",
+      "measure": "x",
+      "scope": { "item": "item2" },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "x",
+        "scope": { "item": "item12" }
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "New policy: number of item placements for item2 must be at most 60% of item12 placements."
+}

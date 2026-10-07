@@ -1,0 +1,55 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_shipped_vs_total_bought",
+   "measure": "flow",
+   "scope": {
+    "food": {
+     "type": "string"
+    },
+    "from_city": {
+     "type": "string"
+    },
+    "to_city": {
+     "type": "string"
+    }
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "food": {
+      "type": "string"
+     },
+     "supplier": {
+      "type": "string"
+     }
+    }
+   },
+   "factor": 1.5
+  },
+  {
+   "name": "wheat_ration_vs_milk_ration",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat",
+    "camp": {
+     "type": "string"
+    }
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "food": "Milk",
+     "camp": {
+      "type": "string"
+     }
+    }
+   },
+   "factor": 0.75
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod1_stock_limit",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": "<=",
+   "value": 80
+  }
+ ],
+ "note": "A stock limit over the entire horizon is a absolute rule on the sum of store over product."
+}

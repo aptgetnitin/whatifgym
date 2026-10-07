@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "retrain_semi_skilled_cap",
+      "measure": "retrain",
+      "scope": {
+        "from_skill": "semi_skilled",
+        "to_skill": [
+          "skilled"
+        ]
+      },
+      "sense": "==",
+      "value": 100
+    }
+  ]
+}

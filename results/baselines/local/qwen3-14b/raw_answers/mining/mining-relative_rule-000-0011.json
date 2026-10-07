@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "open_vs_operate_ratio",
+      "measure": "open",
+      "scope": {
+        "year": ["Year1", "Year2", "Year3", "Year4", "Year5"],
+        "mine": ["Mine1", "Mine2", "Mine3", "Mine4"]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "year": ["Year1", "Year2", "Year3", "Year4", "Year5"],
+          "mine": ["Mine1", "Mine2", "Mine3", "Mine4"]
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

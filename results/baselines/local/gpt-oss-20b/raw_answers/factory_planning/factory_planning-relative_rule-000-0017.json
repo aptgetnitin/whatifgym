@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"measure":"store","sense":">=","relative_to":{"measure":"make"},"factor":0.6}],"note":"Enforce that total units in stock are at least 60% of total units produced."}

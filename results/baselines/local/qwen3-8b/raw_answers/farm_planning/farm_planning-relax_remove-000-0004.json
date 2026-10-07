@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "relax": [
+  {
+   "constraint": "labour",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  },
+  {
+   "constraint": "housing",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  }
+ ],
+ "note": "Relaxing the labour and housing constraints removes their limits on the model."
+}

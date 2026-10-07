@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "monday_rentals_cap",
+   "measure": "rentals",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "day": "Saturday"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "Limits Monday rentals to 80% of Saturday rentals."
+}

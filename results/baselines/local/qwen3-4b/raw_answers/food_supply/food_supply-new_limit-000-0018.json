@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "dayr_az_zor_purchase_limit",
+      "measure": "purchase",
+      "scope": {
+        "supplier": [
+          "Dayr_Az_Zor"
+        ]
+      },
+      "sense": "<=",
+      "value": 116450
+    }
+  ]
+}

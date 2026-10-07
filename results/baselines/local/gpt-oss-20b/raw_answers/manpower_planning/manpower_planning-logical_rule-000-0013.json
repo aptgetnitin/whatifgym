@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "logic": [
+    {
+      "name": "unskilled_short_time_minimum",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "short_time",
+          "scope": {
+            "skill": "unskilled"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "short_time",
+          "scope": {
+            "skill": "unskilled"
+          },
+          "sense": ">=",
+          "value": 220
+        }
+      ]
+    }
+  ],
+  "note": "If any unskilled workers are on short‑time, at least 220 must be."
+}

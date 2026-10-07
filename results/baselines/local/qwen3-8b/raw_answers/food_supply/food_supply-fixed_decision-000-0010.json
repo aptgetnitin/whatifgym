@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "food": "Corn-soya blend (CSB)",
+    "from_city": "Hassakeh",
+    "to_city": "Qamishli"
+   },
+   "value": 4400
+  }
+ ],
+ "rules": [
+  {
+   "name": "wheat_ration_jubb_al_jarrah_zero",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat",
+    "camp": "Jubb_al_Jarrah"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Fixed the flow of Corn-soya blend (CSB) from Hassakeh to Qamishli to exactly 4400 units per day and set the ration of Wheat in Jubb_al_Jarrah to 0, with all other decisions optimised."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "year": "Year4"
+      },
+      "value": 11250000
+    }
+  ],
+  "note": "The planner asks for a fixed extraction amount for Year4. However, the model's decision variable `extract[year, mine]` is per mine, not a single value for the year. The question is ambiguous: does it mean total extraction for Year4 across all mines, or per mine? The model schema shows `extract` is indexed by both `year` and `mine`, so a single value for `Year4` is not directly settable. This requires clarification."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","logic":[{"name":"at_most_one_hour_with_soc","at_least":3,"of":[{"measure":"soc","scope":{"hour":"16-17"},"sense":"<=","value":0},{"measure":"soc","scope":{"hour":"15-16"},"sense":"<=","value":0},{"measure":"soc","scope":{"hour":"17-18"},"sense":"<=","value":0},{"measure":"soc","scope":{"hour":"19-20"},"sense":"<=","value":0}]}]}

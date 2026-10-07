@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "min_profit_year3",
+   "measure": "yearly_profit",
+   "scope": {
+    "year": "Year3"
+   },
+   "sense": ">=",
+   "value": 77450
+  }
+ ],
+ "note": "A minimum profit requirement for a specific year is enforced through a rule."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"beet_heifer_ratio","measure":"grow_beet","sense":"<=","relative_to":{"measure":"raise_heifers"},"factor":1.25}]}

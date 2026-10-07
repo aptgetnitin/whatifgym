@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "ask": "What does 'capped' mean in this context? How many item placements are being capped? What is the cap value?"
+  }

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","objective":[{"sense":"max","measure":"original"},{"sense":"max","measure":"damaged_left","scope":{"day":"Wednesday"}}],"note":"Lexicographic objective: first maximize weekly profit, then maximize the number of damaged cars kept overnight at all depots on Wednesday."}

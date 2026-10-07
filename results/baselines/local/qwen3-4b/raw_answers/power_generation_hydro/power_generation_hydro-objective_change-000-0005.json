@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "cost",
+      "scope": {
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "reservoir_level",
+      "scope": {
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ]
+      }
+    }
+  ],
+  "note": "The planner wants the same total generating cost as today (so the first objective stage is fixed at the current cost) but the minimum possible reservoir level. However, the model's objective is to minimize cost, so this requires a two-stage objective: first minimize cost (to match today's cost), then minimize reservoir level."
+  }

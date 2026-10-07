@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "redundant_year2_at_most_25_year1",
+      "measure": "redundant",
+      "scope": {
+        "year": 2
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "redundant",
+        "scope": {
+          "year": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "overmanned_year2_limit",
+   "measure": "overmanned",
+   "scope": {
+    "year": 2
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "year": 1
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "The overmanned workforce in year 2 is limited to 80% of the overmanned workforce in year 1."
+}

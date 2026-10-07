@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "charge"
+    },
+    {
+      "sense": "max",
+      "measure": "soc"
+    }
+  ],
+  "note": "Keep profit at its maximum, then maximize total battery charging power, and finally maximize total battery stored energy."
+}

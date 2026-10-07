@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"measure":"buy","sense":">=","value":13500}],"note":"Check if total oil purchases can reach at least 13500 tons."}

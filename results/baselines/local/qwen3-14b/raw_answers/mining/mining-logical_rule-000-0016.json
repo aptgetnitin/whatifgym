@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "max_open_mines",
+      "measure": "open",
+      "scope": {
+        "mine": [
+          "Mine3",
+          "Mine4",
+          "Mine1",
+          "Mine2"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

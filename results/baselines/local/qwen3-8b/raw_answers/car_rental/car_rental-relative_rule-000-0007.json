@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_stock_friday_min",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Friday"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "undamaged_stock",
+    "scope": {
+     "day": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Saturday"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "The rule ensures that undamaged cars at the depot on Friday account for at least 40% of the total undamaged cars at the depots on other days."
+}

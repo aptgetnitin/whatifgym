@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","objective":[{"measure":"original","sense":"max"},{"measure":"damaged_transfers","sense":"min"},{"measure":"damaged_left","sense":"min"}]}

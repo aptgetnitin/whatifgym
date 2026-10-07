@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "mine2_worked_at_least_4_years",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine2"
+   },
+   "sense": ">=",
+   "value": 4
+  },
+  {
+   "name": "total_ore_extracted_capped",
+   "measure": "extract",
+   "scope": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ],
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "<=",
+   "value": 20873350
+  }
+ ],
+ "note": "Two new rules are added: one to ensure Mine2 is worked in at least 4 years, and another to cap the total ore extracted across all mines and years."
+}

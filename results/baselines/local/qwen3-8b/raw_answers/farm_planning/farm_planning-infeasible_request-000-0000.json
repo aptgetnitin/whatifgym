@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "age4_cattle_min",
+   "measure": "herd",
+   "scope": {
+    "year": "Year1",
+    "age": 4
+   },
+   "sense": ">=",
+   "value": 110
+  },
+  {
+   "name": "age11_cattle_min",
+   "measure": "herd",
+   "scope": {
+    "year": "Year1",
+    "age": 11
+   },
+   "sense": ">=",
+   "value": 94
+  }
+ ],
+ "note": "The question requires setting minimum values for the herd in specific age groups across the first year."
+}

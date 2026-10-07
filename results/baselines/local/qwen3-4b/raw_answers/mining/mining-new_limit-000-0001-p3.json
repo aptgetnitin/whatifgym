@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extracted_total",
+      "where": {
+        "mine": "Mine4"
+      },
+      "value": 9562500
+    }
+  ],
+  "note": "The requirement is a fixed decision on the total extracted from Mine4 over the horizon."
+  }

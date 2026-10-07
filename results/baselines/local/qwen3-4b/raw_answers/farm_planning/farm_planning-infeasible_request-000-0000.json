@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "age4_at_least_110",
+      "measure": "herd",
+      "scope": {
+        "year": "Year1",
+        "age": 4
+      },
+      "sense": ">=",
+      "value": 110
+    },
+    {
+      "name": "age11_at_least_94",
+      "measure": "herd",
+      "scope": {
+        "year": "Year1",
+        "age": 11
+      },
+      "sense": ">=",
+      "value": 94
+    }
+  ],
+  "note": "The planner asks if two minimum herd sizes for specific ages in Year1 can be satisfied simultaneously."
+  }

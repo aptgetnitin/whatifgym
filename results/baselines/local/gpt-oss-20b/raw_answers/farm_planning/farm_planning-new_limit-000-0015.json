@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"min_sell_heifers_year1","measure":"sell_heifers","scope":{"year":"Year1"},"sense":">=","value":37}],"note":"Ensure at least 37 heifer calves sold in Year1."}

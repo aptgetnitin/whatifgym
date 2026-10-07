@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "relax": [
+  {
+   "constraint": "quality",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2"
+    ]
+   }
+  }
+ ],
+ "note": "The quality constraint is relaxed for Year1 and Year2, meaning the blend-quality target does not apply for these years."
+}

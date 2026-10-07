@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","relax":[{"constraint":"labour"},{"constraint":"housing"}],"note":"Drop labour-hours limit and housing-capacity limit."}

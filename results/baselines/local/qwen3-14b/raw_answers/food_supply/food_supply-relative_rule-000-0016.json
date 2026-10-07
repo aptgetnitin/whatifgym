@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_ration_min",
+      "measure": "ration",
+      "scope": {
+        "food": "Oil"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "camp": {
+            "camp": [
+              "Ar Raqqa",
+              "Daraa",
+              "Dayr_Az_Zor",
+              "Hassakeh",
+              "Idleb",
+              "Jubb_al_Jarrah",
+              "Qamishli"
+            ]
+          }
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "fixed_decisions": [
+    {
+      "measure": "flow",
+      "scope": {
+        "food": "Oil",
+        "from_city": "Hassakeh",
+        "to_city": "Qamishli"
+      },
+      "value": 5000
+    },
+    {
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Daraa"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Two fixed decisions: flow of Oil from Hassakeh to Qamishli is 5000 units per day, and ration of CSB in Daraa camp is 0."
+  }

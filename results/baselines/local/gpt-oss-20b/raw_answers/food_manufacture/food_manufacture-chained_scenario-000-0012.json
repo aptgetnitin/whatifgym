@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"scale_param","name":"initial_stock","factor":1.5}],"rules":[{"measure":"produce","scope":{},"sense":"<=","value":1900,"name":"cap_produce_total"}],"note":"Opening stock per oil increased by 50%; overall cap of 1900 tons of food production."}

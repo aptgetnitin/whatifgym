@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"total_make_target","measure":"make","sense":">=","value":35800}],"note":"Require total production of at least 35,800 units."}

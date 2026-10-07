@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "rule1",
+      "measure": "make",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": "May"
+        }
+      },
+      "factor": 3.0
+    },
+    {
+      "name": "rule2",
+      "measure": "store",
+      "scope": {
+        "month": [
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": [
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

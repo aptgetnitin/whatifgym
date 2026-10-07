@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "grain_grown_group2_year3",
+   "measure": "grow_grain",
+   "scope": {
+    "year": "Year3",
+    "land_group": "Group2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "raise_heifers",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 4.2
+  }
+ ],
+ "note": "A rule that enforces a minimum grain grown on Group2 in Year3 relative to heifer calves raised in Year1."
+}

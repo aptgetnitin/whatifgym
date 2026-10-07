@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase",
+      "column": "purchase",
+      "where": {
+        "food": [
+          "Maize meal",
+          "Oil",
+          "Milk"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A constraint that at most one food may have any purchase is not directly expressible as a data change. Instead, we fix the purchase to zero for all three foods, which is the most precise interpretation of the question."
+}

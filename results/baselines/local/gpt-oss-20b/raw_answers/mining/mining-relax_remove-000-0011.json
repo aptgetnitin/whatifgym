@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "quality",
+      "scope": {
+        "year": ["Year3", "Year4"]
+      }
+    }
+  ],
+  "note": "Lift blend-quality target for Year3 and Year4 by removing the quality constraint."
+}

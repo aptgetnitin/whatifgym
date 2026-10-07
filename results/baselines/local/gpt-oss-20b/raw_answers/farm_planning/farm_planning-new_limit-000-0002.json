@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"max_profit_year5","measure":"yearly_profit","scope":{"year":"Year5"},"sense":"<=","value":17700}]}

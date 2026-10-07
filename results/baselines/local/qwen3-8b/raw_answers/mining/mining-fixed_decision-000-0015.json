@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "blend",
+   "where": {
+    "year": "Year5"
+   },
+   "value": 0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "blend",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4"
+    ]
+   }
+  }
+ ],
+ "note": "Fix the tons of blended ore sold for Year5 at 0 and optimise the rest."
+}

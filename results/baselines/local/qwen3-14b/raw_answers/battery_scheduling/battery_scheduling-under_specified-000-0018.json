@@ -1,0 +1,1 @@
+{"version": "0.1", "base_model": "battery_scheduling", "ask": "What is the new value for the minimum battery charge at the end of the day (kWh)?"}

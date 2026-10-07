@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_charge_kw",
+   "value": 3.9
+  }
+ ],
+ "note": "The maximum charging power is set to 3.9 kW."
+}

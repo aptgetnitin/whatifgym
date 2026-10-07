@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "at_most_one_year_grain_bought",
+      "measure": "buy_grain",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

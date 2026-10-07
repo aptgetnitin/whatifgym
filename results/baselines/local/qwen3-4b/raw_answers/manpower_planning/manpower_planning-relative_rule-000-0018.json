@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "max_recruit",
+      "where": {
+        "year": [
+          "3"
+        ]
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "The planner's question specifies that at least 60% of the total workers recruited may go to year 3. This implies that the maximum number of recruits for year 3 is 60% of the total recruits across all years. However, the model's `requirements` table has a `max_recruit` column that specifies the maximum number of workers that can be recruited each year. The question is ambiguous because it refers to 'total workers recruited' (across all years) and 'go to year 3' (which implies the recruits for year 3). The model does not have a direct measure for total recruits across years, so this scenario cannot be precisely defined without more information."
+}

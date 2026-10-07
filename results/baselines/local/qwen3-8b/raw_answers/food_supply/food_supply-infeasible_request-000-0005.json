@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Daraa"
+      },
+      "value": 3.5
+    }
+  ],
+  "rules": [
+    {
+      "name": "ration_fixed",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Daraa"
+      },
+      "sense": "==",
+      "value": 3.5
+    }
+  ],
+  "note": "Fix the ration for Corn-soya blend (CSB) in Daraa to exactly 3.5 units per person per day."
+}

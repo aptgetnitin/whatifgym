@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"Year1_sell_heifers_at_most_10_percent","measure":"sell_heifers","scope":{"year":"Year1"},"sense":"<=","relative_to":{"measure":"sell_heifers"},"factor":0.1}],"note":"At most 10% of all heifer calves sold may be sold in Year1."}

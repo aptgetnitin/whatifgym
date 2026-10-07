@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"sugar_beet_year1_requires_grain_year2","at_least":1,"of":[{"measure":"sell_beet","scope":{"year":"Year1"},"sense":"<=","value":0},{"measure":"buy_grain","scope":{"year":"Year2"},"sense":">=","value":44}]}]}

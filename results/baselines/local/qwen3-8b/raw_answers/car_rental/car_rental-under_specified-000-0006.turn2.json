@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "rentals_upper_limit",
+   "measure": "rentals",
+   "scope": {
+    "depot": "Birmingham"
+   },
+   "sense": "<=",
+   "value": 540
+  }
+ ],
+ "note": "The plan is adjusted to ensure the total cars rented out for depot Birmingham does not exceed 540."
+}

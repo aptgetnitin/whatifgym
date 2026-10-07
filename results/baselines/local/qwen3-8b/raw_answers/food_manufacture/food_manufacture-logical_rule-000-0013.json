@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "refining_months",
+   "measure": "consume",
+   "scope": {
+    "month": [
+      "Feb",
+      "May"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Restrict refining to only June and March."
+}

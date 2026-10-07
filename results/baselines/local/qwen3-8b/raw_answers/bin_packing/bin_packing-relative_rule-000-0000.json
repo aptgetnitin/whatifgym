@@ -1,0 +1,47 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "total_items_below_two_times_bins",
+   "measure": "x",
+   "scope": {
+    "bin": [
+     "bin0",
+     "bin1",
+     "bin2",
+     "bin3",
+     "bin4",
+     "bin5",
+     "bin6",
+     "bin7",
+     "bin8",
+     "bin9",
+     "bin10"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  },
+  {
+   "name": "bins_used_for_bin2_at_most_50_of_bin10",
+   "measure": "y",
+   "scope": {
+    "bin": [
+     "bin2"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "y",
+    "scope": {
+     "bin": [
+      "bin10"
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The first rule ensures the total number of items packed is at most twice the number of bins used. The second rule limits the number of bins used for bin2 to at most 50% of the number of bins used for bin10."
+}

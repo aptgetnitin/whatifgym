@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod1_stock_condition",
+      "measure": "store",
+      "scope": {
+        "product": "Prod1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod2"
+        }
+      },
+      "factor": 300
+    }
+  ]
+}

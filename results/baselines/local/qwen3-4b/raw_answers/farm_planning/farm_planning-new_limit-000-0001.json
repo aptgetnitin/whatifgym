@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "max_sell_heifers_year1",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "value": 28
+    },
+    {
+      "name": "min_buy_grain_year5",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "value": 37
+    }
+  ]
+}

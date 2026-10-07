@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "year1_vs_year3_workforce",
+      "measure": "workforce",
+      "scope": {
+        "year": 1
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "workforce",
+        "scope": {
+          "year": 3
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "short_time_vs_retrain",
+      "measure": "short_time",
+      "scope": {},
+      "sense": "<=",
+      "relative_to": {
+        "measure": "retrain",
+        "scope": {
+          "from_skill": ["unskilled", "semi_skilled"],
+          "to_skill": ["semi_skilled", "skilled"]
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

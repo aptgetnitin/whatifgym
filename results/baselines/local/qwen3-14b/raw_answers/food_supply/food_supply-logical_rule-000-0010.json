@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "wheat_csb_shipment_rule",
+   "measure": "purchase",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "Corn-soya blend (CSB)",
+     "from_city": "Aleppo",
+     "to_city": "Idleb"
+    }
+   },
+   "factor": 7000
+  }
+ ]
+}

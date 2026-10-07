@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_at_least_1.25_times_charge",
+      "measure": "discharge",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "charge"
+      },
+      "factor": 1.25
+    },
+    {
+      "name": "charge_03_04_at_least_75_percent_of_total",
+      "measure": "charge",
+      "scope": {
+        "hour": "03-04"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "charge"
+      },
+      "factor": 0.75
+    }
+  ]
+}

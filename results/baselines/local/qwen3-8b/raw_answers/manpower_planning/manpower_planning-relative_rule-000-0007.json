@@ -1,0 +1,57 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 3,
+    "skill": "skilled"
+   },
+   "value": 2200
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "value": 700
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 1,
+    "skill": "semi_skilled"
+   },
+   "value": 1000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 2,
+    "skill": "semi_skilled"
+   },
+   "value": 1000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 3,
+    "skill": "semi_skilled"
+   },
+   "value": 1000
+  }
+ ],
+ "note": "The scenario adjusts the required workforce and recruitment limits for skilled and unskilled workers in specific years."
+}

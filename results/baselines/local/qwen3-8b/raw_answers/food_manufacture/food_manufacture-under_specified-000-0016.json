@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "food_manufacture","rules": [{"name": "min_refined_oil","measure": "consume","scope": {"month": ["Jan","Feb","Mar","Apr","May","Jun"]},"sense": ">=","value": 2700}],"note": "A minimum total tons of oil refined across all months."}

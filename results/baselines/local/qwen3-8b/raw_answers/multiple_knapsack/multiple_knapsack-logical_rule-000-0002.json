@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "logic": [
+  {
+   "name": "item12_placements_at_least_2_item1_bin0",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "x",
+     "sense": ">=",
+     "value": 2,
+     "scope": {
+      "item": "item1",
+      "bin": "bin0"
+     }
+    },
+    {
+     "measure": "x",
+     "sense": ">=",
+     "value": 0,
+     "scope": {
+      "item": "item12"
+     }
+    }
+   ]
+  }
+ ]
+}

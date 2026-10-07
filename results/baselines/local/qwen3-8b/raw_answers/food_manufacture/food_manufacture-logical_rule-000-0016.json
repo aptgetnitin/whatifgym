@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "logic": [
+  {
+   "name": "no_food_in_jun_and_apr",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "produce",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "month": "Jun"
+     }
+    },
+    {
+     "measure": "produce",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "month": "Apr"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","objective":[{"sense":"min","measure":"extract"},{"sense":"max","measure":"original"}],"note":"Lexicographic objective: minimize total extraction, then maximize discounted profit."}

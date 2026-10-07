@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "prod6_march_zero_or_at_least_600",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Mar",
+            "product": "Prod6"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Mar",
+            "product": "Prod6"
+          },
+          "sense": ">=",
+          "value": 600
+        }
+      ]
+    }
+  ],
+  "note": "Units sold for Prod6 in March must be either zero or at least 600."
+}

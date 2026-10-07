@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "undamaged_left",
+      "column": "undamaged_left",
+      "where": {
+        "day": "Friday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "A relative constraint on the total undamaged cars kept overnight for Friday across all depots."
+}

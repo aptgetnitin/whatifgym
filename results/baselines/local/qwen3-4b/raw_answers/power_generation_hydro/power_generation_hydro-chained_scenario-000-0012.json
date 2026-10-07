@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_ngen_total",
+      "measure": "ngen",
+      "scope": {},
+      "sense": "<=",
+      "value": 80
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": [
+    {
+      "name": "hydroB_startups_at_least_2",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "hydro_start",
+          "scope": {
+            "hydro": "HydroB"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "hydro_start",
+          "scope": {
+            "hydro": "HydroB"
+          },
+          "sense": ">=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

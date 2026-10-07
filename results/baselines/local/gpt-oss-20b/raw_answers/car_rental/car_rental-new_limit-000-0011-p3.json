@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"measure":"undamaged_stock","sense":"<=","value":1900}],"note":"Limit total undamaged cars in morning to 1900"}

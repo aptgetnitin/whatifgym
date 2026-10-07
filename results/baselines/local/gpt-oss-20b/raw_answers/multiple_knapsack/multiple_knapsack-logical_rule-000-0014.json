@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"only_one_of_item10_8_9","measure":"x","scope":{"item":["item10","item8","item9"]},"sense":"<=","value":1}],"note":"Only one of items 10, 8, 9 may be packed."}

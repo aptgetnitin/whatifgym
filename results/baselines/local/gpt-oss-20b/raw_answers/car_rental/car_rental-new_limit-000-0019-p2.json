@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"min_damaged_left_saturday","measure":"damaged_left","scope":{"day":"Saturday"},"sense":">=","value":1.9},{"name":"max_damaged_stock_manchester","measure":"damaged_stock","scope":{"depot":"Manchester"},"sense":"<=","value":67}]}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "grow_beet"
+    },
+    {
+      "sense": "max",
+      "measure": "sell_beet"
+    }
+  ]
+}

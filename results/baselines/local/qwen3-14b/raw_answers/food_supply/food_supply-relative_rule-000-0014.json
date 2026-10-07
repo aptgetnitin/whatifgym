@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "oil_to_milk_ratio",
+   "measure": "flow",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "Milk"
+    }
+   },
+   "factor": 3.0
+  },
+  {
+   "name": "wheat_share",
+   "measure": "flow",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {}
+   },
+   "factor": 0.5
+  }
+ ]
+}

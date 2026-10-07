@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "total_inventory_cap",
+      "measure": "store",
+      "sense": "<=",
+      "value": 900
+    }
+  ],
+  "note": "Finance caps total inventory to 900 units."
+}

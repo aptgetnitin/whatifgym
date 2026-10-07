@@ -1,0 +1,122 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": [
+          "Mine1"
+        ]
+      },
+      "value": 0.6
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": [
+          "Mine2"
+        ]
+      },
+      "value": 0.6
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": [
+          "Mine3"
+        ]
+      },
+      "value": 1.6
+    },
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": [
+          "Mine4"
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "Mine5",
+          "royalty": 3000000,
+          "capacity": 1000000,
+          "quality": 1.2
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "name": "mine1_royalty",
+      "measure": "royalty",
+      "scope": {
+        "mine": [
+          "Mine1"
+        ]
+      },
+      "sense": ">=",
+      "value": 6000000
+    },
+    {
+      "name": "mine3_capacity",
+      "measure": "capacity",
+      "scope": {
+        "mine": [
+          "Mine3"
+        ]
+      },
+      "sense": ">=",
+      "value": 1600000
+    },
+    {
+      "name": "mine2_quality",
+      "measure": "quality",
+      "scope": {
+        "mine": [
+          "Mine2"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.6
+    },
+    {
+      "name": "mine4_availability",
+      "measure": "open",
+      "scope": {
+        "mine": [
+          "Mine4"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "name": "mine5_availability",
+      "measure": "open",
+      "scope": {
+        "mine": [
+          "Mine5"
+        ]
+      },
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

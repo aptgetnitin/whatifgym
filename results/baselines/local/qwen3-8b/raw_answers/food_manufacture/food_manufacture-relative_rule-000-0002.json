@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "refined_oil_limit",
+   "measure": "consume",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "produce",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "The total tons of oil refined is limited to 90% of the total tons of food produced across all months."
+}

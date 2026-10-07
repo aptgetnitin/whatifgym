@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_wheat_dayr_az_zor","measure":"ration","scope":{"food":"Wheat","camp":"Dayr_Az_Zor"},"sense":">=","value":3.9}]}

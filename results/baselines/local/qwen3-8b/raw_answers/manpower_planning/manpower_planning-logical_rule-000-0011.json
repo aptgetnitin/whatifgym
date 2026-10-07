@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "only_one_skill_on_short_time",
+   "measure": "short_time",
+   "scope": {
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "At most one skill level can have workers on short-time working."
+}

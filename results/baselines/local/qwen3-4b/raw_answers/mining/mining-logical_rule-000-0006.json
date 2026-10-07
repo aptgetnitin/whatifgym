@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "blend",
+      "column": "blend",
+      "where": {
+        "year": "Year1"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "blend",
+      "column": "blend",
+      "where": {
+        "year": "Year2"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner wants to set both Year1 and Year2 blend to zero, which is a fixed decision for those years."
+}

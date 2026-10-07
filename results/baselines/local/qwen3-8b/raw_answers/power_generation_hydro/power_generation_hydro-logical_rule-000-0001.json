@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "min_thermal_output_06-09",
+   "measure": "output",
+   "scope": {
+    "period": "06-09"
+   },
+   "sense": ">=",
+   "value": 45000
+  }
+ ],
+ "note": "Ensures that if there is any thermal output during the 06-09 period, it must be at least 45000 MW."
+}

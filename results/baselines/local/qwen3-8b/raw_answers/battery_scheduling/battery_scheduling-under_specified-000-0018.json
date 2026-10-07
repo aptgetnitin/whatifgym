@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "ask": "Please specify the new minimum battery charge at the end of the day (kWh) to proceed with the scenario."
+}

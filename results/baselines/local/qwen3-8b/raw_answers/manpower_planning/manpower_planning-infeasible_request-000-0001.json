@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "workforce",
+   "column": "workforce",
+   "where": {
+    "year": 1,
+    "skill": "semi_skilled"
+   },
+   "value": 7200
+  }
+ ],
+ "note": "Fix the workforce for year 1, semi_skilled to exactly 7200 and let other variables adjust accordingly."
+}

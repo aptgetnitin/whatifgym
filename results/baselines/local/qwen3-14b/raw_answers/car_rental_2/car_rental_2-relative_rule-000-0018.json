@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "expansion_step_2_min_75_step_1",
+      "measure": "expand",
+      "scope": {
+        "step": 2
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "expand",
+        "scope": {
+          "step": 1
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

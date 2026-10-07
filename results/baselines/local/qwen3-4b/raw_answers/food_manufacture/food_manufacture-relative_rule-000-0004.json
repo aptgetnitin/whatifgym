@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "May",
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "factor": 0.95
+    }
+  ],
+  "note": "A relative storage limit over a subset of oils for a specific month is a scale over the matching rows."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_grown_year5",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "value": 160
+  },
+  {
+   "name": "sugar_beet_sold_cap",
+   "measure": "sell_beet",
+   "sense": "<=",
+   "value": 170
+  }
+ ],
+ "note": "The first rule ensures that the total sugar beet grown in Year5 is at least 160 tons. The second rule caps the total sugar beet sold across all years at 170 tons."
+}

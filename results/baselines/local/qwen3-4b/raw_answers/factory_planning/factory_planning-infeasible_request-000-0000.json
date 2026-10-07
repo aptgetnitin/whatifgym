@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod1",
+        "month": "May"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is about feasibility of a minimum production target for May. Since the model's objective is to maximize profit, we need to check if the model can produce at least 6900 units of Prod1 in May without violating constraints. However, the question does not specify which product, so we need to clarify."
+}

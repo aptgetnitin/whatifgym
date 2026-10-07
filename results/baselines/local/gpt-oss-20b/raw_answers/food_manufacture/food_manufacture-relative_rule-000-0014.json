@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"measure":"buy","scope":{"oil":"OIL2"},"sense":">=","relative_to":{"measure":"buy","scope":{"oil":"VEG1"}},"factor":3.0}]}

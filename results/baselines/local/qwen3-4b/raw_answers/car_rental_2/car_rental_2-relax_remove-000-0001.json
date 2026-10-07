@@ -1,0 +1,13 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "repair_capacity",
+      "where": {
+        "day": "Wednesday"
+      }
+    }
+  ],
+  "note": "The repair capacity constraint does not apply for Wednesday, so we remove the constraint for that day."
+}

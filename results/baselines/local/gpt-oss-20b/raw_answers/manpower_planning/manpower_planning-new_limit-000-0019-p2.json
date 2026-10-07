@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "min_redundant_year1",
+      "measure": "redundant",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 530
+    }
+  ],
+  "note": "Enforce at least 530 redundant workers in year 1 across all skill levels."
+}

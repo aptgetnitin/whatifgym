@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","logic":[{"name":"Milk_Idleb_minimum_or_zero","at_least":1,"of":[{"measure":"ration","scope":{"food":"Milk","camp":"Idleb"},"sense":"<=","value":0},{"measure":"ration","scope":{"food":"Milk","camp":"Idleb"},"sense":">=","value":2.15}]}],"note":"Enforce that if Milk ration in Idleb is positive, it is at least 2.15."}

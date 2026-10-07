@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "total_items_to_bins_ratio",
+      "measure": "x",
+      "scope": {
+        "item": "item0",
+        "item10": "item10"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "y",
+        "scope": {
+          "bin": "bin0",
+          "bin10": "bin10"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "bin2_usage_limit",
+      "measure": "y",
+      "scope": {
+        "bin": "bin2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "y",
+        "scope": {
+          "bin": "bin10"
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

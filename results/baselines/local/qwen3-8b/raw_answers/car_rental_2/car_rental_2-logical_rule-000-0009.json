@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "rentals_wed_manchester_zero_or_at_least_200",
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Manchester"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Manchester"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "rentals_wed_manchester_zero_or_at_least_200",
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Manchester"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A logical rule that enforces the rentals for Wednesday, Manchester to be either zero or at least 200."
+}

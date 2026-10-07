@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "depots",
+      "column": "repair_capacity",
+      "where": {
+        "depot": "Birmingham"
+      },
+      "factor": 1.25
+    }
+  ],
+  "note": "Scaling the repair capacity of Birmingham by 25% to reflect the increased base repair capacity."
+}

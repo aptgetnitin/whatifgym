@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"Year2_raise_heifers_cap","measure":"raise_heifers","scope":{"year":"Year2"},"sense":"<=","relative_to":{"measure":"raise_heifers"},"factor":0.25}],"note":"At most 25% of total raised heifer calves may be raised in Year2."}

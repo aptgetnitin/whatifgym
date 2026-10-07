@@ -1,0 +1,1 @@
+{"ask":"Please provide the parameters for the new generator type (type name, units_available, min_output_mw, max_output_mw, cost_per_hour, cost_per_mwh_above_min, startup_cost, units_on_at_start)."}

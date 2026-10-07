@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "min_total_thermal_output",
+      "measure": "output",
+      "sense": ">=",
+      "value": 681600
+    }
+  ]
+}

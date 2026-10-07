@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_make_target",
+      "measure": "make",
+      "sense": "==",
+      "value": 39800
+    }
+  ],
+  "note": "Enforce that the total number of units manufactured across all months and products equals 39,800."
+}

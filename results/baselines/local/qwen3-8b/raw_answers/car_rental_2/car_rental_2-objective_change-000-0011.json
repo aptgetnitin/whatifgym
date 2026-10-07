@@ -1,0 +1,40 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "maximize_total_damaged_left",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Wednesday",
+    "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   },
+   "sense": "max"
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "weekly_profit"
+  },
+  {
+   "sense": "max",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Wednesday",
+    "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to maximise weekly profit while maximising the total damaged cars kept at depots overnight."
+}

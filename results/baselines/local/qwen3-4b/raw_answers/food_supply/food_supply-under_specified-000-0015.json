@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_purchase",
+      "value": 20000
+    }
+  ],
+  "note": "The planner asks about an upper limit on food bought (units of 100 g a day). The model has a parameter `max_purchase` that limits the units of one food that can be bought at one supplier per day. Setting it to 20000 units (100 g) per day is a specific change that can be made machine-checkable."
+  }

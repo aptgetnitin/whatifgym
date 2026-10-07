@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"measure":"downgrade","scope":{"from_skill":"skilled"},"sense":"<=","value":130,"name":"max_downgrade_from_skilled"}]}

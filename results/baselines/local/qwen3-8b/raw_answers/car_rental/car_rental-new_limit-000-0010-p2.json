@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_transfers_cap",
+   "measure": "damaged_transfers",
+   "scope": {
+    "from_depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ],
+    "to_depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ]
+   },
+   "sense": "<=",
+   "value": 55
+  }
+ ],
+ "note": "A global cap on the total number of damaged cars transferred across all routes and days."
+}

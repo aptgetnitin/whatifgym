@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"prod4_6_jun_cap","measure":"make","scope":{"month":"Jun","product":["Prod4","Prod6"]},"sense":"<=","value":450}],"note":"Upper limit on production of Prod4 and Prod6 in June."}

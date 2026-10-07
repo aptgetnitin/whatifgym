@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "total_retrain",
+   "measure": "retrain",
+   "scope": {
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": ">=",
+   "value": 10700
+  }
+ ],
+ "note": "A rule to ensure the total number of workers retrained to a higher skill level meets the target."
+}

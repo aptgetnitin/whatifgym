@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "extract_year3_mine1_to_extract_year2_mine3",
+      "measure": "extract",
+      "scope": {
+        "year": "Year2",
+        "mine": "Mine3"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "extract",
+        "scope": {
+          "year": "Year3",
+          "mine": "Mine1"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

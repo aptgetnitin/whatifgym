@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "plymouth_rentals_at_least_40_percent",
+   "measure": "rentals",
+   "scope": {
+    "depot": "Plymouth"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ]
+}

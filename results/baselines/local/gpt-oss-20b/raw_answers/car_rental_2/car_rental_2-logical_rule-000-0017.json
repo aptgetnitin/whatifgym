@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "logic": [
+    {
+      "name": "repair_batch_manchester_saturday",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "repairs",
+          "scope": {
+            "day": "Saturday",
+            "depot": "Manchester"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "repairs",
+          "scope": {
+            "day": "Saturday",
+            "depot": "Manchester"
+          },
+          "sense": ">=",
+          "value": 44
+        }
+      ]
+    }
+  ]
+}

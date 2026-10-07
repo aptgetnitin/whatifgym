@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_overmanned_total",
+      "measure": "overmanned",
+      "scope": {},
+      "sense": "<=",
+      "value": 400
+    },
+    {
+      "name": "cap_short_time_total",
+      "measure": "short_time",
+      "scope": {},
+      "sense": "<=",
+      "value": 210
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {}
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+  }

@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "plymouth_rentals_fixed",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Plymouth",
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ]
+      },
+      "sense": "==",
+      "value": 52
+    }
+  ]
+}

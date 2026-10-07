@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "heifer_calf_share",
+      "where": {
+        "name": "heifer_calf_share"
+      },
+      "factor": 0.5
+    }
+  ]
+}

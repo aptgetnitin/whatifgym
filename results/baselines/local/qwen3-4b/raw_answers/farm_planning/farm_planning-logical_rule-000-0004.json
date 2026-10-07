@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "logic": [
+    {
+      "name": "no_both_sold",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell_heifers",
+          "scope": {
+            "year": "Year2"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell_heifers",
+          "scope": {
+            "year": "Year5"
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "logic": [
+  {
+   "name": "no_sales_in_may_and_feb",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "sell",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "month": "May"
+     }
+    },
+    {
+     "measure": "sell",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "month": "Feb"
+     }
+    }
+   ]
+  }
+ ]
+}

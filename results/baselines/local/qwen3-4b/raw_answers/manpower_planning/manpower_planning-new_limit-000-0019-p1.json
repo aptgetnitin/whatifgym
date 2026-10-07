@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1
+      },
+      "value": 530
+    }
+  ],
+  "note": "The planner wants to set the required redundancies for year 1 to at least 530, but redundancies are not directly a column in the requirements table. The requirements table tracks required headcount, not redundancies. The redundancy measure is 'redundant[year, skill]'. The planner's question is about setting a minimum redundancy level, which is a decision measure, not a data change to the requirements table."
+  }

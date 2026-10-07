@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "flow_balance_homs",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Homs",
+        "to_city": {
+          "type": "array",
+          "items": [
+            "Ar Raqqa",
+            "Idleb",
+            "As_Suweida",
+            "Daraa",
+            "Aleppo",
+            "Dayr_Az_Zor",
+            "Hassakeh",
+            "Damascus",
+            "Homs",
+            "Jubb_al_Jarrah",
+            "Qamishli",
+            "Hama"
+          ]
+        }
+      },
+      "sense": "==",
+      "value": 170
+    }
+  ]
+}

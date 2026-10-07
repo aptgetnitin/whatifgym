@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_ration_at_most_75_of_dsm",
+      "measure": "ration",
+      "scope": {
+        "food": "Oil",
+        "camp": "*"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Dried skim milk (enriched) (DSM)",
+          "camp": "*"
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

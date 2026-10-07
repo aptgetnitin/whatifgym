@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "fixed_decisions": [
+  {
+   "measure": "soc",
+   "scope": {
+    "hour": "06-07"
+   },
+   "value": 7
+  }
+ ],
+ "note": "Fixing the stored energy at the end of hour 06-07 to 7 kWh."
+}

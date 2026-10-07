@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "profit",
+   "scope": {}
+  },
+  {
+   "sense": "min",
+   "measure": "repairs",
+   "scope": {}
+  },
+  {
+   "sense": "max",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Monday",
+    "depot": "Glasgow"
+   }
+  }
+ ],
+ "note": "The scenario first maximises weekly profit, then minimises total cars repaired, and finally maximises total damaged cars at the depot in the morning."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "regular_labour_hours",
+      "column": "regular_labour_hours",
+      "where": {
+        "year": "Year4"
+      },
+      "factor": 1
+    }
+  ],
+  "note": "The labour-hours limit is lifted for Year4 by scaling the regular labour hours to 100% of its original value."
+}

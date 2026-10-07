@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "price",
+   "value": 9
+  }
+ ],
+ "note": "The ore selling price is set to 9 USD per ton."
+}

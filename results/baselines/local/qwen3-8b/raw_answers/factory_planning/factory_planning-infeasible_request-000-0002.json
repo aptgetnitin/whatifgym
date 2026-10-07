@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "make",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   }
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "make",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "value": 35800
+  }
+ ],
+ "note": "The objective is to maximise the total units made, with a fixed decision to set the total units made to 35800."
+}

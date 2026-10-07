@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "food_production_cap",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 2150
+  },
+  {
+   "name": "jan_refining_cap",
+   "measure": "consume",
+   "scope": {
+    "month": [
+     "Jan"
+    ]
+   },
+   "sense": "<=",
+   "value": 400
+  }
+ ],
+ "note": "Limits on total food production and total oil refined in January."
+}

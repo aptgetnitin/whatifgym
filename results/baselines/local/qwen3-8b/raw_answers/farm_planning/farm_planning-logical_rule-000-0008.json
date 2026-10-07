@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "no_sugar_beet_in_year1_and_year2",
+   "measure": "grow_beet",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "A rule that restricts the total sugar beet grown in Year1 and Year2 to zero."
+}

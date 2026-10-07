@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","relax":[{"constraint":"end_stock","scope":{"product":["Prod5","Prod7"]}}],"note":"Lift end‑of‑horizon stock target for Prod5 and Prod7 only."}

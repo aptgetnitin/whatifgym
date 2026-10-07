@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"sat_requires_tue_manchester_118","measure":"rentals","scope":{"day":"Saturday"},"sense":">=","relative_to":{"measure":"rentals","scope":{"day":"Tuesday","depot":"Manchester"}},"factor":118}],"note":"Enforces that total Saturday rentals are at least 118 times the Tuesday Manchester rentals."}

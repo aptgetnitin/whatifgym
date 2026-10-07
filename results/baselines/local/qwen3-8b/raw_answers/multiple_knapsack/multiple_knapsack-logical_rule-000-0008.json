@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "logic": [
+  {
+   "name": "no_item9_and_item3_placements",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "x",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "item": "item9"
+     }
+    },
+    {
+     "measure": "x",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "item": "item3"
+     }
+    }
+   ]
+  }
+ ]
+}

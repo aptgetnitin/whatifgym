@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "at_least",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "product": "Prod3"
+          },
+          "sense": "<="
+          },
+        {
+          "measure": "sell",
+          "scope": {
+            "product": "Prod4"
+          },
+          "sense": "<="
+        }
+      ]
+    }
+  ]
+}

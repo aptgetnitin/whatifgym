@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"measure":"sell_beet","scope":{"year":"Year1"},"sense":">=","value":34},{"measure":"raise_heifers","sense":"<=","value":31}]}

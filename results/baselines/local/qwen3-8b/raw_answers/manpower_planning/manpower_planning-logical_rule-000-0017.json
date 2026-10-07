@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "redundant_unskilled_year_3_min",
+   "measure": "redundant",
+   "scope": {
+    "year": 3,
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "value": 580
+  },
+  {
+   "name": "redundant_unskilled_year_3_max",
+   "measure": "redundant",
+   "scope": {
+    "year": 3,
+    "skill": "unskilled"
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "The redundant workers for year 3, unskilled must be either zero or at least 580."
+}

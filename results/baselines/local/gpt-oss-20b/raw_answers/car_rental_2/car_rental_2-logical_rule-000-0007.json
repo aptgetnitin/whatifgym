@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","logic":[{"name":"at_most_two_days_with_rentals","at_least":1,"of":[{"measure":"rentals","scope":{"day":"Wednesday"},"sense":"<=","value":0},{"measure":"rentals","scope":{"day":"Saturday"},"sense":"<=","value":0},{"measure":"rentals","scope":{"day":"Friday"},"sense":"<=","value":0}]}]}

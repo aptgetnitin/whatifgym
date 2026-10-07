@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "Thermal0_min_60pct",
+      "measure": "output",
+      "scope": {
+        "type": "Thermal0"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "output",
+        "scope": {}
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "Thermal0 output must be at least 60% of total thermal output."
+}

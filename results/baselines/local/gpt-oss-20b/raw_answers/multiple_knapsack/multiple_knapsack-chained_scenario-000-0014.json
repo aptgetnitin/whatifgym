@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","data_changes":[{"op":"add","table":"items","rows":[{"item":"new_item","weight":42,"value":24}]},{"op":"scale","table":"items","column":"weight","factor":0.75}],"note":"Add new item and reduce all item weights by 25%."}

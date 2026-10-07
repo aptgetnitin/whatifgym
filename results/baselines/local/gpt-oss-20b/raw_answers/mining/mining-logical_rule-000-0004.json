@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "Year2_or_Year4_no_open",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year2"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year4"
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "note": "Ensure that Year2 and Year4 cannot both have any mines kept open."
+}

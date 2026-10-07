@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal0_output_limit",
+   "measure": "output",
+   "scope": {
+    "type": "Thermal0"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "output",
+    "scope": {
+     "type": [
+      "Thermal1",
+      "Thermal2"
+     ]
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "Thermal0's output is limited to 25% of the total thermal output across all types."
+}

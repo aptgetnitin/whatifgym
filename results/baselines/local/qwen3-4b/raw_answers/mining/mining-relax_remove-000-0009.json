@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_mines",
+      "value": 0
+    },
+    {
+      "op": "set_param",
+      "name": "quality_target",
+      "value": 0
+    }
+  ]
+}

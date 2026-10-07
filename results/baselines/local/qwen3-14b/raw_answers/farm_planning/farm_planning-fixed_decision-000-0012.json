@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "fixed_decisions": [
+    {
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year1"
+      },
+      "value": 137
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"max_total_flow","measure":"flow","scope":{},"sense":"<=","value":121500}],"note":"Total shipped units limited to 121,500"}

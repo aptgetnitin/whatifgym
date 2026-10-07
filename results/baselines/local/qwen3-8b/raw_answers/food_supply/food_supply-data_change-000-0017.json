@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "food_nutrients",
+      "column": "amount",
+      "where": {
+        "nutrient": [
+          "Energy(kcal)",
+          "Protein(g)",
+          "Fat(g)",
+          "Calcium(mg)",
+          "Iron(mg)",
+          "VitaminA(ug)",
+          "ThiamineB1(mg)",
+          "RiboflavinB2(mg)",
+          "NicacinB3(mg)",
+          "Folate(ug)",
+          "VitaminC(mg)"
+        ]
+      },
+      "factor": 1.1
+    }
+  ],
+  "note": "The nutrient content of all foods increases by 10% across all nutrients, which affects the nutritional intake calculations."
+}

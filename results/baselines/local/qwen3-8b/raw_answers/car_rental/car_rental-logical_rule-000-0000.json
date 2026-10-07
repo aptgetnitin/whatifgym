@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "rentals_limit",
+   "measure": "rentals",
+   "scope": {
+    "depot": [
+     "Plymouth",
+     "Manchester",
+     "Birmingham",
+     "Glasgow"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Limits the total number of rentals across the specified depots to 2."
+}

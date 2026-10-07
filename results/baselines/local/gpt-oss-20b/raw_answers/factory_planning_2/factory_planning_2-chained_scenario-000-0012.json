@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","data_changes":[{"op":"set","table":"max_sales","column":"max_sales","where":{"month":"Feb","product":"Prod7"},"value":300},{"op":"set_param","name":"holding_cost","value":1}]}

@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "land_groups",
+   "rows": [
+    {
+     "land_group": "new_land_group",
+     "area": 45,
+     "grain_yield": 1.12
+    }
+   ]
+  }
+ ],
+ "note": "A new land group is added with specified grain-suitable acres and grain yield."
+}

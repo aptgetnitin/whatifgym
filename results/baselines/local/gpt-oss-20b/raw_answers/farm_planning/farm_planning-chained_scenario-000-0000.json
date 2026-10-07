@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"measure":"sell_heifers","scope":{"year":"Year2"},"sense":">=","value":45,"name":"floor_sell_heifers_Year2"},{"measure":"sell_heifers","scope":{"year":"Year1"},"sense":">=","value":34,"name":"floor_sell_heifers_Year1"}]}

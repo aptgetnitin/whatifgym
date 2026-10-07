@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "Feb_maintenance_min_50pct",
+      "measure": "repair",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "repair"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "At least 50% of the total maintenance must be scheduled in February."
+}

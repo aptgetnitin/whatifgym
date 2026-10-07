@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_at_least_three_times_charge",
+   "measure": "discharge",
+   "scope": {
+    "hour": "all"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "charge",
+    "scope": {
+     "hour": "all"
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "The rule ensures that the total discharging power is at least three times the total charging power across all hours."
+}

@@ -1,0 +1,40 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_purchase_limit",
+   "measure": "purchase",
+   "scope": {
+    "food": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "*",
+     "from_city": "*"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "amman_shipment_limit",
+   "measure": "flow",
+   "scope": {
+    "food": "*",
+    "from_city": "Amman"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "*",
+     "from_city": "Gaziantep"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "Two relative limits: total purchase is at most 75% of total shipment, and Amman's shipment is at most 60% of Gaziantep's shipment."
+}

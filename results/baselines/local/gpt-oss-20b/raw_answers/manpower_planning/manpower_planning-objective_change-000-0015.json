@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant"
+    },
+    {
+      "sense": "max",
+      "measure": "downgrade"
+    }
+  ]
+}

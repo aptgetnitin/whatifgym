@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod1_at_least_75%",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": [
+      "Prod1",
+      "Prod2",
+      "Prod3",
+      "Prod4",
+      "Prod5",
+      "Prod6",
+      "Prod7"
+     ]
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "A relative rule compares the sum of sales for Prod1 to the sum of sales for all products."
+}

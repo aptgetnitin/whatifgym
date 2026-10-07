@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod2",
+        "month": "Jun"
+      },
+      "factor": 1.5
+    }
+  ],
+  "rules": [
+    {
+      "name": "prod5_prod1_feb_cap",
+      "measure": "make",
+      "scope": {
+        "month": "Feb",
+        "product": [
+          "Prod5",
+          "Prod1"
+        ]
+      },
+      "sense": "<=",
+      "value": 600
+    }
+  ],
+  "note": "Cap production of Prod5 and Prod1 together to 600 units in February."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"Jun_at_least_1.5_Mar","measure":"store","scope":{"month":"Jun"},"sense":">=","relative_to":{"measure":"store","scope":{"month":"Mar"}},"factor":1.5}],"note":"Units in stock in June must be at least 1.5 times units in stock in March for each product."}

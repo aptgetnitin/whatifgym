@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"max_total_ration_per_camp","measure":"ration","scope":{"camp":["Ar Raqqa","Daraa","Dayr_Az_Zor","Hassakeh","Idleb","Jubb_al_Jarrah","Qamishli"]},"sense":"<=","value":30}]}

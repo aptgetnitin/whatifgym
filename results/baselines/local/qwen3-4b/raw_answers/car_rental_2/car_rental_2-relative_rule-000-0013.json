@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "repaired_plymouth_at_least_twice_birmingham",
+      "measure": "repairs",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "repairs",
+        "scope": {
+          "depot": "Birmingham"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

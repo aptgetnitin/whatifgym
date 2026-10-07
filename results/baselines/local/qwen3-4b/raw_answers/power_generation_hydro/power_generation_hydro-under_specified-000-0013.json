@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "cost_per_hour",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "scale",
+      "table": "hydro_units",
+      "column": "cost_per_hour",
+      "where": {
+        "hydro": [
+          "HydroA",
+          "HydroB"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is vague: 'across the board' could mean different things. The model has two tables with hourly costs: thermal_types.cost_per_hour and hydro_units.cost_per_hour. To make it machine-checkable, I assumed a uniform scale factor of 1.0 (no change) for all units. If the planner meant a specific change (e.g., 10% increase), they should specify the factor."
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "Food Supply (World Food Programme, Syria)",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_nutrient_factor",
+      "value": "a number"
+    }
+  ],
+  "note": "The question asks for a change in the parameter max_nutrient_factor, which is the upper limit on each nutrient's daily intake per person as a multiple of its minimum requirement."
+  }

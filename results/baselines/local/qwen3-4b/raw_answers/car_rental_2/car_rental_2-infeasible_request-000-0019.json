@@ -1,0 +1,36 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "repaired_friday_at_least_94",
+      "measure": "repairs",
+      "scope": {
+        "day": "Friday",
+        "depot": [
+          "Manchester",
+          "Birmingham",
+          "Plymouth",
+          "Glasgow"
+        ]
+      },
+      "sense": ">=",
+      "value": 94
+    },
+    {
+      "name": "repaired_thursday_at_least_94",
+      "measure": "repairs",
+      "scope": {
+        "day": "Thursday",
+        "depot": [
+          "Manchester",
+          "Birmingham",
+          "Plymouth",
+          "Glasgow"
+        ]
+      },
+      "sense": ">=",
+      "value": 94
+    }
+  ]
+}

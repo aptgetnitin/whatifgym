@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "semi_skilled_overmanned_at_least_50_of_unskilled_overmanned",
+      "measure": "overmanned",
+      "scope": {
+        "skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "overmanned",
+        "scope": {
+          "skill": "unskilled"
+        }
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "The policy requires that the overmanned workers for semi_skilled are at least 50% of the overmanned workers for unskilled."
+  }

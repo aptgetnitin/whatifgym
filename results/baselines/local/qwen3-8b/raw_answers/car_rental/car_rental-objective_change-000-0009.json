@@ -1,0 +1,45 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "weekly_profit_max",
+   "measure": "profit",
+   "scope": {},
+   "sense": "==",
+   "value": 121160.21
+  },
+  {
+   "name": "damaged_stock_birmingham_max",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Birmingham"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Birmingham"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "profit",
+   "scope": {}
+  },
+  {
+   "sense": "max",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Birmingham"
+   }
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "short_time_total_limit",
+   "measure": "short_time",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   },
+   "sense": "<=",
+   "value": 240
+  },
+  {
+   "name": "redundant_year_2_limit",
+   "measure": "redundant",
+   "scope": {
+    "year": [2],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   },
+   "sense": "<=",
+   "value": 80
+  }
+ ],
+ "note": "The scenario imposes two limits: total short-time workers across all years and skill levels must not exceed 240, and total redundancies in year 2 must not exceed 80."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "rule_for_prod3_jun_prod2_stock",
+      "measure": "store",
+      "scope": {
+        "product": "Prod2"
+      },
+      "sense": ">=",
+      "value": 220
+    }
+  ]
+}

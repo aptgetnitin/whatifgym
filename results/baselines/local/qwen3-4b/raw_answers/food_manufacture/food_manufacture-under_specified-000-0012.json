@@ -1,0 +1,21 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "initial_stock",
+      "where": {
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "value": 500
+    }
+  ],
+  "note": "The planner mentions revisiting the opening stock per oil, which is currently set to 500 tons for each oil. The scenario sets the initial stock to 500 tons for all oils."
+}

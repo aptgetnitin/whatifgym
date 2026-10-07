@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": [
+          "all"
+        ],
+        "from_city": [
+          "all"
+        ],
+        "to_city": [
+          "all"
+        ]
+      },
+      "factor": 0.999999
+    },
+    {
+      "op": "scale",
+      "table": "purchase",
+      "column": "purchase",
+      "where": {
+        "food": [
+          "Milk"
+        ],
+        "supplier": [
+          "all"
+        ]
+      },
+      "factor": 0.999999
+    }
+  ],
+  "note": "The total food shipped is the sum of flow over all food, from_city, to_city; total food bought for Milk is the sum of purchase for Milk over all suppliers."
+}

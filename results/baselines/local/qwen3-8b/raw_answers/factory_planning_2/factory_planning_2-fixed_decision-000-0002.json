@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "fixed_decisions": [
+  {
+   "measure": "make",
+   "scope": {
+    "month": "Jan",
+    "product": "Prod6"
+   },
+   "value": 0
+  },
+  {
+   "measure": "sell",
+   "scope": {
+    "month": "Jun",
+    "product": "Prod5"
+   },
+   "value": 800
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "profit"
+  }
+ ]
+}

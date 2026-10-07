@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "sat_thurs_rental_ratio",
+      "measure": "rentals",
+      "scope": {
+        "day": "Saturday"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "rentals",
+        "scope": {
+          "day": "Thursday"
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "overmanned",
+      "column": "overmanned",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "overmanned",
+      "column": "overmanned",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "value": 400
+    }
+  ],
+  "note": "The planner's question specifies a binary condition: either zero or at least 400. In the scenario DSL, this is modeled as two separate set operations (one for 0, one for 400) to represent the two possible values."
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "logic": [
+    {
+      "name": "repair_monday_birmingham_zero_or_at_least_50",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "repairs",
+          "scope": {
+            "day": "Monday",
+            "depot": "Birmingham"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "repairs",
+          "scope": {
+            "day": "Monday",
+            "depot": "Birmingham"
+          },
+          "sense": ">=",
+          "value": 50
+        }
+      ]
+    }
+  ],
+  "note": "Cars repaired on Monday at Birmingham must be either zero or at least 50."
+}

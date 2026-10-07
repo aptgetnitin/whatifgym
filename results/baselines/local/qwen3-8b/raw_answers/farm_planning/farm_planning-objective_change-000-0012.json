@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "yearly_profit",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "sell_beet",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  }
+ ],
+ "note": "First maximise the five-year profit, then maximise the total tons of sugar beet sold across all years."
+}

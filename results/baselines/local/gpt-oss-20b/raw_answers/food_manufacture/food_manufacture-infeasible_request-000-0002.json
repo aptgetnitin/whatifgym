@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "consume",
+      "sense": "==",
+      "value": 27000
+    }
+  ],
+  "note": "Enforce that the total amount of oil refined over the horizon equals 27,000 tons."
+}

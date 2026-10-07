@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "ask": "What is the upper limit on tons of food produced? How is it determined? What specific constraints or parameters affect this limit?"
+  }

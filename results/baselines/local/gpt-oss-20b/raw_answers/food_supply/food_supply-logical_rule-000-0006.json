@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","logic":[{"name":"Oil ration in Idleb implies Amman purchase >= 12050","at_least":1,"of":[{"measure":"ration","scope":{"food":"Oil","camp":"Idleb"},"sense":"<=","value":0},{"measure":"purchase","scope":{"food":"Oil","supplier":"Amman"},"sense":">=","value":12050}]}]}

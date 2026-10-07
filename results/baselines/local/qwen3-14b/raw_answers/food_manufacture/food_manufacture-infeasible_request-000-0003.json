@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "mar_food_production",
+      "measure": "produce",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": "==",
+      "value": 1350
+    }
+  ]
+}

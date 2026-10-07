@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "ask": "What is the floor value for the tons of oil bought? How is it defined (e.g., per oil, per month, total)?"
+}

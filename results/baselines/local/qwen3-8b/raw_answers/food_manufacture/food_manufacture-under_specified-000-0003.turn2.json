@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "min_hardness",
+   "value": 6
+  }
+ ],
+ "note": "The minimum product hardness is set to 6."
+}

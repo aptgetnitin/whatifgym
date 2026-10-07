@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_overmanned",
+      "value": 220
+    },
+    {
+      "op": "scale",
+      "table": "skills",
+      "column": "current_strength",
+      "factor": 1.1
+    }
+  ],
+  "note": "Current workforce increased by 10% for all skill levels."
+}

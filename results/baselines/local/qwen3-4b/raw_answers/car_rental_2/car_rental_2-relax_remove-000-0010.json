@@ -1,0 +1,20 @@
+{
+  "base_model": "car_rental_2",
+  "relax": [
+    {
+      "constraint": "repair_capacity",
+      "scope": {
+        "day": [
+          "Friday",
+          "Wednesday"
+        ],
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      }
+    }
+  ]
+}

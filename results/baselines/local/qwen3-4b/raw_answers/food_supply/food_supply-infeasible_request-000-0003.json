@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "min_15_csbs",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": [
+          "Ar Raqqa",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Idleb",
+          "Jubb_al_Jarrah",
+          "Qamishli"
+        ]
+      },
+      "sense": ">=",
+      "value": 15
+    },
+    {
+      "name": "min_1_2_dsm",
+      "measure": "ration",
+      "scope": {
+        "food": "Dried skim milk (enriched) (DSM)",
+        "camp": [
+          "Ar Raqqa",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Idleb",
+          "Jubb_al_Jarrah",
+          "Qamishli"
+        ]
+      },
+      "sense": ">=",
+      "value": 1.2
+    }
+  ]
+}

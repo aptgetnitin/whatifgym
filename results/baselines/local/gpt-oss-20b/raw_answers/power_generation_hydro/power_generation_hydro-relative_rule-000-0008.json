@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"reservoir_level_ratio","measure":"reservoir_level","scope":{"period":"09-15"},"sense":">=","relative_to":{"measure":"reservoir_level","scope":{"period":"15-18"}},"factor":3.0},{"name":"hydro_vs_start","measure":"hydro_on","sense":">=","relative_to":{"measure":"nstart"},"factor":1.0}]}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "extract_year3_mine1_implies_extract_year2_mine3",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year3",
+            "mine": "Mine1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year2",
+            "mine": "Mine3"
+          },
+          "sense": ">=",
+          "value": 1625000
+        }
+      ]
+    }
+  ],
+  "note": "If any ore is extracted from Mine1 in Year3, then at least 1,625,000 tons must be extracted from Mine3 in Year2."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "store_feb_zero_or_600",
+   "measure": "store",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 600
+  },
+  {
+   "name": "store_feb_zero_or_600",
+   "measure": "store",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "value": 0
+  }
+ ],
+ "note": "The store for Feb must be either zero or at least 600."
+}

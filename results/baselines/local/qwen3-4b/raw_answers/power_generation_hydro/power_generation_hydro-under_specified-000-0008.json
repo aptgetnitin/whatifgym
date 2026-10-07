@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_on_at_start",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner wants to cap the number of thermal units started, but the model doesn't have a direct cap on nstart. The base model's thermal_startup constraint links ngen to ngen[previous period] and nstart, but there's no explicit cap on nstart. To make this a what-if scenario, we need to set the initial units_on_at_start to 0, which implies no units are running at the start of the day, so the planner would have to start units from scratch each period. However, the question is vague about what 'cap' means—whether it's a fixed number or a percentage. Since the question cannot be made precise, we ask for clarification."
+  }

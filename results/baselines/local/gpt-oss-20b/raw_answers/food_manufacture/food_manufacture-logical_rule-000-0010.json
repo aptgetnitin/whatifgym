@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"veg1_to_veg2_ratio","measure":"buy","scope":{"oil":"VEG2"},"sense":">=","relative_to":{"measure":"buy","scope":{"oil":"VEG1"}},"factor":680}]}

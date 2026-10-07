@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "sell_heifers",
+   "column": "sell_heifers",
+   "where": {
+    "year": "Year1"
+   },
+   "value": 28
+  },
+  {
+   "op": "set",
+   "table": "buy_grain",
+   "column": "buy_grain",
+   "where": {
+    "year": "Year5"
+   },
+   "value": 37
+  }
+ ],
+ "note": "The first rule limits the number of heifer calves sold in Year1 to 28. The second rule sets the amount of grain bought in Year5 to 37 tons."
+}

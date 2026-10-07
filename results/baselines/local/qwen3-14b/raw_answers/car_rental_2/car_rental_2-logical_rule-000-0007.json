@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "rentals_limit_wed_fri_sat",
+      "measure": "rentals",
+      "scope": {
+        "day": [
+          "Wednesday",
+          "Friday",
+          "Saturday"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "store_feb_min",
+   "measure": "store",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "value": 2950
+  }
+ ],
+ "note": "A minimum storage requirement for a specific month."
+}

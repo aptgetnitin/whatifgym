@@ -1,0 +1,92 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "veg_refining_capacity",
+   "value": 250
+  },
+  {
+   "op": "set_param",
+   "name": "nonveg_refining_capacity",
+   "value": 250
+  },
+  {
+   "op": "set_param",
+   "name": "product_price",
+   "value": 130
+  },
+  {
+   "op": "set_param",
+   "name": "holding_cost",
+   "value": 10
+  },
+  {
+   "op": "set_param",
+   "name": "storage_capacity",
+   "value": 600
+  },
+  {
+   "op": "set_param",
+   "name": "min_hardness",
+   "value": 4
+  },
+  {
+   "op": "set_param",
+   "name": "max_hardness",
+   "value": 5.5
+  },
+  {
+   "op": "set_param",
+   "name": "initial_stock",
+   "value": 600
+  },
+  {
+   "op": "set_param",
+   "name": "final_stock",
+   "value": 0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "produce",
+   "scope": {
+    "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+    ]
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_refined",
+   "measure": "consume",
+   "scope": {
+    "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+    ],
+    "oil": [
+      "VEG1",
+      "VEG2",
+      "OIL1",
+      "OIL2",
+      "OIL3"
+    ]
+   },
+   "sense": ">=",
+   "value": 27000
+  }
+ ]
+}

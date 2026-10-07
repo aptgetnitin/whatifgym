@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "camp": "Idleb"
+      },
+      "factor": 7.3
+    }
+  ],
+  "note": "The ration per person summed over everything with camp = Idleb must be at least 7.3 units (100 g per day)."
+}

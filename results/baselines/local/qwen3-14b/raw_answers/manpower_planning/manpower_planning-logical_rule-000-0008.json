@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "unskilled_redundancy_year2_if_recruit_year3",
+      "measure": "redundant",
+      "scope": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 250,
+      "relative_to": {
+        "measure": "recruit",
+        "scope": {
+          "year": 3,
+          "skill": [
+            "unskilled",
+            "semi_skilled",
+            "skilled"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

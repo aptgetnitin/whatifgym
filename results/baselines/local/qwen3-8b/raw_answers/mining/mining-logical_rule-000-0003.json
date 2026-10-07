@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "open",
+   "where": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ],
+    "year": [
+     "Year1",
+     "Year5",
+     "Year3",
+     "Year2",
+     "Year4"
+    ]
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the open status of all mines across all years to 0, indicating that only 4 mine-years may be kept open."
+}

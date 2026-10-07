@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "ask": "What does it mean to have a total short-time limit of 220 workers across the whole plan? Is this a per-year limit or a total limit over all years? How is the short-time limit applied across skill levels?"
+  }

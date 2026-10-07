@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "ask": "What specific weight change is intended for item2? (e.g., increased by X units, decreased to Y units, or set to Z units?)"
+}

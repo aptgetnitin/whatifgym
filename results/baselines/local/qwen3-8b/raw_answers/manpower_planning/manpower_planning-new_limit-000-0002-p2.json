@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "downgrade_attrition",
+   "where": {},
+   "value": 0.3
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_downgrade_limit",
+   "measure": "downgrade",
+   "scope": {
+    "year": [1, 2, 3],
+    "from_skill": ["unskilled", "semi_skilled"],
+    "to_skill": ["unskilled", "semi_skilled"]
+   },
+   "sense": "<=",
+   "value": 130
+  }
+ ],
+ "note": "The downgrade_attrition is set to 30% to reflect the share of downgraded workers who leave, and a rule limits the total number of workers downgraded across all years and skill levels."
+}

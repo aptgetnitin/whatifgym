@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine4_worked_once",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine4",
+        "year": "Year5"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ]
+}

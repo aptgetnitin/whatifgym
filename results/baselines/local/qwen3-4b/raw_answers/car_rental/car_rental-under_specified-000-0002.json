@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "ask": "What is the specific upper limit on damaged cars transferred that the planner is referring to? The question is too vague to be machine-checked without knowing the exact constraint value or context."
+}

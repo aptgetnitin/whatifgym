@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "floor_downgrade_1",
+      "measure": "downgrade",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 170
+    }
+  ]
+}

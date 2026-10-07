@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"shipped_at_least_2x_bought","measure":"flow","sense":">=","relative_to":{"measure":"purchase"},"factor":2.0}]}

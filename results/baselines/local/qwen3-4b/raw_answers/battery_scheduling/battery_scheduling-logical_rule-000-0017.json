@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "soc",
+      "column": "soc",
+      "where": {
+        "hour": "13-14"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "soc",
+      "column": "soc",
+      "where": {
+        "hour": "13-14"
+      },
+      "value": 20
+    }
+  ],
+  "note": "The planner wants the soc for hour 13-14 to be either 0 or at least 20. This requires two separate set operations for the two possible values."
+}

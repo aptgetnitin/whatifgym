@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"oil_at_most_75pct_dsm","measure":"ration","scope":{"food":"Oil"},"sense":"<=","relative_to":{"measure":"ration","scope":{"food":"DSM"}},"factor":0.75}],"note":"Policy: ration for Oil must be at most 75% of the ration for Dried skim milk (DSM)."}

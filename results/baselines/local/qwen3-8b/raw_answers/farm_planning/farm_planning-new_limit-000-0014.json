@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_sold_year1",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 34
+  },
+  {
+   "name": "heifer_calves_raised_cap",
+   "measure": "raise_heifers",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "<=",
+   "value": 31
+  }
+ ],
+ "note": "The first rule ensures that the total sugar beet sold in Year1 is at least 34, while the second rule caps the total heifer calves raised across all years to 31."
+}

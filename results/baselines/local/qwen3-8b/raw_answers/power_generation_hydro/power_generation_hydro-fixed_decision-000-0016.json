@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "ngen",
+   "where": {
+    "period": "18-24",
+    "type": "Thermal1"
+   },
+   "value": 4
+  }
+ ],
+ "note": "Fix the number of Thermal1 units running in period 18-24 to 4."
+}

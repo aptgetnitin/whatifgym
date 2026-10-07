@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "supplier_purchase_limit",
+   "measure": "purchase",
+   "scope": {
+    "supplier": [
+     "Hassakeh",
+     "Homs",
+     "Daraa",
+     "Aleppo"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ]
+}

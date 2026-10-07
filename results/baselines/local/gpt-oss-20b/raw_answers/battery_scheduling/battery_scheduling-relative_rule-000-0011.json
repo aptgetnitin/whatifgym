@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"discharge_at_least_3x_soc","measure":"discharge","scope":{},"sense":">=","relative_to":{"measure":"soc","scope":{}},"factor":3.0}],"note":"Enforce that total discharging power is at least three times total stored energy."}

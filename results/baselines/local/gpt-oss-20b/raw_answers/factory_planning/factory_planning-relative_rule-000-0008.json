@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "make_at_most_25_percent_of_stock",
+      "measure": "make",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store"
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Total production limited to 25% of total stock across all months and products."
+}

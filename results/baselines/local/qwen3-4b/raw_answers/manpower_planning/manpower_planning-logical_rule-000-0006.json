@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "at_most_two_short_time_skills",
+      "measure": "short_time",
+      "scope": {
+        "skill": [
+          "skilled",
+          "unskilled",
+          "semi_skilled"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ],
+  "note": "The planner wants to limit short-time workers to at most 2 across all three skill levels."
+}

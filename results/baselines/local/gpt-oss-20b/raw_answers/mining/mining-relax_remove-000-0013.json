@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "quality",
+      "scope": {
+        "year": ["Year1", "Year2"]
+      }
+    }
+  ],
+  "note": "Blend-quality target removed for Year1 and Year2"
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_sales_year1_limit",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "value": 0.1
+    }
+  ],
+  "note": "A relative limit on heifer sales in Year1 as a percentage of total heifer sales."
+  }

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "flow",
+      "scope": {
+        "food": {
+          "type": "string"
+        },
+        "from_city": {
+          "type": "string"
+        },
+        "to_city": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

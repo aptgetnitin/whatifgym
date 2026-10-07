@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","fixed_decisions":[{"measure":"soc","scope":{"hour":"16-17"},"value":0}],"note":"Fix stored energy at 0 for hour 16-17."}
