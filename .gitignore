@@ -11,3 +11,6 @@ __pycache__/
 .idea/
 /results/scratch/
 .env
+
+# training outputs (adapters are large; keep summaries by copying them elsewhere)
+results/training/

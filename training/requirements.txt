@@ -1,0 +1,8 @@
+# GPU training (Linux or WSL2, NVIDIA). Install PyTorch for your CUDA first; for an RTX 50-series GPU:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+# then: pip install -r requirements.txt -r training/requirements.txt
+# Record the exact versions with `pip freeze > training/env-lock.txt` (the paper reports pinned versions).
+unsloth
+vllm
+trl
+datasets
