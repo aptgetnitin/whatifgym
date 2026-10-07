@@ -440,7 +440,7 @@ All 135 files, 2,368 tasks (`results/trivial_baselines.md`):
 | `random_valid` | submits a random valid scenario | near 0 correct | 0.3 % correct |
 | `nearest_example` | copies the gold scenario of the most similar training task | low | 5.8 % correct (1.9 % on the two newest families) |
 
-Where `nearest_example` scores high, several questions share one scored outcome. Example: lift the weight limit on *any* knapsack, and all items fit. The four newest families filter this out. 18 older files still go above 10 %; regenerate them with the same filter. One new file also does: `wedding_seating` chained (2 of 7), where a "replace" answer can equal an existing data-change task.
+Where `nearest_example` scores high, several questions share one scored outcome. Example: lift the weight limit on *any* knapsack, and all items fit. The four newest families filter this out. 21 files still score above 10 %: 16 template files of the older families, 4 paraphrase files, and `wedding_seating` chained (2 of 7). The fix: regenerate them as `_v1` files with the same filter, and keep the `_v0` files that published results cite.
 
 ### Frontier models
 
@@ -647,7 +647,7 @@ flowchart TB
     subgraph X["Next"]
         direction LR
         X1["Frontier APIs on<br/>all 10 families"]
-        X2["Regenerate 18 files<br/>with shared outcomes"]
+        X2["Regenerate 21 files<br/>as _v1 (shared outcomes)"]
         X4["Port 11+ more models"]
         X5["RL on Qwen3 4B or 8B"]
     end
@@ -664,7 +664,7 @@ flowchart TB
 | done | Untrained LLM ladder on all 10 families: Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % |
 | next | Frontier APIs on all 10 families, with pinned ids |
 | done | All 10 families: `infeasible_request` and `chained_scenario` built Oct 7 |
-| next | Regenerate the 18 files with shared outcomes |
+| next | Regenerate the 21 files with shared outcomes as `_v1` files |
 | next | Port more models; hold some out; RL on a 4B–8B model |
 
 ---
