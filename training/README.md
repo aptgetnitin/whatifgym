@@ -60,18 +60,19 @@ Run these in Ubuntu. Keep the repository in the Linux file system (`~/`), not un
    git clone https://github.com/aptgetnitin/whatifgym ~/whatifgym && cd ~/whatifgym
    python3.12 -m venv .venv-train && source .venv-train/bin/activate
    ```
-3. PyTorch for CUDA 12.8 first (the RTX 50 series needs it), then the rest:
+3. Install with `uv`. It reads the driver's CUDA version and installs torch, torchvision and vLLM builds that match it:
    ```bash
-   pip install --upgrade pip
-   pip install torch --index-url https://download.pytorch.org/whl/cu128
-   pip install -r requirements.txt -r training/requirements.txt
+   pip install uv
+   uv pip install vllm --torch-backend=auto
+   uv pip install unsloth trl datasets -r requirements.txt --torch-backend=auto
    ```
+   Do not install torch first with `pip` and the rest after it. On Runpod that mixed a CUDA 12.8 torch with a CUDA 13 vLLM, and `unsloth` and `vllm` did not import (`training/RUNPOD.md`).
 4. Record the versions, for the paper's compute report:
    ```bash
-   pip freeze > training/env-lock.txt
+   uv pip freeze > training/env-lock.txt
    ```
 
-If `pip install` of `unsloth` or `vllm` replaces PyTorch with a build that has no `sm_120`, step 5 says so. Then follow Unsloth's guide for Blackwell / RTX 50-series GPUs (docs.unsloth.ai) and run step 5 again.
+If step 5 says that the torch build has no code for your GPU (for an RTX 50 series, nothing from `sm_120`), follow Unsloth's guide for Blackwell / RTX 50-series GPUs (docs.unsloth.ai) and run step 5 again.
 
 ## 5. Check the GPU (1 minute)
 

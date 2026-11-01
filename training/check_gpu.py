@@ -10,6 +10,11 @@ import importlib
 import sys
 
 
+def _runs_on(arch: str, major: int, minor: int) -> bool:
+    prefix = f"sm_{major}"
+    return arch.startswith(prefix) and len(arch) == len(prefix) + 1 and int(arch[-1]) <= minor
+
+
 def main() -> int:
     ok = True
     import torch
@@ -24,8 +29,9 @@ def main() -> int:
           f"{total / 1e9:.1f} GB ({free / 1e9:.1f} GB free)")
     arch = torch.cuda.get_arch_list()
     needed = f"sm_{cap[0]}{cap[1]}"
-    if needed not in arch:
-        print(f"FAIL: this PyTorch build has {arch}, not {needed}. Install the CUDA 12.8 build (training/README.md).")
+    # code built for sm_XY also runs on sm_XZ with Z >= Y (an sm_86 build runs on an sm_89 RTX 4090)
+    if not any(_runs_on(a, *cap) for a in arch):
+        print(f"FAIL: this PyTorch build has {arch}, nothing that runs on {needed}. Install the CUDA 12.8 build (training/README.md).")
         ok = False
     x = torch.randn(2048, 2048, device="cuda", dtype=torch.bfloat16)
     torch.cuda.synchronize()
