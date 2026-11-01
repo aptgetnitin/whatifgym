@@ -11,6 +11,7 @@ What it does:
 * scores every completion with the environment: the oracle solves the scenario, the scorer compares it with the
   hidden reference, and the reward is the environment's (1.1 correct and valid, 0.1 valid only, 0 otherwise);
   a pool of worker processes does the solves, so the GPU does not wait for one solver at a time;
+* scores a fixed set of test tasks (greedy) before and after training, with the same environment reward;
 * writes the LoRA adapter, the log history and a summary (peak GPU memory, seconds per step, reward per step).
 
 Single-turn pilot: `under_specified` tasks (they need a second turn) are left out, and a clarifying question on a
@@ -69,7 +70,8 @@ def task_files(families_excluded: tuple[str, ...]) -> list[str]:
     return [f for f in files if not any(f"/{fam}_v0" in f for fam in families_excluded)]
 
 
-def build_rows(files: list[str], tokenizer, max_prompt_tokens: int, limit: int | None, seed: int) -> list[dict]:
+def build_rows(files: list[str], tokenizer, max_prompt_tokens: int, limit: int | None, seed: int,
+               split: str = "train") -> list[dict]:
     import random
 
     from run_baseline import SYSTEM_PROMPT, build_prompt
@@ -78,7 +80,7 @@ def build_rows(files: list[str], tokenizer, max_prompt_tokens: int, limit: int |
 
     rows, too_long = [], 0
     for f in files:
-        for t in load_tasks(f, split="train"):
+        for t in load_tasks(f, split=split):
             obs = WhatIfEnv([t]).reset(t)
             messages = [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": build_prompt(obs)}]
             n = len(tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True))
@@ -87,8 +89,25 @@ def build_rows(files: list[str], tokenizer, max_prompt_tokens: int, limit: int |
                 continue
             rows.append({"prompt": messages, "task_id": t.id, "family": t.family, "model": t.model})
     random.Random(seed).shuffle(rows)
-    print(f"dataset: {len(rows)} training tasks fit in {max_prompt_tokens} prompt tokens; {too_long} longer ones left out")
+    print(f"dataset ({split}): {len(rows)} tasks fit in {max_prompt_tokens} prompt tokens; {too_long} longer ones left out")
     return rows[:limit] if limit else rows
+
+
+def evaluate(model, tokenizer, rows: list[dict], pool, max_tokens: int, lora_request=None) -> dict:
+    """Greedy answers to one fixed task set, scored by the environment: the before/after number of the gate."""
+    from vllm import SamplingParams
+
+    texts = [tokenizer.apply_chat_template(r["prompt"], tokenize=False, add_generation_prompt=True) for r in rows]
+    outs = model.fast_generate(texts, sampling_params=SamplingParams(temperature=0.0, max_tokens=max_tokens),
+                               lora_request=lora_request)
+    rewards = list(pool.map(_score, [(r["task_id"], o.outputs[0].text) for r, o in zip(rows, outs)]))
+    by_family: dict[str, list[bool]] = {}
+    for r, x in zip(rows, rewards):
+        by_family.setdefault(r["family"], []).append(x >= 1.0)
+    n = len(rows)
+    return {"tasks": n, "accuracy": round(sum(x >= 1.0 for x in rewards) / n, 4),
+            "valid": round(sum(x > 0 for x in rewards) / n, 4), "mean_reward": round(sum(rewards) / n, 4),
+            "accuracy_by_family": {f: round(sum(v) / len(v), 3) for f, v in sorted(by_family.items())}}
 
 
 # ------------------------------------------------------------------ main
@@ -99,7 +118,8 @@ def main(argv=None) -> int:
     ap.add_argument("--max-steps", type=int, default=50)
     ap.add_argument("--tasks-limit", type=int, default=None, help="use only the first N training tasks (after shuffling)")
     ap.add_argument("--num-generations", type=int, default=4, help="completions per prompt (the GRPO group)")
-    ap.add_argument("--grad-accum", type=int, default=2)
+    ap.add_argument("--grad-accum", type=int, default=8, help="prompts per step (one prompt per micro-batch)")
+    ap.add_argument("--eval-tasks", type=int, default=200, help="test tasks scored before and after training; 0 skips")
     ap.add_argument("--max-prompt-tokens", type=int, default=7000, help="tasks with longer prompts are left out")
     ap.add_argument("--max-completion", type=int, default=768)
     ap.add_argument("--lora-rank", type=int, default=32)
@@ -110,7 +130,7 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default=str(ROOT / "results" / "training" / "pilot"))
     args = ap.parse_args(argv)
     if args.smoke:
-        args.max_steps, args.tasks_limit = 5, args.tasks_limit or 20
+        args.max_steps, args.tasks_limit, args.eval_tasks = 5, args.tasks_limit or 20, min(args.eval_tasks, 20)
 
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -131,10 +151,15 @@ def main(argv=None) -> int:
     files = task_files(families_excluded=("under_specified",))
     rows = build_rows(files, tokenizer, args.max_prompt_tokens, args.tasks_limit, args.seed)
     dataset = Dataset.from_list(rows)
+    eval_rows = build_rows(files, tokenizer, args.max_prompt_tokens, args.eval_tasks, args.seed, split="test") \
+        if args.eval_tasks else []
+    (out / "eval_task_ids.json").write_text(json.dumps([r["task_id"] for r in eval_rows]), encoding="utf-8")
 
     # spawn, not fork: this process already holds CUDA and vLLM threads, and a forked child can hang on them
     pool = ProcessPoolExecutor(max_workers=args.workers, initializer=_init_worker, initargs=(files,),
                                mp_context=multiprocessing.get_context("spawn"))
+    eval_before = evaluate(model, tokenizer, eval_rows, pool, args.max_completion) if eval_rows else None
+    print(f"EVAL before training: {json.dumps(eval_before)}", flush=True)
     reward_seconds: list[float] = []
 
     def whatifgym_reward(prompts, completions, task_id, **kwargs):
@@ -164,15 +189,19 @@ def main(argv=None) -> int:
     t0 = time.perf_counter()
     trainer.train()
     wall = time.perf_counter() - t0
-    pool.shutdown()
 
-    model.save_pretrained(str(out / "lora"))
+    model.save_lora(str(out / "lora"))
     tokenizer.save_pretrained(str(out / "lora"))
+    eval_after = evaluate(model, tokenizer, eval_rows, pool, args.max_completion,
+                          lora_request=model.load_lora(str(out / "lora"))) if eval_rows else None
+    print(f"EVAL after training: {json.dumps(eval_after)}", flush=True)
+    pool.shutdown()
     history = trainer.state.log_history
     (out / "log_history.json").write_text(json.dumps(history, indent=1), encoding="utf-8")
     rewards = [h["reward"] for h in history if "reward" in h]
     summary = {
         "model": args.model, "steps": args.max_steps, "tasks": len(rows), "num_generations": args.num_generations,
+        "prompts_per_step": args.grad_accum, "eval_before": eval_before, "eval_after": eval_after,
         "max_prompt_tokens": args.max_prompt_tokens, "max_completion": args.max_completion,
         "peak_gpu_memory_gb": round(torch.cuda.max_memory_reserved() / 1e9, 2),
         "gpu": torch.cuda.get_device_name(0), "seconds_total": round(wall, 1),
@@ -182,6 +211,7 @@ def main(argv=None) -> int:
     }
     (out / "summary.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
     print("\n" + json.dumps(summary, indent=1))
+    print("SUMMARY " + json.dumps(summary), flush=True)  # one line: easy to find in a pod log
     print(f"\nadapter, log and summary in {out}")
     return 0
 
