@@ -121,6 +121,27 @@ What it does and does not show: the direction is right and consistent (more vali
 
 Per-step training reward: 0.459, 0.503, 0.575, 0.562, 0.491, 0.206, 0.728, 0.7, 0.659, 0.725, 0.316, 0.622, 0.428, 0.159, 0.491, 0.603, 0.441, 0.378, 0.791, 0.562, 0.716, 0.587, 0.775, 0.338, 0.531, 0.656, 0.472, 0.622, 0.694, 0.284, 0.522, 0.894, 0.572, 0.641, 0.834, 0.319, 0.469, 0.156, 0.725, 0.906, 0.741, 0.794, 0.653, 0.513, 0.25, 0.659, 0.522, 0.581, 0.763, 0.812, 0.756, 0.566, 0.869, 0.828, 0.831, 0.584, 0.734, 0.597, 0.6, 0.781, 0.775, 0.419, 0.675, 0.553, 0.584, 0.641, 0.713, 0.669, 0.369, 0.963, 0.606, 0.472, 0.794, 0.587, 0.609, 0.756, 0.503, 0.697, 0.703, 0.559.
 
+## Run 4 (planned): pass-rate filter, held-out base models, 3 seeds
+
+Changes since run 3: the task set is cleaned (`_v1` files, `tasks/superseded.txt`, probe 1.7 %); three base models are held out of training (`power_generation_hydro`, `manpower_planning`, `mining`); training uses only tasks the untrained model solves 10–90 % of the time; every seed is scored on the same tasks, with per-task results saved.
+
+```text
+# on the pod, after steps 1–4 (install)
+git pull                                                     # needs commit 1eed81c or later
+H="--holdout-models power_generation_hydro manpower_planning mining"
+# a) pass rates: 8 sampled answers per training task (also the plan's pass@8 number); no training
+python training/grpo_pilot.py $H --measure-pass 8 --workers 14 --out results/training/pass8
+# look for: PASS_RATES {...}  (pass@1, pass@8 and the share in [0.1, 0.9], by family)
+# b) three seeds on the filtered tasks; each scores "test" (200, trained models) and "heldout_models" (200)
+for s in 1 2 3; do
+  python training/grpo_pilot.py $H --pass-rates results/training/pass8/pass_rates.json \
+      --max-steps 80 --workers 14 --seed $s --out results/training/run4_seed$s
+done
+# look for: EVAL before training / EVAL after training, and SUMMARY, for each seed
+```
+
+Three base models (`food_supply`, `farm_planning`, `car_rental_2`) have no task whose prompt fits in 7,000 tokens, so no run trains or scores on them.
+
 ## Problems hit, in order
 
 1. `check_gpu.py` said `not sm_89` on the RTX 4090: a false alarm, fixed in `da6e3a8` (an `sm_86` build runs on `sm_89`).

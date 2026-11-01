@@ -4,15 +4,16 @@
 
 whatifgym is a clean-room benchmark and reinforcement-learning environment for **LLM what-if agents over optimization models**. A planner asks a question such as *"what if demand for Prod5 drops 20 % in May?"*. The agent translates the question into a formal scenario. A solver, not the agent, solves the model again. The agent gets a reward only when the new result matches a hidden reference.
 
-> **State on Oct 7, 2026**
+> **State on Nov 1, 2026**
 >
 > | Item | Now |
 > |---|---|
 > | Base models | 14 of 30, verified on HiGHS, SCIP and CBC |
 > | Task families | 10 of 10 |
-> | Tasks | 2,290 template tasks + 78 verified paraphrases |
-> | Tests | 465 pass, 7 slow tests skipped |
-> | Latest result | Untrained LLMs on all 2,290 tasks: Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % (section 11) |
+> | Tasks (current set) | 2,194 template tasks + 45 verified paraphrases, in 131 files; shared outcomes removed (`_v1`, section 11) |
+> | Tests | 467 pass, 7 slow tests skipped |
+> | Untrained LLMs (`_v0` set) | Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % (section 11) |
+> | First training result | GRPO on Qwen3 4B, 80 steps, one GPU: 51.5 % → 56.0 % on 200 test tasks; one seed (section 11) |
 
 ---
 
@@ -46,7 +47,7 @@ Total time: about 10 minutes.
    git clone https://github.com/aptgetnitin/whatifgym && cd whatifgym
    ```
 2. Set up and check (about 5 minutes): `./setup.sh`, then `source .venv/bin/activate`.
-3. Run the tests (about 3 minutes): `python -m pytest -q`. Expect `465 passed, 7 skipped`.
+3. Run the tests (about 3 minutes): `python -m pytest -q`. Expect `467 passed, 7 skipped`.
 4. Score the trivial agents on one file (10 seconds):
    ```bash
    python scripts/run_baseline.py --tasks tasks/mining/new_limit_v0.jsonl --agent oracle   # mean reward 1.100
@@ -147,7 +148,7 @@ whatifgym/                      the package
     examples/01..12.json        worked examples (two go into every observation)
   oracle.py, scoring.py         solve_scenario(); compare_results() and the reward
   env.py                        WhatIfEnv: reset()/step(), ask handling, 3 turns
-  tasks.py                      Task, JSONL I/O, deterministic splits
+  tasks.py                      Task, JSONL I/O, deterministic splits, current_task_files()
   families/                     base.py (generator and filters) + one file per family (10)
 scripts/
   make_tasks.py                 generate task files
@@ -157,9 +158,16 @@ scripts/
   run_local_baselines.py        Ollama LLMs on every file, resumable
   summarise_results.py          comparison tables
   verify_models.py              every model x every solver vs reference.json
-tasks/<model>/*.jsonl           generated tasks; tasks/frozen.txt lists files that results cite
-results/                        trivial_baselines.md, baselines/ (frontier and local runs)
-tests/                          pytest, 472 tests
+training/
+  grpo_pilot.py                 GRPO on one GPU (Unsloth + TRL + vLLM), scored before and after training
+  check_gpu.py                  is this GPU and software ready?
+  README.md, RUNPOD.md          laptop setup; the Runpod log of every run, command and result
+tasks/<model>/*.jsonl           generated tasks (_v0; _v1 replaces a _v0 file); _nl = paraphrases
+tasks/frozen.txt                files that published results cite (never overwritten)
+tasks/superseded.txt            files left out of the current set (shared outcomes); kept on disk
+results/                        trivial_baselines_v1.md (current set), trivial_baselines.md (_v0),
+                                baselines/ (frontier and local LLM runs, on _v0)
+tests/                          pytest, 474 tests
 docs/                           base_models.md (shortlist), PORTING_GUIDE.md
 ```
 
@@ -387,24 +395,26 @@ Column names: data = `data_change`, limit = `new_limit`, relative = `relative_ru
 
 | base model | data | limit | relative | objective | fixed | relax | logic | infeasible | chained | vague | total |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `battery_scheduling` | 20 | 20 | 20 | 16 | 20 | 1 | 20 | 20 | 20 | 20 | 177 |
-| `bin_packing` | 20 | 4 | 18 | – | – | – | – | – | 20 | 20 | 82 |
-| `car_rental` | 20 | 20 | 20 | 20 | 20 | – | 20 | 2 | 20 | 20 | 162 |
-| `car_rental_2` | 20 | 20 | 20 | 20 | 20 | 14 | 20 | 20 | 20 | 20 | 194 |
+| `battery_scheduling` | 20 | 20† | 20 | 8† | 20 | 1 | 20 | 20 | 20 | 20 | 169 |
+| `bin_packing` | 20 | 1† | 7† | – | – | – | – | – | 20 | 20 | 68 |
+| `car_rental` | 20 | 20 | 20 | 13† | 20 | – | 20 | 2 | 20 | 20 | 155 |
+| `car_rental_2` | 20 | 20 | 20 | 20† | 20 | 14 | 20 | 20 | 20 | 20 | 194 |
 | `factory_planning` | 60 | 20 | 20 | 3 | 20 | 20 | 20 | 20 | 20 | 20 | 223 |
-| `factory_planning_2` | 20 | 20 | 20 | 13 | 20 | 7 | 20 | 20 | 20 | 20 | 180 |
+| `factory_planning_2` | 20 | 20 | 20 | 7† | 20 | 7 | 20 | 20 | 20 | 20 | 174 |
 | `farm_planning` | 20 | 20 | 20 | 20 | 20 | 7 | 20 | 20 | 20 | 20 | 187 |
-| `food_manufacture` | 20 | 20 | 20 | 20 | 20 | 1 | 20 | 20 | 20 | 20 | 181 |
+| `food_manufacture` | 20† | 20 | 20† | 11† | 20 | 1 | 20 | 20 | 20 | 20 | 172 |
 | `food_supply` | 20 | 20 | 20 | 4 | 20 | – | 20 | 20 | 20 | 20 | 164 |
 | `manpower_planning` | 20 | 20 | 20 | 20 | 20 | 12 | 20 | 20 | 20 | 20 | 192 |
-| `mining` | 20 | 20 | 20 | 11 | 20 | 20 | 20 | 20 | 20 | 20 | 191 |
-| `multiple_knapsack` | 20 | 15 | 20 | 1 | 15 | 1 | 18 | – | 20 | 20 | 130 |
-| `power_generation_hydro` | 20 | 20 | 20 | 20 | 20 | – | 20 | 19 | 20 | 20 | 179 |
-| `wedding_seating` | 20 | – | – | – | – | 1 | – | – | 7 | 20 | 48 |
-| **total** | 320 | 239 | 258 | 168 | 235 | 84 | 238 | 201 | 267 | 280 | **2290** |
+| `mining` | 20 | 20 | 20 | 2† | 20 | 20 | 20 | 20 | 20 | 20 | 182 |
+| `multiple_knapsack` | 20 | 6† | 20† | 1 | 2† | 1 | 18 | – | 20 | 20 | 108 |
+| `power_generation_hydro` | 20 | 20 | 20 | 14† | 20 | – | 20 | 19 | 20 | 20 | 173 |
+| `wedding_seating` | 5† | – | – | – | – | 1 | – | – | 7 | 20 | 33 |
+| **total** | 305 | 227 | 247 | 123 | 222 | 84 | 238 | 201 | 267 | 280 | **2194** |
+
+† a `_v1` file: regenerated on Nov 1 with the shared-outcome filter (the `_v0` file had more tasks). The table counts the current set; the `_v0` set had 2,290.
 
 - Command: `python scripts/make_tasks.py --family all --model all --n 20 --seed 0`.
-- The same seed gives the same file. `--force` regenerates a file.
+- The same seed gives the same file. `--force` regenerates a file. The `_v1` files: `--seed 1 --version v1`.
 - `tasks/frozen.txt` lists files that published results cite. `make_tasks.py` does not overwrite them without `--force-frozen`.
 - Every oracle solve during generation has a 60-second limit.
 
@@ -422,7 +432,7 @@ flowchart LR
     C -- no --> D["Drop"]
 ```
 
-Example: *"An overall cap of 55 applies to the damaged cars transferred in total."* became *"Cap damaged-car transfers at 55 in total, all days and routes combined."* The first batch has 78 rewrites, on the test split of five models: paraphraser Claude Opus, verifier Claude Sonnet, 78 of 78 accepted. Do not report results on the paraphrases for the model that verified them.
+Example: *"An overall cap of 55 applies to the damaged cars transferred in total."* became *"Cap damaged-car transfers at 55 in total, all days and routes combined."* The first batch has 78 rewrites, on the test split of five models: paraphraser Claude Opus, verifier Claude Sonnet, 78 of 78 accepted. 4 of its 10 files shared outcomes and left the current set, which keeps 45. Do not report results on the paraphrases for the model that verified them.
 
 ---
 
@@ -430,15 +440,15 @@ Example: *"An overall cap of 55 applies to the damaged cars transferred in total
 
 ### Trivial agents: the reward scale is exact
 
-All 135 files, 2,368 tasks (`results/trivial_baselines.md`):
+The current set, 131 files, 2,239 tasks ([results/trivial_baselines_v1.md](results/trivial_baselines_v1.md); the `_v0` set: [results/trivial_baselines.md](results/trivial_baselines.md)):
 
 | Agent | What it does | Expected | Measured |
 |---|---|---|---|
 | `oracle` | submits the gold scenario | 1.100 (0 on under-specified) | exact on every file |
 | `noop` | submits an empty valid scenario | 0.100 (0) | exact on every file |
 | `ask_then_oracle` | asks one question, then the gold scenario | 0.900 (1.100) | exact on every file |
-| `random_valid` | submits a random valid scenario | near 0 correct | 0.3 % correct |
-| `nearest_example` | copies the gold scenario of the most similar training task | low | 5.8 % correct (1.9 % on the two newest families) |
+| `random_valid` | submits a random valid scenario | near 0 correct | 0.1 % correct (`_v0`: 0.3 %) |
+| `nearest_example` | copies the gold scenario of the most similar training task | low | 1.7 % correct (`_v0`: 5.8 %) |
 
 Where `nearest_example` scores high, several questions share one scored outcome. Example: lift the weight limit on *any* knapsack, and all items fit. The four newest families filter this out. In the `_v0` files, 21 scored above 10 %: 16 template files of the older families, 4 paraphrase files, and `wedding_seating` chained. Fix (Nov 1): the 16 files are regenerated as `_v1` with the same filter (176 tasks instead of 272: the rest shared an outcome); the 4 paraphrase files are dropped. `tasks/superseded.txt` lists the 20 `_v0` files; they stay on disk because published results cite them, and the scripts leave them out (`current_task_files()`). On the current set (2,239 tasks, 131 files) `nearest_example` is **1.7 %**. One file is above 10 %: `wedding_seating/data_change_v1`, 1 of 5 tasks, which copies a vague `under_specified` question of the same model ([results/trivial_baselines_v1.md](results/trivial_baselines_v1.md)).
 
@@ -447,6 +457,8 @@ Where `nearest_example` scores high, several questions share one scored outcome.
 On the 60 `factory_planning` data-change tasks: Claude Sonnet 59/60, Claude Opus 60/60, every answer valid DSL. This family is saturated for frontier models. It shows that the pipeline and the reward work.
 
 ### Untrained open LLMs (Ollama, M4 Max)
+
+These runs (Oct 5–7) used the `_v0` set, before shared outcomes were removed.
 
 The first 399 tasks (`data_change` and `new_limit` on 10 base models):
 
@@ -519,6 +531,18 @@ An earlier report said that the LLMs never asked. That was this harness bug. Wit
 
 Claude, Qwen3 32B and Qwen3 8B with thinking never asked, so their earlier results do not change.
 
+### Training: first GRPO pilot (Nov 1)
+
+Qwen3-4B-Instruct-2507, 4-bit with a LoRA adapter (rank 32), GRPO with the environment's reward, 80 steps of 8 questions with 4 answers each, one RTX 4090 (about 80 minutes, about $1.20). Scored on the same 200 test tasks, greedy, before and after training (single-turn families, prompts up to 7,000 tokens, `_v0` set):
+
+| | Before | After | Change |
+|---|---|---|---|
+| Correct | 51.5 % | **56.0 %** | +4.5 points (9 tasks) |
+| Valid scenario | 73 % | 79 % | +6 |
+| Biggest family gains | infeasible 59 %, data 69 % | infeasible 73 %, data 78 % | +14, +9 |
+
+Five families gained, none lost. It is one seed on 200 tasks, so not yet significant alone. In 37–88 % of question groups all four answers scored the same, which gives GRPO no signal. The next run trains only on tasks of medium difficulty (pass rate 0.1–0.9), keeps three base models out of training and scores them apart, and uses three seeds. Setup, commands, every run and its numbers: [training/RUNPOD.md](training/RUNPOD.md).
+
 ---
 
 ## 12. Run everything
@@ -526,7 +550,7 @@ Claude, Qwen3 32B and Qwen3 8B with thinking never asked, so their earlier resul
 ### Tests and model checks (about 3 minutes)
 
 ```bash
-python -m pytest -q                       # 465 passed, 7 skipped
+python -m pytest -q                       # 467 passed, 7 skipped
 python scripts/verify_models.py           # every model x every solver vs reference.json
 ```
 
@@ -566,7 +590,8 @@ The script prints the split counts, the template mix and why candidates were dro
 | One trivial agent | `python scripts/run_baseline.py --tasks <file> --agent oracle` (or `noop`, `nearest_example`, `random_valid`) |
 | Claude through the API | `ANTHROPIC_API_KEY=... python scripts/run_baseline.py --tasks <file> --split test --agent anthropic --model claude-sonnet-5-5` |
 | Answers made elsewhere | `--export-prompts DIR`, collect one reply per task, then `--agent answers --answers-dir DIR` |
-| Local LLM ladder (about one night per 4 LLMs) | `caffeinate -i python scripts/run_local_baselines.py --models qwen3:4b qwen3:8b qwen3:14b gpt-oss:20b` |
+| Local LLM ladder (about one night per 4 LLMs) | `caffeinate -i python scripts/run_local_baselines.py --models qwen3:4b qwen3:8b qwen3:14b gpt-oss:20b` (default: the current set) |
+| GRPO training on a GPU | see [training/README.md](training/README.md) (laptop) and [training/RUNPOD.md](training/RUNPOD.md) (cloud) |
 
 The local runner obeys these rules, because each one silently corrupted results before:
 
@@ -640,15 +665,16 @@ flowchart TB
         direction LR
         D1["14 models, 3 solvers"]
         D2["DSL v0.1 + relax + logic"]
-        D3["10 families, 2,290 tasks"]
+        D3["10 families, 2,239 tasks<br/>(shared outcomes removed)"]
         D4["5 trivial agents"]
         D5["4 LLMs on every task"]
+        D6["GRPO pilot:<br/>51.5 % → 56.0 %"]
     end
     subgraph X["Next"]
         direction LR
         X1["Frontier APIs on<br/>all 10 families"]
         X4["Port 11+ more models"]
-        X5["RL on Qwen3 4B or 8B"]
+        X5["GRPO: 3 seeds, filtered tasks,<br/>held-out base models"]
     end
     D --> X
 ```
@@ -657,14 +683,16 @@ flowchart TB
 |---|---|
 | done | 14 base models on HiGHS, SCIP and CBC; 3 also on CP-SAT; 4 also against Gurobi 13 |
 | done | DSL v0.1: 12 examples, 26 planted bad scenarios, `relax` and `logic` |
-| done | 10 families, 2,290 tasks, 78 verified paraphrases |
-| done | Trivial agents exact on every file; probes at 0.3 % and 6.6 % |
+| done | 10 families; current set 2,194 tasks + 45 paraphrases (`_v0`: 2,290 + 78) |
+| done | Trivial agents exact on every file; probes 0.1 % and 1.7 % on the current set |
 | done | Frontier baseline (Sonnet 59/60, Opus 60/60); LLM ladder on the first 399 tasks |
 | done | Untrained LLM ladder on all 10 families: Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % |
 | next | Frontier APIs on all 10 families, with pinned ids |
 | done | All 10 families: `infeasible_request` and `chained_scenario` built Oct 7 |
 | done | Shared outcomes removed: 16 files regenerated as `_v1`, 4 paraphrase files dropped; probe 1.7 % (Nov 1) |
-| next | Port more models; hold some out; RL on a 4B–8B model |
+| done | GRPO pilot on one RTX 4090: Qwen3 4B, 51.5 % → 56.0 % on 200 test tasks, one seed (Nov 1) |
+| next | GRPO with a pass-rate filter, three held-out base models and 3 seeds |
+| next | Port more models (the gate needs 25) |
 
 ---
 

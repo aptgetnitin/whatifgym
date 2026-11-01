@@ -123,10 +123,12 @@ Done when the reward rises over the 50 steps and `reward_seconds_per_step` stays
 |---|---|---|
 | Model | Qwen3-4B-Instruct-2507, 4-bit + LoRA rank 32 | Qwen3-8B and 4B, bf16 + LoRA |
 | Group size | 4 | 8–16 |
-| Prompts | up to 7,000 tokens: 863 tasks, 9 families, 9 base models | all |
+| Prompts | up to 7,000 tokens: 1,078 training tasks on the `_v0` set (9 families; `food_supply`, `farm_planning` and `car_rental_2` have no prompt that short) | all |
 | Turns | one; `under_specified` left out | multi-turn, with the ask action |
 | Reward | the environment's: 1.1 correct, 0.1 valid only, 0 otherwise | the same |
 
 The pilot uses the exact prompt of the baselines (`scripts/run_baseline.py`), so a trained adapter is measured the same way as the untrained models.
 
 Outputs go to `results/training/pilot/` (git-ignored): the LoRA adapter, `log_history.json`, `summary.json`.
+
+First results on a cloud RTX 4090 (smoke, 50-step and 80-step pilots, before/after scores): [RUNPOD.md](RUNPOD.md).
