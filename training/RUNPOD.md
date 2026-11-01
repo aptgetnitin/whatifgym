@@ -29,6 +29,7 @@ uv venv .venv-train --python 3.12              # an isolated Python 3.12 environ
 source .venv-train/bin/activate                # use it in this shell
 uv pip install vllm --torch-backend=auto       # "auto" reads the driver and picks the torch build for it
 uv pip install unsloth trl datasets -r requirements.txt --torch-backend=auto   # training libraries + WhatIfGym's own
+uv pip install vllm-bnb-plugin --torch-backend=auto   # vLLM >= 0.28 needs it for 4-bit loading (else: RuntimeError at model load)
 
 # ---- 5. Verify ----
 python training/check_gpu.py                   # expect the torch build, "matmul ok", all 6 libraries, READY
