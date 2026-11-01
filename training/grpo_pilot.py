@@ -66,12 +66,13 @@ def _score(job: tuple[str, str]) -> float:
 
 # ------------------------------------------------------------------ data
 def task_files(families_excluded: tuple[str, ...]) -> list[str]:
-    files = sorted(str(p) for p in ROOT.glob("tasks/*/*_v0.jsonl"))
-    return [f for f in files if not any(f"/{fam}_v0" in f for fam in families_excluded)]
+    from whatifgym.tasks import current_task_files
+
+    return [str(p) for p in current_task_files(paraphrases=False) if p.stem.rsplit("_v", 1)[0] not in families_excluded]
 
 
 def build_rows(files: list[str], tokenizer, max_prompt_tokens: int, limit: int | None, seed: int,
-               split: str = "train") -> list[dict]:
+               split: str | None = "train") -> list[dict]:
     import random
 
     from run_baseline import SYSTEM_PROMPT, build_prompt
@@ -111,6 +112,17 @@ def evaluate(model, tokenizer, rows: list[dict], pool, max_tokens: int, lora_req
             "correct": "".join("1" if x >= 1.0 else "0" for x in rewards)}  # per task, in eval order: paired tests
 
 
+def pass_rates(model, tokenizer, rows: list[dict], pool, k: int, max_tokens: int) -> dict[str, float]:
+    """Share of k sampled answers (temperature 1, the training setting) that are correct, for each task."""
+    from vllm import SamplingParams
+
+    texts = [tokenizer.apply_chat_template(r["prompt"], tokenize=False, add_generation_prompt=True) for r in rows]
+    outs = model.fast_generate(texts, sampling_params=SamplingParams(n=k, temperature=1.0, max_tokens=max_tokens))
+    jobs = [(r["task_id"], c.text) for r, o in zip(rows, outs) for c in o.outputs]
+    rewards = list(pool.map(_score, jobs, chunksize=16))
+    return {r["task_id"]: sum(x >= 1.0 for x in rewards[i * k:(i + 1) * k]) / k for i, r in enumerate(rows)}
+
+
 # ------------------------------------------------------------------ main
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -127,7 +139,12 @@ def main(argv=None) -> int:
     ap.add_argument("--lr", type=float, default=5e-6)
     ap.add_argument("--gpu-mem", type=float, default=0.55, help="share of GPU memory vLLM may take for generation")
     ap.add_argument("--workers", type=int, default=8, help="solver processes for the reward")
-    ap.add_argument("--seed", type=int, default=3407)
+    ap.add_argument("--seed", type=int, default=3407, help="training seed; the evaluation tasks do not depend on it")
+    ap.add_argument("--holdout-models", nargs="*", default=[], help="base models kept out of training, scored apart")
+    ap.add_argument("--measure-pass", type=int, default=0, metavar="K",
+                    help="only sample K answers per training task, write pass_rates.json and stop")
+    ap.add_argument("--pass-rates", default=None, help="pass_rates.json from --measure-pass: train only on tasks ...")
+    ap.add_argument("--pass-range", type=float, nargs=2, default=(0.1, 0.9), help="... with a pass rate in [LO, HI]")
     ap.add_argument("--out", default=str(ROOT / "results" / "training" / "pilot"))
     args = ap.parse_args(argv)
     if args.smoke:
@@ -150,16 +167,47 @@ def main(argv=None) -> int:
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"])
 
     files = task_files(families_excluded=("under_specified",))
-    rows = build_rows(files, tokenizer, args.max_prompt_tokens, args.tasks_limit, args.seed)
-    dataset = Dataset.from_list(rows)
-    eval_rows = build_rows(files, tokenizer, args.max_prompt_tokens, args.eval_tasks, args.seed, split="test") \
-        if args.eval_tasks else []
-    (out / "eval_task_ids.json").write_text(json.dumps([r["task_id"] for r in eval_rows]), encoding="utf-8")
+    holdout = set(args.holdout_models)
+    rows = [r for r in build_rows(files, tokenizer, args.max_prompt_tokens, None, args.seed) if r["model"] not in holdout]
+    if args.pass_rates:
+        rates = json.loads(Path(args.pass_rates).read_text(encoding="utf-8"))
+        lo, hi = args.pass_range
+        before = len(rows)
+        rows = [r for r in rows if lo <= rates.get(r["task_id"], -1.0) <= hi]
+        print(f"pass-rate filter [{lo}, {hi}]: {len(rows)} of {before} training tasks kept", flush=True)
+    rows = rows[:args.tasks_limit] if args.tasks_limit else rows
+    # One fixed draw (seed 0), so every training seed is scored on the same tasks
+    eval_sets = {
+        "test": [r for r in build_rows(files, tokenizer, args.max_prompt_tokens, None, 0, split="test")
+                 if r["model"] not in holdout][:args.eval_tasks],
+        "heldout_models": [r for r in build_rows(files, tokenizer, args.max_prompt_tokens, None, 0, split=None)
+                           if r["model"] in holdout][:args.eval_tasks],
+    } if args.eval_tasks else {}
+    eval_sets = {name: rs for name, rs in eval_sets.items() if rs}
+    (out / "eval_task_ids.json").write_text(json.dumps({n: [r["task_id"] for r in rs] for n, rs in eval_sets.items()}),
+                                            encoding="utf-8")
 
     # spawn, not fork: this process already holds CUDA and vLLM threads, and a forked child can hang on them
     pool = ProcessPoolExecutor(max_workers=args.workers, initializer=_init_worker, initargs=(files,),
                                mp_context=multiprocessing.get_context("spawn"))
-    eval_before = evaluate(model, tokenizer, eval_rows, pool, args.max_completion) if eval_rows else None
+    if args.measure_pass:
+        rates = pass_rates(model, tokenizer, rows, pool, args.measure_pass, args.max_completion)
+        pool.shutdown()
+        (out / "pass_rates.json").write_text(json.dumps(rates), encoding="utf-8")
+        by_family: dict[str, list[float]] = {}
+        for r in rows:
+            by_family.setdefault(r["family"], []).append(rates[r["task_id"]])
+        lo, hi = args.pass_range
+        stats = lambda v: {"tasks": len(v), "pass@1": round(sum(v) / len(v), 3),  # noqa: E731
+                           f"pass@{args.measure_pass}": round(sum(x > 0 for x in v) / len(v), 3),
+                           "in_range": round(sum(lo <= x <= hi for x in v) / len(v), 3)}
+        report = {"k": args.measure_pass, "all": stats(list(rates.values())),
+                  "by_family": {f: stats(v) for f, v in sorted(by_family.items())}}
+        print("PASS_RATES " + json.dumps(report), flush=True)
+        print("PASS_RATES_FILE " + json.dumps(rates), flush=True)  # the whole file, one line: copy it off the pod
+        return 0
+    dataset = Dataset.from_list(rows)
+    eval_before = {n: evaluate(model, tokenizer, rs, pool, args.max_completion) for n, rs in eval_sets.items()}
     print(f"EVAL before training: {json.dumps(eval_before)}", flush=True)
     reward_seconds: list[float] = []
 
@@ -193,15 +241,18 @@ def main(argv=None) -> int:
 
     model.save_lora(str(out / "lora"))
     tokenizer.save_pretrained(str(out / "lora"))
-    eval_after = evaluate(model, tokenizer, eval_rows, pool, args.max_completion,
-                          lora_request=model.load_lora(str(out / "lora"))) if eval_rows else None
+    lora = model.load_lora(str(out / "lora"))
+    eval_after = {n: evaluate(model, tokenizer, rs, pool, args.max_completion, lora_request=lora)
+                  for n, rs in eval_sets.items()}
     print(f"EVAL after training: {json.dumps(eval_after)}", flush=True)
     pool.shutdown()
     history = trainer.state.log_history
     (out / "log_history.json").write_text(json.dumps(history, indent=1), encoding="utf-8")
     rewards = [h["reward"] for h in history if "reward" in h]
     summary = {
-        "model": args.model, "steps": args.max_steps, "tasks": len(rows), "num_generations": args.num_generations,
+        "model": args.model, "seed": args.seed, "holdout_models": sorted(holdout), "pass_rates": args.pass_rates,
+        "pass_range": list(args.pass_range) if args.pass_rates else None,
+        "steps": args.max_steps, "tasks": len(rows), "num_generations": args.num_generations,
         "prompts_per_step": args.grad_accum, "eval_before": eval_before, "eval_after": eval_after,
         "max_prompt_tokens": args.max_prompt_tokens, "max_completion": args.max_completion,
         "peak_gpu_memory_gb": round(torch.cuda.max_memory_reserved() / 1e9, 2),

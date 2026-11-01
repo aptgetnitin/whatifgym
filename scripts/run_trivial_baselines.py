@@ -37,7 +37,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from run_baseline import (agent_ask_then_oracle, agent_nearest_example, agent_noop, agent_oracle,  # noqa: E402
                           agent_random_valid, run)
-from whatifgym.tasks import load_tasks  # noqa: E402
+from whatifgym.tasks import current_task_files, load_tasks  # noqa: E402
 
 # expected reward per agent: (fully specified task, under-specified task)
 AGENTS = {"oracle": (agent_oracle, (1.1, 0.0)), "noop": (agent_noop, (0.1, 0.0)), "ask_then_oracle": (agent_ask_then_oracle, (0.9, 1.1))}
@@ -48,12 +48,12 @@ PROBE_WARN = 0.10
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--tasks", nargs="*", default=None, help="task files (default: tasks/*/*_v0.jsonl)")
+    ap.add_argument("--tasks", nargs="*", default=None, help="task files (default: the current set, tasks/superseded.txt left out)")
     ap.add_argument("--out", default=str(ROOT / "results" / "trivial_baselines.md"))
     ap.add_argument("--solver", default="highs")
     args = ap.parse_args(argv)
 
-    files = [Path(p).resolve() for p in args.tasks] if args.tasks else sorted(ROOT.glob("tasks/*/*.jsonl"))
+    files = [Path(p).resolve() for p in args.tasks] if args.tasks else current_task_files()
     scratch = ROOT / "results" / "scratch"
     scratch.mkdir(parents=True, exist_ok=True)
     rows, problems, warnings = [], [], []

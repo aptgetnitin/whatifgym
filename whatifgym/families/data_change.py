@@ -401,6 +401,8 @@ def _touches(scenario: dict) -> set:
 
 class DataChangeFamily(TaskFamily):
     name = "data_change"
+    distinct_outcomes = True   # since _v1: else one answer fits several questions (nearest_example probe)
+    check_all_solvers = True
     description = ("The planner changes one or two input numbers (demand, capacity, maintenance, margins, process times, "
                    "policy parameters); the answer is the data edit, re-solved.")
     specific_templates = {"factory_planning": FACTORY_TEMPLATES}

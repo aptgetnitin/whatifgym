@@ -127,6 +127,8 @@ def _clause(question: str) -> str:
 
 class RelativeRuleFamily(TaskFamily):
     name = "relative_rule"
+    distinct_outcomes = True   # since _v1: else one answer fits several questions (nearest_example probe)
+    check_all_solvers = True
     description = ("The planner states a limit relative to another quantity of the plan (a ratio between two "
                    "scopes, a share of a total, one measure against another); the answer is a rule with "
                    "`relative_to` and `factor`, re-solved.")

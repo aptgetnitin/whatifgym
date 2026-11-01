@@ -128,6 +128,8 @@ GENERIC_TEMPLATES = {"o_then_min": o_then_min, "o_then_max": o_then_max, "o_then
 
 class ObjectiveChangeFamily(TaskFamily):
     name = "objective_change"
+    distinct_outcomes = True   # since _v1: else one answer fits several questions (nearest_example probe)
+    check_all_solvers = True
     description = ("The planner changes what counts as best: keep the original objective at its optimum and then "
                    "minimise or maximise a decision measure (or several, in order), or replace the objective; the "
                    "answer is the DSL's lexicographic `objective` stages, re-solved.")

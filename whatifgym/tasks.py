@@ -54,6 +54,22 @@ def save_tasks(tasks: Iterable[Task], path: str | Path) -> int:
     return n
 
 
+TASKS_DIR = Path(__file__).resolve().parents[1] / "tasks"
+
+
+def current_task_files(paraphrases: bool = True, root: Path = TASKS_DIR) -> list[Path]:
+    """The active benchmark: every task file except those in ``tasks/superseded.txt``.
+
+    A superseded file stays on disk unchanged (published results cite it); its replacement, if any, is the
+    ``_v1`` file next to it. ``paraphrases=False`` also leaves out the ``*_nl`` files.
+    """
+    listed = root / "superseded.txt"
+    lines = listed.read_text(encoding="utf-8").splitlines() if listed.exists() else []
+    skip = {(root.parent / ln.split("#")[0].strip()).resolve() for ln in lines if ln.split("#")[0].strip()}
+    return [p for p in sorted(root.glob("*/*.jsonl"))
+            if p.resolve() not in skip and (paraphrases or not p.stem.endswith("_nl"))]
+
+
 def load_tasks(path: str | Path, split: str | None = None) -> list[Task]:
     tasks = []
     with open(path, encoding="utf-8") as fh:

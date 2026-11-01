@@ -253,6 +253,8 @@ def _clause(question: str) -> str:
 
 class NewLimitFamily(TaskFamily):
     name = "new_limit"
+    distinct_outcomes = True   # since _v1: else one answer fits several questions (nearest_example probe)
+    check_all_solvers = True
     description = ("The planner adds a constraint the model never had: a cap or floor on the sum of a decision measure "
                    "over a scope; the answer is one or more rules, re-solved.")
     specific_templates = {"factory_planning": FACTORY_TEMPLATES}

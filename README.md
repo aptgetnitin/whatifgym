@@ -350,7 +350,7 @@ How each family adjusts the filters:
 | `infeasible_request` | **infeasible** | the conflict is not empty |
 | `chained_scenario` | optimal | (inside the template) the history matters: see the family's rules below |
 
-"Outcome new" and "all three solvers" apply to the four newest families. The six older families check one second solver and do not filter shared outcomes yet (section 11).
+"Outcome new" and "all three solvers" apply to every family except `under_specified`. The five older families got them in the `_v1` files (section 11); their `_v0` files were made without them.
 
 ### The ten families
 
@@ -440,7 +440,7 @@ All 135 files, 2,368 tasks (`results/trivial_baselines.md`):
 | `random_valid` | submits a random valid scenario | near 0 correct | 0.3 % correct |
 | `nearest_example` | copies the gold scenario of the most similar training task | low | 5.8 % correct (1.9 % on the two newest families) |
 
-Where `nearest_example` scores high, several questions share one scored outcome. Example: lift the weight limit on *any* knapsack, and all items fit. The four newest families filter this out. 21 files still score above 10 %: 16 template files of the older families, 4 paraphrase files, and `wedding_seating` chained (2 of 7). The fix: regenerate them as `_v1` files with the same filter, and keep the `_v0` files that published results cite.
+Where `nearest_example` scores high, several questions share one scored outcome. Example: lift the weight limit on *any* knapsack, and all items fit. The four newest families filter this out. In the `_v0` files, 21 scored above 10 %: 16 template files of the older families, 4 paraphrase files, and `wedding_seating` chained. Fix (Nov 1): the 16 files are regenerated as `_v1` with the same filter (176 tasks instead of 272: the rest shared an outcome); the 4 paraphrase files are dropped. `tasks/superseded.txt` lists the 20 `_v0` files; they stay on disk because published results cite them, and the scripts leave them out (`current_task_files()`). On the current set (2,239 tasks, 131 files) `nearest_example` is **1.7 %**. One file is above 10 %: `wedding_seating/data_change_v1`, 1 of 5 tasks, which copies a vague `under_specified` question of the same model ([results/trivial_baselines_v1.md](results/trivial_baselines_v1.md)).
 
 ### Frontier models
 
@@ -647,7 +647,6 @@ flowchart TB
     subgraph X["Next"]
         direction LR
         X1["Frontier APIs on<br/>all 10 families"]
-        X2["Regenerate 21 files<br/>as _v1 (shared outcomes)"]
         X4["Port 11+ more models"]
         X5["RL on Qwen3 4B or 8B"]
     end
@@ -664,7 +663,7 @@ flowchart TB
 | done | Untrained LLM ladder on all 10 families: Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % |
 | next | Frontier APIs on all 10 families, with pinned ids |
 | done | All 10 families: `infeasible_request` and `chained_scenario` built Oct 7 |
-| next | Regenerate the 21 files with shared outcomes as `_v1` files |
+| done | Shared outcomes removed: 16 files regenerated as `_v1`, 4 paraphrase files dropped; probe 1.7 % (Nov 1) |
 | next | Port more models; hold some out; RL on a 4B–8B model |
 
 ---

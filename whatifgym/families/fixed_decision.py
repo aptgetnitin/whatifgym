@@ -129,6 +129,8 @@ def _clause(question: str) -> str:
 
 class FixedDecisionFamily(TaskFamily):
     name = "fixed_decision"
+    distinct_outcomes = True   # since _v1: else one answer fits several questions (nearest_example probe)
+    check_all_solvers = True
     description = ("The planner commits part of the plan (a level, zero, a 0/1 choice, a whole scope) and asks for "
                    "the best remainder; the answer is the DSL's `fixed_decisions`, re-solved.")
     generic_templates = GENERIC_TEMPLATES

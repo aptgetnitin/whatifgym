@@ -1,0 +1,23 @@
+# Task files left out of the current benchmark (whatifgym.tasks.current_task_files). They stay on disk unchanged:
+# published results cite them. Replacements are the _v1 files next to them; a _nl file whose questions share
+# scored outcomes is dropped without a replacement. One repo-relative path per line; # starts a comment.
+tasks/battery_scheduling/new_limit_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by new_limit_v1
+tasks/battery_scheduling/objective_change_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by objective_change_v1
+tasks/bin_packing/new_limit_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by new_limit_v1
+tasks/bin_packing/relative_rule_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by relative_rule_v1
+tasks/car_rental/objective_change_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by objective_change_v1
+tasks/car_rental_2/objective_change_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by objective_change_v1
+tasks/factory_planning_2/objective_change_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by objective_change_v1
+tasks/food_manufacture/data_change_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by data_change_v1
+tasks/food_manufacture/objective_change_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by objective_change_v1
+tasks/food_manufacture/relative_rule_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by relative_rule_v1
+tasks/mining/objective_change_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by objective_change_v1
+tasks/multiple_knapsack/fixed_decision_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by fixed_decision_v1
+tasks/multiple_knapsack/new_limit_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by new_limit_v1
+tasks/multiple_knapsack/relative_rule_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by relative_rule_v1
+tasks/power_generation_hydro/objective_change_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by objective_change_v1
+tasks/wedding_seating/data_change_v0.jsonl   # shared outcomes (nearest_example probe > 0.10); replaced by data_change_v1
+tasks/car_rental/data_change_v0_nl.jsonl   # paraphrases with shared outcomes (probe > 0.10); dropped
+tasks/food_manufacture/data_change_v0_nl.jsonl   # paraphrases with shared outcomes (probe > 0.10); dropped
+tasks/power_generation_hydro/data_change_v0_nl.jsonl   # paraphrases with shared outcomes (probe > 0.10); dropped
+tasks/power_generation_hydro/new_limit_v0_nl.jsonl   # paraphrases with shared outcomes (probe > 0.10); dropped

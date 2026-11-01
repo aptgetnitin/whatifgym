@@ -40,7 +40,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from whatifgym.env import WhatIfEnv  # noqa: E402
-from whatifgym.tasks import load_tasks  # noqa: E402
+from whatifgym.tasks import current_task_files, load_tasks  # noqa: E402
 
 
 # ------------------------------------------------------------------------------------------------ agents
@@ -65,9 +65,9 @@ def _words(text: str) -> set[str]:
 
 @functools.lru_cache(maxsize=1)
 def _train_pool() -> dict[str, list]:
-    """Training-split tasks of every task file, by base model (the pool `nearest_example` copies from)."""
+    """Training-split tasks of every current task file, by base model (the pool `nearest_example` copies from)."""
     pool: dict[str, list] = collections.defaultdict(list)
-    for path in sorted(ROOT.glob("tasks/*/*.jsonl")):
+    for path in current_task_files():
         for t in load_tasks(path):
             if t.split == "train":
                 pool[t.model].append((t, _words(t.question)))
