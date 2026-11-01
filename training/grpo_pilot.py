@@ -107,7 +107,8 @@ def evaluate(model, tokenizer, rows: list[dict], pool, max_tokens: int, lora_req
     n = len(rows)
     return {"tasks": n, "accuracy": round(sum(x >= 1.0 for x in rewards) / n, 4),
             "valid": round(sum(x > 0 for x in rewards) / n, 4), "mean_reward": round(sum(rewards) / n, 4),
-            "accuracy_by_family": {f: round(sum(v) / len(v), 3) for f, v in sorted(by_family.items())}}
+            "accuracy_by_family": {f: round(sum(v) / len(v), 3) for f, v in sorted(by_family.items())},
+            "correct": "".join("1" if x >= 1.0 else "0" for x in rewards)}  # per task, in eval order: paired tests
 
 
 # ------------------------------------------------------------------ main
