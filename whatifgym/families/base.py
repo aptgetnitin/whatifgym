@@ -14,6 +14,7 @@ schema.json) are both supported; a family lists which it has.
 """
 from __future__ import annotations
 
+import hashlib
 import random
 import time
 from dataclasses import dataclass, field
@@ -28,6 +29,13 @@ from ..tasks import Task, split_for
 
 Template = Callable[[random.Random, "FamilyContext"], tuple[str, dict[str, Any], dict[str, Any], str] | None]
 
+
+
+def short_name(name: str, limit: int = 80) -> str:
+    """A rule name within the DSL's 80-character limit; a hash suffix keeps long names built from entity labels distinct."""
+    if len(name) <= limit:
+        return name
+    return name[:limit - 9] + "_" + hashlib.sha1(name.encode()).hexdigest()[:8]
 
 @dataclass
 class FamilyContext:

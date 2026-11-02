@@ -1,0 +1,11 @@
+{
+  "objective": 55.0,
+  "source_solver": "OR-Tools 9.15.6755 CP-SAT; original example jobshop_ft06_sat.py (stable branch, fetched from raw.githubusercontent.com) run unmodified in a subprocess on 2026-11-02 (status OPTIMAL, best bound 55)",
+  "n_vars": 163,
+  "n_constraints": 252,
+  "n_int_vars": 90,
+  "original_n_vars": 73,
+  "original_n_constraints": 73,
+  "original_n_int_vars": 73,
+  "notes": "Original CP-SAT model (proto counts): 36 start + 36 end + 1 makespan integer variables = 73; 36 interval + 6 add_no_overlap + 30 job precedences + 1 add_max_equality = 73 constraints. The PuLP port is a disjunctive big-M MILP with different sizes: start/end are continuous (all data are integers, so the optimum is integral), each interval becomes one row end = start + duration (36), precedences stay (30), add_max_equality becomes makespan >= end of each job's last step (6 rows; equal at the optimum when minimising), and each no-overlap becomes one binary goes_first per job pair per machine (6 x 15 = 90) with two big-M rows (180). Port: 36 + 36 + 1 + 90 = 163 variables (90 binary); 36 + 30 + 6 + 180 = 252 rows. Big-M = horizon = max release_time + sum of durations (197 on the base data, the original's horizon), also the upper bound of every start/end, as in the original. Steps are 1-based here (0-based in the original); jobs J0..J5 and machines M0..M5 keep the original indices. New data column jobs.release_time (0 in the base data) bounds the first start. HiGHS, SCIP and CBC all return 55. Alternative optima (min/max of each quantity with makespan <= 55, HiGHS): completion J0 48..55, J1 52..54, J2 37..55, J3 52..55, J4 53..55, J5 43..55; total_completion_time 301..323; goes_first is not unique. Unique: makespan, idle_by_machine (makespan - busy), mean_utilisation; busy_by_machine is data only."
+}

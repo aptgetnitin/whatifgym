@@ -82,6 +82,8 @@ def apply_data_changes(data: dict[str, Any], changes: list[dict[str, Any]]) -> d
             col, where = ch["column"], ch.get("where")
             for row in out[ch["table"]]:
                 if _matches(row, where):
+                    if op != "set" and row[col] is None:
+                        continue  # a blank cell means "none" (e.g. no deadline): scaling or shifting keeps it blank
                     if op == "set":
                         row[col] = ch["value"]
                     elif op == "scale":

@@ -1,0 +1,98 @@
+{
+  "model": "technician_routing_scheduling",
+  "sense": "min",
+  "objective": "sum over customers of priority * (lateness_penalty * lateness + window_violation_penalty * (early_start + late_start) + unfilled_job_penalty * unfilled)",
+  "tables": {
+    "technicians": {
+      "key": ["technician"],
+      "label": "technicians",
+      "columns": {
+        "technician": {"type": "string", "label": "technician"},
+        "capacity_min": {"type": "number", "unit": "min", "description": "Most minutes of service plus travel in the day; used only if the technician is dispatched", "label": "daily working capacity (min)"},
+        "depot": {"type": "string", "description": "Location the technician leaves from and returns to", "label": "home depot"}
+      }
+    },
+    "job_types": {
+      "key": ["job_type"],
+      "label": "job types",
+      "removable": false,
+      "columns": {
+        "job_type": {"type": "string", "label": "job type"},
+        "priority": {"type": "int", "unit": "points", "description": "Weight on every penalty of a job of this type", "label": "job priority"},
+        "duration_min": {"type": "number", "unit": "min", "description": "Service time on site", "label": "job duration (min)"}
+      }
+    },
+    "skills": {
+      "key": ["technician", "job_type"],
+      "label": "technician skills",
+      "columns": {
+        "technician": {"type": "string", "ref": "technicians.technician", "label": "technician"},
+        "job_type": {"type": "string", "ref": "job_types.job_type", "label": "job type"},
+        "qualified": {"type": "int", "unit": "0/1", "description": "1 if the technician can do jobs of this type", "label": "qualified flag"}
+      }
+    },
+    "customers": {
+      "key": ["customer"],
+      "label": "customer jobs",
+      "columns": {
+        "customer": {"type": "string", "label": "customer"},
+        "location": {"type": "string", "description": "Town of the job; one customer per location", "label": "customer location"},
+        "job_type": {"type": "string", "ref": "job_types.job_type", "label": "job type"},
+        "window_start": {"type": "number", "unit": "min from day start", "description": "Earliest service start without penalty", "label": "time window start"},
+        "window_end": {"type": "number", "unit": "min from day start", "description": "Latest service start without penalty", "label": "time window end"},
+        "due_time": {"type": "number", "unit": "min from day start", "description": "Time the job should be finished by; later finish is lateness", "label": "due time"}
+      }
+    },
+    "travel_times": {
+      "key": ["from_location", "to_location"],
+      "label": "travel times",
+      "removable": false,
+      "columns": {
+        "from_location": {"type": "string", "label": "from location"},
+        "to_location": {"type": "string", "label": "to location"},
+        "travel_min": {"type": "number", "unit": "min", "description": "Driving time, same in both directions (one row per pair)", "label": "travel time (min)"}
+      }
+    }
+  },
+  "params": {
+    "day_length_min": {"type": "number", "unit": "min", "description": "Every service starts between 0 and this time; also the big-M base of the sequencing rows", "label": "working day length (min)"},
+    "unfilled_job_penalty": {"type": "number", "unit": "per priority point", "description": "Penalty for a job nobody is assigned to", "label": "penalty per unfilled job"},
+    "window_violation_penalty": {"type": "number", "unit": "per priority point per min", "description": "Penalty per minute a service starts outside its window", "label": "penalty per minute outside the time window"},
+    "lateness_penalty": {"type": "number", "unit": "per priority point per min", "description": "Penalty per minute a job finishes after its due time", "label": "penalty per minute late"}
+  },
+  "decision_variables": {
+    "assign[customer, technician]": "binary, technician does the job",
+    "use[technician]": "binary, technician is dispatched",
+    "route[from_location, to_location, technician]": "binary, technician drives this leg (legs touching another technician's depot fixed to 0)",
+    "start_time[location]": "service start, 0..day_length_min",
+    "lateness[customer]": "min finished after due time (>= 0)",
+    "early_start[customer]": "min started before window start (>= 0)",
+    "late_start[customer]": "min started after window end (>= 0)",
+    "unfilled[customer]": "binary, job left undone"
+  },
+  "constraints": {
+    "cover[customer]": "sum over qualified technicians of assign + unfilled = 1",
+    "one_technician[customer]": "sum over all technicians of assign <= 1",
+    "capacity[technician]": "duration of assigned jobs + travel of driven legs <= capacity_min * use",
+    "arrive[technician, customer]": "legs into the customer's location = assign",
+    "leave[technician, customer]": "legs out of the customer's location = assign",
+    "return_depot[technician]": "legs from customer locations into the home depot = use",
+    "leave_depot[technician]": "legs from the home depot to customer locations = use",
+    "sequence[customer, customer]": "if any technician drives a to b: start b >= start a + duration a + travel (big-M)",
+    "from_depot[depot, customer]": "if any technician drives depot to b: start b >= start at depot + travel (big-M)",
+    "window_start[customer]": "start + early_start >= window_start",
+    "window_end[customer]": "start - late_start <= window_end",
+    "due[customer]": "lateness >= start + duration - due_time"
+  },
+  "kpis": ["total_penalty", "unfilled_penalty", "window_penalty", "lateness_penalty", "jobs_unfilled", "lateness_minutes", "technicians_used", "travel_minutes"],
+  "measures": {
+    "assign": {"dims": ["customer", "technician"], "label": "jobs assigned"},
+    "use": {"dims": ["technician"], "label": "technicians dispatched"},
+    "route": {"dims": ["from_location", "to_location", "technician"], "label": "legs driven"},
+    "start_time": {"dims": ["location"], "label": "service start time (min)"},
+    "lateness": {"dims": ["customer"], "label": "minutes late"},
+    "early_start": {"dims": ["customer"], "label": "minutes started before the window"},
+    "late_start": {"dims": ["customer"], "label": "minutes started after the window"},
+    "unfilled": {"dims": ["customer"], "label": "unfilled jobs"}
+  }
+}

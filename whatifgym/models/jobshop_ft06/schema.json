@@ -1,0 +1,55 @@
+{
+  "model": "jobshop_ft06",
+  "sense": "min",
+  "objective": "makespan = latest end time over all jobs",
+  "tables": {
+    "jobs": {
+      "key": ["job"],
+      "label": "jobs",
+      "removable": false,
+      "columns": {
+        "job": {"type": "string", "label": "job"},
+        "release_time": {"type": "number", "unit": "time units", "description": "Earliest time the job's first operation may start (0 = now)", "label": "job release time"}
+      }
+    },
+    "machines": {
+      "key": ["machine"],
+      "label": "machines",
+      "removable": false,
+      "columns": {
+        "machine": {"type": "string", "label": "machine"},
+        "name": {"type": "string", "label": "machine name"}
+      }
+    },
+    "operations": {
+      "key": ["job", "step"],
+      "label": "job operations (routing)",
+      "removable": false,
+      "columns": {
+        "job": {"type": "string", "ref": "jobs.job", "label": "job"},
+        "step": {"type": "int", "description": "Position of the operation in its job's route (1 = first)", "label": "routing step"},
+        "machine": {"type": "string", "ref": "machines.machine", "description": "Machine that processes the operation; each job visits each machine once", "label": "machine used", "editable": false},
+        "duration": {"type": "number", "unit": "time units", "description": "Processing time of the operation", "label": "processing time"}
+      }
+    }
+  },
+  "decision_variables": {
+    "start[job, step]": "time the operation starts",
+    "end[job, step]": "time the operation ends",
+    "makespan": "time the last job finishes",
+    "goes_first[machine, job, other_job]": "binary, 1 if the job is processed on the machine before the other job (one per pair, job < other_job)"
+  },
+  "constraints": {
+    "duration[job, step]": "end = start + processing time",
+    "precedence[job, step]": "the next step starts after this step ends; step 1 starts no earlier than the release time (bound)",
+    "makespan[job]": "makespan >= end of the job's last step",
+    "order[machine, job, other_job]": "big-M disjunction (M = horizon): one of each pair on a machine finishes before the other starts"
+  },
+  "kpis": ["makespan", "completion_by_job", "total_completion_time", "busy_by_machine", "idle_by_machine", "mean_utilisation"],
+  "measures": {
+    "start": {"dims": ["job", "step"], "label": "operation start time"},
+    "end": {"dims": ["job", "step"], "label": "operation end time"},
+    "makespan": {"dims": [], "label": "makespan (time units)"},
+    "goes_first": {"dims": ["machine", "job", "other_job"], "label": "job pairs where the job goes first on the machine"}
+  }
+}

@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 
-from .base import FamilyContext, TaskFamily
+from .base import FamilyContext, TaskFamily, short_name
 from .new_limit import _label, _usable
 
 RATIOS = [0.25, 0.5, 0.6, 0.75, 0.8, 0.9, 1.0, 1.25, 1.5, 2.0, 3.0]
@@ -35,7 +35,7 @@ def _pick_binding(base_ratio: float, sense: str, rng, candidates=RATIOS):
 
 def _rel_rule(measure, scope, sense, ref_measure, ref_scope, factor, name):
     return {"measure": measure, "scope": scope, "sense": sense,
-            "relative_to": {"measure": ref_measure, "scope": ref_scope}, "factor": factor, "name": name}
+            "relative_to": {"measure": ref_measure, "scope": ref_scope}, "factor": factor, "name": short_name(name)}
 
 
 def _dims_with_values(ctx: FamilyContext, measure: str, min_values: int = 2):

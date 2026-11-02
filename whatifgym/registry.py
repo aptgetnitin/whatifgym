@@ -26,11 +26,17 @@ def _registry() -> dict[str, type[BaseModel]]:
     from .models.power_generation_hydro.model import PowerGenerationHydro
     from .models.railway_dispatching.model import RailwayDispatching
     from .models.wedding_seating.model import WeddingSeating
+    from .models.technician_routing_scheduling.model import TechnicianRoutingScheduling
+    from .models.drone_network.model import DroneNetwork
+    from .models.airline_planning.model import AirlinePlanning
+    from .models.jobshop_ft06.model import JobshopFt06
+    from .models.single_machine_scheduling.model import SingleMachineScheduling
 
     classes = [FactoryPlanning, FactoryPlanning2, FoodManufacture, Mining, ManpowerPlanning, PowerGenerationHydro,
                MultipleKnapsack, BinPacking, WeddingSeating, CarRental,
                FarmPlanning, BatteryScheduling, CarRental2, FoodSupply, EconomicPlanning, FantasyBasketball,
-               AssignmentWithConstraints, Covid19FacilityLocation, RailwayDispatching, OptimizePowerSchedule]
+               AssignmentWithConstraints, Covid19FacilityLocation, RailwayDispatching, OptimizePowerSchedule,
+               TechnicianRoutingScheduling, DroneNetwork, AirlinePlanning, JobshopFt06, SingleMachineScheduling]
     return {cls.name: cls for cls in classes}
 
 

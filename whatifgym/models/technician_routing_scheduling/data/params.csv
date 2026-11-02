@@ -1,0 +1,5 @@
+name,value,description
+day_length_min,600,Length of the working day in minutes; every service starts between 0 and this time
+unfilled_job_penalty,6100,Penalty per priority point for a job no technician is assigned to
+window_violation_penalty,61,Penalty per priority point per minute a service starts outside its time window
+lateness_penalty,1,Penalty per priority point per minute a job finishes after its due time

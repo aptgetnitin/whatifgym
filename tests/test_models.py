@@ -14,7 +14,10 @@ EXPECTED_SIZES = {"factory_planning": (126, 79, 0), "multiple_knapsack": (75, 20
                   "car_rental_2": (294, 118, 5), "food_supply": (1397, 437, 0),
                   "economic_planning": (51, 33, 0), "fantasy_basketball": (96, 97, 96),
                   "assignment_with_constraints": (99, 57, 99), "covid19_facility_location": (225, 32, 9),
-                  "railway_dispatching": (218, 367, 180), "optimize_power_schedule": (960, 1722, 720)}
+                  "railway_dispatching": (218, 367, 180), "optimize_power_schedule": (960, 1722, 720),
+                  "technician_routing_scheduling": (660, 217, 630), "drone_network": (966, 1987, 483),
+                  "airline_planning": (1930, 536, 1930), "jobshop_ft06": (163, 252, 90),
+                  "single_machine_scheduling": (601, 980, 345)}
 
 
 @pytest.mark.parametrize("solver", PULP_SOLVERS)

@@ -8,10 +8,10 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 >
 > | Item | Now |
 > |---|---|
-> | Base models | 20 of 30, verified on HiGHS, SCIP and CBC |
+> | Base models | 25 of 30, verified on HiGHS, SCIP and CBC |
 > | Task families | 10 of 10 |
-> | Tasks (current set) | 3,093 template tasks + 45 verified paraphrases, in 182 files; shared outcomes removed (`_v1`, section 11) |
-> | Tests | 636 pass, 7 slow tests skipped |
+> | Tasks (current set) | 3,761 template tasks + 45 verified paraphrases, in 224 files; shared outcomes removed (`_v1`, section 11) |
+> | Tests | 766 pass, 7 slow tests skipped |
 > | Untrained LLMs (`_v0` set) | Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % (section 11) |
 > | Training result | GRPO on Qwen3 4B, one GPU, three base models held out: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds; section 11) |
 
@@ -47,7 +47,7 @@ Total time: about 10 minutes.
    git clone https://github.com/aptgetnitin/whatifgym && cd whatifgym
    ```
 2. Set up and check (about 5 minutes): `./setup.sh`, then `source .venv/bin/activate`.
-3. Run the tests (about 14 minutes): `python -m pytest -q`. Expect `636 passed, 7 skipped`.
+3. Run the tests (about 30 minutes): `python -m pytest -q`. Expect `766 passed, 7 skipped`.
 4. Score the trivial agents on one file (10 seconds):
    ```bash
    python scripts/run_baseline.py --tasks tasks/mining/new_limit_v0.jsonl --agent oracle   # mean reward 1.100
@@ -199,6 +199,11 @@ Twenty public models are ported. Each one gives the published optimum on HiGHS, 
 | `covid19_facility_location` | Gurobi, COVID-19 healthcare facility capacity | MILP | 225 / 32 / 9 | min | 1 521 653.42 | assign, build, extra_beds |
 | `railway_dispatching` | Gurobi, Railway dispatching after a delay | MILP | 218 / 367 / 180 | min | 47 | entry_time, finish_time, goes_first, meet |
 | `optimize_power_schedule` | Gurobi, Power generation schedule (unit commitment) | MILP | 960 / 1 722 / 720 | min | 4 495 153.46 | output, on, start, stop |
+| `technician_routing_scheduling` | Gurobi, Technician routing and scheduling (scenario Sce3) | MILP | 660 / 217 / 630 | min | 12 410 | assign, use, route, start_time, … |
+| `drone_network` | Gurobi, Drone network for cardiac-arrest response | MILP | 966 / 1 987 / 483 | min | 37.32 | open, assign, queue_load, linked_load |
+| `airline_planning` | Gurobi, Airline planning after a disruption | IP | 1 930 / 536 / 1 930 | min | 561 087 | operate, connect |
+| `jobshop_ft06` | OR-Tools example (CP-SAT, ported as a big-M MILP) | MILP | 163 / 252 / 90 | min | 55 | start, end, makespan, goes_first |
+| `single_machine_scheduling` | OR-Tools example (CP-SAT, ported as a strengthened MILP) | MILP | 601 / 980 / 345 | min | 112 605 | follows, runs_before, start_time, end_time |
 
 Every model obeys one contract (`whatifgym/base.py`):
 
@@ -401,12 +406,14 @@ Column names: data = `data_change`, limit = `new_limit`, relative = `relative_ru
 
 | base model | data | limit | relative | objective | fixed | relax | logic | infeasible | chained | vague | total |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| `airline_planning` | 20 | 20 | 20 | 2 | 20 | – | 20 | – | 20 | 20 | 142 |
 | `assignment_with_constraints` | 20 | 9 | 20 | – | 20 | 4 | 15 | – | 20 | 20 | 128 |
 | `battery_scheduling` | 20 | 20† | 20 | 8† | 20 | 1 | 20 | 20 | 20 | 20 | 169 |
 | `bin_packing` | 20 | 1† | 7† | – | – | – | – | – | 20 | 20 | 68 |
 | `car_rental` | 20 | 20 | 20 | 13† | 20 | – | 20 | 2 | 20 | 20 | 155 |
 | `car_rental_2` | 20 | 20 | 20 | 20† | 20 | 14 | 20 | 20 | 20 | 20 | 194 |
 | `covid19_facility_location` | 20 | 20 | 20 | 1 | 20 | 20 | 20 | 20 | 20 | 20 | 181 |
+| `drone_network` | 20 | 18 | 20 | 14 | 20 | – | 15 | 4 | 20 | 20 | 151 |
 | `economic_planning` | 20 | 20 | 20 | 14 | 20 | – | 20 | 20 | 20 | 20 | 174 |
 | `factory_planning` | 60 | 20 | 20 | 3 | 20 | 20 | 20 | 20 | 20 | 20 | 223 |
 | `factory_planning_2` | 20 | 20 | 20 | 7† | 20 | 7 | 20 | 20 | 20 | 20 | 174 |
@@ -414,14 +421,17 @@ Column names: data = `data_change`, limit = `new_limit`, relative = `relative_ru
 | `farm_planning` | 20 | 20 | 20 | 20 | 20 | 7 | 20 | 20 | 20 | 20 | 187 |
 | `food_manufacture` | 20† | 20 | 20† | 11† | 20 | 1 | 20 | 20 | 20 | 20 | 172 |
 | `food_supply` | 20 | 20 | 20 | 4 | 20 | – | 20 | 20 | 20 | 20 | 164 |
+| `jobshop_ft06` | 20 | 13 | 20 | 20 | 20 | – | 20 | 20 | 20 | 20 | 173 |
 | `manpower_planning` | 20 | 20 | 20 | 20 | 20 | 12 | 20 | 20 | 20 | 20 | 192 |
 | `mining` | 20 | 20 | 20 | 2† | 20 | 20 | 20 | 20 | 20 | 20 | 182 |
 | `multiple_knapsack` | 20 | 6† | 20† | 1 | 2† | 1 | 18 | – | 20 | 20 | 108 |
 | `optimize_power_schedule` | 20 | 20 | 16 | 2 | 20 | – | 20 | 20 | 20 | 20 | 158 |
 | `power_generation_hydro` | 20 | 20 | 20 | 14† | 20 | – | 20 | 19 | 20 | 20 | 173 |
 | `railway_dispatching` | 20 | 8 | 20 | 20 | 20 | – | 20 | 20 | 20 | 20 | 168 |
+| `single_machine_scheduling` | 7 | 3 | – | 8 | 1 | – | – | 18 | 2 | 6 | 45 |
+| `technician_routing_scheduling` | 20 | 20 | 20 | 15 | 20 | – | 20 | 2 | 20 | 20 | 157 |
 | `wedding_seating` | 5† | – | – | – | – | 1 | – | – | 7 | 20 | 33 |
-| **total** | 425 | 304 | 349 | 160 | 342 | 108 | 337 | 281 | 387 | 400 | **3093** |
+| **total** | 512 | 378 | 429 | 219 | 423 | 108 | 412 | 325 | 469 | 486 | **3761** |
 
 † a `_v1` file: regenerated on Nov 1 with the shared-outcome filter (the `_v0` file had more tasks). The table counts the current set; the `_v0` set of 14 models had 2,290.
 
@@ -562,7 +572,7 @@ Five families gained, none lost. It is one seed on 200 tasks, so not yet signifi
 ### Tests and model checks (about 3 minutes)
 
 ```bash
-python -m pytest -q                       # 636 passed, 7 skipped
+python -m pytest -q                       # 766 passed, 7 skipped
 python scripts/verify_models.py           # every model x every solver vs reference.json
 ```
 
@@ -685,7 +695,7 @@ flowchart TB
     subgraph X["Next"]
         direction LR
         X1["Frontier APIs on<br/>all 10 families"]
-        X4["Port 11+ more models"]
+        X4["Hand audit<br/>(200 tasks)"]
         X5["GRPO: 3 seeds, filtered tasks,<br/>held-out base models"]
     end
     D --> X
@@ -705,6 +715,7 @@ flowchart TB
 | done | GRPO pilot on one RTX 4090: Qwen3 4B, 51.5 % → 56.0 % on 200 test tasks, one seed (Nov 1) |
 | next | GRPO with a pass-rate filter, three held-out base models and 3 seeds |
 | done | 6 more base models (economic planning, fantasy basketball, assignment, COVID-19 facilities, railway dispatching, power schedule): 20 models, 3,093 tasks (Nov 2) |
+| done | 5 more base models (technician routing, drone network, airline planning, job-shop ft06, single-machine scheduling): 25 models, 3,761 tasks (Nov 2) |
 | next | Port 5 more models (the gate needs 25) |
 | later | New families: explanation ("why") questions, goal seeking, nearest feasible alternative, scenario comparison, sensitivity and robustness |
 

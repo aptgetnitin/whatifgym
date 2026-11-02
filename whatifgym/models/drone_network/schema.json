@@ -1,0 +1,60 @@
+{
+  "model": "drone_network",
+  "sense": "min",
+  "objective": "(1 / sum rate) * sum over (location, base) of rate[location] * (0.5 * linked_load + distance_m / drone_speed_kmh * assign)",
+  "tables": {
+    "bases": {
+      "key": ["base"],
+      "label": "candidate drone bases",
+      "columns": {
+        "base": {"type": "string", "label": "drone base"},
+        "kind": {"type": "string", "description": "Fire Station or Rescue Squad", "label": "base kind", "editable": false}
+      }
+    },
+    "incidents": {
+      "key": ["location"],
+      "label": "cardiac-arrest incident locations",
+      "columns": {
+        "location": {"type": "string", "description": "Street block of the incident", "label": "incident location"},
+        "incidents": {"type": "int", "unit": "incidents", "description": "Out-of-hospital cardiac arrests at the location in the observation window; arrival rate = incidents / (24 * observation_days) per hour", "label": "cardiac arrests observed"}
+      }
+    },
+    "distances": {
+      "key": ["location", "base"],
+      "label": "base-to-incident distances",
+      "removable": false,
+      "columns": {
+        "location": {"type": "string", "ref": "incidents.location", "label": "incident location"},
+        "base": {"type": "string", "ref": "bases.base", "label": "drone base"},
+        "distance_m": {"type": "number", "unit": "meters", "description": "Haversine distance from the base to the location", "label": "flight distance (m)", "editable": false}
+      }
+    }
+  },
+  "params": {
+    "max_bases": {"type": "int", "unit": "bases", "description": "Bases that may be opened, one drone each", "label": "number of drones (bases opened)", "min": 1},
+    "drone_speed_kmh": {"type": "number", "unit": "km/h", "description": "Drone flight speed", "label": "drone speed (km/h)"},
+    "maintenance_minutes": {"type": "number", "unit": "minutes", "description": "Prep, dispatch, cleaning and maintenance time per mission", "label": "maintenance time per mission (minutes)"},
+    "observation_days": {"type": "number", "unit": "days", "description": "Length of the incident window behind the arrival rates", "label": "observation window (days)", "editable": false}
+  },
+  "decision_variables": {
+    "open[base]": "binary, 1 if the base gets a drone",
+    "assign[location, base]": "binary, 1 if the base answers the location",
+    "queue_load[base]": "V, the base's queue term (hours), 0 <= V <= Vbar",
+    "linked_load[location, base]": "nu = V[base] * assign (hours), linearised"
+  },
+  "constraints": {
+    "select[location, base]": "assign <= open[base]",
+    "drone_limit": "sum open <= max_bases",
+    "ohca[location]": "sum over bases of assign == 1",
+    "stability[base]": "utilisation sum rate * service_time * assign <= 1",
+    "aux0[base]": "queue_load == sum rate * service_time^2 * assign + sum rate * service_time * linked_load",
+    "aux1/aux2/aux3[location, base]": "linked_load <= queue_load; <= Vbar * assign; >= queue_load - Vbar * (1 - assign)"
+  },
+  "kpis": ["response_objective", "bases_opened", "avg_wait_minutes", "avg_flight_minutes", "max_base_utilization", "locations_per_base", "bases_selected"],
+  "measures": {
+    "open": {"dims": ["base"], "label": "drone bases opened"},
+    "assign": {"dims": ["location", "base"], "label": "incident locations assigned to a base"},
+    "queue_load": {"dims": ["base"], "label": "base queue load (hours)"},
+    "linked_load": {"dims": ["location", "base"], "label": "queue load linked to an assigned location (hours)"}
+  }
+}

@@ -153,3 +153,17 @@ def test_unknown_objective_measure_points_to_original():
     assert validate_scenario(ok, model, raise_on_error=False) == []
     rule = {"version": "0.1", "rules": [{"measure": "profit", "sense": "<=", "value": 1}]}
     assert not any("original" in e["message"] for e in validate_scenario(rule, model, raise_on_error=False))
+
+
+def test_scale_keeps_blank_cells_blank():
+    from whatifgym.dsl.apply import apply_data_changes
+    data = {"jobs": [{"job": "a", "due": None}, {"job": "b", "due": 10}]}
+    out = apply_data_changes(data, [{"op": "scale", "table": "jobs", "column": "due", "factor": 1.5}])
+    assert [r["due"] for r in out["jobs"]] == [None, 15]
+
+
+def test_short_rule_names():
+    from whatifgym.families.base import short_name
+    long = "rel_queue_load_" + "x" * 100
+    assert short_name("cap_a") == "cap_a"
+    assert len(short_name(long)) == 80 and short_name(long) != short_name(long + "y")

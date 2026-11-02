@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import re
 
-from .base import FamilyContext, TaskFamily, nice
+from .base import FamilyContext, TaskFamily, nice, short_name
 from .data_change import MONTH_NAMES, _join, _months
 
 CAP_FACTORS = [0.5, 0.6, 0.7, 0.75, 0.8, 0.9]
@@ -23,7 +23,7 @@ FLOOR_FACTORS = [1.1, 1.2, 1.25, 1.5]
 def _rule(measure, scope, sense, value, name=None):
     r = {"measure": measure, "scope": scope, "sense": sense, "value": value}
     if name:
-        r["name"] = name
+        r["name"] = short_name(name)
     return r
 
 

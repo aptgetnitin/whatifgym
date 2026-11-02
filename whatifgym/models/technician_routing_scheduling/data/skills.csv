@@ -1,0 +1,50 @@
+technician,job_type,qualified
+Albert,Equipment Installation,0
+Albert,Equipment Setup,1
+Albert,Inspect/Service Equipment,1
+Albert,Repair - Regular,0
+Albert,Repair - Important,0
+Albert,Repair - Urgent,0
+Albert,Repair - Critical,0
+Bob,Equipment Installation,0
+Bob,Equipment Setup,1
+Bob,Inspect/Service Equipment,0
+Bob,Repair - Regular,1
+Bob,Repair - Important,0
+Bob,Repair - Urgent,1
+Bob,Repair - Critical,0
+Carlos,Equipment Installation,0
+Carlos,Equipment Setup,1
+Carlos,Inspect/Service Equipment,1
+Carlos,Repair - Regular,1
+Carlos,Repair - Important,0
+Carlos,Repair - Urgent,1
+Carlos,Repair - Critical,0
+Doris,Equipment Installation,1
+Doris,Equipment Setup,1
+Doris,Inspect/Service Equipment,0
+Doris,Repair - Regular,0
+Doris,Repair - Important,1
+Doris,Repair - Urgent,0
+Doris,Repair - Critical,1
+Ed,Equipment Installation,0
+Ed,Equipment Setup,0
+Ed,Inspect/Service Equipment,1
+Ed,Repair - Regular,1
+Ed,Repair - Important,0
+Ed,Repair - Urgent,1
+Ed,Repair - Critical,0
+Flor,Equipment Installation,1
+Flor,Equipment Setup,0
+Flor,Inspect/Service Equipment,0
+Flor,Repair - Regular,1
+Flor,Repair - Important,1
+Flor,Repair - Urgent,1
+Flor,Repair - Critical,0
+Gina,Equipment Installation,1
+Gina,Equipment Setup,1
+Gina,Inspect/Service Equipment,0
+Gina,Repair - Regular,1
+Gina,Repair - Important,1
+Gina,Repair - Urgent,1
+Gina,Repair - Critical,1

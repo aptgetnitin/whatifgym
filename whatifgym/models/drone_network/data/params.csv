@@ -1,0 +1,5 @@
+name,value,description
+max_bases,4,Maximum number of drone bases opened (one drone per base)
+drone_speed_kmh,100,Drone flight speed (km/h)
+maintenance_minutes,25,Time to prepare dispatch clean and maintain a drone per mission (minutes)
+observation_days,30,Length of the incident history window used to estimate arrival rates (days)

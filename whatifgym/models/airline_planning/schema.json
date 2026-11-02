@@ -1,0 +1,56 @@
+{
+  "model": "airline_planning",
+  "sense": "min",
+  "objective": "lost revenue = sum over planned flights of revenue[flight] * (1 - operate[aircraft, flight])",
+  "tables": {
+    "flights": {
+      "key": ["flight"],
+      "label": "planned flights",
+      "columns": {
+        "flight": {"type": "int", "description": "Flight number", "label": "flight"},
+        "aircraft": {"type": "string", "ref": "aircraft.aircraft", "description": "Aircraft assigned in the plan; only it can fly the flight", "label": "assigned aircraft"},
+        "origin": {"type": "string", "description": "Departure airport", "label": "origin airport"},
+        "destination": {"type": "string", "description": "Arrival airport", "label": "destination airport"},
+        "departure": {"type": "int", "unit": "minutes after midnight", "description": "Scheduled departure time", "label": "departure time (minutes after midnight)"},
+        "arrival": {"type": "int", "unit": "minutes after midnight", "description": "Scheduled arrival time (a time before the departure means after midnight)", "label": "arrival time (minutes after midnight)"},
+        "revenue": {"type": "number", "unit": "$", "description": "Ticket revenue lost if the flight is cancelled (0 = no booked itineraries)", "label": "ticket revenue"},
+        "passengers": {"type": "int", "unit": "passengers", "description": "Booked passengers (reported only)", "label": "booked passengers"}
+      }
+    },
+    "aircraft": {
+      "key": ["aircraft"],
+      "label": "aircraft",
+      "columns": {
+        "aircraft": {"type": "string", "label": "aircraft"},
+        "start_airport": {"type": "string", "description": "Airport where the aircraft is at the start of the day", "label": "start airport"},
+        "end_airport": {"type": "string", "description": "Airport where the aircraft must be at the end of the day", "label": "end-of-day airport"}
+      }
+    },
+    "airports": {
+      "key": ["airport"],
+      "label": "airports",
+      "removable": false,
+      "columns": {
+        "airport": {"type": "string", "label": "airport"},
+        "capacity_share": {"type": "number", "unit": "fraction", "description": "Share of the normal day's departures (and, separately, arrivals) the airport can handle (0 = closed, 1 = no disruption)", "label": "share of normal capacity available"}
+      }
+    }
+  },
+  "decision_variables": {
+    "operate[aircraft, flight]": "binary, 1 if the flight is operated (also on the aircraft's source and sink pseudo-flights)",
+    "connect[aircraft, flight, next_flight]": "binary, 1 if the aircraft flies next_flight right after flight; arcs need same airport and arrival < next departure; 'source'/'sink' are the start/end of the day"
+  },
+  "constraints": {
+    "leave_source[aircraft]": "one connect arc leaves the source (a source -> sink arc means the aircraft stays idle)",
+    "reach_sink[aircraft]": "one connect arc enters the sink",
+    "flow[aircraft, flight]": "arcs out of the flight == arcs into it",
+    "fly_if_routed[aircraft, flight]": "operate <= arcs out of the flight",
+    "departures[airport]": "operated departures <= capacity_share * normal departures",
+    "arrivals[airport]": "operated arrivals <= capacity_share * normal arrivals"
+  },
+  "kpis": ["lost_revenue", "revenue_kept", "passengers_carried", "revenue_flights_operated", "flights_operated", "aircraft_used"],
+  "measures": {
+    "operate": {"dims": ["aircraft", "flight"], "label": "flights operated"},
+    "connect": {"dims": ["aircraft", "flight", "next_flight"], "label": "flight-to-flight connections flown"}
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "model": "single_machine_scheduling",
+  "sense": "min",
+  "objective": "makespan = end_time of the last job on the machine",
+  "tables": {
+    "jobs": {
+      "key": ["job"],
+      "label": "jobs",
+      "columns": {
+        "job": {"type": "string", "label": "job"},
+        "duration": {"type": "int", "unit": "time units", "description": "Processing time on the machine", "label": "processing time"},
+        "release_date": {"type": "int", "unit": "time units", "description": "Earliest start time", "label": "release date"},
+        "due_date": {"type": "int", "unit": "time units", "description": "Hard deadline for the end of the job; empty = none", "label": "deadline"}
+      }
+    },
+    "setup_times": {
+      "key": ["from_job", "to_job"],
+      "label": "setup times between jobs",
+      "removable": false,
+      "columns": {
+        "from_job": {"type": "string", "description": "Job just finished, or start (empty machine)", "label": "previous job"},
+        "to_job": {"type": "string", "ref": "jobs.job", "label": "next job"},
+        "setup_time": {"type": "int", "unit": "time units", "description": "Changeover time before to_job when it directly follows from_job", "label": "setup time"}
+      }
+    },
+    "precedences": {
+      "key": ["before", "after"],
+      "label": "job precedences",
+      "columns": {
+        "before": {"type": "string", "ref": "jobs.job", "label": "job that must finish first"},
+        "after": {"type": "string", "ref": "jobs.job", "label": "job that must start after it"}
+      }
+    }
+  },
+  "params": {},
+  "decision_variables": {
+    "follows[from_job, to_job]": "binary, 1 if to_job runs directly after from_job (start/end = first/last job)",
+    "runs_before[job, other_job]": "binary, 1 if job runs anywhere before other_job (job listed first in the job table)",
+    "start_time[job]": "time the job starts",
+    "end_time[job]": "time the job ends"
+  },
+  "constraints": {
+    "one_next/one_before[job], first_job, last_job": "every job has one successor and one predecessor in the sequence",
+    "duration[job]": "end_time = start_time + duration",
+    "sequence[job]": "start_time >= end of the job it follows + setup time",
+    "handover*": "time-flow arcs: carry the end of a job along the arc used, within its deadline",
+    "before[job, other_job]": "big-M: a job sequenced earlier ends (plus least setup) before the other starts",
+    "head/tail[job]": "start >= work sequenced before it; makespan >= end + work after it",
+    "precedence[before, after]": "start_time[after] >= end_time[before]"
+  },
+  "kpis": ["makespan", "total_setup_time", "total_idle_time", "min_deadline_slack", "first_job", "last_job", "sequence"],
+  "measures": {
+    "follows": {"dims": ["from_job", "to_job"], "label": "jobs run directly after another job"},
+    "runs_before": {"dims": ["job", "other_job"], "label": "job pairs where the first job runs earlier"},
+    "start_time": {"dims": ["job"], "label": "start time"},
+    "end_time": {"dims": ["job"], "label": "end time"}
+  }
+}
