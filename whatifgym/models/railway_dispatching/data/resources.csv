@@ -1,0 +1,8 @@
+resource,kind,name,duration,capacity
+0,station,station 0,2,2
+1,track,track between stations 0 and 2,6,1
+2,station,station 2,4,2
+3,track,track between stations 2 and 4,8,1
+4,station,station 4,2,2
+5,track,track between stations 4 and 6,5,1
+6,station,station 6,2,2

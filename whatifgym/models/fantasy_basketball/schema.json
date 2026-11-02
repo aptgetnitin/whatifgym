@@ -1,0 +1,40 @@
+{
+  "model": "fantasy_basketball",
+  "sense": "max",
+  "objective": "sum of predicted_points[player] * pick[player]",
+  "tables": {
+    "players": {
+      "key": ["player"],
+      "label": "players",
+      "columns": {
+        "player": {"type": "string", "label": "player"},
+        "position": {"type": "string", "ref": "positions.position", "description": "Position the player can fill (PG, SG, SF, PF or C)", "label": "position"},
+        "salary": {"type": "int", "unit": "fantasy dollars", "description": "Fantasy salary charged against the cap if picked", "label": "player salary"},
+        "predicted_points": {"type": "number", "unit": "fantasy points", "description": "Predicted fantasy points for the game day", "label": "predicted fantasy points"}
+      }
+    },
+    "positions": {
+      "key": ["position"],
+      "label": "positions",
+      "removable": false,
+      "columns": {
+        "position": {"type": "string", "label": "position"},
+        "required": {"type": "int", "unit": "players", "description": "Number of players the line-up must have at this position", "label": "players required at the position"}
+      }
+    }
+  },
+  "params": {
+    "salary_cap": {"type": "number", "unit": "fantasy dollars", "description": "Maximum total salary of the line-up", "label": "salary cap"}
+  },
+  "decision_variables": {
+    "pick[player]": "binary, 1 if the player is in the line-up"
+  },
+  "constraints": {
+    "position[player]": "sum of pick over players with this player's position == required[position] (one row per player, as in the original)",
+    "salary_cap": "sum of salary[p] * pick[p] <= salary_cap"
+  },
+  "kpis": ["total_predicted_points", "total_salary", "salary_cap_left", "players_selected", "points_per_1000_salary", "lineup"],
+  "measures": {
+    "pick": {"dims": ["player"], "label": "players picked"}
+  }
+}

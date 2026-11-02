@@ -15,6 +15,9 @@ from ..dsl.apply import constraint_families, relax_targets
 
 # model -> constraint family -> how a planner names it
 RELAXABLE: dict[str, dict[str, str]] = {
+    "assignment_with_constraints": {"size": "the per-worker limit on total task size",
+                                    "team_pattern": "the rule that only the allowed teams may work"},
+    "covid19_facility_location": {"capacity": "the bed-capacity limit of the facilities"},
     "battery_scheduling": {"terminal_soc": "the requirement to end the day with the battery at its terminal charge level"},
     "car_rental_2": {"repair_capacity": "the daily repair-capacity limit",
                      "expansion_limit": "the cap on how many workshop expansions may be ordered"},

@@ -1,0 +1,60 @@
+{
+  "model": "railway_dispatching",
+  "sense": "min",
+  "objective": "total delay = sum over trains of finish_time[train] - (sum of duration over the resources left on its route)",
+  "tables": {
+    "resources": {
+      "key": ["resource"],
+      "label": "stations and tracks",
+      "removable": false,
+      "columns": {
+        "resource": {"type": "int", "description": "Resource id; even ids are stations, odd ids are the single tracks between them", "label": "resource"},
+        "kind": {"type": "string", "description": "station or track", "label": "resource kind"},
+        "name": {"type": "string", "description": "Readable name", "label": "resource name"},
+        "duration": {"type": "number", "unit": "minutes", "description": "Least time a train occupies the resource (running time on a track, dwell time at a station)", "label": "minimum time on the resource"},
+        "capacity": {"type": "int", "unit": "trains", "description": "Trains that may occupy the resource at the same time", "label": "train capacity"}
+      }
+    },
+    "routes": {
+      "key": ["route"],
+      "label": "routes",
+      "removable": false,
+      "columns": {
+        "route": {"type": "string", "description": "Route id, as origin-destination station", "label": "route"},
+        "resources": {"type": "string", "description": "Dash-separated resource ids in travel order", "label": "resources in travel order"}
+      }
+    },
+    "trains": {
+      "key": ["train"],
+      "label": "trains",
+      "columns": {
+        "train": {"type": "string", "label": "train"},
+        "route": {"type": "string", "description": "Route the train follows (a routes.route)", "label": "route"},
+        "start": {"type": "int", "description": "Resource on its route where the train is now; it still has to cover the rest of the route", "label": "current position", "editable": false},
+        "ready_time": {"type": "number", "unit": "minutes", "description": "Time at which the train enters its current resource (0 = now); a later time is an extra delay", "label": "ready time"}
+      }
+    }
+  },
+  "decision_variables": {
+    "entry_time[train, resource]": "minutes, when the train starts to occupy the resource",
+    "finish_time[train]": "minutes, when the train leaves its last resource",
+    "goes_first[resource, train, other_train]": "binary, 1 if the train has moved on before the other train enters the resource",
+    "meet[resource, train, other_train]": "binary, 1 if the two trains may occupy the resource at the same time (fixed to 0 on capacity-1 resources)"
+  },
+  "constraints": {
+    "run[train, resource]": "entry_time of the next resource >= entry_time[train, resource] + duration",
+    "finish[train]": "finish_time == entry_time of the last resource + its duration",
+    "order[resource, train, other_train]": "big-M: other train enters after this train has moved on, if goes_first",
+    "meet_a[resource, train, other_train]": "big-M: overlap condition when meet",
+    "meet_b[resource, train, other_train]": "big-M: overlap condition when meet",
+    "one_case[resource, train, other_train]": "goes_first both ways + meet == 1",
+    "capacity[resource, trains]": "for each set of capacity+1 visiting trains: sum of their meet pairs <= C(capacity+1, 2) - 1"
+  },
+  "kpis": ["total_delay", "trains_delayed", "max_train_delay", "last_arrival", "delay_by_train"],
+  "measures": {
+    "entry_time": {"dims": ["train", "resource"], "label": "entry time (minutes)"},
+    "finish_time": {"dims": ["train"], "label": "arrival time at destination (minutes)"},
+    "goes_first": {"dims": ["resource", "train", "other_train"], "label": "trains clearing a resource before another train enters it"},
+    "meet": {"dims": ["resource", "train", "other_train"], "label": "train pairs sharing a resource at the same time"}
+  }
+}

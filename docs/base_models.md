@@ -64,7 +64,7 @@ Domains: Supply chain & logistics (4), Production planning (5), Scheduling (work
 
 | # | model | type | vars | cons | int | open solver | time (s) | reference objective | licence | what-if hooks |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 27 | [Economic Planning (input-output model with capacity building)](https://github.com/Gurobi/modeling-examples/blob/master/economic_planning/economic_planning.ipynb)<br>`gurobi_economic_planning` | LP | 51 | 33 | 0 | HiGHS | 0.001 | 1,902.22 | Apache-2.0 | Input-output coefficients between industries, capacity-building coefficients, exogenous demand, initial stocks and capacities, manpower limits |
+| 27 | [Economic Planning (input-output model with capacity building)](https://github.com/Gurobi/modeling-examples/blob/master/economic_planning/economic_planning.ipynb)<br>`gurobi_economic_planning` | LP | 51 | 33 | 0 | HiGHS | 0.001 | 1,902.22 | Apache-2.0 | Input-output coefficients between industries, capacity-building coefficients, exogenous demand, initial stocks and capacities, manpower coefficients |
 | 28 | [Fantasy basketball line-up under a salary cap (part 1)](https://github.com/Gurobi/modeling-examples/blob/master/fantasy_basketball/fantasy_basketball_part1.ipynb)<br>`gurobi_fantasy_basketball_1` | IP | 96 | 97 | 96 | HiGHS | 0.017 | 171.92 | Apache-2.0 | Predicted points per player, salaries, salary cap, position requirements |
 | 29 | [Car Rental 1 (fleet positioning, transfers and repairs)](https://github.com/Gurobi/modeling-examples/blob/master/car_rental/car_rental_1.ipynb)<br>`gurobi_car_rental_1` **(ported)** | LP | 289 | 97 | 0 | HiGHS | 0.003 | 121,160 | Apache-2.0 | Daily rental demand per depot, price by rental length, return-depot shares, damage rates and repair capacities, transfer costs |
 | 30 | [Car Rental 2 (adds repair-capacity expansion decisions)](https://github.com/Gurobi/modeling-examples/blob/master/car_rental/car_rental_2.ipynb)<br>`gurobi_car_rental_2` **(ported)** | MILP | 294 | 118 | 5 | HiGHS | 0.020 | 132,341 | Apache-2.0 | Same tables as Car Rental 1 plus repair-capacity expansion options and costs |
@@ -95,7 +95,7 @@ Domains: Supply chain & logistics (4), Production planning (5), Scheduling (work
 23. `gurobi_technician_routing_scheduling` — Objective for scenario Sce3 (Sce0 has objective 0). Data is an Excel workbook in the example folder.
 25. `gurobi_airline_planning` — Notebook needs a one-line pandas-3 compatibility patch (groupby().apply(list)).
 26. `ortools_tsp_sat` — Gurobi's tsp.ipynb uses lazy subtour cuts and is deferred until a cut loop exists on open solvers.
-27. `gurobi_economic_planning` — Objective of the notebook's second model (maximise total production); the first model is 3 variables.
+27. `gurobi_economic_planning` — Objective of the notebook's second model: maximise total employment (manpower for production plus capacity building); the first model is 3 variables. Ported 2026-11-02 (economic_planning).
 28. `gurobi_fantasy_basketball_1` — Predicted points come from a regression step in the notebook; freeze them into the data table when porting.
 29. `gurobi_car_rental_1` — PORTED: whatifgym/models/car_rental (verified on HiGHS, SCIP, CBC).
 30. `gurobi_car_rental_2` — PORTED: whatifgym/models/car_rental_2 (verified on HiGHS, SCIP, CBC; original re-run on Gurobi 13).

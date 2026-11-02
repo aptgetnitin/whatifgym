@@ -1,0 +1,74 @@
+{
+  "model": "optimize_power_schedule",
+  "sense": "min",
+  "objective": "sum over plants and hours of (fuel_cost + health_cost) * output + operating_cost * on + startup_cost * start + shutdown_cost * stop (costs by the plant's fuel)",
+  "tables": {
+    "hours": {
+      "key": ["hour"],
+      "label": "hours of the day",
+      "removable": false,
+      "columns": {
+        "hour": {"type": "int", "description": "Hour of 1 July 2011 (1 = midnight to 1 am); consecutive hours are linked by ramp limits and start-ups", "label": "hour"},
+        "demand_mwh": {"type": "number", "unit": "MWh", "description": "Power demand in Georgia in the hour; generation must equal it", "label": "hourly power demand (MWh)"}
+      }
+    },
+    "plants": {
+      "key": ["plant"],
+      "label": "power plants",
+      "columns": {
+        "plant": {"type": "string", "description": "Plant or group of merged plants", "label": "power plant"},
+        "plant_type": {"type": "string", "description": "COAL, NUCLEAR, OIL, BIOMASS, GAS, HYDRO or OTHER COAL", "label": "plant type"},
+        "fuel": {"type": "string", "ref": "fuels.fuel", "description": "Fuel code; sets the plant's costs", "label": "fuel"},
+        "capacity_mwh": {"type": "number", "unit": "MWh per hour", "description": "Most the plant can generate in an hour", "label": "generation capacity (MWh per hour)"},
+        "min_output_fraction": {"type": "number", "unit": "fraction of capacity", "description": "Least output while on", "label": "minimum output fraction when on"},
+        "ramp_fraction": {"type": "number", "unit": "fraction of capacity", "description": "Most the output may change from one hour to the next (1 = no limit)", "label": "hourly ramp limit fraction"},
+        "must_run": {"type": "int", "unit": "0/1", "description": "1 = must generate at least its minimum output every hour (the nuclear plants). To drop it, relax must_run", "label": "must-run flag", "editable": false}
+      }
+    },
+    "fuels": {
+      "key": ["fuel"],
+      "label": "fuels",
+      "columns": {
+        "fuel": {"type": "string", "description": "SUB subbituminous coal, BIT bituminous coal, NUC nuclear, BLQ black liquor, NG natural gas, WAT water", "label": "fuel"},
+        "fuel_cost": {"type": "number", "unit": "$/MWh", "description": "Fuel cost per MWh generated (2011 average)", "label": "fuel cost per MWh"},
+        "operating_cost": {"type": "number", "unit": "$/hour", "description": "Cost of each hour a plant is on", "label": "operating cost per hour on"},
+        "startup_cost": {"type": "number", "unit": "$/start", "description": "Cost of switching a plant on", "label": "start-up cost"},
+        "shutdown_cost": {"type": "number", "unit": "$/stop", "description": "Cost of switching a plant off", "label": "shut-down cost"}
+      }
+    },
+    "health_costs": {
+      "key": ["plant", "hour"],
+      "label": "health costs",
+      "columns": {
+        "plant": {"type": "string", "ref": "plants.plant", "description": "Plant (only the three named coal plants have rows)", "label": "power plant"},
+        "hour": {"type": "int", "ref": "hours.hour", "description": "Hour of the day", "label": "hour"},
+        "health_cost": {"type": "number", "unit": "$/MWh", "description": "Health damage cost per MWh generated in the hour; a missing row means 0", "label": "health cost per MWh"}
+      }
+    }
+  },
+  "params": {},
+  "decision_variables": {
+    "output[plant, hour]": "power generated, MWh (>= 0)",
+    "on[plant, hour]": "binary, 1 if the plant is on",
+    "start[plant, hour]": "binary, 1 if the plant is switched on in the hour",
+    "stop[plant, hour]": "binary, 1 if the plant is switched off in the hour"
+  },
+  "constraints": {
+    "demand[hour]": "sum_plants output = demand_mwh",
+    "min_output[plant, hour]": "output >= min_output_fraction * capacity_mwh * on",
+    "max_output[plant, hour]": "output <= capacity_mwh * on",
+    "must_run[plant, hour]": "must-run plants only: output >= min_output_fraction * capacity_mwh",
+    "ramp_down[plant, hour]": "from hour 2: output - previous output >= -ramp_fraction * capacity_mwh",
+    "ramp_up[plant, hour]": "from hour 2: output - previous output <= ramp_fraction * capacity_mwh",
+    "start_on[plant, hour]": "start <= on",
+    "stop_off[plant, hour]": "stop <= 1 - on",
+    "switch[plant, hour]": "from hour 2: start - stop = on - previous on"
+  },
+  "kpis": ["total_cost", "fuel_cost", "health_cost", "operating_cost", "startup_cost", "shutdown_cost", "generation_by_plant", "plant_hours_on"],
+  "measures": {
+    "output": {"dims": ["plant", "hour"], "label": "power generated (MWh)"},
+    "on": {"dims": ["plant", "hour"], "label": "plant-hours on"},
+    "start": {"dims": ["plant", "hour"], "label": "plant start-ups"},
+    "stop": {"dims": ["plant", "hour"], "label": "plant shut-downs"}
+  }
+}

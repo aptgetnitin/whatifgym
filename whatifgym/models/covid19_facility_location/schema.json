@@ -1,0 +1,48 @@
+{
+  "model": "covid19_facility_location",
+  "sense": "min",
+  "objective": "travel_cost_per_patient_distance * sum distance[county, facility] * assign + temporary_build_cost * sum build + extra_capacity_penalty * sum extra_beds",
+  "tables": {
+    "counties": {
+      "key": ["county"],
+      "label": "counties",
+      "columns": {
+        "county": {"type": "string", "label": "county"},
+        "x": {"type": "number", "unit": "map units", "description": "x coordinate of the county centroid", "label": "county centroid x coordinate", "editable": false},
+        "y": {"type": "number", "unit": "map units", "description": "y coordinate of the county centroid", "label": "county centroid y coordinate", "editable": false},
+        "demand": {"type": "int", "unit": "patients", "description": "Forecast COVID-19 patients needing a facility bed", "label": "forecast COVID-19 patients"}
+      }
+    },
+    "facilities": {
+      "key": ["facility"],
+      "label": "healthcare facilities",
+      "columns": {
+        "facility": {"type": "string", "label": "facility"},
+        "kind": {"type": "string", "description": "existing (always open) or temporary (candidate site, opened at the build cost)", "label": "facility kind"},
+        "x": {"type": "number", "unit": "map units", "description": "x coordinate of the facility", "label": "facility x coordinate", "editable": false},
+        "y": {"type": "number", "unit": "map units", "description": "y coordinate of the facility", "label": "facility y coordinate", "editable": false},
+        "capacity": {"type": "int", "unit": "beds", "description": "Patients the facility can treat (temporary: only if built)", "label": "facility capacity (beds)"}
+      }
+    }
+  },
+  "params": {
+    "travel_cost_per_patient_distance": {"type": "number", "unit": "USD per patient per map unit", "description": "Travel cost per patient per unit of Euclidean distance", "label": "travel cost per patient per distance unit"},
+    "temporary_build_cost": {"type": "number", "unit": "USD", "description": "Fixed cost of building one temporary facility", "label": "cost of building a temporary facility"},
+    "extra_capacity_penalty": {"type": "number", "unit": "USD per bed", "description": "Penalty per extra bed added at a temporary site", "label": "penalty per extra bed at a temporary site"}
+  },
+  "decision_variables": {
+    "assign[county, facility]": "patients from the county treated at the facility (continuous >= 0)",
+    "build[facility]": "binary, 1 if the temporary facility is built (temporary facilities only)",
+    "extra_beds[facility]": "extra beds added at a temporary site, penalised (temporary facilities only)"
+  },
+  "constraints": {
+    "demand[county]": "sum over facilities of assign == demand",
+    "capacity[facility]": "existing: sum over counties of assign <= capacity; temporary: sum of assign - extra_beds <= capacity * build"
+  },
+  "kpis": ["total_cost", "build_cost", "travel_cost", "temporary_built", "extra_beds_added", "patients_at_temporary", "avg_travel_distance", "temporary_sites_built"],
+  "measures": {
+    "assign": {"dims": ["county", "facility"], "label": "patients assigned"},
+    "build": {"dims": ["facility"], "label": "temporary facilities built"},
+    "extra_beds": {"dims": ["facility"], "label": "extra beds added at temporary sites"}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "objective": 239.0,
+  "source_solver": "OR-Tools 9.15.6755 CP-SAT; original example assignment_with_constraints_sat.py (stable branch) run unmodified in a subprocess on 2026-11-01 (status OPTIMAL, best bound 239)",
+  "n_vars": 99,
+  "n_constraints": 57,
+  "n_int_vars": 99,
+  "original_n_vars": 84,
+  "original_n_constraints": 33,
+  "original_n_int_vars": 84,
+  "notes": "Original CP-SAT model: 72 selected[w,t] + 12 works[w] Booleans = 84 variables; 12 AddMaxEquality + 6 cover + 12 size + 3 AddAllowedAssignments = 33 constraints. The PuLP port is a 0-1 IP with different sizes: AddMaxEquality(works[w], selected[w]) becomes two rows per worker (sum_t assign <= n_tasks * works, works <= sum_t assign; 24 rows); each AddAllowedAssignments table becomes one binary team[k] per allowed row (15 variables), one 'pick one team' row per group (3) and one row per group member tying works[w] to the chosen team's pattern (12). Port: 72 + 12 + 15 = 99 binaries; 24 + 12 size + 6 cover + 3 + 12 = 57 rows. The optimum is unique (no-good enumeration on assign finds one plan at cost 239) and equals the original's: worker_0-task_4, worker_1-task_2, worker_5-task_5, worker_6-task_3, worker_10-task_0, worker_11-task_1 (teams 0+1, 5+6, 10+11). The original lists 8 task sizes but has only 6 tasks (cost has 6 columns); the last two sizes (11, 5) are unused and not ported. Values hard-coded in the original are data here: total_size_max 15 (workers.size_capacity per worker) and 'at least one worker per task' (tasks.min_workers)."
+}

@@ -1,0 +1,8 @@
+{
+  "objective": 1902.2169104530858,
+  "source_solver": "gurobipy 13.0.3 (Gurobi 13.0.3, size-limited pip licence), original notebook code cells run unmodified (only the %pip line dropped) on 2026-11-02",
+  "n_vars": 51,
+  "n_constraints": 33,
+  "n_int_vars": 0,
+  "notes": "Objective of the notebook's dynamic model: maximise employment (labour for production plus labour for capacity building over years 1-5); data/base_models.csv describes it as total production, but the code maximises manpower. The notebook's addVars(..., ub=capacity0) passes a dict keyed by industry for variables keyed by (industry, year), so gurobipy applies no upper bound; the port likewise leaves production unbounded above (capacity rows still limit years 1-5, year 6 has no capacity row). The steady-state levels the notebook takes from its separate static model (coal 166.397, steel 105.668, transport 92.308) are computed in build() by solving (I - A) x = external_demand, so they follow demand and input-output what-ifs; the static model itself is not part of the 51 x 33 LP. Same rows and bounds otherwise: production fixed to 0 in year 1; extra capacity fixed to 0 in years 1, 2 and 6. HiGHS, SCIP and CBC reach the same optimum. Employment, its production/capacity split, total production, capacity built and final capacity per industry are unique at the optimum (checked by min/max over the optimal face); the year-by-year production split is not."
+}

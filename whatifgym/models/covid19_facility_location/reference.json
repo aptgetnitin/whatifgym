@@ -1,0 +1,8 @@
+{
+  "objective": 1521653.4243105084,
+  "source_solver": "gurobipy 13.0.3 (pip size-limited licence); original notebook covid19_facility_location.ipynb code cells run unmodified via exec (only the %pip line and the +20% scenario 1 cell dropped) on 2026-11-02",
+  "n_vars": 225,
+  "n_constraints": 32,
+  "n_int_vars": 9,
+  "notes": "Base scenario (solve 1 of 2 in the notebook). Gurobi reports NumVars 225 (9 binary build + 207 assignment + 9 extra-capacity), NumConstrs 32 (9 demand + 14 existing capacity + 9 temporary capacity), NumIntVars 9, MIP gap 0. Optimum: build temporary sites 15, 17, 18 (T15, T17, T18) for 1,500,000; travel cost 21,653.42; no extra beds. The notebook prints travel cost $21,645 because its report rounds each distance*patients term before summing; the objective is unrounded. The build set is unique (a no-good cut gives 1,521,791.08), and travel cost, extra beds and patients at temporary sites (300) are unique over the optimal face (min/max check), so the scoring KPIs are safe; the per-county assignment is not. Quirks of the original reproduced as computed: dcost=5 is documented as the cost of driving 10 miles but is multiplied by the raw Euclidean map distance (so it is cost per patient per map unit); extra capacity z[t] is not tied to y[t], so extra beds could be added at an unbuilt temporary site (never used at the base optimum, penalty 1e9 per bed). Same formulation, no reformulation. Values hard-coded in the original are data here: coordinates, demand, capacities (counties.csv, facilities.csv), dcost, tfcost and bigM (params.csv). Facility ids keep the notebook numbers with E (existing 1-14) / T (temporary 15-23) prefixes, counties C1-C9. HiGHS, SCIP and CBC reach the same optimum."
+}

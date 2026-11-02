@@ -1,0 +1,64 @@
+{
+  "model": "assignment_with_constraints",
+  "sense": "min",
+  "objective": "sum of cost[worker, task] * assign[worker, task]",
+  "tables": {
+    "workers": {
+      "key": ["worker"],
+      "label": "workers",
+      "removable": false,
+      "columns": {
+        "worker": {"type": "string", "label": "worker"},
+        "group": {"type": "string", "description": "Worker group; in each group only an allowed team may work", "label": "worker group"},
+        "size_capacity": {"type": "int", "unit": "size units", "description": "Maximum total size of the tasks a worker takes", "label": "worker size limit"}
+      }
+    },
+    "tasks": {
+      "key": ["task"],
+      "label": "tasks",
+      "columns": {
+        "task": {"type": "string", "label": "task"},
+        "size": {"type": "int", "unit": "size units", "description": "Size a task uses of its worker's limit", "label": "task size"},
+        "min_workers": {"type": "int", "unit": "workers", "description": "Workers the task must be assigned to (at least)", "label": "workers required per task"}
+      }
+    },
+    "costs": {
+      "key": ["worker", "task"],
+      "label": "assignment costs",
+      "columns": {
+        "worker": {"type": "string", "ref": "workers.worker", "label": "worker"},
+        "task": {"type": "string", "ref": "tasks.task", "label": "task"},
+        "cost": {"type": "int", "unit": "cost units", "description": "Cost of assigning the task to the worker; a missing row means the worker cannot do the task", "label": "assignment cost"}
+      }
+    },
+    "allowed_teams": {
+      "key": ["team", "worker"],
+      "label": "allowed teams (which group members work)",
+      "columns": {
+        "team": {"type": "string", "label": "team"},
+        "worker": {"type": "string", "ref": "workers.worker", "label": "worker"},
+        "works": {"type": "int", "unit": "0/1", "description": "1 if the worker works when this team is chosen for its group", "label": "worker works in the team (0/1)"}
+      }
+    }
+  },
+  "params": {},
+  "decision_variables": {
+    "assign[worker, task]": "binary, 1 if the task is assigned to the worker",
+    "works[worker]": "binary, 1 if the worker has at least one task",
+    "team[team]": "binary, 1 if the team is the chosen working pattern of its group"
+  },
+  "constraints": {
+    "works_if_assigned[worker]": "sum_t assign[worker, t] <= n_tasks * works[worker]",
+    "works_only_if_assigned[worker]": "works[worker] <= sum_t assign[worker, t]",
+    "size[worker]": "sum_t size[t] * assign[worker, t] <= size_capacity[worker]",
+    "cover[task]": "sum_w assign[w, task] >= min_workers[task]",
+    "one_team[group]": "sum of team[k] over the group's teams == 1",
+    "team_pattern[worker]": "works[worker] == sum_k works[k, worker] * team[k] over the teams of the worker's group"
+  },
+  "kpis": ["total_cost", "assignments", "workers_used", "max_worker_load", "extra_assignments", "average_cost_per_assignment", "teams_chosen", "assignment"],
+  "measures": {
+    "assign": {"dims": ["worker", "task"], "label": "task assignments"},
+    "works": {"dims": ["worker"], "label": "workers working"},
+    "team": {"dims": ["team"], "label": "teams chosen"}
+  }
+}

@@ -1,0 +1,10 @@
+supplier,user,input_per_unit_output,input_per_unit_capacity
+coal,coal,0.1,0.1
+coal,steel,0.5,0.7
+coal,transport,0.4,0.9
+steel,coal,0.1,0.1
+steel,steel,0.1,0.1
+steel,transport,0.2,0.2
+transport,coal,0.2,0.2
+transport,steel,0.1,0.1
+transport,transport,0.2,0.2

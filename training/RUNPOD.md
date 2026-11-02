@@ -193,6 +193,21 @@ Training reward 0.627 (steps 1–10) to 0.948 (steps 71–80). The before-traini
 
 **Why `objective_change` is 0 % on the training models** (checked on the Mac with Ollama qwen3:4b, 24 tasks of the `_v1` files): the scenario language names the model's own objective `"measure": "original"`, but the model writes its natural name (`"profit"`), which the validator rejects (`unknown measure 'profit'`). All 9 answers that came back used `profit` instead of `original`; stage order, sense and the second measure were mostly right (15 others failed with a local Ollama request error, not related). `original` appears only inside the 20,000-character schema; neither worked example is an objective change; the validator's message does not mention it. So the 0 % is mostly a prompt artifact, and RL cannot learn it (no correct sample, so the filter drops all 32 tasks). Fix after run 4 (so all three seeds share one prompt): (1) the validator's message names `original`; (2) one line on `original` in the system prompt. Then re-run the untrained ladder on the current set. **Fixed Nov 1** (`whatifgym/dsl/validate.py`, `scripts/run_baseline.py`). Check with Ollama qwen3:4b on the same 24 tasks: 2 of the 9 answers that came back are now correct (before: 0 of 9), and 3 objective stages use `original` (before: 0); most still write `profit`, often for a stage that comes second ("minimize X, then the most profit"). The other 15 failed again with a local Ollama request error, to look into. Next step if needed: an objective-change worked example in the prompt.
 
+## Run 4, seed 3 (separate pod)
+
+Pod `z6o2u9zodp6cr9`, RTX 4090, 15 vCPU, EUR-NO-1, $0.89/hr, created 2026-11-02 05:40 UTC. To match seeds 1–2 it checks out `df92ff6` (the code of run 4, before the objective-prompt fix) and re-measures the pass rates (the first pod's `pass_rates.json` was lost when it was terminated), then trains seed 3 only.
+
+**Seed 3 result** (training ended 07:01 UTC; 46.2 s a step; the re-measured filter kept 177 tasks, against 171 on the first pod, because sampling is not bit-exact):
+
+| Greedy, same tasks | Before | After | Gained / lost | McNemar | 95 % CI of the change |
+|---|---|---|---|---|---|
+| **Held-out base models** (200) | 0.560 | **0.660** | 21 / 1 | p = 1.1e-5 | +6.0 to +14.5 points |
+| Test tasks of the training models (131) | 0.511 | **0.611** | 14 / 1 | p = 0.00098 | +4.6 to +16.0 points |
+
+Training reward 0.637 (steps 1–10) to 0.975 (steps 71–80). The pod idled 30 min after `RUN_DONE` before the agent noticed; terminated 07:32 UTC (`list-pods` empty). Seed-3 pod cost about $1.65. Per-task results: `training/results/run4_seed3_correct.json`.
+
+**Run 4, all three seeds, held-out base models:** 55.0/56.0/56.0 % before, 68.0/67.0/66.0 % after; mean gain **+11.3 points** (sd 1.5); every seed p ≤ 1.1e-5.
+
 ## Problems hit, in order
 
 1. `check_gpu.py` said `not sm_89` on the RTX 4090: a false alarm, fixed in `da6e3a8` (an `sm_86` build runs on `sm_89`).

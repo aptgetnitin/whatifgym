@@ -8,12 +8,12 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 >
 > | Item | Now |
 > |---|---|
-> | Base models | 14 of 30, verified on HiGHS, SCIP and CBC |
+> | Base models | 20 of 30, verified on HiGHS, SCIP and CBC |
 > | Task families | 10 of 10 |
-> | Tasks (current set) | 2,194 template tasks + 45 verified paraphrases, in 131 files; shared outcomes removed (`_v1`, section 11) |
+> | Tasks (current set) | 3,093 template tasks + 45 verified paraphrases, in 182 files; shared outcomes removed (`_v1`, section 11) |
 > | Tests | 467 pass, 7 slow tests skipped |
 > | Untrained LLMs (`_v0` set) | Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % (section 11) |
-> | First training result | GRPO on Qwen3 4B, 80 steps, one GPU: 51.5 % → 56.0 % on 200 test tasks; one seed (section 11) |
+> | Training result | GRPO on Qwen3 4B, one GPU, three base models held out: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds; section 11) |
 
 ---
 
@@ -175,7 +175,7 @@ docs/                           base_models.md (shortlist), PORTING_GUIDE.md
 
 ## 6. Base models
 
-Fourteen public models are ported. Each one gives the published optimum on HiGHS, SCIP and CBC (`scripts/verify_models.py`). For the four newest, the original notebook was also run again on Gurobi 13.
+Twenty public models are ported. Each one gives the published optimum on HiGHS, SCIP and CBC (`scripts/verify_models.py`). For the ten newest, the original notebook or script was run again (Gurobi 13, or OR-Tools CP-SAT) to record the reference.
 
 | model | origin (data values only) | type | vars / cons / int | sense | reference optimum | measures |
 |---|---|---|---|---|---|---|
@@ -193,6 +193,12 @@ Fourteen public models are ported. Each one gives the published optimum on HiGHS
 | `multiple_knapsack` | OR-Tools samples | IP | 75 / 20 / 75 | max | 395 | x |
 | `bin_packing` | OR-Tools samples | IP | 132 / 22 / 132 | min | 4 | x, y |
 | `wedding_seating` | PuLP case study (set partitioning) | IP | 3 213 / 18 / 3 213 | min | 12 | x |
+| `economic_planning` | Gurobi, Economic Planning (Williams, example 9) | LP | 51 / 33 / 0 | max | 1 902.22 | production, stock, extra_capacity |
+| `fantasy_basketball` | Gurobi, Fantasy basketball line-up under a salary cap | IP | 96 / 97 / 96 | max | 171.92 | pick |
+| `assignment_with_constraints` | OR-Tools example (CP-SAT, ported as a 0-1 IP) | IP | 99 / 57 / 99 | min | 239 | assign, works, team |
+| `covid19_facility_location` | Gurobi, COVID-19 healthcare facility capacity | MILP | 225 / 32 / 9 | min | 1 521 653.42 | assign, build, extra_beds |
+| `railway_dispatching` | Gurobi, Railway dispatching after a delay | MILP | 218 / 367 / 180 | min | 47 | entry_time, finish_time, goes_first, meet |
+| `optimize_power_schedule` | Gurobi, Power generation schedule (unit commitment) | MILP | 960 / 1 722 / 720 | min | 4 495 153.46 | output, on, start, stop |
 
 Every model obeys one contract (`whatifgym/base.py`):
 
@@ -395,23 +401,29 @@ Column names: data = `data_change`, limit = `new_limit`, relative = `relative_ru
 
 | base model | data | limit | relative | objective | fixed | relax | logic | infeasible | chained | vague | total |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| `assignment_with_constraints` | 20 | 9 | 20 | – | 20 | 4 | 15 | – | 20 | 20 | 128 |
 | `battery_scheduling` | 20 | 20† | 20 | 8† | 20 | 1 | 20 | 20 | 20 | 20 | 169 |
 | `bin_packing` | 20 | 1† | 7† | – | – | – | – | – | 20 | 20 | 68 |
 | `car_rental` | 20 | 20 | 20 | 13† | 20 | – | 20 | 2 | 20 | 20 | 155 |
 | `car_rental_2` | 20 | 20 | 20 | 20† | 20 | 14 | 20 | 20 | 20 | 20 | 194 |
+| `covid19_facility_location` | 20 | 20 | 20 | 1 | 20 | 20 | 20 | 20 | 20 | 20 | 181 |
+| `economic_planning` | 20 | 20 | 20 | 14 | 20 | – | 20 | 20 | 20 | 20 | 174 |
 | `factory_planning` | 60 | 20 | 20 | 3 | 20 | 20 | 20 | 20 | 20 | 20 | 223 |
 | `factory_planning_2` | 20 | 20 | 20 | 7† | 20 | 7 | 20 | 20 | 20 | 20 | 174 |
+| `fantasy_basketball` | 20 | – | 6 | – | 20 | – | 4 | – | 20 | 20 | 90 |
 | `farm_planning` | 20 | 20 | 20 | 20 | 20 | 7 | 20 | 20 | 20 | 20 | 187 |
 | `food_manufacture` | 20† | 20 | 20† | 11† | 20 | 1 | 20 | 20 | 20 | 20 | 172 |
 | `food_supply` | 20 | 20 | 20 | 4 | 20 | – | 20 | 20 | 20 | 20 | 164 |
 | `manpower_planning` | 20 | 20 | 20 | 20 | 20 | 12 | 20 | 20 | 20 | 20 | 192 |
 | `mining` | 20 | 20 | 20 | 2† | 20 | 20 | 20 | 20 | 20 | 20 | 182 |
 | `multiple_knapsack` | 20 | 6† | 20† | 1 | 2† | 1 | 18 | – | 20 | 20 | 108 |
+| `optimize_power_schedule` | 20 | 20 | 16 | 2 | 20 | – | 20 | 20 | 20 | 20 | 158 |
 | `power_generation_hydro` | 20 | 20 | 20 | 14† | 20 | – | 20 | 19 | 20 | 20 | 173 |
+| `railway_dispatching` | 20 | 8 | 20 | 20 | 20 | – | 20 | 20 | 20 | 20 | 168 |
 | `wedding_seating` | 5† | – | – | – | – | 1 | – | – | 7 | 20 | 33 |
-| **total** | 305 | 227 | 247 | 123 | 222 | 84 | 238 | 201 | 267 | 280 | **2194** |
+| **total** | 425 | 304 | 349 | 160 | 342 | 108 | 337 | 281 | 387 | 400 | **3093** |
 
-† a `_v1` file: regenerated on Nov 1 with the shared-outcome filter (the `_v0` file had more tasks). The table counts the current set; the `_v0` set had 2,290.
+† a `_v1` file: regenerated on Nov 1 with the shared-outcome filter (the `_v0` file had more tasks). The table counts the current set; the `_v0` set of 14 models had 2,290.
 
 - Command: `python scripts/make_tasks.py --family all --model all --n 20 --seed 0`.
 - The same seed gives the same file. `--force` regenerates a file. The `_v1` files: `--seed 1 --version v1`.
@@ -692,7 +704,8 @@ flowchart TB
 | done | Shared outcomes removed: 16 files regenerated as `_v1`, 4 paraphrase files dropped; probe 1.7 % (Nov 1) |
 | done | GRPO pilot on one RTX 4090: Qwen3 4B, 51.5 % → 56.0 % on 200 test tasks, one seed (Nov 1) |
 | next | GRPO with a pass-rate filter, three held-out base models and 3 seeds |
-| next | Port more models (the gate needs 25) |
+| done | 6 more base models (economic planning, fantasy basketball, assignment, COVID-19 facilities, railway dispatching, power schedule): 20 models, 3,093 tasks (Nov 2) |
+| next | Port 5 more models (the gate needs 25) |
 | later | New families: explanation ("why") questions, goal seeking, nearest feasible alternative, scenario comparison, sensitivity and robustness |
 
 ---

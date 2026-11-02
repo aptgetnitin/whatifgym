@@ -1,0 +1,13 @@
+worker,group,size_capacity
+worker_0,group_1,15
+worker_1,group_1,15
+worker_2,group_1,15
+worker_3,group_1,15
+worker_4,group_2,15
+worker_5,group_2,15
+worker_6,group_2,15
+worker_7,group_2,15
+worker_8,group_3,15
+worker_9,group_3,15
+worker_10,group_3,15
+worker_11,group_3,15

@@ -1,0 +1,4 @@
+name,value,description
+travel_cost_per_patient_distance,5,Travel cost per patient per unit of map distance (the notebook calls it the cost of driving 10 miles but multiplies it by the raw distance)
+temporary_build_cost,500000,Fixed cost of building one temporary facility
+extra_capacity_penalty,1000000000,Penalty cost per extra bed added at a built or unbuilt temporary facility

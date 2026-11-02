@@ -46,6 +46,16 @@ MAY_BE_EMPTY |= {("power_generation_hydro", "relax_remove"), ("bin_packing", "lo
 # infeasible_request skips whole-number measures, and these models have only those; car rental's free fleet size
 # makes almost every request feasible
 MAY_BE_EMPTY |= {(m, "infeasible_request") for m in ("bin_packing", "multiple_knapsack", "car_rental")}
+# economic planning has no policy constraint (balances and capacity only), and fantasy basketball's one decision is a
+# 0/1 pick per player: the relax, new-limit, objective and infeasible templates find nothing to say about it
+MAY_BE_EMPTY |= {("economic_planning", "relax_remove")}
+MAY_BE_EMPTY |= {("fantasy_basketball", f) for f in ("relax_remove", "new_limit", "objective_change", "infeasible_request")}
+# assignment's measures are 0/1 picks (no infeasible template applies) and every objective stage it allows is already
+# optimal or duplicates another; power schedule's relative rules rarely bind within the test's two-minute budget
+MAY_BE_EMPTY |= {("assignment_with_constraints", f) for f in ("infeasible_request", "objective_change")}
+MAY_BE_EMPTY |= {("optimize_power_schedule", "relative_rule")}
+# railway's capacity rows exist only where they bind (not relaxable); the power plan's must-run and ramp limits never bind
+MAY_BE_EMPTY |= {("railway_dispatching", "relax_remove"), ("optimize_power_schedule", "relax_remove")}
 
 
 @pytest.mark.parametrize("model_name", FAST_MODELS)

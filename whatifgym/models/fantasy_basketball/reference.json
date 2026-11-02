@@ -1,0 +1,8 @@
+{
+  "objective": 171.91892914,
+  "source_solver": "gurobipy 13.0.3 (pip size-limited licence); original notebook fantasy_basketball_part1.ipynb optimisation cells run unmodified via exec on 2026-11-02, with player_results = target_games.csv merged with the published PredictedFantasyPoints",
+  "n_vars": 96,
+  "n_constraints": 97,
+  "n_int_vars": 96,
+  "notes": "Gurobi reports NumVars 96, NumConstrs 97, NumIntVars 96 (all binary), MIP gap 0; the notebook's own printed run (Gurobi 10.0.2) gives 171.91892913632245. Optimal line-up: Jarrett Jack (PG), Trevor Ariza (SG), Markieff Morris (SF), Dario Saric (PF), Joel Embiid (C), salary 29,700; the line-up is unique (excluding it with a no-good cut gives 171.54), so the scoring KPIs are safe. The regression step that predicts points (gradient boosting on a 10 MB box-score file) is not reproduced: the predicted points of the 96 players are taken from results_target_advanced.csv in the same folder, which matches the values the notebook prints. The original adds one position row per player row (`for j in player_results.Pos`), so 91 of its 96 position rows duplicate the 5 distinct ones (Gurobi presolve removes them); the port keeps that shape for the same size. Values hard-coded in the original are data here: the salary cap (params.salary_cap) and one player per position (positions.required)."
+}

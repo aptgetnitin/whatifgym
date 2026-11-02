@@ -1,0 +1,4 @@
+industry,initial_stock,initial_capacity,external_demand,labor_per_unit_output,labor_per_unit_capacity
+coal,250,300,60,0.6,0.4
+steel,180,350,60,0.3,0.2
+transport,200,280,30,0.2,0.1

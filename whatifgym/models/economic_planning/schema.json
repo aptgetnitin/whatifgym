@@ -1,0 +1,54 @@
+{
+  "model": "economic_planning",
+  "sense": "max",
+  "objective": "sum over planning years (all but the last) and industries of labor_per_unit_output * production + labor_per_unit_capacity * extra_capacity",
+  "tables": {
+    "industries": {
+      "key": ["industry"],
+      "label": "industries",
+      "columns": {
+        "industry": {"type": "string", "description": "Industry of the economy", "label": "industry"},
+        "initial_stock": {"type": "number", "unit": "million USD", "description": "Stock of the industry's output available at the start of year 1", "label": "initial stock"},
+        "initial_capacity": {"type": "number", "unit": "million USD/year", "description": "Productive capacity before any capacity is built", "label": "initial productive capacity"},
+        "external_demand": {"type": "number", "unit": "million USD/year", "description": "Output consumed outside the modelled industries every year (also sets the steady-state production levels)", "label": "exogenous consumption demand"},
+        "labor_per_unit_output": {"type": "number", "unit": "manpower units per million USD", "description": "Manpower used per unit of output", "label": "manpower per unit of output"},
+        "labor_per_unit_capacity": {"type": "number", "unit": "manpower units per million USD", "description": "Manpower used per unit of capacity built", "label": "manpower per unit of capacity built"}
+      }
+    },
+    "input_output": {
+      "key": ["supplier", "user"],
+      "label": "input-output coefficients",
+      "columns": {
+        "supplier": {"type": "string", "ref": "industries.industry", "description": "Industry whose output is used as input", "label": "supplying industry"},
+        "user": {"type": "string", "ref": "industries.industry", "description": "Industry that uses the input", "label": "using industry"},
+        "input_per_unit_output": {"type": "number", "unit": "million USD per million USD", "description": "Supplier output needed one year earlier per unit of the user's output; a missing row means 0", "label": "input per unit of output"},
+        "input_per_unit_capacity": {"type": "number", "unit": "million USD per million USD", "description": "Supplier output needed two years earlier per unit of the user's new capacity; a missing row means 0", "label": "input per unit of capacity built"}
+      }
+    },
+    "years": {
+      "key": ["year"],
+      "label": "years",
+      "columns": {
+        "year": {"type": "int", "description": "Year label; the last year stands for the steady state beyond the horizon", "label": "year"},
+        "order": {"type": "int", "description": "Position in the horizon (1 = first year)", "label": "year order", "editable": false}
+      }
+    }
+  },
+  "params": {},
+  "decision_variables": {
+    "production[year, industry]": "output of the industry in the year (>= 0; 0 in the first year)",
+    "stock[year, industry]": "output held in stock at the end of the year (>= 0; every year but the last)",
+    "extra_capacity[year, industry]": "capacity that becomes available in the year (>= 0; only from the third year and not in the last year)"
+  },
+  "constraints": {
+    "balance[year, industry]": "for every year but the last: production + previous closing stock (initial_stock in year 1) = sum over users of input_per_unit_output * next year's production + input_per_unit_capacity * capacity built two years later + external_demand + closing stock",
+    "steady_production[industry]": "last-year production >= the steady-state level x solving x - A x = external_demand",
+    "capacity[year, industry]": "for every year but the last: production <= initial_capacity + extra_capacity built up to that year"
+  },
+  "kpis": ["employment", "production_employment", "capacity_building_employment", "total_production", "capacity_built", "final_capacity_by_industry", "production_by_year"],
+  "measures": {
+    "production": {"dims": ["year", "industry"], "label": "output produced (million USD)"},
+    "stock": {"dims": ["year", "industry"], "label": "output held in stock (million USD)"},
+    "extra_capacity": {"dims": ["year", "industry"], "label": "capacity built (million USD/year)"}
+  }
+}
