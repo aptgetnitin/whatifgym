@@ -141,3 +141,15 @@ def test_two_rules_may_share_a_name():
     rule = {"measure": "make", "scope": {"product": "Prod1"}, "sense": "<=", "value": 500, "name": "cap"}
     r = _solve(model, rules=[rule, {**rule, "value": 400}, {**rule, "name": "cap-1"}, {**rule, "name": "cap_1"}])
     assert r.status == "optimal" and r.n_rules == 4
+
+
+def test_unknown_objective_measure_points_to_original():
+    """A model writes its objective's name ("profit") instead of the keyword; the message must say what to use."""
+    model = get_model("food_manufacture")
+    bad = {"version": "0.1", "objective": [{"sense": "max", "measure": "profit"}, {"sense": "min", "measure": "store"}]}
+    msgs = [e["message"] for e in validate_scenario(bad, model, raise_on_error=False)]
+    assert any("unknown measure 'profit'" in m and '"original"' in m for m in msgs), msgs
+    ok = {"version": "0.1", "objective": [{"sense": "max", "measure": "original"}, {"sense": "min", "measure": "store"}]}
+    assert validate_scenario(ok, model, raise_on_error=False) == []
+    rule = {"version": "0.1", "rules": [{"measure": "profit", "sense": "<=", "value": 1}]}
+    assert not any("original" in e["message"] for e in validate_scenario(rule, model, raise_on_error=False))

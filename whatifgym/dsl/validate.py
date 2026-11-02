@@ -168,7 +168,8 @@ def validate_semantics(scenario: dict, model, data: dict) -> list[dict[str, str]
 
     def check_scope(path: str, measure_name: str, scope: dict | None) -> None:
         if measure_name not in measures:
-            errors.append({"path": path + "/measure", "message": f"unknown measure {measure_name!r}; measures are {sorted(model.MEASURE_DIMS)}"})
+            hint = '; for the model\'s own objective (its profit or cost) write "measure": "original"' if "/objective/" in path else ""
+            errors.append({"path": path + "/measure", "message": f"unknown measure {measure_name!r}; measures are {sorted(model.MEASURE_DIMS)}{hint}"})
             return
         m = measures[measure_name]
         n_before = len(errors)

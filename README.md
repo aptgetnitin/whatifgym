@@ -693,6 +693,7 @@ flowchart TB
 | done | GRPO pilot on one RTX 4090: Qwen3 4B, 51.5 % → 56.0 % on 200 test tasks, one seed (Nov 1) |
 | next | GRPO with a pass-rate filter, three held-out base models and 3 seeds |
 | next | Port more models (the gate needs 25) |
+| later | New families: explanation ("why") questions, goal seeking, nearest feasible alternative, scenario comparison, sensitivity and robustness |
 
 ---
 

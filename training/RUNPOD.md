@@ -142,6 +142,57 @@ done
 
 Three base models (`food_supply`, `farm_planning`, `car_rental_2`) have no task whose prompt fits in 7,000 tokens, so no run trains or scores on them.
 
+Started by the agent (MCP plugin), as one start command running a) and then b): pod `du2ke49fph6irm`, `whatifgym-run4`, RTX 4090, 16 vCPU, EU-RO-1, host CUDA 13.2, $0.89/hr, same image, 50 GB disk, no volume, no ports; code at `df92ff6`. Created 2026-11-02 00:14:30 UTC. Budget cap $4.50: terminate by 05:17 UTC whatever the state.
+
+Timeline (UTC): 00:16:45 datasets (train 1,006 tasks fit in 7,000 tokens; after the 3 held-out models, 671); 00:17 sampling 8 answers for each of 671 tasks; 00:27:06 pass rates done (about 10 min); 00:27:12 seed 1 starts; 00:27:54 filter keeps 171 of 671; 00:28:56 evaluation before training done, training starts.
+
+**Pass rates** (`--measure-pass 8`, temperature 1, 671 training tasks):
+
+| Family | Tasks | pass@1 | pass@8 | In [0.1, 0.9] |
+|---|---|---|---|---|
+| all | 671 | 0.508 | 0.624 | **0.255 (171 kept)** |
+| fixed_decision | 73 | 0.868 | 0.918 | 0.11 |
+| data_change | 131 | 0.637 | 0.74 | 0.206 |
+| new_limit | 77 | 0.631 | 0.792 | 0.364 |
+| relax_remove | 24 | 0.604 | 0.667 | 0.208 |
+| infeasible_request | 61 | 0.549 | 0.639 | 0.262 |
+| chained_scenario | 108 | 0.544 | 0.667 | 0.25 |
+| relative_rule | 86 | 0.314 | 0.535 | 0.465 |
+| logical_rule | 79 | 0.15 | 0.266 | 0.253 |
+| objective_change | 32 | **0.0** | **0.0** | 0.0 |
+
+Three quarters of the training tasks are always or never solved. `objective_change`: 0 of 256 sampled answers correct on the training models; to check (the trivial agents are exact on these files, so the references hold). The full `pass_rates.json` stays on the pod: its one-line copy in the log is cut at 16,384 characters.
+
+**Before training, seed 1** (greedy): test (training models) 131 tasks, accuracy **0.519**, valid 0.725; held-out models (power_generation_hydro, manpower_planning, mining) 200 tasks, accuracy **0.550**, valid 0.725. Only 131 test tasks of the training models fit in 7,000 tokens.
+
+**Seed 1 result** (training 00:29–01:41 UTC; 54.0 s a step; solver 0.06 s a step; peak GPU 19.11 GB):
+
+| Greedy, same tasks before and after | Before | After | Gained / lost tasks | Paired test (McNemar) | 95 % bootstrap CI of the change |
+|---|---|---|---|---|---|
+| **Held-out base models** (200 tasks; never trained on) | 0.550 | **0.680** | 29 / 3 | p = 2.6e-6 | +8.0 to +18.5 points |
+| Test tasks of the training models (131) | 0.519 | **0.634** | 16 / 1 | p = 0.00027 | +6.1 to +17.6 points |
+| Valid scenario, held-out / test | 0.725 / 0.725 | 0.87 / 0.84 | | | |
+
+Held-out models by family, before → after: data_change 0.696 → 0.826, new_limit 0.704 → 0.852, relative_rule 0.52 → 0.80, chained 0.346 → 0.50, logical_rule 0.217 → 0.304, relax 0.444 → 0.611, fixed 0.88 → 0.92, infeasible 0.571 → 0.667, objective 0.5 → 0.5. Test tasks: infeasible 0.636 → 1.0, data_change 0.71 → 0.839, chained 0.471 → 0.588, new_limit 0.462 → 0.692, objective 0 → 0.
+
+Training reward rose from 0.668 (mean of steps 1–10) to 0.979 (steps 71–80): the model learned its 171 tasks (3.8 passes), and the gain carried over to base models it never saw. Per-task results: `training/results/run4_seed1_correct.json`.
+
+Per-step training reward: 0.641, 0.781, 0.769, 0.703, 0.453, 0.656, 0.675, 0.897, 0.45, 0.659, 0.694, 0.356, 0.812, 0.438, 0.728, 0.519, 0.378, 0.725, 0.641, 0.791, 0.863, 0.859, 0.622, 0.738, 0.7, 0.656, 0.528, 0.759, 0.778, 0.463, 0.966, 0.728, 0.631, 0.65, 0.969, 0.678, 0.725, 0.634, 0.931, 0.966, 0.897, 0.869, 1.003, 0.906, 0.731, 0.938, 0.966, 0.906, 0.975, 0.797, 0.875, 0.628, 0.772, 0.963, 0.812, 0.938, 1.003, 0.997, 0.825, 1.031, 0.997, 0.828, 0.797, 1.034, 1.1, 0.809, 0.897, 0.881, 0.634, 1.1, 1.066, 1.031, 0.791, 1.069, 0.963, 1.034, 1.069, 0.966, 0.941, 0.859.
+
+Seed 2 started 01:41:57 UTC.
+
+**Seed 2 result** (ended about 02:45 UTC; 43.7 s a step):
+
+| Greedy, same tasks | Before | After | Gained / lost | McNemar | 95 % CI of the change |
+|---|---|---|---|---|---|
+| **Held-out base models** (200) | 0.560 | **0.670** | 23 / 1 | p = 3e-6 | +6.5 to +15.5 points |
+| Test tasks of the training models (131) | 0.527 | **0.634** | 14 / 0 | p = 0.00012 | +6.1 to +16.0 points |
+| Valid scenario, held-out / test | 0.71 / 0.733 | 0.85 / 0.855 | | | |
+
+Training reward 0.627 (steps 1–10) to 0.948 (steps 71–80). The before-training scores differ slightly between seeds (held-out 0.550 vs 0.560) although the untrained model is the same: greedy decoding in vLLM is not bit-exact across batches. Per-task results: `training/results/run4_seed2_correct.json`. Seed 3 started about 02:45 UTC. **Stopped by the user at 02:46 UTC (6:46 PM Pacific): pod terminated, `list-pods` empty; seed 3 not run. Run 4 cost about $2.30 (about 2.6 h at $0.89/hr).** To finish later: one pod with the run 4 commands and `--seed 3` only (pass rates can be re-measured in about 10 min, or skipped by reusing the same filter step).
+
+**Why `objective_change` is 0 % on the training models** (checked on the Mac with Ollama qwen3:4b, 24 tasks of the `_v1` files): the scenario language names the model's own objective `"measure": "original"`, but the model writes its natural name (`"profit"`), which the validator rejects (`unknown measure 'profit'`). All 9 answers that came back used `profit` instead of `original`; stage order, sense and the second measure were mostly right (15 others failed with a local Ollama request error, not related). `original` appears only inside the 20,000-character schema; neither worked example is an objective change; the validator's message does not mention it. So the 0 % is mostly a prompt artifact, and RL cannot learn it (no correct sample, so the filter drops all 32 tasks). Fix after run 4 (so all three seeds share one prompt): (1) the validator's message names `original`; (2) one line on `original` in the system prompt. Then re-run the untrained ladder on the current set. **Fixed Nov 1** (`whatifgym/dsl/validate.py`, `scripts/run_baseline.py`). Check with Ollama qwen3:4b on the same 24 tasks: 2 of the 9 answers that came back are now correct (before: 0 of 9), and 3 objective stages use `original` (before: 0); most still write `profit`, often for a stage that comes second ("minimize X, then the most profit"). The other 15 failed again with a local Ollama request error, to look into. Next step if needed: an objective-change worked example in the prompt.
+
 ## Problems hit, in order
 
 1. `check_gpu.py` said `not sm_89` on the RTX 4090: a false alarm, fixed in `da6e3a8` (an `sm_86` build runs on `sm_89`).

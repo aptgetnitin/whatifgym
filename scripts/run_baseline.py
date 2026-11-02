@@ -142,7 +142,8 @@ scenario for an existing optimization model. You never solve the model yourself.
 that validates against the scenario DSL schema you are given: either a scenario (data_changes, rules, objective,
 fixed_decisions, relax, logic) or, only when the question cannot be made precise from the information available,
 {"ask": "..."}. Use only table names, column names, parameter names, measure names, constraint names and key values
-that appear in the model schema and index sets. Output JSON only, no prose, no code fences."""
+that appear in the model schema and index sets. In an objective stage, write "measure": "original" for the model's
+own objective (its profit or cost); other stages name a decision measure. Output JSON only, no prose, no code fences."""
 
 
 def _compact_schema(schema: dict) -> dict:
