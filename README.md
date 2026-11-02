@@ -11,7 +11,7 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 > | Base models | 20 of 30, verified on HiGHS, SCIP and CBC |
 > | Task families | 10 of 10 |
 > | Tasks (current set) | 3,093 template tasks + 45 verified paraphrases, in 182 files; shared outcomes removed (`_v1`, section 11) |
-> | Tests | 467 pass, 7 slow tests skipped |
+> | Tests | 636 pass, 7 slow tests skipped |
 > | Untrained LLMs (`_v0` set) | Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % (section 11) |
 > | Training result | GRPO on Qwen3 4B, one GPU, three base models held out: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds; section 11) |
 
@@ -47,7 +47,7 @@ Total time: about 10 minutes.
    git clone https://github.com/aptgetnitin/whatifgym && cd whatifgym
    ```
 2. Set up and check (about 5 minutes): `./setup.sh`, then `source .venv/bin/activate`.
-3. Run the tests (about 3 minutes): `python -m pytest -q`. Expect `467 passed, 7 skipped`.
+3. Run the tests (about 14 minutes): `python -m pytest -q`. Expect `636 passed, 7 skipped`.
 4. Score the trivial agents on one file (10 seconds):
    ```bash
    python scripts/run_baseline.py --tasks tasks/mining/new_limit_v0.jsonl --agent oracle   # mean reward 1.100
@@ -562,7 +562,7 @@ Five families gained, none lost. It is one seed on 200 tasks, so not yet signifi
 ### Tests and model checks (about 3 minutes)
 
 ```bash
-python -m pytest -q                       # 467 passed, 7 skipped
+python -m pytest -q                       # 636 passed, 7 skipped
 python scripts/verify_models.py           # every model x every solver vs reference.json
 ```
 
