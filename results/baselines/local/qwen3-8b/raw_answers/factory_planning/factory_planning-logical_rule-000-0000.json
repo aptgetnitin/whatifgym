@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "logic": [
+  {
+   "name": "prod6_sell_mar",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "Mar",
+      "product": "Prod6"
+     },
+     "sense": "==",
+     "value": 0
+    },
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "Mar",
+      "product": "Prod6"
+     },
+     "sense": ">=",
+     "value": 600
+    }
+   ]
+  }
+ ],
+ "note": "Logical rule: at least one of the conditions must hold."
+}

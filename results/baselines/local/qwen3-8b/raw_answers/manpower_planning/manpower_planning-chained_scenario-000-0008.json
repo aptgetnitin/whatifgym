@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "skills",
+   "column": "current_strength",
+   "where": {
+    "skill": "unskilled"
+   },
+   "factor": 0.7
+  }
+ ],
+ "note": "Scaling the current_strength of unskilled workers by 0.7 to reflect a 30% lower workforce."
+}

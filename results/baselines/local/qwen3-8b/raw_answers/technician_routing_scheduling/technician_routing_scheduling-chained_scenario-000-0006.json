@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "unfilled_job_penalty",
+   "factor": 0.75
+  }
+ ],
+ "note": "The penalty per unfilled job is scaled by a factor of 0.75."
+}

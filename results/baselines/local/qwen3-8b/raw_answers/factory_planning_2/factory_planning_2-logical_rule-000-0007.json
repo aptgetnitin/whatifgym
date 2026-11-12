@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "non_zero_sales_limit",
+   "measure": "sell",
+   "scope": {
+    "product": [
+     "Prod4",
+     "Prod5",
+     "Prod2",
+     "Prod6",
+     "Prod1"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "The rule limits the sum of sell for the specified products to zero, implying at most 2 of them can have non-zero units sold."
+}

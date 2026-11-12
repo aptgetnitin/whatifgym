@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "terminal_soc_kwh",
+   "where": {
+    "parameter": "terminal_soc_kwh"
+   },
+   "factor": 0.5
+  }
+ ]
+}

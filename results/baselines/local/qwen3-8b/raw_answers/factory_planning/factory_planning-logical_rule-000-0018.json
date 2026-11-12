@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod4_sold_requires_prod3_made",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod4",
+    "month": "Apr"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "product": "Prod3",
+     "month": "Apr"
+    }
+   },
+   "factor": 800
+  }
+ ],
+ "note": "A rule that enforces a relative constraint between the sum of sell for Prod4 in April and the sum of make for Prod3 in April."
+}

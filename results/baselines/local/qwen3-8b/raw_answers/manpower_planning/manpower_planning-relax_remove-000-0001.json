@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "relax": [
+  {
+   "constraint": "retraining_limit",
+   "scope": {
+    "to_skill": "semi_skilled"
+   }
+  }
+ ],
+ "note": "The retraining limit for the to_skill level semi_skilled is relaxed, meaning the constraint no longer applies."
+}

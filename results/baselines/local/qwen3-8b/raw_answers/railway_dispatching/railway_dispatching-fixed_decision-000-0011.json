@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "trains",
+   "column": "ready_time",
+   "where": {
+    "train": "F"
+   },
+   "value": 62
+  }
+ ],
+ "note": "Fixing the ready_time of train F to 62 minutes ensures its entry time at resource 0 is fixed."
+}

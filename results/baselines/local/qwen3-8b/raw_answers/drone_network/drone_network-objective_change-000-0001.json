@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "queue_load",
+   "scope": {
+    "base": [
+     "21 MUNICIPAL CTR Fire Station",
+     "2837 SHORE DR Fire Station",
+     "800 VIRGINIA BEACH BLVD Fire Station",
+     "600 CENTRAL DR Fire Station",
+     "3769 E. STRATFORD ROAD Rescue Squad",
+     "5145 RURITAN COURT Rescue Squad",
+     "333 THALIA ROAD Rescue Squad"
+    ]
+   }
+  }
+ ],
+ "note": "Maximise the total base queue load (hours) while maintaining the original response objective."
+}

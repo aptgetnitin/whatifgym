@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "shift",
+   "table": "flights",
+   "column": "departure",
+   "where": {
+    "flight": 4269
+   },
+   "delta": 1
+  }
+ ],
+ "note": "The departure time for flight 4269 is shifted by 1 minute after midnight."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "hours",
+   "column": "demand_mwh",
+   "where": {
+    "hour": 20
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "A relative demand change over a subset of hours is a scale over the matching rows."
+}

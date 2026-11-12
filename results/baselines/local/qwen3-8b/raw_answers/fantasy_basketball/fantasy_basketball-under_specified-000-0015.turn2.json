@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "salary",
+   "where": {
+    "position": [
+     "PG",
+     "SG",
+     "SF",
+     "PF",
+     "C"
+    ]
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "A relative salary change across all players is a scale over all rows of the players table."
+}

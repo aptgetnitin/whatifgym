@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "start_time_mannheim_zero_or_at_least_60",
+   "measure": "start_time",
+   "scope": {
+    "location": "Mannheim"
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "start_time_mannheim_at_least_60",
+   "measure": "start_time",
+   "scope": {
+    "location": "Mannheim"
+   },
+   "sense": ">=",
+   "value": 60
+  }
+ ],
+ "note": "The rule enforces that the start time for location Mannheim must be either zero or at least 60."
+}

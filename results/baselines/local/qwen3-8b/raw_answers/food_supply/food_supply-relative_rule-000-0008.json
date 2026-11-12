@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "milk_at_most_25_of_wheat",
+   "measure": "flow",
+   "scope": {
+    "food": "Milk"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "Wheat"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "A relative rule compares the sum of the flow measure for Milk to 25% of the sum for Wheat."
+}

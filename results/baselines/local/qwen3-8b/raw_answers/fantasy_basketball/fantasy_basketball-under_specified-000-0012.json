@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "salary_cap",
+   "value": 35000
+  }
+ ],
+ "note": "Changing the salary cap to 35,000 to explore the impact on the fantasy basketball line-up."
+}

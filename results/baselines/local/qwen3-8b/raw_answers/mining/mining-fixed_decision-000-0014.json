@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "open",
+   "where": {
+    "mine": "Mine1"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "operate",
+   "where": {
+    "mine": "Mine1"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixing the open and operate status of Mine1 across all years to 0 effectively removes it from the planning horizon."
+}

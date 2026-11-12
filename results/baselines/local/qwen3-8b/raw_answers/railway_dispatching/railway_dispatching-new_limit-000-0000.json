@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_resource_4_sum",
+   "measure": "entry_time",
+   "scope": {
+    "resource": 4
+   },
+   "sense": ">=",
+   "value": 135
+  }
+ ],
+ "note": "A rule that enforces the sum of entry times for all trains on resource 4 to be at least 135 minutes."
+}

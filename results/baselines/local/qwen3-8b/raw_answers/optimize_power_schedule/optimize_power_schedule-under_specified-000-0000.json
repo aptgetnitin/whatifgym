@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "ask": "What does changing the demand for hour 3 do?"
+}

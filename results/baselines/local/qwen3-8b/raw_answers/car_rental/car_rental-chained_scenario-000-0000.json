@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "depots",
+   "column": "repair_capacity",
+   "where": {
+    "depot": "Birmingham"
+   },
+   "factor": 0.9
+  }
+ ]
+}

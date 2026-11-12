@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "output",
+   "column": "output",
+   "where": {
+    "plant": "OIL"
+   },
+   "value": 38
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix the output of the OIL plant to 38 MWh per hour and minimize the total cost."
+}

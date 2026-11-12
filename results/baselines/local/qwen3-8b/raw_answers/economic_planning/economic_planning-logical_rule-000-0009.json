@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "logic": [
+  {
+   "name": "steel_stock_zero_or_at_least_660",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "stock",
+     "sense": "==",
+     "value": 0,
+     "scope": {
+      "industry": "steel"
+     }
+    },
+    {
+     "measure": "stock",
+     "sense": ">=",
+     "value": 660,
+     "scope": {
+      "industry": "steel"
+     }
+    }
+   ]
+  }
+ ]
+}

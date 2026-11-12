@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "no_flight_4510_and_3107_together",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": [
+     "4510",
+     "3107"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

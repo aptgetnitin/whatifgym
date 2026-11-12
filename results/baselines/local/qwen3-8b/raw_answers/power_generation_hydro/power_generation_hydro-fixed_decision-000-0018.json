@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "output",
+   "where": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ],
+    "period": "00-06"
+   },
+   "value": 6450
+  }
+ ],
+ "note": "Fixing the thermal output for period 00-06 for all generator types."
+}

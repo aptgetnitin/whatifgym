@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "start_time_offenburg_min",
+   "measure": "start_time",
+   "scope": {
+    "location": "Offenburg"
+   },
+   "sense": ">=",
+   "value": 54
+  }
+ ],
+ "note": "The total service start time for location Offenburg must be at least 54 minutes."
+}

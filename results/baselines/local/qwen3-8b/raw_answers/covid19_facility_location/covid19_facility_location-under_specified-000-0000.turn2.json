@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "upper_limit_on_patients_assigned",
+   "measure": "assign",
+   "scope": {
+    "facility": "T18"
+   },
+   "sense": "<=",
+   "value": 75
+  }
+ ],
+ "note": "Add a rule to limit the total number of patients assigned to facility T18."
+}

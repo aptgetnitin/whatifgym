@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "linked_load_ratio",
+      "measure": "linked_load",
+      "scope": {
+        "location": "1200 BRAHMS DR",
+        "base": "base"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "linked_load",
+        "scope": {
+          "location": "4000 SMOKEY LAKE DR",
+          "base": "base"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

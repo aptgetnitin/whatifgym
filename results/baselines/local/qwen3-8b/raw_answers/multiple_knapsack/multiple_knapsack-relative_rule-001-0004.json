@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "bin4_at_least_60_percent",
+   "measure": "x",
+   "scope": {
+    "bin": "bin4"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": "*"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "A rule that enforces bin4 to account for at least 60% of all item placements."
+}

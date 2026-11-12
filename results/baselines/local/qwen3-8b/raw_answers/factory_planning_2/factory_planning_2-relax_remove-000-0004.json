@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "relax": [
+  {
+   "constraint": "maintenance",
+   "scope": {
+    "machine": "*"
+   }
+  }
+ ],
+ "note": "Removing the maintenance requirement by relaxing the maintenance constraint for all machines."
+}

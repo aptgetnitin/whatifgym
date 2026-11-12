@@ -1,0 +1,44 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "periods",
+   "column": "demand_mw",
+   "where": {
+    "period": [
+     "00-06",
+     "06-09",
+     "09-15",
+     "15-18",
+     "18-24"
+    ]
+   },
+   "value": 21150
+  }
+ ],
+ "rules": [
+  {
+   "name": "pump_power",
+   "measure": "pump",
+   "scope": {
+    "period": [
+     "00-06",
+     "06-09",
+     "09-15",
+     "15-18",
+     "18-24"
+    ]
+   },
+   "sense": "==",
+   "value": 21150
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "total_sold_limit",
+   "measure": "sell",
+   "scope": {
+    "product": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "*"
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "A relative rule comparing the total units sold to the total units in stock."
+}

@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "no_expansion_steps_1_and_2",
+   "measure": "expand",
+   "scope": {
+    "depot": "Plymouth",
+    "step": [
+     1,
+     2
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "This rule ensures that no expansion options are carried out for both step 1 and step 2 at Plymouth."
+}

@@ -19,6 +19,5 @@
       "sense": "<=",
       "value": 1.0
     }
-  ],
-  "note": "A cap on the base queue load (hours) is a rule that sets an absolute limit on the sum of queue_load over all bases."
+  ]
 }

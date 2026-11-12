@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "step6_start_time_share",
+   "measure": "start",
+   "scope": {
+    "step": 6
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "step": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "At least 40% of the total start time of steps 1-5 must be allocated to step 6."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 1,
+    "skill": "unskilled"
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 1,
+    "skill": "unskilled"
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "The requirement for unskilled workers in year 1 falls by 20%, and the recruitment limit for unskilled workers in year 1 is also scaled by 20%."
+}

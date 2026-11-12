@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "finish_time",
+   "scope": {
+    "train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ]
+   }
+  }
+ ],
+ "note": "Maximizing the total arrival time at destination (sum of finish_time for all trains) to reach at least 900 minutes."
+}

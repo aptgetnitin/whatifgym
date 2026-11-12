@@ -1,0 +1,165 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 3,
+    "skill": "skilled"
+   },
+   "value": 2200
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "value": 700
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 1,
+    "skill": "semi_skilled"
+   },
+   "value": 1000
+  },
+  {
+   "op": "set",
+   "table": "skills",
+   "column": "attrition_new",
+   "where": {
+    "skill": "unskilled"
+   },
+   "value": 0.2
+  },
+  {
+   "op": "set",
+   "table": "skills",
+   "column": "attrition_experienced",
+   "where": {
+    "skill": "skilled"
+   },
+   "value": 0.1
+  },
+  {
+   "op": "set",
+   "table": "skills",
+   "column": "current_strength",
+   "where": {
+    "skill": "semi_skilled"
+   },
+   "value": 1500
+  },
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 300
+  },
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_share_of_target",
+   "where": {
+    "from_skill": "semi_skilled",
+    "to_skill": "skilled"
+   },
+   "value": 0.2
+  },
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "skilled"
+   },
+   "value": 100
+  },
+  {
+   "op": "scale",
+   "table": "retraining",
+   "column": "cost",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "skilled"
+   },
+   "factor": 1.1
+  },
+  {
+   "op": "set",
+   "table": "costs",
+   "column": "redundancy_cost",
+   "where": {
+    "skill": "skilled"
+   },
+   "value": 800
+  },
+  {
+   "op": "scale",
+   "table": "costs",
+   "column": "overmanning_cost",
+   "where": {
+    "skill": "*"
+   },
+   "factor": 0.75
+  },
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_overmanned",
+   "value": 250
+  },
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_short_time",
+   "value": 100
+  },
+  {
+   "op": "set",
+   "table": "params",
+   "column": "short_time_productivity",
+   "value": 0.6
+  },
+  {
+   "op": "set",
+   "table": "params",
+   "column": "downgrade_attrition",
+   "value": 0.3
+  }
+ ],
+ "rules": [
+  {
+   "name": "cap_retrain_total",
+   "measure": "retrain",
+   "scope": {},
+   "sense": "<=",
+   "value": 750
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {}
+  }
+ ],
+ "fixed_decisions": [],
+ "relax": [],
+ "logic": [],
+ "note": "The scenario includes changes to requirements, attrition rates, retraining limits, costs, and parameters, along with an overall cap on overmanning."
+}

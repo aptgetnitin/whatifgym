@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "heifer_calves_sold_floor",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 0
+  }
+ ],
+ "note": "A floor on the heifer calves sold in Year1."
+}

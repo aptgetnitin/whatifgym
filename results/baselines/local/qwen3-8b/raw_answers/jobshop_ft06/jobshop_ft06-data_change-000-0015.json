@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "operations",
+   "column": "duration",
+   "where": {
+    "job": "J4",
+    "step": 6
+   },
+   "factor": 0.7
+  }
+ ],
+ "note": "A relative change in processing time for a specific operation is a scale over the matching row."
+}

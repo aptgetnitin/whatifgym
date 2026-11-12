@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "max_three_foods",
+   "measure": "ration",
+   "scope": {
+    "food": [
+     "Corn-soya blend (CSB)",
+     "Oil",
+     "Milk"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "At most two of the three foods may have a non-zero ration per person."
+}

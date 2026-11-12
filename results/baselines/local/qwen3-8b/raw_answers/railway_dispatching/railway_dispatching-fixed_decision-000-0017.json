@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "resources",
+   "column": "capacity",
+   "where": {
+    "resource": 6
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "capacity_6",
+   "measure": "meet",
+   "scope": {
+    "resource": 6
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Set the capacity of resource 6 to 0 and enforce that no pairs of trains share resource 6 at the same time."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_glasgow_damaged_transfers",
+   "measure": "damaged_transfers",
+   "scope": {
+    "from_depot": "Glasgow"
+   },
+   "sense": ">=",
+   "value": 133
+  }
+ ],
+ "note": "The scenario requires at least 133 damaged cars to be transferred from Glasgow, which is enforced through a rule."
+}

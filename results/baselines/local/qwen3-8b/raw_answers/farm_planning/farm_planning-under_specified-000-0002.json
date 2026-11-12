@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "minimum_heifer_calves_raised",
+   "measure": "raise_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 15
+  }
+ ],
+ "note": "A rule to ensure a minimum number of heifer calves are raised in Year1."
+}

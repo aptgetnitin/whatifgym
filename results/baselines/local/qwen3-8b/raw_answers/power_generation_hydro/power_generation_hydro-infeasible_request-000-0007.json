@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_09-15_thermal0",
+   "measure": "output",
+   "scope": {
+    "period": "09-15",
+    "type": "Thermal0"
+   },
+   "sense": "==",
+   "value": 52800
+  }
+ ],
+ "note": "The scenario requires exactly 52800 MW of output from Thermal0 during the 09-15 period, with other decisions adjusted accordingly."
+}

@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "trains",
+   "column": "ready_time",
+   "where": {
+    "train": "E"
+   },
+   "value": 10
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "entry_time",
+   "scope": {
+    "train": "E",
+    "resource": 0
+   },
+   "value": 130
+  }
+ ],
+ "note": "Fixed entry time for train E at resource 0 to 130 minutes, with train E's ready time set to 10 minutes."
+}

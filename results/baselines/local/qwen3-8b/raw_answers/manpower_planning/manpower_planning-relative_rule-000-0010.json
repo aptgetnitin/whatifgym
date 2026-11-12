@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "short_time_limit_unskilled",
+   "measure": "short_time",
+   "scope": {
+    "skill": "unskilled"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "short_time",
+    "scope": {
+     "skill": "unskilled"
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "A rule limits the short-time workers at unskilled level to 10% of the total short-time workers."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "biomass_plant_hours_limit",
+   "measure": "on",
+   "scope": {
+    "plant": "BIOMASS"
+   },
+   "sense": "<=",
+   "value": 14
+  }
+ ],
+ "note": "A limit on the total number of hours the BIOMASS plant is on."
+}

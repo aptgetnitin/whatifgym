@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "f_entry_time_at_most_75_of_c_entry_time",
+   "measure": "entry_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "train": "C"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The entry time for train F is constrained to be at most 75% of the entry time for train C."
+}

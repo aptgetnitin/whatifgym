@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "min_csb_ration_daraa",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Daraa"
+      },
+      "sense": ">=",
+      "value": 1.05
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "purchase",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "supplier": [
+          "Aleppo",
+          "As_Suweida",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hama",
+          "Hassakeh",
+          "Homs"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

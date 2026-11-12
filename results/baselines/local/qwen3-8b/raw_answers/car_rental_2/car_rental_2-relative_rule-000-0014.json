@@ -1,0 +1,80 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "rentals_below_damaged_stock",
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Glasgow"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Glasgow"
+    }
+   },
+   "factor": 0.8
+  },
+  {
+   "name": "rentals_below_damaged_stock",
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Manchester"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Manchester"
+    }
+   },
+   "factor": 0.8
+  },
+  {
+   "name": "rentals_below_damaged_stock",
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Birmingham"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Birmingham"
+    }
+   },
+   "factor": 0.8
+  },
+  {
+   "name": "rentals_below_damaged_stock",
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Plymouth"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Plymouth"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

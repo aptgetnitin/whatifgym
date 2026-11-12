@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "logic": [
+  {
+   "name": "at_least_2_job_pairs_for_j3_j4_on_m3",
+   "at_least": 2,
+   "of": [
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "M3",
+      "job": "J3",
+      "other_job": "J4"
+     },
+     "sense": "==",
+     "value": 1
+    },
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "M3",
+      "job": "J4",
+      "other_job": "J3"
+     },
+     "sense": "==",
+     "value": 1
+    }
+   ]
+  }
+ ]
+}

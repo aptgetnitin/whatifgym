@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "fixed_decisions": [
+  {
+   "measure": "production",
+   "scope": {
+    "year": 4,
+    "industry": "transport"
+   },
+   "value": 340
+  }
+ ],
+ "note": "Fixed production for transport in year 4 to exactly 340 million USD."
+}

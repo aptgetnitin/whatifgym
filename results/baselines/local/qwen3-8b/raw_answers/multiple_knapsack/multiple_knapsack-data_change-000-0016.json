@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "bins",
+   "where": {
+    "bin": "bin2"
+   }
+  }
+ ],
+ "note": "Removing bin2 from the bins table effectively deletes that bin and requires re-planning."
+}

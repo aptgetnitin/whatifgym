@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "fixed_decisions": [
+  {
+   "measure": "works",
+   "scope": {
+    "worker": "worker_1"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixing the number of workers working there at 0 by setting works[worker_1] to 0."
+}

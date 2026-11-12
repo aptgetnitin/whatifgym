@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "non_zero_buy",
+   "measure": "buy",
+   "scope": {
+    "oil": [
+     "VEG2",
+     "OIL2",
+     "VEG1"
+    ]
+   },
+   "sense": ">=",
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "buy",
+   "scope": {
+    "oil": [
+     "OIL1",
+     "OIL3"
+    ]
+   },
+   "value": 0
+  }
+ ]
+}

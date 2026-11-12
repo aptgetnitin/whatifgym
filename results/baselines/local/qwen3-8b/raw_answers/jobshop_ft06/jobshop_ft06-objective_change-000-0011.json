@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "start",
+   "scope": {
+    "job": "J0"
+   }
+  }
+ ],
+ "note": "First optimise the makespan (original objective), then maximise the start time of J0's operations."
+}

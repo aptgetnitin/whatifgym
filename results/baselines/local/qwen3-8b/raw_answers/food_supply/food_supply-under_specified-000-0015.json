@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_purchase",
+   "value": 20000
+  }
+ ],
+ "note": "Setting the max_purchase parameter to 20000 units (100 g) per day introduces an upper limit on food bought at each supplier."
+}

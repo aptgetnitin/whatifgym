@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "ration_floor",
+   "measure": "ration",
+   "scope": {
+    "camp": "Daraa"
+   },
+   "sense": ">=",
+   "value": 6.1
+  }
+ ],
+ "note": "A floor on the ration per person (units of 100 g a day) in Daraa camp."
+}

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "fixed_decisions": [
+  {
+   "measure": "assign",
+   "scope": {
+    "worker": "worker_5",
+    "task": "task_2"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Forcing the assignment of worker_5 to task_2 by fixing the assign variable to 1."
+}

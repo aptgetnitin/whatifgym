@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 250
+  }
+ ],
+ "rules": [
+  {
+   "name": "coal_capacity_built_at_least_730",
+   "measure": "extra_capacity",
+   "scope": {
+    "industry": "coal"
+   },
+   "sense": ">=",
+   "value": 730
+  }
+ ],
+ "note": "The initial capacity for coal is set to 250, and a rule ensures that the total extra capacity built for coal is at least 730."
+}

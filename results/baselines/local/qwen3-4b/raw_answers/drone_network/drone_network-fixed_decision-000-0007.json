@@ -4,6 +4,15 @@
   "data_changes": [
     {
       "op": "set",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "1200 FAULKNER RD"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
       "table": "assign",
       "column": "assign",
       "where": {
@@ -12,5 +21,6 @@
       },
       "value": 0
     }
-  ]
+  ],
+  "note": "Set incident location 1200 FAULKNER RD to have 0 incidents and set its assignment to base 21 MUNICIPAL CTR Fire Station to 0."
 }

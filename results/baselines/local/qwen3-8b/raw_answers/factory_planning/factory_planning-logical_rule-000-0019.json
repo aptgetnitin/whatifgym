@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "max_one_month_production",
+   "measure": "make",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "May"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Only one of the months Jan, Feb, or May can have non-zero units made."
+}

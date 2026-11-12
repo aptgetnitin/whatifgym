@@ -1,0 +1,49 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "entry_time",
+   "column": "entry_time",
+   "where": {
+    "train": "F",
+    "resource": 4
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "entry_time",
+   "column": "entry_time",
+   "where": {
+    "train": "F",
+    "resource": 4
+   },
+   "value": 65
+  }
+ ],
+ "rules": [
+  {
+   "name": "entry_time_F_resource_4",
+   "measure": "entry_time",
+   "scope": {
+    "train": "F",
+    "resource": 4
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "entry_time_F_resource_4",
+   "measure": "entry_time",
+   "scope": {
+    "train": "F",
+    "resource": 4
+   },
+   "sense": ">=",
+   "value": 65
+  }
+ ],
+ "note": "The total entry time for train F, resource 4 must be either zero or at least 65."
+}

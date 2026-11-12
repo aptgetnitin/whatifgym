@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "at_least_50_percent_to_jan",
+   "measure": "make",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": [
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "At least 50% of the total units made must be allocated to January."
+}

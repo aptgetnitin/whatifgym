@@ -3,7 +3,7 @@
   "base_model": "drone_network",
   "rules": [
     {
-      "name": "queue_load_800_VB_BLVD_max_10%",
+      "name": "queue_load_800_VIRGINIA_BEACH_BLVD_max",
       "measure": "queue_load",
       "scope": {
         "base": "800 VIRGINIA BEACH BLVD Fire Station"
@@ -12,7 +12,7 @@
       "value": 0.1
     },
     {
-      "name": "open_bases_800_VB_BLVD_at_most_90%",
+      "name": "open_bases_ratio",
       "measure": "open",
       "scope": {
         "base": "800 VIRGINIA BEACH BLVD Fire Station"

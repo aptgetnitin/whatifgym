@@ -6,7 +6,7 @@
       "op": "scale",
       "table": "incidents",
       "column": "incidents",
-      "factor": 2.0
+      "factor": 1.0
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 250
+  }
+ ],
+ "rules": [
+  {
+   "name": "coal_capacity_year_3",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 3,
+    "industry": "coal"
+   },
+   "sense": ">",
+   "value": 0
+  },
+  {
+   "name": "coal_stock_year_5",
+   "measure": "stock",
+   "scope": {
+    "year": 5,
+    "industry": "coal"
+   },
+   "sense": ">=",
+   "value": 1190
+  }
+ ],
+ "note": "The scenario sets coal's initial capacity to 250 and requires non-zero capacity built in year 3 for coal, while also enforcing a minimum stock of 1190 for coal in year 5."
+}

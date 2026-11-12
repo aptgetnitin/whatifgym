@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "skilled_workers_year_3",
+   "measure": "workforce",
+   "scope": {
+    "year": 3,
+    "skill": "skilled"
+   },
+   "sense": ">=",
+   "value": 20000
+  }
+ ],
+ "note": "The rule ensures that the workforce for skilled workers in year 3 is at least 20000."
+}

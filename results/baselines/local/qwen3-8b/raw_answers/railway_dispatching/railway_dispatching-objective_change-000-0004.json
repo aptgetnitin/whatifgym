@@ -1,0 +1,73 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "meet",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ],
+    "other_train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ],
+    "other_train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ]
+   }
+  }
+ ],
+ "note": "Prioritizes minimizing total delay, then maximizing the number of train pairs sharing a resource at the same time, and finally minimizing the number of trains clearing a resource before another train enters it."
+}

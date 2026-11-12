@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "zero_queue_load_for_5145_RURITAN_COURT",
+   "measure": "queue_load",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Fixing the queue load for the specified base to zero."
+}

@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod7_sales_at_least_20_percent_total",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "*"
+    }
+   },
+   "factor": 0.2
+  },
+  {
+   "name": "feb_sales_at_most_50_percent_of_may",
+   "measure": "sell",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": "May"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Two relative limits are imposed on the total units sold for Prod7 and the units sold for Feb relative to May."
+}

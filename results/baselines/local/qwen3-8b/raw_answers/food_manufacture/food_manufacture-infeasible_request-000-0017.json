@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "store",
+   "column": "store",
+   "where": {
+    "month": "Mar",
+    "oil": "VEG2"
+   },
+   "value": 2410
+  }
+ ],
+ "note": "Fix the storage amount for VEG2 in March to exactly 2410 tons."
+}

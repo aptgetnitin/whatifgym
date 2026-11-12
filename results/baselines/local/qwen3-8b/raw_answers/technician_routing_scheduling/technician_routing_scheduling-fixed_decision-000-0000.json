@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "fixed_decisions": [
+  {
+   "measure": "unfilled",
+   "scope": {
+    "customer": "Customer6"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fix the unfilled status of Customer6 to 1."
+}

@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "hours_per_month",
+   "factor": 1.5
+  }
+ ],
+ "note": "Scaling the hours_per_month parameter by 1.5 reflects the increase in machine hours per month due to running three shifts."
+}

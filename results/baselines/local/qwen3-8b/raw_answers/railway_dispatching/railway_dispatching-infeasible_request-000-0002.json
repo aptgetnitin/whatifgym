@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "entry_time",
+   "scope": {
+    "train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ],
+    "resource": [
+     1,
+     3,
+     5
+    ]
+   }
+  }
+ ],
+ "note": "Maximizing the total entry time of the trains on the tracks to reach at least 2840 minutes."
+}

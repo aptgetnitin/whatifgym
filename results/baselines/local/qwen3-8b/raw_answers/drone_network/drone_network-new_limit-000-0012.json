@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_limit_5145_RURITAN_COURT",
+   "measure": "queue_load",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "sense": "<=",
+   "value": 0.01
+  }
+ ],
+ "note": "Limits the total queue load for the specified drone base to 0.01 hours."
+}

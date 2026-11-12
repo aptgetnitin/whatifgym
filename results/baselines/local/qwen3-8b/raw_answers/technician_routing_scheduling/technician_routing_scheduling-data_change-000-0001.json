@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "customers",
+      "column": "window_end",
+      "where": {
+        "customer": "Customer6"
+      },
+      "delta": 210
+    }
+  ],
+  "note": "The time window end of Customer6 is shifted by 210 minutes."
+}

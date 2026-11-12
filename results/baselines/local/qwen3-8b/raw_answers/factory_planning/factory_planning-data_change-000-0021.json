@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod5"
+   },
+   "factor": 1.2727272727272727
+  },
+  {
+   "op": "set_param",
+   "name": "hours_per_month",
+   "value": 200
+  }
+ ],
+ "note": "The profit_per_unit for Prod5 is scaled by a factor of 1.2727272727272727 to reflect the price change from 11 to 14. The hours_per_month for the planers is set to 200 to account for the installation of 2 more planers."
+}

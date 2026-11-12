@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "logic": [
+  {
+   "name": "no_non_zero_mine_years_worked_for_mine1_and_mine2",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "operate",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "mine": "Mine1"
+     }
+    },
+    {
+     "measure": "operate",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "mine": "Mine2"
+     }
+    }
+   ]
+  }
+ ]
+}

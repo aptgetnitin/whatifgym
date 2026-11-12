@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "rules": [
+  {
+   "name": "jobs_before_job_14",
+   "measure": "runs_before",
+   "scope": {
+    "other_job": "job_14"
+   },
+   "sense": ">=",
+   "value": 9
+  },
+  {
+   "name": "jobs_after_job_6",
+   "measure": "follows",
+   "scope": {
+    "from_job": "job_6"
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; the first rule ensures at least 9 jobs run before job_14, and the second rule limits the number of jobs directly after job_6 to 1."
+}

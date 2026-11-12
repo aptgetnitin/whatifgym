@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "size",
+   "where": {
+    "task": "task_4"
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "The task size of task_4 falls by 20%."
+}

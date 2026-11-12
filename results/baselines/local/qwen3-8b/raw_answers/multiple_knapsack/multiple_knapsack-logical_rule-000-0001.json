@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "max_two_bins",
+   "measure": "x",
+   "scope": {
+    "bin": [
+     "bin0",
+     "bin1",
+     "bin2",
+     "bin3",
+     "bin4"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

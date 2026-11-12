@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "max_flights_for_A319_18",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A319#18"
+   },
+   "sense": "<=",
+   "value": 4
+  }
+ ],
+ "note": "The total number of flights operated by aircraft A319#18 is capped at 4."
+}

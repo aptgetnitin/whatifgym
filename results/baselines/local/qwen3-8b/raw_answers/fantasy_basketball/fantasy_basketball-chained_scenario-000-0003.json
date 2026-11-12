@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "salary",
+   "where": {
+    "position": [
+     "PG",
+     "SG",
+     "SF",
+     "PF",
+     "C"
+    ]
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "Scale the salary column for all players by 25%."
+}

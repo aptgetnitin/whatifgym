@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "logic": [
+  {
+   "name": "at_least_one_embiid_and_at_least_two_saric",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "pick",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "player": "Joel Embiid"
+     }
+    },
+    {
+     "measure": "pick",
+     "sense": ">=",
+     "value": 2,
+     "scope": {
+      "player": "Dario Saric"
+     }
+    }
+   ]
+  }
+ ]
+}

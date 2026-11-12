@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "end",
+   "scope": {
+    "job": "*",
+    "step": 5
+   }
+  }
+ ],
+ "note": "First, the makespan is minimised. Then, the end time of step 5 for all jobs is minimised."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "start",
+   "scope": {
+    "job": "*",
+    "step": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "end",
+   "scope": {
+    "job": "*",
+    "step": "*"
+   }
+  }
+ ],
+ "note": "The objective stages prioritise minimising makespan, then total operation start time, and finally total operation end time."
+}

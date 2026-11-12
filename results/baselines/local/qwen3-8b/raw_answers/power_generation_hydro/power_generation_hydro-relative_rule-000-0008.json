@@ -1,0 +1,44 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "reservoir_level_09-15_at_least_3_times_15-18",
+   "measure": "reservoir_level",
+   "scope": {
+    "period": "09-15"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "reservoir_level",
+    "scope": {
+     "period": "15-18"
+    }
+   },
+   "factor": 3
+  },
+  {
+   "name": "hydro_unit_periods_running_at_least_thermal_units_started",
+   "measure": "hydro_on",
+   "scope": {
+    "hydro": [
+     "HydroA",
+     "HydroB"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "nstart",
+    "scope": {
+     "type": [
+      "Thermal0",
+      "Thermal1",
+      "Thermal2"
+     ]
+    }
+   },
+   "factor": 1
+  }
+ ],
+ "note": "Two relative limits are imposed on the reservoir level and the total number of hydro unit-periods running compared to the total number of thermal units started."
+}

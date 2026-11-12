@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_5145_RURITAN_COURT",
+   "measure": "linked_load",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "sense": "<=",
+   "value": 0.27
+  },
+  {
+   "name": "queue_load_800_VIRGINIA_BEACH_BLVD",
+   "measure": "linked_load",
+   "scope": {
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": ">=",
+   "value": 0.13
+  }
+ ],
+ "note": "Two new rules: queue load for 5145 RURITAN COURT Rescue Squad must be at or below 0.27, and queue load for 800 VIRGINIA BEACH BLVD Fire Station must be at least 0.13."
+}

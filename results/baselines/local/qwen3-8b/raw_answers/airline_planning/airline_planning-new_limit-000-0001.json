@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "max_flights_operated",
+   "measure": "operate",
+   "scope": {},
+   "sense": "<=",
+   "value": 38
+  }
+ ],
+ "note": "The total number of flights operated is bounded by 38."
+}

@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_left_cap",
+   "measure": "undamaged_left",
+   "scope": {
+    "day": [
+     "Monday",
+     "Tuesday",
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday"
+    ],
+    "depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ]
+   },
+   "sense": "<=",
+   "value": 150
+  }
+ ],
+ "note": "An overall cap on the sum of undamaged cars kept at depots overnight."
+}

@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "transport"
+   },
+   "factor": 1.25
+  }
+ ],
+ "rules": [
+  {
+   "name": "stock_cap",
+   "measure": "stock",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   "sense": "<=",
+   "value": 1050
+  }
+ ],
+ "note": "An overall cap on the total stock across all industries and years."
+}

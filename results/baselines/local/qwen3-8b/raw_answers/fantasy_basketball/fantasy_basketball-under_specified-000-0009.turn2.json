@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "salary_cap",
+   "value": 60000
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The salary cap is increased to 60000 to explore its impact on the optimal line-up and total predicted points."
+}

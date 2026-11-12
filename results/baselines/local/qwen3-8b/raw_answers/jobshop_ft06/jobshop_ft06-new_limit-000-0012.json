@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "sum_start_step6",
+   "measure": "start",
+   "scope": {
+    "step": 6
+   },
+   "sense": ">=",
+   "value": 420
+  },
+  {
+   "name": "sum_goes_first_J3",
+   "measure": "goes_first",
+   "scope": {
+    "job": "J3"
+   },
+   "sense": "<=",
+   "value": 6
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; the first rule ensures the sum of start times for all operations with step 6 is at least 420, and the second rule ensures the number of job pairs where J3 goes first on a machine is at or below 6."
+}

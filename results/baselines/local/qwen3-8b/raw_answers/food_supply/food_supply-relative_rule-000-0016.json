@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "oil_ration_min",
+   "measure": "ration",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "camp": "Ar Raqqa",
+     "camp": "Daraa",
+     "camp": "Dayr_Az_Zor",
+     "camp": "Hassakeh",
+     "camp": "Idleb",
+     "camp": "Jubb_al_Jarrah",
+     "camp": "Qamishli"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "At least 25% of the total ration per person must go to Oil."
+}

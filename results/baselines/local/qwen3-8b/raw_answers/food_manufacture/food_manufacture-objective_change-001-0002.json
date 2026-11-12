@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "consume",
+   "scope": {
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Prioritise minimising total oil refined first, then maximising profit."
+}

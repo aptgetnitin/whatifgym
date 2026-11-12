@@ -1,0 +1,1 @@
+{"version": "0.1","base_model":"fantasy_basketball","data_changes":[{"op":"shift","table":"players","column":"predicted_points","where":{"player":["player"]},"delta":1}]}

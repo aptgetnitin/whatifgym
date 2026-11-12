@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Saturday",
+    "depot": "Glasgow"
+   },
+   "value": 20
+  },
+  {
+   "op": "add",
+   "table": "demand",
+   "rows": [
+    {
+     "day": "Wednesday",
+     "depot": "Birmingham",
+     "demand": 50
+    }
+   ]
+  }
+ ],
+ "note": "A cap on rentals is implemented by setting a lower demand for Glasgow on Saturday and adding demand for Birmingham on Wednesday."
+}

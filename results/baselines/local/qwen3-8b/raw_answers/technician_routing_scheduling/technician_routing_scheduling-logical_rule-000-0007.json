@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "at_most_one_leg_from_locations",
+   "measure": "route",
+   "scope": {
+    "from_location": [
+     "Offenburg",
+     "Heidelberg",
+     "Freiburg im Breisgau",
+     "Mannheim",
+     "Lahr/Schwarzwald"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "At most one of the specified from locations may have a non-zero number of legs driven."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "gas_total_output",
+   "measure": "output",
+   "scope": {
+    "plant": "GAS"
+   },
+   "sense": ">=",
+   "value": 35450
+  }
+ ],
+ "note": "The total output for the GAS plant must be at least 35450 MWh."
+}

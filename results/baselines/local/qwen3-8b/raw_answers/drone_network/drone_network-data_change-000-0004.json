@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "all"
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "All incident counts are increased by 20% to reflect the rise in cardiac arrests."
+}

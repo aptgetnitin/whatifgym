@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "measure": "entry_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": ">=",
+   "value": 280,
+   "name": "floor_entry_time_F"
+  }
+ ]
+}

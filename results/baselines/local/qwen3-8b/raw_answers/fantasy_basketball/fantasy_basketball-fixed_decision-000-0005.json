@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "fixed_decisions": [
+    {
+      "measure": "pick",
+      "scope": {
+        "player": "Joel Embiid"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fixing the decision variable for Joel Embiid to 0 as he is ruled out."
+}

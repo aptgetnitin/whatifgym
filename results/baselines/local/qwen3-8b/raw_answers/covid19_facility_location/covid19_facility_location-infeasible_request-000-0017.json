@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "assign",
+   "column": "assign",
+   "where": {
+    "county": "C8",
+    "facility": "E12"
+   },
+   "value": 280
+  }
+ ],
+ "note": "Fix the assignment of 280 patients from county C8 to facility E12 and optimize the rest."
+}

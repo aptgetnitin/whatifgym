@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "grain_grown_year2_at_least_2_times_year5",
+   "measure": "grow_grain",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "grow_grain",
+    "scope": {
+     "year": "Year5"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The rule enforces that the total grain grown in Year2 is at least twice the total grain grown in Year5."
+}

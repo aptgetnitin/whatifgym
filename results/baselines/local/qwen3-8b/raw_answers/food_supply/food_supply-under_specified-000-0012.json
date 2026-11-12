@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "nutrients",
+   "column": "min_per_person",
+   "where": {
+    "nutrient": "VitaminA(ug)"
+   },
+   "factor": 1
+  }
+ ],
+ "note": "The question is about changing the minimum daily intake for VitaminA(ug), which is a data change in the nutrients table."
+}

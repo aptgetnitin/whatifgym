@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "fixed_decisions": [
+  {
+   "measure": "pick",
+   "scope": {
+    "player": "Terry Rozier"
+   },
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fixed Terry Rozier's pick to 1 and optimise the rest."
+}

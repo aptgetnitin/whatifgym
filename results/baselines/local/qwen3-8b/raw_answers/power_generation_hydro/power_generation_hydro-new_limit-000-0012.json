@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_09-15",
+   "measure": "output",
+   "scope": {
+    "period": "09-15"
+   },
+   "sense": ">=",
+   "value": 32900
+  },
+  {
+   "name": "pump_00-06",
+   "measure": "pump",
+   "scope": {
+    "period": "00-06"
+   },
+   "sense": "<=",
+   "value": 360
+  }
+ ],
+ "note": "Two new rules: thermal output over period 09-15 must be at least 32900 MW, and pumping power for period 00-06 may not exceed 360 MW."
+}

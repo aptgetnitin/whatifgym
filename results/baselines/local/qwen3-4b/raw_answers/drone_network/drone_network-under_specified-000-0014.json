@@ -81,5 +81,5 @@
       "factor": 1.0
     }
   ],
-  "note": "The planner's question refers to 'shifts' for every row of the incident locations table. In the model, the incidents table has a column 'incidents' which is the number of cardiac arrests at each location. A 'shift' here likely means a change in the value of this column. However, the question does not specify the direction or magnitude of the shift. Since the question says 'shifts for every row', it implies that all rows are affected by the same factor. The factor is set to 1.0 as a placeholder, but in reality, the planner would need to specify a factor (e.g., 0.9 for a 10% decrease). Without more information, we can only represent the scenario as a scale operation with factor 1.0, which means no change. However, this is a placeholder for the actual scenario. The note explains that the question is ambiguous without more details."
+  "note": "The planner's question says 'shifts for every row', which means a uniform scaling factor of 1.0 (no change) for all rows. However, the question is ambiguous and may require clarification."
 }

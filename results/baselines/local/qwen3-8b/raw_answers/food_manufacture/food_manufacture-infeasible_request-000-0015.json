@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "minimum_production_apr",
+   "measure": "produce",
+   "scope": {
+    "month": "Apr"
+   },
+   "sense": ">=",
+   "value": 4500
+  }
+ ],
+ "note": "A rule enforces a minimum production requirement for April."
+}

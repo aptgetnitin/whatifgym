@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "facilities",
+   "column": "capacity",
+   "where": {
+    "facility": "E1"
+   },
+   "factor": 1000
+  }
+ ],
+ "note": "The bed-capacity limit for facility E1 is increased by a factor of 1000."
+}

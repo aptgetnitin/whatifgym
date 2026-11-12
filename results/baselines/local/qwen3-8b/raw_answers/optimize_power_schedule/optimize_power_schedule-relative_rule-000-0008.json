@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "shut_downs_at_least_25_of_hours_on",
+   "measure": "stop",
+   "scope": {
+    "plant": "*"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "on",
+    "scope": {
+     "plant": "*"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The rule enforces that the total number of plant shut-downs is at least 25% of the total number of plant-hours on. The objective remains to minimize the original cost."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_transfers_to_manchester",
+   "measure": "undamaged_transfers",
+   "scope": {
+    "to_depot": "Manchester"
+   },
+   "sense": ">=",
+   "value": 78
+  }
+ ],
+ "note": "A rule that enforces a minimum sum of undamaged transfers to Manchester."
+}

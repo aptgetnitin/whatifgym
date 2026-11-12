@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "no_heifer_calves_sold_in_year2_and_year5",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": [
+          "Year2",
+          "Year5"
+        ]
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ],
+  "note": "A rule that enforces zero heifer calves sold in both Year2 and Year5."
+}

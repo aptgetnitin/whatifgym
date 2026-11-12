@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "assign",
+   "column": "assign",
+   "where": {
+    "location": "2200 ELSON GREEN AV",
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the assignment of incident location 2200 ELSON GREEN AV to drone base 21 MUNICIPAL CTR Fire Station at 0."
+}

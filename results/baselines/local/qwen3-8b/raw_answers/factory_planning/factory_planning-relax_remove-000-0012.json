@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "machine": "grinder"
+   }
+  }
+ ],
+ "note": "Removing the capacity constraint for the grinder machine type."
+}

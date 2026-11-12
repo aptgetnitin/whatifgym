@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "300 HORACE AV"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The question is interpreted as the incident count for location 300 HORACE AV being set to zero."
+}

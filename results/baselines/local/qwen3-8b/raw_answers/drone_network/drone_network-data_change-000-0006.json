@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "700 20TH ST"
+   },
+   "factor": 0.7
+  }
+ ],
+ "note": "A relative demand change for a specific incident location is a scale over the matching row."
+}

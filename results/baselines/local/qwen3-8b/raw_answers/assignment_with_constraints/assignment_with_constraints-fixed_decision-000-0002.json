@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "assign",
+   "column": "assign",
+   "where": {
+    "worker": "worker_3",
+    "task": "task_3"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Forcing the assignment of worker_3 to task_3 by setting the assign variable to 1."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "wheat_purchase_min",
+   "measure": "purchase",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": ">=",
+   "value": 262600
+  },
+  {
+   "name": "milk_purchase_min",
+   "measure": "purchase",
+   "scope": {
+    "food": "Milk"
+   },
+   "sense": ">=",
+   "value": 52500
+  }
+ ],
+ "note": "The planner requests minimum purchase quantities for Wheat and Milk, which are enforced as absolute limits on the sum of the purchase measure over the respective scopes."
+}

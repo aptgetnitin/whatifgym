@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "steel_output_min",
+   "measure": "production",
+   "scope": {
+    "industry": "steel"
+   },
+   "sense": ">=",
+   "value": 1550
+  }
+ ],
+ "note": "The total output for steel must be at least 1550 million USD."
+}

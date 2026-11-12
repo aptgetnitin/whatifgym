@@ -1,0 +1,72 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "repairs",
+   "column": "repairs",
+   "where": {
+    "day": "Monday",
+    "depot": "Manchester"
+   },
+   "value": 9
+  },
+  {
+   "op": "set",
+   "table": "repairs",
+   "column": "repairs",
+   "where": {
+    "day": "Tuesday",
+    "depot": "Manchester"
+   },
+   "value": 9
+  },
+  {
+   "op": "set",
+   "table": "repairs",
+   "column": "repairs",
+   "where": {
+    "day": "Wednesday",
+    "depot": "Manchester"
+   },
+   "value": 9
+  },
+  {
+   "op": "set",
+   "table": "repairs",
+   "column": "repairs",
+   "where": {
+    "day": "Thursday",
+    "depot": "Manchester"
+   },
+   "value": 9
+  },
+  {
+   "op": "set",
+   "table": "repairs",
+   "column": "repairs",
+   "where": {
+    "day": "Friday",
+    "depot": "Manchester"
+   },
+   "value": 9
+  },
+  {
+   "op": "set",
+   "table": "repairs",
+   "column": "repairs",
+   "where": {
+    "day": "Saturday",
+    "depot": "Manchester"
+   },
+   "value": 9
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

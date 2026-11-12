@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "operations",
+   "column": "duration",
+   "where": {
+    "machine": [
+     "M0",
+     "M1",
+     "M2",
+     "M3",
+     "M4",
+     "M5"
+    ]
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "Scaling the duration column in the operations table by 10% for all rows."
+}

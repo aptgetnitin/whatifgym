@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "t18_at_least_40_of_temp",
+   "measure": "build",
+   "scope": {
+    "facility": "T18"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "build",
+    "scope": {
+     "kind": "temporary"
+    }
+   },
+   "factor": 0.4
+  },
+  {
+   "name": "t15_at_most_90_of_t18",
+   "measure": "build",
+   "scope": {
+    "facility": "T15"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "build",
+    "scope": {
+     "facility": "T18"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "Two relative limits on the number of temporary facilities built: T18 must account for at least 40% of all temporary facilities built, and T15 must be at most 90% of T18."
+}

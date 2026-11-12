@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "fixed_decisions": [
+  {
+   "measure": "soc",
+   "scope": {
+    "hour": "03-04"
+   },
+   "value": 40
+  }
+ ],
+ "note": "Fixed the stored energy (soc) for hour 03-04 to exactly 40 kWh."
+}

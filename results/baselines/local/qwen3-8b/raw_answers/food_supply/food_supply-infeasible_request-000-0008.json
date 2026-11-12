@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_purchase",
+   "value": 200550
+  }
+ ],
+ "rules": [
+  {
+   "name": "oil_purchase_hassakeh",
+   "measure": "purchase",
+   "scope": {
+    "food": "Oil",
+    "supplier": "Hassakeh"
+   },
+   "sense": ">=",
+   "value": 200550
+  }
+ ],
+ "note": "Set the purchase limit for Oil at Hassakeh to 200550 and enforce that at least this amount is purchased."
+}

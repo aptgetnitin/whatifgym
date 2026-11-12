@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "flow",
+   "scope": {
+    "food": "*",
+    "from_city": "*",
+    "to_city": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "original",
+   "scope": {}
+  }
+ ],
+ "note": "Prioritise minimising total food shipped first, then total cost."
+}

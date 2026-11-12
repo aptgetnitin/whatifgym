@@ -1,0 +1,119 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_0",
+    "other_job": "job_1"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_1",
+    "other_job": "job_2"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_2",
+    "other_job": "job_3"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_3",
+    "other_job": "job_4"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs, before",
+   "scope": {
+    "job": "job_4",
+    "other_job": "job_5"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_5",
+    "other_job": "job_6"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_6",
+    "other_job": "job_7"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_7",
+    "other_job": "job_8"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_8",
+    "other_job": "job_9"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_9",
+    "other_job": "job_10"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_10",
+    "other_job": "job_11"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_11",
+    "other_job": "job_12"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_12",
+    "other_job": "job_13"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "runs_before",
+   "scope": {
+    "job": "job_13",
+    "other_job": "job_14"
+   }
+  }
+ ],
+ "note": "The objective is to maximise the total number of job pairs where the first job runs earlier."
+}

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "fixed_decisions": [
+  {
+   "measure": "x",
+   "scope": {
+    "item": "item11",
+    "bin": "bin3"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fixing the number of item placements for item11 in bin3 to 1."
+}

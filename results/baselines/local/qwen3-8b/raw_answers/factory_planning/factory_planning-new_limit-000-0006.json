@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "total_stock_units",
+   "measure": "store",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 550
+  },
+  {
+   "name": "end_of_feb_stock",
+   "measure": "store",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 240
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; the first rule limits total stock across all months, and the second limits stock at the end of February."
+}

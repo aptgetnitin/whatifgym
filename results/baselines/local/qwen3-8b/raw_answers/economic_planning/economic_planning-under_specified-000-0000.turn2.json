@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "output_limit",
+   "measure": "production",
+   "scope": {
+    "industry": "transport"
+   },
+   "sense": "<=",
+   "value": 670
+  }
+ ],
+ "note": "A new rule limits the total output produced for the transport industry to 670 million USD."
+}

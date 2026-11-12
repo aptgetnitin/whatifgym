@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_19-20_if_soc_14-15_positive",
+   "measure": "discharge",
+   "scope": {
+    "hour": "19-20"
+   },
+   "sense": ">=",
+   "value": 3.3,
+   "logic": {
+    "at_least": 1,
+    "of": [
+     {
+      "measure": "soc",
+      "sense": ">",
+      "value": 0,
+      "scope": {
+       "hour": "14-15"
+      }
+     },
+     {
+      "measure": "discharge",
+      "sense": ">=",
+      "value": 0,
+      "scope": {
+       "hour": "19-20"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "note": "A logical rule: if the battery stored energy (soc) for hour 14-15 is above zero, then the total battery discharging power for hour 19-20 must be at least 3.3."
+}

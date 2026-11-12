@@ -1,1 +1,15 @@
-REQUEST_ERROR: Ollama /api/chat returned HTTP 500: {"error":"prediction aborted, token repeat limit reached"}
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "fixed_decisions": [
+    {
+      "measure": "queue_load",
+      "scope": {
+        "base": [
+          "21 MUNICIPAL CTR Fire Station"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

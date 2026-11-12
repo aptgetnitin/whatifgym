@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hydro_max_plant_hours",
+   "measure": "on",
+   "scope": {
+    "plant": "HYDRO"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "on",
+    "scope": {
+     "plant": [
+      "Scherer",
+      "Bowen",
+      "Jack McDonough",
+      "Edwin I Hatch",
+      "Vogtle",
+      "OIL",
+      "BIOMASS",
+      "GAS",
+      "OTHER COAL"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "A relative rule limits the sum of 'on' hours for HYDRO to 5% of the sum for all other plants."
+}

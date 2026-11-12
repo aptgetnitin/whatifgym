@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "1900 LANDSTOWN CENTRE WAY"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "linked_load_zero",
+      "measure": "linked_load",
+      "scope": {
+        "location": "1900 LANDSTOWN CENTRE WAY",
+        "base": "21 MUNICIPAL CTR Fire Station"
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ],
+  "note": "Setting incidents to zero for the location removes its demand, and a rule enforces linked_load to zero for the specified location and base."
+}

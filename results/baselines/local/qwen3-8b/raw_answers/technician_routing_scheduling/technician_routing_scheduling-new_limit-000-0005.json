@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "total_service_start_time_limit",
+   "measure": "start_time",
+   "scope": {
+    "location": [
+     "Heidelberg",
+     "Freiburg im Breisgau",
+     "Mannheim",
+     "Karlsruhe",
+     "Baden-Baden",
+     "Buehl",
+     "Offenburg",
+     "Lahr/Schwarzwald",
+     "Loerrach"
+    ]
+   },
+   "sense": "<=",
+   "value": 800
+  }
+ ],
+ "note": "The total service start time across all locations is constrained to not exceed 800 minutes."
+}

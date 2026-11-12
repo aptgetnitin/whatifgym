@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "j5_start_at_most_75_of_j2_start",
+   "measure": "start",
+   "scope": {
+    "job": "J5"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": "J2"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The start time of J5 is bounded by 75% of the start time of J2."
+}

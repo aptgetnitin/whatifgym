@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "ask": "What is the impact of changing the cost per MWh above minimum for Thermal1 on the total cost and generation plan?"
+}

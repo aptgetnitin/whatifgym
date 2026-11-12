@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_stock_cap",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Glasgow"
+   },
+   "sense": "<=",
+   "value": 260
+  }
+ ],
+ "note": "A cap on the total damaged cars at a depot in the morning, summed over all days and depots."
+}

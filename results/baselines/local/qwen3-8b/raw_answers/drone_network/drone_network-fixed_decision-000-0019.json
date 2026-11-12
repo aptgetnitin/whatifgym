@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "5600 MEER ST"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "linked_load_zero",
+   "measure": "linked_load",
+   "scope": {
+    "location": "5600 MEER ST",
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Set incidents at 5600 MEER ST to zero to remove demand, and enforce linked_load to zero for the specified location and base."
+}

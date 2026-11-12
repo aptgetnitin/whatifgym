@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "purchase_prices",
+   "column": "price",
+   "where": {
+    "month": "Jan",
+    "oil": "OIL1"
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The purchase price of OIL1 in January is scaled by 50%."
+}

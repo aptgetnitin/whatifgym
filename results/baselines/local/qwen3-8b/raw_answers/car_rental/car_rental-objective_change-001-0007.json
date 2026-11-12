@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Plymouth"
+   }
+  }
+ ],
+ "note": "First, maximise weekly profit as in the original model. Then, maximise the number of damaged cars kept at Plymouth depot overnight on Wednesday."
+}

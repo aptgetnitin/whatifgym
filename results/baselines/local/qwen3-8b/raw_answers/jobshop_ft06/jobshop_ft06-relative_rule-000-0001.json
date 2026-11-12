@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "logic": [
+  {
+   "name": "at_least_15_of_job_pairs",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "*",
+      "job": "J2"
+     },
+     "sense": ">=",
+     "value": 0
+    },
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "*",
+      "job": "*"
+     },
+     "sense": "<=",
+     "value": 0
+    }
+   ]
+  }
+ ]
+}

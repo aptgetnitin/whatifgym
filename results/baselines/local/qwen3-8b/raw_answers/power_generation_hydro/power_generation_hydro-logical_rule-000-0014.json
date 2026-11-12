@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal0_output_09-15_min",
+   "measure": "output",
+   "scope": {
+    "period": "09-15",
+    "type": "Thermal0"
+   },
+   "sense": ">=",
+   "value": 26400
+  }
+ ],
+ "note": "If the total thermal output for period 09-15, generator type Thermal0 is above zero, it must be at least 26400."
+}

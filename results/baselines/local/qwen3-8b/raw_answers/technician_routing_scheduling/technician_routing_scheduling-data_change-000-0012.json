@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "customers",
+      "column": "window_end",
+      "where": {
+        "customer": "Customer7"
+      },
+      "factor": 0.7
+    }
+  ],
+  "note": "The time window end for Customer7 is scaled by 0.7, representing a 30% reduction."
+}

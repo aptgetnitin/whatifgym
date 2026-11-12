@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "rules": [
+  {
+   "name": "jarrett_jack_at_least_1_5_times_dario_saric",
+   "measure": "pick",
+   "scope": {
+    "player": "Jarrett Jack"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "pick",
+    "scope": {
+     "player": "Dario Saric"
+    }
+   },
+   "factor": 1.5
+  },
+  {
+   "name": "trevor_ariza_at_most_15_of_all_players",
+   "measure": "pick",
+   "scope": {
+    "player": "Trevor Ariza"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "pick",
+    "scope": {
+     "player": "*"
+    }
+   },
+   "factor": 0.15
+  }
+ ],
+ "note": "Two relative limits: Jarrett Jack must be at least 1.5 times Dario Saric's selection, and Trevor Ariza must account for at most 15% of all players selected."
+}

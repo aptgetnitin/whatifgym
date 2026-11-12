@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "rentals_upper_limit",
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday"
+   },
+   "sense": "<=",
+   "value": 1000
+  }
+ ],
+ "note": "A limit on the number of cars rented out on Wednesday."
+}

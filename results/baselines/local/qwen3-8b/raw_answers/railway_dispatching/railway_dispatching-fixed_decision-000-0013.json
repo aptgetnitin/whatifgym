@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "resources",
+   "column": "capacity",
+   "where": {
+    "resource": 1
+   },
+   "value": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "no_overlap_between_e_and_f_on_resource_1",
+   "measure": "meet",
+   "scope": {
+    "resource": 1,
+    "train": "E",
+    "other_train": "F"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Resource 1's capacity is set to 1 to prevent overlap, and the meet between train E and F on resource 1 is fixed to 0."
+}

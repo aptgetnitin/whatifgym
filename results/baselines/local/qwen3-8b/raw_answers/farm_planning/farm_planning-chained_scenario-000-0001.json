@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "beet_sale_price",
+   "value": 29
+  },
+  {
+   "op": "scale_param",
+   "name": "grain_yield",
+   "factor": 0.4
+  }
+ ],
+ "note": "A relative change in grain yield for land group Group3 is a scale over the matching parameter."
+}

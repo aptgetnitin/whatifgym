@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "relax": [
+  {
+   "constraint": "overmanning",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3
+    ]
+   }
+  }
+ ],
+ "note": "Relaxing the overmanning constraint to see the effect of revisiting the overmanning allowance per year."
+}

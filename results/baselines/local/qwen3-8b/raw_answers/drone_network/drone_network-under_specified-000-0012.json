@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "observation_days",
+   "value": 10
+  }
+ ],
+ "note": "Changing the observation window to 10 days affects the arrival rate calculation for incidents."
+}

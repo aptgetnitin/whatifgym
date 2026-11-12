@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "scherer_plant_hours_limit",
+   "measure": "on",
+   "scope": {
+    "plant": "Scherer"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "on",
+    "scope": {
+     "plant": "*"
+    }
+   },
+   "factor": 0.05
+  },
+  {
+   "name": "shutdowns_limit",
+   "measure": "stop",
+   "scope": {
+    "plant": "*",
+    "hour": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "plant": "*",
+     "hour": "*"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "Two relative limits are imposed on the total number of plant-hours on and the total number of plant shut-downs relative to start-ups."
+}

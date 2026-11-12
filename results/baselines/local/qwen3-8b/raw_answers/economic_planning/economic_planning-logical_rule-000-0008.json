@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "transport_output_year_2_requirement",
+   "measure": "production",
+   "scope": {
+    "year": 2,
+    "industry": "transport"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "year": 6,
+     "industry": "transport"
+    }
+   },
+   "factor": 115
+  }
+ ],
+ "note": "A rule that enforces a relative requirement on the production of transport in year 2 compared to year 6."
+}

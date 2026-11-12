@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "linked_load",
+      "column": "linked_load",
+      "where": {
+        "location": "600 PAWLEYS AR",
+        "base": "5145 RURITAN COURT Rescue Squad"
+      },
+      "value": 0.06
+    }
+  ],
+  "note": "Fix the linked_load for the specified location and base to exactly 0.06 hours."
+}

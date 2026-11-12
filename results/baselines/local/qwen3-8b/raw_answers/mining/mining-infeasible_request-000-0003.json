@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "quality_target",
+   "where": {
+    "year": "Year3"
+   },
+   "value": 0.975
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "blend",
+   "scope": {
+    "year": "Year3"
+   }
+  }
+ ],
+ "note": "The quality target for Year3 is set to 9750000 tons of blended ore sold."
+}

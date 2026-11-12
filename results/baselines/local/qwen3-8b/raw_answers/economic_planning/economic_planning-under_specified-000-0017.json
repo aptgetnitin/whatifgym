@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "economic_planning","rules": [{"name": "stock_cap","measure": "stock","scope": {"year": [1,2,3,4,5],"industry": ["coal","steel","transport"]},"sense": "<=","value": 1000}],"note": "A cap on the total stock held across all industries and years."}

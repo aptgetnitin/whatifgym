@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hour_18_generation",
+   "measure": "output",
+   "scope": {
+    "hour": 18
+   },
+   "sense": ">=",
+   "value": 36500
+  },
+  {
+   "name": "hour_19_generation",
+   "measure": "output",
+   "scope": {
+    "hour": 19
+   },
+   "sense": ">=",
+   "value": 37500
+  }
+ ],
+ "note": "The planner requests to ensure that the total generation meets or exceeds specified thresholds for hours 18 and 19."
+}

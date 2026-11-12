@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "industries",
+   "column": "external_demand",
+   "where": {
+    "industry": "coal"
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "The exogenous consumption demand for coal is reduced by 10%."
+}

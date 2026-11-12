@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase_prices",
+   "column": "price",
+   "where": {
+    "month": "Jun",
+    "oil": "OIL2"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "oil2_buy_total",
+   "measure": "buy",
+   "scope": {
+    "oil": "OIL2"
+   },
+   "sense": ">=",
+   "value": 3000
+  }
+ ],
+ "note": "Set the price of OIL2 in June to 0 to ensure purchase, then enforce a minimum total buy of 3000 tons for OIL2."
+}

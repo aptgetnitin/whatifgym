@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "facility_e5_per_county",
+   "measure": "assign",
+   "scope": {
+    "facility": "E5"
+   },
+   "sense": "==",
+   "value": 23
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Assign exactly 23 patients to facility E5 per county and optimise the rest."
+}

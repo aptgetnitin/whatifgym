@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "end_time",
+   "scope": {
+    "job": "job_1"
+   }
+  }
+ ],
+ "note": "First, keep the makespan at its minimum by optimising the original objective. Then, further optimise the end time of job_1."
+}

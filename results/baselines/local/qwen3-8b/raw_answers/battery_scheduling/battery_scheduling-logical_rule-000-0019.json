@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_18-19_requires_charge_02-03",
+   "measure": "soc",
+   "scope": {
+    "hour": "18-19"
+   },
+   "sense": ">",
+   "value": 0
+  },
+  {
+   "name": "charge_02-03_min",
+   "measure": "charge",
+   "scope": {
+    "hour": "02-03"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "soc",
+    "scope": {
+     "hour": "18-19"
+    }
+   },
+   "factor": 5.6
+  }
+ ],
+ "note": "A non-zero stored energy in hour 18-19 requires a minimum charging power of 5.6 kW in hour 02-03."
+}

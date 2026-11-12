@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "sum_start_j3_at_least_220",
+   "measure": "start",
+   "scope": {
+    "job": "J3"
+   },
+   "sense": ">=",
+   "value": 220
+  }
+ ],
+ "note": "A rule bounds the SUM of a decision measure (start) over a scope (job = J3); the sum must be at least 220."
+}

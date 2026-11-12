@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "temporary_build_cost",
+   "factor": 1.25
+  }
+ ],
+ "note": "The cost of building a temporary facility is increased by 25%."
+}

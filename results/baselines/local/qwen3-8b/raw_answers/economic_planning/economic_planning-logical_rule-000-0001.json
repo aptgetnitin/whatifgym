@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "coal_capacity_min_year_5",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 5,
+    "industry": "coal"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extra_capacity",
+    "scope": {
+     "year": 5,
+     "industry": "coal"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "If coal capacity built in year 5 is above zero, it must be at least 1180."
+}

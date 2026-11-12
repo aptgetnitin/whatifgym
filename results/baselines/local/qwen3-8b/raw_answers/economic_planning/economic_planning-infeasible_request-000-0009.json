@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "production",
+   "scope": {
+    "year": 5
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_output_year_5",
+   "measure": "production",
+   "scope": {
+    "year": 5
+   },
+   "sense": ">=",
+   "value": 4200
+  }
+ ]
+}

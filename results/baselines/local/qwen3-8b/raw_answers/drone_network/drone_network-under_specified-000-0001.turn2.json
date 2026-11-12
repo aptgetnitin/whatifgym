@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "3900 BUCHANAN DR"
+   },
+   "value": 2
+  }
+ ],
+ "note": "The cardiac arrests observed for incident location 3900 BUCHANAN DR is updated to 2."
+}

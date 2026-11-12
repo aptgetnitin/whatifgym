@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "ask": "Please specify the new grain yield per acre for land group Group2 and the type of change (scale, shift, set, add, or remove row)."
+}

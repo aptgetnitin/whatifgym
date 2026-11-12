@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "no_rentals_in_glasgow_and_manchester",
+   "measure": "rentals",
+   "scope": {
+    "day": "Monday",
+    "depot": [
+     "Glasgow",
+     "Manchester"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A rule that enforces zero rentals at both Glasgow and Manchester depots on Monday."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_undamaged_transfers",
+   "measure": "undamaged_transfers",
+   "scope": {
+    "from_depot": "Glasgow",
+    "to_depot": "Plymouth"
+   },
+   "sense": ">=",
+   "value": 10
+  }
+ ],
+ "note": "A minimum requirement on the sum of undamaged transfers between specific depots."
+}

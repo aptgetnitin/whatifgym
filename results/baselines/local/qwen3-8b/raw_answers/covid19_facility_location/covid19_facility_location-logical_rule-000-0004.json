@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "no_t18_and_e11_assigned",
+   "measure": "assign",
+   "scope": {
+    "county": "*",
+    "facility": [
+     "T18",
+     "E11"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A rule that enforces no patients are assigned to both T18 and E11."
+}

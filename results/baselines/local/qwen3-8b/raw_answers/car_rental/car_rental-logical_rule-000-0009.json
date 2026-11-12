@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "repair_min_tuesday_manchester",
+   "measure": "repairs",
+   "scope": {
+    "day": "Tuesday",
+    "depot": "Manchester"
+   },
+   "sense": ">=",
+   "value": 30
+  }
+ ],
+ "note": "If the total cars repaired for day Tuesday, depot Manchester is above zero, it must be at least 30."
+}

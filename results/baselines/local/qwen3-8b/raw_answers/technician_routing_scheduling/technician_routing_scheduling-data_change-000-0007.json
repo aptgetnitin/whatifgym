@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "job_types",
+   "column": "duration_min",
+   "where": {
+    "job_type": "Equipment Installation"
+   },
+   "factor": 0.3333333333333333
+  }
+ ],
+ "note": "The duration of job type 'Equipment Installation' is scaled by a factor of 0.3333333333333333."
+}

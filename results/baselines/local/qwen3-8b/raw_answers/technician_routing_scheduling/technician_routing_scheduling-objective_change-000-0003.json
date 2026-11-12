@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "start_time",
+   "scope": {
+    "location": [
+     "Heidelberg",
+     "Freiburg im Breisgau",
+     "Mannheim",
+     "Karlsruhe",
+     "Baden-Baden",
+     "Buehl",
+     "Offenburg",
+     "Lahr/Schwarzwald",
+     "Loerrach"
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "penalty",
+   "scope": {
+    "customer": [
+     "Customer1",
+     "Customer2",
+     "Customer3",
+     "Customer4",
+     "Customer5",
+     "Customer6",
+     "Customer7"
+    ]
+   }
+  }
+ ],
+ "note": "The objective prioritizes minimizing total service start time first, followed by minimizing total penalty."
+}

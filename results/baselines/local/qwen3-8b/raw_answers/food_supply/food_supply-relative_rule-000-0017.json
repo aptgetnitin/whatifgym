@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "total_shipped_at_least_twice_total_bought",
+      "measure": "flow",
+      "scope": {
+        "food": "*"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "*"
+        }
+      },
+      "factor": 2
+    }
+  ],
+  "note": "The rule ensures that the total food shipped is at least twice the total food bought."
+}

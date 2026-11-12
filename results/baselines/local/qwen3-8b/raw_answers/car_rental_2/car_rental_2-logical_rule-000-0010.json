@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "manchester_step_2_requires_step_1",
+   "measure": "expand",
+   "scope": {
+    "depot": "Manchester",
+    "step": 2
+   },
+   "sense": ">",
+   "value": 0,
+   "relative_to": {
+    "measure": "expand",
+    "scope": {
+     "depot": "Manchester",
+     "step": 1
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "If expand[Manchester, 2] > 0, then expand[Manchester, 1] must be at least 3."
+}

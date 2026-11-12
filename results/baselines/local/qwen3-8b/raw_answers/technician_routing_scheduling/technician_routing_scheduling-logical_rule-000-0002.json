@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "unfilled",
+   "column": "unfilled",
+   "where": {
+    "customer": "Customer4"
+   },
+   "value": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "legs_to_lahr_schwarzwald",
+   "measure": "route",
+   "scope": {
+    "to_location": "Lahr/Schwarzwald"
+   },
+   "sense": ">=",
+   "value": 2
+  }
+ ],
+ "note": "Unfilled jobs for Customer4 are set to 1, and a rule ensures at least 2 legs are driven to Lahr/Schwarzwald."
+}

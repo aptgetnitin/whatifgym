@@ -3,7 +3,7 @@
   "base_model": "drone_network",
   "rules": [
     {
-      "name": "at_least_50_percent_to_5145",
+      "name": "at_least_50_percent_to_5145_RURITAN_COURT",
       "measure": "open",
       "scope": {
         "base": [
@@ -13,6 +13,5 @@
       "sense": ">=",
       "value": 0.5
     }
-  ],
-  "note": "A rule that at least 50% of the total number of drone bases opened must go to a specific base."
+  ]
 }

@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "min_batch_oil1_mar",
+   "measure": "store",
+   "scope": {
+    "month": "Mar",
+    "oil": "OIL1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Mar",
+     "oil": "OIL1"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "store",
+   "scope": {
+    "month": "Mar",
+    "oil": "OIL1"
+   },
+   "value": 750
+  }
+ ]
+}

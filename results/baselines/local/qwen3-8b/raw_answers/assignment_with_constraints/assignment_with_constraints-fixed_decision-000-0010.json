@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "fixed_decisions": [
+  {
+   "measure": "works",
+   "scope": {
+    "worker": "worker_9"
+   },
+   "value": 1
+  },
+  {
+   "measure": "team",
+   "scope": {
+    "team": "team_10_11"
+   },
+   "value": 0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

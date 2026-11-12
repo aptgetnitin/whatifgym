@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "fixed_decisions": [
+  {
+   "measure": "pick",
+   "scope": {
+    "player": "Kevin Love"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Kevin Love is fixed to be picked in the line-up."
+}

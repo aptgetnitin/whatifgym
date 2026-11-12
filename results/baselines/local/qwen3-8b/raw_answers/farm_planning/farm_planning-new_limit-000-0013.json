@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_sold_year3",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year3"
+   },
+   "sense": ">=",
+   "value": 27
+  }
+ ],
+ "note": "A rule enforces a minimum total of sugar beet sold in Year3."
+}

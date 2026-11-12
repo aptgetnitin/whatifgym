@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "flor_job_share",
+   "measure": "assign",
+   "scope": {
+    "technician": "Flor"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "technician": [
+      "Albert",
+      "Bob",
+      "Carlos",
+      "Doris",
+      "Ed",
+      "Flor",
+      "Gina"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "At least 40% of the total assigned jobs must be assigned to Flor."
+}

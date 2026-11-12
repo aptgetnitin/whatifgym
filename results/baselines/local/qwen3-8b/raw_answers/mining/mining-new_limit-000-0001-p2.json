@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "mine",
+   "where": {
+    "mine": "Mine4"
+   },
+   "value": "Mine4"
+  },
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine4"
+   },
+   "value": 10000000
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine4"
+   },
+   "value": 9562500
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

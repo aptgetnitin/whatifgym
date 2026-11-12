@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "minimum_thermal_output",
+   "measure": "output",
+   "scope": {
+    "period": "06-09"
+   },
+   "sense": ">=",
+   "value": 36000
+  }
+ ],
+ "note": "A minimum thermal output requirement for the 06-09 period."
+}

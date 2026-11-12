@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "fixed_decisions": [
+    {
+      "measure": "open",
+      "scope": {
+        "base": "333 THALIA ROAD Rescue Squad"
+      },
+      "value": 1
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "stability",
+      "scope": {
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      }
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

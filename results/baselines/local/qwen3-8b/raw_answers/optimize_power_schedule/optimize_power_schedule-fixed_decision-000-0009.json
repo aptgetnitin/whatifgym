@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "fixed_decisions": [
+  {
+   "measure": "start",
+   "scope": {
+    "plant": "Scherer",
+    "hour": 10
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fix the start-up of Scherer in hour 10 to 1."
+}

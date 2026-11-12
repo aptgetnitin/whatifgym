@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "plant": "OTHER COAL",
+        "hour": 24
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fix the output of plant OTHER COAL in hour 24 to 0 and optimize the rest."
+}

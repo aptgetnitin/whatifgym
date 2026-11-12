@@ -1,0 +1,50 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "assign_c3_e3_zero_or_at_least_600",
+   "measure": "assign",
+   "scope": {
+    "county": "C3",
+    "facility": "E3"
+   },
+   "sense": ">=",
+   "value": 0,
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "county": "C3",
+     "facility": "E3"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "logic": [
+  {
+   "name": "at_least_one_of_zero_or_600",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "assign",
+     "scope": {
+      "county": "C3",
+      "facility": "E3"
+     },
+     "sense": "==",
+     "value": 0
+    },
+    {
+     "measure": "assign",
+     "scope": {
+      "county": "C3",
+      "facility": "E3"
+     },
+     "sense": ">=",
+     "value": 600
+    }
+   ]
+  }
+ ]
+}

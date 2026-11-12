@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "operations",
+   "column": "end",
+   "where": {
+    "job": "J3",
+    "step": 4
+   },
+   "value": 260
+  }
+ ],
+ "rules": [
+  {
+   "name": "start_time_j3_step4",
+   "measure": "start",
+   "scope": {
+    "job": "J3",
+    "step": 4
+   },
+   "sense": ">=",
+   "value": 260
+  }
+ ],
+ "note": "The end time for J3's step 4 is fixed to 260, which implies the start time must be at least 260."
+}

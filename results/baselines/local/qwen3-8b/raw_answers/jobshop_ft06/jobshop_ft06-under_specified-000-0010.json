@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "ask": "Please specify which processing time for job J3, routing step 2 has changed and by how much."
+}

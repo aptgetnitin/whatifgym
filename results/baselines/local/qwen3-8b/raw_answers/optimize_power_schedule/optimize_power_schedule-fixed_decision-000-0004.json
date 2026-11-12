@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "output",
+   "column": "output",
+   "where": {
+    "plant": "BIOMASS",
+    "hour": 5
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "start",
+   "column": "start",
+   "where": {
+    "plant": "HYDRO",
+    "hour": 23
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fixed output for BIOMASS at hour 5 and fixed start for HYDRO at hour 23."
+}

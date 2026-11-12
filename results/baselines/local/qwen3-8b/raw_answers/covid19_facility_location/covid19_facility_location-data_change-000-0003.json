@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "counties",
+   "rows": [
+    {
+     "county": "new_county",
+     "x": 1,
+     "y": 1,
+     "demand": 351
+    }
+   ]
+  }
+ ],
+ "note": "A new county is added with specified coordinates and demand."
+}

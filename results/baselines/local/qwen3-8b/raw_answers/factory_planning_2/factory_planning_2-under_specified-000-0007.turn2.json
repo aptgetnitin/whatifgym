@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "upper_limit_on_units_made",
+   "measure": "make",
+   "scope": {
+    "month": "Mar"
+   },
+   "sense": "<=",
+   "value": 1900
+  }
+ ],
+ "note": "A rule is added to impose an upper limit on the total units made in March."
+}

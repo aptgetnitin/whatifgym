@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "fixed_decisions": [
+  {
+   "measure": "start",
+   "scope": {
+    "job": "J1",
+    "step": 6
+   },
+   "value": 480
+  }
+ ],
+ "note": "Fix the start time of J1's step 6 to 480 and optimize the rest of the schedule."
+}

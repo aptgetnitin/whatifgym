@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "production",
+   "column": "production",
+   "where": {
+    "year": 2,
+    "industry": "coal"
+   },
+   "value": 1500
+  }
+ ],
+ "note": "Fixed the production of coal in year 2 to exactly 1500 million USD."
+}

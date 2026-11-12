@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "resources",
+   "column": "duration",
+   "factor": 1.3
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "shift",
+   "table": "customers",
+   "column": "window_start",
+   "where": {
+    "customer": "Customer6"
+   },
+   "delta": 10
+  }
+ ],
+ "note": "The time window start for Customer6 is shifted by 10 minutes."
+}

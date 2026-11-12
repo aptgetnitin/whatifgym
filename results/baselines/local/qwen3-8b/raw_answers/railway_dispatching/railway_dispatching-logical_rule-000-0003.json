@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "d_total_arrival_time",
+   "measure": "finish_time",
+   "scope": {
+    "train": "D"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "resource": 1
+    }
+   },
+   "factor": 18
+  }
+ ],
+ "note": "If the entry time for resource 1 is above zero, the total arrival time for train D must be at least 18."
+}

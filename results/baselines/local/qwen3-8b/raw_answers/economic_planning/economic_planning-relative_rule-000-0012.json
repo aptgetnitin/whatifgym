@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "capacity_year3_at_least_50_of_year5",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 3
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extra_capacity",
+    "scope": {
+     "year": 5
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "A relative rule comparing the capacity built in year 3 to that in year 5."
+}

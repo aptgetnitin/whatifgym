@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "repair_cap_saturday",
+   "measure": "repairs",
+   "scope": {
+    "day": "Saturday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "day": "Tuesday"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "A relative rule compares the sum of repairs on Saturday to the sum of repairs on Tuesday."
+}

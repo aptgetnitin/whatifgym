@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "scherer_output_hour_5",
+   "measure": "output",
+   "scope": {
+    "plant": "Scherer",
+    "hour": 5
+   },
+   "sense": ">=",
+   "value": 8600
+  },
+  {
+   "name": "scherer_output_hour_5_zero",
+   "measure": "output",
+   "scope": {
+    "plant": "Scherer",
+    "hour": 5
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The total power generated for Scherer in hour 5 must be either zero or at least 8600."
+}

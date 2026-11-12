@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "only_one_stock_non_zero",
+      "measure": "stock",
+      "scope": {
+        "industry": [
+          "steel",
+          "coal",
+          "transport"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "Only one of the industries can have non-zero stock at the end of each year."
+}

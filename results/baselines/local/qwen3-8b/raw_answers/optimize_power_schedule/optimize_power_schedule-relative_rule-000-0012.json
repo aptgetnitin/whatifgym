@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "other_coal_hours",
+   "measure": "on",
+   "scope": {
+    "plant": "OTHER COAL"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "on",
+    "scope": {
+     "plant": [
+      "Scherer",
+      "Bowen",
+      "Jack McDonough",
+      "Edwin I Hatch",
+      "Vogtle",
+      "OIL",
+      "BIOMASS",
+      "GAS",
+      "HYDRO",
+      "OTHER COAL"
+     ]
+    }
+   },
+   "factor": 0.2
+  }
+ ],
+ "note": "At least 20% of the total number of plant-hours on must go to power plant OTHER COAL."
+}

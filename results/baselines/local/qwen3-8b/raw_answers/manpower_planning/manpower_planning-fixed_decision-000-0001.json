@@ -1,0 +1,40 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_share_of_target",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "no_retrain_unskilled_to_semi_skilled_year_3",
+   "measure": "retrain",
+   "scope": {
+    "year": 3,
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Setting the retraining limit to zero for unskilled to semi-skilled in year 3 and enforcing it via a rule."
+}

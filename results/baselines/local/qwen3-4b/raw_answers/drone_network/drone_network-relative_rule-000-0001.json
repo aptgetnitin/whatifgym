@@ -12,6 +12,7 @@
         "base": "800 VIRGINIA BEACH BLVD Fire Station"
       },
       "sense": ">=",
+      "value": 3,
       "relative_to": {
         "measure": "assign",
         "scope": {
@@ -21,7 +22,7 @@
           "base": "21 MUNICIPAL CTR Fire Station"
         }
       },
-      "factor": 3.0
+      "factor": 1.0
     }
   ]
 }

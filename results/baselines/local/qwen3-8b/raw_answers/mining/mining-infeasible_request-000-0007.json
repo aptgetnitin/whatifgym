@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "blend_year1_min",
+   "measure": "blend",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 8625000
+  },
+  {
+   "name": "blend_year4_min",
+   "measure": "blend",
+   "scope": {
+    "year": "Year4"
+   },
+   "sense": ">=",
+   "value": 8437500
+  }
+ ],
+ "note": "The planner requests that the blended ore sold in Year1 and Year4 meet or exceed specified minimums."
+}

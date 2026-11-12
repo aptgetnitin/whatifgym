@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "minimum_task_assignments",
+   "measure": "assign",
+   "scope": {
+    "task": "task_0"
+   },
+   "sense": ">=",
+   "value": 2
+  }
+ ],
+ "note": "A rule to enforce a minimum number of task assignments for a specific task."
+}

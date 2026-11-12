@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "operations",
+   "column": "duration",
+   "where": {
+    "job": "J5",
+    "step": 6
+   },
+   "value": 280
+  }
+ ],
+ "rules": [
+  {
+   "name": "end_j4_step_6_at_least_280",
+   "measure": "end",
+   "scope": {
+    "job": "J4",
+    "step": 6
+   },
+   "sense": ">=",
+   "value": 280
+  }
+ ],
+ "note": "The operation end time for J4's step 6 is constrained to be at least 280."
+}

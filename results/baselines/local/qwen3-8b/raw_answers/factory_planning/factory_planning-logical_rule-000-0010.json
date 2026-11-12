@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "logic": [
+  {
+   "name": "prod3_sell_feb_impact_mar_make",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "Feb",
+      "product": "Prod3"
+     },
+     "sense": ">",
+     "value": 0
+    },
+    {
+     "measure": "make",
+     "scope": {
+      "month": "Mar"
+     },
+     "sense": ">=",
+     "value": 800
+    }
+   ]
+  }
+ ],
+ "note": "Logical rule: at least 1 of the conditions hold. If sell for Feb, Prod3 is above zero, then make for Mar must be at least 800."
+}

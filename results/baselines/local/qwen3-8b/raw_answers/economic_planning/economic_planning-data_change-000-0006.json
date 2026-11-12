@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_stock",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 500
+  },
+  {
+   "op": "scale",
+   "table": "input_output",
+   "column": "input_per_unit_capacity",
+   "where": {
+    "supplier": "coal",
+    "user": "transport"
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The initial stock for coal is set to 500, and the input per unit of capacity for transport using coal is increased by 25%."
+}

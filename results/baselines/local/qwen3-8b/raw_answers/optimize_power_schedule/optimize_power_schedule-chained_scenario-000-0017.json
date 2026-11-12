@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "fuels",
+   "column": "fuel_cost",
+   "factor": 0.5
+  }
+ ],
+ "note": "A relative fuel cost change across all fuels is a scale over the matching rows."
+}

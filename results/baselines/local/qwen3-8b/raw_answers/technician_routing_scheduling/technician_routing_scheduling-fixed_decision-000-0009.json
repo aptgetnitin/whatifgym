@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "customers",
+   "column": "due_time",
+   "where": {
+    "customer": "Customer5"
+   },
+   "value": 160
+  }
+ ],
+ "rules": [
+  {
+   "name": "lateness_customer5",
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "sense": "==",
+   "value": 160
+  }
+ ],
+ "note": "Fixing the minutes late for Customer5 to 160 by setting its due_time and enforcing the lateness constraint."
+}

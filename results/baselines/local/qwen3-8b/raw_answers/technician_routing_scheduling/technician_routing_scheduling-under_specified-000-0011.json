@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "shift",
+   "table": "travel_times",
+   "column": "travel_min",
+   "where": {
+    "from_location": [
+     "Heidelberg",
+     "Freiburg im Breisgau",
+     "Mannheim",
+     "Karlsruhe",
+     "Baden-Baden",
+     "Buehl",
+     "Offenburg",
+     "Lahr/Schwarzwald"
+    ],
+    "to_location": [
+     "Freiburg im Breisgau",
+     "Mannheim",
+     "Karlsruhe",
+     "Baden-Baden",
+     "Buehl",
+     "Offenburg",
+     "Lahr/Schwarzwald",
+     "Loerrach"
+    ]
+   },
+   "delta": 20
+  }
+ ],
+ "note": "Travel time shifts for every row of the travel times table."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "mines",
+   "column": "quality",
+   "where": {
+    "mine": "Mine3"
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The ore quality for Mine3 is reduced by 25%."
+}

@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "mining","data_changes": [{"op": "set_param","name": "max_mines","value": 2}],"note": "Capping the number of mine-years worked by setting the max_mines parameter to 2."}

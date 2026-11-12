@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "fixed_decisions": [
+  {
+   "measure": "buy",
+   "scope": {
+    "oil": "VEG2"
+   },
+   "value": 68
+  }
+ ],
+ "note": "Fixing the buy quantity for VEG2 to 68 tons per month."
+}

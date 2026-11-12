@@ -1,0 +1,41 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "output",
+   "column": "output",
+   "where": {
+    "plant": "BIOMASS"
+   },
+   "value": 240
+  }
+ ],
+ "rules": [
+  {
+   "name": "biomass_output_fixed",
+   "measure": "output",
+   "scope": {
+    "plant": "BIOMASS"
+   },
+   "sense": "==",
+   "value": 240
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "output",
+   "scope": {
+    "plant": "BIOMASS"
+   },
+   "value": 240
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "short_time_total_limit",
+   "measure": "short_time",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3
+    ],
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": "<=",
+   "value": 240
+  },
+  {
+   "name": "redundant_year_2_limit",
+   "measure": "redundant",
+   "scope": {
+    "year": 2,
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": "<=",
+   "value": 80
+  }
+ ],
+ "note": "The scenario applies two rules: one limiting the total number of workers on short-time working across all years and skill levels, and another limiting the total number of workers made redundant in year 2."
+}

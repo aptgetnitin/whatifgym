@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hour_11_generation",
+   "measure": "output",
+   "scope": {
+    "hour": 11
+   },
+   "sense": ">=",
+   "value": 11900
+  },
+  {
+   "name": "hour_21_generation",
+   "measure": "output",
+   "scope": {
+    "hour": 21
+   },
+   "sense": ">=",
+   "value": 18600
+  }
+ ],
+ "note": "The planner is asking if it is possible to meet the generation targets for hour 11 and hour 21 simultaneously."
+}

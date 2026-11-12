@@ -24,5 +24,5 @@
       "value": 0.02
     }
   ],
-  "note": "The queue load linked to a specific location and base must be either zero or at least 0.02 hours."
+  "note": "The condition requires the linked_load for the specific location and base to be either 0 or at least 0.02. This is modeled as two separate rules with an OR condition, but the DSL requires explicit conditions for each case."
 }

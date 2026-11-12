@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "non_zero_refining_months",
+   "measure": "consume",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "May"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Limit the number of months with non-zero refining to at most 2."
+}

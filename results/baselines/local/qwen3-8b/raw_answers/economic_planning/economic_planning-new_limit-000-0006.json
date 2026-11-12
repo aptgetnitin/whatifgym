@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "transport_stock_limit",
+   "measure": "stock",
+   "scope": {
+    "industry": "transport"
+   },
+   "sense": "<=",
+   "value": 39
+  }
+ ],
+ "note": "A limit on the total stock held for the transport industry across all years."
+}

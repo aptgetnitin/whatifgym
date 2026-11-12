@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "meet",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to maintain the same total delay as today while minimizing the number of train pairs sharing a resource at the same time."
+}

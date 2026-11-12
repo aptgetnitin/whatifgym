@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "stock",
+   "scope": {
+    "year": 2
+   }
+  }
+ ],
+ "note": "First maximise employment (original objective), then maximise stock for year 2."
+}

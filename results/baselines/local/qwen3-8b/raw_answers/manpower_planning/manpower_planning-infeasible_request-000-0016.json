@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 1000
+  }
+ ],
+ "rules": [
+  {
+   "name": "retrain_upper_bound",
+   "measure": "retrain",
+   "scope": {
+    "year": 3,
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": "<=",
+   "value": 1000
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The question asks whether it is possible to retrain at least 1000 workers to a higher skill level for year 3, from unskilled to semi_skilled. This is addressed by setting the max_per_year for this retraining move to 1000 and adding a rule to ensure the retrain measure does not exceed this value."
+}

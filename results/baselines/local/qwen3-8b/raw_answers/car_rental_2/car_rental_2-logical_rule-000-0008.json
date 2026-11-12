@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_transfers_glasgow_to_manchester",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Wednesday",
+    "from_depot": "Glasgow",
+    "to_depot": "Manchester"
+   },
+   "sense": ">=",
+   "value": 1
+  },
+  {
+   "name": "undamaged_transfers_manchester",
+   "measure": "undamaged_transfers",
+   "scope": {
+    "day": "Wednesday",
+    "to_depot": "Manchester"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "damaged_transfers",
+    "scope": {
+     "day": "Wednesday",
+     "from_depot": "Glasgow",
+     "to_depot": "Manchester"
+    }
+   },
+   "factor": 78
+  }
+ ],
+ "note": "A rule enforces that the sum of undamaged transfers to Manchester is at least 78 times the sum of damaged transfers from Glasgow to Manchester on Wednesday."
+}

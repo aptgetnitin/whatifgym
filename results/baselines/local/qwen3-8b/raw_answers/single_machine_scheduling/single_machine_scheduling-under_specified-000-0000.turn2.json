@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "jobs",
+   "column": "duration",
+   "where": {
+    "job": "job_6"
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The processing time for job_6 is scaled by 0.5."
+}

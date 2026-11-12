@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "finish_time",
+   "scope": {
+    "train": "F"
+   }
+  }
+ ],
+ "note": "First, keep the total delay at its minimum. Then, minimise the arrival time at destination for train F."
+}

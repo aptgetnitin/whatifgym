@@ -1,0 +1,44 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "item14_placement_share",
+   "measure": "x",
+   "scope": {
+    "item": "item14"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": [
+      "item0",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5",
+      "item6",
+      "item7",
+      "item8",
+      "item9",
+      "item10",
+      "item11",
+      "item12",
+      "item13",
+      "item14"
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The rule ensures that the number of placements for item14 is at least 60% of the total number of placements across all items."
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "years",
+      "where": {
+        "year": [
+          "Year1",
+          "Year3"
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "table": "years",
+      "rows": [
+        {
+          "year": "Year1",
+          "order": 1
+        },
+        {
+          "year": "Year3",
+          "order": 3
+        }
+      ]
+    }
+  ],
+  "note": "The housing-capacity limit is lifted for Year1 and Year3 by removing the constraint and adding the years back with the updated housing capacity."
+}

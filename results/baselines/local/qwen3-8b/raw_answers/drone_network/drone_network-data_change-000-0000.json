@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "max_bases",
+   "factor": 2.0
+  }
+ ],
+ "note": "The number of drones (bases opened) is scaled by a factor of 2.0."
+}

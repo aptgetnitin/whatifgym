@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "industries",
+   "column": "labor_per_unit_output",
+   "where": {
+    "industry": "coal"
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "The manpower per unit of output for coal is increased by 20%."
+}

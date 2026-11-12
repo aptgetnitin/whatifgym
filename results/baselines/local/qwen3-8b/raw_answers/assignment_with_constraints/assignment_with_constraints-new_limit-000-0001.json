@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "worker_10_min_tasks",
+   "measure": "assign",
+   "scope": {
+    "worker": "worker_10"
+   },
+   "sense": ">=",
+   "value": 2
+  }
+ ],
+ "note": "The rule ensures the total number of task assignments for worker_10 is at least 2."
+}

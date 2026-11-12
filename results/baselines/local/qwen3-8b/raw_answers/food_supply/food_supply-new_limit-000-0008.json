@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "food": "all",
+    "from_city": "all",
+    "to_city": "all"
+   },
+   "value": 156250
+  }
+ ],
+ "note": "An overall cap on the total food shipped is applied by setting the flow variable to a fixed value across all food, from_city, and to_city combinations."
+}

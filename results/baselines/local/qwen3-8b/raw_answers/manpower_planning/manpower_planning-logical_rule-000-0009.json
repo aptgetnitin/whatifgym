@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "overmanned_year_3_min",
+   "measure": "overmanned",
+   "scope": {
+    "year": 3
+   },
+   "sense": ">=",
+   "value": 300
+  }
+ ],
+ "note": "If the total workers employed above requirement for year 3 is above zero, it must be at least 300."
+}

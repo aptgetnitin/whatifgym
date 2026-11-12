@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "at_most_4_non_zero_placements",
+   "measure": "x",
+   "scope": {
+    "bin": [
+     "bin0",
+     "bin1",
+     "bin2",
+     "bin3",
+     "bin4"
+    ]
+   },
+   "sense": "<=",
+   "value": 4
+  }
+ ],
+ "note": "A rule limits the number of bins with non-zero item placements to at most 4."
+}

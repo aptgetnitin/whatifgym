@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "logic": [
+  {
+   "name": "at_least_72600_to_qamishli_and_idleb",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "flow",
+     "scope": {
+      "from_city": ["*"],
+      "to_city": ["Qamishli"]
+     },
+     "sense": ">=",
+     "value": 72600
+    },
+    {
+     "measure": "flow",
+     "scope": {
+      "from_city": ["*"],
+      "to_city": ["Idleb"]
+     },
+     "sense": ">=",
+     "value": 72600
+    }
+   ]
+  }
+ ]
+}

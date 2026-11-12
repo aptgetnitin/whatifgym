@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "queue_load",
+      "scope": {
+        "base": "21 MUNICIPAL CTR Fire Station"
+      }
+    }
+  ],
+  "note": "Prioritise maintaining the minimum response objective, then optimise queue load for the specified base."
+}

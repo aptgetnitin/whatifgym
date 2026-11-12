@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "stock",
+   "column": "stock",
+   "where": {
+    "year": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   "value": 600
+  }
+ ],
+ "note": "An overall cap on total stock across all industries and years."
+}

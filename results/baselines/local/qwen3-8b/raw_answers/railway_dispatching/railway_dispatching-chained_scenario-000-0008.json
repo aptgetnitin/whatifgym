@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "resources",
+   "column": "capacity",
+   "where": {
+    "resource": 3
+   },
+   "factor": 2
+  }
+ ],
+ "note": "Scaling the capacity of resource 3 by a factor of 2 to reflect the new train capacity."
+}

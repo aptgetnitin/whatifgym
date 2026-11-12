@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "max_aircraft_operated_flights",
+   "measure": "operate",
+   "scope": {
+    "aircraft": [
+     "A318#8",
+     "A319#5",
+     "A320#22",
+     "A319#11",
+     "A321#4"
+    ]
+   },
+   "sense": "<=",
+   "value": 4
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

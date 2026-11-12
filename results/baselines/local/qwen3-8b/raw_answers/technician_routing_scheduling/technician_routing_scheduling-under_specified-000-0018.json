@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "customers",
+   "column": "window_end",
+   "where": {
+    "customer": "Customer4"
+   },
+   "value": 60
+  }
+ ],
+ "note": "The time window end for Customer4 is set to 60."
+}

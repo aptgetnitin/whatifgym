@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "end",
+   "scope": {
+    "job": "*",
+    "step": 3
+   }
+  }
+ ],
+ "note": "First, the makespan is minimised. Then, among all schedules with the minimum makespan, the one that maximises the end time of routing step 3 is selected."
+}

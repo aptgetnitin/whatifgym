@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "land_groups",
+   "column": "grow_grain",
+   "where": {
+    "land_group": "Group1"
+   },
+   "value": 560
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_grain_grown",
+   "measure": "grow_grain",
+   "scope": {
+    "land_group": [
+     "Group1",
+     "Group2",
+     "Group3",
+     "Group4"
+    ]
+   },
+   "sense": ">=",
+   "value": 560
+  }
+ ],
+ "note": "The scenario sets the total grain grown to 560 tons and ensures the plan meets or exceeds this target."
+}

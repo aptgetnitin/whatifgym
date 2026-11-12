@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "jun_buy_at_least_75_percent",
+   "measure": "buy",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May"
+     ]
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "A rule that enforces the total oil bought in June to be at least 75% of the total oil bought in the other months."
+}

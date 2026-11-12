@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "finish_time_A_zero",
+   "measure": "finish_time",
+   "scope": {
+    "train": "A"
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "finish_time_A_at_least_99",
+   "measure": "finish_time",
+   "scope": {
+    "train": "A"
+   },
+   "sense": ">=",
+   "value": 99
+  }
+ ],
+ "note": "The total arrival time at destination for train A must be either zero or at least 99."
+}

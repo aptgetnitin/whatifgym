@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_stock_sat_max_90_of_wed",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Saturday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "undamaged_stock",
+    "scope": {
+     "day": "Wednesday"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "A rule limits the sum of undamaged_stock on Saturday to 90% of the sum on Wednesday."
+}

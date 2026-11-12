@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "rules": [
+  {
+   "name": "start_time_job_4",
+   "measure": "start_time",
+   "scope": {
+    "job": "job_4"
+   },
+   "sense": ">=",
+   "value": 373300
+  }
+ ],
+ "note": "The rule enforces the start time of job_4 to be at least 373300."
+}

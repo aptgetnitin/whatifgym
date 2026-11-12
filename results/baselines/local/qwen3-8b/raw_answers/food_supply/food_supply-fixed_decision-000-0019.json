@@ -1,0 +1,56 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_purchase",
+      "value": 20000
+    }
+  ],
+  "rules": [
+    {
+      "name": "equal_purchase_csb",
+      "measure": "purchase",
+      "scope": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "sense": "==",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "Corn-soya blend (CSB)"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "purchase",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "supplier": [
+          "Aleppo",
+          "Amman",
+          "As_Suweida",
+          "Beirut",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Gaziantep",
+          "Hama",
+          "Hassakeh",
+          "Homs"
+        ]
+      },
+      "value": 5350
+    }
+  ]
+}

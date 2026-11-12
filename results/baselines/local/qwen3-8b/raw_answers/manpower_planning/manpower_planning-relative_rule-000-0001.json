@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "overmanned_year2_at_least_60_percent",
+   "measure": "overmanned",
+   "scope": {
+    "year": 2
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "year": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "A rule that enforces the overmanned workers in year 2 to be at least 60% of the total overmanned workers across all years."
+}

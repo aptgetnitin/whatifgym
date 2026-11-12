@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "end_j2_step1_zero_or_at_least_15",
+   "measure": "end",
+   "scope": {
+    "job": "J2",
+    "step": 1
+   },
+   "sense": "<=",
+   "value": 0
+  },
+  {
+   "name": "end_j2_step1_at_least_15",
+   "measure": "end",
+   "scope": {
+    "job": "J2",
+    "step": 1
+   },
+   "sense": ">=",
+   "value": 15
+  }
+ ],
+ "note": "The total operation end time for job J2, routing step 1 must be either zero or at least 15."
+}

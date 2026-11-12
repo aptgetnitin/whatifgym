@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "max_service_start_time_in_lahr",
+   "measure": "start_time",
+   "scope": {
+    "location": "Lahr/Schwarzwald"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "start_time",
+    "scope": {
+     "location": [
+      "Heidelberg",
+      "Freiburg im Breisgau",
+      "Mannheim",
+      "Karlsruhe",
+      "Baden-Baden",
+      "Buehl",
+      "Offenburg",
+      "Lahr/Schwarzwald",
+      "Loerrach"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "A rule limits the proportion of total service start time allocated to Lahr/Schwarzwald."
+}

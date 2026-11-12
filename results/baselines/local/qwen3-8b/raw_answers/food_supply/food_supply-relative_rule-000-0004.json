@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "milk_shipment_limit",
+   "measure": "flow",
+   "scope": {
+    "food": "Milk"
+   },
+   "sense": "<=",
+   "value": 0.15
+  }
+ ],
+ "note": "A relative limit on the total flow of Milk compared to all food flows."
+}

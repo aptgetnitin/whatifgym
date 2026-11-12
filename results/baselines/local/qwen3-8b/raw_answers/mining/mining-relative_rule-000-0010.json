@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "year2_blend_limit",
+   "measure": "blend",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "blend",
+    "scope": {
+     "year": [
+      "Year1",
+      "Year3",
+      "Year4",
+      "Year5"
+     ]
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "A relative limit on the total blended ore sold in Year2 compared to the rest of the horizon."
+}

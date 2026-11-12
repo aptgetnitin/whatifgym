@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "consume_may_equal",
+   "measure": "consume",
+   "scope": {
+    "month": "May"
+   },
+   "sense": "==",
+   "value": 68
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Ensure equal consumption of each oil in May and optimise the rest."
+}

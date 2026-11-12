@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "500 PINE TOPS CT"
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "A relative demand change over a single location is a scale over the matching row."
+}

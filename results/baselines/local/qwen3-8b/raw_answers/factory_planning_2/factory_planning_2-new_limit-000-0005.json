@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "feb_make_cap",
+   "measure": "make",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 1950
+  }
+ ],
+ "note": "A hard cap on the total units made in February."
+}

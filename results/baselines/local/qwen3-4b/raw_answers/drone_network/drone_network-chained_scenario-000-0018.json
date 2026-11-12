@@ -3,10 +3,10 @@
   "base_model": "drone_network",
   "data_changes": [
     {
-      "op": "scale_param",
+      "op": "shift_param",
       "name": "observation_days",
-      "factor": 15
+      "delta": 15
     }
   ],
-  "note": "The observation window (days) becomes 15, so scale the parameter by 15."
+  "note": "The observation window (days) becomes 15, so we shift the parameter by 15 days."
 }

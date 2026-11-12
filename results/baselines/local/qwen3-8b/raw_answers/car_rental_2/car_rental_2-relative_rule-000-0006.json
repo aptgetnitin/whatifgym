@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_transfers_limit",
+   "measure": "damaged_transfers",
+   "scope": {
+    "day": "Wednesday",
+    "from_depot": "Plymouth"
+   },
+   "sense": "<=",
+   "value": 75
+  }
+ ],
+ "note": "The rule limits the total damaged cars transferred from Plymouth on Wednesday to 75% of the total damaged cars kept at the depot overnight."
+}

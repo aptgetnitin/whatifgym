@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_cars_birmingham_tuesday",
+      "measure": "damaged_stock",
+      "scope": {
+        "day": "Tuesday",
+        "depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 25
+    }
+  ],
+  "logic": [
+    {
+      "name": "damaged_transfers_monday_plymouth_to_birmingham",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "damaged_transfers",
+          "sense": ">",
+          "value": 0,
+          "scope": {
+            "day": "Monday",
+            "from_depot": "Plymouth",
+            "to_depot": "Birmingham"
+          }
+        }
+      ]
+    }
+  ]
+}

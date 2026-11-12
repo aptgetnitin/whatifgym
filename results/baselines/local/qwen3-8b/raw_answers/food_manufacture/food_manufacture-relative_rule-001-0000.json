@@ -1,0 +1,43 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg2_buy_at_least_80_of_oil2_buy",
+   "measure": "buy",
+   "scope": {
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "oil": "OIL2"
+    }
+   },
+   "factor": 0.8
+  },
+  {
+   "name": "april_produce_at_least_50_of_total_produce",
+   "measure": "produce",
+   "scope": {
+    "month": "Apr"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "produce",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Two relative limits: VEG2 buy is at least 80% of OIL2 buy; April produce is at least 50% of total produce."
+}

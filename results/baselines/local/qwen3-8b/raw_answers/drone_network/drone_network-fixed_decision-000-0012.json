@@ -1,0 +1,52 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "bases",
+   "column": "open",
+   "where": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "assign",
+   "column": "assign",
+   "where": {
+    "location": "700 LONDON BRIDGE RD",
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "value": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "assign_700_LONDON_BRIDGE_RD",
+   "measure": "assign",
+   "scope": {
+    "location": "700 LONDON BRIDGE RD"
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "open",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Set the open status of 5145 RURITAN COURT Rescue Squad to 0 and fix the assignment of 700 LONDON BRIDGE RD to 21 MUNICIPAL CTR Fire Station."
+}

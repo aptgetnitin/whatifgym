@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "discharge_efficiency",
+   "value": 0.90
+  }
+ ],
+ "note": "The discharging efficiency is changed to 0.90 to reflect the battery's aging."
+}

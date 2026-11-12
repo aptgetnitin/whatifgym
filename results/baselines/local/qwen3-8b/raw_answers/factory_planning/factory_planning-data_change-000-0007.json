@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "profit_per_unit",
+   "value": 4
+  },
+  {
+   "op": "add",
+   "table": "products",
+   "rows": [
+    {
+     "product": "Prod2"
+    }
+   ]
+  }
+ ],
+ "note": "The price change for Prod2 is implemented by setting the profit_per_unit parameter to 4 and adding a row for Prod2 in the products table."
+}

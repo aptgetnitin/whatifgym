@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_stock_monday_plymouth_rule",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Thursday",
+    "depot": "Plymouth"
+   },
+   "sense": ">",
+   "value": 0,
+   "relative_to": {
+    "measure": "undamaged_stock",
+    "scope": {
+     "day": "Monday",
+     "depot": "Plymouth"
+    }
+   },
+   "factor": 1260
+  }
+ ],
+ "note": "If the undamaged cars rented out for Thursday, Plymouth is above zero, the total undamaged cars at the depot in the morning for Monday must be at least 1260."
+}

@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "manpower_planning","data_changes": [{"op": "set","table": "params","column": "downgrade_attrition","value": 0.3}],"note": "Capping the attrition rate for workers downgraded to a lower skill level."}

@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "no_rentals_on_friday_and_wednesday",
+   "measure": "rentals",
+   "scope": {
+    "day": [
+     "Friday",
+     "Wednesday"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A rule that enforces no rentals on both Friday and Wednesday."
+}

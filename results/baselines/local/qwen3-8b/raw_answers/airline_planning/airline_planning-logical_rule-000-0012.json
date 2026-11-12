@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "no_flight_3082_and_4275_together",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": [
+     "3082",
+     "4275"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

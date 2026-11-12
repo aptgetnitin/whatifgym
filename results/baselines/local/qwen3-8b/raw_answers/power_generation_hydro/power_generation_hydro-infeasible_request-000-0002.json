@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "output",
+   "scope": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "rules": [
+  {
+   "name": "thermal_output_target",
+   "measure": "output",
+   "scope": {
+    "type": [
+     "Thermal0",
+     "Thermal1",
+     "Thermal2"
+    ]
+   },
+   "sense": ">=",
+   "value": 681600
+  }
+ ]
+}

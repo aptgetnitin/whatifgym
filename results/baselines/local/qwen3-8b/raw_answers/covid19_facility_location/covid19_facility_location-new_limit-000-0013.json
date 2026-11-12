@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "t15_capacity_limit",
+   "measure": "assign",
+   "scope": {
+    "facility": "T15"
+   },
+   "sense": "<=",
+   "value": 90
+  }
+ ],
+ "note": "A rule limits the total patients assigned to facility T15 to 90."
+}

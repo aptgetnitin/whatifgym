@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "resources",
+   "column": "duration",
+   "where": {
+    "resource": 5
+   },
+   "factor": 1.3
+  }
+ ],
+ "note": "The minimum time on resource 5 is increased by 30%."
+}

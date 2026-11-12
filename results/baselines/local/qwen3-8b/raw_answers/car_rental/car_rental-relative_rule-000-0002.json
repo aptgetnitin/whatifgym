@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_left_thursday_share",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Thursday"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "damaged_left",
+    "scope": {
+     "day": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Friday",
+      "Saturday"
+     ]
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "A rule that enforces the damaged_left on Thursday to be at least 75% of the sum of damaged_left across other days."
+}

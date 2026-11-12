@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "factory_planning","data_changes": [{"op": "set_param","name": "max_inventory","value": 550}],"note": "The upper limit on units in stock is set to 550 units across all products and months."}

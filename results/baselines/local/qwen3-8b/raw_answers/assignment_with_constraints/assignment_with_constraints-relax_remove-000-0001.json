@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "relax": [
+  {
+   "constraint": "size",
+   "scope": {
+    "worker": "*"
+   }
+  },
+  {
+   "constraint": "team_pattern",
+   "scope": {
+    "worker": "*"
+   }
+  }
+ ],
+ "note": "Relaxing the per-worker size limit and the team pattern constraint removes the restrictions on worker size capacity and allowed teams."
+}

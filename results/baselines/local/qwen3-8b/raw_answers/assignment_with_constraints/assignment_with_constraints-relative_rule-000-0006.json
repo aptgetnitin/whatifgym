@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "workers_11_at_least_125_workers_10",
+   "measure": "works",
+   "scope": {
+    "worker": "worker_11"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "works",
+    "scope": {
+     "worker": "worker_10"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The rule ensures the number of workers working for worker_11 is at least 1.25 times the number of workers working for worker_10."
+}

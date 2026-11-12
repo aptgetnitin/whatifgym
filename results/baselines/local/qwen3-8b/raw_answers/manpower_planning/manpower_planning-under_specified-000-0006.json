@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_short_time",
+   "value": 50
+  }
+ ],
+ "note": "Setting the maximum number of workers on short-time working to 50 per skill level per year."
+}

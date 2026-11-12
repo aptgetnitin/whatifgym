@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "lateness_penalty",
+   "value": 2
+  }
+ ],
+ "note": "The penalty per minute late is set to 2."
+}

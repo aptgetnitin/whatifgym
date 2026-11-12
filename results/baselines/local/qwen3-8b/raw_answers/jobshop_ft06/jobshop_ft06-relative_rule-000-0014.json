@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "logic": [
+  {
+   "name": "at_most_5_percent_of_job_pairs",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "machine",
+      "job": "J3",
+      "other_job": "other_job"
+     },
+     "sense": "<=",
+     "value": 0.05
+    },
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "machine",
+      "job": "other_job",
+      "other_job": "other_job"
+     },
+     "sense": ">=",
+     "value": 0
+    }
+   ]
+  }
+ ]
+}

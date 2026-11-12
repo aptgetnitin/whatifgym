@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "start",
+   "scope": {
+    "job": "*",
+    "step": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "*",
+    "job": "*",
+    "other_job": "*"
+   }
+  }
+ ],
+ "note": "Optimise in stages: first keep makespan at minimum, then minimise total operation start time, and finally minimise the number of job pairs where a job goes first on a machine."
+}

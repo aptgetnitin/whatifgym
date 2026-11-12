@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod4_make_jun_zero_or_at_least_1050",
+   "measure": "make",
+   "scope": {
+    "month": "Jun",
+    "product": "Prod4"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": "Jun",
+     "product": "Prod4"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "prod4_make_jun_zero_or_at_least_1050",
+   "measure": "make",
+   "scope": {
+    "month": "Jun",
+    "product": "Prod4"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A logical rule that enforces the total units made for month Jun, product Prod4 must be either zero or at least 1050."
+}

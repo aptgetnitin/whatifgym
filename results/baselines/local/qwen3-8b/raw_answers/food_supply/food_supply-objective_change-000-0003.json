@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "purchase",
+   "scope": {
+    "food": "*",
+    "supplier": "*"
+   }
+  }
+ ],
+ "note": "Prioritise minimising food bought first, then total cost."
+}

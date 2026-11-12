@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "unfilled",
+   "scope": {
+    "customer": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "start_time",
+   "scope": {
+    "location": "*"
+   }
+  }
+ ],
+ "note": "The objective prioritizes minimizing the total penalty first, then maximizing the total number of unfilled jobs, and finally minimizing the total service start time."
+}

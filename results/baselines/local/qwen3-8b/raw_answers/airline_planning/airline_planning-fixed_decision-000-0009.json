@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "fixed_decisions": [
+  {
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A321#2",
+    "flight": 4268
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the operate decision for aircraft A321#2 and flight 4268 to 0."
+}

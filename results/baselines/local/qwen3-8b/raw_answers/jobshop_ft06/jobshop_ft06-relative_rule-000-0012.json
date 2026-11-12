@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "step1_end_at_least_half_step6_end",
+   "measure": "end",
+   "scope": {
+    "job": "job",
+    "step": 1
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "end",
+    "scope": {
+     "job": "job",
+     "step": 6
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The end time of step 1 must be at least 50% of the end time of step 6 for each job."
+}

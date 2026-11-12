@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "april_food_limit",
+   "measure": "produce",
+   "scope": {
+    "month": "Apr"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "produce",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.15
+  }
+ ],
+ "note": "A relative limit on the sum of food produced in April compared to the total sum over the horizon."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "sum_start_step5_at_least_340",
+   "measure": "start",
+   "scope": {
+    "step": 5
+   },
+   "sense": ">=",
+   "value": 340
+  }
+ ],
+ "note": "A rule bounds the SUM of the start times of all operations with routing step 5 to be at least 340."
+}

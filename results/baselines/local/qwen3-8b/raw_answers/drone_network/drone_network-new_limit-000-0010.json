@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "min_locations_800_virginia_beach_bvd",
+   "measure": "assign",
+   "scope": {
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": ">=",
+   "value": 20
+  }
+ ],
+ "note": "Ensures the base 800 VIRGINIA BEACH BLVD Fire Station is assigned at least 20 incident locations."
+}

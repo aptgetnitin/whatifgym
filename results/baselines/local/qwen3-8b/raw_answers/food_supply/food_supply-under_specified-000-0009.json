@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "camps",
+   "column": "beneficiaries",
+   "where": {
+    "camp": "Hassakeh"
+   },
+   "factor": "scale"
+  }
+ ],
+ "note": "The question is about a change in the number of beneficiaries for the Hassakeh camp, which is represented by scaling the 'beneficiaries' column in the 'camps' table."
+}

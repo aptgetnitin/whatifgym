@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "repair_plymouth_friday",
+   "measure": "repairs",
+   "scope": {
+    "day": "Friday",
+    "depot": "Plymouth"
+   },
+   "sense": ">=",
+   "value": 7.5,
+   "relative_to": {
+    "measure": "damaged_transfers",
+    "scope": {
+     "day": "Friday",
+     "from_depot": "Glasgow"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A logical rule that enforces a minimum repair requirement at Plymouth on Friday if there are damaged transfers from Glasgow on that day."
+}

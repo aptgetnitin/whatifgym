@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "downtime",
+   "column": "machines_down",
+   "where": {
+    "machine": "horiDrill",
+    "month": "Feb"
+   },
+   "factor": 0
+  },
+  {
+   "op": "set",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod6"
+   },
+   "value": 7
+  }
+ ],
+ "note": "The horizontal drill maintenance for February is cancelled by scaling the machines_down to 0, and the profit contribution of Prod6 is updated to 7."
+}

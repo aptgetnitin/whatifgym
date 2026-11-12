@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "no_veg1_and_oil2_purchase",
+   "measure": "buy",
+   "scope": {
+    "oil": [
+     "VEG1",
+     "OIL2"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A new rule that restricts the purchase of VEG1 and OIL2 to be zero simultaneously."
+}

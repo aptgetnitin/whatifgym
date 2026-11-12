@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "d_capacity",
+   "measure": "meet",
+   "scope": {
+    "resource": "resource",
+    "train": "D"
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "The total number of train pairs sharing a resource at the same time for train D is limited to 1."
+}

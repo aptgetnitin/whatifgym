@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine4_extraction_min",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine4"
+   },
+   "sense": ">=",
+   "value": 9562500
+  }
+ ],
+ "note": "A rule enforces a minimum total extraction for Mine4 across all years."
+}

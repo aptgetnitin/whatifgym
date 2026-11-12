@@ -1,0 +1,43 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "resource": 3
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "capacity_3_fixed",
+   "measure": "meet",
+   "scope": {
+    "resource": 3
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "goes_first",
+   "scope": {
+    "resource": 3,
+    "train": "E",
+    "other_train": "F"
+   },
+   "value": 1
+  },
+  {
+   "measure": "goes_first",
+   "scope": {
+    "resource": 3,
+    "train": "F",
+    "other_train": "E"
+   },
+   "value": 0
+  }
+ ]
+}

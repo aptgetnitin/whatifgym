@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "at_least_560_for_E1",
+   "measure": "assign",
+   "scope": {
+    "facility": "E1"
+   },
+   "sense": ">=",
+   "value": 560
+  },
+  {
+   "name": "at_least_500_for_E9",
+   "measure": "assign",
+   "scope": {
+    "facility": "E9"
+   },
+   "sense": ">=",
+   "value": 500
+  }
+ ],
+ "note": "The planner wants to ensure that at least 560 patients are assigned to facility E1 and at least 500 patients are assigned to facility E9."
+}

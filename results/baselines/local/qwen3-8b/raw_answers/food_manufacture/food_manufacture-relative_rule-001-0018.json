@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "oil2_refining_limit",
+   "measure": "consume",
+   "scope": {
+    "oil": "OIL2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "oil": [
+      "VEG1",
+      "VEG2",
+      "OIL1",
+      "OIL2",
+      "OIL3"
+     ]
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "A relative rule limits the sum of consume for OIL2 to 10% of the total consume across all oils."
+}

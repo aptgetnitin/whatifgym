@@ -1,18 +1,1 @@
-{
-  "version": "0.1",
-  "base_model": "drone_network",
-  "objective": [
-    {
-      "sense": "min",
-      "measure": "original",
-      "scope": {}
-    },
-    {
-      "sense": "max",
-      "measure": "linked_load",
-      "scope": {
-        "location": "2400 LAUREL COVE DR"
-      }
-    }
-  ]
-}
+REQUEST_ERROR: Ollama /api/chat returned HTTP 500: {"error":"prediction aborted, token repeat limit reached"}

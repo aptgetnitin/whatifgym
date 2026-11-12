@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "total_start_time_j5_above_zero",
+   "measure": "start",
+   "scope": {
+    "job": "J5"
+   },
+   "sense": ">=",
+   "value": 470,
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": "J5"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "If the total start time for job J5 is above zero, it must be at least 470."
+}

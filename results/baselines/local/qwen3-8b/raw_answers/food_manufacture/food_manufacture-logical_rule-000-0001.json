@@ -1,0 +1,46 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "oil1_storage_min",
+   "measure": "store",
+   "scope": {
+    "oil": "OIL1"
+   },
+   "sense": ">=",
+   "value": 4500,
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "oil": "OIL1"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "logic": [
+  {
+   "name": "oil1_storage_positive",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "store",
+     "scope": {
+      "oil": "OIL1"
+     },
+     "sense": ">",
+     "value": 0
+    },
+    {
+     "measure": "store",
+     "scope": {
+      "oil": "OIL1"
+     },
+     "sense": "<=",
+     "value": 4500
+    }
+   ]
+  }
+ ]
+}

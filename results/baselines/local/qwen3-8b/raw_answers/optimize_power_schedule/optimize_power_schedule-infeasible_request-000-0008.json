@@ -1,0 +1,93 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "health_costs",
+   "column": "health_cost",
+   "where": {
+    "plant": "Bowen",
+    "hour": [
+     17,
+     18,
+     19,
+     20,
+     21,
+     22
+    ]
+   },
+   "value": 2
+  },
+  {
+   "op": "scale",
+   "table": "health_costs",
+   "column": "health_cost",
+   "where": {
+    "plant": "Bowen",
+    "hour": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16
+    ]
+   },
+   "factor": 0.5
+  }
+ ],
+ "rules": [
+  {
+   "name": "demand_increase",
+   "measure": "demand_mwh",
+   "scope": {
+    "hour": [
+     17,
+     18,
+     19,
+     20,
+     21,
+     22
+    ]
+   },
+   "sense": ">=",
+   "value": 13500
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "on",
+   "scope": {
+    "plant": "Vogtle",
+    "hour": 1
+   },
+   "value": 1
+  }
+ ],
+ "relax": [
+  {
+   "constraint": "must_run",
+   "scope": {
+    "plant": "Vogtle"
+   }
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The scenario increases evening demand, reduces Bowen's health costs, and fixes Vogtle to be on in hour 1 while relaxing its must-run constraint."
+}

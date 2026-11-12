@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "may_make_cap",
+   "measure": "make",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "value": 6900
+  }
+ ],
+ "note": "A rule to enforce a minimum total production for May."
+}

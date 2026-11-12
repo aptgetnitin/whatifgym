@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "c_arrival_time_min",
+   "measure": "finish_time",
+   "scope": {
+    "train": "C"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "finish_time",
+    "scope": {
+     "train": "C"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "finish_time",
+   "scope": {
+    "train": "C"
+   },
+   "value": 34
+  }
+ ],
+ "note": "If the total arrival time at destination for train C is above zero, it must be at least 34."
+}

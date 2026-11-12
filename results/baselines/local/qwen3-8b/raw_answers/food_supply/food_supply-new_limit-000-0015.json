@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "from_city": "Aleppo"
+   },
+   "value": 19350
+  }
+ ],
+ "note": "The total food shipped from Aleppo is capped at 19350 units per day."
+}

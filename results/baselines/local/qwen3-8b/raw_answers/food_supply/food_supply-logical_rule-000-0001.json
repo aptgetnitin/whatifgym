@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "corn_soy_blend_shipment",
+      "measure": "flow",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "from_city": "Dayr_Az_Zor",
+        "to_city": "Ar Raqqa"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "Corn-soya blend (CSB)",
+          "supplier": "Aleppo"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "A conditional rule that enforces a minimum shipment of Corn-soya blend (CSB) from Dayr_Az_Zor to Ar Raqqa if Aleppo purchases any of this food."
+}

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "downtime",
+   "where": {
+    "month": "Feb",
+    "machine": "horiDrill"
+   }
+  }
+ ],
+ "note": "Removing the downtime for horizontal drills in February allows the model to consider the potential increase in production capacity."
+}

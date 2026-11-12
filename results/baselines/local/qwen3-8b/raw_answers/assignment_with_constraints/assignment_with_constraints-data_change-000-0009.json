@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "allowed_teams",
+   "column": "works",
+   "where": {
+    "team": "team_0_1",
+    "worker": "worker_1"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Set the 'works' column to 1 for worker_1 in the team_0_1 row of the allowed_teams table."
+}

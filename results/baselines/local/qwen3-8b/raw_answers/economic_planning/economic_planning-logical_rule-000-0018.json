@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "non_zero_output_limit",
+   "measure": "production",
+   "scope": {
+    "year": [
+     2,
+     6,
+     5,
+     4,
+     3
+    ]
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "Limits the total number of years (from 2, 6, 5, 4, 3) with non-zero output production to at most 3."
+}

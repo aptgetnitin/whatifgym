@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "store_oil3_min",
+   "measure": "store",
+   "scope": {
+    "oil": "OIL3"
+   },
+   "sense": ">=",
+   "value": 3600
+  },
+  {
+   "name": "produce_cap_total",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 2450
+  }
+ ],
+ "note": "Rules enforce a minimum storage requirement for OIL3 and a total cap on food production."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "years",
+      "where": {
+        "year": [
+          "Year1",
+          "Year5"
+        ]
+      }
+    }
+  ],
+  "note": "Removing the blend-quality target constraint for Year1 and Year5."
+}

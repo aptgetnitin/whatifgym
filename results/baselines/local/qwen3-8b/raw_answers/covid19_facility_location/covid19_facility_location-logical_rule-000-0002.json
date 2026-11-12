@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "max_two_facilities",
+   "measure": "assign",
+   "scope": {
+    "facility": [
+     "E7",
+     "E8",
+     "E9",
+     "E11"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "Only two of the listed facilities can have non-zero patients assigned."
+}

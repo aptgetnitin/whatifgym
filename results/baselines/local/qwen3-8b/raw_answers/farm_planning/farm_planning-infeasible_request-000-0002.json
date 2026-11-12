@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "total_cattle",
+   "measure": "herd",
+   "scope": {
+    "year": "Year5",
+    "age": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   "sense": ">=",
+   "value": 1170
+  }
+ ],
+ "note": "The total cattle head count in the last year must be at least 1170."
+}

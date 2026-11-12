@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "damaged_transfers",
+   "column": "sum",
+   "where": {
+    "day": [
+     "Monday",
+     "Tuesday",
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday"
+    ],
+    "from_depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ],
+    "to_depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ]
+   },
+   "value": 55
+  }
+ ],
+ "note": "An overall cap on the sum of damaged transfers across all days and depots."
+}

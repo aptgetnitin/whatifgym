@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod2_min_batch_jan",
+   "measure": "sell",
+   "scope": {
+    "month": "Jan",
+    "product": "Prod2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": "Jan",
+     "product": "Prod2"
+    }
+   },
+   "factor": 1500
+  }
+ ],
+ "note": "If the total units sold for month Jan, product Prod2 is above zero, it must be at least 1500."
+}

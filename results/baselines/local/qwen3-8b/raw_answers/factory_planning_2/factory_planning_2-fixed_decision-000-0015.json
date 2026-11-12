@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod4_sell_per_month",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod4"
+   },
+   "sense": "==",
+   "value": 100
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix the monthly sales of Prod4 to exactly 100 units and optimise the rest of the plan."
+}

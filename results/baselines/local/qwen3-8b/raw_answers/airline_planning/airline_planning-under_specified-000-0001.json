@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flights",
+   "column": "passengers",
+   "where": {
+    "flight": 4264
+   },
+   "value": 0
+  }
+ ],
+ "note": "The booked passengers for flight 4264 is set to 0."
+}

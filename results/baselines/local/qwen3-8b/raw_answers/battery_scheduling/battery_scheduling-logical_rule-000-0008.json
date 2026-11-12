@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "no_non_zero_soc_15-16_and_18-19",
+   "measure": "soc",
+   "scope": {
+    "hour": [
+     "15-16",
+     "18-19"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A rule fixes the stored energy (soc) to zero for the specified hours."
+}

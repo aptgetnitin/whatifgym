@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "quality_target",
+   "where": {
+    "year": "Year3"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "years",
+   "column": "quality_target",
+   "where": {
+    "year": "Year3"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting the quality target for Year3 to zero effectively fixes the blend sold to zero, as the quality constraint requires the blend to match the target grade."
+}

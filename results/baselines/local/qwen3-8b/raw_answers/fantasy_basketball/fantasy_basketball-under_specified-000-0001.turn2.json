@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "players",
+   "column": "predicted_points",
+   "where": {
+    "player": "Andre Roberson"
+   },
+   "value": 28
+  }
+ ],
+ "note": "The predicted fantasy points for Andre Roberson is updated to 28."
+}

@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "pump_mwh_per_m",
+   "where": {
+    "param": "pump_mwh_per_m"
+   },
+   "factor": 1.1666666666666667
+  }
+ ],
+ "rules": [
+  {
+   "name": "pump_cap",
+   "measure": "pump",
+   "scope": {
+    "period": [
+     "00-06",
+     "06-09",
+     "09-15",
+     "15-18",
+     "18-24"
+    ]
+   },
+   "sense": "<=",
+   "value": 1600
+  }
+ ],
+ "note": "A cap on total pumping power across all periods."
+}

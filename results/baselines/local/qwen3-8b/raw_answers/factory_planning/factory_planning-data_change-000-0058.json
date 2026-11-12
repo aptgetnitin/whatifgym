@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod5",
+    "month": "Apr"
+   },
+   "value": 0
+  },
+  {
+   "op": "scale",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": "grinder",
+    "product": "Prod1"
+   },
+   "factor": 0.625
+  }
+ ],
+ "note": "A zero demand for Prod5 in April is set in the max_sales table, and a process change for Prod1 is modeled as a scale on the hours_per_unit in the process_hours table."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_cap_for_train_B",
+   "measure": "entry_time",
+   "scope": {
+    "train": "B"
+   },
+   "sense": "<=",
+   "value": 80
+  }
+ ],
+ "note": "A cap on the entry time (minutes) summed over everything with train = B, must stay at or below 80."
+}

@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "end_time",
+   "scope": {
+    "job": "job_0"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "end_time_job_0_at_least_62700",
+   "measure": "end_time",
+   "scope": {
+    "job": "job_0"
+   },
+   "sense": ">=",
+   "value": 62700
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "start_time_lahr_schwarzwald_min",
+   "measure": "start_time",
+   "scope": {
+    "location": "Lahr/Schwarzwald"
+   },
+   "sense": ">=",
+   "value": 450
+  }
+ ],
+ "note": "The total service start time for location Lahr/Schwarzwald must be at least 450 minutes."
+}

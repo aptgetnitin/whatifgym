@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "end_j0_step6_condition",
+   "measure": "end",
+   "scope": {
+    "job": "J4",
+    "step": 4
+   },
+   "sense": ">",
+   "value": 0,
+   "relative_to": {
+    "measure": "end",
+    "scope": {
+     "job": "J0",
+     "step": 6
+    }
+   },
+   "factor": 82
+  }
+ ],
+ "note": "If the start time of J4's step 4 is above zero, the end time of J0's step 6 must be at least 82."
+}

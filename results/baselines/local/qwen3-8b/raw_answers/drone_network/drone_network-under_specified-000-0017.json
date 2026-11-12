@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "drone_network","rules":[{"name": "queue_load_floor","measure": "linked_load","scope":{"location": ["1700 PLEASURE HOUSE RD"],"base": ["21 MUNICIPAL CTR Fire Station"]},"sense": ">=","value": 0.0001}],"note": "A floor on the queue load linked to an assigned location (hours)."}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "max_plant_hours",
+   "measure": "on",
+   "scope": {
+    "plant": [
+     "HYDRO",
+     "OTHER COAL",
+     "OIL",
+     "Vogtle",
+     "BIOMASS"
+    ]
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "Limits the total number of plant-hours on for the specified plants to at most 3."
+}

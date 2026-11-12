@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "rentals_to_birmingham_cap",
+   "measure": "rentals",
+   "scope": {
+    "depot": "Birmingham"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+     ]
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "A relative rule caps the sum of rentals to Birmingham as 25% of the total rentals across all depots."
+}

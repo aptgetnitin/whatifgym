@@ -1,0 +1,54 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "resources",
+   "column": "capacity",
+   "where": {
+    "resource": 3
+   },
+   "value": 1
+  },
+  {
+   "op": "set",
+   "table": "resources",
+   "column": "capacity",
+   "where": {
+    "resource": 6
+   },
+   "value": 2
+  }
+ ],
+ "rules": [
+  {
+   "name": "goes_first_resource_3_train_F_other_train_E",
+   "measure": "goes_first",
+   "scope": {
+    "resource": 3,
+    "train": "F",
+    "other_train": "E"
+   },
+   "sense": "==",
+   "value": 1
+  },
+  {
+   "name": "meet_resource_6_train_D_other_train_F",
+   "measure": "meet",
+   "scope": {
+    "resource": 6,
+    "train": "D",
+    "other_train": "F"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

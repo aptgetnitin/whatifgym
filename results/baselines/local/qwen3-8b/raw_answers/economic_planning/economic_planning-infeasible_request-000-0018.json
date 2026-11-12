@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "production",
+   "scope": {
+    "year": [1, 2, 3, 4, 5],
+    "industry": ["coal", "steel", "transport"]
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_output",
+   "measure": "production",
+   "scope": {
+    "year": [1, 2, 3, 4, 5],
+    "industry": ["coal", "steel", "transport"]
+   },
+   "sense": ">=",
+   "value": 40900
+  }
+ ],
+ "note": "The objective is to maximise total output over years 1–5, with a rule ensuring it meets the target of at least 40900 million USD."
+}

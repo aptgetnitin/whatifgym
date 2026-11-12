@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_B_resource_2_min",
+   "measure": "entry_time",
+   "scope": {
+    "train": "B",
+    "resource": 2
+   },
+   "sense": ">=",
+   "value": 18,
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "train": "B",
+     "resource": 2
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "If the total entry time for train B, resource 2 is above zero, it must be at least 18."
+}

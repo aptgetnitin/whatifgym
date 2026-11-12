@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "fixed_decisions": [
+  {
+   "measure": "stop",
+   "scope": {
+    "plant": "GAS",
+    "hour": 14
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fix the number of plant shut-downs for GAS in hour 14 to 1."
+}

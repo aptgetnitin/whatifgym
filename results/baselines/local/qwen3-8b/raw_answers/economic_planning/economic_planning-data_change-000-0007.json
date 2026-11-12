@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "input_output",
+      "column": "input_per_unit_output",
+      "where": {
+        "supplier": "steel",
+        "user": "transport"
+      },
+      "value": 0.3
+    }
+  ]
+}

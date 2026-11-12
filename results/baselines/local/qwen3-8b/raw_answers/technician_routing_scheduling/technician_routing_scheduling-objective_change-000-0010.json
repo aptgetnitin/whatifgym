@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "use",
+   "scope": {
+    "technician": "*"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "start_time",
+   "scope": {
+    "location": "*"
+   }
+  }
+ ],
+ "note": "Optimise first by total penalty, then by the least number of technicians dispatched, and finally by the most total service start time."
+}

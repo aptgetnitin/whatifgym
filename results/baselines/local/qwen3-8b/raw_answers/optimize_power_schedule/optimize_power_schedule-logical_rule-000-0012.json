@@ -1,0 +1,44 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "logic": [
+  {
+   "name": "at_most_one_non_zero",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "output",
+     "scope": {
+      "plant": "HYDRO"
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "output",
+     "scope": {
+      "plant": "Edwin I Hatch"
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "output",
+     "scope": {
+      "plant": "Scherer"
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "output",
+     "scope": {
+      "plant": "BIOMASS"
+     },
+     "sense": ">=",
+     "value": 1
+    }
+   ]
+  }
+ ]
+}

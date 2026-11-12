@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "end_j5_zero",
+   "measure": "end",
+   "scope": {
+    "job": "J5"
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "end_j5_at_least_460",
+   "measure": "end",
+   "scope": {
+    "job": "J5"
+   },
+   "sense": ">=",
+   "value": 460
+  }
+ ],
+ "note": "The total end time for job J5 must be either zero or at least 460."
+}

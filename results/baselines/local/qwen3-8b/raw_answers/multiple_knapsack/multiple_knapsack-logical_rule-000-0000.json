@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "at_most_two_non_zero_bins",
+   "measure": "x",
+   "scope": {
+    "bin": [
+     "bin0",
+     "bin1",
+     "bin2",
+     "bin3",
+     "bin4"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "At most two bins can have non-zero item placements."
+}

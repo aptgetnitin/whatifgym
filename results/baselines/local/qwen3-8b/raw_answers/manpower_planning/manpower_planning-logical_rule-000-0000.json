@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "short_time_unskilled_year_2",
+   "measure": "short_time",
+   "scope": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "value": 0
+  },
+  {
+   "name": "overmanned_year_3_at_least_220",
+   "measure": "overmanned",
+   "scope": {
+    "year": 3
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "year": 3
+    }
+   },
+   "factor": 220
+  }
+ ],
+ "note": "A rule enforces a minimum number of workers on short-time working for unskilled workers in year 2 and a minimum total overmanned workers for year 3."
+}

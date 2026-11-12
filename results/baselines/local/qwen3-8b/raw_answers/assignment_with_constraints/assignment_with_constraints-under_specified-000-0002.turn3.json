@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "ask": "Which task's min_workers value are you referring to?"
+}

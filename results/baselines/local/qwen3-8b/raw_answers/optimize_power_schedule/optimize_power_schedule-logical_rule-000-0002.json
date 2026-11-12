@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "gas_hour19_output",
+   "measure": "output",
+   "scope": {
+    "plant": "GAS",
+    "hour": 19
+   },
+   "sense": ">=",
+   "value": 2650
+  },
+  {
+   "name": "gas_hour19_output_zero",
+   "measure": "output",
+   "scope": {
+    "plant": "GAS",
+    "hour": 19
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The total power generated for plant GAS in hour 19 must be either zero or at least 2650."
+}

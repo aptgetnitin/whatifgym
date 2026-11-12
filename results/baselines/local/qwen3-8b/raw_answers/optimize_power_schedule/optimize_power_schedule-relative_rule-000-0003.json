@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "scherer_hours_at_most_90_of_edwin_i_hatch",
+   "measure": "on",
+   "scope": {
+    "plant": "Scherer"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "on",
+    "scope": {
+     "plant": "Edwin I Hatch"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "A rule bounds the sum of the 'on' decision measure for Scherer relative to the sum for Edwin I Hatch."
+}

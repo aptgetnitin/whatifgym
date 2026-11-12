@@ -81,5 +81,5 @@
       "factor": 1.1
     }
   ],
-  "note": "The incidents table has a row for each location, and the question specifies a 10% increase for every row of the incidents table."
+  "note": "The incidents table has a column 'incidents' with integer values representing the number of cardiac arrests at each location. Scaling this column by 1.1 increases the observed incidents by 10% for every row in the table."
 }

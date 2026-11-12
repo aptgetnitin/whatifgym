@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "no_overlap_between_A_and_B",
+   "measure": "meet",
+   "scope": {
+    "resource": [
+     1,
+     3,
+     5
+    ],
+    "train": "A",
+    "other_train": "B"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A new rule that prevents train A and train B from overlapping on any track resource."
+}

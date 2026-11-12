@@ -1,0 +1,70 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "min_workers",
+   "where": {
+    "task": "task_5"
+   },
+   "factor": 1.3
+  },
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "min_workers",
+   "where": {
+    "task": "task_0"
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "min_workers",
+   "where": {
+    "task": "task_1"
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "min_workers",
+   "where": {
+    "task": "task_2"
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "min_workers",
+   "where": {
+    "task": "task_3"
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "min_workers",
+   "where": {
+    "task": "task_4"
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "min_workers",
+   "where": {
+    "task": "task_5"
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "Scaling the min_workers column for all tasks by 0.8, except task_5 which is scaled by 1.3."
+}

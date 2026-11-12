@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "total_stock",
+   "measure": "stock",
+   "scope": {
+    "industry": [
+     "coal",
+     "steel",
+     "transport"
+    ],
+    "year": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   "sense": ">=",
+   "value": 3550
+  }
+ ],
+ "note": "The rule ensures the total stock across all industries and years 1-5 meets the target of at least 3550 million USD."
+}

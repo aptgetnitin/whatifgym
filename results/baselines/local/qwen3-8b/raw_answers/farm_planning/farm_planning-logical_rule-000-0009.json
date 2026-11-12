@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "heifer_calves_raised_year1",
+   "measure": "raise_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 34
+  },
+  {
+   "name": "heifer_calves_raised_year1_zero",
+   "measure": "raise_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The total heifer calves raised for Year1 must be either zero or at least 34."
+}

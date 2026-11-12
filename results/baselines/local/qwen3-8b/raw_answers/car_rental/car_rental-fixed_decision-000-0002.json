@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "damaged_stock",
+   "column": "damaged_stock",
+   "where": {
+    "day": "Monday",
+    "depot": "Plymouth"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting the damaged_stock to zero for Monday at Plymouth depot."
+}

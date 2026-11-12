@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "unfilled",
+      "column": "unfilled",
+      "where": {
+        "customer": "Customer4"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "lateness_customer5",
+      "measure": "lateness",
+      "scope": {
+        "customer": "Customer5"
+      },
+      "sense": "==",
+      "value": 80
+    }
+  ],
+  "note": "Customer5's lateness is fixed to 80 minutes, and Customer4 is set as unfilled."
+}

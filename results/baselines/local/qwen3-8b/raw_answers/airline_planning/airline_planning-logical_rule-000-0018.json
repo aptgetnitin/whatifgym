@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "flights_operated_A320_22",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A320#22"
+   },
+   "sense": ">=",
+   "value": 1
+  },
+  {
+   "name": "flights_operated_A318_4_flight_3077",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A318#4",
+    "flight": 3077
+   },
+   "sense": ">=",
+   "value": 1
+  },
+  {
+   "name": "flights_operated_A318_4_total",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A318#4"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "aircraft": "A318#4",
+     "flight": 3077
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "Rules ensure a non-zero number of flights are operated for aircraft A320#22, and that flight 3077 for aircraft A318#4 requires at least twice as many total flights operated for the aircraft."
+}

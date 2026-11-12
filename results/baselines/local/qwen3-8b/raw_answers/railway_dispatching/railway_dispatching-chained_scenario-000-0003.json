@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "resources",
+   "column": "duration",
+   "where": {
+    "resource": 0
+   },
+   "factor": 0.8
+  }
+ ],
+ "rules": [
+  {
+   "name": "arrival_time_f_sum",
+   "measure": "finish_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": ">=",
+   "value": 78
+  }
+ ],
+ "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}

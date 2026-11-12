@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal1_run_min",
+   "measure": "ngen",
+   "scope": {
+    "type": "Thermal1"
+   },
+   "sense": ">=",
+   "value": 43
+  },
+  {
+   "name": "thermal0_output_max",
+   "measure": "output",
+   "scope": {
+    "type": "Thermal0"
+   },
+   "sense": "<=",
+   "value": 39950
+  }
+ ],
+ "note": "Rules enforce a minimum number of Thermal1 units running and a maximum thermal output from Thermal0 units."
+}

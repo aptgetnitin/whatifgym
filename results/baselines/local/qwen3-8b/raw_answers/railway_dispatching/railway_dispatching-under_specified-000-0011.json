@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "resources",
+   "column": "duration",
+   "where": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The minimum time on the resource shifts for every row of the stations and tracks table."
+}

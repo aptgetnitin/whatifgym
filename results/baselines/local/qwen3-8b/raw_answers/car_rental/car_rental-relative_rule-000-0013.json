@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_left_monday_share",
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "undamaged_left",
+    "scope": {
+     "day": [
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "The rule ensures that undamaged cars kept overnight on Monday account for at least 40% of the total undamaged cars kept overnight on other days."
+}

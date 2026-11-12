@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "factor": 1.2
+  }
+ ],
+ "rules": [
+  {
+   "name": "units_made_in_may_at_least_2200",
+   "measure": "make",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "value": 2200
+  }
+ ]
+}

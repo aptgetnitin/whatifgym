@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "fixed_decisions": [
+  {
+   "measure": "produce",
+   "scope": {
+    "month": "Jan"
+   },
+   "value": 0
+  },
+  {
+   "measure": "store",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "oil": "OIL3"
+   },
+   "value": 500
+  }
+ ],
+ "note": "Fixed decisions set the produce quantity for January to zero and the storage quantity for OIL3 to 500 for all months."
+}

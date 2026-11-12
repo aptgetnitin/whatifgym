@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "hours_per_month",
+   "value": 160
+  }
+ ],
+ "note": "The hours_per_month parameter is set to 160 to reflect the change in the number of machines installed for the vertDrill type."
+}

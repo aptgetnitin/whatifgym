@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "players",
+   "column": "predicted_points",
+   "where": {
+    "player": "Joel Embiid"
+   },
+   "value": 26
+  }
+ ]
+}

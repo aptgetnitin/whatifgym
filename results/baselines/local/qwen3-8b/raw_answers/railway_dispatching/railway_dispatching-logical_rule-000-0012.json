@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "arrival_time_f_condition",
+   "measure": "finish_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": ">",
+   "value": 0,
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "train": "E",
+     "resource": 3
+    }
+   },
+   "factor": 12
+  }
+ ],
+ "note": "If train F's arrival time at destination is above zero, then train E's entry time at resource 3 must be at least 12 minutes."
+}

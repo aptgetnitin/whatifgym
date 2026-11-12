@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "floor_on_units_made",
+   "measure": "make",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "value": 2600
+  }
+ ],
+ "note": "A floor on the total units made for month Feb is enforced through a rule."
+}

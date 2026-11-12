@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "item5_placement_limit",
+   "measure": "x",
+   "scope": {
+    "item": "item5"
+   },
+   "sense": "<=",
+   "value": 0.05
+  }
+ ],
+ "note": "At most 5% of the total number of item placements may go to item item5."
+}

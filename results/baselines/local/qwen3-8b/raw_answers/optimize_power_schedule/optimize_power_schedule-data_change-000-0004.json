@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "fuels",
+   "column": "operating_cost",
+   "where": {
+    "fuel": "WAT"
+   },
+   "factor": 1.2
+  },
+  {
+   "op": "shift",
+   "table": "hours",
+   "column": "demand_mwh",
+   "where": {
+    "hour": 5
+   },
+   "delta": 4000
+  }
+ ],
+ "note": "The operating cost for fuel WAT is increased by 20%, and the demand for hour 5 is adjusted to 4000 MWh."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "*"
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "Scaling the incidents column by 10% for all locations in the incidents table."
+}

@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "linked_load_5600_meer_st_to_1700_virginia_beach_bl",
+   "measure": "linked_load",
+   "scope": {
+    "location": "5600 MEER ST",
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "linked_load",
+    "scope": {
+     "location": "1700 VIRGINIA BEACH BL",
+     "base": "21 MUNICIPAL CTR Fire Station"
+    }
+   },
+   "factor": 0.5
+  },
+  {
+   "name": "open_21_municipal_ctr_to_10_percent_of_all_bases",
+   "measure": "open",
+   "scope": {
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "open",
+    "scope": {
+     "base": "*"
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "Two relative limits: one on the linked load between two locations, and one on the proportion of bases opened at a specific base."
+}

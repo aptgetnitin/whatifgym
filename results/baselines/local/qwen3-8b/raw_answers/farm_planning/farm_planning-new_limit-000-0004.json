@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "heifer_calves_raised_year2",
+   "measure": "raise_heifers",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "value": 13
+  }
+ ],
+ "note": "A rule to ensure the sum of heifer calves raised in Year2 is at least 13."
+}

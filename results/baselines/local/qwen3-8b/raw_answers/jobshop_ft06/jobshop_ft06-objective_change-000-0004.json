@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "*",
+    "job": "*",
+    "other_job": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "makespan",
+   "scope": {}
+  }
+ ],
+ "note": "The objective is to minimize the total number of job pairs where one job goes first on a machine, and then minimize the makespan among those plans."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hydro_hours_limit",
+   "measure": "on",
+   "scope": {
+    "plant": "HYDRO"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "on",
+    "scope": {
+     "plant": "Edwin I Hatch"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The total number of hours HYDRO is on must be at most 75% of the total number of hours Edwin I Hatch is on."
+}

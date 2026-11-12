@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "on",
+   "scope": {
+    "plant": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Prioritise minimising plant-hours on first, then total cost."
+}

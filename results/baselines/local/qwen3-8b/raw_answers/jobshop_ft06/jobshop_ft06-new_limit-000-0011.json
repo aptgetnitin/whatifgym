@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "sum_start_j5",
+   "measure": "start",
+   "scope": {
+    "job": "J5"
+   },
+   "sense": "<=",
+   "value": 110
+  }
+ ],
+ "note": "A rule limits the sum of start times for all operations of job J5 to be at or below 110."
+}

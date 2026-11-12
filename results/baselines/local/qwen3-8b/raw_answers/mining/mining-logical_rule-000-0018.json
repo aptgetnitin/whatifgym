@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "logic": [
+  {
+   "name": "mine3_worked_impact_mine4",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "operate",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "year": "Year2",
+      "mine": "Mine3"
+     }
+    },
+    {
+     "measure": "operate",
+     "sense": ">=",
+     "value": 2,
+     "scope": {
+      "year": "Year2",
+      "mine": "Mine4"
+     }
+    }
+   ]
+  }
+ ]
+}

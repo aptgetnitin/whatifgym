@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "downtime",
+   "column": "machines_down",
+   "where": {
+    "month": "May",
+    "machine": "grinder"
+   },
+   "factor": 2
+  },
+  {
+   "op": "set_param",
+   "name": "installed",
+   "value": 2
+  }
+ ],
+ "note": "The number of grinders down in May is scaled by 2, and the installed grinders are set to 2."
+}

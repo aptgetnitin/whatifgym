@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "transport_output_per_year",
+   "measure": "production",
+   "scope": {
+    "industry": "transport"
+   },
+   "sense": "==",
+   "value": 190
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Transport output is fixed to 190 per year; the rest is optimised."
+}

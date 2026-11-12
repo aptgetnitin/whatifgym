@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": [
+     1,
+     2,
+     3
+    ],
+    "skill": "skilled"
+   },
+   "value": 420
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Set the maximum recruitment for skilled workers to 420 per year and optimise for minimum redundancies."
+}

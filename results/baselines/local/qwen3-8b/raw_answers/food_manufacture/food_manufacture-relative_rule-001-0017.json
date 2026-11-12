@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "may_produce_at_least_1_5_times_jun",
+   "measure": "produce",
+   "scope": {
+    "month": "May"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "produce",
+    "scope": {
+     "month": "Jun"
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "A relative rule compares the sum of the produce measure over the scope of May to 1.5 times the sum over the scope of Jun."
+}

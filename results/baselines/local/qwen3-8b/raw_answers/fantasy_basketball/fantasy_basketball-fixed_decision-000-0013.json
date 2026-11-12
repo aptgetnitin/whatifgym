@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "fixed_decisions": [
+  {
+   "measure": "pick",
+   "scope": {
+    "player": "Shaun Livingston"
+   },
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix Shaun Livingston's pick to 1 and optimise the rest."
+}

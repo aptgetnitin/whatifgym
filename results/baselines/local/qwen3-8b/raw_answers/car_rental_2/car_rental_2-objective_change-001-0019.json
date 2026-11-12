@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "undamaged_transfers",
+   "scope": {
+    "day": "Wednesday"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Wednesday"
+   }
+  }
+ ],
+ "note": "The objective stages first maximise weekly profit, then maximise total undamaged cars transferred on Wednesday, and finally minimise total damaged cars kept at depots overnight on Wednesday."
+}

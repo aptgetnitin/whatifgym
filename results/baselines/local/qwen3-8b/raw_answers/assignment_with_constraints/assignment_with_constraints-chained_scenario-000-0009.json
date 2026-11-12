@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "workers",
+   "column": "size_capacity",
+   "factor": 1.2
+  }
+ ],
+ "rules": [
+  {
+   "name": "worker_0_task_count",
+   "measure": "assign",
+   "scope": {
+    "worker": "worker_0"
+   },
+   "sense": ">=",
+   "value": 2
+  }
+ ],
+ "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}

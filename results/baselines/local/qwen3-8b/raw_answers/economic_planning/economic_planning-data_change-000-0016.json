@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "input_output",
+      "column": "input_per_unit_capacity",
+      "where": {
+        "supplier": "coal",
+        "user": "steel"
+      },
+      "factor": 1.3
+    }
+  ],
+  "note": "The input per unit of capacity built for supplying industry steel, using industry coal is scaled by 30%."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "birmingham_repairs_at_least_3_times_manchester",
+   "measure": "repairs",
+   "scope": {
+    "depot": "Birmingham"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "depot": "Manchester"
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "A relative rule comparing the sum of repairs for Birmingham to the sum for Manchester."
+}

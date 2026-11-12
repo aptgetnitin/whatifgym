@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "logic": [
+  {
+   "name": "at_least_5_percent_to_glasgow",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "damaged_transfers",
+     "sense": ">=",
+     "value": 0.05,
+     "scope": {
+      "day": "all",
+      "from_depot": "all",
+      "to_depot": "Glasgow"
+     }
+    },
+    {
+     "measure": "damaged_transfers",
+     "sense": "==",
+     "value": 1,
+     "scope": {
+      "day": "all",
+      "from_depot": "all",
+      "to_depot": "all"
+     }
+    }
+   ]
+  }
+ ]
+}

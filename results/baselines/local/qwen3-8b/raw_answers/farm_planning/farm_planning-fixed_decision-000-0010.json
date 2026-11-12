@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "land_groups",
+      "column": "grain_yield",
+      "where": {
+        "land_group": "Group2"
+      },
+      "factor": 0.42
+    }
+  ],
+  "note": "Fixing the grain yield for land group Group2 to 0.42 for every year is achieved by scaling the grain_yield column for the Group2 row."
+}

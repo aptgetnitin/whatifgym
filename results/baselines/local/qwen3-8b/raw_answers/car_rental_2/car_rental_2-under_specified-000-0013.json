@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Tuesday",
+    "depot": "Birmingham"
+   },
+   "value": 0
+  }
+ ],
+ "note": "The question asks about a change in the rental demand for Tuesday at Birmingham depot. The scenario sets the demand to 0 to reflect this change."
+}

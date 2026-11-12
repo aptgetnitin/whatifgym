@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "trains",
+   "column": "ready_time",
+   "where": {
+    "train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ]
+   },
+   "factor": 1.2
+  },
+  {
+   "op": "set",
+   "table": "resources",
+   "column": "capacity",
+   "where": {
+    "resource": 3
+   },
+   "value": 2
+  }
+ ],
+ "note": "The ready time for all trains is increased by 20%, and the capacity of resource 3 is set to 2."
+}

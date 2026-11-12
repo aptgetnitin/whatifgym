@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "stock",
+      "scope": {
+        "year": 1
+      }
+    }
+  ],
+  "note": "Prioritise maintaining maximum employment, then focus on maximising stock held in year 1."
+}

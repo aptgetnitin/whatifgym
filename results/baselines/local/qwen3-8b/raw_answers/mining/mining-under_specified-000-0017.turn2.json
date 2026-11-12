@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ]
+   },
+   "value": 18264150
+  }
+ ],
+ "note": "An upper limit on total tons of ore extracted is applied across all mines."
+}

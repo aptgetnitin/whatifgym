@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "logic": [
+  {
+   "name": "coal_stock_zero_or_at_least_1990",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "stock",
+     "sense": "==",
+     "value": 0,
+     "scope": {
+      "industry": "coal"
+     }
+    },
+    {
+     "measure": "stock",
+     "sense": ">=",
+     "value": 1990,
+     "scope": {
+      "industry": "coal"
+     }
+    }
+   ]
+  }
+ ]
+}

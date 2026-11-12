@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "total_flights_operated_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 46
+  },
+  {
+   "name": "a321_4_flights_operated_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A321#4",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 4
+  }
+ ],
+ "note": "Two new rules: an overall cap of 46 on total flights operated and a cap of 4 on flights operated for aircraft A321#4."
+}

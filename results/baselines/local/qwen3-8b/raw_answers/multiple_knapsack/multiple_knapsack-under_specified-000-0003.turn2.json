@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "items",
+   "column": "value",
+   "where": {
+    "item": "item9"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "item_placement_limit",
+   "measure": "x",
+   "scope": {
+    "item": "*"
+   },
+   "sense": "<=",
+   "value": 15
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The question introduces an upper limit on the number of item placements, which is enforced through a rule."
+}

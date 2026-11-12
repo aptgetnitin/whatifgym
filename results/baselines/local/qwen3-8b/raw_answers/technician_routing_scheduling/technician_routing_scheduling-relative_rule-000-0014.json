@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "unfilled_at_least_three_times_assigned",
+   "measure": "unfilled",
+   "scope": {
+    "customer": "*"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "customer": "*"
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "The total number of unfilled jobs must be at least three times the total number of jobs assigned."
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "linked_load",
+      "scope": {
+        "location": "*",
+        "base": "5145 RURITAN COURT Rescue Squad"
+      }
+    }
+  ],
+  "note": "Prioritise minimising the original response objective, then focus on minimising the queue load linked to locations assigned to the 5145 RURITAN COURT Rescue Squad."
+}

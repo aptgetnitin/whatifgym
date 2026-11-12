@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "at_most_two_bases_open",
+   "measure": "open",
+   "scope": {
+    "base": [
+     "5145 RURITAN COURT Rescue Squad",
+     "800 VIRGINIA BEACH BLVD Fire Station",
+     "3769 E. STRATFORD ROAD Rescue Squad",
+     "21 MUNICIPAL CTR Fire Station"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Limit the number of open bases to at most 2 among the specified bases."
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "fixed_decisions": [
+    {
+      "measure": "open",
+      "scope": {
+        "base": "600 CENTRAL DR Fire Station"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Fixing the open status of the 600 CENTRAL DR Fire Station to 1."
+}

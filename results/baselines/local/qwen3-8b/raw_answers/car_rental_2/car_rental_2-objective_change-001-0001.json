@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Glasgow"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "rules": [
+  {
+   "name": "damaged_left_min",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Glasgow"
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ]
+}

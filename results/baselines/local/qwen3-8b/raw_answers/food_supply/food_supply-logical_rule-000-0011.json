@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_shipment_for_idleb",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat",
+        "from_city": "Hama",
+        "to_city": "Idleb"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Wheat",
+          "camp": "Idleb"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "If the ration for Wheat in Idleb is above zero, the shipment of Wheat to Idleb must be at least 86400 units."
+}

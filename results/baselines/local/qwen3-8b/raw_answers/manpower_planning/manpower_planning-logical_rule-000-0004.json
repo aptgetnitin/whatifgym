@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "no_overmanned_in_year_1_and_3",
+   "measure": "overmanned",
+   "scope": {
+    "year": [
+     1,
+     3
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A rule that enforces zero overmanned workers in year 1 and year 3."
+}

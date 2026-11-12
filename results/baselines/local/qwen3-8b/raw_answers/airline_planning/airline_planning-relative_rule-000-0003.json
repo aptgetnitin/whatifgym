@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "flight_4572_at_least_1_25_times_flight_3065",
+   "measure": "operate",
+   "scope": {
+    "flight": 4572
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "flight": 3065
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The rule ensures that the number of flights operated for flight 4572 is at least 1.25 times the number of flights operated for flight 3065."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg2_refining_min",
+   "measure": "consume",
+   "scope": {
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "oil": "VEG2"
+    }
+   },
+   "factor": 1080
+  }
+ ],
+ "note": "If the total tons of oil refined for VEG2 is above zero, it must be at least 1080."
+}

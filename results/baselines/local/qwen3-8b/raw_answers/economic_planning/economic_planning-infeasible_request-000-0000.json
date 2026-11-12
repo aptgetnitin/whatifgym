@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "stock",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "industry": [
+     "coal",
+     "steel",
+     "transport"
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to maximise the total stock held across all industries and years within the planning horizon."
+}

@@ -1,0 +1,45 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_3769_E_stratford_road",
+   "measure": "queue_load",
+   "scope": {
+    "base": "3769 E. STRATFORD ROAD Rescue Squad"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "queue_load",
+    "scope": {
+     "base": [
+      "21 MUNICIPAL CTR Fire Station",
+      "2837 SHORE DR Fire Station",
+      "800 VIRGINIA BEACH BLVD Fire Station",
+      "600 CENTRAL DR Fire Station",
+      "3769 E. STRATFORD ROAD Rescue Squad",
+      "5145 RURITAN COURT Rescue Squad",
+      "333 THALIA ROAD Rescue Squad"
+     ]
+    }
+   },
+   "factor": 0.05
+  },
+  {
+   "name": "open_21_municipal_ctr_at_least_2_times_open_5145_ruritan_court",
+   "measure": "open",
+   "scope": {
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "open",
+    "scope": {
+     "base": "5145 RURITAN COURT Rescue Squad"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

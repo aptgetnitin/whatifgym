@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "flight_operate_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A320#22"
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "A rule limits the total number of flights operated by a specific aircraft."
+}

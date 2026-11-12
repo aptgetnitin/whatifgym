@@ -1,0 +1,40 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "facilities",
+   "column": "capacity",
+   "where": {
+    "facility": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5",
+     "E6",
+     "E7",
+     "E8",
+     "E9",
+     "E10",
+     "E11",
+     "E12",
+     "E13",
+     "E14",
+     "T15",
+     "T16",
+     "T17",
+     "T18",
+     "T19",
+     "T20",
+     "T21",
+     "T22",
+     "T23"
+    ]
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "Scaling the capacity of all facilities by 20%."
+}

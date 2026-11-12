@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "no_service_in_karlsruhe_and_mannheim",
+   "measure": "start_time",
+   "scope": {
+    "location": [
+     "Karlsruhe",
+     "Mannheim"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A new rule restricts service start times in Karlsruhe and Mannheim to zero."
+}

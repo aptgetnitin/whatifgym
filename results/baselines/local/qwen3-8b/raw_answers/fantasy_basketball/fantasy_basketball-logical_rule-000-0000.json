@@ -1,0 +1,52 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "logic": [
+  {
+   "name": "at_most_two_of_selected_players",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "pick",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "player": "Jarrett Jack"
+     }
+    },
+    {
+     "measure": "pick",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "player": "Markieff Morris"
+     }
+    },
+    {
+     "measure": "pick",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "player": "Dario Saric"
+     }
+    },
+    {
+     "measure": "pick",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "player": "Trevor Ariza"
+     }
+    },
+    {
+     "measure": "pick",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "player": "Joel Embiid"
+     }
+    }
+   ]
+  }
+ ]
+}

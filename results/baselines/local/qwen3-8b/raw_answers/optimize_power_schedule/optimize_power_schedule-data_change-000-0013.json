@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "health_costs",
+   "column": "health_cost",
+   "where": {
+    "plant": "Scherer",
+    "hour": 9
+   },
+   "value": 3
+  }
+ ],
+ "note": "The health cost per MWh for power plant Scherer in hour 9 is set to 3."
+}

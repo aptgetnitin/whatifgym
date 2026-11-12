@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "oils",
+   "column": "hardness",
+   "where": {
+    "oil": "VEG1"
+   },
+   "value": 8.8
+  }
+ ],
+ "note": "The question is ambiguous. It does not specify the new hardness value for VEG1."
+}

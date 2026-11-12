@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "energy_capacity_kwh",
+   "value": 170
+  }
+ ],
+ "rules": [
+  {
+   "name": "charge_cap_03-04",
+   "measure": "charge",
+   "scope": {
+    "hour": [
+     "03-04"
+    ]
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "An overall cap on battery stored energy and a charge power cap for specific hours are applied."
+}

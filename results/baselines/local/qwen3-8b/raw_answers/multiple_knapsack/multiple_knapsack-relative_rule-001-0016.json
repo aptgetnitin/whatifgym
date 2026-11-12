@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "at_least_50_percent_item13",
+   "measure": "x",
+   "scope": {
+    "item": "item13"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": "item"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "At least 50% of the total item placements must be assigned to item13."
+}

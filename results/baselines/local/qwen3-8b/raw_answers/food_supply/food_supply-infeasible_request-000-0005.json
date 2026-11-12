@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Daraa"
+      },
+      "value": 25000
+    }
+  ],
+  "rules": [
+    {
+      "name": "ration_csb_daraa",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Daraa"
+      },
+      "sense": "==",
+      "value": 3.5
+    }
+  ],
+  "note": "Set the beneficiaries of Daraa camp to 25,000 to match the original data and enforce the exact ration of 3.5 units of Corn-soya blend (CSB) per person per day."
+}

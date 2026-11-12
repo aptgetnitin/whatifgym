@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to maximise the total food produced over the entire horizon."
+}

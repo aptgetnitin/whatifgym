@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "resources",
+   "column": "entry_time",
+   "where": {
+    "resource": 4
+   },
+   "value": 450
+  }
+ ],
+ "note": "Setting the entry time for resource 4 to 450 minutes."
+}

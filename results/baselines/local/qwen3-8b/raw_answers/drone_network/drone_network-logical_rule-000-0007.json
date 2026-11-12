@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "linked_load_600_fleet_dr_800_virginia_beach_bvd",
+      "measure": "linked_load",
+      "scope": {
+        "location": "600 FLEET DR",
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": ">=",
+      "value": 0.02
+    },
+    {
+      "name": "linked_load_600_fleet_dr_800_virginia_beach_bvd_zero",
+      "measure": "linked_load",
+      "scope": {
+        "location": "600 FLEET DR",
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ],
+  "note": "The rule enforces that the linked load for location 600 FLEET DR and base 800 VIRGINIA BEACH BLVD Fire Station must be either zero or at least 0.02."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal1_06-09_hydroB_15-18",
+   "measure": "hydro_on",
+   "scope": {
+    "hydro": "HydroB",
+    "period": "15-18"
+   },
+   "sense": ">=",
+   "value": 2
+  }
+ ],
+ "note": "At least 2 hydro unit-periods (HydroB) must run in period 15-18 if a non-zero number of thermal units of type Thermal1 run in period 06-09."
+}

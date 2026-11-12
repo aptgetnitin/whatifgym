@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": "transport"
+      },
+      "factor": 1.2
+    },
+    {
+      "op": "scale",
+      "table": "input_output",
+      "column": "input_per_unit_output",
+      "where": {
+        "supplier": [
+          "coal",
+          "steel",
+          "transport"
+        ],
+        "user": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "Initial stock of transport increases by 20%, and all input per unit of output coefficients decrease by 10%."
+}

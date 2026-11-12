@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "logic": [
+  {
+   "name": "at_most_4_pairs_for_J3",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "*",
+      "job": "J3"
+     },
+     "sense": "<=",
+     "value": 4
+    },
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "*",
+      "job": "J3"
+     },
+     "sense": ">=",
+     "value": 0
+    }
+   ]
+  }
+ ]
+}

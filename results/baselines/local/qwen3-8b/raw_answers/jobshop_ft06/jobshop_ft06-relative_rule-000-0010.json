@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "step5_end_time_limit",
+   "measure": "end",
+   "scope": {
+    "step": 5
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "end",
+    "scope": {
+     "step": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    }
+   },
+   "factor": 0.15
+  }
+ ],
+ "note": "The rule limits the sum of end times for step 5 to at most 15% of the sum of end times for all steps."
+}

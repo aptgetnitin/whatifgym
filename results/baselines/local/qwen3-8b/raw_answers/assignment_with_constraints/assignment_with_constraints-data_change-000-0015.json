@@ -1,0 +1,45 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "costs",
+   "column": "cost",
+   "where": {
+    "task": "task_2"
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "costs",
+   "column": "cost",
+   "where": {
+    "task": "task_0",
+    "worker": "worker_10"
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "costs",
+   "column": "cost",
+   "where": {
+    "task": "task_5",
+    "worker": "worker_5"
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "set",
+   "table": "tasks",
+   "column": "size",
+   "where": {
+    "task": "task_2"
+   },
+   "value": 6
+  }
+ ],
+ "note": "Every assignment cost in the costs table falls by 10%, and the task size for task_2 becomes 6."
+}

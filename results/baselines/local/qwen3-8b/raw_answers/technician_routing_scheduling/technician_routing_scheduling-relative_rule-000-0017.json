@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "leg_count_limit",
+   "measure": "route",
+   "scope": {
+    "technician": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "use",
+    "scope": {
+     "technician": "*"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The rule limits the total number of legs driven to 75% of the total number of technicians dispatched."
+}

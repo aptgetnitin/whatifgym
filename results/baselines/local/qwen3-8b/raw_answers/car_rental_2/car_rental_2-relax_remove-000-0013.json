@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "repair_capacity",
+   "column": "repair_capacity",
+   "where": {
+    "day": [
+     "Thursday",
+     "Saturday"
+    ],
+    "depot": [
+     "Manchester",
+     "Birmingham"
+    ]
+   },
+   "factor": 1
+  }
+ ],
+ "note": "The repair capacity for Manchester and Birmingham on Thursday and Saturday is scaled by 1 (no change), simulating the lifting of the daily repair-capacity limit for these days."
+}

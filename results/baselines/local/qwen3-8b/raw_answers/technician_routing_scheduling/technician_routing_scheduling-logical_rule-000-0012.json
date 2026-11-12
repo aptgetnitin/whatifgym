@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "min_start_time_mannheim",
+   "measure": "start_time",
+   "scope": {
+    "location": "Mannheim"
+   },
+   "sense": ">=",
+   "value": 48,
+   "relative_to": {
+    "measure": "start_time",
+    "scope": {
+     "location": "Mannheim"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "If the total service start time for location Mannheim is above zero, it must be at least 48."
+}

@@ -1,0 +1,54 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "total_make_at_least_twice_total_sell",
+   "measure": "make",
+   "scope": {
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ],
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": [
+      "Prod1",
+      "Prod2",
+      "Prod3",
+      "Prod4",
+      "Prod5",
+      "Prod6",
+      "Prod7"
+     ],
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "A relative rule comparing the total units made to the total units sold across all products and months."
+}

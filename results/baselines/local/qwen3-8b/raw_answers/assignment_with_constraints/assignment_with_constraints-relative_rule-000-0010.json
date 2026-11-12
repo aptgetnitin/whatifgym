@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "worker_6_assignment_min",
+   "measure": "assign",
+   "scope": {
+    "worker": "worker_6"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "task": "task_0",
+     "task": "task_1",
+     "task": "task_2",
+     "task": "task_3",
+     "task": "task_4",
+     "task": "task_5"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "At least 25% of the total number of task assignments must go to worker_6."
+}

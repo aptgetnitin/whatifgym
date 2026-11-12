@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "non_zero_sales",
+   "measure": "sell",
+   "scope": {
+    "month": [
+     "Jun",
+     "May",
+     "Apr"
+    ]
+   },
+   "sense": ">=",
+   "value": 1
+  }
+ ],
+ "note": "Only three months (Apr, May, Jun) may have non-zero units sold."
+}

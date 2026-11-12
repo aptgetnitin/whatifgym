@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "steel_output_year_5",
+   "measure": "production",
+   "scope": {
+    "year": 5,
+    "industry": "steel"
+   },
+   "sense": ">=",
+   "value": 1750
+  }
+ ],
+ "note": "The rule ensures that the total production of steel in year 5 is at least 1750 million USD."
+}

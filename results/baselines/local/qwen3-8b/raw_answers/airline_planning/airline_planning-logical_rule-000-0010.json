@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "logic": [
+  {
+   "name": "flights_operated_3108_positive",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "operate",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "aircraft": "A321#4",
+      "flight": "4571"
+     }
+    },
+    {
+     "measure": "operate",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "flight": "3108"
+     }
+    }
+   ]
+  }
+ ]
+}

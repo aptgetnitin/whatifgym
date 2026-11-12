@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "fixed_decisions": [
+    {
+      "measure": "stock",
+      "scope": {
+        "year": 2,
+        "industry": "transport"
+      },
+      "value": 0
+    },
+    {
+      "measure": "production",
+      "scope": {
+        "year": 3,
+        "industry": "steel"
+      },
+      "value": 270
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ]
+}

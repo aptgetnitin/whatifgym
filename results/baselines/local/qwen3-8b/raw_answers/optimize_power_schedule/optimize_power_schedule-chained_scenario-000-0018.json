@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "plants",
+   "column": "capacity_mwh",
+   "where": {
+    "plant": "GAS"
+   },
+   "value": 2650
+  }
+ ],
+ "rules": [
+  {
+   "name": "plant_hours_cap",
+   "measure": "on",
+   "scope": {
+    "plant": "*"
+   },
+   "sense": "<=",
+   "value": 134
+  }
+ ],
+ "note": "An overall cap on the number of plant-hours on, summed over all plants."
+}

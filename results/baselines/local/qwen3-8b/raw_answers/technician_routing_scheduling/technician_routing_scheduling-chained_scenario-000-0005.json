@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "leg_cap",
+   "measure": "route",
+   "scope": {
+    "from_location": "all",
+    "to_location": "all",
+    "technician": "all"
+   },
+   "sense": "<=",
+   "value": 7
+  }
+ ],
+ "note": "A cap on the total number of legs driven across all technicians."
+}

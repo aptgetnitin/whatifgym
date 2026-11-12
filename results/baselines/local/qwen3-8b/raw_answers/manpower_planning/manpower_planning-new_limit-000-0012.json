@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_short_time",
+   "value": 38
+  }
+ ],
+ "note": "Setting the max_short_time parameter to 38 limits the total workers on short-time working for the semi_skilled skill level."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_stock_min_monday",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": ">=",
+   "value": 710
+  }
+ ],
+ "note": "A rule to ensure the total undamaged cars at each depot in the morning on Monday meets the minimum requirement."
+}

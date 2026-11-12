@@ -1,0 +1,40 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "e_goes_first_percentage",
+   "measure": "goes_first",
+   "scope": {
+    "resource": "*",
+    "train": "E"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "goes_first",
+    "scope": {
+     "resource": "*"
+    }
+   },
+   "factor": 0.2
+  },
+  {
+   "name": "d_meet_pairs_ratio",
+   "measure": "meet",
+   "scope": {
+    "resource": "*",
+    "train": "D"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "meet",
+    "scope": {
+     "resource": "*",
+     "train": "B"
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "Rules enforce relative limits on the number of trains clearing a resource before another train enters it and the number of train pairs sharing a resource at the same time for specific trains."
+}

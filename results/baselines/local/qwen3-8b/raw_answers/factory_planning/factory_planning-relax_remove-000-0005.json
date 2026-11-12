@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "machine": "horiDrill"
+   }
+  }
+ ],
+ "note": "Removing the capacity constraint for horiDrill allows unlimited machine-hours for this machine type."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "end_j1_at_most_75_of_end_j4",
+   "measure": "end",
+   "scope": {
+    "job": "J1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "end",
+    "scope": {
+     "job": "J4"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The end time of J1 is bounded by 75% of the end time of J4."
+}

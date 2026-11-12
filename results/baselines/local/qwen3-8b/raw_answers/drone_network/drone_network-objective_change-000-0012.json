@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "linked_load",
+   "scope": {
+    "location": "*",
+    "base": "21 MUNICIPAL CTR Fire Station"
+   }
+  }
+ ],
+ "note": "First, minimize the original response objective. Then, minimize the queue load linked to assigned locations for the 21 MUNICIPAL CTR Fire Station."
+}

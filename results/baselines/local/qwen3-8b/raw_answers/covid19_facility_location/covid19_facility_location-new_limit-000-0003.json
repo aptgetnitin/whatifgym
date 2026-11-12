@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "total_temp_facilities_cap",
+   "measure": "build",
+   "scope": {
+    "kind": "temporary"
+   },
+   "sense": "<=",
+   "value": 1
+  },
+  {
+   "name": "t17_patient_cap",
+   "measure": "assign",
+   "scope": {
+    "facility": "T17"
+   },
+   "sense": "<=",
+   "value": 50
+  }
+ ],
+ "note": "Two new rules: one limits the total number of temporary facilities built, and the other caps the total patients assigned to facility T17."
+}

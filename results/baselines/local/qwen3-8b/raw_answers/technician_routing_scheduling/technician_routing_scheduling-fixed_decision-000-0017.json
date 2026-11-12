@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "customers",
+   "column": "window_start",
+   "where": {
+    "location": "Karlsruhe"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting the window start time for location Karlsruhe to zero removes any service start time constraint for that location."
+}

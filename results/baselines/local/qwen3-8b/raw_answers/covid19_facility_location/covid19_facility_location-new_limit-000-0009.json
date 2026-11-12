@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "assign_to_E2_limit",
+   "measure": "assign",
+   "scope": {
+    "facility": "E2"
+   },
+   "sense": "<=",
+   "value": 140
+  }
+ ],
+ "note": "A rule limits the total number of patients assigned to facility E2."
+}

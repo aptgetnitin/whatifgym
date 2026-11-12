@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "min_workers",
+   "where": {
+    "task": "task_2"
+   },
+   "factor": 1.3
+  }
+ ]
+}

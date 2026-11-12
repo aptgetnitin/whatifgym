@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "health_costs",
+   "column": "health_cost",
+   "where": {
+    "plant": "Bowen",
+    "hour": 4
+   },
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "start",
+   "scope": {
+    "plant": "Bowen"
+   },
+   "value": 1
+  },
+  {
+   "measure": "output",
+   "scope": {
+    "plant": "GAS"
+   },
+   "value": 900
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

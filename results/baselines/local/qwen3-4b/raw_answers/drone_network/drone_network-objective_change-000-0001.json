@@ -17,5 +17,6 @@
         ]
       }
     }
-  ]
-}
+  ],
+  "note": "The planner wants to maximize the total base queue load (hours) without changing the response objective."
+  }

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "fixed_decisions": [
+  {
+   "measure": "output",
+   "scope": {
+    "plant": "Scherer",
+    "hour": 5
+   },
+   "value": 14300
+  }
+ ],
+ "note": "Fix the output of Scherer in hour 5 to exactly 14300 MWh and optimize the rest of the schedule around this fixed value."
+}

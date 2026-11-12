@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "output",
+   "column": "output",
+   "where": {
+    "plant": "GAS",
+    "hour": 4
+   },
+   "value": 1350
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "milk_ride_min",
+      "measure": "ration",
+      "scope": {
+        "food": "Milk",
+        "camp": "Idleb"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Milk",
+          "camp": "Idleb"
+        }
+      },
+      "factor": 2.15
+    }
+  ]
+}

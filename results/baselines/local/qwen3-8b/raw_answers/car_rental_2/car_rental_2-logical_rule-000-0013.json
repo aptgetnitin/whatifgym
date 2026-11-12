@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_repair_tuesday",
+   "measure": "repairs",
+   "scope": {
+    "day": "Tuesday"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "day": "Tuesday"
+    }
+   },
+   "factor": 70
+  }
+ ],
+ "note": "If the total cars repaired on Tuesday is above zero, it must be at least 70."
+}

@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod1",
+    "product": "Prod2",
+    "product": "Prod3",
+    "product": "Prod4",
+    "product": "Prod5",
+    "product": "Prod6",
+    "product": "Prod7"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Prioritise minimising units sold, then maximising profit."
+}

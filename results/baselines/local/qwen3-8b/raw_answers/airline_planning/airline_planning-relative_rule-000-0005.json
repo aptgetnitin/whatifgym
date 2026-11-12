@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "flight_4568_at_least_1_5_times_flight_4575",
+   "measure": "operate",
+   "scope": {
+    "flight": "4568"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "flight": "4575"
+    }
+   },
+   "factor": 1.5
+  },
+  {
+   "name": "aircraft_a319_11_at_least_40_percent",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A319#11"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "aircraft": "*"
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "Rules enforce the required proportionality between the number of flights operated for flight 4568 and 4575, and the contribution of aircraft A319#11 to the total number of flights operated."
+}

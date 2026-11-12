@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "total_output_cap",
+   "measure": "production",
+   "scope": {
+    "year": [1, 2, 3, 4, 5]
+   },
+   "sense": "<=",
+   "value": 3700
+  }
+ ],
+ "note": "A rule limits the total output across all industries and years to 3700 million USD."
+}

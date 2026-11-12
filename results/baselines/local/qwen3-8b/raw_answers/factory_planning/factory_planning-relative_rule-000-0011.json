@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "stock_at_least_3_times_make",
+   "measure": "store",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "A relative rule comparing the total units in stock to the total units made across all months."
+}

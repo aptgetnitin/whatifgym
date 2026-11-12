@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "logic": [
+  {
+   "name": "flights_operated_A318_5_3093_impact",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "operate",
+     "sense": ">",
+     "value": 0,
+     "scope": {
+      "aircraft": "A318#5",
+      "flight": 3093
+     }
+    },
+    {
+     "measure": "operate",
+     "sense": ">=",
+     "value": 2,
+     "scope": {
+      "aircraft": "A319#18",
+      "flight": 4509
+     }
+    }
+   ]
+  }
+ ]
+}

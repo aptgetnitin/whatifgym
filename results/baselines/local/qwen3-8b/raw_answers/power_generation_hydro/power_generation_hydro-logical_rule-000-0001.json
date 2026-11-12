@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_min_06-09",
+   "measure": "output",
+   "scope": {
+    "period": "06-09"
+   },
+   "sense": ">=",
+   "value": 45000
+  }
+ ],
+ "note": "If the total thermal output for period 06-09 is above zero, it must be at least 45000."
+}

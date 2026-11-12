@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "lateness_customer5",
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "sense": "<=",
+   "value": 60
+  }
+ ],
+ "note": "A limit on the total lateness for Customer5."
+}

@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "end_time",
+   "scope": {
+    "job": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "runs_before",
+   "scope": {
+    "job": "*",
+    "other_job": "*"
+   }
+  }
+ ],
+ "note": "Prioritizing the minimum makespan first, then maximizing the total end time, and finally minimizing the total number of job pairs where the first job runs earlier."
+}

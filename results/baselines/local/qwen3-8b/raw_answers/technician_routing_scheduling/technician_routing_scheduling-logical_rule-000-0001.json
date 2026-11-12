@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "max_three_customers",
+   "measure": "assign",
+   "scope": {
+    "customer": [
+     "Customer1",
+     "Customer2",
+     "Customer5",
+     "Customer6"
+    ]
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

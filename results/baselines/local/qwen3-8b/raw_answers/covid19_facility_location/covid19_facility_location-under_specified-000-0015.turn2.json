@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "facilities",
+   "column": "capacity",
+   "where": {
+    "facility": "T16"
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The facility capacity (beds) of facility T16 is increased by 25%."
+}

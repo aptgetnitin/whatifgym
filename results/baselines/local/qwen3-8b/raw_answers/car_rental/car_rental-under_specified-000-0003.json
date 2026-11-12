@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "damage_excess",
+   "value": "damage_excess"
+  }
+ ],
+ "note": "The damage excess charged is changed to a new value, which affects the overall profit and the number of cars needed."
+}

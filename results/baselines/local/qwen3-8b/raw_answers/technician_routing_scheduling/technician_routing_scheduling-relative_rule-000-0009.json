@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "customer1_at_most_60_of_customer6",
+   "measure": "assign",
+   "scope": {
+    "customer": "Customer1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "customer": "Customer6"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "The rule enforces that the number of jobs assigned to Customer1 is at most 60% of the number assigned to Customer6."
+}

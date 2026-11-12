@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "shift",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ],
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "delta": -0.25
+  }
+ ],
+ "note": "A market limit shift for every row of the market limits table is a shift over all rows."
+}

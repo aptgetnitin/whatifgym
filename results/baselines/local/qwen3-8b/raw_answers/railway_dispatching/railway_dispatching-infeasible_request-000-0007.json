@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "finish_time",
+   "scope": {
+    "train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ]
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_arrival_time",
+   "measure": "finish_time",
+   "scope": {
+    "train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ]
+   },
+   "sense": "<=",
+   "value": 1800
+  }
+ ]
+}

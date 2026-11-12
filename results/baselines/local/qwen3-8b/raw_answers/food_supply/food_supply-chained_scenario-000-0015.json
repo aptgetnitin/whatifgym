@@ -1,0 +1,44 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "camps",
+   "where": {
+    "camp": "Qamishli"
+   }
+  },
+  {
+   "op": "add",
+   "table": "camps",
+   "rows": [
+    {
+     "camp": "Homs",
+     "beneficiaries": 3000
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "name": "Idleb_population_increase",
+   "measure": "ration",
+   "scope": {
+    "camp": "Idleb"
+   },
+   "sense": ">=",
+   "value": 2000
+  },
+  {
+   "name": "Daraa_food_shipment_requirement",
+   "measure": "flow",
+   "scope": {
+    "to_city": "Daraa"
+   },
+   "sense": ">=",
+   "value": 12050
+  }
+ ],
+ "note": "The scenario adds a new camp in Homs, removes Qamishli, increases Idleb's population, and enforces a minimum food shipment to Daraa."
+}

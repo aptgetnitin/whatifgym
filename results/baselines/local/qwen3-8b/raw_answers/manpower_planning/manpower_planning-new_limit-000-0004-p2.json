@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_overmanned",
+   "value": 240
+  }
+ ],
+ "rules": [
+  {
+   "name": "redundant_year_2_cap",
+   "measure": "redundant",
+   "scope": {
+    "year": 2
+   },
+   "sense": "<=",
+   "value": 80
+  }
+ ],
+ "note": "The scenario caps short-time working at 240 workers overall and limits redundancies in year 2 to 80 workers."
+}

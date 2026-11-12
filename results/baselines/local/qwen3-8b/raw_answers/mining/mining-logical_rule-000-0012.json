@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "extract_mine1_year5_zero_or_at_least_6000000",
+   "measure": "extract",
+   "scope": {
+    "year": "Year5",
+    "mine": "Mine1"
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "extract_mine1_year5_at_least_6000000",
+   "measure": "extract",
+   "scope": {
+    "year": "Year5",
+    "mine": "Mine1"
+   },
+   "sense": ">=",
+   "value": 6000000
+  }
+ ],
+ "note": "The rule enforces that the total tons of ore extracted for Year5, Mine1 must be either zero or at least 6000000."
+}

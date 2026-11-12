@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "month": [
+     "May",
+     "Jun"
+    ],
+    "machine": "*"
+   }
+  }
+ ],
+ "note": "The machine-hour capacity constraints for May and June are relaxed, effectively lifting the limit on available hours for all machines during these months."
+}

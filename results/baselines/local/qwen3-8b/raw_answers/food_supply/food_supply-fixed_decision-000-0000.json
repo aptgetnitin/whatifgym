@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "purchase",
+   "column": "purchase",
+   "where": {
+    "food": "Oil",
+    "supplier": [
+     "Aleppo",
+     "Amman",
+     "As_Suweida",
+     "Beirut",
+     "Damascus",
+     "Daraa",
+     "Dayr_Az_Zor",
+     "Gaziantep",
+     "Hama",
+     "Hassakeh",
+     "Homs"
+    ]
+   },
+   "value": 3650
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Set the purchase of Oil to 3650 units per day for each supplier, then optimise the rest."
+}

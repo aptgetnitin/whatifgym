@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_stock_friday_share",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Friday"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "undamaged_stock",
+    "scope": {
+     "day": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Saturday"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "A rule that enforces the undamaged_stock on Friday to be at least 40% of the total undamaged_stock across other days."
+}

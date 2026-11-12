@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "only_one_month_produce",
+   "measure": "produce",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Only one month can have non-zero food production."
+}

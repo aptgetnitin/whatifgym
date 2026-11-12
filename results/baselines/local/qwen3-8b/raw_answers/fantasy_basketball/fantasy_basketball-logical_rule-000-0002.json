@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "rules": [
+  {
+   "name": "exactly_one_of_jarrett_jack_dario_saric_trevor_ariza_joel_embiid",
+   "measure": "pick",
+   "scope": {
+    "player": [
+     "Jarrett Jack",
+     "Dario Saric",
+     "Trevor Ariza",
+     "Joel Embiid"
+    ]
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "note": "Only one of the specified players can be picked in the line-up."
+}

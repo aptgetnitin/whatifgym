@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "horiDrill"
+   },
+   "factor": 0.6666666666666666
+  }
+ ],
+ "note": "Reducing the number of horizontal drills by one (from 1 to 0) is achieved by scaling the installed count by 2/3."
+}

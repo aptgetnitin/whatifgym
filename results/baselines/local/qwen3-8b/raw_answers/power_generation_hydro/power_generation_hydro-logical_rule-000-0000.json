@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_types_limit",
+   "measure": "ngen",
+   "scope": {
+    "type": [
+      "Thermal0",
+      "Thermal1",
+      "Thermal2"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Only two thermal types can have non-zero units running."
+}

@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "doris_dispatched_at_most_90_of_ed",
+   "measure": "use",
+   "scope": {
+    "technician": "Doris"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "use",
+    "scope": {
+     "technician": "Ed"
+    }
+   },
+   "factor": 0.9
+  },
+  {
+   "name": "at_least_50_of_jobs_to_customer2",
+   "measure": "assign",
+   "scope": {
+    "customer": "Customer2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "customer": "Customer2"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

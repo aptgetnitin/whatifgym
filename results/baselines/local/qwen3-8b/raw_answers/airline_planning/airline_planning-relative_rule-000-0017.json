@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "A319_18_at_least_90_percent_of_A321_2",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A319#18"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "aircraft": "A321#2"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "The rule ensures that the number of flights operated for aircraft A319#18 is at least 90% of the number of flights operated for aircraft A321#2."
+}

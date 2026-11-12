@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "production",
+   "scope": {
+    "year": [1, 2, 3, 4, 5]
+   }
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "production",
+   "scope": {
+    "year": [1, 2, 3, 4, 5]
+   },
+   "value": 8200
+  }
+ ],
+ "note": "The objective is to maximise employment, and the fixed decision ensures the total production meets the target of 8200 million USD."
+}

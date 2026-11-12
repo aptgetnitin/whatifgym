@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "F"
+      },
+      "value": 65
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "goes_first",
+      "scope": {
+        "resource": 1,
+        "train": "F"
+      },
+      "value": 1
+    }
+  ],
+  "rules": [
+    {
+      "name": "goes_first_for_F_and_E",
+      "measure": "goes_first",
+      "scope": {
+        "resource": 1,
+        "train": "F",
+        "other_train": "E"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

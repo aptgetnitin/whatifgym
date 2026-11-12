@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "ask": "Which cardiac arrest location's observed value are you referring to? Please specify the location and the new value."
+}

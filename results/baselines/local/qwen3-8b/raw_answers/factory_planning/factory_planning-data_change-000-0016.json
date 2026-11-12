@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod4",
+    "month": [
+     "Jan"
+    ]
+   },
+   "factor": 1.1
+  },
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod3"
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "A relative demand change over a subset of periods is a scale over the matching rows. A relative contribution change is a scale over the matching row."
+}

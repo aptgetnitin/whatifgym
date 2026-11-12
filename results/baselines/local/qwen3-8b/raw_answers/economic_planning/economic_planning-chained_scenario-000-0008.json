@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "stock",
+   "column": "stock",
+   "where": {
+    "year": 1
+   },
+   "value": 123
+  }
+ ],
+ "note": "A fixed minimum stock level for year 1."
+}

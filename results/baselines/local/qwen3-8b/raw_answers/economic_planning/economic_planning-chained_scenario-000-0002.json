@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 450
+  }
+ ],
+ "note": "The initial productive capacity for coal is set to 450."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "min_11_oil",
+   "measure": "ration",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "value": 11
+  },
+  {
+   "name": "min_37_wheat",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": ">=",
+   "value": 37
+  }
+ ],
+ "note": "The planner requests minimum rations for Oil and Wheat, which are enforced as absolute limits on the sum of the ration measure over the respective scopes."
+}

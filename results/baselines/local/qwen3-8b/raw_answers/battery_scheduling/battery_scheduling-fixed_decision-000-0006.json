@@ -1,0 +1,46 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "charge",
+   "where": {
+    "hour": "02-03"
+   },
+   "value": 2.1
+  },
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "discharge",
+   "where": {
+    "hour": "21-22"
+   },
+   "value": 0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "charge",
+   "scope": {
+    "hour": "02-03"
+   },
+   "value": 2.1
+  },
+  {
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "value": 0
+  }
+ ]
+}

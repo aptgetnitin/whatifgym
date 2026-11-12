@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "at_least_400_for_E3",
+   "measure": "assign",
+   "scope": {
+    "facility": "E3"
+   },
+   "sense": ">=",
+   "value": 400
+  },
+  {
+   "name": "at_least_320_for_E11",
+   "measure": "assign",
+   "scope": {
+    "facility": "E11"
+   },
+   "sense": ">=",
+   "value": 320
+  }
+ ],
+ "note": "Two rules ensure that at least 400 patients are assigned to facility E3 and at least 320 patients are assigned to facility E11."
+}

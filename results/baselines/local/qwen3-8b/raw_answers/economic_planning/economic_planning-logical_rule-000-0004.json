@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "input_output",
+   "column": "input_per_unit_capacity",
+   "where": {
+    "supplier": "coal",
+    "user": "transport"
+   },
+   "value": 0.7
+  }
+ ],
+ "rules": [
+  {
+   "name": "capacity_for_transport_output_year_2",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 3,
+    "industry": "transport"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "year": 2,
+     "industry": "transport"
+    }
+   },
+   "factor": 89
+  }
+ ],
+ "note": "The scenario adjusts the input_per_unit_capacity for transport and introduces a rule that the extra_capacity for transport in year 3 must be at least 89 times the production of transport in year 2."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal0_min_output",
+   "measure": "output",
+   "scope": {
+    "type": "Thermal0"
+   },
+   "sense": ">=",
+   "value": 99850
+  }
+ ],
+ "note": "If Thermal0's total output is positive, it must meet the minimum batch requirement of 99850 MW."
+}

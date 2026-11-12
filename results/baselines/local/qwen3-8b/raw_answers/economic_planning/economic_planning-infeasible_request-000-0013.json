@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "fixed_decisions": [
+    {
+      "measure": "stock",
+      "scope": {
+        "year": 1,
+        "industry": "steel"
+      },
+      "value": 345
+    }
+  ],
+  "note": "Fixed the stock of steel in year 1 to exactly 345 million USD."
+}

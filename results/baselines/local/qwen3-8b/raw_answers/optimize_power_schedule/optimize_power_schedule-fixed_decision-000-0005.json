@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "plant": "OTHER COAL",
+        "hour": 18
+      },
+      "value": 0
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "output",
+      "scope": {
+        "plant": "OTHER COAL",
+        "hour": 18
+      },
+      "value": 0
+    }
+  ]
+}

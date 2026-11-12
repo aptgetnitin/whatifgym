@@ -1,0 +1,47 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "karlsruhe_service_start_time",
+   "measure": "start_time",
+   "scope": {
+    "location": "Karlsruhe"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start_time",
+    "scope": {
+     "location": [
+      "Heidelberg",
+      "Freiburg im Breisgau",
+      "Mannheim",
+      "Karlsruhe",
+      "Baden-Baden",
+      "Buehl",
+      "Offenburg",
+      "Lahr/Schwarzwald",
+      "Loerrach"
+     ]
+    }
+   },
+   "factor": 0.2
+  },
+  {
+   "name": "carlos_dispatched_technicians",
+   "measure": "use",
+   "scope": {
+    "technician": "Carlos"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "use",
+    "scope": {
+     "technician": "Ed"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "Two relative limits: Karlsruhe's service start time must be at least 20% of all service start times; Carlos's dispatched technicians must be at most 25% of Ed's."
+}

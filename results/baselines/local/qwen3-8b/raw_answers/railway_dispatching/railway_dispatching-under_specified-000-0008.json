@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "ask": "What does changing the minimum time on resource 0 do?"
+}

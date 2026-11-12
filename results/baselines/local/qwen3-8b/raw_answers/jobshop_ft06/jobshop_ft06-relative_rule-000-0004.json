@@ -1,0 +1,43 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "total_start_time_for_J1",
+   "measure": "start",
+   "scope": {
+    "job": "J1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": [
+      "J0",
+      "J2",
+      "J3",
+      "J4",
+      "J5"
+     ]
+    }
+   },
+   "factor": 0.05
+  },
+  {
+   "name": "start_time_J5_at_least_1_25_times_J0",
+   "measure": "start",
+   "scope": {
+    "job": "J5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": "J0"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

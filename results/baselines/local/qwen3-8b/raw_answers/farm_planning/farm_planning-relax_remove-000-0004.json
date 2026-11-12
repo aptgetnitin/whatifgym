@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "relax": [
+  {
+   "constraint": "housing",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  },
+  {
+   "constraint": "land",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  }
+ ],
+ "note": "Relaxing the housing and land constraints removes the limits on labour-hours and housing-capacity."
+}

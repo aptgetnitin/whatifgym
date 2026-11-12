@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg1_buy_min",
+   "measure": "buy",
+   "scope": {
+    "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "oil": "VEG1"
+   },
+   "sense": ">=",
+   "value": 2000
+  },
+  {
+   "name": "oil2_buy_min",
+   "measure": "buy",
+   "scope": {
+    "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "oil": "OIL2"
+   },
+   "sense": ">=",
+   "value": 4500
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

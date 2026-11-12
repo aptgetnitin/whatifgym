@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "customers",
+   "column": "due_time",
+   "where": {
+    "customer": "Customer5"
+   },
+   "value": 120
+  }
+ ],
+ "rules": [
+  {
+   "name": "customer5_lateness",
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "sense": "==",
+   "value": 210
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

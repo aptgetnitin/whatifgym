@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_stock",
+   "where": {
+    "industry": "transport"
+   },
+   "value": 300
+  }
+ ],
+ "note": "The initial stock for transport is set to 300."
+}

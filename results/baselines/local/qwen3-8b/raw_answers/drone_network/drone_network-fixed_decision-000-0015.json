@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "fixed_decisions": [
+    {
+      "measure": "assign",
+      "scope": {
+        "location": "5600 MEER ST",
+        "base": "2837 SHORE DR Fire Station"
+      },
+      "value": 1
+    },
+    {
+      "measure": "assign",
+      "scope": {
+        "location": "5600 MEER ST",
+        "base": "3769 E. STRATFORD ROAD Rescue Squad"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Fixing the assignment of location 5600 MEER ST to both bases 2837 SHORE DR Fire Station and 3769 E. STRATFORD ROAD Rescue Squad."
+}

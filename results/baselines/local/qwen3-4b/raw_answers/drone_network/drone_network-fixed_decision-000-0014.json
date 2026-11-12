@@ -20,15 +20,5 @@
       },
       "value": 0
     }
-  ],
-  "fixed_decisions": [
-    {
-      "measure": "assign",
-      "scope": {
-        "location": "1300 HAWKS NEST WAY",
-        "base": "800 VIRGINIA BEACH BLVD Fire Station"
-      },
-      "value": 0
-    }
   ]
 }

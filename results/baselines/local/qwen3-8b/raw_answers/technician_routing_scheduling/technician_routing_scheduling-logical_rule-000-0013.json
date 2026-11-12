@@ -1,0 +1,46 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "start_time_mannheim_zero_or_at_least_72",
+   "measure": "start_time",
+   "scope": {
+    "location": "Mannheim"
+   },
+   "sense": ">=",
+   "value": 0,
+   "relative_to": {
+    "measure": "start_time",
+    "scope": {
+     "location": "Mannheim"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "logic": [
+  {
+   "name": "either_start_time_mannheim_zero_or_at_least_72",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "start_time",
+     "scope": {
+      "location": "Mannheim"
+     },
+     "sense": "==",
+     "value": 0
+    },
+    {
+     "measure": "start_time",
+     "scope": {
+      "location": "Mannheim"
+     },
+     "sense": ">=",
+     "value": 72
+    }
+   ]
+  }
+ ]
+}

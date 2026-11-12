@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "input_output",
+   "column": "input_per_unit_output",
+   "where": {
+    "supplier": "coal",
+    "user": "transport"
+   },
+   "value": 0.2
+  }
+ ],
+ "note": "The input per unit of output for coal to transport is updated to 0.2."
+}

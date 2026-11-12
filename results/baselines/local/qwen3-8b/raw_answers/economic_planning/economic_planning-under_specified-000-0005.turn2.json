@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "input_output",
+   "column": "input_per_unit_output",
+   "where": {
+    "supplier": "transport",
+    "user": "transport"
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "The input per unit of output for supplying industry transport, using industry transport is scaled by 0.8 (20% decrease)."
+}

@@ -33,8 +33,9 @@ def rescore_file(path: str) -> tuple[str, int, int, int]:
         env.reset(tasks[r["task_id"]])
         if r["asked"]:
             env.step({"type": "ask", "text": "replayed question"})
-        _, reward, done, info = env.step(r["final_action"])
-        assert done
+        done = False
+        while not done:   # a final action that is itself a question ends the episode at the turn limit
+            _, reward, done, info = env.step(r["final_action"])
         if abs(reward - r["reward"]) > 1e-9:
             up += reward > r["reward"]
             down += reward < r["reward"]

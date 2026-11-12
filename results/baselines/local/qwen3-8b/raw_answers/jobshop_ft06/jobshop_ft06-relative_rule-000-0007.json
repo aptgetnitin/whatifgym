@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "end_j2_at_least_1_5_end_j1",
+   "measure": "end",
+   "scope": {
+    "job": "J2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "end",
+    "scope": {
+     "job": "J1"
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "The end time of J2 must be at least 1.5 times the end time of J1."
+}

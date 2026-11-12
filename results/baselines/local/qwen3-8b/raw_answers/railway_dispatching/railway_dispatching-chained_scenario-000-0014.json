@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "resources",
+   "column": "duration",
+   "factor": 1.5
+  }
+ ],
+ "note": "A relative change to the duration of all resources (stations and tracks) is a scale over the entire table."
+}

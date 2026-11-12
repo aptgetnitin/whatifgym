@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "at_most_two_service_starts",
+   "measure": "start_time",
+   "scope": {
+    "location": [
+     "Buehl",
+     "Karlsruhe",
+     "Lahr/Schwarzwald",
+     "Loerrach"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Limit the number of locations among Buehl, Karlsruhe, Lahr/Schwarzwald, and Loerrach that have a non-zero service start time."
+}

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "fixed_decisions": [
+  {
+   "measure": "workforce",
+   "scope": {
+    "year": 1,
+    "skill": "semi_skilled"
+   },
+   "value": 7200
+  }
+ ],
+ "note": "Fixed the workforce for year 1, skill level semi_skilled to exactly 7200."
+}

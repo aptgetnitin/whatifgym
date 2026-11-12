@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "at_most_one_of_maize_meal_oil_milk",
+   "measure": "purchase",
+   "scope": {
+    "food": [
+     "Maize meal",
+     "Oil",
+     "Milk"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "At most one of the specified foods can have a non-zero purchase."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod6_stock_limit",
+   "measure": "store",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod2"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "A relative stock limit over a subset of products is a rule comparing the sum of store for Prod6 to 25% of the sum of store for Prod2."
+}

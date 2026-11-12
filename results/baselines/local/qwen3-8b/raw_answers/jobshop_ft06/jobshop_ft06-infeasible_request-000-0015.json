@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "operation_start_time_step_5",
+   "measure": "start",
+   "scope": {
+    "job": "*",
+    "step": 5
+   },
+   "sense": ">=",
+   "value": 1140
+  }
+ ],
+ "note": "The rule ensures the sum of start times for all operations in step 5 is at least 1140."
+}

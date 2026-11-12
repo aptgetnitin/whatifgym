@@ -13,5 +13,5 @@
       "value": 3
     }
   ],
-  "note": "The incident location '1700 PLEASURE HOUSE RD' has a different number of cardiac arrests observed."
-  }
+  "note": "The planner's question refers to a specific incident location row having a different observed cardiac arrest count. The 'incidents' table has a row for '1700 PLEASURE HOUSE RD' with the original incident count (likely 1), and the question implies a change to this row's incidents value."
+}

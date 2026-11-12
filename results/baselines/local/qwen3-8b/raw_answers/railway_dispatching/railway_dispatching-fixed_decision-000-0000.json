@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "E"
+      },
+      "value": 10
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "finish_time",
+      "scope": {
+        "train": "E"
+      },
+      "value": 56
+    }
+  ],
+  "rules": [
+    {
+      "name": "capacity_resource_1",
+      "measure": "meet",
+      "scope": {
+        "resource": 1,
+        "train": "B",
+        "other_train": "E"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

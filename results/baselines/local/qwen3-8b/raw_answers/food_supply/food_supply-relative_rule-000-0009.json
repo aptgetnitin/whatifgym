@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "wheat_at_most_60_percent_of_oil",
+   "measure": "flow",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "Oil"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "A relative rule compares the sum of the flow for Wheat to the sum of the flow for Oil."
+}

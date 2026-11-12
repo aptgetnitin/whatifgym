@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "max_5_percent_total_end_time_step_2",
+   "measure": "end",
+   "scope": {
+    "job": "*",
+    "step": 2
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "end",
+    "scope": {
+     "job": "*",
+     "step": "*"
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "A rule that limits the sum of end times for step 2 to at most 5% of the total sum of end times across all steps."
+}

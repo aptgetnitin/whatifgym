@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "task_3_at_least_30_percent",
+   "measure": "assign",
+   "scope": {
+    "task": "task_3"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "task": "*"
+    }
+   },
+   "factor": 0.3
+  }
+ ],
+ "note": "The rule ensures that task_3's assignments are at least 30% of all task assignments."
+}

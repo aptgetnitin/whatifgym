@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "task_1_at_most_25_of_task_5",
+   "measure": "assign",
+   "scope": {
+    "task": "task_1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "task": "task_5"
+    }
+   },
+   "factor": 0.25
+  },
+  {
+   "name": "total_teams_at_most_25_of_total_assignments",
+   "measure": "team",
+   "sense": "<=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "task": "all"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "Two relative limits: task_1 assignments are at most 25% of task_5 assignments, and total teams are at most 25% of total assignments."
+}

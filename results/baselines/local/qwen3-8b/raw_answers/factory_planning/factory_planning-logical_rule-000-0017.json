@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "min_stock_jan",
+   "measure": "store",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Jan"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "If the total units in stock for month Jan is above zero, it must be at least 124."
+}

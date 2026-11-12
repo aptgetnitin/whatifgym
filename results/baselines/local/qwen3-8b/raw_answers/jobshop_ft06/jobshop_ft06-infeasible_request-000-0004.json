@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "start_j5_step3_at_least_190",
+   "measure": "start",
+   "scope": {
+    "job": "J5",
+    "step": 3
+   },
+   "sense": ">=",
+   "value": 190
+  }
+ ],
+ "note": "The rule ensures the start time of J5's step 3 is at least 190."
+}

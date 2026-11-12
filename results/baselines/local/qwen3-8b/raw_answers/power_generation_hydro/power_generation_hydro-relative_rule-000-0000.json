@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal2_at_least_40_percent",
+   "measure": "ngen",
+   "scope": {
+    "type": "Thermal2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "ngen",
+    "scope": {
+     "type": [
+      "Thermal0",
+      "Thermal1",
+      "Thermal2"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "At least 40% of the total number of thermal units running must be of type Thermal2."
+}

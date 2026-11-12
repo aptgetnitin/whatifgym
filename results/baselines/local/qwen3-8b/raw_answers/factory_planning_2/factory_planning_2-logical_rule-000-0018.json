@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "logic": [
+  {
+   "name": "stock_prod4_jun_condition",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "Apr",
+      "product": "Prod1"
+     },
+     "sense": ">",
+     "value": 0
+    },
+    {
+     "measure": "store",
+     "scope": {
+      "month": "Jun",
+      "product": "Prod4"
+     },
+     "sense": ">=",
+     "value": 100
+    }
+   ]
+  }
+ ],
+ "note": "Logical rule: at least one of the conditions must hold. If non-zero units are sold for Prod1 in April, then the stock of Prod4 in June must be at least 100."
+}

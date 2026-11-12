@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "min_csb_shipment",
+      "measure": "flow",
+      "scope": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "sense": ">=",
+      "value": 18500
+    }
+  ]
+}

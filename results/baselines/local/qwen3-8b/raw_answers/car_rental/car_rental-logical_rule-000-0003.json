@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "max_rentals_non_zero",
+   "measure": "rentals",
+   "scope": {
+    "depot": [
+     "Birmingham",
+     "Plymouth",
+     "Glasgow",
+     "Manchester"
+    ]
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "Limits the number of depots with non-zero rentals to at most 3."
+}

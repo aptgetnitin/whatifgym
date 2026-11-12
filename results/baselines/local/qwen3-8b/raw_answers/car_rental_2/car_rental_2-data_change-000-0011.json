@@ -1,0 +1,69 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_same_depot",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "price_other_depot",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "share",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale",
+   "table": "rental_lengths",
+   "column": "marginal_cost",
+   "where": {
+    "rental_days": [
+     1,
+     2,
+     3
+    ]
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Tuesday",
+    "depot": "Manchester"
+   },
+   "value": 290
+  }
+ ],
+ "note": "All prices and return to same depot shares are scaled down by 10%, and the demand for Tuesday, Manchester is set to 290."
+}

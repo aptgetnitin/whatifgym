@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "fixed_decisions": [
+  {
+   "measure": "short_time",
+   "scope": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "value": 38
+  }
+ ],
+ "note": "Fix the number of unskilled workers on short-time working in year 2 to 38."
+}

@@ -1,0 +1,1 @@
+{"version": "0.1","base_model":"jobshop_ft06","ask":"Please specify which row in the operations table and which column (duration) needs to have a different processing time."}

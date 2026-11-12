@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "lateness_penalty",
+   "value": 10000
+  }
+ ],
+ "rules": [
+  {
+   "name": "lateness_customer5",
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "sense": "==",
+   "value": 130
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Set the lateness penalty to 10000 and fix the lateness for Customer5 to 130 minutes, then optimise the rest."
+}

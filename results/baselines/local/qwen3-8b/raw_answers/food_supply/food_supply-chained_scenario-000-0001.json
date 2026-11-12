@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "cap_purchase_Milk",
+   "measure": "purchase",
+   "scope": {
+    "food": "Milk"
+   },
+   "sense": "<=",
+   "value": 23100
+  }
+ ],
+ "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}

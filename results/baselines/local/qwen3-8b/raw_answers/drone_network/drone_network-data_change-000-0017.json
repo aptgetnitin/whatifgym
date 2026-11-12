@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_bases",
+   "value": 10
+  }
+ ],
+ "note": "Halving the number of drones (bases opened) from the original value."
+}

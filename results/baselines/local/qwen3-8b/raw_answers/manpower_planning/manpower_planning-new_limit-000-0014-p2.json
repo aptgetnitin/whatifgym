@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_short_time",
+   "value": 220
+  }
+ ],
+ "note": "The short-time working limit per skill level is set to 220 across the whole plan."
+}

@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "coal_capacity_year_5_if_stock_year_1_positive",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 5,
+    "industry": "coal"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "stock",
+    "scope": {
+     "year": 1
+    }
+   },
+   "factor": 1180
+  }
+ ],
+ "note": "If the stock in year 1 is above zero, the extra capacity for coal in year 5 must be at least 1180."
+}

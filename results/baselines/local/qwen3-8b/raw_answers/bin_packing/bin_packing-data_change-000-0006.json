@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "items",
+   "rows": [
+    {
+     "item": "new_item",
+     "weight": 11
+    }
+   ]
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Adding a new item to the items table increases the total weight, which may require more bins to be used."
+}

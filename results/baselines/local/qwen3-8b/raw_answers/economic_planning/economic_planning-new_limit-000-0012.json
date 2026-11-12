@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "coal_capacity_limit",
+   "measure": "extra_capacity",
+   "scope": {
+    "industry": "coal"
+   },
+   "sense": "<=",
+   "value": 400
+  }
+ ],
+ "note": "Limits the total extra capacity built for coal across all years to 400 million USD/year."
+}

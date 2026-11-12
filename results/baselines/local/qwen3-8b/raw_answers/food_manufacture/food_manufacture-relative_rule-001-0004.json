@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "oil3_store_share",
+   "measure": "store",
+   "scope": {
+    "oil": "OIL3"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "oil": [
+      "VEG1",
+      "VEG2",
+      "OIL1",
+      "OIL2",
+      "OIL3"
+     ]
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "A relative rule bounds the share of a single oil in total storage."
+}

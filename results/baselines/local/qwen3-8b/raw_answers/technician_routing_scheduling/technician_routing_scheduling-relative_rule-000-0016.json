@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "service_start_time_to_lahr",
+   "measure": "start_time",
+   "scope": {
+    "location": "Lahr/Schwarzwald"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start_time",
+    "scope": {
+     "location": [
+      "Heidelberg",
+      "Freiburg im Breisgau",
+      "Mannheim",
+      "Karlsruhe",
+      "Baden-Baden",
+      "Buehl",
+      "Offenburg",
+      "Lahr/Schwarzwald",
+      "Loerrach"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "At least 40% of the total service start time must be allocated to Lahr/Schwarzwald."
+}

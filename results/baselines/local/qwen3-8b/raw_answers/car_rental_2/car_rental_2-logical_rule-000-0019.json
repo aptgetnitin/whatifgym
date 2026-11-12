@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "rentals_limit",
+   "measure": "rentals",
+   "scope": {
+    "depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ]
+}

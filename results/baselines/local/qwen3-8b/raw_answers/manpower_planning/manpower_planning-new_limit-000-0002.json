@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "total_downgrade_limit",
+   "measure": "downgrade",
+   "scope": {
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "unskilled",
+     "semi_skilled"
+    ]
+   },
+   "sense": "<=",
+   "value": 130
+  }
+ ],
+ "note": "A rule limits the total number of workers downgraded across all skill levels and directions."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "a321_2_operate_at_most_25_of_a318_4",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A321#2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "aircraft": "A318#4"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The number of flights operated for aircraft A321#2 is constrained to be at most 25% of the number of flights operated for aircraft A318#4."
+}

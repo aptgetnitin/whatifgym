@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "relax": [
+  {
+   "constraint": "capacity",
+   "scope": {
+    "facility": [
+     "T19",
+     "E10"
+    ]
+   }
+  }
+ ],
+ "note": "The capacity constraint is relaxed for facilities T19 and E10, meaning the bed-capacity limit does not apply to them."
+}

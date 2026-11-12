@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "start_time_karlsruhe_zero_or_at_least_320",
+   "measure": "start_time",
+   "scope": {
+    "location": "Karlsruhe"
+   },
+   "sense": ">=",
+   "value": 0
+  },
+  {
+   "name": "start_time_karlsruhe_at_least_320",
+   "measure": "start_time",
+   "scope": {
+    "location": "Karlsruhe"
+   },
+   "sense": ">=",
+   "value": 320
+  }
+ ],
+ "note": "The total service start time for location Karlsruhe must be either zero or at least 320."
+}

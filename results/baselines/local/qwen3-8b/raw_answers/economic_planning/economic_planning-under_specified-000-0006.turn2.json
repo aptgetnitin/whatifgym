@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "capacity_floor",
+   "measure": "extra_capacity",
+   "scope": {
+    "industry": "coal"
+   },
+   "sense": ">=",
+   "value": 790
+  }
+ ],
+ "note": "A floor on the capacity built (million USD/year) for industry coal."
+}

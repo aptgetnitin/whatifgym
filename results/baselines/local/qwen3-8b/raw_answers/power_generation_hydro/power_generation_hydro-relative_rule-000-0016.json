@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_to_period_09-15",
+   "measure": "output",
+   "scope": {
+    "period": "09-15"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "output",
+    "scope": {
+     "period": [
+      "00-06",
+      "06-09",
+      "15-18",
+      "18-24"
+     ]
+    }
+   },
+   "factor": 0.3
+  }
+ ],
+ "note": "At least 30% of the total thermal output must be allocated to the 09-15 period."
+}

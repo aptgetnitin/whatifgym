@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_resource_1",
+   "measure": "entry_time",
+   "scope": {
+    "resource": 1
+   },
+   "sense": ">=",
+   "value": 350
+  }
+ ],
+ "note": "The rule enforces a minimum entry time of 350 minutes for resource 1."
+}

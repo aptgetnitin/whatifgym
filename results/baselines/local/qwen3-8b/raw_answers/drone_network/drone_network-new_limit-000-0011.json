@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_bases",
+      "value": 3
+    }
+  ],
+  "rules": [
+    {
+      "name": "base_assign_limit_5145_RURITAN_COURT",
+      "measure": "assign",
+      "scope": {
+        "base": "5145 RURITAN COURT Rescue Squad"
+      },
+      "sense": "<=",
+      "value": 29
+    }
+  ],
+  "note": "Set max_bases to 3 and limit the number of incident locations assigned to 5145 RURITAN COURT Rescue Squad to 29."
+}

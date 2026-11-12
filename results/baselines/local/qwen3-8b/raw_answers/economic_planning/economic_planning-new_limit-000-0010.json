@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "transport_output_min",
+   "measure": "production",
+   "scope": {
+    "industry": "transport"
+   },
+   "sense": ">=",
+   "value": 1110
+  }
+ ],
+ "note": "A minimum requirement on the total output of the transport industry over the planning horizon."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "base_queue_load_min",
+   "measure": "queue_load",
+   "scope": {
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": ">=",
+   "value": 0.01
+  }
+ ],
+ "note": "Ensuring the queue load for the specified base meets the minimum threshold."
+}

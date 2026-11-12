@@ -1,0 +1,11 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "travel_cost_per_patient_distance",
+   "factor": 1.5
+  }
+ ]
+}

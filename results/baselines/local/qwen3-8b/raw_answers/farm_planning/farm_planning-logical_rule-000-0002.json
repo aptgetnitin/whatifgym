@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "grow_grain",
+   "column": "grow_grain",
+   "where": {
+    "year": "Year4",
+    "land_group": "Group1"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "grain_bought_min_year1",
+   "measure": "buy_grain",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 46
+  }
+ ],
+ "note": "A non-zero tons of grain grown for Year4, Group1 requires a total tons of grain bought of at least 46 for Year1."
+}

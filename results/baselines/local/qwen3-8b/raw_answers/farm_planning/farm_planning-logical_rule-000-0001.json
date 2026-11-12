@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_sold_year3_min",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year3"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell_beet",
+    "scope": {
+     "year": "Year3"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "If the total tons of sugar beet sold for Year3 is above zero, it must be at least 49."
+}

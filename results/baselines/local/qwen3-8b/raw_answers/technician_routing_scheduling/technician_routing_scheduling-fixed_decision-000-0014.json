@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "customers",
+   "column": "unfilled",
+   "where": {
+    "customer": "Customer7"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Set the unfilled status of Customer7 to 1 and optimise the rest."
+}

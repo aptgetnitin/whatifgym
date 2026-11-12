@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "lost_revenue",
+   "scope": {
+    "flight": "*"
+   }
+  }
+ ],
+ "note": "Prioritise minimising the number of flights operated, then minimising lost revenue."
+}

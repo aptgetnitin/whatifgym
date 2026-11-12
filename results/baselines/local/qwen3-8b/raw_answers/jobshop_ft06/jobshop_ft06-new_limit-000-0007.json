@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "sum_end_step5_at_least_310",
+   "measure": "end",
+   "scope": {
+    "step": 5
+   },
+   "sense": ">=",
+   "value": 310
+  }
+ ],
+ "note": "A rule bounds the SUM of the end times of all operations with routing step 5 to be at least 310."
+}

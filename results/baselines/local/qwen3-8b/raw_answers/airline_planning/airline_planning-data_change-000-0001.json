@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "shift",
+   "table": "flights",
+   "column": "departure",
+   "where": {
+    "flight": 4578
+   },
+   "delta": 701
+  }
+ ],
+ "note": "The departure time of flight 4578 is adjusted to 701 minutes after midnight."
+}

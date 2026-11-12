@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_bases",
+   "value": 3
+  }
+ ],
+ "note": "Setting the max_bases parameter to 3 enforces an overall cap of 3 on the number of drone bases opened."
+}

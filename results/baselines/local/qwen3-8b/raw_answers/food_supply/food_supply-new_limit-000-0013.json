@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "wheat_shipment_min",
+   "measure": "flow",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": ">=",
+   "value": 86400
+  }
+ ],
+ "note": "The total flow of Wheat across all links must be at least 86400 units per day."
+}

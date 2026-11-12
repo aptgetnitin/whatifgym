@@ -272,7 +272,24 @@ About 12 % of qwen3:4b's first 250 answers ended in `HTTP 500: prediction aborte
 
 The user raised the cap to $5.50: terminate by 01:50 UTC (5:50 PM Pacific).
 
-Timeline, continued: 22:02:12 qwen3:4b restarts; 22:28:23 qwen3:8b starts.
+**The pod scored with a newer HiGHS.** `pip install -e .` took highspy 1.16.0; the Mac, where every reference was made, has 1.15.1. The test suite run on the pod (765 passed, 1 failed, 28 min) showed it: one gold answer in `tests/test_training_eval.py` no longer scored as correct. A scan of all gold answers on the pod found 8 of 3,801 that 1.16.0 does not reproduce and 1.15.1 on the same pod does:
+
+```
+drone_network-infeasible_request-000-0003         farm_planning-new_limit-000-0002
+optimize_power_schedule-new_limit-000-0011        railway_dispatching-new_limit-000-0005
+railway_dispatching-relative_rule-000-0010, -0011 technician_routing_scheduling-objective_change-000-0005, -0013
+```
+
+So at most 8 answers per model were at risk. Fix: highspy 1.15.1 installed in the run's environment at 23:09 UTC (task files started later score with it), `highspy<1.16` pinned in `pyproject.toml` and `requirements.txt` (commit `501705f`), and every result file replayed through the scorer with 1.15.1 (no model call; the records keep each final scenario):
+
+```bash
+python3 -m venv /root/venv2 && /root/venv2/bin/pip install -e . 'highspy==1.15.1'
+/root/venv2/bin/python scripts/rescore_results.py results/baselines/local/qwen3-4b results/baselines/local/qwen3-8b --jobs 8
+```
+
+Open item: these 8 labels depend on the solver release (degenerate optima, or a MIP gap in two cases); check them and drop or regenerate them.
+
+Timeline, continued: 22:02:12 qwen3:4b restarts; 22:28:23 qwen3:8b starts; 22:54:33 it ends (26 min); 22:54:40 to 23:02:51 drone_network again for both models with the 32k window; 23:02:58 qwen3:14b starts (4 at once).
 
 ## Problems hit, in order
 

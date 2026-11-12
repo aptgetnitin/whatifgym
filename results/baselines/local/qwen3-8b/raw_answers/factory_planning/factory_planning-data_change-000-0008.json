@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod5"
+   },
+   "factor": 0.75
+  },
+  {
+   "op": "set_param",
+   "name": "max_inventory",
+   "value": 150
+  }
+ ],
+ "relax": [
+  {
+   "constraint": "end_stock",
+   "scope": {
+    "product": "*"
+   }
+  }
+ ],
+ "note": "A new borer increases machine capacity, and Prod5's profit is reduced by 25%. The end-of-horizon stock target is relaxed."
+}

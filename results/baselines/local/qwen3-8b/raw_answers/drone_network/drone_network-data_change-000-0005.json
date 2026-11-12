@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "1200 MOZART DR"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting the incidents count for location 1200 MOZART DR to 0."
+}

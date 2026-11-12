@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "charge_limit_02-03",
+   "measure": "charge",
+   "scope": {
+    "hour": "02-03"
+   },
+   "sense": "<=",
+   "value": 2.2
+  }
+ ],
+ "note": "A rule limits the total charging power for the specific hour."
+}

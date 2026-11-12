@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "params",
+   "column": "store_target",
+   "where": {
+    "param": "store_target"
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The closing stock target is doubled by scaling the store_target parameter."
+}

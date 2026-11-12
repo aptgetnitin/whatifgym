@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "fixed_decisions": [
+  {
+   "measure": "operate",
+   "scope": {
+    "aircraft": [
+     "A321#2",
+     "A321#4",
+     "A319#18",
+     "A319#5"
+    ]
+   },
+   "value": 0
+  }
+ ],
+ "note": "Only two of the specified aircraft can have non-zero operated flights."
+}

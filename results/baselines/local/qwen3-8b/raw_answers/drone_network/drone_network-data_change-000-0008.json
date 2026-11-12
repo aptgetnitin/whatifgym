@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "5800 MISS CORAL CT"
+   },
+   "value": 2
+  }
+ ],
+ "note": "The number of cardiac arrests at location 5800 MISS CORAL CT is set to 2."
+}

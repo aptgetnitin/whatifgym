@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "fixed_decisions": [
+  {
+   "measure": "repairs",
+   "scope": {
+    "day": "Saturday",
+    "depot": "Manchester"
+   },
+   "value": 6
+  }
+ ],
+ "note": "Fix the number of repairs at Manchester on Saturday to exactly 6."
+}

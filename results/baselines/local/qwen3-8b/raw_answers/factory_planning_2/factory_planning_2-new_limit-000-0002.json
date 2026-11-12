@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "all"
+   },
+   "value": 6450
+  }
+ ],
+ "note": "An overall cap on units sold is applied by setting the max_sales column to 6450 for all products."
+}

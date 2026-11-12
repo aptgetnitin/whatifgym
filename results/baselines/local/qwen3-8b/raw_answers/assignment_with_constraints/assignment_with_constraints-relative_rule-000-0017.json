@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "task_5_at_most_50_of_task_3",
+   "measure": "assign",
+   "scope": {
+    "task": "task_5"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "task": "task_3"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "A rule that limits the number of task assignments for task_5 to at most 50% of the number for task_3."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "plant_hours_on_hour_19",
+   "measure": "on",
+   "scope": {
+    "hour": 19
+   },
+   "sense": ">=",
+   "value": 10
+  }
+ ],
+ "note": "The total number of plants on in hour 19 must be at least 10."
+}

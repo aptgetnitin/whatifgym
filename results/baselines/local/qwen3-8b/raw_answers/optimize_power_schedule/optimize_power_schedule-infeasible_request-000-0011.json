@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hour14_output",
+   "measure": "output",
+   "scope": {
+    "hour": 14
+   },
+   "sense": ">=",
+   "value": 15200
+  },
+  {
+   "name": "hour20_output",
+   "measure": "output",
+   "scope": {
+    "hour": 20
+   },
+   "sense": ">=",
+   "value": 18850
+  }
+ ],
+ "note": "The planner is asking if it is possible to meet both the minimum generation requirements for hour 14 and hour 20."
+}

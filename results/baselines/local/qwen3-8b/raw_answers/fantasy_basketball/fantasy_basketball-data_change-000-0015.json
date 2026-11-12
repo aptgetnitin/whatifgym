@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "positions",
+   "column": "required",
+   "where": {
+    "position": "SF"
+   },
+   "value": 0
+  },
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "salary",
+   "where": {
+    "player": "Josh Huestis"
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "The required number of players for SF is set to 0, and the salary of Josh Huestis is increased by 50%."
+}

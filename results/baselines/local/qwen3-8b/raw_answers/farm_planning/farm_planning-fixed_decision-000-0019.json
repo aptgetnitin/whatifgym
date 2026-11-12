@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "sell_beet",
+   "column": "sell_beet",
+   "where": {
+    "year": "Year4"
+   },
+   "value": 21
+  }
+ ],
+ "note": "Fixing the tons of sugar beet sold in Year4 to 21."
+}

@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 1,
+    "skill": "skilled"
+   },
+   "value": 700
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 2,
+    "skill": "skilled"
+   },
+   "value": 700
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 3,
+    "skill": "skilled"
+   },
+   "value": 700
+  }
+ ]
+}

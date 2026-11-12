@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "blend",
+   "where": {
+    "year": "Year2"
+   },
+   "value": 3000000
+  }
+ ],
+ "note": "Fixed the blend quantity for Year2 to exactly 3000000 tons."
+}

@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "steel_output_year_2_zero_or_at_least_470",
+   "measure": "production",
+   "scope": {
+    "year": 2,
+    "industry": "steel"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "year": 2,
+     "industry": "steel"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "steel_output_year_2_zero_or_at_least_470",
+   "measure": "production",
+   "scope": {
+    "year": 2,
+    "industry": "steel"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The rule enforces that the steel output in year 2 is either zero or at least 470."
+}

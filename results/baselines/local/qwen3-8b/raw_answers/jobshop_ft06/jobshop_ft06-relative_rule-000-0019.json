@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "j1_goes_first_at_least_60",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "*",
+    "job": "J1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "goes_first",
+    "scope": {
+     "machine": "*"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "The rule ensures that the sum of goes_first for J1 on all machines is at least 60% of the total goes_first across all jobs on all machines."
+}

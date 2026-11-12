@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "fixed_decisions": [
+  {
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 5,
+    "industry": "coal"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the extra_capacity for year 5 and coal to 0."
+}

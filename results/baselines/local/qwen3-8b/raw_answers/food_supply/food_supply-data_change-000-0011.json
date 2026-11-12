@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "camps",
+   "where": {
+    "camp": "Dayr_Az_Zor"
+   }
+  },
+  {
+   "op": "scale",
+   "table": "local_prices",
+   "column": "price",
+   "where": {
+    "supplier": "As_Suweida",
+    "food": "Bulgur"
+   },
+   "factor": 1.2
+  }
+ ],
+ "rules": [
+  {
+   "name": "no_dayr_az_zor_camp",
+   "measure": "ration",
+   "scope": {
+    "camp": "Dayr_Az_Zor"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Removing the Dayr_Az_Zor camp and adjusting the local price for Bulgur at As_Suweida."
+}

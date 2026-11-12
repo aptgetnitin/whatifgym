@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "feb_make_requiring_apr_prod4_sell",
+   "measure": "make",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">",
+   "value": 0,
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": "Apr",
+     "product": "Prod4"
+    }
+   },
+   "factor": 150
+  }
+ ],
+ "note": "A rule that links the sum of make in Feb to the sum of sell in Apr for Prod4."
+}

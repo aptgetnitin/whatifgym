@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "total_stock_units",
+   "measure": "store",
+   "scope": {
+    "product": "*"
+   },
+   "sense": "<=",
+   "value": 900
+  }
+ ],
+ "note": "A limit on the total unit-months of stock across all products over the horizon."
+}

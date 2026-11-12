@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "output",
+   "scope": {
+    "plant": "*",
+    "hour": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "output",
+   "scope": {
+    "plant": "*",
+    "hour": "*"
+   },
+   "value": 717000
+  }
+ ],
+ "note": "The objective is to maximise total power generated while ensuring the total output meets the target of 717000 MWh."
+}

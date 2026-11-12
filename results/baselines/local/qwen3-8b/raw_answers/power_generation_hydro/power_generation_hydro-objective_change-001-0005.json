@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "nstart",
+   "scope": {
+    "type": "Thermal0",
+    "period": [
+     "00-06",
+     "06-09",
+     "09-15",
+     "15-18",
+     "18-24"
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "original",
+   "scope": {}
+  }
+ ],
+ "note": "Prioritise minimising the number of thermal units started first, then minimising the total generating cost."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "rentals_tuesday_manchester_min",
+   "measure": "rentals",
+   "scope": {
+    "day": "Tuesday",
+    "depot": "Manchester"
+   },
+   "sense": ">=",
+   "value": 118
+  }
+ ],
+ "note": "A rule to enforce a minimum number of rentals at Manchester on Tuesday."
+}

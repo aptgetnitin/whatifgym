@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "flight_3107_op_at_most_75_of_3112",
+   "measure": "operate",
+   "scope": {
+    "flight": 3107
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "flight": 3112
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The number of flights operated for flight 3107 is constrained to be at most 75% of the number of flights operated for flight 3112."
+}

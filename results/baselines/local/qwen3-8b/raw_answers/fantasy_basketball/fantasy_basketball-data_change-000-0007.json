@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "players",
+   "column": "predicted_points",
+   "where": {
+    "player": "Jayson Tatum"
+   },
+   "value": 37
+  }
+ ],
+ "note": "The predicted fantasy points for Jayson Tatum are updated to 37."
+}

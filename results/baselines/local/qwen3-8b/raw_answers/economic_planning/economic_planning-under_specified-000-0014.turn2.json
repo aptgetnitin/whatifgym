@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "minimum_stock_for_steel",
+   "measure": "stock",
+   "scope": {
+    "industry": "steel"
+   },
+   "sense": ">=",
+   "value": 360
+  }
+ ],
+ "note": "A rule enforces a minimum stock level for steel across all years."
+}

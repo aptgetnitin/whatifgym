@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": [
+     "coal",
+     "steel",
+     "transport"
+    ]
+   },
+   "value": 250
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_extra_capacity_cap",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "industry": [
+     "coal",
+     "steel",
+     "transport"
+    ]
+   },
+   "sense": "<=",
+   "value": 500
+  }
+ ],
+ "note": "An overall cap of 500 applies to the capacity built (million USD/year), summed over everything."
+}

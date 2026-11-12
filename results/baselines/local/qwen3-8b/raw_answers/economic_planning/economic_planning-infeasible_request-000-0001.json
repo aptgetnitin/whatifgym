@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "fixed_decisions": [
+  {
+   "measure": "production",
+   "scope": {
+    "year": 5,
+    "industry": "coal"
+   },
+   "value": 4810
+  }
+ ],
+ "note": "Fix the production of coal in year 5 to exactly 4810 million USD."
+}

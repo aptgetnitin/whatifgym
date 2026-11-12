@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "fixed_decisions": [
+  {
+   "measure": "consume",
+   "scope": {
+    "month": "Feb",
+    "oil": "VEG2"
+   },
+   "value": 20
+  }
+ ],
+ "note": "Fix the amount of VEG2 refined in February to 20 tons."
+}

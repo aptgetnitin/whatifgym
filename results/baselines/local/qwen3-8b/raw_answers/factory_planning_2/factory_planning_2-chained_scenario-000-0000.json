@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "store_target",
+   "value": 38
+  },
+  {
+   "op": "set_param",
+   "name": "holding_cost",
+   "value": 0.75
+  }
+ ],
+ "note": "The holding cost is set to 0.75 and the closing stock target is set to 38."
+}

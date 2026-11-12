@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "min_incidents_per_base",
+   "measure": "assign",
+   "scope": {
+    "base": [
+     "21 MUNICIPAL CTR Fire Station",
+     "800 VIRGINIA BEACH BLVD Fire Station",
+     "600 CENTRAL DR Fire Station",
+     "3769 E. STRATFORD ROAD Rescue Squad",
+     "5145 RURITAN COURT Rescue Squad",
+     "333 THALIA ROAD Rescue Squad"
+    ]
+   },
+   "sense": ">=",
+   "value": 10
+  }
+ ],
+ "note": "A rule to enforce a minimum number of incident locations assigned to each base."
+}

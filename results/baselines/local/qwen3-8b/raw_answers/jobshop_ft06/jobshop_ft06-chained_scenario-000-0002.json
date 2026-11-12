@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "end_time_j4_limit",
+   "measure": "end",
+   "scope": {
+    "job": "J4"
+   },
+   "sense": "<=",
+   "value": 170
+  }
+ ],
+ "note": "A limit on the sum of end times for all operations of job J4."
+}

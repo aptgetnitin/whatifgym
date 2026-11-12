@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "at_most_3_aircraft_operate",
+   "measure": "operate",
+   "scope": {
+    "aircraft": [
+     "A318#8",
+     "A320#22",
+     "A318#4",
+     "A319#18",
+     "A319#11"
+    ]
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "A rule limits the total number of aircraft that can have a non-zero number of operated flights."
+}

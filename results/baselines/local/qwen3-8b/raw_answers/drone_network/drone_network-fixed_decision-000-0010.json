@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "fixed_decisions": [
+    {
+      "measure": "assign",
+      "scope": {
+        "location": "5800 N OTTAWA RD",
+        "base": "3769 E. STRATFORD ROAD Rescue Squad"
+      },
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

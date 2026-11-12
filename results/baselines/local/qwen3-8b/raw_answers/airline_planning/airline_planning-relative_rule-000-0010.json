@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "flights_to_A319_11",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A319#11"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "aircraft": "*"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "At least 75% of the total number of flights operated must go to aircraft A319#11."
+}

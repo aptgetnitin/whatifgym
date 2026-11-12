@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "service_start_time_floor",
+   "measure": "start_time",
+   "scope": {
+    "location": "Offenburg"
+   },
+   "sense": ">=",
+   "value": 54
+  }
+ ],
+ "note": "A floor on the service start time for location Offenburg."
+}

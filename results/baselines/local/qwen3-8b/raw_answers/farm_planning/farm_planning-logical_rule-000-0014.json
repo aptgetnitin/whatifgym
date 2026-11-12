@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "grain_bought_min_for_beet_sold_year1",
+   "measure": "buy_grain",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell_beet",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 44
+  }
+ ],
+ "note": "A rule that links the total tons of grain bought in Year2 to the total tons of sugar beet sold in Year1 with a factor of 44."
+}

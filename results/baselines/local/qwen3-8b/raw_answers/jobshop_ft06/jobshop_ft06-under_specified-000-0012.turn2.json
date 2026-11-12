@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "upper_limit_on_operation_end_time",
+   "measure": "end",
+   "scope": {
+    "job": "*",
+    "step": "*"
+   },
+   "sense": "<=",
+   "value": 1000
+  }
+ ],
+ "note": "An upper limit of 1000 is applied to the end time of all operations."
+}

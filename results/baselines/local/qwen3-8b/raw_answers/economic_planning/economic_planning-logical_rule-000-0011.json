@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "at_most_one_non_zero_stock",
+      "measure": "stock",
+      "scope": {
+        "year": [
+          2,
+          5,
+          1
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

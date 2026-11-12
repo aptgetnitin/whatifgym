@@ -1,0 +1,46 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "f_delay_based_on_d",
+   "measure": "finish_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "finish_time",
+    "scope": {
+     "train": "D"
+    }
+   },
+   "factor": 1.0,
+   "note": "If train D's finish time is above zero, train F's finish time must be at least 104."
+  }
+ ],
+ "logic": [
+  {
+   "name": "d_finish_time_positive",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "finish_time",
+     "scope": {
+      "train": "D"
+     },
+     "sense": ">",
+     "value": 0
+    },
+    {
+     "measure": "finish_time",
+     "scope": {
+      "train": "F"
+     },
+     "sense": ">=",
+     "value": 104
+    }
+   ]
+  }
+ ]
+}

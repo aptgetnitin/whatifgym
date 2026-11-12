@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "predicted_points",
+   "where": {
+    "position": [
+     "PG",
+     "SG",
+     "SF",
+     "PF",
+     "C"
+    ]
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Every predicted fantasy points in the players table falls by 25%."
+}

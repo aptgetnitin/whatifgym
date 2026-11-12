@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 2
+      },
+      "factor": 1.1
+    }
+  ],
+  "note": "A 10% increase in hourly power demand for hour 2 is modeled by scaling the demand_mwh column in the hours table for the row with hour 2."
+}

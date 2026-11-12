@@ -1,0 +1,50 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "worker_1_limit",
+   "measure": "works",
+   "scope": {
+    "worker": "worker_1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "works",
+    "scope": {
+     "worker": [
+      "worker_0",
+      "worker_1",
+      "worker_2",
+      "worker_3",
+      "worker_4",
+      "worker_5",
+      "worker_6",
+      "worker_7",
+      "worker_8",
+      "worker_9",
+      "worker_10",
+      "worker_11"
+     ]
+    }
+   },
+   "factor": 0.1
+  },
+  {
+   "name": "team_10_11_at_least_1_5_times_team_0_1",
+   "measure": "team",
+   "scope": {
+    "team": "team_10_11"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "team",
+    "scope": {
+     "team": "team_0_1"
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

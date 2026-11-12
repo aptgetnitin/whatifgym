@@ -1,0 +1,62 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "logic": [
+  {
+   "name": "at_most_one_month_with_produce",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "produce",
+     "scope": {
+      "month": [
+       "Jun"
+      ]
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "produce",
+     "scope": {
+      "month": [
+       "Feb"
+      ]
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "produce",
+     "scope": {
+      "month": [
+       "Apr"
+      ]
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "produce",
+     "scope": {
+      "month": [
+       "May"
+      ]
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "produce",
+     "scope": {
+      "month": [
+       "Mar"
+      ]
+     },
+     "sense": ">=",
+     "value": 1
+    }
+   ]
+  }
+ ]
+}

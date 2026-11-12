@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "arrival_time_D",
+   "measure": "finish_time",
+   "scope": {
+    "train": "D"
+   },
+   "sense": ">=",
+   "value": 27
+  },
+  {
+   "name": "arrival_time_F",
+   "measure": "finish_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": ">=",
+   "value": 160
+  }
+ ],
+ "note": "The rules enforce minimum arrival times for trains D and F at their destinations."
+}

@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "no_purchase_in_daraa_and_hassakeh",
+   "measure": "purchase",
+   "scope": {
+    "supplier": [
+     "Daraa",
+     "Hassakeh"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A rule that enforces zero purchase from both Daraa and Hassakeh."
+}

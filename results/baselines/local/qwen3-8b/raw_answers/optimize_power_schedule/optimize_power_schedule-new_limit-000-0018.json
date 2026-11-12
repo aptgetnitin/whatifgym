@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "biomass_output_limit",
+   "measure": "output",
+   "scope": {
+    "plant": "BIOMASS"
+   },
+   "sense": "<=",
+   "value": 8500
+  }
+ ],
+ "note": "Limits the total output of the BIOMASS plant to 8500 MWh."
+}

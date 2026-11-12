@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "make_jun_if_make_mar",
+   "measure": "make",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": "Mar"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that enforces a relative constraint between the total units made in June and March."
+}

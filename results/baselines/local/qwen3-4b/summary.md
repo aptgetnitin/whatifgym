@@ -6,7 +6,7 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 
 | model | episodes | accuracy | mean reward | valid DSL | route ok | chained_scenario | data_change | data_change (nl) | fixed_decision | infeasible_request | logical_rule | new_limit | new_limit (nl) | objective_change | relative_rule | relax_remove | under_specified | easy | medium | hard | s/episode |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `ollama/qwen3:4b` | 3801 | 0.253 | 0.317 | 0.72 | 0.89 | 0.48 (469) | 0.51 (512) | 0.50 (6) | 0.16 (423) | 0.09 (325) | 0.15 (407) | 0.44 (378) | 0.38 (39) | 0.20 (219) | 0.18 (429) | 0.06 (108) | 0.01 (486) | 0.24 (465) | 0.21 (2198) | 0.35 (1138) | 3.4 |
+| `ollama/qwen3:4b` | 3801 | 0.252 | 0.316 | 0.72 | 0.89 | 0.48 (469) | 0.51 (512) | 0.50 (6) | 0.16 (423) | 0.09 (325) | 0.15 (407) | 0.44 (378) | 0.38 (39) | 0.20 (219) | 0.18 (429) | 0.06 (108) | 0.01 (486) | 0.24 (465) | 0.21 (2198) | 0.35 (1138) | 3.3 |
 
 ## By base model
 
@@ -19,7 +19,7 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | `car_rental` | 0.22 (164) |
 | `car_rental_2` | 0.28 (194) |
 | `covid19_facility_location` | 0.21 (181) |
-| `drone_network` | 0.38 (151) |
+| `drone_network` | 0.36 (151) |
 | `economic_planning` | 0.28 (174) |
 | `factory_planning` | 0.21 (223) |
 | `factory_planning_2` | 0.31 (174) |
@@ -79,15 +79,15 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | under_specified | ask_outage | 0.00 (1) | needed clarification not asked |
 | under_specified | ask_outage_cancel | 0.00 (1) | invalid DSL: Additional properties are not allowed ('role', 'text' were unexpected) |
 | under_specified | ask_retire | 0.00 (2) | needed clarification not asked |
-| under_specified | ask_g_set_column | 0.02 (84) | invalid DSL: no row of 'flights' matches {"flight": ["4576"]} |
+| under_specified | ask_g_set_column | 0.01 (84) | invalid DSL: no row of 'flights' matches {"flight": ["4576"]} |
 | under_specified | ask_g_scale_column | 0.03 (77) | invalid DSL: column 'revenue' is numeric; got 'revenue' |
 | objective_change | o_then_max | 0.04 (23) | result differs from reference |
 | relax_remove | x_scoped | 0.05 (86) | result differs from reference |
-| fixed_decision | f_force_one | 0.06 (67) | result differs from reference |
 | logical_rule | l_at_most_k | 0.06 (108) | invalid DSL: no row of 'flights' matches {"flight": ["4572", "3095", "3112", "3069", "4571"]} |
 | infeasible_request | i_commit | 0.07 (133) | result differs from reference |
-| fixed_decision | f_fix_zero | 0.07 (122) | invalid DSL: table 'flights' has no column 'operate'; columns are ['aircraft', 'arrival', 'de |
+| fixed_decision | f_force_one | 0.07 (67) | result differs from reference |
 | infeasible_request | i_floor | 0.08 (88) | result differs from reference |
+| fixed_decision | f_fix_zero | 0.08 (122) | invalid DSL: table 'flights' has no column 'operate'; columns are ['aircraft', 'arrival', 'de |
 | objective_change | o_reorder | 0.10 (48) | invalid DSL: unknown measure 'revenue'; measures are ['connect', 'operate']; for the model's  |
 | relative_rule | r_two_measures | 0.12 (52) | invalid DSL: a rule carries either `value` (absolute) or `relative_to` + `factor` (relative), |
 | data_change | g_param | 0.12 (60) | invalid DSL: unknown table 'params'; tables are ['hours'] |
@@ -102,13 +102,13 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | logical_rule | l_none_or_batch | 0.19 (122) | result differs from reference |
 | infeasible_request | i_two_floors | 0.22 (58) | result differs from reference |
 | objective_change | o_three_stages | 0.23 (40) | invalid DSL: '*' is not a hour; known values: ['00-01', '01-02', '02-03', '03-04', '04-05', ' |
-| new_limit | g_cap_measure_total | 0.26 (87) | invalid DSL: invalid set change: {'aircraft': ['all'], 'flight': ['all']} is not valid under  |
 | relative_rule | r_two_values | 0.26 (136) | invalid DSL: a rule carries either `value` (absolute) or `relative_to` + `factor` (relative), |
-| objective_change | o_then_scoped | 0.30 (96) | result differs from reference |
+| new_limit | g_cap_measure_total | 0.26 (87) | invalid DSL: invalid set change: {'aircraft': ['all'], 'flight': ['all']} is not valid under  |
+| objective_change | o_then_scoped | 0.29 (96) | result differs from reference |
 | chained_scenario | c_add | 0.31 (174) | result differs from reference |
 | data_change | process_hours | 0.33 (3) | result differs from reference |
 | data_change (nl) | g_scale_all_rows | 0.33 (3) | invalid DSL: no row of 'requirements' matches {"year": ["1", "2", "3"], "skill": ["unskilled" |
-| fixed_decision | combo | 0.38 (82) | result differs from reference |
+| fixed_decision | combo | 0.37 (82) | result differs from reference |
 | new_limit (nl) | g_floor_measure_scope | 0.44 (9) | result differs from reference |
 | new_limit | g_floor_measure_scope | 0.45 (82) | result differs from reference |
 | chained_scenario | c_undo | 0.46 (144) | invalid DSL: '1' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '104' |
@@ -123,7 +123,7 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | data_change (nl) | g_set_column | 0.67 (3) | result differs from reference |
 | new_limit (nl) | g_cap_measure_scope | 0.67 (3) | invalid DSL: unknown table 'retrain'; tables are ['costs', 'requirements', 'retraining', 'ski |
 | data_change | g_scale_all_rows | 0.69 (95) | invalid DSL: no row of 'flights' matches {"flight": ["1", "2", "3", "4", "5", "6", "7", "8",  |
-| chained_scenario | c_revise | 0.71 (151) | result differs from reference |
+| chained_scenario | c_revise | 0.70 (151) | result differs from reference |
 | data_change | g_set_column | 0.71 (86) | result differs from reference |
 | data_change | demand_scale | 1.00 (5) |  |
 | data_change | margin_scale | 1.00 (5) |  |
@@ -133,4 +133,4 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 
 | model | wrong result | invalid DSL | unparseable | cut off at max tokens | truncated prompt | request errors |
 |---|---|---|---|---|---|---|
-| `ollama/qwen3:4b` | 1774 | 1066 | 3 | 3 | 137 | 859 |
+| `ollama/qwen3:4b` | 1778 | 1065 | 3 | 3 | 0 | 858 |

@@ -1,0 +1,54 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "year5_output_limit",
+   "measure": "production",
+   "scope": {
+    "year": 5
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "year": 3
+    }
+   },
+   "factor": 0.25
+  },
+  {
+   "name": "total_capacity_built_limit",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "year": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The first rule limits year 5 output to 25% of year 3 output. The second rule requires total capacity built to be at least 50% of total output produced."
+}

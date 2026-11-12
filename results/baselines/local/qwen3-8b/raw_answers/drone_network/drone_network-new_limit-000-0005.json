@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_cap",
+   "measure": "linked_load",
+   "scope": {
+    "location": "*"
+   },
+   "sense": "<=",
+   "value": 0.53
+  }
+ ],
+ "note": "An overall cap of 0.53 applies to the queue load linked to an assigned location (hours), summed over everything."
+}

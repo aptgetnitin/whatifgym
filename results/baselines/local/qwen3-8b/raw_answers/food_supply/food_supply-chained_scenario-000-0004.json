@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "cap_purchase_total",
+   "measure": "purchase",
+   "scope": {},
+   "sense": "<=",
+   "value": 321150
+  }
+ ],
+ "note": "An overall cap of 321150 applies to the food bought (units of 100 g a day), summed over everything."
+}

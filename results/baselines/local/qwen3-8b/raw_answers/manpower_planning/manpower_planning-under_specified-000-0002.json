@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": [
+     1,
+     2,
+     3
+    ],
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "The recruitment limit is scaled for every row of the requirements and recruitment limits table."
+}

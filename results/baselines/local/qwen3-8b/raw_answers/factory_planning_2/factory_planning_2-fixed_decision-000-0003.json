@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "mar_sales_per_product",
+   "measure": "sell",
+   "scope": {
+    "month": "Mar"
+   },
+   "sense": "==",
+   "value": 140
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix the total sales per product in March to 140 units and optimise the rest."
+}

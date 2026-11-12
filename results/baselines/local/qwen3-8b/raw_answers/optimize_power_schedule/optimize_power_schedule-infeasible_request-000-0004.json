@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hour18_output_target",
+   "measure": "output",
+   "scope": {
+    "hour": 18
+   },
+   "sense": ">=",
+   "value": 24350
+  }
+ ],
+ "note": "A minimum target for power generation in hour 18."
+}

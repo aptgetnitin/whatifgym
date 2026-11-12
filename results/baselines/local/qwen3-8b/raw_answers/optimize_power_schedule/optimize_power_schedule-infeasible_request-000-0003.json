@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hour_23_generation",
+   "measure": "output",
+   "scope": {
+    "hour": 23
+   },
+   "sense": ">=",
+   "value": 35000
+  },
+  {
+   "name": "hour_21_generation",
+   "measure": "output",
+   "scope": {
+    "hour": 21
+   },
+   "sense": ">=",
+   "value": 37200
+  }
+ ],
+ "note": "The planner requests to ensure at least 35000 MWh of generation for hour 23 and at least 37200 MWh for hour 21."
+}

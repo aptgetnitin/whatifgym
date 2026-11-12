@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "fixed_decisions": [
+  {
+   "measure": "pick",
+   "scope": {
+    "player": "Jodie Meeks"
+   },
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix Jodie Meeks to be picked and optimise the rest."
+}

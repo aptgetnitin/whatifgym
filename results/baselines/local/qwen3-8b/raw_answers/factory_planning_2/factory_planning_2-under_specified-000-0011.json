@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "ask": "What does it mean for the market limit to shift for every row of the market limits table?"
+}

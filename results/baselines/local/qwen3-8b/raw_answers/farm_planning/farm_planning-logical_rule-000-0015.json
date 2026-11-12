@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "no_grain_grown_in_year1_and_year5",
+   "measure": "grow_grain",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year5"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A rule that enforces zero tons of grain grown in both Year1 and Year5."
+}

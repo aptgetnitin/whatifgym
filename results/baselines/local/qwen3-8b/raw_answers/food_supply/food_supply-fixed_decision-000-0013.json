@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "food": "Wheat",
+    "from_city": "Aleppo",
+    "to_city": "Idleb"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting the flow of Wheat from Aleppo to Idleb to zero."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "operate",
+   "column": "operate",
+   "where": {
+    "aircraft": "A319#11",
+    "flight": 3107
+   },
+   "value": 0
+  }
+ ],
+ "note": "Set the operate decision for aircraft A319#11 and flight 3107 to 0 to cancel the flight and re-plan."
+}

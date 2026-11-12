@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_overmanned",
+   "value": 2250
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The overmanning allowance is set to 2250 workers, and the objective is to minimise redundancies."
+}

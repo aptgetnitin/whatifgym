@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "redundant_unskilled_year_3_zero_or_at_least_580",
+   "measure": "redundant",
+   "scope": {
+    "year": 3,
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "value": 0,
+   "relative_to": {
+    "measure": "redundant",
+    "scope": {
+     "year": 3,
+     "skill": "unskilled"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "redundant_unskilled_year_3_at_least_580",
+   "measure": "redundant",
+   "scope": {
+    "year": 3,
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "value": 580
+  }
+ ],
+ "note": "The planner's question requires that the total workers made redundant for year 3, skill level unskilled must be either zero or at least 580. This is achieved by setting two rules: one to ensure it is at least zero (which is always true) and another to ensure it is at least 580."
+}

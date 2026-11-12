@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "fixed_decisions": [
+  {
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 3,
+    "industry": "coal"
+   },
+   "value": 210
+  },
+  {
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 5,
+    "industry": "coal"
+   },
+   "value": 1750
+  }
+ ],
+ "note": "Fixed decisions set the minimum capacity built for coal in years 3 and 5."
+}

@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "measure": "production",
+   "scope": {
+    "industry": "coal"
+   },
+   "sense": "<=",
+   "value": 1500
+  }
+ ]
+}

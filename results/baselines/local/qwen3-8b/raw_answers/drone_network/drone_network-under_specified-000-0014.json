@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "*"
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The question is ambiguous. It refers to 'cardiac arrests observed shifts' but does not specify whether this means an increase, decrease, or a specific shift in the data. Without further clarification, it is not possible to construct a precise scenario."
+}

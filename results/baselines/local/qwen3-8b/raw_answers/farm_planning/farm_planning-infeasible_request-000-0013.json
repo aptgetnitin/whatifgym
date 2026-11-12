@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "fixed_decisions": [
+  {
+   "measure": "herd",
+   "scope": {
+    "year": "Year4",
+    "age": 9
+   },
+   "value": 18.4
+  }
+ ],
+ "note": "Fixed the number of cattle of age 9 in Year4 to exactly 18.4 head."
+}

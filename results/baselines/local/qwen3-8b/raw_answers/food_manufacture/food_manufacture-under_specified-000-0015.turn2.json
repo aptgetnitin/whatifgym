@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "refining_cap_limit",
+   "measure": "consume",
+   "scope": {
+    "month": "Apr",
+    "oil": "VEG1"
+   },
+   "sense": "<=",
+   "value": 220
+  }
+ ],
+ "note": "A new rule limits the total tons of oil refined for month Apr."
+}

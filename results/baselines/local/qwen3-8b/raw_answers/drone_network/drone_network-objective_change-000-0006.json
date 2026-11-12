@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "response_objective"
+  },
+  {
+   "sense": "max",
+   "measure": "open",
+   "scope": {
+    "base": "*"
+   }
+  }
+ ],
+ "note": "Prioritise minimising the response objective, then maximise the number of open bases."
+}

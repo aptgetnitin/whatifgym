@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_short_time",
+   "value": 210
+  }
+ ],
+ "rules": [
+  {
+   "measure": "short_time",
+   "scope": {},
+   "sense": "<=",
+   "value": 210,
+   "name": "cap_short_time_total"
+  }
+ ],
+ "note": "An overall cap on short-time workers is applied by setting the parameter and adding a rule."
+}

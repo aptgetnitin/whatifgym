@@ -1,0 +1,48 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "resource_pair_cap",
+   "measure": "meet",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   "sense": "<=",
+   "value": 4
+  },
+  {
+   "name": "entry_time_sum_resource_0",
+   "measure": "entry_time",
+   "scope": {
+    "resource": 0
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "resource": 0
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [],
+ "relax": [],
+ "logic": []
+}

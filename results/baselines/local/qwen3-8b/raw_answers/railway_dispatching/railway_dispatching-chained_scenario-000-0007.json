@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "trains",
+   "column": "ready_time",
+   "where": {
+    "train": "B"
+   },
+   "value": 10
+  }
+ ],
+ "rules": [
+  {
+   "name": "entry_time_B_at_least_160",
+   "measure": "entry_time",
+   "scope": {
+    "train": "B"
+   },
+   "sense": ">=",
+   "value": 160
+  }
+ ],
+ "note": "Set the ready_time of train B to 10 and enforce its total entry time to be at least 160."
+}

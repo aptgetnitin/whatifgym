@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "at_most_one_of_oil_wheat_csb",
+      "measure": "ration",
+      "scope": {
+        "food": ["Oil", "Wheat", "Corn-soya blend (CSB)"]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "The rule limits the sum of rations for Oil, Wheat, and Corn-soya blend (CSB) per person to at most 1 unit (100 g) per day."
+}

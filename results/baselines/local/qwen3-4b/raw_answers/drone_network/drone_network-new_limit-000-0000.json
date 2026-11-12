@@ -6,9 +6,7 @@
       "name": "min_assign_21_municipal_ctr",
       "measure": "assign",
       "scope": {
-        "base": [
-          "21 MUNICIPAL CTR Fire Station"
-        ]
+        "base": "21 MUNICIPAL CTR Fire Station"
       },
       "sense": ">=",
       "value": 13

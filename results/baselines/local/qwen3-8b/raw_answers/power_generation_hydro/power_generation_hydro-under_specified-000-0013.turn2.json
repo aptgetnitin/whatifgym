@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "cost_per_hour",
+   "factor": 1.1
+  }
+ ],
+ "note": "Scaling the cost_per_hour parameter by 10% across all thermal unit types."
+}

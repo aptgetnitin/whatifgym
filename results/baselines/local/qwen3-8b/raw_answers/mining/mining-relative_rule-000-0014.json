@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine_years_worked_year2_at_least_3_times_year4",
+   "measure": "operate",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "year": "Year4"
+    }
+   },
+   "factor": 3
+  },
+  {
+   "name": "year1_blend_tons_at_most_20_percent_of_total",
+   "measure": "blend",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "blend",
+    "scope": {
+     "year": "Year"
+    }
+   },
+   "factor": 0.2
+  }
+ ],
+ "note": "Two relative limits: mine-years worked in Year2 is at least 3 times that in Year4; Year1's blended ore is at most 20% of total."
+}

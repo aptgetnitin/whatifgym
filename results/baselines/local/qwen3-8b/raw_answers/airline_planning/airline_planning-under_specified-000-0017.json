@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "ask": "What is the impact of changing the departure time for flight 4269 on the lost revenue and aircraft routing?"
+}

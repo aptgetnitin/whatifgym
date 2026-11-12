@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "facilities",
+   "column": "capacity",
+   "where": {
+    "facility": "T23"
+   },
+   "value": 200
+  }
+ ],
+ "note": "The capacity of facility T23 is set to 200 beds."
+}

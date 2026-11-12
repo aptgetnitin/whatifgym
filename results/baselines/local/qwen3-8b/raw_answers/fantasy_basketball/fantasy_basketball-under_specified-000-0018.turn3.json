@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "predicted_points",
+   "where": {
+    "player": "Clint Capela"
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "The predicted fantasy points for Clint Capela is increased by 20%."
+}

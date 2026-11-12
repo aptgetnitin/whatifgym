@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "logic": [
+  {
+   "name": "no_non_zero_for_e9_and_e5",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "assign",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "facility": "E9"
+     }
+    },
+    {
+     "measure": "assign",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "facility": "E5"
+     }
+    }
+   ]
+  }
+ ]
+}

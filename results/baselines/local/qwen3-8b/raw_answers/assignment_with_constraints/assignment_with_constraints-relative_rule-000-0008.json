@@ -1,0 +1,51 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "workers_5_vs_workers_11",
+   "measure": "works",
+   "scope": {
+    "worker": "worker_5"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "works",
+    "scope": {
+     "worker": "worker_11"
+    }
+   },
+   "factor": 0.5
+  },
+  {
+   "name": "team_0_1_percentage",
+   "measure": "team",
+   "scope": {
+    "team": "team_0_1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "team",
+    "scope": {
+     "team": "team_2_3",
+     "team": "team_1_3",
+     "team": "team_1_2",
+     "team": "team_0_1",
+     "team": "team_0_2",
+     "team": "team_6_7",
+     "team": "team_5_7",
+     "team": "team_5_6",
+     "team": "team_4_5",
+     "team": "team_4_7",
+     "team": "team_10_11",
+     "team": "team_9_11",
+     "team": "team_9_10",
+     "team": "team_8_10",
+     "team": "team_8_11"
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

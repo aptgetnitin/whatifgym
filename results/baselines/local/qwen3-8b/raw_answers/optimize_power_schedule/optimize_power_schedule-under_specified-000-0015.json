@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "fuel_cost",
+   "factor": 1.5
+  }
+ ],
+ "note": "Fuel cost per MWh is scaled across all fuels."
+}

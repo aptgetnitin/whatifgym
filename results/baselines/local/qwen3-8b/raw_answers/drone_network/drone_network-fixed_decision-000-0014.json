@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "1300 HAWKS NEST WAY"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "assign_1300_hawks_nest_way_to_800_virginia_beach_bvd_fire_station",
+      "measure": "assign",
+      "scope": {
+        "location": "1300 HAWKS NEST WAY",
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ],
+  "note": "Remove the incident location 1300 HAWKS NEST WAY and set its assignment to base 800 VIRGINIA BEACH BLVD Fire Station to 0."
+}

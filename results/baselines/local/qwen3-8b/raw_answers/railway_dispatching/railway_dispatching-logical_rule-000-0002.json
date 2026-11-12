@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "trains",
+   "column": "ready_time",
+   "where": {
+    "train": "F"
+   },
+   "value": 20
+  }
+ ],
+ "rules": [
+  {
+   "name": "entry_time_C_resource_5_at_least_20",
+   "measure": "entry_time",
+   "scope": {
+    "train": "C",
+    "resource": 5
+   },
+   "sense": ">=",
+   "value": 20
+  }
+ ],
+ "note": "A non-zero entry time for train F requires a total entry time of at least 20 for train C at resource 5."
+}

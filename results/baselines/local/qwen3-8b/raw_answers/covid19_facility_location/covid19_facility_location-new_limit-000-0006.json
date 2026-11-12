@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "e7_capacity_limit",
+   "measure": "assign",
+   "scope": {
+    "facility": "E7"
+   },
+   "sense": "<=",
+   "value": 130
+  }
+ ],
+ "note": "A rule limits the total patients assigned to facility E7 to 130."
+}

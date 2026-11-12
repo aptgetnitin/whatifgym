@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flights",
+   "column": "passengers",
+   "where": {
+    "flight": 3073
+   },
+   "value": 152
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_flights_operated_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 46
+  }
+ ],
+ "note": "The total number of flights operated is capped at 46."
+}

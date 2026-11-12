@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "start_time",
+   "column": "start_time",
+   "where": {
+    "location": "Lahr/Schwarzwald"
+   },
+   "value": 1500
+  }
+ ],
+ "note": "Fix the start time for location Lahr/Schwarzwald to exactly 1500 minutes."
+}

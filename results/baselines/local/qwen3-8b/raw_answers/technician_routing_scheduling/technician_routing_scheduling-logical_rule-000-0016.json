@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "logic": [
+  {
+   "name": "no_service_at_buehl_and_lahr",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "start_time",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "location": "Buehl"
+     }
+    },
+    {
+     "measure": "start_time",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "location": "Lahr/Schwarzwald"
+     }
+    }
+   ]
+  }
+ ]
+}

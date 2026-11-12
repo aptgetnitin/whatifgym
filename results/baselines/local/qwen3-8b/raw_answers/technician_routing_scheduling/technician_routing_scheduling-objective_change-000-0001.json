@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "start_time",
+   "scope": {
+    "location": "customer"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "assign",
+   "scope": {
+    "customer": "customer"
+   }
+  }
+ ],
+ "note": "Optimise first by keeping total penalty at its minimum, then by minimising the total service start time, and finally by maximising the total number of jobs assigned."
+}

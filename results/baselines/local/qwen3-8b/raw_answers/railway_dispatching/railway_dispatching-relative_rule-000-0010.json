@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "max_e_arrival_time",
+   "measure": "finish_time",
+   "scope": {
+    "train": "E"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "finish_time",
+    "scope": {
+     "train": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "F"
+     ]
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "The rule limits the arrival time of train E to at most 10% of the total arrival time of all other trains."
+}

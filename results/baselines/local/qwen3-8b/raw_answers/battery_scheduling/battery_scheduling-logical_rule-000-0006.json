@@ -1,0 +1,57 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "non_zero_soc_hours",
+   "measure": "soc",
+   "scope": {
+    "hour": [
+     "06-07",
+     "07-08",
+     "13-14",
+     "18-19",
+     "21-22"
+    ]
+   },
+   "sense": ">=",
+   "value": 0.1
+  }
+ ],
+ "logic": [
+  {
+   "name": "at_most_three_non_zero_soc",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "soc",
+     "scope": {
+      "hour": [
+       "06-07",
+       "07-08",
+       "13-14",
+       "18-19",
+       "21-22"
+      ]
+     },
+     "sense": ">=",
+     "value": 0.1
+    },
+    {
+     "measure": "soc",
+     "scope": {
+      "hour": [
+       "06-07",
+       "07-08",
+       "13-14",
+       "18-19",
+       "21-22"
+      ]
+     },
+     "sense": "<=",
+     "value": 0
+    }
+   ]
+  }
+ ]
+}

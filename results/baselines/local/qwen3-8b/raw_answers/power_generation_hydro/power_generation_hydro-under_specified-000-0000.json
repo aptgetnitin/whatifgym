@@ -1,0 +1,1 @@
+{"version": "0.1","base_model":"power_generation_hydro","data_changes":[{"op":"remove","table":"thermal_types","where":{"type":["Thermal0","Thermal1","Thermal2"]}}],"note":"Removing all thermal generator types from the model to simulate one dropping out."}

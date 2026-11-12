@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "travel_times",
+   "column": "travel_min",
+   "where": {
+    "from_location": "Karlsruhe",
+    "to_location": "Baden-Baden"
+   },
+   "value": 20
+  }
+ ],
+ "rules": [
+  {
+   "name": "max_start_time_locations",
+   "measure": "start_time",
+   "scope": {
+    "location": [
+     "Offenburg",
+     "Karlsruhe",
+     "Mannheim",
+     "Baden-Baden",
+     "Buehl"
+    ]
+   },
+   "sense": "<=",
+   "value": 180
+  }
+ ],
+ "note": "Restricting the maximum start time for specific locations to 180 minutes."
+}

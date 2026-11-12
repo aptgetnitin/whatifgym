@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "finish_time_A_at_least_2_times_finish_time_E",
+   "measure": "finish_time",
+   "scope": {
+    "train": "A"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "finish_time",
+    "scope": {
+     "train": "E"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The rule enforces that the finish time of train A is at least twice the finish time of train E."
+}

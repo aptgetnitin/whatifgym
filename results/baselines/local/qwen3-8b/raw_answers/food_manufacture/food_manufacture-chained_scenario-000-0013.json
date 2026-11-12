@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "purchase_prices",
+   "column": "price",
+   "factor": 2.0
+  }
+ ],
+ "note": "Every purchase price in the raw oil purchase prices table rises by 100%. Effect?"
+}

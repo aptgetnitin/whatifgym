@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "yearly_profit",
+   "column": "yearly_profit",
+   "where": {
+    "year": "Year4"
+   },
+   "value": 134150
+  }
+ ],
+ "note": "Fixed the yearly profit for Year4 to exactly 134150 USD."
+}

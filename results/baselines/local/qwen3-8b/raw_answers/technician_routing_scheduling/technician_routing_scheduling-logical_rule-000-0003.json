@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "no_non_zero_start_time_for_mannheim_and_baden_baden",
+   "measure": "start_time",
+   "scope": {
+    "location": [
+     "Mannheim",
+     "Baden-Baden"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "A rule that enforces the start time for Mannheim and Baden-Baden to be zero."
+}

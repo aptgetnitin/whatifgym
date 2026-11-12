@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "max_rentals_per_depot",
+   "measure": "rentals",
+   "scope": {
+    "depot": [
+     "Plymouth",
+     "Manchester",
+     "Birmingham",
+     "Glasgow"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "This rule limits the number of cars rented out to zero at each of the specified depots."
+}

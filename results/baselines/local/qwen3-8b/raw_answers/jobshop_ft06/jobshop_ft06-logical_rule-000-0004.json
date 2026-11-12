@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "logic": [
+  {
+   "name": "at_least_1_of_not_j2_first_and_not_j1_first",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "goes_first",
+     "sense": ">=",
+     "value": 0,
+     "scope": {
+      "machine": "M0",
+      "job": "J2",
+      "other_job": "J1"
+     }
+    },
+    {
+     "measure": "goes_first",
+     "sense": ">=",
+     "value": 0,
+     "scope": {
+      "machine": "M0",
+      "job": "J1",
+      "other_job": "J2"
+     }
+    }
+   ]
+  }
+ ]
+}

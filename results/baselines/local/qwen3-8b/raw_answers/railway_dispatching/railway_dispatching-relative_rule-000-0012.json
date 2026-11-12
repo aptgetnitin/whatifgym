@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "finish_time_c_at_least_twice_d",
+   "measure": "finish_time",
+   "scope": {
+    "train": "C"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "finish_time",
+    "scope": {
+     "train": "D"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The arrival time at destination for train C must be at least twice that of train D."
+}

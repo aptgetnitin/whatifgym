@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "stay_closed",
+      "scope": {
+        "mine": ["Mine1", "Mine2", "Mine3", "Mine4"],
+        "year": ["Year1", "Year2", "Year3", "Year4", "Year5"]
+      }
+    },
+    {
+      "constraint": "max_operating",
+      "scope": {
+        "year": ["Year1", "Year2", "Year3", "Year4", "Year5"]
+      }
+    }
+  ]
+}

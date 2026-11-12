@@ -7,9 +7,7 @@
       "table": "incidents",
       "column": "incidents",
       "where": {
-        "location": [
-          "700 20TH ST"
-        ]
+        "location": "700 20TH ST"
       },
       "factor": 0.7
     }

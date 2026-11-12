@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "min_task_assignments",
+   "measure": "assign",
+   "scope": {
+    "task": "*"
+   },
+   "sense": ">=",
+   "value": 1
+  }
+ ],
+ "note": "A rule requiring a minimum number of task assignments by ensuring each task is assigned to at least one worker."
+}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase",
+      "column": "purchase",
+      "where": {
+        "food": "Maize meal",
+        "supplier": "Aleppo"
+      },
+      "value": 23
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "ration",
+      "scope": {
+        "food": "Wheat",
+        "camp": "Qamishli"
+      },
+      "value": 0
+    }
+  ]
+}

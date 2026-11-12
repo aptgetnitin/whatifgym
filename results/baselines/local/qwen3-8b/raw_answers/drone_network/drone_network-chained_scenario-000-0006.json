@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "1300 HAWKS NEST WAY"
+   },
+   "factor": 0
+  }
+ ],
+ "note": "A zero demand for a location removes its contribution to the objective and constraints."
+}

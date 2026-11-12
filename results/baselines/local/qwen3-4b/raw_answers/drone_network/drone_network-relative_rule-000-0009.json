@@ -9,14 +9,16 @@
         "location": "1100 ATLANTIC AV"
       },
       "sense": ">=",
-      "value": 2,
-      "relative_to": {
-        "measure": "linked_load",
-        "scope": {
-          "location": "1300 HAWKS NEST WAY"
-        }
+      "value": 0
+    },
+    {
+      "name": "queue_load_at_least_2x",
+      "measure": "linked_load",
+      "scope": {
+        "location": "1300 HAWKS NEST WAY"
       },
-      "factor": 1.0
+      "sense": ">=",
+      "value": 0
     }
   ]
 }

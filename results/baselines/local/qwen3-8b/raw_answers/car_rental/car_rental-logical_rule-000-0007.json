@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "logic": [
+  {
+   "name": "repair_birmingham_monday",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "repairs",
+     "sense": ">=",
+     "value": 50,
+     "scope": {
+      "day": "Monday",
+      "depot": "Birmingham"
+     }
+    },
+    {
+     "measure": "repairs",
+     "sense": "==",
+     "value": 0,
+     "scope": {
+      "day": "Monday",
+      "depot": "Birmingham"
+     }
+    }
+   ]
+  }
+ ]
+}

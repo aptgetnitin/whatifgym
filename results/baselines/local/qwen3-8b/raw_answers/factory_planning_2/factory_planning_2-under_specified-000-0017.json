@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "store_target",
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "end_stock_rule",
+   "measure": "store",
+   "scope": {
+    "product": "all"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The closing stock target is changed to 0, and a rule enforces the end-of-horizon stock target constraint."
+}

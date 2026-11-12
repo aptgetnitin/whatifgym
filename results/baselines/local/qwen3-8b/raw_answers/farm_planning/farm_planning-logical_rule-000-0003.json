@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "sugar_beet_min_if_grain_group1_pos",
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "grow_grain",
+        "scope": {
+          "year": "Year1",
+          "land_group": "Group1"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "If grain grown on Group1 in Year1 is positive, sugar beet grown in Year1 must be at least 182."
+}

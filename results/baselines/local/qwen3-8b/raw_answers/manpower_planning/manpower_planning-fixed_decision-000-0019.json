@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "fixed_decisions": [
+  {
+   "measure": "overmanned",
+   "scope": {
+    "year": 2
+   },
+   "value": 50
+  }
+ ],
+ "note": "Fix the overmanned workers for year 2 to 50 for each skill level."
+}

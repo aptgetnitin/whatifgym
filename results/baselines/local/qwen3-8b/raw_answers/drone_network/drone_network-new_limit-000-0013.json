@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "linked_load_3400_champlain_la",
+   "measure": "linked_load",
+   "scope": {
+    "location": "3400 CHAMPLAIN LA"
+   },
+   "sense": ">=",
+   "value": 0.02
+  }
+ ],
+ "note": "The rule ensures the total queue load linked to the assigned location 3400 CHAMPLAIN LA is at least 0.02 hours."
+}

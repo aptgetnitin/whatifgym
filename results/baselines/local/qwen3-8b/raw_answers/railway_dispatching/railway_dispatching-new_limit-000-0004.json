@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "finish_time_C_at_least_21",
+   "measure": "finish_time",
+   "scope": {
+    "train": "C"
+   },
+   "sense": ">=",
+   "value": 21
+  }
+ ],
+ "note": "The rule ensures that the finish time of train C is at least 21 minutes."
+}

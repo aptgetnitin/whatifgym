@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_repair_sat_man",
+   "measure": "repairs",
+   "scope": {
+    "day": "Saturday",
+    "depot": "Manchester"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "day": "Saturday",
+     "depot": "Manchester"
+    }
+   },
+   "factor": 44
+  }
+ ]
+}

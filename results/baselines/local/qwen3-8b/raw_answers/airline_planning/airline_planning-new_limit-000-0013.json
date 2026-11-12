@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "a321_2_operate_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A321#2"
+   },
+   "sense": "<=",
+   "value": 7
+  },
+  {
+   "name": "total_operate_cap",
+   "measure": "operate",
+   "scope": {
+   },
+   "sense": "<=",
+   "value": 36
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; the second rule applies to all aircraft."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "route",
+   "scope": {
+    "from_location": "*",
+    "to_location": "*",
+    "technician": "*"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "start_time",
+   "scope": {
+    "location": "*"
+   }
+  }
+ ],
+ "note": "First, keep the total penalty at its minimum. Then, minimise the total number of legs driven. Finally, minimise the total service start time."
+}

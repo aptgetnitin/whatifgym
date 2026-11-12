@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "stock_may_jun_ratio",
+   "measure": "store",
+   "scope": {
+    "month": "May"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Jun"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "A relative rule comparing the sum of store over May to the sum of store over Jun."
+}

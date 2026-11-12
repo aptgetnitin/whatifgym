@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "at_least_50_percent_of_total_buys_in_feb",
+   "measure": "buy",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "month": [
+      "Jan",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "At least 50% of the total oil bought across all months must be bought in February."
+}

@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "rules": [
+  {
+   "name": "dario_saric_at_least_125_jarrett_jack",
+   "measure": "pick",
+   "scope": {
+    "player": "Dario Saric"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "pick",
+    "scope": {
+     "player": "Jarrett Jack"
+    }
+   },
+   "factor": 1.25
+  },
+  {
+   "name": "trevor_ariza_at_most_15_of_all_players",
+   "measure": "pick",
+   "scope": {
+    "player": "Trevor Ariza"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "pick",
+    "scope": {
+     "player": "*"
+    }
+   },
+   "factor": 0.15
+  }
+ ],
+ "note": "Rules enforce a relative constraint between the number of players picked for Dario Saric and Jarrett Jack, and a relative constraint on Trevor Ariza's contribution to the total number of players picked."
+}

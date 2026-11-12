@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "land_groups",
+      "column": "grow_grain",
+      "where": {
+        "land_group": [
+          "Group1",
+          "Group2",
+          "Group3",
+          "Group4"
+        ],
+        "year": "Year2"
+      },
+      "value": 5.5
+    }
+  ],
+  "note": "Set the grain grown in each land group for Year2 to 5.5 tons."
+}

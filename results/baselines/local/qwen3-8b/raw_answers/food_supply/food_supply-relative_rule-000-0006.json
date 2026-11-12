@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_purchase_limit",
+   "measure": "purchase",
+   "scope": {
+    "food": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+      "food": "*"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "amman_shipment_limit",
+   "measure": "flow",
+   "scope": {
+    "from_city": "Amman",
+    "food": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+      "from_city": "Gaziantep",
+      "food": "*"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "Two relative limits on the total food purchased and shipped, and on shipments from Amman relative to Gaziantep."
+}

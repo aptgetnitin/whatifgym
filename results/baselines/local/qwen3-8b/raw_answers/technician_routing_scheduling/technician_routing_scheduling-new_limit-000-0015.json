@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "doris_legs_limit",
+   "measure": "route",
+   "scope": {
+    "technician": "Doris"
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "The total number of legs driven by Doris is limited to 1."
+}

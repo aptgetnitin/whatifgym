@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_discharge_kw",
+   "value": 5.8
+  }
+ ],
+ "rules": [
+  {
+   "name": "charge_limit_03-04",
+   "measure": "charge",
+   "scope": {
+    "hour": "03-04"
+   },
+   "sense": "<=",
+   "value": 4
+  }
+ ]
+}

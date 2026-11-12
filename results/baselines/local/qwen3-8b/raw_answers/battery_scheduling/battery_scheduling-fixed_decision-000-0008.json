@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "fixed_decisions": [
+  {
+   "measure": "soc",
+   "scope": {
+    "hour": "07-08"
+   },
+   "value": 7
+  },
+  {
+   "measure": "charge",
+   "scope": {
+    "hour": "02-03"
+   },
+   "value": 0
+  }
+ ]
+}

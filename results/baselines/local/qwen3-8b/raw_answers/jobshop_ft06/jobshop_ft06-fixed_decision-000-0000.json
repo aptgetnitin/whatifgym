@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "end",
+   "column": "end",
+   "where": {
+    "job": "J5",
+    "step": 5
+   },
+   "value": 84
+  }
+ ],
+ "rules": [
+  {
+   "name": "goes_first_m1_j0_j3",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "M1",
+    "job": "J0",
+    "other_job": "J3"
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

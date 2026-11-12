@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 250
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_extra_capacity",
+   "measure": "extra_capacity",
+   "scope": {
+    "industry": [
+     "coal",
+     "steel",
+     "transport"
+    ],
+    "year": [
+     3,
+     4,
+     5
+    ]
+   },
+   "sense": ">=",
+   "value": 3310
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The question asks whether the plan can meet the target of 3310 million USD/year capacity built in total. This is achieved by setting the initial capacity of coal to 250 and adding a rule to ensure the total extra capacity meets the target."
+}

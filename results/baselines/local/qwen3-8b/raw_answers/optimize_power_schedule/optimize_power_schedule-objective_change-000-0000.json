@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "start",
+   "scope": {
+    "plant": "*"
+   }
+  }
+ ],
+ "note": "First, keep the total cost at its minimum. Then, maximise the total number of plant start-ups across all plants."
+}

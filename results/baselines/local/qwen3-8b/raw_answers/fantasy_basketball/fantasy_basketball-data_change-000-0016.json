@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "salary",
+   "where": {
+    "position": "PF"
+   },
+   "factor": 1.25
+  },
+  {
+   "op": "set",
+   "table": "positions",
+   "column": "required",
+   "where": {
+    "position": "PF"
+   },
+   "value": 0
+  }
+ ],
+ "note": "The required number of players for position PF is set to 0, and all player salaries are increased by 25%."
+}

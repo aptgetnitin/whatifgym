@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "min_locations_21_municipal_centre",
+   "measure": "assign",
+   "scope": {
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "sense": ">=",
+   "value": 14
+  }
+ ],
+ "note": "Ensures the base 21 MUNICIPAL CTR Fire Station is assigned at least 14 incident locations."
+}

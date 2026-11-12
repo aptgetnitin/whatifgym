@@ -1,0 +1,61 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "external_demand",
+   "where": {
+    "industry": "steel"
+   },
+   "value": 80
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_stock",
+   "where": {
+    "industry": "transport"
+   },
+   "value": 150
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 250
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "labor_per_unit_output",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 0.5
+  }
+ ],
+ "rules": [
+  {
+   "name": "steel_output_year_3",
+   "measure": "production",
+   "scope": {
+    "year": 3,
+    "industry": "steel"
+   },
+   "sense": ">=",
+   "value": 1820
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The scenario adjusts demand for steel, initial stock for transport, initial capacity for coal, and labor per unit output for coal. It also enforces a minimum output of 1820 million USD for steel in year 3."
+}

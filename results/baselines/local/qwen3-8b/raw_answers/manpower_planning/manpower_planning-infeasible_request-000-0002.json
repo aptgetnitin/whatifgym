@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "overmanned",
+   "column": "overmanned",
+   "where": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "value": 300
+  }
+ ],
+ "note": "Fix the overmanned count for year 2 and unskilled workers to exactly 300."
+}

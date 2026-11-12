@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "logic": [
+  {
+   "name": "extract_mine1_year3_impact_extract_mine3_year2",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "extract",
+     "sense": ">=",
+     "value": 1625000,
+     "scope": {
+      "year": "Year2",
+      "mine": "Mine3"
+     }
+    },
+    {
+     "measure": "extract",
+     "sense": ">",
+     "value": 0,
+     "scope": {
+      "year": "Year3",
+      "mine": "Mine1"
+     }
+    }
+   ]
+  }
+ ]
+}

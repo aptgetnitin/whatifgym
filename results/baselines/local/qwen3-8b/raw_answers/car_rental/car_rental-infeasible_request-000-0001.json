@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "damaged_transfers",
+   "column": "damaged_transfers",
+   "where": {
+    "day": "Friday",
+    "from_depot": "Plymouth",
+    "to_depot": "Birmingham"
+   },
+   "value": 73.6
+  }
+ ],
+ "note": "Fixed the damaged transfers for the specified day, from depot, and to depot."
+}

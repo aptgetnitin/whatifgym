@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "at_least_340_for_E14",
+   "measure": "assign",
+   "scope": {
+    "facility": "E14"
+   },
+   "sense": ">=",
+   "value": 340
+  },
+  {
+   "name": "at_least_450_for_E13",
+   "measure": "assign",
+   "scope": {
+    "facility": "E13"
+   },
+   "sense": ">=",
+   "value": 450
+  }
+ ],
+ "note": "Two rules ensure that at least 340 patients are assigned to facility E14 and at least 450 patients are assigned to facility E13."
+}

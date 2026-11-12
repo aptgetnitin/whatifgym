@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "logic": [
+  {
+   "name": "no_non_zero_make_in_jan_and_may",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "make",
+     "scope": {
+      "month": "Jan"
+     },
+     "sense": "==",
+     "value": 0
+    },
+    {
+     "measure": "make",
+     "scope": {
+      "month": "May"
+     },
+     "sense": "==",
+     "value": 0
+    }
+   ]
+  }
+ ]
+}

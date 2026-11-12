@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "temp_facility_t15_at_most_90_of_t18",
+   "measure": "build",
+   "scope": {
+    "facility": "T15"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "build",
+    "scope": {
+     "facility": "T18"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "The number of temporary facilities built for T15 is at most 90% of that for T18."
+}

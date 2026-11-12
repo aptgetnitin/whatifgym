@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "consume",
+   "column": "consume",
+   "where": {
+    "month": "Apr",
+    "oil": "VEG1"
+   },
+   "value": 1590
+  }
+ ],
+ "note": "Fix the amount of VEG1 refined in April to exactly 1590 tons."
+}

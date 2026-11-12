@@ -3,7 +3,7 @@
   "base_model": "drone_network",
   "rules": [
     {
-      "name": "queue_load_800_vb_blvd_at_most_75_of_3769_e_stratford",
+      "name": "queue_load_800_virginia_beach_bld_fires_station_at_most_75_of_3769_e_stratford_road_rescue_squad",
       "measure": "queue_load",
       "scope": {
         "base": "800 VIRGINIA BEACH BLVD Fire Station"

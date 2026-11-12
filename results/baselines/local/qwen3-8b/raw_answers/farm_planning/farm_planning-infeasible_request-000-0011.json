@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "at_least_120_heifer_calves_sold_year2",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "value": 120
+  },
+  {
+   "name": "at_least_93_heifer_calves_sold_year1",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 93
+  }
+ ],
+ "note": "Rules enforce the minimum number of heifer calves sold in specific years."
+}

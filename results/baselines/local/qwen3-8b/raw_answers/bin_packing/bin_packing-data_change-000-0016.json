@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "items",
+   "where": {
+    "item": "item2"
+   }
+  }
+ ],
+ "note": "Removing item2 from the items table."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "nutrients",
+   "column": "min_per_person",
+   "where": {
+    "nutrient": "NicacinB3(mg)"
+   },
+   "factor": "scale"
+  }
+ ],
+ "note": "The minimum daily intake per person for nutrient NicacinB3(mg) is scaled, which affects the nutrition constraints."
+}

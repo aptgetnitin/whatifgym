@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "ask": "Please specify how the grain-suitable acres for land group Group1 change (e.g., increase, decrease, or a specific value) to proceed with the scenario."
+}

@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_left_at_least_3_times_repairs",
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Glasgow"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Glasgow"
+    }
+   },
+   "factor": 3
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "measure": "operate",
+   "sense": "<=",
+   "value": 46
+  }
+ ],
+ "note": "Limit the total number of operated flights to 46."
+}

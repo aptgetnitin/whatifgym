@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_e_limit",
+   "measure": "entry_time",
+   "scope": {
+    "train": "E"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "train": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "This rule limits the sum of entry times for train E to at most 5% of the total sum of entry times for all trains."
+}

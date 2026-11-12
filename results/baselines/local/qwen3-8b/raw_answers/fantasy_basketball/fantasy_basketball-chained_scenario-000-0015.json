@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "players",
+   "column": "predicted_points",
+   "where": {
+    "player": "LeBron James"
+   },
+   "value": 24
+  },
+  {
+   "op": "scale_param",
+   "name": "salary_cap",
+   "factor": 1.5
+  }
+ ],
+ "note": "The salary cap is increased by 50%."
+}

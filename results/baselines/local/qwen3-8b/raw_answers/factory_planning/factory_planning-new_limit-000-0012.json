@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "inventory_cap",
+   "measure": "store",
+   "scope": {
+    "product": "*",
+    "month": "*"
+   },
+   "sense": "<=",
+   "value": 550
+  }
+ ],
+ "note": "A global inventory cap is enforced by limiting the total month-end stock across all products and months."
+}

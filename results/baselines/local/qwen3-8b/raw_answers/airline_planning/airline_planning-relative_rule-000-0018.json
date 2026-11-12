@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "a318_5_op_at_most_25_of_a319_18_op",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A318#5"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "aircraft": "A319#18"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "A relative rule bounds the SUM of operate decisions for A318#5 as a fraction of the SUM for A319#18."
+}

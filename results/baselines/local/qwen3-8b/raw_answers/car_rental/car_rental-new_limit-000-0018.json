@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "birmingham_rentals_cap",
+   "measure": "rentals",
+   "scope": {
+    "depot": "Birmingham"
+   },
+   "sense": "<=",
+   "value": 510
+  }
+ ],
+ "note": "A cap on the total rentals at Birmingham depot."
+}

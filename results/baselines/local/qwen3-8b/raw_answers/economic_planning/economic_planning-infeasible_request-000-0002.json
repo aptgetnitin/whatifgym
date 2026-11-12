@@ -1,0 +1,88 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "external_demand",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 60
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "external_demand",
+   "where": {
+    "industry": "steel"
+   },
+   "value": 80
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_stock",
+   "where": {
+    "industry": "transport"
+   },
+   "value": 150
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 250
+  },
+  {
+   "op": "scale",
+   "table": "input_output",
+   "column": "input_per_unit_output",
+   "where": {
+    "supplier": "steel",
+    "user": "steel"
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale",
+   "table": "input_output",
+   "column": "input_per_unit_capacity",
+   "where": {
+    "supplier": "transport",
+    "user": "transport"
+   },
+   "factor": 0.7555555555555556
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "stock",
+   "scope": {
+    "year": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "industry": [
+      "coal",
+      "steel",
+      "transport"
+    ]
+   },
+   "value": 2400
+  }
+ ]
+}

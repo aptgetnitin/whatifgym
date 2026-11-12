@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "service_start_time_cap_mannheim",
+   "measure": "start_time",
+   "scope": {
+    "location": "Mannheim"
+   },
+   "sense": "<=",
+   "value": 12
+  }
+ ],
+ "note": "A rule limits the sum of the service start time over locations with Mannheim."
+}

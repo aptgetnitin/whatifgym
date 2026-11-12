@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "redundant",
+   "column": "redundant",
+   "where": {
+    "year": 1
+   },
+   "value": 530
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "year": [
+     1
+    ]
+   }
+  }
+ ],
+ "note": "Set the total redundancies in year 1 to 530 and minimize it."
+}

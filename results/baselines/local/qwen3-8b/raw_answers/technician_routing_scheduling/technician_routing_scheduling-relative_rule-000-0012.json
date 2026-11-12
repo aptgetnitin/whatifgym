@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "flor_dispatched_percentage",
+   "measure": "use",
+   "scope": {
+    "technician": "Flor"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "use",
+    "scope": {
+     "technician": "technician"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "assigned_jobs_unfilled_ratio",
+   "measure": "assign",
+   "scope": {
+    "customer": "customer"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "unfilled",
+    "scope": {
+     "customer": "customer"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Two relative limits: Flor must account for at least 75% of all dispatched technicians; total assigned jobs may be at most 75% of total unfilled jobs."
+}

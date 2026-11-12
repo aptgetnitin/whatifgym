@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "wheat_ration_min",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "food": "Wheat"
+    }
+   },
+   "factor": 55
+  }
+ ],
+ "note": "If the total ration per person for food Wheat is above zero, it must be at least 55 units (100 g) per day."
+}

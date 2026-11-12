@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "job_types",
+   "column": "duration_min",
+   "where": {
+    "job_type": [
+     "Equipment Installation",
+     "Equipment Setup",
+     "Inspect/Service Equipment",
+     "Repair - Regular",
+     "Repair - Important",
+     "Repair - Urgent",
+     "Repair - Critical"
+    ]
+   },
+   "factor": 0.75
+  }
+ ],
+ "rules": [
+  {
+   "name": "floor_lateness_Customer5",
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "sense": ">=",
+   "value": 160
+  }
+ ]
+}

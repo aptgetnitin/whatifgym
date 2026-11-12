@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "a321_2_flight_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A321#2"
+   },
+   "sense": "<=",
+   "value": 7
+  }
+ ],
+ "note": "A limit on the total number of flights operated by aircraft A321#2."
+}

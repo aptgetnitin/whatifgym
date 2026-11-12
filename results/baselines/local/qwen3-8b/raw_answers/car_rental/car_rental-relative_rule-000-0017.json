@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "repaired_cars_vs_undamaged_kept",
+   "measure": "repairs",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Glasgow"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "undamaged_left",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Glasgow"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

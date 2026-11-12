@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "assign",
+   "scope": {
+    "customer": "all"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Prioritise minimising the number of jobs assigned first, then the total penalty."
+}

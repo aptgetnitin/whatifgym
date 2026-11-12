@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "food_manufacture","data_changes": [{"op": "set_param","name": "storage_capacity","value": 600}],"rules": [{"name": "buy_cap","measure": "buy","scope": {"month": ["Jun"],"oil": ["OIL2"]},"sense": "<=","value": 500}],"note": "Capping the tons of oil bought for OIL2 in June."}

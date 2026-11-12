@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "relax": [
+  {
+   "constraint": "overmanning",
+   "scope": {
+    "year": 1
+   }
+  }
+ ],
+ "note": "The overmanning constraint for year 1 is relaxed, meaning the cap on overmanning does not apply in that year."
+}

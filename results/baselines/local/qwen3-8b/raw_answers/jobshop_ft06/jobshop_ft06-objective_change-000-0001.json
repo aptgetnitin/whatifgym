@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "makespan"
+  },
+  {
+   "sense": "max",
+   "measure": "end",
+   "scope": {
+    "job": [
+      "J0",
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5"
+    ],
+    "step": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to minimize makespan first, then maximize the total operation end time."
+}

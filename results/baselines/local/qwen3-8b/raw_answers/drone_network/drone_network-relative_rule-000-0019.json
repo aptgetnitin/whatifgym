@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_to_5145_RURITAN_COURT",
+   "measure": "queue_load",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "queue_load",
+    "scope": {
+     "base": "*"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "At least 60% of the total base queue load must be assigned to the 5145 RURITAN COURT Rescue Squad."
+}

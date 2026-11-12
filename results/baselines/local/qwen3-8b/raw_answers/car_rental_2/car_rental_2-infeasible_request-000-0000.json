@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "total_repairs",
+   "measure": "repairs",
+   "scope": {
+    "day": [
+     "Monday",
+     "Tuesday",
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday"
+    ],
+    "depot": [
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ]
+   },
+   "sense": ">=",
+   "value": 1410
+  }
+ ],
+ "note": "A rule to ensure the total number of repairs across all days and repair depots meets the target of at least 1410 cars."
+}

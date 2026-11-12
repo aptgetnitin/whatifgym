@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "force_order_resource_6_train_A_other_train_C",
+   "measure": "goes_first",
+   "scope": {
+    "resource": 6,
+    "train": "A",
+    "other_train": "C"
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "note": "Forcing the order of trains A and C on resource 6 by fixing the goes_first variable to 1."
+}

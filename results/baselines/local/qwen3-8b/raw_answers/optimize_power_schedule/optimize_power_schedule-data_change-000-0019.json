@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "demand_mwh",
+   "where": {
+    "hour": 17
+   },
+   "value": 8950
+  }
+ ],
+ "note": "The demand for hour 17 is set to 8950 MWh."
+}

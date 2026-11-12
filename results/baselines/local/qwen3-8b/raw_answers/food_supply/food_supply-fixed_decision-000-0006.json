@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": "Oil",
+        "from_city": "Hassakeh",
+        "to_city": "Qamishli"
+      },
+      "value": 5000
+    }
+  ],
+  "rules": [
+    {
+      "name": "csb_ration_daraa_zero",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Daraa"
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

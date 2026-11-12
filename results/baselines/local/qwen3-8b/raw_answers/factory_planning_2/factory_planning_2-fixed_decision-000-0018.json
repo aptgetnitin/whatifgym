@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "fixed_decisions": [
+  {
+   "measure": "store",
+   "scope": {
+    "month": "Jun",
+    "product": "*"
+   },
+   "value": 50
+  },
+  {
+   "measure": "make",
+   "scope": {
+    "month": "Jan",
+    "product": "Prod6"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixed decisions set the store level for all products in June to 50 and set the make quantity for Prod6 in January to zero."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "min_total_output_hour_10",
+   "measure": "output",
+   "scope": {
+    "hour": 10
+   },
+   "sense": ">=",
+   "value": 23050
+  }
+ ],
+ "note": "The rule ensures that the total power generated in hour 10 meets the specified minimum."
+}

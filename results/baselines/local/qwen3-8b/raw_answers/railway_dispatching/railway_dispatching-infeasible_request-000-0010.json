@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "fixed_decisions": [
+  {
+   "measure": "finish_time",
+   "scope": {
+    "train": "C"
+   },
+   "value": 170
+  }
+ ],
+ "note": "Fix the finish time of train C to exactly 170 minutes and optimize the rest of the schedule around this constraint."
+}

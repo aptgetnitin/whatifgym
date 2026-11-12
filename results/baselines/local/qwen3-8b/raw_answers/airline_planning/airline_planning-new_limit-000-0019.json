@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "total_flights_operated_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 38
+  },
+  {
+   "name": "flights_operated_for_A319_11_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A319#11",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "Two new limits: an overall cap of 38 on total flights operated and a cap of 3 on flights operated for aircraft A319#11."
+}

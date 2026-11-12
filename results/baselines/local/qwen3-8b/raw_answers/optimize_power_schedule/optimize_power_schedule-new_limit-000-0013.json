@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "max_scherer_hours",
+   "measure": "on",
+   "scope": {
+    "plant": "Scherer"
+   },
+   "sense": "<=",
+   "value": 19
+  }
+ ],
+ "note": "Limits the total number of hours Scherer is on to 19."
+}

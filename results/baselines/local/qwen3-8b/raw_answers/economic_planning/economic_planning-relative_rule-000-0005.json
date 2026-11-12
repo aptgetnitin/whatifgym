@@ -1,0 +1,49 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "stock_at_least_3_capacity",
+   "measure": "stock",
+   "scope": {
+    "industry": [
+      "coal",
+      "steel",
+      "transport"
+    ],
+    "year": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extra_capacity",
+    "scope": {
+     "industry": [
+       "coal",
+       "steel",
+       "transport"
+     ],
+     "year": [
+       1,
+       2,
+       3,
+       4,
+       5
+     ]
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

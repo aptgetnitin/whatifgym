@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg2_refine_monthly",
+   "measure": "consume",
+   "scope": {
+    "oil": "VEG2"
+   },
+   "sense": "==",
+   "value": 113
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix the monthly consumption of VEG2 to 113 tons and optimise the rest."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "year_2_employment",
+   "measure": "workforce",
+   "scope": {
+    "year": 2
+   },
+   "sense": ">=",
+   "value": 12600
+  },
+  {
+   "name": "year_3_employment",
+   "measure": "workforce",
+   "scope": {
+    "year": 3
+   },
+   "sense": ">=",
+   "value": 14000
+  }
+ ],
+ "note": "The scenario requires at least 12600 workers employed in year 2 and at least 14000 workers employed in year 3."
+}

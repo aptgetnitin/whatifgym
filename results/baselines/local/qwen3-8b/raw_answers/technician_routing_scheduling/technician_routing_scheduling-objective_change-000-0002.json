@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "start_time",
+   "scope": {
+    "location": "Loerrach"
+   }
+  }
+ ],
+ "note": "First, minimize the original penalty objective. Then, minimize the start time for Loerrach."
+}

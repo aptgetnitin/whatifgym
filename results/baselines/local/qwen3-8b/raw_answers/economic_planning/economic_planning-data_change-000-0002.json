@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "industries",
+   "column": "labor_per_unit_output",
+   "where": {
+    "industry": [
+     "coal",
+     "steel",
+     "transport"
+    ]
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "Manpower per unit of output falls by 20% for all industries."
+}

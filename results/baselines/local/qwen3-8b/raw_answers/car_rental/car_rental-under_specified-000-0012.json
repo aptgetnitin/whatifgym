@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "depots",
+   "column": "repair_capacity",
+   "where": {
+    "depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ]
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting repair capacity to 0 for all depots simulates a shift in repair capacity for every row of the depots table."
+}

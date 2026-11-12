@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "fixed_decisions": [
+  {
+   "measure": "overmanned",
+   "scope": {
+    "skill": "semi_skilled"
+   },
+   "value": 7.5
+  },
+  {
+   "measure": "overmanned",
+   "scope": {
+    "skill": "semi_skilled",
+    "year": [
+     1,
+     2,
+     3
+    ]
+   },
+   "value": 7.5
+  }
+ ],
+ "note": "Fix the overmanned workers for semi_skilled skill level at 7.5 for each year."
+}

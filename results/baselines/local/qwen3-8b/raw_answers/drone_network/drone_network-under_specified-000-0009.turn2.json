@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "5800 N OTTAWA RD"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The observed value for the cardiac arrests at location 5800 N OTTAWA RD is set to 0."
+}

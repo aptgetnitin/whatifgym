@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "milk_shipment_min",
+   "measure": "flow",
+   "scope": {
+    "food": "Milk"
+   },
+   "sense": ">=",
+   "value": 43800
+  }
+ ],
+ "note": "A minimum requirement on the total shipment of Milk across all links."
+}

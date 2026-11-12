@@ -1,0 +1,118 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "stock_at_least_sold",
+   "measure": "store",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod1"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "stock_at_least_sold_prod2",
+   "measure": "store",
+   "scope": {
+    "product": "Prod2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod2"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "stock_at_least_sold_prod3",
+   "measure": "store",
+   "scope": {
+    "product": "Prod3"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod3"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "stock_at_least_sold_prod4",
+   "measure": "store",
+   "scope": {
+    "product": "Prod4"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod4"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "stock_at_least_sold_prod5",
+   "measure": "store",
+   "scope": {
+    "product": "Prod5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod5"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "stock_at_least_sold_prod6",
+   "measure": "store",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod6"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "stock_at_least_sold_prod7",
+   "measure": "store",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "product": "Prod7"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The rule ensures that the total units in stock for each product is at least the total units sold for that product. The objective is to maximize the original profit."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_18-24_zero_or_at_least_38900",
+   "measure": "output",
+   "scope": {
+    "period": "18-24"
+   },
+   "sense": ">=",
+   "value": 38900
+  },
+  {
+   "name": "thermal_output_18-24_zero",
+   "measure": "output",
+   "scope": {
+    "period": "18-24"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The total thermal output for period 18-24 must be either zero or at least 38900."
+}

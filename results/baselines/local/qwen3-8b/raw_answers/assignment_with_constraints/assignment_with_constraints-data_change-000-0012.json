@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "size",
+   "where": {
+    "task": "task_0"
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "Scaling the size of task_0 by 25% increases the required capacity for that task."
+}

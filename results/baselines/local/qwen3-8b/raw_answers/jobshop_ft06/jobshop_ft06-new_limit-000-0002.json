@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "job_pairs_with_j5",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "*",
+    "other_job": "J5"
+   },
+   "sense": "<=",
+   "value": 9
+  },
+  {
+   "name": "start_time_j5",
+   "measure": "start",
+   "scope": {
+    "job": "J5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": "J5"
+    }
+   },
+   "factor": 190
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

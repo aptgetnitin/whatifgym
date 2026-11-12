@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_min_19-20",
+   "measure": "discharge",
+   "scope": {
+    "hour": "19-20"
+   },
+   "sense": ">=",
+   "value": 2.7
+  }
+ ],
+ "note": "A rule enforces a minimum discharge power for the 19-20 hour."
+}

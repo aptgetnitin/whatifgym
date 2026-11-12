@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "item8_at_least_125_times_item7",
+   "measure": "x",
+   "scope": {
+    "item": "item8"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": "item7"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The number of item placements for item8 must be at least 1.25 times the number of item placements for item7."
+}

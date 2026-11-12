@@ -3,7 +3,7 @@
   "base_model": "drone_network",
   "rules": [
     {
-      "name": "queue_load_min_3400_CHAMPLAIN_LA",
+      "name": "queue_load_min",
       "measure": "linked_load",
       "scope": {
         "location": "3400 CHAMPLAIN LA"

@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_unskilled_to_semi_skilled_year_1",
+   "measure": "retrain",
+   "scope": {
+    "year": 1,
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 300
+  },
+  {
+   "name": "overmanned_year_2_positive",
+   "measure": "overmanned",
+   "scope": {
+    "year": 2
+   },
+   "sense": ">",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "year": 2
+    }
+   },
+   "factor": 0
+  }
+ ],
+ "note": "A rule ensures that if there are overmanned workers in year 2, then at least 300 unskilled workers are retrained to semi-skilled in year 1."
+}

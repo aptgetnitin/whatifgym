@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "coal_output_year_2_min",
+   "measure": "production",
+   "scope": {
+    "year": 2,
+    "industry": "coal"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "year": 2,
+     "industry": "coal"
+    }
+   },
+   "factor": 600
+  }
+ ],
+ "note": "If the total output produced for year 2, industry coal is above zero, it must be at least 600."
+}

@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_cap",
+   "measure": "soc",
+   "sense": "<=",
+   "value": 210
+  }
+ ]
+}

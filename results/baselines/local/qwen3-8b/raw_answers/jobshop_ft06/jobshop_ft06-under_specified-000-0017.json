@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "logic": [
+  {
+   "name": "at_least_one_pair",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "goes_first",
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "goes_first",
+     "sense": "<=",
+     "value": 0
+    }
+   ]
+  }
+ ]
+}

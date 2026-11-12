@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "fixed_decisions": [
+  {
+   "measure": "produce",
+   "scope": {
+    "month": "Jan"
+   },
+   "value": 2250
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix the food production for January to exactly 2250 tons and maximize the original objective (profit)."
+}

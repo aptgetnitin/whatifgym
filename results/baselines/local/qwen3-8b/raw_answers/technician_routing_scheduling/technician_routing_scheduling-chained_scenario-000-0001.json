@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "sum_start_time_mannheim",
+   "measure": "start_time",
+   "scope": {
+    "location": "Mannheim"
+   },
+   "sense": ">=",
+   "value": 36
+  }
+ ],
+ "note": "A rule to enforce the sum of service start times at Mannheim locations to be at least 36."
+}

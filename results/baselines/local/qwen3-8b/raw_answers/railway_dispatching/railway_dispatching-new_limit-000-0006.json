@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_limit_for_train_B",
+   "measure": "entry_time",
+   "scope": {
+    "train": "B"
+   },
+   "sense": "<=",
+   "value": 90
+  }
+ ],
+ "note": "A rule limits the sum of entry times for train B to be at or below 90 minutes."
+}

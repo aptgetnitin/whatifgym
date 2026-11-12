@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "max_nutrient_factor",
+   "where": {},
+   "value": 3
+  }
+ ],
+ "rules": [
+  {
+   "name": "ration_cap_total",
+   "measure": "ration",
+   "scope": {
+    "camp": [
+      "Ar Raqqa",
+      "Daraa",
+      "Dayr_Az_Zor",
+      "Hassakeh",
+      "Idleb",
+      "Jubb_al_Jarrah",
+      "Qamishli"
+    ]
+   },
+   "sense": "<=",
+   "value": 30
+  },
+  {
+   "name": "flow_cap_to_Ar_Raqqa",
+   "measure": "flow",
+   "scope": {
+    "to_city": "Ar Raqqa"
+   },
+   "sense": "<=",
+   "value": 58650
+  }
+ ],
+ "note": "Two new limits: an overall ration cap of 30 units per person per day and a flow cap of 58650 units to Ar Raqqa."
+}

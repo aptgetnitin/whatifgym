@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "positions",
+      "column": "required",
+      "where": {
+        "position": "PG"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Setting the required number of players for PG to 0 changes the position requirements."
+}

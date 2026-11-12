@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "fixed_decisions": [
+  {
+   "measure": "make",
+   "scope": {
+    "month": "Jan",
+    "product": "Prod2"
+   },
+   "value": 5000
+  }
+ ],
+ "note": "Fix the make decision for product Prod2 in month Jan to exactly 5000 units."
+}

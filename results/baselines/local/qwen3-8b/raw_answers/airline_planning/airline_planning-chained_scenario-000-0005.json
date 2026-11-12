@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "flights",
+   "column": "passengers",
+   "factor": 1.2
+  }
+ ],
+ "rules": [
+  {
+   "name": "overall_flight_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 41
+  }
+ ],
+ "note": "An overall cap on the number of flights operated, summed over everything."
+}

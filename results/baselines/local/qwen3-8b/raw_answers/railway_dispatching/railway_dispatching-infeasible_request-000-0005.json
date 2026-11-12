@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "trains",
+   "column": "entry_time",
+   "where": {
+    "train": "A",
+    "resource": 5
+   },
+   "value": 130
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "entry_time",
+   "scope": {
+    "train": "A",
+    "resource": 5
+   },
+   "value": 130
+  }
+ ]
+}

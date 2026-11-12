@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "fixed_decisions": [
+  {
+   "measure": "start_time",
+   "scope": {
+    "job": "job_5"
+   },
+   "value": 49000
+  }
+ ],
+ "note": "Fix the start time of job_5 to 49000 and let the model adjust the rest of the schedule accordingly."
+}

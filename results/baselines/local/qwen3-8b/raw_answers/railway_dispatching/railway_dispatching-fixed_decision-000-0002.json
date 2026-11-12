@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "capacity_resource_5",
+   "measure": "meet",
+   "scope": {
+    "resource": 5
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "note": "Forcing the number of train pairs sharing resource 5 at the same time to 1."
+}

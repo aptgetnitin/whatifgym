@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "item12_placement_limit",
+   "measure": "x",
+   "scope": {
+    "item": "item12"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": "item10"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "The number of item placements for item12 is limited to 80% of that for item10."
+}

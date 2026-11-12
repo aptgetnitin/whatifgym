@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_f",
+   "measure": "entry_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": ">=",
+   "value": 2070
+  }
+ ],
+ "note": "The rule ensures that the entry time for train F is at least 2070 minutes."
+}

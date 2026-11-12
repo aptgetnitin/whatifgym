@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "item_placement_limit",
+   "measure": "x",
+   "scope": {
+    "item": "*"
+   },
+   "sense": "<=",
+   "value": 9
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Introducing an upper limit on the total number of item placements changes the constraints and affects the optimal solution."
+}

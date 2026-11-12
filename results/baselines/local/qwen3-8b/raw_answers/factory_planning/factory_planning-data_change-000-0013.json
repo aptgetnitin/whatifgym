@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "installed",
+   "value": 2,
+   "table": "machines",
+   "where": {
+    "machine": "grinder"
+   }
+  }
+ ]
+}

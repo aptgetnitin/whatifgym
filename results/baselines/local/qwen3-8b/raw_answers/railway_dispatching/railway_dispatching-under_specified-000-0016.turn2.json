@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "finish_time",
+   "scope": {
+    "train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to minimize the total arrival time at destination for each train."
+}

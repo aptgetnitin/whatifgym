@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "downgrade_attrition",
+   "value": 0.3
+  }
+ ],
+ "note": "The downgrade_attrition parameter is set to 0.3, which caps the share of downgraded workers who leave the company in the year they are downgraded."
+}

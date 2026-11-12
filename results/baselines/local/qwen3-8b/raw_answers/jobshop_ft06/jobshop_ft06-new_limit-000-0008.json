@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "max_goes_first_for_j3",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "*",
+    "job": "J3"
+   },
+   "sense": "<=",
+   "value": 8
+  }
+ ],
+ "note": "The rule limits the total number of job pairs where J3 goes first on a machine to 8."
+}

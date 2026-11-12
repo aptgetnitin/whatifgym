@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "x",
+   "scope": {
+    "item": "*",
+    "bin": "*"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "value",
+   "scope": {
+    "item": "*"
+   }
+  }
+ ],
+ "note": "Prioritise minimising the number of item placements first, then maximising the total packed value."
+}

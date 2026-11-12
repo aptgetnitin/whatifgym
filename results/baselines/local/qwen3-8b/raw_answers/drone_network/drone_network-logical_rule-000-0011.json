@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "logic": [
+  {
+   "name": "queue_load_linked_condition",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "linked_load",
+     "scope": {
+      "location": "2600 CANTWELL RD",
+      "base": "21 MUNICIPAL CTR Fire Station"
+     },
+     "sense": ">=",
+     "value": 0.02
+    },
+    {
+     "measure": "linked_load",
+     "scope": {
+      "location": "1100 RITTMAN RD",
+      "base": "5145 RURITAN COURT Rescue Squad"
+     },
+     "sense": ">=",
+     "value": 0.02
+    }
+   ]
+  }
+ ]
+}

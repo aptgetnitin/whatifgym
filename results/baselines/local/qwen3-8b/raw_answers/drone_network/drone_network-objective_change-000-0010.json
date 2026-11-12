@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "linked_load",
+      "scope": {
+        "location": "*",
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      }
+    }
+  ],
+  "note": "Prioritise minimising the response objective, then maximise the queue load linked to assigned locations for the specified drone base."
+}

@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "linked_load_500_pine_tops_ct_800_virginia_beach_bvd_fire_station",
+   "measure": "linked_load",
+   "scope": {
+    "location": "500 PINE TOPS CT",
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": ">=",
+   "value": 0.02
+  },
+  {
+   "name": "queue_load_5145_ruritan_court_rescue_squad",
+   "measure": "queue_load",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "linked_load",
+    "scope": {
+     "location": "500 PINE TOPS CT",
+     "base": "800 VIRGINIA BEACH BLVD Fire Station"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The rule ensures that the queue load for the base 5145 RURITAN COURT Rescue Squad is at least equal to the linked load for the location 500 PINE TOPS CT assigned to the base 800 VIRGINIA BEACH BLVD Fire Station."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "floor_on_operation_end_time",
+   "measure": "end",
+   "scope": {
+    "job": "J0",
+    "step": 6
+   },
+   "sense": ">=",
+   "value": 370
+  }
+ ],
+ "note": "A floor on the operation end time for job J0's step 6 is enforced."
+}

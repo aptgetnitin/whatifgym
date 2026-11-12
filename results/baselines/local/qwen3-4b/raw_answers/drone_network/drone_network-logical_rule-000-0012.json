@@ -3,7 +3,7 @@
   "base_model": "drone_network",
   "logic": [
     {
-      "name": "base_5145_ruritan_at_least_2",
+      "name": "at_least_1",
       "at_least": 1,
       "of": [
         {

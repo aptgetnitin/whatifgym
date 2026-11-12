@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal1_run_00-06",
+   "measure": "ngen",
+   "scope": {
+    "period": "00-06",
+    "type": "Thermal1"
+   },
+   "sense": ">=",
+   "value": 1
+  },
+  {
+   "name": "thermal1_run_18-24_at_least_14",
+   "measure": "ngen",
+   "scope": {
+    "period": "18-24",
+    "type": "Thermal1"
+   },
+   "sense": ">=",
+   "value": 14
+  }
+ ],
+ "note": "The scenario requires that at least one Thermal1 unit runs during the 00-06 period and at least 14 Thermal1 units run during the 18-24 period."
+}

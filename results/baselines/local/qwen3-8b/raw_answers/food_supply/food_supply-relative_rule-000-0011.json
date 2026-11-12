@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "total_shipped_at_most_25_of_total_bought",
+      "measure": "flow",
+      "scope": {
+        "food": "*"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "*"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

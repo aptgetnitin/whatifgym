@@ -6,8 +6,14 @@
       "sense": "min",
       "measure": "response_objective",
       "scope": {
-        "location": [
-          "all"
+        "base": [
+          "21 MUNICIPAL CTR Fire Station",
+          "2837 SHORE DR Fire Station",
+          "800 VIRGINIA BEACH BLVD Fire Station",
+          "600 CENTRAL DR Fire Station",
+          "3769 E. STRATFORD ROAD Rescue Squad",
+          "5145 RURITAN COURT Rescue Squad",
+          "333 THALIA ROAD Rescue Squad"
         ]
       }
     },
@@ -16,9 +22,17 @@
       "measure": "open",
       "scope": {
         "base": [
-          "all"
-        ]
+          "21 MUNICIPAL CTR Fire Station",
+          "2837 SHORE DR Fire Station",
+          "800 VIRGINIA BEACH BLVD Fire Station",
+          "600 CENTRAL DR Fire Station",
+          "3769 E. STRATFORD ROAD Rescue Squad",
+          "5145 RURITAN COURT Rescue Squad",
+          "333 THALIA ROAD Rescue Squad"
+          ]
+        }
       }
-    }
-  ]
-}
+    ]
+  
+    
+  }

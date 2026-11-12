@@ -1,0 +1,1 @@
+{"version": "0.1","base_model": "car_rental","rules": [{"name": "rentals_floor","measure": "rentals","scope": {"depot": "Glasgow","day": "Saturday"},"sense": ">=","value": 20}]}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "fuels",
+   "column": "fuel_cost",
+   "factor": 0.8
+  },
+  {
+   "op": "set",
+   "table": "fuels",
+   "column": "fuel_cost",
+   "where": {
+    "fuel": "BLQ"
+   },
+   "value": 7
+  }
+ ],
+ "note": "Fuel cost per MWh for all fuels is scaled down by 20%, and specifically for BLQ, it is set to 7."
+}

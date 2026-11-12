@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "salary",
+   "factor": 0.75
+  }
+ ],
+ "note": "Every player salary in the players table falls by 25%."
+}

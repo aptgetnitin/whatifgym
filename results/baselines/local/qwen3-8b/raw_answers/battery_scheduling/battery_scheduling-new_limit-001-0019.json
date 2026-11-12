@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "energy_capacity_kwh",
+   "value": 220
+  }
+ ],
+ "note": "The battery's stored energy capacity is capped at 220 kWh across all hours."
+}

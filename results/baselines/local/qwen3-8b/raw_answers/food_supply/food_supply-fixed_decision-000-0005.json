@@ -1,0 +1,53 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "from_city": "Homs",
+    "to_city": "Homs"
+   },
+   "value": 170
+  },
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "from_city": "Homs",
+    "to_city": "Homs"
+   },
+   "value": 170
+  }
+ ],
+ "rules": [
+  {
+   "name": "flow_from_homs",
+   "measure": "flow",
+   "scope": {
+    "from_city": "Homs"
+   },
+   "sense": "==",
+   "value": 170
+  },
+  {
+   "name": "flow_to_homs",
+   "measure": "flow",
+   "scope": {
+    "to_city": "Homs"
+   },
+   "sense": "==",
+   "value": 17
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Set the flow from and to Homs to 170 units per food and optimise the rest."
+}

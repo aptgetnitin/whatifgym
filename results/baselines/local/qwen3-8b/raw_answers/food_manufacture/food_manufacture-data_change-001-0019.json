@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "oils",
+   "column": "hardness",
+   "where": {
+    "oil": "VEG2"
+   },
+   "value": 12.2
+  }
+ ],
+ "note": "The hardness of VEG2 is updated to 12.2."
+}

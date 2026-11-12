@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "total_start_time_for_j4",
+   "measure": "start",
+   "scope": {
+    "job": "J4"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": [
+      "J0",
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5"
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "At least 60% of the total operation start time must be allocated to job J4."
+}

@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "ask": "What is the impact of changing the penalty per unfilled job on the plan?"
+}

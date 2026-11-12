@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "at_most_three_plants_on",
+   "measure": "on",
+   "scope": {
+    "plant": [
+     "Vogtle",
+     "OTHER COAL",
+     "Scherer",
+     "Edwin I Hatch"
+    ]
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "Limits the total number of plants that can be on (non-zero plant-hours) to at most 3 among the specified plants."
+}

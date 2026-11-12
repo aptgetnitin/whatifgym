@@ -1,0 +1,46 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "camps",
+   "column": "beneficiaries",
+   "where": {
+    "camp": "Dayr_Az_Zor"
+   },
+   "value": 25000
+  }
+ ],
+ "rules": [
+  {
+   "name": "ration_dsm_dayr_az_zor",
+   "measure": "ration",
+   "scope": {
+    "food": "Dried skim milk (enriched) (DSM)",
+    "camp": "Dayr_Az_Zor"
+   },
+   "sense": ">=",
+   "value": 0
+  },
+  {
+   "name": "flow_wheat_hassakeh_qamishli",
+   "measure": "flow",
+   "scope": {
+    "food": "Wheat",
+    "from_city": "Hassakeh",
+    "to_city": "Qamishli"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "food": "Dried skim milk (enriched) (DSM)",
+     "camp": "Dayr_Az_Zor"
+    }
+   },
+   "factor": 16350
+  }
+ ],
+ "note": "The question requires setting the beneficiaries of Dayr_Az_Zor to 25,000 and adding a rule that the flow of wheat from Hassakeh to Qamishli is at least 16,350 times the ration of dried skim milk (enriched) (DSM) in Dayr_Az_Zor."
+}

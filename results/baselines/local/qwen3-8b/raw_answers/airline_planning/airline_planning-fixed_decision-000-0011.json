@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "fixed_decisions": [
+  {
+   "measure": "operate",
+   "scope": {
+    "aircraft": "CRJ700#3",
+    "flight": 3076
+   },
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

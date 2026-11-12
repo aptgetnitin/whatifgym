@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "total_discharge_limit",
+   "measure": "discharge",
+   "sense": "<=",
+   "value": 4.3
+  }
+ ],
+ "note": "A global limit on the total discharging power across all hours."
+}

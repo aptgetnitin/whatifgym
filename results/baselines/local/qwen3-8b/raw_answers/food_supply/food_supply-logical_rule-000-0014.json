@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_purchase",
+      "value": 20000
+    }
+  ],
+  "rules": [
+    {
+      "name": "max_purchase_per_supplier",
+      "measure": "purchase",
+      "scope": {
+        "supplier": ["Daraa", "Hassakeh", "Aleppo", "Gaziantep", "Amman"]
+      },
+      "sense": "<=",
+      "value": 20000
+    }
+  ],
+  "note": "Restrict purchase to only the specified suppliers with a maximum purchase limit."
+}

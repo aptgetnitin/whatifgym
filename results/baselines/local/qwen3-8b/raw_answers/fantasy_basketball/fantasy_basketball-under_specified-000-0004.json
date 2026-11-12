@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "ask": "Please specify which position's required number of players has changed and the new required value."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "year_2_output_limit",
+   "measure": "production",
+   "scope": {
+    "year": 2
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "year": [
+      1,
+      3,
+      4,
+      5
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "Year 2 output is limited to 5% of the total output from years 1, 3, 4, and 5."
+}

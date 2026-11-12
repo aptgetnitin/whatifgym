@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "friday_undamaged_stock_limit",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Friday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "undamaged_stock",
+    "scope": {
+     "day": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Saturday"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "A relative limit on the sum of undamaged_stock on Friday compared to the sum across other days."
+}

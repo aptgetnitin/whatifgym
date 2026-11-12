@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "final_stock",
+   "where": {
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   },
+   "value": 5000
+  }
+ ],
+ "note": "The question asks to set the final stock of each oil to 5000 tons in June."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "rules": [
+  {
+   "name": "trevor_ariza_at_most_80_of_dario_saric",
+   "measure": "pick",
+   "scope": {
+    "player": "Trevor Ariza"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "pick",
+    "scope": {
+     "player": "Dario Saric"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "A rule that limits the number of players picked for Trevor Ariza to at most 80% of the number picked for Dario Saric."
+}

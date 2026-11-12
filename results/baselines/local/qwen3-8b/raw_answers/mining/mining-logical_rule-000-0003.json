@@ -1,0 +1,49 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "fixed_decisions": [
+    {
+      "measure": "open",
+      "scope": {
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ],
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "at_most_four_mine_years_open",
+      "measure": "open",
+      "scope": {
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ],
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ],
+  "note": "Fixing the open status to zero for all mines and years, and adding a rule to ensure at most four mine-years are kept open."
+}

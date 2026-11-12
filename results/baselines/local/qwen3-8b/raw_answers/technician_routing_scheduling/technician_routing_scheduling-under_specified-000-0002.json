@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "day_length_min",
+   "factor": 1.2
+  },
+  {
+   "op": "scale_param",
+   "name": "unfilled_job_penalty",
+   "factor": 1.2
+  },
+  {
+   "op": "scale_param",
+   "name": "window_violation_penalty",
+   "factor": 1.2
+  },
+  {
+   "op": "scale_param",
+   "name": "lateness_penalty",
+   "factor": 1.2
+  }
+ ],
+ "note": "Daily working capacity (min) changes across the board by scaling all relevant parameters."
+}

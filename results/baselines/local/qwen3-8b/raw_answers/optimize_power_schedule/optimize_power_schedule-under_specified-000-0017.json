@@ -1,0 +1,1 @@
+{"version": "0.1","base_model":"optimize_power_schedule","rules":[{"name":"plant_hours_cap","measure":"on","scope":{"plant":["Scherer","Bowen","Jack McDonough","Edwin I Hatch","Vogtle","OIL","BIOMASS","GAS","HYDRO","OTHER COAL"]},"sense":"<=","value":240}],"note":"A cap on the total number of plant-hours on across all plants."}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "min_start_time_baden_baden",
+   "measure": "start_time",
+   "scope": {
+    "location": "Baden-Baden"
+   },
+   "sense": ">=",
+   "value": 0
+  },
+  {
+   "name": "lateness_customer5_at_least_130",
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "sense": ">=",
+   "value": 130
+  }
+ ],
+ "note": "A non-zero service start time for Baden-Baden requires a total minutes late of at least 130 for Customer5."
+}

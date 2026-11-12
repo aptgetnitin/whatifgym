@@ -1,0 +1,49 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "short_time_year1_at_least_60_percent",
+   "measure": "short_time",
+   "scope": {
+    "year": 1
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "short_time",
+    "scope": {
+     "year": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "factor": 0.6
+  },
+  {
+   "name": "overmanned_at_most_50_percent_of_redundant",
+   "measure": "overmanned",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "redundant",
+    "scope": {
+     "year": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Two relative limits: short-time working in year 1 is at least 60% of total short-time working; overmanned workers are at most 50% of total redundancies."
+}

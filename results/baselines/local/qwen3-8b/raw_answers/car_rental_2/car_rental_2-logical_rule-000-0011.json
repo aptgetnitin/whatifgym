@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_rentals_wed_plymouth",
+   "measure": "rentals",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Plymouth"
+   },
+   "sense": ">=",
+   "value": 138
+  }
+ ],
+ "note": "If the total cars rented out for day Wednesday, depot Plymouth is above zero, it must be at least 138."
+}

@@ -1,0 +1,65 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "entry_time",
+   "scope": {
+    "train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ],
+    "resource": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ],
+    "other_train": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ]
+   }
+  }
+ ],
+ "note": "Prioritizes minimizing total delay, then minimizing total entry time, and finally maximizing the number of trains clearing a resource before another train enters it."
+}

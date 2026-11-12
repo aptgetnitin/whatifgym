@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "grain_grown_year2_at_least_1_25_year5",
+   "measure": "grow_grain",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "grow_grain",
+    "scope": {
+     "year": "Year5"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "A relative rule compares the sum of grain grown in Year2 to the sum of grain grown in Year5."
+}

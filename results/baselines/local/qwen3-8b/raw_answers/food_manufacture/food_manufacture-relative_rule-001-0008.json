@@ -1,0 +1,44 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg2_refine_at_least_3_times_veg1",
+   "measure": "consume",
+   "scope": {
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "consume",
+    "scope": {
+     "oil": "VEG1"
+    }
+   },
+   "factor": 3
+  },
+  {
+   "name": "jun_food_at_least_75_percent_total",
+   "measure": "produce",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "produce",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Rules enforce a relative constraint between the tons of oil refined for VEG2 and VEG1, and a relative constraint between the food produced in June and the total food produced."
+}

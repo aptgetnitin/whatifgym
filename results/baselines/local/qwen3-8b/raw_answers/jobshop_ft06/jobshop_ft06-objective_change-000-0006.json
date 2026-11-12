@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "makespan"
+  },
+  {
+   "sense": "min",
+   "measure": "start",
+   "scope": {
+    "job": "*",
+    "step": "*"
+   }
+  }
+ ],
+ "note": "Minimise makespan first, then minimise the sum of start times of all operations."
+}

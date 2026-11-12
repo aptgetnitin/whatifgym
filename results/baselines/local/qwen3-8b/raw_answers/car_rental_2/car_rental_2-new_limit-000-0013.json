@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_stock_total",
+   "measure": "undamaged_stock",
+   "scope": {},
+   "sense": "<=",
+   "value": 2650
+  },
+  {
+   "name": "undamaged_transfers_thursday",
+   "measure": "undamaged_transfers",
+   "scope": {
+    "day": "Thursday"
+   },
+   "sense": "<=",
+   "value": 45
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; the first rule applies to all depots and days, while the second applies to undamaged transfers on Thursday."
+}

@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "max_open_mines",
+   "measure": "open",
+   "scope": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "A rule limits the total number of mine-years kept open to at most 1."
+}

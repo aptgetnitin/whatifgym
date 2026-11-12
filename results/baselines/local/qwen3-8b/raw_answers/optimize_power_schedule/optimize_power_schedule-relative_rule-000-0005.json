@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "other_coal_min_share",
+   "measure": "output",
+   "scope": {
+    "plant": "OTHER COAL"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "output",
+    "scope": {
+     "plant": [
+      "Scherer",
+      "Bowen",
+      "Jack McDonough",
+      "Edwin I Hatch",
+      "Vogtle",
+      "OIL",
+      "BIOMASS",
+      "GAS",
+      "HYDRO",
+      "OTHER COAL"
+     ]
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "At least 25% of the total power generated must go to the OTHER COAL plant."
+}

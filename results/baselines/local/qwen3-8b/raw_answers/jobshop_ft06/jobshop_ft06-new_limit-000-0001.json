@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "sum_end_j4_at_least_270",
+   "measure": "end",
+   "scope": {
+    "job": "J4"
+   },
+   "sense": ">=",
+   "value": 270
+  }
+ ],
+ "note": "A rule bounds the SUM of the end times for all operations of job J4 to be at least 270."
+}

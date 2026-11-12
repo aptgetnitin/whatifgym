@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "a319_11_flight_limit",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A319#11"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "aircraft": "*"
+    }
+   },
+   "factor": 0.05
+  },
+  {
+   "name": "a319_5_flight_limit",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A319#5"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "aircraft": "A318#5"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "Relative limits on the number of flights operated for specific aircraft compared to the total or another aircraft."
+}

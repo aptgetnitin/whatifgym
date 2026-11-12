@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "demand",
+   "column": "demand",
+   "where": {
+    "day": "Monday",
+    "depot": "Glasgow"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Capping the cars rented out is achieved by setting the demand to 0 for the specified day and depot."
+}

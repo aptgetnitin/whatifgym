@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "rules": [
+  {
+   "name": "start_time_job_13",
+   "measure": "start_time",
+   "scope": {
+    "job": "job_13"
+   },
+   "sense": ">=",
+   "value": 314250
+  },
+  {
+   "name": "start_time_job_10",
+   "measure": "start_time",
+   "scope": {
+    "job": "job_10"
+   },
+   "sense": ">=",
+   "value": 91400
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The question asks whether both start time constraints for job_13 and job_10 can be satisfied simultaneously."
+}

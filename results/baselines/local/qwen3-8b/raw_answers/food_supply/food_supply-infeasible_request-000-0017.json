@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "purchase",
+   "scope": {
+    "food": "*",
+    "supplier": "*"
+   }
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "purchase",
+   "scope": {
+    "food": "*",
+    "supplier": "*"
+   },
+   "value": 973150
+  }
+ ],
+ "note": "Maximise the total food purchased while fixing it to the target value."
+}

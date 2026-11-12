@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "short_time",
+   "column": "short_time",
+   "where": {
+    "year": 2,
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "value": 42
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix the short_time variable for year 2 across all skill levels to 42 and optimise for minimum redundancies."
+}

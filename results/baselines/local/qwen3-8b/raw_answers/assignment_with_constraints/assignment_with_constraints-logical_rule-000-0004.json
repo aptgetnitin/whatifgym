@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "logic": [
+  {
+   "name": "no_team_10_11_and_team_5_6",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "team",
+     "sense": "==",
+     "value": 0,
+     "scope": {
+      "team": "team_10_11"
+     }
+    },
+    {
+     "measure": "team",
+     "sense": "==",
+     "value": 0,
+     "scope": {
+      "team": "team_5_6"
+     }
+    }
+   ]
+  }
+ ]
+}

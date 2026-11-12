@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "arrival_time_train_B",
+   "measure": "finish_time",
+   "scope": {
+    "train": "B"
+   },
+   "sense": "<=",
+   "value": 37
+  },
+  {
+   "name": "train_B_pair_sharing",
+   "measure": "meet",
+   "scope": {
+    "train": "B"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "meet",
+    "scope": {
+     "train": "B"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The first rule limits the total arrival time of train B. The second rule ensures that the number of train pairs sharing a resource with train B is at least 2."
+}

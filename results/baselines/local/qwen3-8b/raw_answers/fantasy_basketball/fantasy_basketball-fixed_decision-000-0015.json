@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "fixed_decisions": [
+  {
+   "measure": "pick",
+   "scope": {
+    "player": "Alex Abrines"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Forcing the selection of Alex Abrines by fixing the pick decision to 1."
+}

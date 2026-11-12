@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "initial_soc_kwh",
+   "where": {
+    "name": "initial_soc_kwh"
+   },
+   "value": 2
+  }
+ ],
+ "note": "The initial SOC is changed to 2 kWh to explore the effect on the battery scheduling."
+}

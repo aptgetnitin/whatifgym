@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "year_6_output_share",
+   "measure": "production",
+   "scope": {
+    "year": 6
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "year": [1, 2, 3, 4, 5]
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "Year 6 output must be at least 10% of the total output from years 1 to 5."
+}

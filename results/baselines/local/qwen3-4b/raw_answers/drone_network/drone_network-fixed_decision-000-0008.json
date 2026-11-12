@@ -4,7 +4,7 @@
   "data_changes": [
     {
       "op": "set",
-      "table": "assign",
+      "table": "incidents",
       "column": "assign",
       "where": {
         "location": "1200 MOZART DR",

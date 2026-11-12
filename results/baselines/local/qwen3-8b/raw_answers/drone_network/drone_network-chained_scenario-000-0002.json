@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "location"
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "A 10% decrease in all cardiac arrests across incident locations."
+}

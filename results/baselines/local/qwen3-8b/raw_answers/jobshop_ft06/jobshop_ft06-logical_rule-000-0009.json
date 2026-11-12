@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "total_operation_end_time_step_4",
+   "measure": "end",
+   "scope": {
+    "step": 4
+   },
+   "sense": ">=",
+   "value": 320
+  }
+ ],
+ "note": "If the total operation end time for routing step 4 is above zero, it must be at least 320."
+}

@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "cap_buy_total",
+   "measure": "buy",
+   "scope": {},
+   "sense": "<=",
+   "value": 1600
+  }
+ ]
+}

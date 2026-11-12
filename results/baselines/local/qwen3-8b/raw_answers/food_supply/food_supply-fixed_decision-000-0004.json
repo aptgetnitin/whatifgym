@@ -1,0 +1,57 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "food": "Corn-soya blend (CSB)",
+    "from_city": "Jubb_al_Jarrah",
+    "to_city": "Ar Raqqa"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "flow",
+   "column": "flow",
+   "where": {
+    "food": "Oil",
+    "from_city": "Ar Raqqa",
+    "to_city": "Dayr_Az_Zor"
+   },
+   "value": 25000
+  }
+ ],
+ "rules": [
+  {
+   "name": "ration_csb_jubb_al_jarrah_zero",
+   "measure": "ration",
+   "scope": {
+    "food": "Corn-soya blend (CSB)",
+    "camp": "Jubb_al_Jarrah"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "flow",
+   "scope": {
+    "food": "Oil",
+    "from_city": "Ar Raqqa",
+    "to_city": "Dayr_Az_Zor"
+   },
+   "value": 25000
+  }
+ ]
+}

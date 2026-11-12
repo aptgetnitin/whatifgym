@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "1100 HORNET CT"
+   },
+   "value": 2
+  }
+ ],
+ "note": "The incidents at location 1100 HORNET CT are set to 2."
+}

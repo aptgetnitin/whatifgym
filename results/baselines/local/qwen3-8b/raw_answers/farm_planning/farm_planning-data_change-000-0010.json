@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "land_groups",
+   "column": "area",
+   "where": {
+    "land_group": [
+     "Group1",
+     "Group2",
+     "Group3",
+     "Group4"
+    ]
+   },
+   "factor": 1.2
+  },
+  {
+   "op": "scale",
+   "table": "land_groups",
+   "column": "grain_yield",
+   "where": {
+    "land_group": [
+     "Group1",
+     "Group2",
+     "Group3",
+     "Group4"
+    ]
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "The grain-suitable acres in the land groups suitable for grain table rise by 20%."
+}

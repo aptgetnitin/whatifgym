@@ -1,0 +1,48 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "sum_start_j5",
+   "measure": "start",
+   "scope": {
+    "job": "J5"
+   },
+   "sense": "<=",
+   "value": 120
+  },
+  {
+   "name": "cap_job_pairs",
+   "measure": "goes_first",
+   "scope": {
+    "machine": [
+     "M0",
+     "M1",
+     "M2",
+     "M3",
+     "M4",
+     "M5"
+    ],
+    "job": [
+     "J0",
+     "J1",
+     "J2",
+     "J3",
+     "J4",
+     "J5"
+    ],
+    "other_job": [
+     "J0",
+     "J1",
+     "J2",
+     "J3",
+     "J4",
+     "J5"
+    ]
+   },
+   "sense": "<=",
+   "value": 38
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; the second rule caps the total number of job pairs where a job goes first on a machine."
+}

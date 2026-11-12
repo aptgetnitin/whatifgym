@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "production",
+   "scope": {
+    "year": 2
+   }
+  }
+ ],
+ "note": "First maximise total manpower (original objective), then maximise production in year 2."
+}

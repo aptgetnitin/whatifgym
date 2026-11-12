@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "repairs",
+   "column": "repairs",
+   "where": {
+    "day": "Saturday",
+    "depot": "Birmingham"
+   },
+   "value": 60
+  }
+ ],
+ "note": "Fix the number of repairs at Birmingham on Saturday to exactly 60."
+}

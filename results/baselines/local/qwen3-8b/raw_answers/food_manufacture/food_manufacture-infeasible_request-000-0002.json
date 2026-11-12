@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "total_refined",
+   "measure": "consume",
+   "scope": {
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ],
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": ">=",
+   "value": 27000
+  }
+ ],
+ "note": "The rule ensures the total refined oil meets the new target."
+}

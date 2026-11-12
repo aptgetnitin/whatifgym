@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "charge_03-04_if_soc_17-18_positive",
+   "measure": "charge",
+   "scope": {
+    "hour": "03-04"
+   },
+   "sense": ">=",
+   "value": 7.5,
+   "relative_to": {
+    "measure": "soc",
+    "scope": {
+     "hour": "17-18"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that enforces a minimum charging power in 03-04 if the stored energy in 17-18 is positive."
+}

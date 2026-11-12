@@ -1,0 +1,55 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "redundant",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "recruit",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ],
+    "year": [
+      1,
+      2,
+      3
+    ]
+   }
+  }
+ ],
+ "note": "The objective stages first minimises total redundancies (as in the original model), then minimises the total workers made redundant (which is the same as the first stage), and finally maximises the total workers recruited."
+}

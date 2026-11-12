@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "min_discharge_for_soc_21-22",
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "soc",
+    "scope": {
+     "hour": "21-22"
+    }
+   },
+   "factor": 10
+  }
+ ],
+ "note": "A rule that links the total battery discharging power to the stored energy for hour 21-22."
+}

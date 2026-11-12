@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "costs",
+   "column": "cost",
+   "where": {
+    "worker": "worker_8",
+    "task": "task_3"
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The cost of assigning task_3 to worker_8 is reduced by 50%."
+}

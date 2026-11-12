@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "operations",
+   "column": "duration",
+   "where": {
+    "job": "J0",
+    "step": 1
+   },
+   "value": 2
+  }
+ ],
+ "note": "The processing time for job J0, routing step 1 is changed to 2."
+}

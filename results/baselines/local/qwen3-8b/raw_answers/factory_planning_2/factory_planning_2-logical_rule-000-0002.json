@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "sold_jun_at_least_6100_if_make_jan_positive",
+   "measure": "sell",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "make",
+    "scope": {
+     "month": "Jan"
+    }
+   },
+   "factor": 6100
+  }
+ ],
+ "note": "A rule that enforces a conditional constraint on the total units sold in June based on the total units made in January."
+}

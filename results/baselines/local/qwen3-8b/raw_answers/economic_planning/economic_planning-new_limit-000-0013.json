@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "coal_output_min",
+   "measure": "production",
+   "scope": {
+    "industry": "coal"
+   },
+   "sense": ">=",
+   "value": 2700
+  }
+ ],
+ "note": "A minimum total output requirement for coal across all years."
+}

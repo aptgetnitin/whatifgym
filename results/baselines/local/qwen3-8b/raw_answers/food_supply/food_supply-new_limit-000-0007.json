@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "daraa_purchase_min",
+   "measure": "purchase",
+   "scope": {
+    "supplier": "Daraa"
+   },
+   "sense": ">=",
+   "value": 50450
+  }
+ ],
+ "note": "A minimum purchase requirement for a supplier is enforced through a rule on the purchase measure."
+}

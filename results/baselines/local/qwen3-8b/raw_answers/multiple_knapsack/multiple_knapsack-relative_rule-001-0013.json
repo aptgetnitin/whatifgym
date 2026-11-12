@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "item14_at_least_15_percent",
+   "measure": "x",
+   "scope": {
+    "item": "item14"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": "*"
+    }
+   },
+   "factor": 0.15
+  },
+  {
+   "name": "bin0_at_most_50_percent_of_bin1",
+   "measure": "x",
+   "scope": {
+    "bin": "bin0"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "bin": "bin1"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "Two relative limits on the number of item placements: at least 15% of total placements for item14, and bin0 placements at most 50% of bin1 placements."
+}

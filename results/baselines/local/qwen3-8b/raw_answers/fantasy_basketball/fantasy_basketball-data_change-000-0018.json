@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "predicted_points",
+   "where": {
+    "position": [
+     "PG"
+    ]
+   },
+   "factor": 1.25
+  },
+  {
+   "op": "set",
+   "table": "positions",
+   "column": "required",
+   "where": {
+    "position": "PG"
+   },
+   "value": 2
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

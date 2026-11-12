@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_limit_21-22",
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": "<=",
+   "value": 2.5
+  }
+ ],
+ "note": "A limit on the total discharge power during the 21-22 hour."
+}

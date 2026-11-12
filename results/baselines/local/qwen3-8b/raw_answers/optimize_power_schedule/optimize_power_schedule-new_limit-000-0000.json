@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "other_coal_max_hours_on",
+   "measure": "on",
+   "scope": {
+    "plant": "OTHER COAL"
+   },
+   "sense": "<=",
+   "value": 6
+  }
+ ],
+ "note": "Limits the total number of hours the plant OTHER COAL is on to 6."
+}

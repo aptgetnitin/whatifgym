@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "logic": [
+  {
+   "name": "no_output_in_both_year_2_and_4",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "production",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "year": 2
+     }
+    },
+    {
+     "measure": "production",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "year": 4
+     }
+    }
+   ]
+  }
+ ]
+}

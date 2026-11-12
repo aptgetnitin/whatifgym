@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "no_both_4577_and_4576",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": [
+     "4577",
+     "4576"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

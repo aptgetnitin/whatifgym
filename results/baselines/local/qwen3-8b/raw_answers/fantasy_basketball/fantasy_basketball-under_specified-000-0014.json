@@ -1,0 +1,1 @@
+{"version": "0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set_param","name":"salary_cap","value":25000},{"op":"set_param","name":"salary_cap","value":35000}],"note":"Changing the salary cap to 25,000 and 35,000 to explore the effect on the optimal line-up."}

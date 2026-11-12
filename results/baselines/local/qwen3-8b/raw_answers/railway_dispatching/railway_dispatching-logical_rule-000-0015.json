@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "f_entry_time_min",
+   "measure": "entry_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "train": "F"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "entry_time",
+   "scope": {
+    "train": "F"
+   },
+   "value": 620
+  }
+ ]
+}

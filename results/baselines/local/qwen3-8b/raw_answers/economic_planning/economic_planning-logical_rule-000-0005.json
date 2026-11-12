@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "non_zero_output_years",
+   "measure": "production",
+   "scope": {
+    "year": [
+     6,
+     5,
+     2,
+     3
+    ]
+   },
+   "sense": ">=",
+   "value": 0
+  }
+ ],
+ "note": "Restricting production to specific years."
+}

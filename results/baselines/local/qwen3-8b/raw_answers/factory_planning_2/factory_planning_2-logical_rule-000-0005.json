@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "logic": [
+  {
+   "name": "jan_prod5_sell_zero_or_at_least_1200",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "Jan",
+      "product": "Prod5"
+     },
+     "sense": "==",
+     "value": 0
+    },
+    {
+     "measure": "sell",
+     "scope": {
+      "month": "Jan",
+      "product": "Prod5"
+     },
+     "sense": ">=",
+     "value": 1200
+    }
+   ]
+  }
+ ]
+}

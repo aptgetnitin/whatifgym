@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "inventory_cap",
+   "measure": "store",
+   "scope": {},
+   "sense": "<=",
+   "value": 1000
+  }
+ ],
+ "note": "A global constraint on the total month-end stock across all products and months."
+}

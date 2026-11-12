@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "maize_meal_at_least_30_percent_of_all_food_shipped",
+   "measure": "flow",
+   "scope": {
+    "food": "Maize meal"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "*"
+    }
+   },
+   "factor": 0.3
+  }
+ ],
+ "note": "A relative rule compares the sum of the measure over the scope to a factor of the sum of another measure over a different scope."
+}

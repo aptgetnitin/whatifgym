@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "rentals",
+   "scope": {
+    "day": "all",
+    "depot": "all"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "all",
+    "depot": "all"
+   }
+  }
+ ],
+ "note": "Prioritizes weekly profit first, then minimizes total cars rented out, and finally maximizes total damaged cars kept at depots overnight."
+}

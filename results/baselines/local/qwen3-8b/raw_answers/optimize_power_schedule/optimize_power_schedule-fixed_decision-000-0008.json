@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "plants",
+   "column": "must_run",
+   "where": {
+    "plant": "Scherer"
+   },
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "on",
+   "scope": {
+    "plant": "Scherer",
+    "hour": 3
+   },
+   "value": 0
+  }
+ ],
+ "note": "Set Scherer's must_run to 0 and fix its on status to 0 in hour 3."
+}

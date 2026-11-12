@@ -1,0 +1,43 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "external_demand",
+   "where": {
+    "industry": "steel"
+   },
+   "value": 80
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_stock",
+   "where": {
+    "industry": "transport"
+   },
+   "value": 150
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 250
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "labor_per_unit_output",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 0.5
+  }
+ ],
+ "note": "The exogenous consumption demand for steel is increased to 80, the initial stock for transport is set to 150, the initial capacity for coal is set to 250, and the labor per unit of output for coal is reduced to 0.5."
+}

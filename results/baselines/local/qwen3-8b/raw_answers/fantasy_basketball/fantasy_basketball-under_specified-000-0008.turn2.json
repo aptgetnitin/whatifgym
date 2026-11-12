@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "salary",
+   "where": {
+    "position": [
+     "PG",
+     "SG",
+     "SF",
+     "PF",
+     "C"
+    ]
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "All player salaries are increased by 10% across the board."
+}

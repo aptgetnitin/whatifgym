@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "make",
+   "scope": {
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ]
+   }
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "make",
+   "scope": {
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ]
+   },
+   "value": 26500
+  }
+ ]
+}

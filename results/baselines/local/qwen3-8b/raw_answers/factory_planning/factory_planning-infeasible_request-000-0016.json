@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod7_make_feb",
+   "measure": "make",
+   "scope": {
+    "product": "Prod7",
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "value": 500
+  }
+ ],
+ "note": "A rule enforces a minimum sum of the make decision measure for Prod7 in Feb."
+}

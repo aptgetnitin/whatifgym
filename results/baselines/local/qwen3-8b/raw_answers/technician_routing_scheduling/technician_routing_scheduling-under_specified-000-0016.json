@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "lateness",
+   "scope": {
+    "customer": [
+     "Customer4",
+     "Customer5"
+    ]
+   }
+  }
+ ],
+ "note": "The objective is to minimize the lateness of Customer4 and Customer5."
+}

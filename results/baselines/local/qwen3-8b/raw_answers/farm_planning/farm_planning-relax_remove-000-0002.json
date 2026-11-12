@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "housing_capacity",
+   "where": {
+    "name": "housing_capacity"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Removing the housing-capacity limit by setting it to 0."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "external_demand",
+   "where": {
+    "industry": "steel"
+   },
+   "value": 3100
+  }
+ ],
+ "rules": [
+  {
+   "name": "steel_output_at_least_3100",
+   "measure": "production",
+   "scope": {
+    "industry": "steel"
+   },
+   "sense": ">=",
+   "value": 3100
+  }
+ ],
+ "note": "Set the external demand for steel to 3100 and enforce that the production of steel meets this demand."
+}

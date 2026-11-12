@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_limit_for_train_C",
+   "measure": "entry_time",
+   "scope": {
+    "train": "C"
+   },
+   "sense": "<=",
+   "value": 0.05,
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "train": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+     ]
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A relative rule bounds the sum of entry times for train C as a percentage of the total sum of entry times for all trains."
+}

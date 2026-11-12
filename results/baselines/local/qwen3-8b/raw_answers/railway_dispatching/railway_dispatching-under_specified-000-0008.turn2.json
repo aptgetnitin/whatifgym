@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "resources",
+   "column": "duration",
+   "where": {
+    "resource": 0
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "Scaling the duration of resource 0 by a factor of 1.5 to simulate an increase in the minimum time on the resource."
+}

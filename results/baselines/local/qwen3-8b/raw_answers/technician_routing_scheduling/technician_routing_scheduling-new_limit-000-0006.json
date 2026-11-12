@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "total_service_start_time",
+   "measure": "start_time",
+   "scope": {
+    "location": [
+     "Heidelberg",
+     "Freiburg im Breisgau",
+     "Mannheim",
+     "Karlsruhe",
+     "Baden-Baden",
+     "Buehl",
+     "Offenburg",
+     "Lahr/Schwarzwald",
+     "Loerrach"
+    ]
+   },
+   "sense": "<=",
+   "value": 750
+  },
+  {
+   "name": "service_start_time_baden_baden",
+   "measure": "start_time",
+   "scope": {
+    "location": "Baden-Baden"
+   },
+   "sense": ">=",
+   "value": 80
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope."
+}

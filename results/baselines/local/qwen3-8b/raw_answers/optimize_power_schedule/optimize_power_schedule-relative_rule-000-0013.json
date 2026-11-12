@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "edwin_i_hatch_output_limit",
+   "measure": "output",
+   "scope": {
+    "plant": "Edwin I Hatch"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "output",
+    "scope": {
+     "plant": [
+      "Scherer",
+      "Bowen",
+      "Jack McDonough",
+      "Vogtle",
+      "OIL",
+      "BIOMASS",
+      "GAS",
+      "HYDRO",
+      "OTHER COAL"
+     ]
+    }
+   },
+   "factor": 0.15
+  }
+ ],
+ "note": "A relative rule limits the total output of Edwin I Hatch to 15% of the total output of all other plants."
+}

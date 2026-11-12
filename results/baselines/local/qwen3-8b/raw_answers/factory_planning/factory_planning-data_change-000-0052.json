@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "holding_cost",
+   "factor": 0.5
+  }
+ ],
+ "note": "Storage cost is halved by scaling the holding_cost parameter."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "upper_limit_flights_operated",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 38
+  }
+ ],
+ "note": "An upper limit on the number of flights operated is imposed."
+}

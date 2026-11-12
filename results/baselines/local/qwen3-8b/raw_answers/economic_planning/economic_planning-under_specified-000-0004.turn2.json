@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "output_floor",
+   "measure": "production",
+   "scope": {
+    "industry": "transport"
+   },
+   "sense": ">=",
+   "value": 1110
+  }
+ ],
+ "note": "A floor on the output produced (million USD) for industry transport is enforced through a rule."
+}

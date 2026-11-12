@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "linked_load_ratio",
+   "measure": "linked_load",
+   "scope": {
+    "location": "*",
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "linked_load",
+    "scope": {
+     "location": "*",
+     "base": "5145 RURITAN COURT Rescue Squad"
+    }
+   },
+   "factor": 3
+  },
+  {
+   "name": "base_5145_ruritan_court_percentage",
+   "measure": "open",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "open",
+    "scope": {
+     "base": "*"
+    }
+   },
+   "factor": 0.3
+  }
+ ],
+ "note": "The first rule enforces that the linked load for base 800 VIRGINIA BEACH BLVD Fire Station is at least 3 times that of base 5145 RURITAN COURT Rescue Squad. The second rule ensures that base 5145 RURITAN COURT Rescue Squad accounts for at least 30% of all opened bases."
+}

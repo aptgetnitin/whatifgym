@@ -1,0 +1,41 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "output",
+   "column": "output",
+   "where": {
+    "plant": "OTHER COAL"
+   },
+   "value": 650
+  }
+ ],
+ "rules": [
+  {
+   "name": "other_coal_output_fixed",
+   "measure": "output",
+   "scope": {
+    "plant": "OTHER COAL"
+   },
+   "sense": "==",
+   "value": 650
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "output",
+   "scope": {
+    "plant": "OTHER COAL"
+   },
+   "value": 650
+  }
+ ]
+}

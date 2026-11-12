@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "resources",
+   "column": "duration",
+   "where": {
+    "resource": 5
+   },
+   "factor": 0.76
+  }
+ ],
+ "note": "The minimum time on resource 5 is scaled by a factor of 0.76 to achieve the desired 3.8 minutes."
+}

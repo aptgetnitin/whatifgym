@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "job_types",
+   "column": "duration_min",
+   "where": {
+    "job_type": "Equipment Installation"
+   },
+   "factor": 1.2
+  },
+  {
+   "op": "scale",
+   "table": "technicians",
+   "column": "capacity_min",
+   "where": {
+    "technician": [
+     "Albert",
+     "Bob",
+     "Carlos",
+     "Doris",
+     "Ed",
+     "Flor",
+     "Gina"
+    ]
+   },
+   "factor": 0.9
+  }
+ ]
+}

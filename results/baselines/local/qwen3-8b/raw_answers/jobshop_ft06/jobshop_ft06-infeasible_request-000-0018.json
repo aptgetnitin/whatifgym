@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "fixed_decisions": [
+  {
+   "measure": "end",
+   "scope": {
+    "job": "J0",
+    "step": 6
+   },
+   "value": 275
+  }
+ ],
+ "note": "Fix the end time of J0's step 6 to exactly 275."
+}

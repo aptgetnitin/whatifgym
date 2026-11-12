@@ -81,7 +81,7 @@
       "value": 0.53
     },
     {
-      "name": "base_queue_load_min",
+      "name": "base_queue_load_min_800_vb",
       "measure": "queue_load",
       "scope": {
         "base": [

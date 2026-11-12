@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "capacity_resource_4",
+   "measure": "meet",
+   "scope": {
+    "resource": 4,
+    "train": "A",
+    "other_train": "C"
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

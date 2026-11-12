@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "plants",
+   "column": "capacity_mwh",
+   "where": {
+    "plant": "Edwin I Hatch"
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "The capacity of the plant 'Edwin I Hatch' is reduced by 10%."
+}

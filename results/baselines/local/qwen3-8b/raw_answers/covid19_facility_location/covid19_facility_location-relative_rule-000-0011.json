@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "t18_build_at_most_75_of_t17",
+   "measure": "build",
+   "scope": {
+    "facility": "T18"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "build",
+    "scope": {
+     "facility": "T17"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "t18_accounts_for_at_least_60_of_all_assigned",
+   "measure": "assign",
+   "scope": {
+    "facility": "T18"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "facility": "*"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "Two relative limits: T18 build count is at most 75% of T17's, and T18 accounts for at least 60% of all assigned patients."
+}

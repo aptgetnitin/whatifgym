@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "plant": "GAS",
+        "hour": 15
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fix the output of plant GAS at hour 15 to 0 and optimize the rest."
+}

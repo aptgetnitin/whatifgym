@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_stock_limit",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Friday",
+    "depot": "Glasgow"
+   },
+   "sense": "<=",
+   "value": 200
+  },
+  {
+   "name": "friday_repair_contribution",
+   "measure": "repairs",
+   "scope": {
+    "day": "Friday",
+    "depot": "Glasgow"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "day": "Monday",
+     "depot": "Glasgow"
+    }
+   },
+   "factor": 0.3
+  }
+ ],
+ "note": "The first rule limits undamaged_stock at Glasgow on Friday to 200, and the second ensures that repairs on Friday account for at least 30% of the total repairs at Glasgow on Monday."
+}

@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "logic": [
+  {
+   "name": "at_least_1_of_j2_before_j3_on_m1",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "M1",
+      "job": "J2",
+      "other_job": "J3"
+     },
+     "sense": "==",
+     "value": 1
+    },
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "M1",
+      "job": "J3",
+      "other_job": "J2"
+     },
+     "sense": "==",
+     "value": 1
+    }
+   ]
+  }
+ ]
+}

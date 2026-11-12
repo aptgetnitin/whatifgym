@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "factor": 1.1
+  }
+ ],
+ "rules": [
+  {
+   "name": "make_limit_feb",
+   "measure": "make",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": "<=",
+   "value": 1600
+  }
+ ]
+}

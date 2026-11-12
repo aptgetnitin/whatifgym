@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod4_make_min",
+   "measure": "make",
+   "scope": {
+    "product": "Prod4"
+   },
+   "sense": ">=",
+   "value": 1300
+  },
+  {
+   "name": "prod6_make_min",
+   "measure": "make",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": ">=",
+   "value": 2600
+  }
+ ],
+ "note": "Rules enforce minimum production quantities for Prod4 and Prod6."
+}

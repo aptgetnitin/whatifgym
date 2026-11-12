@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "downgrade_skilled_to_semi_skilled_year_1",
+   "measure": "downgrade",
+   "scope": {
+    "year": 1,
+    "from_skill": "skilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 340,
+   "relative_to": {
+    "measure": "recruit",
+    "scope": {
+     "year": 3,
+     "skill": "skilled"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that enforces a minimum downgrade of skilled workers to semi-skilled in year 1 if there are any skilled recruits in year 3."
+}

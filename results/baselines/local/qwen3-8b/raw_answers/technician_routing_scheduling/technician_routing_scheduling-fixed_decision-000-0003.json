@@ -1,0 +1,43 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "customers",
+   "column": "due_time",
+   "where": {
+    "customer": "Customer5"
+   },
+   "value": 120
+  }
+ ],
+ "rules": [
+  {
+   "name": "lateness_customer5",
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "sense": ">=",
+   "value": 160
+  },
+  {
+   "name": "assign_customer6_to_bob",
+   "measure": "assign",
+   "scope": {
+    "customer": "Customer6",
+    "technician": "Bob"
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "Set Customer5's due time to 120 to ensure 160 minutes of lateness, and fix Customer6 to be assigned to Bob."
+}

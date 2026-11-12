@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "fixed_decisions": [
+  {
+   "measure": "expand",
+   "scope": {
+    "depot": "Birmingham",
+    "step": 2
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fixing the expansion step 2 at Birmingham to 1 ensures the number of expansion options carried out there is fixed at 1."
+}

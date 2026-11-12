@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "logic": [
+  {
+   "name": "gas_hour15_on_impact_scherer_hour11",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "on",
+     "sense": ">",
+     "value": 0,
+     "scope": {
+      "plant": "GAS",
+      "hour": 15
+     }
+    },
+    {
+     "measure": "on",
+     "sense": ">=",
+     "value": 2,
+     "scope": {
+      "plant": "Scherer",
+      "hour": 11
+     }
+    }
+   ]
+  }
+ ]
+}

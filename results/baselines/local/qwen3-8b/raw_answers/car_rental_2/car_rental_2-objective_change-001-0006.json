@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "max_total_damaged_stock",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Glasgow"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Glasgow"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The rule forces the total damaged cars at the depot in the morning to be as high as possible without reducing weekly profit."
+}

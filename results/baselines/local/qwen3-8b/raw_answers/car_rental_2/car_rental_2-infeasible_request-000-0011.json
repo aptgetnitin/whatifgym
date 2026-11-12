@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "min_repair_monday",
+   "measure": "repairs",
+   "scope": {
+    "day": "Monday",
+    "depot": [
+     "Manchester",
+     "Birmingham"
+    ]
+   },
+   "sense": ">=",
+   "value": 140
+  },
+  {
+   "name": "min_repair_tuesday",
+   "measure": "repairs",
+   "scope": {
+    "day": "Tuesday",
+    "depot": [
+     "Manchester",
+     "Birmingham"
+    ]
+   },
+   "sense": ">=",
+   "value": 140
+  }
+ ],
+ "note": "Rules enforce minimum repair capacity on specific days and depots."
+}

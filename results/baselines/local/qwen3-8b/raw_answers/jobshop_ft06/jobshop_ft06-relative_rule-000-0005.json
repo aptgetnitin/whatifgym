@@ -1,0 +1,44 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "j4_end_time_at_least_30_of_total",
+   "measure": "end",
+   "scope": {
+    "job": "J4"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "end",
+    "scope": {
+     "job": [
+      "J0",
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5"
+     ]
+    }
+   },
+   "factor": 0.3
+  },
+  {
+   "name": "step5_end_time_at_least_2_times_step3",
+   "measure": "end",
+   "scope": {
+    "step": 5
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "end",
+    "scope": {
+     "step": 3
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "Two relative limits are applied: one for job J4's end time relative to all jobs, and one for step 5's end time relative to step 3."
+}

@@ -1,0 +1,75 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_cars_to_wednesday",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Monday",
+    "depot": "Glasgow"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Glasgow"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "damaged_cars_to_wednesday",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Monday",
+    "depot": "Manchester"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "damaged_stock",
+    "scope": {
+     "day": "Wednesday",
+     "depot": "Manchester"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "damaged_cars_to_wednesday",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Monday",
+    "depot": "Birmingham"
+   },
+   "sense": ">=",
+    "relative_to": {
+     "measure": "damaged_stock",
+     "scope": {
+      "day": "Wednesday",
+      "depot": "Birmingham"
+     }
+    },
+    "factor": 0.75
+  },
+  {
+   "name": "damaged_cars_to_wednesday",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Monday",
+    "depot": "Plymouth"
+   },
+   "sense": ">=",
+    "relative_to": {
+     "measure": "damaged_stock",
+     "scope": {
+      "day": "Wednesday",
+      "depot": "Plymouth"
+     }
+    },
+    "factor": 0.75
+  }
+ ],
+ "note": "At least 75% of the total damaged cars at each depot in the morning must go to Wednesday."
+}

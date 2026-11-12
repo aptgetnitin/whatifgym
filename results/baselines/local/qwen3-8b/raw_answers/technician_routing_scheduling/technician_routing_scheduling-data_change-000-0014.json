@@ -1,0 +1,65 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "travel_times",
+   "column": "travel_min",
+   "where": {
+    "from_location": [
+     "Heidelberg",
+     "Freiburg im Breisgau",
+     "Mannheim",
+     "Karlsruhe",
+     "Baden-Baden",
+     "Buehl",
+     "Offenburg",
+     "Lahr/Schwarzwald"
+    ],
+    "to_location": [
+     "Freiburg im Breisgau",
+     "Mannheim",
+     "Karlsruhe",
+     "Baden-Baden",
+     "Buehl",
+     "Offenburg",
+     "Lahr/Schwarzwald",
+     "Loerrach"
+    ]
+   },
+   "factor": 0.9
+  },
+  {
+   "op": "scale_param",
+   "name": "window_violation_penalty",
+   "factor": 0.1
+  },
+  {
+   "op": "scale_param",
+   "name": "lateness_penalty",
+   "factor": 0.1
+  },
+  {
+   "op": "scale_param",
+   "name": "unfilled_job_penalty",
+   "factor": 0.1
+  },
+  {
+   "op": "scale_param",
+   "name": "day_length_min",
+   "factor": 0.9
+  }
+ ],
+ "rules": [
+  {
+   "name": "repair_urgent_priority",
+   "measure": "priority",
+   "scope": {
+    "job_type": "Repair - Urgent"
+   },
+   "sense": "==",
+   "value": 2
+  }
+ ]
+}

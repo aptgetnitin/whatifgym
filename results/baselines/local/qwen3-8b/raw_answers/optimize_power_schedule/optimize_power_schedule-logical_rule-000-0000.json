@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "at_most_three_non_zero",
+   "measure": "output",
+   "scope": {
+    "plant": [
+     "Scherer",
+     "OTHER COAL",
+     "Edwin I Hatch",
+     "GAS",
+     "HYDRO"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "The rule limits the total output of the specified plants to zero, effectively ensuring at most three of them have non-zero generation."
+}

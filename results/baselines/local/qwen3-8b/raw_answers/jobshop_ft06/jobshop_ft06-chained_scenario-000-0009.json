@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "operations",
+   "column": "duration",
+   "where": {
+    "job": "J1",
+    "step": 2
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The processing time of J1's step 2 is scaled by 25%."
+}

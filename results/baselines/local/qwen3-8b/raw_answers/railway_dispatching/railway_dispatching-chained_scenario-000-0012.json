@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "trains",
+   "where": {
+    "train": "D"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "arrival_time_f",
+   "measure": "finish_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": "<=",
+   "value": 31
+  }
+ ],
+ "note": "A limit on the sum of finish_time for train F to stay at or below 31."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg1_buy_min",
+   "measure": "buy",
+   "scope": {
+    "oil": "VEG1"
+   },
+   "sense": ">=",
+   "value": 1300
+  },
+  {
+   "name": "veg2_buy_min",
+   "measure": "buy",
+   "scope": {
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "value": 1100
+  }
+ ],
+ "note": "Rules enforce minimum total purchase quantities for VEG1 and VEG2 across the planning horizon."
+}

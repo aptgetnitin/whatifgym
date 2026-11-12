@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "nutrients",
+   "column": "min_per_person",
+   "where": {
+    "nutrient": "VitaminC(mg)"
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "A relative change to a nutrient requirement is a scale over the matching row."
+}

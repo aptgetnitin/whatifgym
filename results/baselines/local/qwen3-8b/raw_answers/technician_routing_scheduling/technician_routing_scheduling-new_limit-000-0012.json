@@ -1,0 +1,45 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "travel_times",
+   "column": "travel_min",
+   "where": {
+    "from_location": "Karlsruhe",
+    "to_location": "Baden-Baden"
+   },
+   "value": 20
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_service_start_time_mannheim",
+   "measure": "start_time",
+   "scope": {
+    "location": "Mannheim"
+   },
+   "sense": "<=",
+   "value": 19
+  },
+  {
+   "name": "total_technicians_dispatched_cap",
+   "measure": "use",
+   "scope": {
+    "technician": [
+     "Albert",
+     "Bob",
+     "Carlos",
+     "Doris",
+     "Ed",
+     "Flor",
+     "Gina"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "The scenario introduces a new limit on the total service start time for Mannheim and caps the number of technicians dispatched."
+}

@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "order",
+   "where": {
+    "year": "Year4"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine4"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine4_worked_years",
+   "measure": "operate",
+   "scope": {
+    "mine": "Mine4"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Set Mine4's capacity to 0 and ensure it is not operated in any year."
+}

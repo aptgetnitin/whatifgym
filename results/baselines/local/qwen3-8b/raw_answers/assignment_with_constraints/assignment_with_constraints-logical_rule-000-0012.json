@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "only_one_worker_non_zero",
+   "measure": "works",
+   "scope": {
+    "worker": [
+     "worker_10",
+     "worker_1",
+     "worker_5",
+     "worker_6"
+    ]
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

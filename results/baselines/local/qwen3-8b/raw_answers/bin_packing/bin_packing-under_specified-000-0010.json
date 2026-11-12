@@ -1,0 +1,1 @@
+{"version": "0.1","base_model":"bin_packing","ask":"Which item can we lose without affecting the optimal packing?"}

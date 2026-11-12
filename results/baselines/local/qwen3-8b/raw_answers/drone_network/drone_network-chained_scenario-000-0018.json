@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "observation_days",
+   "value": 15
+  }
+ ],
+ "note": "The observation window is updated to 15 days."
+}

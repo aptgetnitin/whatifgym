@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "ed_dispatched_at_least_60_percent",
+   "measure": "use",
+   "scope": {
+    "technician": "Ed"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "use",
+    "scope": {
+     "technician": [
+      "Albert",
+      "Bob",
+      "Carlos",
+      "Doris",
+      "Ed",
+      "Flor",
+      "Gina"
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "At least 60% of the total number of dispatched technicians must be Ed."
+}

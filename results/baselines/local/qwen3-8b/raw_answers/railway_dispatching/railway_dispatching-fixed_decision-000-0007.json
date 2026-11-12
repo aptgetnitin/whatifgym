@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "fixed_decisions": [
+  {
+   "measure": "finish_time",
+   "scope": {
+    "train": "B"
+   },
+   "value": 51
+  }
+ ],
+ "note": "Fixed the finish time of train B to 51 minutes."
+}

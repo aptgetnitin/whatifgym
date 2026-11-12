@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "transport_stock_min_year1",
+   "measure": "stock",
+   "scope": {
+    "year": 1,
+    "industry": "transport"
+   },
+   "sense": ">=",
+   "value": 118
+  }
+ ],
+ "note": "If the stock for transport in year 1 is above zero, it must be at least 118."
+}

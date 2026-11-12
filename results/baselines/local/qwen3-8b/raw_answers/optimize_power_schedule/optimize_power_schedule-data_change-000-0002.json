@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "fuels",
+   "column": "shutdown_cost",
+   "where": {
+    "fuel": "BIT"
+   },
+   "factor": 1.1
+  },
+  {
+   "op": "scale",
+   "table": "health_costs",
+   "column": "health_cost",
+   "where": {
+    "plant": [
+     "Bowen",
+     "Jack McDonough",
+     "Scherer"
+    ]
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The shut-down cost for BIT is increased by 10%, and health costs are reduced by 25% for all coal plants."
+}

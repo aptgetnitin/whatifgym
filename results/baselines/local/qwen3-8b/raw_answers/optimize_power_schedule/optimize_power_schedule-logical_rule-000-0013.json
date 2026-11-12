@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "min_batch_scherer_hour_10",
+   "measure": "output",
+   "scope": {
+    "plant": "Scherer",
+    "hour": 10
+   },
+   "sense": ">=",
+   "value": 8600
+  }
+ ],
+ "note": "If the total power generated for Scherer in hour 10 is above zero, it must be at least 8600."
+}

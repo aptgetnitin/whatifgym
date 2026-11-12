@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "t17_temp_facility_share",
+   "measure": "build",
+   "scope": {
+    "facility": "T17"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "build",
+    "scope": {
+     "kind": "temporary"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "e12_assigned_patients_limit",
+   "measure": "assign",
+   "scope": {
+    "county": "*",
+    "facility": "E12"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "county": "*",
+     "facility": "E6"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "Rules enforce that T17 must account for at least 75% of all temporary facilities built and that patients assigned to E12 are at most the same as those assigned to E6."
+}

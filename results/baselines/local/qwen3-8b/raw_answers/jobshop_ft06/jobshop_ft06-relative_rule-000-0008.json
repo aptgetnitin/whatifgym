@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "step3_start_at_least_half_step6_start",
+   "measure": "start",
+   "scope": {
+    "job": "job",
+    "step": 3
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": "job",
+     "step": 6
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The start time of step 3 must be at least 50% of the start time of step 6 for each job."
+}

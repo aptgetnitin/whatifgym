@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg1_buy_floor",
+   "measure": "buy",
+   "scope": {
+    "oil": "VEG1"
+   },
+   "sense": ">=",
+   "value": 820
+  }
+ ],
+ "note": "A floor constraint on the total tons of oil bought for VEG1."
+}

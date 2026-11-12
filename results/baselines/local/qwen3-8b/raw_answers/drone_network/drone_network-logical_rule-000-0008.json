@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "logic": [
+    {
+      "name": "linked_load_700_london_bridge_rd",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "linked_load",
+          "sense": "==",
+          "value": 0,
+          "scope": {
+            "location": "700 LONDON BRIDGE RD",
+            "base": "21 MUNICIPAL CTR Fire Station"
+          }
+        },
+        {
+          "measure": "linked_load",
+          "sense": ">=",
+          "value": 0.01,
+          "scope": {
+            "location": "700 LONDON BRIDGE RD",
+            "base": "21 MUNICIPAL CTR Fire Station"
+          }
+        }
+      ]
+    }
+  ]
+}

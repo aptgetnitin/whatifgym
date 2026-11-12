@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flights",
+   "column": "passengers",
+   "where": {
+    "flight": 3102
+   },
+   "value": 74
+  }
+ ],
+ "note": "The booked passengers of flight 3102 is updated to 74."
+}

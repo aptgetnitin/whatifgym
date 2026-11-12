@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "one_service_start",
+   "measure": "start_time",
+   "scope": {
+    "location": [
+     "Buehl",
+     "Offenburg",
+     "Karlsruhe",
+     "Loerrach"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "Only one of the locations can have a non-zero service start time."
+}

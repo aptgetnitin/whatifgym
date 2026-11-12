@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "demand_mwh",
+   "where": {
+    "hour": 17
+   },
+   "value": 4200
+  }
+ ],
+ "rules": [
+  {
+   "name": "vogtle_output_hour_17",
+   "measure": "output",
+   "scope": {
+    "plant": "Vogtle",
+    "hour": 17
+   },
+   "sense": "==",
+   "value": 4200
+  }
+ ],
+ "note": "Set the demand for hour 17 to 4200 MWh and enforce that Vogtle's output equals this demand."
+}

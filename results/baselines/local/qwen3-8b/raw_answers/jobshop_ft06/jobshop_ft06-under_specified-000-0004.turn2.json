@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "operation_start_floor",
+   "measure": "start",
+   "scope": {
+    "step": 5
+   },
+   "sense": ">=",
+   "value": 290
+  }
+ ],
+ "note": "A floor on the start time for operations in step 5 is enforced."
+}

@@ -1,0 +1,47 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "final_stock",
+   "where": {
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   },
+   "value": 1000
+  }
+ ],
+ "rules": [
+  {
+   "name": "storage_total",
+   "measure": "store",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   },
+   "sense": ">=",
+   "value": 22500
+  }
+ ],
+ "note": "Set final stock to 1000 for all oils to ensure storage capacity is fully utilized, and add a rule to require at least 22500 tons of oil in storage across all months and oils."
+}

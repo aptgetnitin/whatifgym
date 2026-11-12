@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "worker_5_assignments_limit",
+   "measure": "assign",
+   "scope": {
+    "worker": "worker_5"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "worker": "worker_1"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "A relative rule bounds the sum of assign[worker_5, task] by 80% of the sum of assign[worker_1, task]."
+}

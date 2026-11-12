@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "fixed_decisions": [
+  {
+   "measure": "pick",
+   "scope": {
+    "player": "Tyus Jones"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fixing the number of players picked at Tyus Jones to 1."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hour_11_output",
+   "measure": "output",
+   "scope": {
+    "hour": 11
+   },
+   "sense": ">=",
+   "value": 23800
+  },
+  {
+   "name": "hour_12_output",
+   "measure": "output",
+   "scope": {
+    "hour": 12
+   },
+   "sense": ">=",
+   "value": 24550
+  }
+ ],
+ "note": "The planner is asking if it is possible to meet the minimum generation requirements for hours 11 and 12."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_inventory",
+   "value": 320
+  }
+ ],
+ "rules": [
+  {
+   "name": "prod1_make_march_april",
+   "measure": "make",
+   "scope": {
+    "product": "Prod1",
+    "month": [
+     "Mar",
+     "Apr"
+    ]
+   },
+   "sense": "<=",
+   "value": 160
+  }
+ ],
+ "note": "Warehouse space is limited to 320 units in total at the end of February, and Prod1 production in March and April is capped at 160 units."
+}

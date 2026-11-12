@@ -1,0 +1,62 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ]
+   },
+   "factor": 0.8
+  },
+  {
+   "op": "scale_param",
+   "name": "holding_cost",
+   "factor": 0.8
+  },
+  {
+   "op": "scale_param",
+   "name": "max_inventory",
+   "factor": 0.8
+  },
+  {
+   "op": "scale_param",
+   "name": "store_target",
+   "factor": 0.8
+  },
+  {
+   "op": "scale_param",
+   "name": "hours_per_month",
+   "factor": 0.8
+  }
+ ],
+ "rules": [
+  {
+   "name": "profit_per_unit_prod1_lower",
+   "measure": "profit_per_unit",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": "<=",
+   "value": 0.8
+  }
+ ]
+}

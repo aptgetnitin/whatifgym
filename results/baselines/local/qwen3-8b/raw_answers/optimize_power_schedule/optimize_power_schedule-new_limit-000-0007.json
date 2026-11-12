@@ -1,0 +1,41 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "shut_downs_other_coal",
+   "measure": "stop",
+   "scope": {
+    "plant": "OTHER COAL"
+   },
+   "sense": ">=",
+   "value": 2
+  },
+  {
+   "name": "total_hours_on",
+   "measure": "on",
+   "scope": {
+    "plant": [
+     "Scherer",
+     "Bowen",
+     "Jack McDonough",
+     "Edwin I Hatch",
+     "Vogtle",
+     "OIL",
+     "BIOMASS",
+     "GAS",
+     "HYDRO",
+     "OTHER COAL"
+    ]
+   },
+   "sense": "<=",
+   "value": 134
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

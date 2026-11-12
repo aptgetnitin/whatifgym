@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "flights_to_4514",
+   "measure": "operate",
+   "scope": {
+    "flight": [
+     4514
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "flight": [
+      4514
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "At least 40% of the total number of flights operated must go to flight 4514."
+}

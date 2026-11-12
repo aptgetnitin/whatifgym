@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "total_flow_at_least_1_5_total_purchase",
+   "measure": "flow",
+   "scope": {
+    "food": "*"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "food": "*"
+    }
+   },
+   "factor": 1.5
+  },
+  {
+   "name": "wheat_ration_at_most_75_percent_milk_ration",
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "ration",
+    "scope": {
+     "food": "Milk"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Two relative limits: total flow is at least 1.5 times total purchase; wheat ration is at most 75% of milk ration."
+}

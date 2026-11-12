@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "fixed_ration_hassakeh_oil",
+   "measure": "ration",
+   "scope": {
+    "food": "Oil",
+    "camp": "Hassakeh"
+   },
+   "sense": "==",
+   "value": 8.04
+  }
+ ],
+ "note": "Fix the ration of Oil in Hassakeh to exactly 8.04 units per person per day."
+}

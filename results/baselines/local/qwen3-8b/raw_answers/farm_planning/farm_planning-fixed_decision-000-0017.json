@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "sell_beet",
+   "column": "sell_beet",
+   "where": {
+    "year": "Year5"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixed sugar beet sold in Year5 to zero."
+}

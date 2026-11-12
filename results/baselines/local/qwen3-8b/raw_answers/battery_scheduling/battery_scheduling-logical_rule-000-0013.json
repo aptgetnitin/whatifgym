@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_21-22_binary",
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "discharge",
+    "scope": {
+     "hour": "21-22"
+    }
+   },
+   "factor": 15
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "value": 0
+  }
+ ]
+}

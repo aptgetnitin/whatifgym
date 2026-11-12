@@ -3,13 +3,13 @@
   "base_model": "drone_network",
   "data_changes": [
     {
-      "op": "shift",
+      "op": "scale",
       "table": "incidents",
       "column": "incidents",
       "where": {
         "location": "700 20TH ST"
       },
-      "delta": -0.3
+      "factor": 0.7
     }
   ]
 }

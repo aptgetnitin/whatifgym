@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "salary",
+   "where": {
+    "player": "Taj Gibson"
+   },
+   "factor": 0.5
+  },
+  {
+   "op": "set",
+   "table": "positions",
+   "column": "required",
+   "where": {
+    "position": "SF"
+   },
+   "value": 2
+  }
+ ],
+ "note": "The required number of players for SF is increased to 2, and Taj Gibson's salary is reduced by 50%."
+}

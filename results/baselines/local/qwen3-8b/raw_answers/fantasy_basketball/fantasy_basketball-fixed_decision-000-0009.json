@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "fixed_decisions": [
+  {
+   "measure": "pick",
+   "scope": {
+    "player": "Marcin Gortat"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fixing the number of players picked at Marcin Gortat to 1."
+}

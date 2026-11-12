@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_stock_cap",
+   "measure": "undamaged_stock",
+   "sense": "<=",
+   "value": 1900
+  }
+ ],
+ "note": "An overall cap on the sum of undamaged_stock across all depots and days."
+}

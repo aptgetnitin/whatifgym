@@ -1,0 +1,45 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "freiburg_legs_at_least_75_percent",
+   "measure": "route",
+   "scope": {
+    "to_location": "Freiburg im Breisgau"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "route",
+    "scope": {
+     "from_location": "Heidelberg",
+     "to_location": "Freiburg im Breisgau"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "jobs_assigned_at_most_25_percent_of_legs",
+   "measure": "assign",
+   "scope": {
+    "customer": "Customer1",
+    "customer": "Customer2",
+    "customer": "Customer3",
+    "customer": "Customer4",
+    "customer": "Customer5",
+    "customer": "Customer6",
+    "customer": "Customer7"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "route",
+    "scope": {
+     "from_location": "Heidelberg",
+     "to_location": "Freiburg im Breisgau"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "Two relative limits: Freiburg legs account for at least 75% of all legs, and jobs assigned are at most 25% of legs."
+}

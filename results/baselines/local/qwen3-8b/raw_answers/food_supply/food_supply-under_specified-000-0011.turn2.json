@@ -1,0 +1,40 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "local_prices",
+   "column": "price",
+   "where": {
+    "supplier": [
+     "Aleppo",
+     "As_Suweida",
+     "Damascus",
+     "Daraa",
+     "Dayr_Az_Zor",
+     "Hama",
+     "Hassakeh",
+     "Homs"
+    ],
+    "food": [
+     "Beans",
+     "Bulgur",
+     "Cheese",
+     "Chickpeas",
+     "Dates",
+     "Fish",
+     "Lentils",
+     "Meat",
+     "Milk",
+     "Oil",
+     "Rice",
+     "Sugar",
+     "Wheatflour"
+    ]
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "A scale operation on the price column of the local_prices table for all existing rows, increasing local prices by 10%."
+}

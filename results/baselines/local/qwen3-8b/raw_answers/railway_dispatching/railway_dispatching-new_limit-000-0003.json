@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "limit_e_goes_first",
+   "measure": "goes_first",
+   "scope": {
+    "resource": "*",
+    "train": "E"
+   },
+   "sense": "<=",
+   "value": 5
+  },
+  {
+   "name": "total_entry_time_f",
+   "measure": "entry_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "train": "F"
+    }
+   },
+   "factor": 310
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "relax": [
+    {
+      "constraint": "repair_capacity",
+      "scope": {
+        "depot": ["Manchester", "Birmingham", "Plymouth"]
+      }
+    }
+  ],
+  "note": "Removing the repair capacity constraints for the repair depots allows the model to operate without the daily repair-capacity limit."
+}

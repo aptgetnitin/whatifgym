@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "blend_cap_year4",
+   "measure": "blend",
+   "scope": {
+    "year": "Year4"
+   },
+   "sense": "<=",
+   "value": 4218750
+  },
+  {
+   "name": "blend_cap_total",
+   "measure": "blend",
+   "scope": {
+    
+   },
+   "sense": "<=",
+   "value": 13045850
+  }
+ ],
+ "note": "Two caps are applied to the total blended ore sold: one for Year4 and one overall."
+}

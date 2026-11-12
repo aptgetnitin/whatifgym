@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "linked_load_limit_for_5145_ruritan_court",
+   "measure": "linked_load",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "linked_load",
+    "scope": {
+     "base": "5145 RURITAN COURT Rescue Squad"
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "The rule limits the queue load linked to locations assigned to the 5145 RURITAN COURT Rescue Squad to at most 5% of the total linked load for that base."
+}

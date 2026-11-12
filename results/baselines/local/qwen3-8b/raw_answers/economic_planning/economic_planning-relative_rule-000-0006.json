@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "stock_limit",
+   "measure": "stock",
+   "scope": {
+    "year": [1, 2, 3, 4, 5]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "extra_capacity",
+    "scope": {
+     "year": [1, 2, 3, 4, 5]
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "capacity_year3_year5",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 3
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extra_capacity",
+    "scope": {
+     "year": 5
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "Two relative limits: stock is at most 75% of total capacity built; year 3 capacity built is at least 60% of year 5 capacity built."
+}

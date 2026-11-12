@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "gas_generation_min",
+   "measure": "output",
+   "scope": {
+    "plant": "GAS"
+   },
+   "sense": ">=",
+   "value": 36900
+  }
+ ],
+ "note": "A requirement to ensure the total generation from the GAS plant meets a minimum threshold."
+}

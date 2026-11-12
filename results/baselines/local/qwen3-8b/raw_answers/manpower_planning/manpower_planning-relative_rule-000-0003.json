@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "short_time_year1_at_most_25_of_year3",
+   "measure": "short_time",
+   "scope": {
+    "year": 1
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "short_time",
+    "scope": {
+     "year": 3
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "A rule that limits the sum of short_time workers in year 1 to 25% of the sum in year 3."
+}

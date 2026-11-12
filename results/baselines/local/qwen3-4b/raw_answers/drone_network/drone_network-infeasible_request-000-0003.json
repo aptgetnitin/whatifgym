@@ -79,5 +79,5 @@
       }
     }
   ],
-  "note": "The planner asks if the model can achieve a total linked load of 5.9 hours across all locations. The linked_load is a decision measure that represents the queue wait plus flight time for each location assigned to a base."
-  }
+  "note": "The planner is asking if the model can achieve a total linked load of 5.9 hours across all locations. The linked_load is a decision measure that represents the queue wait plus flight time for each location assigned to a base."
+}

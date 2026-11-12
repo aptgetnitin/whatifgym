@@ -1,0 +1,50 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "fixed_decisions": [
+  {
+   "measure": "assign",
+   "scope": {
+    "worker": "worker_10",
+    "task": "task_0"
+   },
+   "value": 0
+  }
+ ],
+ "relax": [
+  {
+   "constraint": "one_team",
+   "scope": {
+    "group": "worker_10's group"
+   }
+  }
+ ],
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "allowed_teams",
+   "column": "works",
+   "where": {
+    "team": "team_4_5",
+    "worker": "worker_10"
+   },
+   "value": 1
+  }
+ ],
+ "logic": [
+  {
+   "name": "team_4_5_must_happen",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "team",
+     "sense": "==",
+     "value": 1,
+     "scope": {
+      "team": "team_4_5"
+     }
+    }
+   ]
+  }
+ ]
+}

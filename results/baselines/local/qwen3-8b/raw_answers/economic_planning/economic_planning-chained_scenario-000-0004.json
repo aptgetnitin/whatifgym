@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "industries",
+   "column": "initial_capacity",
+   "factor": 1.1
+  }
+ ],
+ "note": "The initial productive capacity is increased by 10% for every industry."
+}

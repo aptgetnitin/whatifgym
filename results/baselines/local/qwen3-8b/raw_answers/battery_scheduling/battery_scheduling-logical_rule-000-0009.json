@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_12_13_requires_discharge_21_22",
+   "measure": "soc",
+   "scope": {
+    "hour": "12-13"
+   },
+   "sense": ">",
+   "value": 0
+  },
+  {
+   "name": "discharge_21_22_min",
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "soc",
+    "scope": {
+     "hour": "12-13"
+    }
+   },
+   "factor": 6.2
+  }
+ ],
+ "note": "A non-zero stored energy in hour 12-13 requires a minimum discharge power of 6.2 kW in hour 21-22."
+}

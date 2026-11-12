@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "only_one_non_zero",
+   "measure": "x",
+   "scope": {
+    "item": [
+     "item9",
+     "item4",
+     "item3",
+     "item8"
+    ]
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

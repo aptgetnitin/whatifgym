@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "plants",
+   "column": "capacity_mwh",
+   "where": {
+    "plant": "Edwin I Hatch"
+   },
+   "value": 1200
+  },
+  {
+   "op": "scale",
+   "table": "health_costs",
+   "column": "health_cost",
+   "where": {
+    "plant": "Bowen",
+    "hour": 13
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "The capacity of Edwin I Hatch is set to 1200 MWh per hour, and the health cost for Bowen in hour 13 is increased by 25%."
+}

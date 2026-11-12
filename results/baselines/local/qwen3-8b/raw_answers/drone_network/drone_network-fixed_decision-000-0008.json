@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "assign",
+      "column": "assign",
+      "where": {
+        "location": "1200 MOZART DR",
+        "base": "21 MUNICIPAL CTR Fire Station"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fixing the assignment of location 1200 MOZART DR to base 21 MUNICIPAL CTR Fire Station at 0."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "steel_at_least_1_25_transport",
+   "measure": "production",
+   "scope": {
+    "industry": "steel"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "industry": "transport"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "note": "Steel production must be at least 1.25 times transport production."
+}

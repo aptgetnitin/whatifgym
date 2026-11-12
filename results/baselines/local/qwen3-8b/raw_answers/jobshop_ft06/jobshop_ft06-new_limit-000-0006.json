@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "total_start_time_step_5",
+   "measure": "start",
+   "scope": {
+    "step": 5
+   },
+   "sense": ">=",
+   "value": 290
+  }
+ ],
+ "note": "The total start time for all operations in routing step 5 must be at least 290."
+}

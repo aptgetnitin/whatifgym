@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "bins",
+   "column": "capacity",
+   "where": {
+    "bin": "bin3"
+   },
+   "factor": 1000000
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The weight limit for bin3 is scaled to a very high value to simulate lifting the limit."
+}

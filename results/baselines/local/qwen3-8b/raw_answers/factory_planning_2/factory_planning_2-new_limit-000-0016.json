@@ -1,0 +1,43 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Apr"
+   },
+   "value": 720
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_sales_limit",
+   "measure": "sell",
+   "scope": {
+    "product": [
+     "Prod1",
+     "Prod2",
+     "Prod3",
+     "Prod4",
+     "Prod5",
+     "Prod6",
+     "Prod7"
+    ],
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": "<=",
+   "value": 9700
+  }
+ ],
+ "note": "A new limit on total sales and a new limit on sales in April."
+}

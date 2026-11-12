@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "technicians",
+   "column": "capacity_min",
+   "where": {
+    "technician": [
+     "Albert",
+     "Bob",
+     "Carlos",
+     "Doris",
+     "Ed",
+     "Flor",
+     "Gina"
+    ]
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "A relative change in daily working capacity (min) across all technicians is a scale over all rows of the technicians table."
+}

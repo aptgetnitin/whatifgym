@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_resource_2_limit",
+   "measure": "entry_time",
+   "scope": {
+    "resource": 2
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "resource": 4
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The entry time for resource 2 is constrained to be at most 50% of the entry time for resource 4."
+}

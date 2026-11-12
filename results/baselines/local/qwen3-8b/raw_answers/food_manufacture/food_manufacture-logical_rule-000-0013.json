@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "consume_limit",
+   "measure": "consume",
+   "scope": {
+    "month": [
+      "Jan",
+      "Mar",
+      "Apr",
+      "Jun"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "consume",
+   "scope": {
+    "month": [
+      "Feb",
+      "May"
+    ]
+   },
+   "value": 0
+  }
+ ]
+}

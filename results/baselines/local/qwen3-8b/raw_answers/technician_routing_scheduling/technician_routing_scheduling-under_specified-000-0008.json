@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "job_assignment_cap",
+   "measure": "assign",
+   "scope": {
+    "technician": [
+      "Albert",
+      "Bob",
+      "Carlos",
+      "Doris",
+      "Ed",
+      "Flor",
+      "Gina"
+    ]
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "A cap on the number of jobs assigned to each technician."
+}

@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "logic": [
+  {
+   "name": "stock_prod7_condition",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "store",
+     "sense": ">=",
+     "value": 190,
+     "scope": {
+      "product": "Prod7",
+      "month": "Jun"
+     }
+    },
+    {
+     "measure": "sell",
+     "sense": ">",
+     "value": 0,
+     "scope": {
+      "product": "Prod1",
+      "month": "Jun"
+     }
+    }
+   ]
+  }
+ ],
+ "note": "A logical rule ensuring that non-zero units sold for Prod1 in June requires at least 190 units in stock for Prod7 in June."
+}

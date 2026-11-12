@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "technicians_dispatched_unfilled_jobs",
+   "measure": "use",
+   "scope": {
+    "technician": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "unfilled",
+    "scope": {
+     "customer": "*"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "A rule that limits the number of dispatched technicians relative to the number of unfilled jobs."
+}

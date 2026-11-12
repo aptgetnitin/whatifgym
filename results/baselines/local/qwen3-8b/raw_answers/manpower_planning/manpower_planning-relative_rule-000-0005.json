@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "short_time_year2_at_least_3_times_year1",
+   "measure": "short_time",
+   "scope": {
+    "year": 2
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "short_time",
+    "scope": {
+     "year": 1
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "A rule that enforces the short-time working in year 2 to be at least 3 times that of year 1."
+}

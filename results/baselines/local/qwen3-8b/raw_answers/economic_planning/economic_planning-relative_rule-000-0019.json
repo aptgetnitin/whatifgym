@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "capacity_vs_stock",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": [1, 2, 3, 4, 5]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "stock",
+    "scope": {
+     "year": [1, 2, 3, 4, 5]
+    }
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "The total capacity built over years 1–5 must be at least 1.5 times the total stock held over the same period."
+}

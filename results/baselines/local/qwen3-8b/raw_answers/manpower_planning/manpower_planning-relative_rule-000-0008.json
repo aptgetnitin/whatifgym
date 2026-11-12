@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "redundant_year3_at_most_60_of_year2",
+   "measure": "redundant",
+   "scope": {
+    "year": 3
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "redundant",
+    "scope": {
+     "year": 2
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "A rule that limits the sum of redundant workers in year 3 to at most 60% of the sum in year 2."
+}

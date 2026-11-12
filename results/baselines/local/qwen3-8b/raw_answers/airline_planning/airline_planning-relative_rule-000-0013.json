@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "a318_5_flight_share",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A318#5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "aircraft": "*"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "Aircraft A318#5 must operate at least 60% of all operated flights."
+}

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "fixed_decisions": [
+  {
+   "measure": "ration",
+   "scope": {
+    "food": "Oil",
+    "camp": "Dayr_Az_Zor"
+   },
+   "value": 4
+  }
+ ],
+ "note": "Fix the ration of Oil in Dayr_Az_Zor to exactly 4 units per person per day."
+}

@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "min_items_bin0",
+   "measure": "x",
+   "scope": {
+    "bin": "bin0"
+   },
+   "sense": ">=",
+   "value": 4
+  },
+  {
+   "name": "max_items_bin2",
+   "measure": "x",
+   "scope": {
+    "bin": "bin2"
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Rules enforce minimum and maximum number of items in specific bins."
+}

@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_discharge_kw",
+   "value": 5
+  }
+ ],
+ "note": "Setting the maximum discharge power to 5 kW across all hours."
+}

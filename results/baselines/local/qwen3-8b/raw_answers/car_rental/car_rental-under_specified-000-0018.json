@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_cars_overnight_cap",
+   "measure": "damaged_left",
+   "scope": {
+    "day": "Wednesday",
+    "depot": "Glasgow"
+   },
+   "sense": "<=",
+   "value": 10
+  }
+ ],
+ "note": "A cap on the damaged cars kept at the depot overnight."
+}

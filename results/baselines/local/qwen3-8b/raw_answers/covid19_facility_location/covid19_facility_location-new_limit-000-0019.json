@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "cap_e11_assigned_patients",
+   "measure": "assign",
+   "scope": {
+    "facility": "E11"
+   },
+   "sense": "<=",
+   "value": 140
+  },
+  {
+   "name": "cap_temporary_facilities",
+   "measure": "build",
+   "scope": {
+    "kind": "temporary"
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

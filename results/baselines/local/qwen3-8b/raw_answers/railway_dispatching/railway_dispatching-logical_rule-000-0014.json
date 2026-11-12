@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "trains",
+   "column": "ready_time",
+   "where": {
+    "train": "C"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "d_total_arrival_time",
+   "measure": "finish_time",
+   "scope": {
+    "train": "D"
+   },
+   "sense": ">=",
+   "value": 11.2
+  }
+ ],
+ "note": "Setting the ready_time of train C to 0 ensures it starts its journey, and the rule enforces the total arrival time for train D to be at least 11.2 minutes."
+}

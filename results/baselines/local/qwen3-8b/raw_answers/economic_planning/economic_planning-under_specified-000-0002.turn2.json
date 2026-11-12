@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 250
+  }
+ ],
+ "rules": [
+  {
+   "name": "minimum_capacity_built",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 5
+   },
+   "sense": ">=",
+   "value": 890
+  }
+ ],
+ "note": "The minimum capacity built (million USD/year) required is set to 890 in year 5."
+}

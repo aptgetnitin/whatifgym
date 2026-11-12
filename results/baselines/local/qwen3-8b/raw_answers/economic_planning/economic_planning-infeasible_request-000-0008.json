@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "coal_output_year_3",
+   "measure": "production",
+   "scope": {
+    "year": 3,
+    "industry": "coal"
+   },
+   "sense": ">=",
+   "value": 740
+  }
+ ],
+ "note": "The rule ensures that the production of coal in year 3 is at least 740 million USD."
+}

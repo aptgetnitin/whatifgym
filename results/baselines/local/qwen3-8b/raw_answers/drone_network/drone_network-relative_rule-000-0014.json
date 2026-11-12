@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_limit_800_virginia_beach_bvd",
+   "measure": "queue_load",
+   "scope": {
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": "<=",
+   "value": 0.1,
+   "relative_to": {
+    "measure": "queue_load",
+    "scope": {
+     "base": "*"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "open_bases_800_virginia_beach_bvd_vs_21_municipal_ctr",
+   "measure": "open",
+   "scope": {
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "open",
+    "scope": {
+     "base": "21 MUNICIPAL CTR Fire Station"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "Limits the queue load for a specific base to 10% of the total and restricts the number of bases opened for one base to 90% of another."
+}

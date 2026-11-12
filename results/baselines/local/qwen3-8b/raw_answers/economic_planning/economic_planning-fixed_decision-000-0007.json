@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "transport_production_per_year",
+   "measure": "production",
+   "scope": {
+    "industry": "transport"
+   },
+   "sense": "==",
+   "value": 150
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Transport production is fixed at 150 million USD per year; the rest of the model is optimised."
+}

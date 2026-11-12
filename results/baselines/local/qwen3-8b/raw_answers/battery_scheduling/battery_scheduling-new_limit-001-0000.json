@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "total_charging_power_limit",
+   "measure": "charge",
+   "sense": "<=",
+   "value": 6.2
+  }
+ ],
+ "note": "A global limit on the total charging power across all hours."
+}

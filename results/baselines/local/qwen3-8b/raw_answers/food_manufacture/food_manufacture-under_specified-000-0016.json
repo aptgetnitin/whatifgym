@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "minimum_refined_oil",
+   "measure": "consume",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ]
+   },
+   "sense": ">=",
+   "value": 2700
+  }
+ ],
+ "note": "A minimum total amount of oil refined across all months is enforced."
+}

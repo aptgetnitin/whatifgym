@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": [1, 2, 3, 4, 5],
+    "industry": ["coal", "steel", "transport"]
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "production",
+   "scope": {
+    "year": [1, 2, 3, 4, 5],
+    "industry": ["coal", "steel", "transport"]
+   }
+  }
+ ],
+ "note": "The objective prioritises minimising total capacity built first, followed by maximising employment."
+}

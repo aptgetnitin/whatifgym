@@ -1,0 +1,64 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "resources",
+   "column": "duration",
+   "where": {
+    "resource": 1
+   },
+   "factor": 2
+  },
+  {
+   "op": "shift",
+   "table": "resources",
+   "column": "duration",
+   "where": {
+    "resource": 2
+   },
+   "delta": -0.1
+  }
+ ],
+ "rules": [
+  {
+   "name": "entry_time_resource_1_twice_resource_3",
+   "measure": "entry_time",
+   "scope": {
+    "resource": 1
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "resource": 3
+    }
+   },
+   "factor": 2
+  },
+  {
+   "name": "total_entry_time_resource_2_at_most_10_percent",
+   "measure": "entry_time",
+   "scope": {
+    "resource": 2
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "resource": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6
+     ]
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "The entry time for resource 1 is at least twice the entry time for resource 3, and the total entry time for resource 2 is at most 10% of the total entry time for all other resources."
+}

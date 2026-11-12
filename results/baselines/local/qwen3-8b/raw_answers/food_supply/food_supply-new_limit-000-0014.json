@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "ration_cap",
+   "measure": "ration",
+   "scope": {
+    "camp": "*"
+   },
+   "sense": "<=",
+   "value": 30
+  }
+ ],
+ "note": "An overall cap of 30 units of ration per person per day, summed over all foods and camps."
+}

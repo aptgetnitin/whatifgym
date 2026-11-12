@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "flights",
+   "column": "revenue",
+   "where": {
+    "flight": 4269
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The revenue of flight 4269 is doubled."
+}

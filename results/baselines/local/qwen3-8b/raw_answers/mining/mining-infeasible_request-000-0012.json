@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine2"
+   },
+   "value": 1.6
+  }
+ ],
+ "rules": [
+  {
+   "name": "min2_extract_at_least_21500000",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine2"
+   },
+   "sense": ">=",
+   "value": 21500000
+  }
+ ],
+ "note": "Set Mine2's capacity to 1.6 million tons/year to allow for the required extraction, and enforce the minimum extraction requirement."
+}

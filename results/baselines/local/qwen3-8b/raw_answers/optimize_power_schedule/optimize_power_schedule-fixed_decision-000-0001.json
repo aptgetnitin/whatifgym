@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "on",
+   "column": "on",
+   "where": {
+    "plant": "GAS",
+    "hour": 22
+   },
+   "value": 0
+  }
+ ],
+ "note": "Set the on status of plant GAS in hour 22 to 0 to exclude it from the schedule."
+}

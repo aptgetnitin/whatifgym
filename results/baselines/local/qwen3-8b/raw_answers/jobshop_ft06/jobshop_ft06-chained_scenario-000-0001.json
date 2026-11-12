@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "operations",
+   "column": "duration",
+   "where": {
+    "job": "J1",
+    "step": 1
+   },
+   "factor": 0.75
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "min_redundant_unskilled_year_2",
+   "measure": "redundant",
+   "scope": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "value": 330
+  }
+ ],
+ "note": "If the total workers made redundant for year 2, skill level unskilled is above zero, it must be at least 330."
+}

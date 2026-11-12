@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "biomass_plant_hours_limit",
+   "measure": "on",
+   "scope": {
+    "plant": "BIOMASS"
+   },
+   "sense": "<=",
+   "value": 0.1,
+   "relative_to": {
+    "measure": "on",
+    "scope": {
+     "plant": "all"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "Limits the proportion of total plant-hours that BIOMASS can contribute."
+}

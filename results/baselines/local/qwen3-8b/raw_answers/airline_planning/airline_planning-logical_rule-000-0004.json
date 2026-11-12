@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "no_flights_4563_and_3103",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": [
+     "4563",
+     "3103"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "A rule that ensures at most one of the flights 4563 or 3103 is operated."
+}

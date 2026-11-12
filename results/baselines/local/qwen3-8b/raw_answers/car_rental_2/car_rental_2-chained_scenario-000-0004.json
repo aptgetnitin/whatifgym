@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_transfers_to_manchester",
+   "measure": "damaged_transfers",
+   "scope": {
+    "from_depot": "Manchester"
+   },
+   "sense": ">=",
+   "value": 56
+  }
+ ],
+ "note": "A rule to ensure the total damaged cars transferred to Manchester meets the specified minimum."
+}

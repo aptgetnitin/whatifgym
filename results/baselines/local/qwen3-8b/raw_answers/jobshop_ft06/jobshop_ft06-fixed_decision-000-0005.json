@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "goes_first",
+   "column": "goes_first",
+   "where": {
+    "machine": "M3",
+    "job": "J2",
+    "other_job": "J3"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting the goes_first value for machine M3, job J2, and other job J3 to 0 effectively removes the constraint that J2 goes before J3 on M3."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "year",
+   "where": {
+    "year": 6
+   },
+   "value": 6
+  }
+ ],
+ "rules": [
+  {
+   "name": "capacity_in_year_3",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 3
+   },
+   "sense": ">=",
+   "value": 85
+  }
+ ],
+ "note": "Add a year to the horizon and enforce a minimum capacity built in year 3."
+}

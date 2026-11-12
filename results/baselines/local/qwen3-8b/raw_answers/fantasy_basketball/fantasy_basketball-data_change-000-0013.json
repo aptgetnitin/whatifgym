@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "positions",
+   "column": "required",
+   "where": {
+    "position": "PF"
+   },
+   "value": 2
+  }
+ ],
+ "note": "Change the required number of players at the PF position to 2."
+}

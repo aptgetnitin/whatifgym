@@ -1,0 +1,205 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "expansion_options",
+   "column": "expand",
+   "where": {
+    "depot": "Birmingham",
+    "step": 1
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "expansion_options",
+   "column": "expand",
+   "where": {
+    "depot": "Birmingham",
+    "step": 2
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "expansion_options",
+   "column": "expand",
+   "where": {
+    "depot": "Manchester",
+    "step": 1
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "expansion_options",
+   "column": "expand",
+   "where": {
+    "depot": "Manchester",
+    "step": 2
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "expansion_options",
+   "column": "expand",
+   "where": {
+    "depot": "Plymouth",
+    "step": 1
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "undamaged_stock_birmingham",
+   "measure": "undamaged_stock",
+   "scope": {
+    "depot": "Birmingham"
+   },
+   "sense": ">=",
+   "value": 1450
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "expand",
+   "scope": {
+    "depot": "Birmingham",
+    "step": 1
+   },
+   "value": 0
+  },
+  {
+   "measure": "expand",
+   "scope": {
+    "depot": "Birmingham",
+    "step": 2
+   },
+   "value": 0
+  },
+  {
+   "measure": "expand",
+   "scope": {
+    "depot": "Manchester",
+    "step": 1
+   },
+   "value": 0
+  },
+  {
+   "measure": "expand",
+   "scope": {
+    "depot": "Manchester",
+    "step": 2
+   },
+   "value": 0
+  },
+  {
+   "measure": "expand",
+   "scope": {
+    "depot": "Plymouth",
+    "step": 1
+   },
+   "value": 0
+  }
+ ],
+ "relax": [
+  {
+   "constraint": "expansion_limit",
+   "scope": {
+    "depot": "Birmingham",
+    "step": 1
+   }
+  },
+  {
+   "constraint": "expansion_limit",
+   "scope": {
+    "depot": "Birmingham",
+    "step": 2
+   }
+  },
+  {
+   "constraint": "expansion_limit",
+   "scope": {
+    "depot": "Manchester",
+    "step": 1
+   }
+  },
+  {
+   "constraint": "expansion_limit",
+   "scope": {
+    "depot": "Manchester",
+    "step": 2
+   }
+  },
+  {
+   "constraint": "expansion_limit",
+   "scope": {
+    "depot": "Ply, Plymouth",
+    "step": 1
+   }
+  }
+ ],
+ "logic": [
+  {
+   "name": "at_most_two_expansions",
+   "at_least": 2,
+   "of": [
+    {
+     "measure": "expand",
+     "scope": {
+      "depot": "Birmingham",
+      "step": 1
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "expand",
+     "scope": {
+      "depot": "Birmingham",
+      "step": 2
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "expand",
+     "scope": {
+      "depot": "Manchester",
+      "step": 1
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "expand",
+     "scope": {
+      "depot": "Manchester",
+      "step": 2
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "expand",
+     "scope": {
+      "depot": "Plymouth",
+      "step": 1
+     },
+     "sense": ">=",
+     "value": 1
+    }
+   ]
+  }
+ ]
+}

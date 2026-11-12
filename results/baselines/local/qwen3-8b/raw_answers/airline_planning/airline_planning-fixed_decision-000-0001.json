@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "flights",
+   "column": "operate",
+   "where": {
+    "flight": 3103
+   },
+   "value": 0
+  }
+ ],
+ "note": "Set the operate decision for flight 3103 to 0 to exclude it from the plan."
+}

@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "unique_non_zero_sales",
+   "measure": "sell",
+   "scope": {
+    "month": [
+     "Jan",
+     "Apr",
+     "Mar"
+    ]
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "note": "Only one of the specified months can have non-zero units sold."
+}

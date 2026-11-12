@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "task_3_at_most_75_of_task_5",
+   "measure": "assign",
+   "scope": {
+    "task": "task_3"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "task": "task_5"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "A rule that bounds the sum of assign[worker, task] for task_3 to be at most 75% of the sum for task_5."
+}

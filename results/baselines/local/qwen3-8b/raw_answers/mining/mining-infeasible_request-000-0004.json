@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine2"
+   },
+   "value": 7500000
+  }
+ ],
+ "rules": [
+  {
+   "name": "fixed_capacity_mine2_year2",
+   "measure": "extract",
+   "scope": {
+    "year": "Year2",
+    "mine": "Mine2"
+   },
+   "sense": "==",
+   "value": 7500000
+  }
+ ],
+ "note": "Fixed the capacity of Mine2 to 7500000 tons/year and enforced the exact extraction amount for Year2."
+}

@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "start",
+   "scope": {
+    "job": "*",
+    "step": 2
+   }
+  }
+ ],
+ "note": "The objective first minimises the makespan, then maximises the start time of routing step 2 across all jobs."
+}

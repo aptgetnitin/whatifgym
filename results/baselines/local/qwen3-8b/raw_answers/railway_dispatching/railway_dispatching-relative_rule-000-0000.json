@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "c_finish_at_most_25_of_b_finish",
+   "measure": "finish_time",
+   "scope": {
+    "train": "C"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "finish_time",
+    "scope": {
+     "train": "B"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The rule enforces that the finish time of train C is at most 25% of the finish time of train B."
+}

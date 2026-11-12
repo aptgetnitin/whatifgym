@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "facility_e11_zero_or_at_least_240",
+   "measure": "assign",
+   "scope": {
+    "facility": "E11"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "facility": "E11"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "facility_e11_zero_or_at_least_240",
+   "measure": "assign",
+   "scope": {
+    "facility": "E11"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The total patients assigned to facility E11 must be either zero or at least 240."
+}

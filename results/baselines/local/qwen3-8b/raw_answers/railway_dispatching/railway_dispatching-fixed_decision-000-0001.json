@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "trains",
+   "column": "entry_time",
+   "where": {
+    "train": "E",
+    "resource": 2
+   },
+   "value": 24
+  }
+ ],
+ "note": "Fixed entry_time for train E at resource 2 to 24 minutes."
+}

@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "product": "Prod2",
+    "month": "Jun"
+   },
+   "value": 0
+  },
+  {
+   "op": "set_param",
+   "name": "max_inventory",
+   "value": 150
+  },
+  {
+   "op": "set_param",
+   "name": "store_target",
+   "value": 50
+  },
+  {
+   "op": "scale",
+   "table": "machines",
+   "column": "installed",
+   "where": {
+    "machine": "grinder"
+   },
+   "factor": 2
+  }
+ ],
+ "note": "Zero demand for Prod2 in June is set in max_sales. The new grinder doubles the installed count for the grinder."
+}

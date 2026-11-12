@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "rules": [
+  {
+   "name": "dario_saric_limit",
+   "measure": "pick",
+   "scope": {
+    "player": "Dario Saric"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "pick",
+    "scope": {
+     "player": "player"
+    }
+   },
+   "factor": 0.05
+  },
+  {
+   "name": "joel_embiid_limit",
+   "measure": "pick",
+   "scope": {
+    "player": "Joel Embiid"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "pick",
+    "scope": {
+     "player": "Dario Saric"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "Relative limits on the number of players picked for specific players compared to the total or another player."
+}

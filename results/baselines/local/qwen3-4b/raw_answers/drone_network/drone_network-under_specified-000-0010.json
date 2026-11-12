@@ -6,9 +6,7 @@
       "table": "incidents",
       "column": "incidents",
       "where": {
-        "location": [
-          "3600 CROFTS PRIDE DR"
-        ]
+        "location": "3600 CROFTS PRIDE DR"
       },
       "factor": 1.0
     }

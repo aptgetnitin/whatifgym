@@ -1,0 +1,47 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "team_count_limit",
+   "measure": "team",
+   "scope": {
+    "team": "team_2_3",
+    "team": "team_1_3",
+    "team": "team_1_2",
+    "team": "team_0_1",
+    "team": "team_0_2",
+    "team": "team_6_7",
+    "team": "team_5_7",
+    "team": "team_5_6",
+    "team": "team_4_5",
+    "team": "team_4_7",
+    "team": "team_10_11",
+    "team": "team_9_11",
+    "team": "team_9_10",
+    "team": "team_8_10",
+    "team": "team_8_11"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "task": "task_0",
+     "task": "task_1",
+     "task": "task_2",
+     "task": "task_3",
+     "task": "task_4",
+     "task": "task_5"
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The total number of teams chosen is constrained to be at most 25% of the total number of task assignments."
+}

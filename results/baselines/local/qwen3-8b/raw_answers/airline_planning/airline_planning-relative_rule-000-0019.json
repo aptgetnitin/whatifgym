@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "at_least_50_percent_flights_to_A321_2",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A321#2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "aircraft": "*"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "At least 50% of the total number of operated flights must be assigned to aircraft A321#2."
+}

@@ -1,0 +1,49 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "shut_downs_limit",
+   "measure": "stop",
+   "scope": {
+    "hour": 8
+   },
+   "sense": "<=",
+   "value": 0.15,
+   "relative_to": {
+    "measure": "stop",
+    "scope": {
+     "plant": [
+      "Scherer",
+      "Bowen",
+      "Jack McDonough",
+      "Edwin I Hatch",
+      "Vogtle",
+      "OIL",
+      "BIOMASS",
+      "GAS",
+      "HYDRO",
+      "OTHER COAL"
+     ]
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "scherer_biomass_hours",
+   "measure": "on",
+   "scope": {
+    "plant": "Scherer"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "on",
+    "scope": {
+     "plant": "BIOMASS"
+    }
+   },
+   "factor": 3.0
+  }
+ ],
+ "note": "The first rule limits the number of plant shut-downs in hour 8 to 15% of the total shut-downs. The second rule ensures that the number of plant-hours on for Scherer is at least three times that for BIOMASS."
+}

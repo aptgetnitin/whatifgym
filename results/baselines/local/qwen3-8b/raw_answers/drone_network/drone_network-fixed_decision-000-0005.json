@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "assign",
+   "column": "assign",
+   "where": {
+    "location": "1500 HALTER DR",
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "assign",
+   "scope": {
+    "location": "1500 HALTER DR",
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the assignment of 1500 HALTER DR to 5145 RURITAN COURT Rescue Squad to 0."
+}

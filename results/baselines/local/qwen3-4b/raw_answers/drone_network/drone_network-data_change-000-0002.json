@@ -81,5 +81,5 @@
       "factor": 0.75
     }
   ],
-  "note": "The incidents table has 68 rows, each with a location and incidents count. The question says 'every row', so we scale all incidents by 0.75."
+  "note": "The incidents table has a column 'incidents' with integer values representing the number of cardiac arrests at each location. Scaling this column by 0.75 reduces the observed incidents by 25% for every row in the table."
 }

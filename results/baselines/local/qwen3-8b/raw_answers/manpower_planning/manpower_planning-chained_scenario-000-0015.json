@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "skills",
+   "column": "current_strength",
+   "where": {
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "Scaling the current_strength of all skill levels by 10% to reflect a higher initial workforce."
+}

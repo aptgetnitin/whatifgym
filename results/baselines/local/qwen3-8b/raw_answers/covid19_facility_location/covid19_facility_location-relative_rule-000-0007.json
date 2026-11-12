@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "facility_e3_assigned_at_most_t18",
+   "measure": "assign",
+   "scope": {
+    "facility": "E3"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "facility": "T18"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule that limits the sum of the assign measure for facility E3 to be at most the sum for facility T18."
+}

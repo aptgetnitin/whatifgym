@@ -14,5 +14,5 @@
       "value": 3
     }
   ],
-  "note": "The question is about requiring a minimum number of incident locations assigned to a base. However, the model does not have a direct parameter for minimum assignments per base. The question might be interpreted as a rule that sets a minimum number of locations assigned to a base. But the model's decision variables and constraints do not support this directly. The original model has a constraint that each location must be assigned to exactly one base (ohca[location]), but no minimum per base. To make this precise, we need to define a rule that specifies a minimum number of locations per base. However, the question is vague on what 'minimum number' means. Given the information, the most precise action is to set a specific incident location to have a higher demand (as an example) to trigger the assignment, but the question is about a rule, not a data change. Since the question cannot be made precise without more details, we ask for clarification."
-  }
+  "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}

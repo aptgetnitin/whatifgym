@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "flight_operated_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A321#4"
+   },
+   "sense": "<=",
+   "value": 4
+  }
+ ],
+ "note": "A cap on the number of flights operated by aircraft A321#4."
+}

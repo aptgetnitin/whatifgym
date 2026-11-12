@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "april_produce_limit",
+   "measure": "produce",
+   "scope": {
+    "month": "Apr"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "produce",
+    "scope": {
+     "month": "Mar"
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "The April food production is limited to 60% of March's production."
+}

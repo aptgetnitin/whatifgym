@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "year4_output_limit",
+   "measure": "production",
+   "scope": {
+    "year": 4
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "year": 3
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "The output for year 4 is limited to 80% of the output for year 3."
+}

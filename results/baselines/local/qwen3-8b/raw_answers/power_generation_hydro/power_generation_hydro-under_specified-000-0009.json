@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "ask": "What is the impact of changing the number of available Thermal0 units on the optimal solution?"
+}

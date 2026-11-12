@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "*",
+    "job": "*",
+    "other_job": "*"
+   }
+  }
+ ],
+ "note": "First, minimise the makespan as per the original objective. Then, maximise the total number of job pairs where one job goes first on a machine compared to another."
+}

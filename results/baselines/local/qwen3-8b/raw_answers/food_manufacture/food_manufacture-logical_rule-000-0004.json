@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "logic": [
+  {
+   "name": "no_food_in_both_feb_and_mar",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "produce",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "month": "Feb"
+     }
+    },
+    {
+     "measure": "produce",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "month": "Mar"
+     }
+    }
+   ]
+  }
+ ]
+}

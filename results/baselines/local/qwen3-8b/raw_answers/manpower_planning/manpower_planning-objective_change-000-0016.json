@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "recruit",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   }
+  }
+ ],
+ "note": "The objective is to minimize total redundancies while maximizing the total number of workers recruited across all years and skill levels."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "grow_beet",
+   "column": "grow_beet",
+   "where": {
+    "year": "Year1"
+   },
+   "value": 480
+  }
+ ],
+ "note": "An upper limit on the total sugar beet grown is set for the first year."
+}

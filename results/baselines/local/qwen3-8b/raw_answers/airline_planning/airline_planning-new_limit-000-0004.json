@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "flight_operate_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 26
+  }
+ ],
+ "note": "An overall cap of 26 applies to the number of flights operated, summed over everything."
+}

@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "fixed_decisions": [
+  {
+   "measure": "overmanned",
+   "scope": {
+    "skill": "unskilled"
+   },
+   "value": 110
+  },
+  {
+   "measure": "overmanned",
+   "scope": {
+    "skill": "unskilled",
+    "year": [
+     1,
+     2,
+     3
+    ]
+   },
+   "value": 110
+  }
+ ],
+ "note": "Fix the overmanned count for unskilled workers to 110 in each year."
+}

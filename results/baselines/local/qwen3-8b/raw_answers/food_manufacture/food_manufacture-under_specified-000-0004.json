@@ -1,0 +1,1 @@
+{"version": "0.1","base_model":"food_manufacture","data_changes":[{"op":"set","table":"params","column":"final_stock","where":{"oil":["VEG1","VEG2","OIL1","OIL2","OIL3"]},"value":500}],"note":"Setting final_stock to 500 tons for all oils ensures a minimum tons of oil in storage at the end of the horizon."}

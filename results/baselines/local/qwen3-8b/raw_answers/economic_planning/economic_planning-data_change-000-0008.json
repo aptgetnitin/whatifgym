@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "input_output",
+   "column": "input_per_unit_capacity",
+   "where": {
+    "supplier": "coal",
+    "user": "transport"
+   },
+   "factor": 0.5
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 600
+  }
+ ],
+ "note": "The input per unit of capacity for transport using coal is reduced by 50%, and the initial capacity for coal is set to 600."
+}

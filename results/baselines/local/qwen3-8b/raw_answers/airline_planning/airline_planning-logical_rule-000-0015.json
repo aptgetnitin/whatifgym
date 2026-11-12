@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "at_most_one_aircraft_operated",
+   "measure": "operate",
+   "scope": {
+    "aircraft": [
+     "A319#11",
+     "A321#4",
+     "A320#22"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "At most one of the specified aircraft may have a non-zero number of flights operated."
+}

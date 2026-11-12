@@ -3,7 +3,7 @@
   "base_model": "drone_network",
   "logic": [
     {
-      "name": "at_least_1",
+      "name": "at_least",
       "at_least": 1,
       "of": [
         {

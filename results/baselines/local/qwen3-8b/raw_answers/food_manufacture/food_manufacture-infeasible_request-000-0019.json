@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "produce_jan_at_least_900",
+   "measure": "produce",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": ">=",
+   "value": 900
+  },
+  {
+   "name": "produce_jun_at_least_900",
+   "measure": "produce",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "value": 900
+  }
+ ],
+ "note": "The planner is asked to produce at least 900 tons of food in both January and June."
+}

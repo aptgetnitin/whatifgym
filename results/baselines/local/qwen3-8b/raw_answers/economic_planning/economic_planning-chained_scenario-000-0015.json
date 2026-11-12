@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "measure": "production",
+   "scope": {},
+   "sense": "<=",
+   "value": 3700,
+   "name": "cap_production_total"
+  }
+ ],
+ "note": "An overall cap on total production is added to the existing cap on total stock."
+}

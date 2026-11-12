@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "plants",
+   "column": "capacity_mwh",
+   "where": {
+    "plant": "Edwin I Hatch"
+   },
+   "value": 3250
+  }
+ ],
+ "note": "The capacity of the plant Edwin I Hatch is set to 3250 MWh per hour."
+}

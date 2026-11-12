@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "counties",
+   "column": "demand",
+   "where": {
+    "county": "C6"
+   },
+   "value": 80
+  }
+ ],
+ "rules": [
+  {
+   "name": "assign_c6_to_e11",
+   "measure": "assign",
+   "scope": {
+    "county": "C6",
+    "facility": "E11"
+   },
+   "sense": "==",
+   "value": 80
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

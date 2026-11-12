@@ -1,0 +1,59 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "max_goes_first",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "goes_first",
+    "scope": {
+     "resource": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The objective is to maximise the total number of trains clearing a resource before another train enters it, while keeping the total delay unchanged."
+}

@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "max_non_zero_output",
+   "measure": "output",
+   "scope": {
+    "plant": [
+     "Edwin I Hatch",
+     "Scherer",
+     "OIL",
+     "OTHER COAL"
+    ]
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "Limits the total non-zero output to 3 MWh across the specified plants."
+}

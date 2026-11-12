@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "costs",
+   "column": "cost",
+   "where": {
+    "worker": "*",
+    "task": "*"
+   },
+   "factor": 0.75
+  },
+  {
+   "op": "set",
+   "table": "workers",
+   "column": "size_capacity",
+   "where": {
+    "worker": "worker_4"
+   },
+   "value": 8
+  }
+ ],
+ "note": "The assignment cost is scaled down by 25% for all entries, and the size capacity of worker_4 is set to 8."
+}

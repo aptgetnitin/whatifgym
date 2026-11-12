@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": "Oil",
+        "from_city": "Beirut",
+        "to_city": "Homs"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fix the flow of Oil from Beirut to Homs at 0 and optimise the rest."
+}

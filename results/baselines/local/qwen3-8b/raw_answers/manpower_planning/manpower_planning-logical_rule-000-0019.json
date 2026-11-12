@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "downgrade_to_unskilled",
+   "measure": "downgrade",
+   "scope": {
+    "year": 1,
+    "from_skill": "skilled",
+    "to_skill": "semi_skilled"
+   },
+   "sense": ">=",
+   "value": 210
+  },
+  {
+   "name": "overmanned_year_2_unskilled",
+   "measure": "overmanned",
+   "scope": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "sense": ">",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "year": 2,
+     "skill": "unskilled"
+    }
+   },
+   "factor": 0
+  }
+ ],
+ "note": "A rule that requires a minimum number of workers downgraded from skilled to semi-skilled in year 1 and ensures a non-zero overmanned count for unskilled workers in year 2."
+}

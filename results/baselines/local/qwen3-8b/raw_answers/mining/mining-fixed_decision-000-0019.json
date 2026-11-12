@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "fixed_decisions": [
+    {
+      "measure": "open",
+      "scope": {
+        "mine": "Mine3"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fixing the number of mine-years kept open for Mine3 to 0 effectively rules it out."
+}

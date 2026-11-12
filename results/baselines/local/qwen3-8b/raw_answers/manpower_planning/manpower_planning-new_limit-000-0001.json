@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "skill": "skilled"
+   },
+   "value": 1100
+  }
+ ],
+ "note": "The requirement for skilled workers is set to 1100."
+}

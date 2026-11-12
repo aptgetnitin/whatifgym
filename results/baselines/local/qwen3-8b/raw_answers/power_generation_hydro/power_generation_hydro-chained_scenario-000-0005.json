@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "thermal_types",
+   "column": "units_available",
+   "where": {
+    "type": "Thermal2"
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The number of available Thermal2 units is reduced to 2."
+}

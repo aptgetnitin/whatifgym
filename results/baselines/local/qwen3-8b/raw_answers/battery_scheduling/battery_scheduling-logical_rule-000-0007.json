@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "only_one_non_zero_soc",
+   "measure": "soc",
+   "scope": {
+    "hour": [
+     "22-23",
+     "07-08",
+     "11-12"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Only one of the specified hours can have non-zero stored energy."
+}

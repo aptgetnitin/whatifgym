@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_mines",
+   "value": 2
+  }
+ ],
+ "note": "A cap on the number of mine-years kept open is achieved by setting the maximum number of mines that may be worked each year."
+}

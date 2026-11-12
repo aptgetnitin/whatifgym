@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "fixed_decisions": [
+  {
+   "measure": "stop",
+   "scope": {
+    "plant": "OTHER COAL",
+    "hour": 17
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fix the number of plant shut-downs for OTHER COAL in hour 17 to 1."
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "at_least_50_percent_to_5145_ruritan_court",
+   "measure": "open",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "open",
+    "scope": {
+     "base": []
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "At least 50% of the total number of drone bases opened must be assigned to the 5145 RURITAN COURT Rescue Squad."
+}

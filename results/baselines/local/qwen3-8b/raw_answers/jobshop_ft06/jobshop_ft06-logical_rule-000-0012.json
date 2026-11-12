@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "logic": [
+  {
+   "name": "no_both_m4_m0_non_zero",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "goes_first",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "machine": "M4"
+     }
+    },
+    {
+     "measure": "goes_first",
+     "sense": ">=",
+     "value": 1,
+     "scope": {
+      "machine": "M0"
+     }
+    }
+   ]
+  }
+ ]
+}

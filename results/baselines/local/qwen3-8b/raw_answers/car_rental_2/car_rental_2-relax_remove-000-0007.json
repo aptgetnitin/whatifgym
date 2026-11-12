@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "depots",
+      "column": "repair_capacity",
+      "where": {
+        "day": "Monday"
+      },
+      "factor": 1
+    }
+  ],
+  "note": "The repair capacity for Monday is scaled by 1, which lifts the daily repair-capacity limit for Monday only."
+}

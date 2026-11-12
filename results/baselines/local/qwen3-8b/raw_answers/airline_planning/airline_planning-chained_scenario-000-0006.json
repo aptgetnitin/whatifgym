@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "flights",
+   "column": "revenue",
+   "where": {
+    "flight": 4569
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The revenue of flight 4569 is scaled by a factor of 1.0, which effectively sets it to 22600."
+}

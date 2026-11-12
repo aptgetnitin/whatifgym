@@ -93,5 +93,6 @@
         ]
       }
     }
-  ]
+  ],
+  "note": "The planner wants to first minimise base queue load (hours) across all bases, then minimise the response objective (which is the rate-weighted average of queue wait plus flight time) over all locations. This is a lexicographic objective with two stages: first queue load, then response objective."
 }

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "other_coal_hour_14_output",
+   "measure": "output",
+   "scope": {
+    "plant": "OTHER COAL",
+    "hour": 14
+   },
+   "sense": ">=",
+   "value": 3250
+  },
+  {
+   "name": "other_coal_hour_14_output_zero",
+   "measure": "output",
+   "scope": {
+    "plant": "OTHER COAL",
+    "hour": 14
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The total power generated for plant OTHER COAL in hour 14 must be either zero or at least 3250."
+}

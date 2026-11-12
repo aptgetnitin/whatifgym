@@ -1,0 +1,44 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knaps",
+ "rules": [
+  {
+   "name": "item2_placement_limit",
+   "measure": "x",
+   "scope": {
+    "item": "item2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": [
+      "item0",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5",
+      "item6",
+      "item7",
+      "item8",
+      "item9",
+      "item10",
+      "item11",
+      "item12",
+      "item13",
+      "item14"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The rule limits the proportion of item placements for item2 relative to all items."
+}

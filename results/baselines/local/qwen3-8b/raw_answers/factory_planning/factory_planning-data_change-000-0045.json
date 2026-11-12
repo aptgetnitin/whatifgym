@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "profit_per_unit",
+   "value": 5
+  }
+ ],
+ "note": "The profit contribution of Prod1 is updated to 5 per unit."
+}

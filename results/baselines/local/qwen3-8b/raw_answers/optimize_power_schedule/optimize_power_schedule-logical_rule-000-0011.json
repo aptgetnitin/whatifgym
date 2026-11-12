@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "max_non_zero_hours",
+   "measure": "on",
+   "scope": {
+    "plant": [
+     "Edwin I Hatch",
+     "OTHER COAL",
+     "GAS"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Limits the total number of non-zero hours for the specified plants to at most 2."
+}

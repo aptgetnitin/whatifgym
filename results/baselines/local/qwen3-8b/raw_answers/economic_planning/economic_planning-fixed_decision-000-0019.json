@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "fixed_decisions": [
+  {
+   "measure": "production",
+   "scope": {
+    "year": 5,
+    "industry": "steel"
+   },
+   "value": 0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix the production of steel in year 5 to 0 and optimise the rest."
+}

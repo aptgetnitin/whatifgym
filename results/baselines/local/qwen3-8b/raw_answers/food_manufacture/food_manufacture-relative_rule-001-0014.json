@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "store_jun_at_least_30_percent",
+   "measure": "store",
+   "scope": {
+    "month": "Jun"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.3
+  }
+ ],
+ "note": "The rule ensures that the total storage in June is at least 30% of the total storage across all months."
+}

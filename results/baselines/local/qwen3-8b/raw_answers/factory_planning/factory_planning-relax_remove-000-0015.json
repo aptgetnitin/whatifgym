@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "store_target",
+   "value": {
+    "product": [
+     "Prod3",
+     "Prod7"
+    ]
+   }
+  }
+ ],
+ "note": "The end-of-horizon stock target is lifted for product Prod3 and Prod7 only."
+}

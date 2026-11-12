@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "doris_dispatch_limit",
+   "measure": "use",
+   "scope": {
+    "technician": "Doris"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "use",
+    "scope": {
+     "technician": [
+      "Albert",
+      "Bob",
+      "Carlos",
+      "Doris",
+      "Ed",
+      "Flor",
+      "Gina"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "At most 5% of the total number of dispatched technicians may be Doris."
+}

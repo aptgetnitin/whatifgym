@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "discharge_at_least_three_times_charge",
+   "measure": "discharge",
+   "scope": {
+    "hour": "all"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "charge",
+    "scope": {
+     "hour": "all"
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

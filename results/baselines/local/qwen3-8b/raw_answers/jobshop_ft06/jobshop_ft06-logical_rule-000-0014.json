@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "operations",
+   "column": "start",
+   "where": {
+    "job": "J0",
+    "step": 6
+   },
+   "value": 170
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_start_time_j1",
+   "measure": "start",
+   "scope": {
+    "job": "J1"
+   },
+   "sense": ">=",
+   "value": 170
+  }
+ ],
+ "note": "The start time of J0's step 6 is set to 170, and a rule ensures that the total start time of J1 meets or exceeds this value."
+}

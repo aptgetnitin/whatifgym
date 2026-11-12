@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "logic": [
+  {
+   "name": "at_least_15_pairs_on_m0",
+   "at_least": 15,
+   "of": [
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "M0"
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "goes_first",
+     "scope": {
+      "machine": "M0"
+     },
+     "sense": "<=",
+     "value": 1
+    }
+   ]
+  }
+ ]
+}

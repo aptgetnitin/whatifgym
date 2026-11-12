@@ -1,0 +1,45 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "land_groups",
+   "column": "area",
+   "where": {
+    "land_group": "Group4"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "land_groups",
+   "column": "grain_yield",
+   "where": {
+    "land_group": "Group4"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "params",
+   "column": "beet_yield",
+   "where": {
+    "name": "beet_yield"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "sugar_beet_growth_limit",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": "<=",
+   "value": 400
+  }
+ ],
+ "note": "An upper limit on sugar beet grown is imposed by setting the beet yield to zero for Group4 and removing its area, and adding a rule to limit the total sugar beet grown."
+}

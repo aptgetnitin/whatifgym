@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "plant_hours_cap",
+   "measure": "on",
+   "scope": {
+    "plant": "*",
+    "hour": "*"
+   },
+   "sense": "<=",
+   "value": 143
+  }
+ ],
+ "note": "An overall cap on the number of plant-hours on, summed over all plants and hours."
+}

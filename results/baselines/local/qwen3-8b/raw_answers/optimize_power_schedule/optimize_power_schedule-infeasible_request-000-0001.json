@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hour_6_generation",
+   "measure": "output",
+   "scope": {
+    "hour": 6
+   },
+   "sense": ">=",
+   "value": 15700
+  },
+  {
+   "name": "hour_1_generation",
+   "measure": "output",
+   "scope": {
+    "hour": 1
+   },
+   "sense": ">=",
+   "value": 22400
+  }
+ ],
+ "note": "The planner is asking if it is possible to meet the minimum generation requirements for hour 6 and hour 1 simultaneously."
+}

@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A318#8"
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ]
+}

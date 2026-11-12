@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_B_at_least_40_percent",
+   "measure": "entry_time",
+   "scope": {
+    "train": "B"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "train": [
+      "A",
+      "C",
+      "D",
+      "E",
+      "F"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "At least 40% of the total entry time (minutes) must go to train B."
+}

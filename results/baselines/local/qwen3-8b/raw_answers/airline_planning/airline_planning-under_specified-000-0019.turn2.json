@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "flights",
+   "column": "revenue",
+   "where": {
+    "flight": 3083
+   },
+   "factor": 1
+  }
+ ],
+ "note": "The ticket revenue for flight 3083 is scaled by a factor of 1, which means it remains unchanged."
+}

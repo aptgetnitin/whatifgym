@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "operate_flights",
+   "measure": "operate",
+   "scope": {
+    "flight": [
+     "3074",
+     "3108",
+     "3097",
+     "3068"
+    ]
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "note": "Only the specified flights can have non-zero operated values."
+}

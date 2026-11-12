@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": "Oil",
+        "from_city": "Aleppo",
+        "to_city": "Idleb"
+      },
+      "value": 2000
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "flow",
+      "scope": {
+        "food": "Oil",
+        "from_city": "Aleppo",
+        "to_city": "Idleb"
+      },
+      "value": 2000
+    }
+  ]
+}

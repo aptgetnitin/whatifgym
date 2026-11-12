@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "*"
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "A relative demand change over all locations is a scale over all rows."
+}

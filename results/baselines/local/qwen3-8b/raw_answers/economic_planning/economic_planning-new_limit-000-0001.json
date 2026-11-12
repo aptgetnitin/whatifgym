@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "year",
+   "where": {
+    "year": 5
+   },
+   "value": 300
+  }
+ ],
+ "rules": [
+  {
+   "name": "coal_capacity_built_at_least_730",
+   "measure": "extra_capacity",
+   "scope": {
+    "industry": "coal"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extra_capacity",
+    "scope": {
+     "industry": [
+      "coal"
+     ]
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The first rule sets the maximum capacity built for year 5 to 300. The second rule ensures that the total capacity built for coal across all years is at least 730."
+}

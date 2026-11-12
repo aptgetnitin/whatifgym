@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "max_sales",
+   "where": {
+    "month": "May",
+    "product": "Prod6"
+   }
+  }
+ ],
+ "note": "Removing the max_sales row for Prod6 in May effectively removes the market limit for that product in that month."
+}

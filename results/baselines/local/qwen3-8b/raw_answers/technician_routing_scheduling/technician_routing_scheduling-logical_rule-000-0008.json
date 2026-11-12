@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "relax": [
+  {
+   "constraint": "route",
+   "scope": {
+    "from_location": [
+     "Heidelberg",
+     "Baden-Baden"
+    ]
+   }
+  }
+ ],
+ "note": "Relaxing the route constraint for legs from Heidelberg and Baden-Baden to prevent non-zero number of legs driven from both locations."
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "assign",
+      "scope": {
+        "base": "*"
+      }
+    }
+  ],
+  "note": "Maximise the total number of incident locations assigned to any base, while maintaining the original response objective."
+}

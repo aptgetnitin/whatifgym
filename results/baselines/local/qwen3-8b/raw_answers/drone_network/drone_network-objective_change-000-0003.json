@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "queue_load",
+      "scope": {
+        "base": "*"
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "response_objective",
+      "scope": {
+        "location": "*",
+        "base": "*"
+      }
+    }
+  ],
+  "note": "Prioritise minimising base queue load, then the response objective."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "rules": [
+  {
+   "name": "task_0_min_assignments",
+   "measure": "assign",
+   "scope": {
+    "task": "task_0"
+   },
+   "sense": ">=",
+   "value": 2
+  }
+ ],
+ "note": "A rule to ensure the total number of assignments for task_0 is at least 2."
+}

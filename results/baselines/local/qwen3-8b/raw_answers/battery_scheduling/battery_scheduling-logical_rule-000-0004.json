@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "no_non_zero_soc_in_15-16_and_03-04",
+   "measure": "soc",
+   "scope": {
+    "hour": [
+     "15-16",
+     "03-04"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ]
+}

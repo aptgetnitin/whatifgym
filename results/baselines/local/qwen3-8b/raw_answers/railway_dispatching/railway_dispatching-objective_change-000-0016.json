@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "entry_time",
+   "scope": {
+    "train": "A"
+   }
+  }
+ ],
+ "note": "First, minimize total delay as per the original objective. Then, maximize the entry time for train A."
+}

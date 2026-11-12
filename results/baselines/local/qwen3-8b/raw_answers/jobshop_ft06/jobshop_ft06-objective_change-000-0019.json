@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "machine",
+    "job": "job",
+    "other_job": "other_job"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "end",
+   "scope": {
+    "job": "job",
+    "step": "step"
+   }
+  }
+ ],
+ "note": "The objective stages first minimise the makespan, then maximise the number of job pairs where a job goes first on a machine, and finally maximise the total operation end time."
+}

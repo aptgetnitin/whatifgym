@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "no_non_zero_purchases_in_gaziantep_and_dayr_az_zor",
+   "measure": "purchase",
+   "scope": {
+    "supplier": [
+     "Gaziantep",
+     "Dayr_Az_Zor"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "This rule ensures that the total purchase from both Gaziantep and Dayr_Az_Zor is zero."
+}

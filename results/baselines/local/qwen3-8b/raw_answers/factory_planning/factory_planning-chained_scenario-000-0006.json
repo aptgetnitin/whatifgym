@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "inventory_cap",
+   "measure": "store",
+   "sense": "<=",
+   "value": 900,
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "*",
+     "month": "*"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A global inventory cap is enforced by a relative rule comparing the total sum of store across all products and months to the cap."
+}

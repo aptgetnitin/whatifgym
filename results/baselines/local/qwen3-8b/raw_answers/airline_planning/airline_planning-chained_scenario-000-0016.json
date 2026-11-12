@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "flights",
+   "column": "revenue",
+   "factor": 0.7
+  }
+ ],
+ "note": "A relative revenue change across all flights is a scale over the entire table."
+}

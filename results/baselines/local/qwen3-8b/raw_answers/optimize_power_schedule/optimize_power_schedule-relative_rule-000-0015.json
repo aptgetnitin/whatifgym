@@ -1,0 +1,59 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "edwin_i_hatch_hours_at_least_1_25_scherer_hours",
+   "measure": "on",
+   "scope": {
+    "plant": "Edwin I Hatch"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "on",
+    "scope": {
+     "plant": "Scherer"
+    }
+   },
+   "factor": 1.25
+  },
+  {
+   "name": "total_shut_downs_at_least_3_times_total_start_ups",
+   "measure": "stop",
+   "scope": {
+    "plant": [
+     "Scherer",
+     "Bowen",
+     "Jack McDonough",
+     "Edwin I Hatch",
+     "Vogtle",
+     "OIL",
+     "BIOMASS",
+     "GAS",
+     "HYDRO",
+     "OTHER COAL"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "plant": [
+      "Scherer",
+      "Bow,",
+      "Jack McDonough",
+      "Edwin I Hatch",
+      "Vogtle",
+      "OIL",
+      "BIOMASS",
+      "GAS",
+      "HYDRO",
+      "OTHER COAL"
+     ]
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "The first rule ensures that the number of plant-hours on for Edwin I Hatch is at least 1.25 times that of Scherer. The second rule ensures that the total number of plant shut-downs is at least 3 times the total number of plant start-ups."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "works",
+   "column": "works",
+   "where": {
+    "worker": "worker_10"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting the works variable for worker_10 to 0 effectively removes the worker from the assignment process."
+}

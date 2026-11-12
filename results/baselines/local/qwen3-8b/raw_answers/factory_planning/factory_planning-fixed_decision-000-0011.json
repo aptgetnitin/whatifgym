@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Jun",
+    "product": "Prod6"
+   },
+   "value": 1000
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Fix the maximum sales for Prod6 in June to exactly 1000 and optimise the rest."
+}

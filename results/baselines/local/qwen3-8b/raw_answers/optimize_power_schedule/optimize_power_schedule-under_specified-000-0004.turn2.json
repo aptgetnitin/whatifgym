@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "upper_limit_on_power_generated",
+   "measure": "output",
+   "scope": {
+    "plant": "HYDRO"
+   },
+   "sense": "<=",
+   "value": 3850
+  }
+ ],
+ "note": "The plan will change under the upper limit on power generated (MWh) for plant HYDRO."
+}

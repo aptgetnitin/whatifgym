@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "fixed_decisions": [
+  {
+   "measure": "pick",
+   "scope": {
+    "player": "Kevin Durant"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Fixing the number of players picked for Kevin Durant at 1."
+}

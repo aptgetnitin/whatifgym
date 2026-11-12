@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "prod2_stock_mar_min",
+   "measure": "store",
+   "scope": {
+    "month": "Mar",
+    "product": "Prod2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Mar",
+     "product": "Prod2"
+    }
+   },
+   "factor": 200
+  }
+ ],
+ "note": "If the total units in stock for month Mar, product Prod2 is above zero, it must be at least 200."
+}

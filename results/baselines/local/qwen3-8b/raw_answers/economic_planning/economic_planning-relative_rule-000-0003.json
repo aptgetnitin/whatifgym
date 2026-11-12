@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "output_year2_at_most_25_of_year5",
+   "measure": "production",
+   "scope": {
+    "year": 2
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "production",
+    "scope": {
+     "year": 5
+    }
+   },
+   "factor": 0.25
+  }
+ ],
+ "note": "The output for year 2 is constrained to be at most 25% of the output for year 5."
+}

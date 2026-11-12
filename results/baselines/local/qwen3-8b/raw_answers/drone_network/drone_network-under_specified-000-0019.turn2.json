@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "3700 PUREBRED DR"
+      },
+      "value": 2
+    }
+  ],
+  "note": "The number of cardiac arrests at location 3700 PUREBRED DR is set to 2."
+}

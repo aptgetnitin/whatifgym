@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "*"
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The question is ambiguous. Scaling incidents by 1.0 does not change the data. Please clarify what specific change is intended for the incident rates."
+}

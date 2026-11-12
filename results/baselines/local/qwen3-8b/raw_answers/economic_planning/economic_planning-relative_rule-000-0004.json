@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "capacity_limit_year_5",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 5
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "extra_capacity",
+    "scope": {
+     "year": [
+      1,
+      2,
+      3,
+      4
+     ]
+    }
+   },
+   "factor": 0.2
+  }
+ ],
+ "note": "Capacity built in year 5 cannot exceed 20% of the total capacity built in years 1-4."
+}

@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg2_buy_jun_min",
+   "measure": "buy",
+   "scope": {
+    "month": "Jun",
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "month": "Jun",
+     "oil": "VEG2"
+    }
+   },
+   "factor": 1620
+  }
+ ],
+ "note": "If the total tons of oil bought for month Jun, oil VEG2 is above zero, it must be at least 1620."
+}

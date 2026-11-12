@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "start_time_lahr_schwarzwald_zero_or_at_least_600",
+   "measure": "start_time",
+   "scope": {
+    "location": "Lahr/Schwarzwald"
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "start_time_lahr_schwarzwald_at_least_600",
+   "measure": "start_time",
+   "scope": {
+    "location": "Lahr/Schwarzwald"
+   },
+   "sense": ">=",
+   "value": 600
+  }
+ ],
+ "note": "The start time for location Lahr/Schwarzwald must be either zero or at least 600."
+}

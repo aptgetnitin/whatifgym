@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "j1_start_time_at_least_50_percent",
+   "measure": "start",
+   "scope": {
+    "job": "J1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": [
+      "J0",
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5"
+     ]
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "The rule ensures that the total start time of job J1 is at least 50% of the total start time of all jobs."
+}

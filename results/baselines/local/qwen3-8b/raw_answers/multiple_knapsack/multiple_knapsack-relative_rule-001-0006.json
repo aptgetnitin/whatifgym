@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "multiple_knapsack",
+ "rules": [
+  {
+   "name": "item5_placement_limit",
+   "measure": "x",
+   "scope": {
+    "item": "item5"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "item": "item14"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "item10_placement_limit",
+   "measure": "x",
+   "scope": {
+    "item": "item10"
+   },
+   "sense": "<=",
+   "value": 0.05
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

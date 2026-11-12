@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knaps","rules":[{"name":"item_placement_cap","measure":"x","scope":{"bin":["bin0","bin1","bin2","bin3","bin4"]},"sense":"<=","value":10}],"note":"A cap of 10 is applied to the total number of item placements across all bins."}

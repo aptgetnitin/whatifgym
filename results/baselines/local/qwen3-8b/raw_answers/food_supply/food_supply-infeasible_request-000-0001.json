@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "ration",
+   "column": "ration",
+   "where": {
+    "food": "Wheat",
+    "camp": "Qamishli"
+   },
+   "value": 13.1
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "ration",
+   "scope": {
+    "food": "Wheat",
+    "camp": "Qamishli"
+   },
+   "value": 13.1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

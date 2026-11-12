@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hydro_at_least_half_gas",
+   "measure": "output",
+   "scope": {
+    "plant": "HYDRO"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "output",
+    "scope": {
+     "plant": "GAS"
+    }
+   },
+   "factor": 0.5
+  }
+ ],
+ "note": "A relative rule compares the total output of HYDRO to the total output of GAS, ensuring HYDRO is at least 50% of GAS."
+}

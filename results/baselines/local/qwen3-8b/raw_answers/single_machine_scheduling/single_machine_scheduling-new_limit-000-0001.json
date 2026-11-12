@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "rules": [
+  {
+   "name": "end_time_job_9_sum",
+   "measure": "end_time",
+   "scope": {
+    "job": "job_9"
+   },
+   "sense": ">=",
+   "value": 118700
+  }
+ ],
+ "note": "A requirement that the end time of job_9 must be at least 118700."
+}

@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "logic": [
+  {
+   "name": "repair_plymouth_tuesday",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "repairs",
+     "scope": {
+      "day": "Tuesday",
+      "depot": "Plymouth"
+     },
+     "sense": "==",
+     "value": 0
+    },
+    {
+     "measure": "repairs",
+     "scope": {
+      "day": "Tuesday",
+      "depot": "Plymouth"
+     },
+     "sense": ">=",
+     "value": 12.5
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "ask": "What is the impact of changing the processing time for job_6 on the makespan and job sequence?"
+}

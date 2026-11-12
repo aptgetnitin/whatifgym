@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "allowed_teams",
+   "column": "works",
+   "where": {
+    "team": "team_1_2",
+    "worker": "worker_1"
+   },
+   "value": 2
+  },
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "min_workers",
+   "where": {
+    "task": "task_3"
+   },
+   "factor": 1.5
+  }
+ ],
+ "note": "The worker's team works value is set to 2 for team_1_2 and the minimum workers for task_3 is scaled by 1.5."
+}

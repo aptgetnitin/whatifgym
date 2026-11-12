@@ -1,0 +1,45 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "semi_skilled"
+   },
+   "value": 300
+  },
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "skilled"
+   },
+   "value": 100
+  },
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": "semi_skilled",
+    "to_skill": "skilled"
+   },
+   "value": 200
+  }
+ ],
+ "relax": [
+  {
+   "constraint": "retraining_limit",
+   "scope": {
+    "year": 1
+   }
+  }
+ ],
+ "note": "The retraining limit is lifted for year 1 only by setting the max_per_year and relaxing the retraining_limit constraint for that year."
+}

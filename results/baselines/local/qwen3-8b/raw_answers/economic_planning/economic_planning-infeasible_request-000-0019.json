@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "stock_year5",
+   "measure": "stock",
+   "scope": {
+    "year": 5
+   },
+   "sense": ">=",
+   "value": 1550
+  },
+  {
+   "name": "stock_year2",
+   "measure": "stock",
+   "scope": {
+    "year": 2
+   },
+   "sense": ">=",
+   "value": 100
+  }
+ ],
+ "note": "The scenario requires at least 1550 million USD in stock for year 5 and at least 100 million USD in stock for year 2."
+}
