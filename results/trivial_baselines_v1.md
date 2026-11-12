@@ -6,6 +6,22 @@ The last two columns are *accuracy* (share of tasks answered correctly) of two p
 
 | task file | tasks | oracle | noop | ask_then_oracle | nearest_example acc | random_valid acc |
 |---|---|---|---|---|---|---|
+| `tasks/airline_planning/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.05 | 0.00 |
+| `tasks/airline_planning/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/airline_planning/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/airline_planning/logical_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/airline_planning/new_limit_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/airline_planning/objective_change_v0.jsonl` | 2 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/airline_planning/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/airline_planning/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
+| `tasks/assignment_with_constraints/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.10 | 0.00 |
+| `tasks/assignment_with_constraints/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/assignment_with_constraints/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/assignment_with_constraints/logical_rule_v0.jsonl` | 15 | 1.100 | 0.100 | 0.900 | 0.13 | 0.00 |
+| `tasks/assignment_with_constraints/new_limit_v0.jsonl` | 9 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/assignment_with_constraints/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.05 | 0.00 |
+| `tasks/assignment_with_constraints/relax_remove_v0.jsonl` | 4 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/assignment_with_constraints/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
 | `tasks/battery_scheduling/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.05 | 0.00 |
 | `tasks/battery_scheduling/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/battery_scheduling/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.05 | 0.00 |
@@ -41,6 +57,34 @@ The last two columns are *accuracy* (share of tasks answered correctly) of two p
 | `tasks/car_rental_2/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/car_rental_2/relax_remove_v0.jsonl` | 14 | 1.100 | 0.100 | 0.900 | 0.00 | 0.07 |
 | `tasks/car_rental_2/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
+| `tasks/covid19_facility_location/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/covid19_facility_location/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/covid19_facility_location/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/covid19_facility_location/infeasible_request_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/covid19_facility_location/logical_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/covid19_facility_location/new_limit_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/covid19_facility_location/objective_change_v0.jsonl` | 1 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/covid19_facility_location/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/covid19_facility_location/relax_remove_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/covid19_facility_location/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
+| `tasks/drone_network/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/drone_network/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.05 |
+| `tasks/drone_network/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/drone_network/infeasible_request_v0.jsonl` | 4 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/drone_network/logical_rule_v0.jsonl` | 15 | 1.100 | 0.100 | 0.900 | 0.13 | 0.00 |
+| `tasks/drone_network/new_limit_v0.jsonl` | 18 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/drone_network/objective_change_v0.jsonl` | 14 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/drone_network/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/drone_network/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
+| `tasks/economic_planning/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/economic_planning/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/economic_planning/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/economic_planning/infeasible_request_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/economic_planning/logical_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/economic_planning/new_limit_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/economic_planning/objective_change_v0.jsonl` | 14 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/economic_planning/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/economic_planning/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
 | `tasks/factory_planning/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/factory_planning/data_change_v0.jsonl` | 60 | 1.100 | 0.100 | 0.900 | 0.02 | 0.00 |
 | `tasks/factory_planning/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
@@ -61,6 +105,12 @@ The last two columns are *accuracy* (share of tasks answered correctly) of two p
 | `tasks/factory_planning_2/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/factory_planning_2/relax_remove_v0.jsonl` | 7 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/factory_planning_2/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
+| `tasks/fantasy_basketball/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/fantasy_basketball/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/fantasy_basketball/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/fantasy_basketball/logical_rule_v0.jsonl` | 4 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/fantasy_basketball/relative_rule_v0.jsonl` | 6 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/fantasy_basketball/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
 | `tasks/farm_planning/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.05 | 0.00 |
 | `tasks/farm_planning/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.05 | 0.05 |
 | `tasks/farm_planning/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.10 | 0.00 |
@@ -91,6 +141,15 @@ The last two columns are *accuracy* (share of tasks answered correctly) of two p
 | `tasks/food_supply/objective_change_v0.jsonl` | 4 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/food_supply/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/food_supply/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
+| `tasks/jobshop_ft06/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/jobshop_ft06/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/jobshop_ft06/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/jobshop_ft06/infeasible_request_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/jobshop_ft06/logical_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/jobshop_ft06/new_limit_v0.jsonl` | 13 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/jobshop_ft06/objective_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/jobshop_ft06/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/jobshop_ft06/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
 | `tasks/manpower_planning/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/manpower_planning/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.05 | 0.00 |
 | `tasks/manpower_planning/data_change_v0_nl.jsonl` | 3 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
@@ -124,6 +183,15 @@ The last two columns are *accuracy* (share of tasks answered correctly) of two p
 | `tasks/multiple_knapsack/relative_rule_v1.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/multiple_knapsack/relax_remove_v0.jsonl` | 1 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/multiple_knapsack/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
+| `tasks/optimize_power_schedule/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/optimize_power_schedule/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.05 |
+| `tasks/optimize_power_schedule/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.05 | 0.00 |
+| `tasks/optimize_power_schedule/infeasible_request_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/optimize_power_schedule/logical_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/optimize_power_schedule/new_limit_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.05 |
+| `tasks/optimize_power_schedule/objective_change_v0.jsonl` | 2 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/optimize_power_schedule/relative_rule_v0.jsonl` | 16 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/optimize_power_schedule/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
 | `tasks/power_generation_hydro/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/power_generation_hydro/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.10 | 0.00 |
 | `tasks/power_generation_hydro/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
@@ -133,15 +201,43 @@ The last two columns are *accuracy* (share of tasks answered correctly) of two p
 | `tasks/power_generation_hydro/objective_change_v1.jsonl` | 14 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/power_generation_hydro/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.10 | 0.00 |
 | `tasks/power_generation_hydro/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
+| `tasks/railway_dispatching/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/railway_dispatching/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/railway_dispatching/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.05 |
+| `tasks/railway_dispatching/infeasible_request_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/railway_dispatching/logical_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.05 | 0.00 |
+| `tasks/railway_dispatching/new_limit_v0.jsonl` | 8 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/railway_dispatching/objective_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/railway_dispatching/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/railway_dispatching/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
+| `tasks/single_machine_scheduling/chained_scenario_v0.jsonl` | 2 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/single_machine_scheduling/data_change_v0.jsonl` | 7 | 1.100 | 0.100 | 0.900 | 0.29 | 0.00 |
+| `tasks/single_machine_scheduling/fixed_decision_v0.jsonl` | 1 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/single_machine_scheduling/infeasible_request_v0.jsonl` | 18 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/single_machine_scheduling/new_limit_v0.jsonl` | 3 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/single_machine_scheduling/objective_change_v0.jsonl` | 8 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/single_machine_scheduling/under_specified_v0.jsonl` | 6 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
+| `tasks/technician_routing_scheduling/chained_scenario_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/technician_routing_scheduling/data_change_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/technician_routing_scheduling/fixed_decision_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.10 | 0.00 |
+| `tasks/technician_routing_scheduling/infeasible_request_v0.jsonl` | 2 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/technician_routing_scheduling/logical_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/technician_routing_scheduling/new_limit_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/technician_routing_scheduling/objective_change_v0.jsonl` | 15 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
+| `tasks/technician_routing_scheduling/relative_rule_v0.jsonl` | 20 | 1.100 | 0.100 | 0.900 | 0.00 | 0.05 |
+| `tasks/technician_routing_scheduling/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
 | `tasks/wedding_seating/chained_scenario_v0.jsonl` | 7 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/wedding_seating/data_change_v1.jsonl` | 5 | 1.100 | 0.100 | 0.900 | 0.20 | 0.00 |
 | `tasks/wedding_seating/relax_remove_v0.jsonl` | 1 | 1.100 | 0.100 | 0.900 | 0.00 | 0.00 |
 | `tasks/wedding_seating/under_specified_v0.jsonl` | 20 | 0.000 | 0.000 | 1.100 | 0.00 | 0.00 |
 
-Total tasks: **2239** in 131 files. Overall accuracy: nearest_example **0.017**, random_valid **0.001**.
+Total tasks: **3806** in 224 files. Overall accuracy: nearest_example **0.013**, random_valid **0.002**.
 
 ## Warnings
 
+- tasks/assignment_with_constraints/logical_rule_v0.jsonl / nearest_example: accuracy 0.13 (['assignment_with_constraints-logical_rule-000-0000', 'assignment_with_constraints-logical_rule-000-0008'])
+- tasks/drone_network/logical_rule_v0.jsonl / nearest_example: accuracy 0.13 (['drone_network-logical_rule-000-0010', 'drone_network-logical_rule-000-0013'])
+- tasks/single_machine_scheduling/data_change_v0.jsonl / nearest_example: accuracy 0.29 (['single_machine_scheduling-data_change-000-0002', 'single_machine_scheduling-data_change-000-0006'])
 - tasks/wedding_seating/data_change_v1.jsonl / nearest_example: accuracy 0.20 (['wedding_seating-data_change-001-0001'])
 
 No deviations from the expected rewards.
