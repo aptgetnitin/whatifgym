@@ -58,8 +58,8 @@ def l_never_both(rng, ctx: FamilyContext):
         return None
     label = _label(ctx, m)
     q = rng.choice([
-        f"What if we may not have both {label} for {_where(ctx, a)} and {label} for {_where(ctx, b)}?",
-        f"New rule: {_where(ctx, a)} and {_where(ctx, b)} cannot both have {label}. Re-plan.",
+        f"What if we may not have a non-zero {label} for both {_where(ctx, a)} and {_where(ctx, b)}?",
+        f"New rule: {_where(ctx, a)} and {_where(ctx, b)} cannot both have a non-zero {label}. Re-plan.",
     ])
     rule = {"at_least": 1, "of": [_cond(m, a, "<=", 0), _cond(m, b, "<=", 0)], "name": f"never_both_{m}"}
     return q, {"logic": [rule]}, {"measure": m, "a": a, "b": b}, "medium"
@@ -78,8 +78,8 @@ def l_none_or_batch(rng, ctx: FamilyContext):
         return None
     label = _label(ctx, m)
     q = rng.choice([
-        f"What if the {label} for {_where(ctx, scope)} must be either zero or at least {q_min}?",
-        f"Minimum batch: if there is any {label} for {_where(ctx, scope)}, it must be at least {q_min}.",
+        f"What if the total {label} for {_where(ctx, scope)} must be either zero or at least {q_min}?",
+        f"Minimum batch: if the total {label} for {_where(ctx, scope)} is above zero, it must be at least {q_min}.",
     ])
     rule = {"at_least": 1, "of": [_cond(m, scope, "<=", 0), _cond(m, scope, ">=", q_min)], "name": f"batch_{m}"}
     return q, {"logic": [rule]}, {"measure": m, "scope": scope, "min": q_min}, "medium"
@@ -103,8 +103,8 @@ def l_if_then(rng, ctx: FamilyContext):
         return None
     la, lb = _label(ctx, ma), _label(ctx, mb)
     q = rng.choice([
-        f"What if any {la} for {_where(ctx, a)} requires at least {q_min} {lb} for {_where(ctx, b)}?",
-        f"Suppose that if there is {la} for {_where(ctx, a)}, the {lb} for {_where(ctx, b)} must be at least {q_min}.",
+        f"What if a non-zero {la} for {_where(ctx, a)} requires a total {lb} of at least {q_min} for {_where(ctx, b)}?",
+        f"Suppose that if the {la} for {_where(ctx, a)} is above zero, the total {lb} for {_where(ctx, b)} must be at least {q_min}.",
     ])
     rule = {"at_least": 1, "of": [_cond(ma, a, "<=", 0), _cond(mb, b, ">=", q_min)], "name": f"if_{ma}_then_{mb}"}
     return q, {"logic": [rule]}, {"if": [ma, a], "then": [mb, b], "min": q_min}, "hard"
@@ -117,6 +117,8 @@ def l_at_most_k(rng, ctx: FamilyContext):
         return None
     m = rng.choice(measures)
     dims = ctx.model.MEASURE_DIMS[m]
+    if any(d.startswith("other_") for d in dims):
+        return None  # an ordering decision exists for one order of each pair only, so "job J4" would cover part of its pairs
     dim = rng.choice(list(dims))
     active = [v for v in ctx.dim_values(m, dim) if ctx.measure_sum(m, {dim: v}) > 1e-6]
     if len(active) < 3:
@@ -127,8 +129,8 @@ def l_at_most_k(rng, ctx: FamilyContext):
     label, dl = _label(ctx, m), ctx.dim_label(dim)
     names = ", ".join(str(v) for v in picked[:-1]) + f" and {picked[-1]}"
     q = rng.choice([
-        f"What if at most {k} of {dl} {names} may have any {label}?",
-        f"Only {k} of these may have {label}: {dl} {names}. Re-plan.",
+        f"What if at most {k} of {dl} {names} may have a non-zero {label}?",
+        f"Only {k} of these may have a non-zero {label}: {dl} {names}. Re-plan.",
     ])
     rule = {"at_least": n - k, "of": [_cond(m, {dim: v}, "<=", 0) for v in picked], "name": f"at_most_{k}_{m}"}
     return q, {"logic": [rule]}, {"measure": m, "dim": dim, "values": picked, "k": k}, "hard"

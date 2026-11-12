@@ -76,7 +76,7 @@ def t_demand_set(rng, ctx):
     q = rng.choice([
         f"What if we can sell at most {v} units of {r['product']} in {MONTH_NAMES[r['month']]}?",
         f"The market limit for {r['product']} in {MONTH_NAMES[r['month']]} becomes {v} units.",
-        f"Cap {r['product']} sales in {MONTH_NAMES[r['month']]} at {v}.",
+        f"Set the market limit for {r['product']} sales in {MONTH_NAMES[r['month']]} to {v}.",
     ])
     sc = {"data_changes": [{"op": "set", "table": "max_sales", "column": "max_sales",
                             "where": {"product": r["product"], "month": r["month"]}, "value": v}]}

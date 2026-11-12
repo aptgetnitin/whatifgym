@@ -59,7 +59,7 @@ def f_fix_zero(rng, ctx: FamilyContext):
     scope = _index_dict(ctx, m, key)
     label = _label(ctx, m)
     if _is_binary(ctx, m):
-        q = rng.choice([f"What if {_describe(ctx, scope)} is ruled out (fix that {label} decision to 0)?",
+        q = rng.choice([f"What if {_describe(ctx, scope)} is ruled out (the {label} there is fixed at 0)?",
                         f"Suppose we decide against {_describe(ctx, scope)}: set its {label} to 0 and re-plan."])
     else:
         q = rng.choice([f"What if there is no {label} at all for {_describe(ctx, scope)} (fixed at zero)?",
@@ -77,7 +77,7 @@ def f_force_one(rng, ctx: FamilyContext):
     key, _ = rng.choice(_entries(ctx, m, positive=False))
     scope = _index_dict(ctx, m, key)
     label = _label(ctx, m)
-    q = rng.choice([f"What if {_describe(ctx, scope)} must happen (fix that {label} decision to 1)?",
+    q = rng.choice([f"What if {_describe(ctx, scope)} is forced (the {label} there is fixed at 1)?",
                     f"Suppose we commit to {_describe(ctx, scope)}: set its {label} to 1 and optimise the rest."])
     fd = {"measure": m, "scope": scope, "value": 1}
     return q, {"fixed_decisions": [fd]}, {"measure": m, "scope": scope, "value": 1, "base": 0}, "medium"

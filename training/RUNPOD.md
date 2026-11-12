@@ -208,6 +208,45 @@ Training reward 0.637 (steps 1–10) to 0.975 (steps 71–80). The pod idled 30 
 
 **Run 4, all three seeds, held-out base models:** 55.0/56.0/56.0 % before, 68.0/67.0/66.0 % after; mean gain **+11.3 points** (sd 1.5); every seed p ≤ 1.1e-5.
 
+## Untrained-model comparison on a pod (Nov 12)
+
+Not training: the four local Ollama models answer every current task (3,806 tasks in 224 files, 25 base models) so the comparison table covers the 11 newest models and the Nov 1 prompt. On the Mac this would take over a day (5 files took 30 min), so it runs on one pod. Budget cap from the user: $4.
+
+Before the pod, on the Mac:
+
+```bash
+git mv results/baselines/local results/archive/local_2026-10    # October results (14 models, old prompt) kept, out of the way
+python scripts/make_audit_pack.py                                # the 200-task hand-audit sample -> audit/audit_v1.{md,csv,jsonl}
+# scripts/run_local_baselines.py gained --jobs N (N task files at once); tested on 4 tasks; pushed as a4032b9
+```
+
+Pod `fapbrfssre299k`, `whatifgym-ladder`: RTX 5090 (32 GB), 32 vCPU, EU-RO-1, secure cloud, host CUDA 13.2, **$1.39/hr**, image `runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404`, 60 GB disk, no volume, port `8000/http` (to copy the results back). Created 2026-11-12 21:52:56 UTC (1:52 PM Pacific), after four creates were refused for capacity. $4 buys 2 h 52 min: terminate by 00:45 UTC (4:45 PM Pacific) whatever the state.
+
+Driven with the plugin's `exec-pod` (no SSH). Set-up, about 2.5 min:
+
+```bash
+apt-get install -y zstd pciutils
+curl -fsSL https://ollama.com/install.sh | OLLAMA_VERSION=0.35.1 sh      # the Mac's Ollama version
+OLLAMA_NUM_PARALLEL=8 OLLAMA_KEEP_ALIVE=30m nohup ollama serve &
+ollama pull qwen3:4b && ollama pull qwen3:8b && ollama pull qwen3:14b && ollama pull gpt-oss:20b
+git clone --depth 1 https://github.com/aptgetnitin/whatifgym && cd whatifgym    # a4032b9
+python3 -m venv .venv && .venv/bin/pip install -e .
+python3 -m http.server 8000 --directory results/baselines &                  # results are public data; the URL is unauthenticated
+```
+
+The run, one model after the other (the server is restarted with the matching `OLLAMA_NUM_PARALLEL` before each):
+
+```bash
+.venv/bin/python scripts/run_local_baselines.py --models qwen3:4b    --jobs 8
+.venv/bin/python scripts/run_local_baselines.py --models qwen3:8b    --jobs 8
+.venv/bin/python scripts/run_local_baselines.py --models qwen3:14b   --jobs 4
+.venv/bin/python scripts/run_local_baselines.py --models gpt-oss:20b --jobs 4
+```
+
+The three qwen3 tags have the same ids as on the Mac (`359d7dd4bcda`, `500a1f067a9f`, `bdbd181c33f2`). `gpt-oss:20b` is `f38aa0c53da5` on the pod and `17052f91a42e` on the Mac (pulled 5 weeks earlier): the tag was updated, so its numbers are not comparable with October's. All four models of the new table come from the pod.
+
+Timeline (UTC): 21:52:56 pod created; 21:55:25 qwen3:4b starts.
+
 ## Problems hit, in order
 
 1. `check_gpu.py` said `not sm_89` on the RTX 4090: a false alarm, fixed in `da6e3a8` (an `sm_86` build runs on `sm_89`).

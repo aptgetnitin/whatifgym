@@ -62,7 +62,7 @@ def r_two_values(rng, ctx: FamilyContext):
         return None
     label, dl = _label(ctx, measure), ctx.dim_label(dim)
     q = rng.choice([
-        f"What if the {label} for {dl} {a} may be at {'most' if sense == '<=' else 'least'} {_ratio_phrase(f)} the {label} for {dl} {b}?",
+        f"What if the {label} for {dl} {a} {'may be at most' if sense == '<=' else 'must be at least'} {_ratio_phrase(f)} the {label} for {dl} {b}?",
         f"New policy: the {label} for {dl} {a} must be at {'most' if sense == '<=' else 'least'} {_ratio_phrase(f)} the {label} for {dl} {b}.",
     ])
     rule = _rel_rule(measure, {dim: a}, sense, measure, {dim: b}, f, f"rel_{measure}_{a}_vs_{b}")
@@ -86,7 +86,7 @@ def r_share_of_total(rng, ctx: FamilyContext):
     pct = int(round(f * 100))
     q = rng.choice([
         f"What if {dl} {a} must account for at {'most' if sense == '<=' else 'least'} {pct}% of all {label}?",
-        f"Suppose at {'most' if sense == '<=' else 'least'} {pct}% of the total {label} may go to {dl} {a}.",
+        f"Suppose at {'most' if sense == '<=' else 'least'} {pct}% of the total {label} {'may' if sense == '<=' else 'must'} go to {dl} {a}.",
     ])
     rule = _rel_rule(measure, {dim: a}, sense, measure, {}, f, f"share_{measure}_{a}")
     return q, {"rules": [rule]}, {"measure": measure, "dim": dim, "a": a, "factor": f, "sense": sense}, "medium"
@@ -107,7 +107,7 @@ def r_two_measures(rng, ctx: FamilyContext):
         return None
     la, lb = _label(ctx, a), _label(ctx, b)
     q = rng.choice([
-        f"What if the total {la} may be at {'most' if sense == '<=' else 'least'} {_ratio_phrase(f)} the total {lb}?",
+        f"What if the total {la} {'may be at most' if sense == '<=' else 'must be at least'} {_ratio_phrase(f)} the total {lb}?",
         f"Keep the total {la} at {'or below' if sense == '<=' else 'or above'} {_ratio_phrase(f)} the total {lb}. Effect on the plan?",
     ])
     rule = _rel_rule(a, {}, sense, b, {}, f, f"rel_{a}_vs_{b}")
@@ -119,7 +119,8 @@ GENERIC_TEMPLATES = {"r_two_values": r_two_values, "r_share_of_total": r_share_o
 
 def _clause(question: str) -> str:
     first = re.split(r"[?.!](?:\s|$)", question, maxsplit=1)[0]
-    first = re.sub(r"^(What if|Suppose|New policy:|Keep)\s+", "", first).strip().rstrip("?.,;")
+    first = re.sub(r"^Keep\s+", "we keep ", first)   # "Keep the total X at or below ..." needs its verb inside a two-part question
+    first = re.sub(r"^(What if|Suppose|New policy:)\s+", "", first).strip().rstrip("?.,;")
     if first and first.split(" ", 1)[0] in {"The", "At"}:
         first = first[0].lower() + first[1:]
     return first

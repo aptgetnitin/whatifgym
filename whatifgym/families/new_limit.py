@@ -234,7 +234,7 @@ def g_cap_measure_total(rng, ctx):
     label = _label(ctx, measure)
     q = rng.choice([
         f"What if the total {label}, summed over everything, may not exceed {cap}?",
-        f"An overall cap of {cap} applies to the {label} in total.",
+        f"An overall cap of {cap} applies to the {label}, summed over everything.",
     ])
     return q, {"rules": [_rule(measure, {}, "<=", cap, f"cap_{measure}_total")]}, {"measure": measure, "cap": cap}, "easy"
 

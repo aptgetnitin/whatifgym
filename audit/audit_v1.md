@@ -99,7 +99,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *airline_planning · logical_rule · template `l_never_both` · medium*
 
-**Question:** New rule: flight 4577 and flight 4576 cannot both have number of flights operated. Re-plan.
+**Question:** New rule: flight 4577 and flight 4576 cannot both have a non-zero number of flights operated. Re-plan.
 
 **Gold scenario:**
 
@@ -194,7 +194,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *assignment_with_constraints · fixed_decision · template `f_fix_zero` · easy*
 
-**Question:** What if worker worker_1 is ruled out (fix that number of workers working decision to 0)?
+**Question:** What if worker worker_1 is ruled out (the number of workers working there is fixed at 0)?
 
 **Gold scenario:**
 
@@ -220,7 +220,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *assignment_with_constraints · logical_rule · template `l_if_then` · hard*
 
-**Question:** What if any number of workers working for worker worker_10 requires at least 2 number of workers working for worker worker_1?
+**Question:** What if a non-zero number of workers working for worker worker_10 requires a total number of workers working of at least 2 for worker worker_1?
 
 **Gold scenario:**
 
@@ -257,48 +257,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 239 → 261; total_cost 261, assignments 6, workers_used 6, max_worker_load 15, extra_assignments 0
 
-### 9. `assignment_with_constraints-logical_rule-000-0004`
-
-*assignment_with_constraints · logical_rule · template `l_never_both` · medium*
-
-**Question:** New rule: team team_10_11 and team team_5_6 cannot both have number of teams chosen. Re-plan.
-
-**Gold scenario:**
-
-```json
-{
- "logic": [
-  {
-   "at_least": 1,
-   "of": [
-    {
-     "measure": "team",
-     "scope": {
-      "team": "team_10_11"
-     },
-     "sense": "<=",
-     "value": 0
-    },
-    {
-     "measure": "team",
-     "scope": {
-      "team": "team_5_6"
-     },
-     "sense": "<=",
-     "value": 0
-    }
-   ],
-   "name": "never_both_team"
-  }
- ],
- "version": "0.1",
- "base_model": "assignment_with_constraints"
-}
-```
-
-**Result:** objective 239 → 249; total_cost 249, assignments 6, workers_used 6, max_worker_load 15, extra_assignments 0
-
-### 10. `assignment_with_constraints-new_limit-000-0001`
+### 9. `assignment_with_constraints-new_limit-000-0001`
 
 *assignment_with_constraints · new_limit · template `g_floor_measure_scope` · medium*
 
@@ -325,6 +284,34 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 ```
 
 **Result:** objective 239 → 322; total_cost 322, assignments 7, workers_used 6, max_worker_load 15, extra_assignments 1
+
+### 10. `assignment_with_constraints-new_limit-000-0004`
+
+*assignment_with_constraints · new_limit · template `g_floor_measure_scope` · medium*
+
+**Question:** Add a requirement: the number of task assignments, summed over everything with worker = worker_1, must be at least 2.
+
+**Gold scenario:**
+
+```json
+{
+ "rules": [
+  {
+   "measure": "assign",
+   "scope": {
+    "worker": "worker_1"
+   },
+   "sense": ">=",
+   "value": 2,
+   "name": "floor_assign_worker_1"
+  }
+ ],
+ "version": "0.1",
+ "base_model": "assignment_with_constraints"
+}
+```
+
+**Result:** objective 239 → 274; total_cost 274, assignments 7, workers_used 6, max_worker_load 15, extra_assignments 1
 
 ### 11. `assignment_with_constraints-under_specified-000-0007`
 
@@ -499,7 +486,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *battery_scheduling · logical_rule · template `l_never_both` · medium*
 
-**Question:** What if we may not have both battery stored energy (kWh) for hour 15-16 and battery stored energy (kWh) for hour 18-19?
+**Question:** What if we may not have a non-zero battery stored energy (kWh) for both hour 15-16 and hour 18-19?
 
 **Gold scenario:**
 
@@ -540,7 +527,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *battery_scheduling · new_limit · template `g_cap_measure_total` · easy*
 
-**Question:** An overall cap of 140 applies to the battery stored energy (kWh) in total.
+**Question:** An overall cap of 140 applies to the battery stored energy (kWh), summed over everything.
 
 **Gold scenario:**
 
@@ -592,13 +579,45 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.566 → 10.8; profit 1.566, export_revenue 2.66, import_cost 1.094, energy_charged_kwh 7.812, energy_discharged_kwh 7.2
 
-### 20. `battery_scheduling-under_specified-000-0013`
+### 20. `battery_scheduling-relative_rule-000-0016`
+
+*battery_scheduling · relative_rule · template `r_share_of_total` · medium*
+
+**Question:** Suppose at most 60% of the total battery discharging power (kW) may go to hour 21-22.
+
+**Gold scenario:**
+
+```json
+{
+ "rules": [
+  {
+   "measure": "discharge",
+   "scope": {
+    "hour": "21-22"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "discharge",
+    "scope": {}
+   },
+   "factor": 0.6,
+   "name": "share_discharge_21-22"
+  }
+ ],
+ "version": "0.1",
+ "base_model": "battery_scheduling"
+}
+```
+
+**Result:** objective 1.566 → 1.528; profit 1.528, export_revenue 2.819, import_cost 1.291, energy_charged_kwh 9.042, energy_discharged_kwh 8.333
+
+### 21. `battery_scheduling-under_specified-000-0013`
 
 *battery_scheduling · under_specified · template `ask_g_cap_measure_total` · medium*
 
 **Question:** There is going to be an upper limit on battery discharging power (kW). How does the plan change?
 
-**Planner's answer when asked:** An overall cap of 6.5 applies to the battery discharging power (kW) in total.
+**Planner's answer when asked:** An overall cap of 6.5 applies to the battery discharging power (kW), summed over everything.
 
 **Gold scenario:**
 
@@ -620,7 +639,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.566 → 1.463; profit 1.463, export_revenue 2.45, import_cost 0.9874, energy_charged_kwh 7.053, energy_discharged_kwh 6.5
 
-### 21. `battery_scheduling-under_specified-000-0015`
+### 22. `battery_scheduling-under_specified-000-0015`
 
 *battery_scheduling · under_specified · template `ask_g_cap_measure_scope` · medium*
 
@@ -650,7 +669,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.566 → 1.53; profit 1.53, export_revenue 2.66, import_cost 1.13, energy_charged_kwh 7.812, energy_discharged_kwh 7.2
 
-### 22. `bin_packing-data_change-000-0009`
+### 23. `bin_packing-data_change-000-0009`
 
 *bin_packing · data_change · template `g_scale_column` · medium*
 
@@ -678,7 +697,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4 → 4; bins_used 4, total_weight 360.5, min_bins_by_weight 4
 
-### 23. `bin_packing-data_change-000-0019`
+### 24. `bin_packing-data_change-000-0019`
 
 *bin_packing · data_change · template `g_scale_column` · medium*
 
@@ -706,7 +725,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4 → 4; bins_used 4, total_weight 376.8, min_bins_by_weight 4
 
-### 24. `car_rental-chained_scenario-000-0010`
+### 25. `car_rental-chained_scenario-000-0010`
 
 *car_rental · chained_scenario · template `c_revise` · hard*
 
@@ -738,7 +757,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.212e+05 → 1.014e+05; profit 1.014e+05, rental_contribution 1.103e+05, transfer_cost 1,469, fleet_cost 7,419, fleet_size 494.6
 
-### 25. `car_rental-data_change-000-0013`
+### 26. `car_rental-data_change-000-0013`
 
 *car_rental · data_change · template `g_scale_column` · medium*
 
@@ -766,7 +785,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.212e+05 → 1.229e+05; profit 1.229e+05, rental_contribution 1.34e+05, transfer_cost 1,904, fleet_cost 9,250, fleet_size 616.7
 
-### 26. `car_rental-fixed_decision-000-0003`
+### 27. `car_rental-fixed_decision-000-0003`
 
 *car_rental · fixed_decision · template `f_fix_scope` · hard*
 
@@ -792,7 +811,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.212e+05 → 1.207e+05; profit 1.207e+05, rental_contribution 1.323e+05, transfer_cost 2,330, fleet_cost 9,259, fleet_size 617.3
 
-### 27. `car_rental-fixed_decision-000-0013`
+### 28. `car_rental-fixed_decision-000-0013`
 
 *car_rental · fixed_decision · template `combo` · hard*
 
@@ -827,11 +846,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.212e+05 → 1.211e+05; profit 1.211e+05, rental_contribution 1.323e+05, transfer_cost 1,918, fleet_cost 9,287, fleet_size 619.1
 
-### 28. `car_rental-logical_rule-000-0010`
+### 29. `car_rental-logical_rule-000-0010`
 
 *car_rental · logical_rule · template `l_at_most_k` · hard*
 
-**Question:** Only 1 of these may have cars repaired: day Monday, Tuesday and Friday. Re-plan.
+**Question:** Only 1 of these may have a non-zero cars repaired: day Monday, Tuesday and Friday. Re-plan.
 
 **Gold scenario:**
 
@@ -876,11 +895,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.212e+05 → 8.086e+04; profit 8.086e+04, rental_contribution 8.821e+04, transfer_cost 1,269, fleet_cost 6,080, fleet_size 405.3
 
-### 29. `car_rental-logical_rule-000-0018`
+### 30. `car_rental-logical_rule-000-0018`
 
 *car_rental · logical_rule · template `l_if_then` · hard*
 
-**Question:** What if any cars rented out for day Saturday requires at least 118 cars rented out for day Tuesday, depot Manchester?
+**Question:** What if a non-zero cars rented out for day Saturday requires a total cars rented out of at least 118 for day Tuesday, depot Manchester?
 
 **Gold scenario:**
 
@@ -918,7 +937,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.212e+05 → 1.211e+05; profit 1.211e+05, rental_contribution 1.323e+05, transfer_cost 1,904, fleet_cost 9,355, fleet_size 623.6
 
-### 30. `car_rental-new_limit-000-0016`
+### 31. `car_rental-new_limit-000-0016`
 
 *car_rental · new_limit · template `g_floor_measure_scope` · medium*
 
@@ -946,7 +965,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.212e+05 → 1.209e+05; profit 1.209e+05, rental_contribution 1.323e+05, transfer_cost 1,904, fleet_cost 9,530, fleet_size 635.4
 
-### 31. `car_rental-new_limit-000-0019`
+### 32. `car_rental-new_limit-000-0019`
 
 *car_rental · new_limit · template `combo` · hard*
 
@@ -982,36 +1001,6 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 ```
 
 **Result:** objective 1.212e+05 → 1.18e+05; profit 1.18e+05, rental_contribution 1.289e+05, transfer_cost 1,885, fleet_cost 8,936, fleet_size 595.7
-
-### 32. `car_rental-relative_rule-000-0017`
-
-*car_rental · relative_rule · template `r_two_measures` · medium*
-
-**Question:** Keep the total cars repaired at or above 2 times the total undamaged cars kept at the depot overnight. Effect on the plan?
-
-**Gold scenario:**
-
-```json
-{
- "rules": [
-  {
-   "measure": "repairs",
-   "scope": {},
-   "sense": ">=",
-   "relative_to": {
-    "measure": "undamaged_left",
-    "scope": {}
-   },
-   "factor": 2.0,
-   "name": "rel_repairs_vs_undamaged_left"
-  }
- ],
- "version": "0.1",
- "base_model": "car_rental"
-}
-```
-
-**Result:** objective 1.212e+05 → 1.21e+05; profit 1.21e+05, rental_contribution 1.323e+05, transfer_cost 2,230, fleet_cost 9,126, fleet_size 608.4
 
 ### 33. `car_rental_2-chained_scenario-000-0005`
 
@@ -1051,7 +1040,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *car_rental_2 · chained_scenario · template `c_add` · medium*
 
-**Earlier question:** An overall cap of 50 applies to the undamaged cars transferred in total.
+**Earlier question:** An overall cap of 50 applies to the undamaged cars transferred, summed over everything.
 
 ```json
 {"version": "0.1", "base_model": "car_rental_2", "rules": [{"measure": "undamaged_transfers", "scope": {}, "sense": "<=", "value": 50, "name": "cap_undamaged_transfers_total"}]}
@@ -1219,34 +1208,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** infeasible; conflicting constraints: repair_capacity_Friday_Birmingham
 
-### 39. `car_rental_2-objective_change-001-0005`
-
-*car_rental_2 · objective_change · template `o_reorder` · medium*
-
-**Question:** What if the least possible total undamaged cars transferred comes first and weekly profit only second?
-
-**Gold scenario:**
-
-```json
-{
- "objective": [
-  {
-   "sense": "min",
-   "measure": "undamaged_transfers"
-  },
-  {
-   "sense": "max",
-   "measure": "original"
-  }
- ],
- "version": "0.1",
- "base_model": "car_rental_2"
-}
-```
-
-**Result:** objective 1.323e+05 → 1.314e+05; profit 1.314e+05, rental_contribution 1.733e+05, transfer_cost 3,553, fleet_cost 1.332e+04, fleet_size 888.3, expansion_cost 2.5e+04
-
-### 40. `car_rental_2-objective_change-001-0018`
+### 39. `car_rental_2-objective_change-001-0018`
 
 *car_rental_2 · objective_change · template `o_then_scoped` · medium*
 
@@ -1276,11 +1238,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.323e+05 → 427.1; profit 1.323e+05, rental_contribution 1.943e+05, transfer_cost 3,230, fleet_cost 1.475e+04, fleet_size 983.3, expansion_cost 4.4e+04
 
-### 41. `car_rental_2-relative_rule-000-0016`
+### 40. `car_rental_2-relative_rule-000-0016`
 
 *car_rental_2 · relative_rule · template `r_share_of_total` · medium*
 
-**Question:** Suppose at least 60% of the total damaged cars transferred may go to return depot Manchester.
+**Question:** Suppose at least 60% of the total damaged cars transferred must go to return depot Manchester.
 
 **Gold scenario:**
 
@@ -1308,7 +1270,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.323e+05 → 1.25e+05; profit 1.25e+05, rental_contribution 1.854e+05, transfer_cost 2,413, fleet_cost 1.403e+04, fleet_size 935.6, expansion_cost 4.4e+04
 
-### 42. `car_rental_2-relax_remove-000-0002`
+### 41. `car_rental_2-relax_remove-000-0002`
 
 *car_rental_2 · relax_remove · template `x_scoped` · hard*
 
@@ -1336,7 +1298,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.323e+05 → 1.976e+05; profit 1.976e+05, rental_contribution 2.249e+05, transfer_cost 9,748, fleet_cost 1.762e+04, fleet_size 1,175, expansion_cost 0
 
-### 43. `car_rental_2-under_specified-000-0003`
+### 42. `car_rental_2-under_specified-000-0003`
 
 *car_rental_2 · under_specified · template `ask_g_param` · medium*
 
@@ -1362,7 +1324,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.323e+05 → 1.267e+05; profit 1.267e+05, rental_contribution 1.887e+05, transfer_cost 3,230, fleet_cost 1.475e+04, fleet_size 983.4, expansion_cost 4.4e+04
 
-### 44. `car_rental_2-under_specified-000-0018`
+### 43. `car_rental_2-under_specified-000-0018`
 
 *car_rental_2 · under_specified · template `ask_g_scale_all_rows` · medium*
 
@@ -1389,7 +1351,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.323e+05 → 1.102e+05; profit 1.102e+05, rental_contribution 1.521e+05, transfer_cost 4,121, fleet_cost 1.279e+04, fleet_size 852.4, expansion_cost 2.5e+04
 
-### 45. `covid19_facility_location-chained_scenario-000-0004`
+### 44. `covid19_facility_location-chained_scenario-000-0004`
 
 *covid19_facility_location · chained_scenario · template `c_undo` · hard*
 
@@ -1426,7 +1388,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.522e+06 → 3.026e+06; total_cost 3.026e+06, build_cost 3e+06, travel_cost 2.571e+04, temporary_built 6, extra_beds_added 0, patients_at_temporary 600
 
-### 46. `covid19_facility_location-chained_scenario-000-0007`
+### 45. `covid19_facility_location-chained_scenario-000-0007`
 
 *covid19_facility_location · chained_scenario · template `c_revise` · hard*
 
@@ -1460,7 +1422,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.522e+06 → 2.021e+06; total_cost 2.021e+06, build_cost 2e+06, travel_cost 2.133e+04, temporary_built 4, extra_beds_added 0, patients_at_temporary 400
 
-### 47. `covid19_facility_location-data_change-000-0002`
+### 46. `covid19_facility_location-data_change-000-0002`
 
 *covid19_facility_location · data_change · template `g_scale_all_rows` · medium*
 
@@ -1485,7 +1447,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.522e+06 → 1.265e+04; total_cost 1.265e+04, build_cost 0, travel_cost 1.265e+04, temporary_built 0, extra_beds_added 0, patients_at_temporary 0
 
-### 48. `covid19_facility_location-data_change-000-0012`
+### 47. `covid19_facility_location-data_change-000-0012`
 
 *covid19_facility_location · data_change · template `g_scale_column` · medium*
 
@@ -1513,7 +1475,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.522e+06 → 1.522e+06; total_cost 1.522e+06, build_cost 1.5e+06, travel_cost 2.214e+04, temporary_built 3, extra_beds_added 0, patients_at_temporary 300
 
-### 49. `covid19_facility_location-infeasible_request-000-0009`
+### 48. `covid19_facility_location-infeasible_request-000-0009`
 
 *covid19_facility_location · infeasible_request · template `i_commit` · medium*
 
@@ -1540,11 +1502,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** infeasible; conflicting constraints: demand_C5
 
-### 50. `covid19_facility_location-logical_rule-000-0019`
+### 49. `covid19_facility_location-logical_rule-000-0019`
 
 *covid19_facility_location · logical_rule · template `l_none_or_batch` · medium*
 
-**Question:** What if the patients assigned for facility E10 must be either zero or at least 310?
+**Question:** What if the total patients assigned for facility E10 must be either zero or at least 310?
 
 **Gold scenario:**
 
@@ -1581,7 +1543,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.522e+06 → 2.021e+06; total_cost 2.021e+06, build_cost 2e+06, travel_cost 2.112e+04, temporary_built 4, extra_beds_added 0, patients_at_temporary 400
 
-### 51. `covid19_facility_location-new_limit-000-0010`
+### 50. `covid19_facility_location-new_limit-000-0010`
 
 *covid19_facility_location · new_limit · template `g_cap_measure_scope` · medium*
 
@@ -1608,6 +1570,28 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 ```
 
 **Result:** objective 1.522e+06 → 2.021e+06; total_cost 2.021e+06, build_cost 2e+06, travel_cost 2.129e+04, temporary_built 4, extra_beds_added 0, patients_at_temporary 400
+
+### 51. `covid19_facility_location-relax_remove-000-0002`
+
+*covid19_facility_location · relax_remove · template `x_full` · easy*
+
+**Question:** Suppose we drop the bed-capacity limit of the facilities. How does the plan change?
+
+**Gold scenario:**
+
+```json
+{
+ "relax": [
+  {
+   "constraint": "capacity"
+  }
+ ],
+ "version": "0.1",
+ "base_model": "covid19_facility_location"
+}
+```
+
+**Result:** objective 1.522e+06 → 1.018e+04; total_cost 1.018e+04, build_cost 0, travel_cost 1.018e+04, temporary_built 0, extra_beds_added 0, patients_at_temporary 234
 
 ### 52. `covid19_facility_location-under_specified-000-0003`
 
@@ -1669,7 +1653,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *drone_network · fixed_decision · template `f_fix_zero` · easy*
 
-**Question:** What if incident location 3800 JEFFERSON BL, drone base 3769 E. STRATFORD ROAD Rescue Squad is ruled out (fix that number of incident locations assigned to a base decision to 0)?
+**Question:** What if incident location 3800 JEFFERSON BL, drone base 3769 E. STRATFORD ROAD Rescue Squad is ruled out (the number of incident locations assigned to a base there is fixed at 0)?
 
 **Gold scenario:**
 
@@ -1696,7 +1680,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *drone_network · logical_rule · template `l_if_then` · hard*
 
-**Question:** Suppose that if there is number of drone bases opened for drone base 21 MUNICIPAL CTR Fire Station, the number of incident locations assigned to a base for incident location 1000 BELVOIR LA, drone base 5145 RURITAN COURT Rescue Squad must be at least 2.
+**Question:** Suppose that if the number of drone bases opened for drone base 21 MUNICIPAL CTR Fire Station is above zero, the total number of incident locations assigned to a base for incident location 1000 BELVOIR LA, drone base 5145 RURITAN COURT Rescue Squad must be at least 2.
 
 **Gold scenario:**
 
@@ -2027,7 +2011,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *economic_planning · relative_rule · template `combo` · hard*
 
-**Question:** What if the output produced (million USD) for year 5 must be at most 25% of the output produced (million USD) for year 3, and in addition the total capacity built (million USD/year) may be at least 50% of the total output produced (million USD)?
+**Question:** What if the output produced (million USD) for year 5 must be at most 25% of the output produced (million USD) for year 3, and in addition the total capacity built (million USD/year) must be at least 50% of the total output produced (million USD)?
 
 **Gold scenario:**
 
@@ -2269,7 +2253,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *factory_planning · data_change · template `demand_set` · easy*
 
-**Question:** Cap Prod1 sales in January at 600.
+**Question:** Set the market limit for Prod1 sales in January to 600.
 
 **Gold scenario:**
 
@@ -2385,7 +2369,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *factory_planning · logical_rule · template `l_if_then` · hard*
 
-**Question:** What if any units sold for month Apr, product Prod5 requires at least 200 units sold for month May, product Prod4?
+**Question:** What if a non-zero units sold for month Apr, product Prod5 requires a total units sold of at least 200 for month May, product Prod4?
 
 **Gold scenario:**
 
@@ -2460,7 +2444,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *factory_planning · relative_rule · template `combo` · hard*
 
-**Question:** Two relative limits at once: product Prod5 must account for at least 75% of all units made; and the total units sold at or below 2 times the total units in stock.
+**Question:** Two relative limits at once: product Prod5 must account for at least 75% of all units made; and we keep the total units sold at or below 2 times the total units in stock.
 
 **Gold scenario:**
 
@@ -2635,7 +2619,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *factory_planning_2 · logical_rule · template `l_none_or_batch` · medium*
 
-**Question:** What if the units sold for month Jan, product Prod5 must be either zero or at least 1200?
+**Question:** What if the total units sold for month Jan, product Prod5 must be either zero or at least 1200?
 
 **Gold scenario:**
 
@@ -2678,7 +2662,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *factory_planning_2 · logical_rule · template `l_if_then` · hard*
 
-**Question:** What if any units sold for month Feb, product Prod3 requires at least 200 units sold for month May, product Prod2?
+**Question:** What if a non-zero units sold for month Feb, product Prod3 requires a total units sold of at least 200 for month May, product Prod2?
 
 **Gold scenario:**
 
@@ -2807,7 +2791,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *factory_planning_2 · relative_rule · template `r_two_measures` · medium*
 
-**Question:** What if the total units made may be at least 2 times the total units sold?
+**Question:** What if the total units made must be at least 2 times the total units sold?
 
 **Gold scenario:**
 
@@ -3022,7 +3006,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *fantasy_basketball · fixed_decision · template `f_force_one` · medium*
 
-**Question:** What if player Russell Westbrook must happen (fix that number of players picked decision to 1)?
+**Question:** What if player Russell Westbrook is forced (the number of players picked there is fixed at 1)?
 
 **Gold scenario:**
 
@@ -3348,7 +3332,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *farm_planning · relative_rule · template `r_two_values` · medium*
 
-**Question:** What if the tons of grain grown for year Year2 may be at least 1.25 times the tons of grain grown for year Year5?
+**Question:** What if the tons of grain grown for year Year2 must be at least 1.25 times the tons of grain grown for year Year5?
 
 **Gold scenario:**
 
@@ -3384,7 +3368,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Question:** Suppose the tons of sugar beet sold gets capped.
 
-**Planner's answer when asked:** An overall cap of 170 applies to the tons of sugar beet sold in total.
+**Planner's answer when asked:** An overall cap of 170 applies to the tons of sugar beet sold, summed over everything.
 
 **Gold scenario:**
 
@@ -3446,7 +3430,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 {"version": "0.1", "base_model": "food_manufacture", "data_changes": [{"op": "set", "table": "oils", "column": "hardness", "where": {"oil": "VEG1"}, "value": 17.6}]}
 ```
 
-**Question:** On top of that: An overall cap of 1350 applies to the tons of oil bought in total.
+**Question:** On top of that: An overall cap of 1350 applies to the tons of oil bought, summed over everything.
 
 **Gold scenario:**
 
@@ -3630,7 +3614,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *food_manufacture · logical_rule · template `l_none_or_batch` · medium*
 
-**Question:** Minimum batch: if there is any tons of oil in storage for oil OIL1, it must be at least 4500.
+**Question:** Minimum batch: if the total tons of oil in storage for oil OIL1 is above zero, it must be at least 4500.
 
 **Gold scenario:**
 
@@ -3671,7 +3655,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *food_manufacture · logical_rule · template `l_at_most_k` · hard*
 
-**Question:** What if at most 2 of month Feb, Jan, May and Mar may have any tons of oil refined?
+**Question:** What if at most 2 of month Feb, Jan, May and Mar may have a non-zero tons of oil refined?
 
 **Gold scenario:**
 
@@ -3728,7 +3712,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *food_manufacture · logical_rule · template `l_never_both` · medium*
 
-**Question:** New rule: month Jun and month Apr cannot both have tons of food produced. Re-plan.
+**Question:** New rule: month Jun and month Apr cannot both have a non-zero tons of food produced. Re-plan.
 
 **Gold scenario:**
 
@@ -3972,7 +3956,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *food_supply · logical_rule · template `l_at_most_k` · hard*
 
-**Question:** What if at most 1 of food Wheat, Corn-soya blend (CSB), Oil, Dried skim milk (enriched) (DSM) and Milk may have any ration per person (units of 100 g a day)?
+**Question:** What if at most 1 of food Wheat, Corn-soya blend (CSB), Oil, Dried skim milk (enriched) (DSM) and Milk may have a non-zero ration per person (units of 100 g a day)?
 
 **Gold scenario:**
 
@@ -4033,35 +4017,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4.008e+08 → 6.953e+08; total_cost 6.953e+08, procurement_cost 5.946e+08, transport_cost 1.007e+08, food_bought 3.521e+05
 
-### 125. `food_supply-new_limit-000-0001`
-
-*food_supply · new_limit · template `g_floor_measure_scope` · medium*
-
-**Question:** Add a requirement: the food bought (units of 100 g a day), summed over everything with food = Oil, must be at least 64550.
-
-**Gold scenario:**
-
-```json
-{
- "rules": [
-  {
-   "measure": "purchase",
-   "scope": {
-    "food": "Oil"
-   },
-   "sense": ">=",
-   "value": 64550,
-   "name": "floor_purchase_Oil"
-  }
- ],
- "version": "0.1",
- "base_model": "food_supply"
-}
-```
-
-**Result:** objective 4.008e+08 → 4.229e+08; total_cost 4.229e+08, procurement_cost 3.731e+08, transport_cost 4.983e+07, food_bought 3.065e+05
-
-### 126. `food_supply-new_limit-000-0003`
+### 125. `food_supply-new_limit-000-0003`
 
 *food_supply · new_limit · template `combo` · hard*
 
@@ -4096,7 +4052,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4.008e+08 → 4.35e+08; total_cost 4.35e+08, procurement_cost 3.892e+08, transport_cost 4.578e+07, food_bought 3.015e+05
 
-### 127. `food_supply-new_limit-000-0009`
+### 126. `food_supply-new_limit-000-0009`
 
 *food_supply · new_limit · template `g_cap_measure_scope` · medium*
 
@@ -4124,7 +4080,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4.008e+08 → 4.039e+08; total_cost 4.039e+08, procurement_cost 3.576e+08, transport_cost 4.629e+07, food_bought 3.25e+05
 
-### 128. `food_supply-relative_rule-000-0006`
+### 127. `food_supply-relative_rule-000-0006`
 
 *food_supply · relative_rule · template `combo` · hard*
 
@@ -4169,7 +4125,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4.008e+08 → 4.221e+08; total_cost 4.221e+08, procurement_cost 3.442e+08, transport_cost 7.786e+07, food_bought 3.243e+05
 
-### 129. `food_supply-relative_rule-000-0008`
+### 128. `food_supply-relative_rule-000-0008`
 
 *food_supply · relative_rule · template `r_two_values` · medium*
 
@@ -4203,7 +4159,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4.008e+08 → 4.017e+08; total_cost 4.017e+08, procurement_cost 3.593e+08, transport_cost 4.244e+07, food_bought 3.244e+05
 
-### 130. `food_supply-under_specified-000-0008`
+### 129. `food_supply-under_specified-000-0008`
 
 *food_supply · under_specified · template `ask_g_scale_all_rows` · medium*
 
@@ -4230,7 +4186,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4.008e+08 → 4.262e+08; total_cost 4.262e+08, procurement_cost 3.698e+08, transport_cost 5.638e+07, food_bought 3.244e+05
 
-### 131. `jobshop_ft06-chained_scenario-000-0009`
+### 130. `jobshop_ft06-chained_scenario-000-0009`
 
 *jobshop_ft06 · chained_scenario · template `c_add` · medium*
 
@@ -4274,7 +4230,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 55 → 70; makespan 70, mean_utilisation 47.2
 
-### 132. `jobshop_ft06-data_change-000-0004`
+### 131. `jobshop_ft06-data_change-000-0004`
 
 *jobshop_ft06 · data_change · template `combo` · hard*
 
@@ -4309,7 +4265,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 55 → 55; makespan 55, mean_utilisation 60.15
 
-### 133. `jobshop_ft06-data_change-000-0009`
+### 132. `jobshop_ft06-data_change-000-0009`
 
 *jobshop_ft06 · data_change · template `g_set_column` · easy*
 
@@ -4338,7 +4294,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 55 → 57; makespan 57, mean_utilisation 58.77
 
-### 134. `jobshop_ft06-fixed_decision-000-0004`
+### 133. `jobshop_ft06-fixed_decision-000-0004`
 
 *jobshop_ft06 · fixed_decision · template `f_fix_level` · medium*
 
@@ -4365,11 +4321,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 55 → 64; makespan 64, mean_utilisation 51.3
 
-### 135. `jobshop_ft06-fixed_decision-000-0006`
+### 134. `jobshop_ft06-fixed_decision-000-0006`
 
 *jobshop_ft06 · fixed_decision · template `f_force_one` · medium*
 
-**Question:** What if machine M1, job J2, other job J3 must happen (fix that number of job pairs where the job goes first on the machine decision to 1)?
+**Question:** What if machine M1, job J2, other job J3 is forced (the number of job pairs where the job goes first on the machine there is fixed at 1)?
 
 **Gold scenario:**
 
@@ -4393,60 +4349,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 55 → 62; makespan 62, mean_utilisation 52.96
 
-### 136. `jobshop_ft06-logical_rule-000-0015`
+### 135. `jobshop_ft06-logical_rule-000-0019`
 
-*jobshop_ft06 · logical_rule · template `l_at_most_k` · hard*
+*jobshop_ft06 · logical_rule · template `l_if_then` · hard*
 
-**Question:** What if at most 1 of machine M5, M4 and M3 may have any number of job pairs where the job goes first on the machine?
-
-**Gold scenario:**
-
-```json
-{
- "logic": [
-  {
-   "at_least": 2,
-   "of": [
-    {
-     "measure": "goes_first",
-     "scope": {
-      "machine": "M5"
-     },
-     "sense": "<=",
-     "value": 0
-    },
-    {
-     "measure": "goes_first",
-     "scope": {
-      "machine": "M4"
-     },
-     "sense": "<=",
-     "value": 0
-    },
-    {
-     "measure": "goes_first",
-     "scope": {
-      "machine": "M3"
-     },
-     "sense": "<=",
-     "value": 0
-    }
-   ],
-   "name": "at_most_1_goes_first"
-  }
- ],
- "version": "0.1",
- "base_model": "jobshop_ft06"
-}
-```
-
-**Result:** objective 55 → 93; makespan 93, mean_utilisation 35.3
-
-### 137. `jobshop_ft06-logical_rule-000-0018`
-
-*jobshop_ft06 · logical_rule · template `l_at_most_k` · hard*
-
-**Question:** Only 1 of these may have number of job pairs where the job goes first on the machine: job J2, J3, J1, J0 and J4. Re-plan.
+**Question:** What if a non-zero operation end time for job J3, routing step 4 requires a total operation start time of at least 260 for routing step 4?
 
 **Gold scenario:**
 
@@ -4454,50 +4361,27 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 {
  "logic": [
   {
-   "at_least": 4,
+   "at_least": 1,
    "of": [
     {
-     "measure": "goes_first",
+     "measure": "end",
      "scope": {
-      "job": "J2"
+      "job": "J3",
+      "step": 4
      },
      "sense": "<=",
      "value": 0
     },
     {
-     "measure": "goes_first",
+     "measure": "start",
      "scope": {
-      "job": "J3"
+      "step": 4
      },
-     "sense": "<=",
-     "value": 0
-    },
-    {
-     "measure": "goes_first",
-     "scope": {
-      "job": "J1"
-     },
-     "sense": "<=",
-     "value": 0
-    },
-    {
-     "measure": "goes_first",
-     "scope": {
-      "job": "J0"
-     },
-     "sense": "<=",
-     "value": 0
-    },
-    {
-     "measure": "goes_first",
-     "scope": {
-      "job": "J4"
-     },
-     "sense": "<=",
-     "value": 0
+     "sense": ">=",
+     "value": 260
     }
    ],
-   "name": "at_most_1_goes_first"
+   "name": "if_end_then_start"
   }
  ],
  "version": "0.1",
@@ -4505,9 +4389,9 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 }
 ```
 
-**Result:** objective 55 → 126; makespan 126, mean_utilisation 26.06
+**Result:** objective 55 → 67.17; makespan 67.17, mean_utilisation 48.88
 
-### 138. `jobshop_ft06-new_limit-000-0005`
+### 136. `jobshop_ft06-new_limit-000-0005`
 
 *jobshop_ft06 · new_limit · template `g_floor_measure_scope` · medium*
 
@@ -4535,7 +4419,34 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 55 → 57.5; makespan 57.5, mean_utilisation 57.1
 
-### 139. `jobshop_ft06-objective_change-000-0017`
+### 137. `jobshop_ft06-objective_change-000-0005`
+
+*jobshop_ft06 · objective_change · template `o_then_min` · medium*
+
+**Question:** Keep makespan at its minimum, then minimise the total number of job pairs where the job goes first on the machine.
+
+**Gold scenario:**
+
+```json
+{
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "goes_first"
+  }
+ ],
+ "version": "0.1",
+ "base_model": "jobshop_ft06"
+}
+```
+
+**Result:** objective 55 → 45; makespan 55, mean_utilisation 59.7
+
+### 138. `jobshop_ft06-objective_change-000-0017`
 
 *jobshop_ft06 · objective_change · template `o_then_scoped` · medium*
 
@@ -4565,7 +4476,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 55 → 173; makespan 55, mean_utilisation 59.7
 
-### 140. `jobshop_ft06-under_specified-000-0001`
+### 139. `jobshop_ft06-under_specified-000-0001`
 
 *jobshop_ft06 · under_specified · template `ask_g_set_column` · medium*
 
@@ -4596,7 +4507,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 55 → 54.5; makespan 54.5, mean_utilisation 59.48
 
-### 141. `manpower_planning-fixed_decision-000-0009`
+### 140. `manpower_planning-fixed_decision-000-0009`
 
 *manpower_planning · fixed_decision · template `f_fix_zero` · easy*
 
@@ -4623,7 +4534,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 841.8 → 856.8; total_redundancy 856.8
 
-### 142. `manpower_planning-infeasible_request-000-0009`
+### 141. `manpower_planning-infeasible_request-000-0009`
 
 *manpower_planning · infeasible_request · template `i_commit` · medium*
 
@@ -4651,11 +4562,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** infeasible; conflicting constraints: balance_1_skilled, retraining_limit_1_semi_skilled_skilled, retraining_limit_1_unskilled_skilled
 
-### 143. `manpower_planning-logical_rule-000-0010`
+### 142. `manpower_planning-logical_rule-000-0002`
 
 *manpower_planning · logical_rule · template `l_if_then` · hard*
 
-**Question:** What if any workers retrained to a higher skill level for year 1 requires at least 860 workers employed above requirement for skill level unskilled?
+**Question:** What if a non-zero workers retrained to a higher skill level for year 2 requires a total workers employed above requirement of at least 190 for year 2, skill level unskilled?
 
 **Gold scenario:**
 
@@ -4668,7 +4579,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
     {
      "measure": "retrain",
      "scope": {
-      "year": 1
+      "year": 2
      },
      "sense": "<=",
      "value": 0
@@ -4676,10 +4587,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
     {
      "measure": "overmanned",
      "scope": {
+      "year": 2,
       "skill": "unskilled"
      },
      "sense": ">=",
-     "value": 860
+     "value": 190
     }
    ],
    "name": "if_retrain_then_overmanned"
@@ -4690,13 +4602,13 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 }
 ```
 
-**Result:** objective 841.8 → 1,040; total_redundancy 1,040
+**Result:** objective 841.8 → 1,049; total_redundancy 1,049
 
-### 144. `manpower_planning-logical_rule-000-0017`
+### 143. `manpower_planning-logical_rule-000-0014`
 
 *manpower_planning · logical_rule · template `l_none_or_batch` · medium*
 
-**Question:** What if the workers made redundant for year 3, skill level unskilled must be either zero or at least 580?
+**Question:** Minimum batch: if the total workers made redundant for year 2, skill level unskilled is above zero, it must be at least 330.
 
 **Gold scenario:**
 
@@ -4709,7 +4621,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
     {
      "measure": "redundant",
      "scope": {
-      "year": 3,
+      "year": 2,
       "skill": "unskilled"
      },
      "sense": "<=",
@@ -4718,11 +4630,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
     {
      "measure": "redundant",
      "scope": {
-      "year": 3,
+      "year": 2,
       "skill": "unskilled"
      },
      "sense": ">=",
-     "value": 580
+     "value": 330
     }
    ],
    "name": "batch_redundant"
@@ -4733,53 +4645,9 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 }
 ```
 
-**Result:** objective 841.8 → 1,189; total_redundancy 1,189
+**Result:** objective 841.8 → 858.2; total_redundancy 858.2
 
-### 145. `manpower_planning-logical_rule-000-0019`
-
-*manpower_planning · logical_rule · template `l_if_then` · hard*
-
-**Question:** What if any workers employed above requirement for year 2, skill level unskilled requires at least 210 workers downgraded to a lower skill level for year 1, from skill level skilled, to skill level semi_skilled?
-
-**Gold scenario:**
-
-```json
-{
- "logic": [
-  {
-   "at_least": 1,
-   "of": [
-    {
-     "measure": "overmanned",
-     "scope": {
-      "year": 2,
-      "skill": "unskilled"
-     },
-     "sense": "<=",
-     "value": 0
-    },
-    {
-     "measure": "downgrade",
-     "scope": {
-      "year": 1,
-      "from_skill": "skilled",
-      "to_skill": "semi_skilled"
-     },
-     "sense": ">=",
-     "value": 210
-    }
-   ],
-   "name": "if_overmanned_then_downgrade"
-  }
- ],
- "version": "0.1",
- "base_model": "manpower_planning"
-}
-```
-
-**Result:** objective 841.8 → 843.9; total_redundancy 843.9
-
-### 146. `manpower_planning-new_limit-000-0007`
+### 144. `manpower_planning-new_limit-000-0007`
 
 *manpower_planning · new_limit · template `g_floor_measure_scope` · medium*
 
@@ -4807,11 +4675,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 841.8 → 842.2; total_redundancy 842.2
 
-### 147. `manpower_planning-objective_change-000-0016`
+### 145. `manpower_planning-objective_change-000-0016`
 
 *manpower_planning · objective_change · template `o_then_max` · medium*
 
-**Question:** What if, without giving up any total redundancy, we want as much workers recruited as possible in total?
+**Question:** What if, without giving up any total redundancy, we want the total workers recruited to be as high as possible?
 
 **Gold scenario:**
 
@@ -4834,7 +4702,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 841.8 → 2,600; total_redundancy 841.8
 
-### 148. `manpower_planning-relative_rule-000-0006`
+### 146. `manpower_planning-relative_rule-000-0006`
 
 *manpower_planning · relative_rule · template `r_two_values` · medium*
 
@@ -4868,7 +4736,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 841.8 → 854.7; total_redundancy 854.7
 
-### 149. `manpower_planning-relax_remove-000-0005`
+### 147. `manpower_planning-relax_remove-000-0005`
 
 *manpower_planning · relax_remove · template `x_scoped` · medium*
 
@@ -4893,7 +4761,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 841.8 → 257.5; total_redundancy 257.5
 
-### 150. `manpower_planning-relax_remove-000-0008`
+### 148. `manpower_planning-relax_remove-000-0008`
 
 *manpower_planning · relax_remove · template `x_scoped` · medium*
 
@@ -4918,35 +4786,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 841.8 → 509; total_redundancy 509
 
-### 151. `manpower_planning-relax_remove-000-0011`
-
-*manpower_planning · relax_remove · template `x_scoped` · hard*
-
-**Question:** Suppose the limit on retraining is lifted for year 1 and 3 only. Effect on the plan?
-
-**Gold scenario:**
-
-```json
-{
- "relax": [
-  {
-   "constraint": "retraining_limit",
-   "scope": {
-    "year": [
-     1,
-     3
-    ]
-   }
-  }
- ],
- "version": "0.1",
- "base_model": "manpower_planning"
-}
-```
-
-**Result:** objective 841.8 → 25; total_redundancy 25
-
-### 152. `mining-data_change-000-0002`
+### 149. `mining-data_change-000-0002`
 
 *mining · data_change · template `g_scale_all_rows` · medium*
 
@@ -4971,7 +4811,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.469e+08 → 1.648e+08; profit 1.648e+08, discounted_revenue 2.185e+08, discounted_royalties 5.373e+07, ore_sold_tons 2.609e+07
 
-### 153. `mining-fixed_decision-000-0004`
+### 150. `mining-fixed_decision-000-0004`
 
 *mining · fixed_decision · template `f_fix_level` · medium*
 
@@ -4997,7 +4837,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.469e+08 → 1.196e+08; profit 1.196e+08, discounted_revenue 1.912e+08, discounted_royalties 7.164e+07, ore_sold_tons 2.309e+07
 
-### 154. `mining-fixed_decision-000-0012`
+### 151. `mining-fixed_decision-000-0012`
 
 *mining · fixed_decision · template `f_fix_level` · medium*
 
@@ -5023,7 +4863,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.469e+08 → 1.375e+08; profit 1.375e+08, discounted_revenue 2.092e+08, discounted_royalties 7.164e+07, ore_sold_tons 2.472e+07
 
-### 155. `mining-fixed_decision-000-0014`
+### 152. `mining-fixed_decision-000-0014`
 
 *mining · fixed_decision · template `f_fix_zero` · easy*
 
@@ -5050,7 +4890,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.469e+08 → 1.344e+08; profit 1.344e+08, discounted_revenue 2.06e+08, discounted_royalties 7.164e+07, ore_sold_tons 2.484e+07
 
-### 156. `mining-infeasible_request-000-0005`
+### 153. `mining-infeasible_request-000-0005`
 
 *mining · infeasible_request · template `i_commit` · medium*
 
@@ -5077,7 +4917,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** infeasible; conflicting constraints: capacity_Year5_Mine2
 
-### 157. `mining-infeasible_request-000-0014`
+### 154. `mining-infeasible_request-000-0014`
 
 *mining · infeasible_request · template `i_two_floors` · hard*
 
@@ -5114,7 +4954,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** infeasible; conflicting constraints: capacity_Year5_Mine1, capacity_Year5_Mine2, capacity_Year5_Mine3, capacity_Year5_Mine4, quality_Year5
 
-### 158. `mining-infeasible_request-000-0018`
+### 155. `mining-infeasible_request-000-0018`
 
 *mining · infeasible_request · template `i_floor` · medium*
 
@@ -5142,7 +4982,115 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** infeasible; conflicting constraints: capacity_Year1_Mine4, capacity_Year2_Mine4, capacity_Year3_Mine4, capacity_Year4_Mine4, capacity_Year5_Mine4
 
-### 159. `mining-new_limit-000-0008`
+### 156. `mining-logical_rule-000-0001`
+
+*mining · logical_rule · template `l_none_or_batch` · medium*
+
+**Question:** What if the total tons of ore extracted for year Year4, mine Mine4 must be either zero or at least 7500000?
+
+**Gold scenario:**
+
+```json
+{
+ "logic": [
+  {
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "extract",
+     "scope": {
+      "year": "Year4",
+      "mine": "Mine4"
+     },
+     "sense": "<=",
+     "value": 0
+    },
+    {
+     "measure": "extract",
+     "scope": {
+      "year": "Year4",
+      "mine": "Mine4"
+     },
+     "sense": ">=",
+     "value": 7500000
+    }
+   ],
+   "name": "batch_extract"
+  }
+ ],
+ "version": "0.1",
+ "base_model": "mining"
+}
+```
+
+**Result:** objective 1.469e+08 → 1.125e+08; profit 1.125e+08, discounted_revenue 1.762e+08, discounted_royalties 6.375e+07, ore_sold_tons 2.047e+07
+
+### 157. `mining-logical_rule-000-0003`
+
+*mining · logical_rule · template `l_at_most_k` · hard*
+
+**Question:** Only 4 of these may have a non-zero number of mine-years kept open: year Year1, Year5, Year3, Year2 and Year4. Re-plan.
+
+**Gold scenario:**
+
+```json
+{
+ "logic": [
+  {
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "open",
+     "scope": {
+      "year": "Year1"
+     },
+     "sense": "<=",
+     "value": 0
+    },
+    {
+     "measure": "open",
+     "scope": {
+      "year": "Year5"
+     },
+     "sense": "<=",
+     "value": 0
+    },
+    {
+     "measure": "open",
+     "scope": {
+      "year": "Year3"
+     },
+     "sense": "<=",
+     "value": 0
+    },
+    {
+     "measure": "open",
+     "scope": {
+      "year": "Year2"
+     },
+     "sense": "<=",
+     "value": 0
+    },
+    {
+     "measure": "open",
+     "scope": {
+      "year": "Year4"
+     },
+     "sense": "<=",
+     "value": 0
+    }
+   ],
+   "name": "at_most_4_open"
+  }
+ ],
+ "version": "0.1",
+ "base_model": "mining"
+}
+```
+
+**Result:** objective 1.469e+08 → 1.216e+08; profit 1.216e+08, discounted_revenue 1.806e+08, discounted_royalties 5.901e+07, ore_sold_tons 2.056e+07
+
+### 158. `mining-new_limit-000-0008`
 
 *mining · new_limit · template `g_cap_measure_total` · easy*
 
@@ -5168,7 +5116,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.469e+08 → 1.228e+08; profit 1.228e+08, discounted_revenue 1.72e+08, discounted_royalties 4.923e+07, ore_sold_tons 1.957e+07
 
-### 160. `mining-new_limit-000-0010`
+### 159. `mining-new_limit-000-0010`
 
 *mining · new_limit · template `g_cap_measure_scope` · medium*
 
@@ -5196,7 +5144,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.469e+08 → 1.399e+08; profit 1.399e+08, discounted_revenue 2.043e+08, discounted_royalties 6.447e+07, ore_sold_tons 2.402e+07
 
-### 161. `mining-new_limit-000-0011`
+### 160. `mining-new_limit-000-0011`
 
 *mining · new_limit · template `g_cap_measure_total` · easy*
 
@@ -5222,7 +5170,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 1.469e+08 → 1.389e+08; profit 1.389e+08, discounted_revenue 1.947e+08, discounted_royalties 5.579e+07, ore_sold_tons 2.285e+07
 
-### 162. `mining-relax_remove-000-0000`
+### 161. `mining-relax_remove-000-0000`
 
 *mining · relax_remove · template `x_scoped` · medium*
 
@@ -5246,6 +5194,39 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 ```
 
 **Result:** objective 1.469e+08 → 1.82e+08; profit 1.82e+08, discounted_revenue 2.536e+08, discounted_royalties 7.164e+07, ore_sold_tons 3.034e+07
+
+### 162. `mining-under_specified-000-0003`
+
+*mining · under_specified · template `ask_g_add_row` · medium*
+
+**Question:** Suppose a new mine joins the mines table.
+
+**Planner's answer when asked:** A new mine 'new_mine' is added with yearly royalty 5000000, yearly extraction limit 2500000 and ore quality 1.
+
+**Gold scenario:**
+
+```json
+{
+ "data_changes": [
+  {
+   "op": "add",
+   "table": "mines",
+   "rows": [
+    {
+     "mine": "new_mine",
+     "royalty": 5000000,
+     "capacity": 2500000,
+     "quality": 1
+    }
+   ]
+  }
+ ],
+ "version": "0.1",
+ "base_model": "mining"
+}
+```
+
+**Result:** objective 1.469e+08 → 1.644e+08; profit 1.644e+08, discounted_revenue 2.456e+08, discounted_royalties 8.119e+07, ore_sold_tons 2.909e+07
 
 ### 163. `multiple_knapsack-chained_scenario-000-0015`
 
@@ -5348,56 +5329,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 395 → 435; packed_value 435
 
-### 166. `multiple_knapsack-logical_rule-000-0014`
-
-*multiple_knapsack · logical_rule · template `l_at_most_k` · hard*
-
-**Question:** Only 1 of these may have number of item placements: item item10, item8 and item9. Re-plan.
-
-**Gold scenario:**
-
-```json
-{
- "logic": [
-  {
-   "at_least": 2,
-   "of": [
-    {
-     "measure": "x",
-     "scope": {
-      "item": "item10"
-     },
-     "sense": "<=",
-     "value": 0
-    },
-    {
-     "measure": "x",
-     "scope": {
-      "item": "item8"
-     },
-     "sense": "<=",
-     "value": 0
-    },
-    {
-     "measure": "x",
-     "scope": {
-      "item": "item9"
-     },
-     "sense": "<=",
-     "value": 0
-    }
-   ],
-   "name": "at_most_1_x"
-  }
- ],
- "version": "0.1",
- "base_model": "multiple_knapsack"
-}
-```
-
-**Result:** objective 395 → 345; packed_value 345
-
-### 167. `multiple_knapsack-relative_rule-001-0009`
+### 166. `multiple_knapsack-relative_rule-001-0009`
 
 *multiple_knapsack · relative_rule · template `r_two_values` · medium*
 
@@ -5431,7 +5363,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 395 → 390; packed_value 390
 
-### 168. `multiple_knapsack-under_specified-000-0005`
+### 167. `multiple_knapsack-under_specified-000-0005`
 
 *multiple_knapsack · under_specified · template `ask_g_add_row` · medium*
 
@@ -5463,7 +5395,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 395 → 415; packed_value 415
 
-### 169. `optimize_power_schedule-chained_scenario-000-0009`
+### 168. `optimize_power_schedule-chained_scenario-000-0009`
 
 *optimize_power_schedule · chained_scenario · template `c_add` · medium*
 
@@ -5503,7 +5435,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4.495e+06 → 3.572e+06; total_cost 3.572e+06, fuel_cost 3.37e+06, health_cost 1.996e+05
 
-### 170. `optimize_power_schedule-data_change-000-0015`
+### 169. `optimize_power_schedule-data_change-000-0015`
 
 *optimize_power_schedule · data_change · template `g_set_column` · easy*
 
@@ -5531,7 +5463,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4.495e+06 → 3.851e+06; total_cost 3.851e+06, fuel_cost 3.649e+06, health_cost 1.999e+05
 
-### 171. `optimize_power_schedule-fixed_decision-000-0013`
+### 170. `optimize_power_schedule-fixed_decision-000-0013`
 
 *optimize_power_schedule · fixed_decision · template `f_fix_zero` · easy*
 
@@ -5558,7 +5490,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4.495e+06 → 4.627e+06; total_cost 4.627e+06, fuel_cost 4.293e+06, health_cost 3.311e+05
 
-### 172. `optimize_power_schedule-fixed_decision-000-0015`
+### 171. `optimize_power_schedule-fixed_decision-000-0015`
 
 *optimize_power_schedule · fixed_decision · template `f_fix_scope` · hard*
 
@@ -5584,11 +5516,11 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 **Result:** objective 4.495e+06 → 4.608e+06; total_cost 4.608e+06, fuel_cost 4.406e+06, health_cost 1.999e+05
 
-### 173. `optimize_power_schedule-logical_rule-000-0000`
+### 172. `optimize_power_schedule-logical_rule-000-0000`
 
 *optimize_power_schedule · logical_rule · template `l_at_most_k` · hard*
 
-**Question:** What if at most 3 of power plant Scherer, OTHER COAL, Edwin I Hatch, GAS and HYDRO may have any power generated (MWh)?
+**Question:** What if at most 3 of power plant Scherer, OTHER COAL, Edwin I Hatch, GAS and HYDRO may have a non-zero power generated (MWh)?
 
 **Gold scenario:**
 
@@ -5648,6 +5580,49 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 ```
 
 **Result:** objective 4.495e+06 → 4.895e+06; total_cost 4.895e+06, fuel_cost 4.56e+06, health_cost 3.337e+05
+
+### 173. `optimize_power_schedule-logical_rule-000-0004`
+
+*optimize_power_schedule · logical_rule · template `l_none_or_batch` · medium*
+
+**Question:** What if the total power generated (MWh) for power plant OTHER COAL, hour 14 must be either zero or at least 3250?
+
+**Gold scenario:**
+
+```json
+{
+ "logic": [
+  {
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "output",
+     "scope": {
+      "plant": "OTHER COAL",
+      "hour": 14
+     },
+     "sense": "<=",
+     "value": 0
+    },
+    {
+     "measure": "output",
+     "scope": {
+      "plant": "OTHER COAL",
+      "hour": 14
+     },
+     "sense": ">=",
+     "value": 3250
+    }
+   ],
+   "name": "batch_output"
+  }
+ ],
+ "version": "0.1",
+ "base_model": "optimize_power_schedule"
+}
+```
+
+**Result:** objective 4.495e+06 → 4.505e+06; total_cost 4.505e+06, fuel_cost 4.294e+06, health_cost 2.082e+05
 
 ### 174. `optimize_power_schedule-new_limit-000-0002`
 
@@ -6100,7 +6075,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *railway_dispatching · relative_rule · template `r_share_of_total` · medium*
 
-**Question:** Suppose at least 40% of the total entry time (minutes) may go to train B.
+**Question:** Suppose at least 40% of the total entry time (minutes) must go to train B.
 
 **Gold scenario:**
 
@@ -6250,7 +6225,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *technician_routing_scheduling · fixed_decision · template `combo` · hard*
 
-**Question:** Two commitments at once: customer Customer5, technician Ed must happen (fix that number of jobs assigned decision to 1); and the minutes late for customer Customer5 is fixed at 210. Optimise the rest.
+**Question:** Two commitments at once: customer Customer5, technician Ed is forced (the number of jobs assigned there is fixed at 1); and the minutes late for customer Customer5 is fixed at 210. Optimise the rest.
 
 **Gold scenario:**
 
@@ -6337,7 +6312,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *technician_routing_scheduling · relative_rule · template `combo` · hard*
 
-**Question:** Two relative limits at once: to location Freiburg im Breisgau must account for at least 75% of all number of legs driven; and the total number of jobs assigned at or below 25% of the total number of legs driven.
+**Question:** Two relative limits at once: to location Freiburg im Breisgau must account for at least 75% of all number of legs driven; and we keep the total number of jobs assigned at or below 25% of the total number of legs driven.
 
 **Gold scenario:**
 
@@ -6380,7 +6355,7 @@ For each task: does the gold scenario say what the question asks? Record `ok`, `
 
 *technician_routing_scheduling · relative_rule · template `combo` · hard*
 
-**Question:** What if location Loerrach must account for at most 20% of all service start time (min), and in addition the total number of legs driven at or above 3 times the total number of technicians dispatched?
+**Question:** What if location Loerrach must account for at most 20% of all service start time (min), and in addition we keep the total number of legs driven at or above 3 times the total number of technicians dispatched?
 
 **Gold scenario:**
 

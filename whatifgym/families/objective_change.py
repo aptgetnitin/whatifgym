@@ -58,7 +58,7 @@ def o_then_max(rng, ctx: FamilyContext):
     label = _label(ctx, m)
     q = rng.choice([
         f"Keep {_noun(ctx)} at its {_verb(ctx)}, then maximise the total {label}.",
-        f"What if, without giving up any {_noun(ctx)}, we want as much {label} as possible in total?",
+        f"What if, without giving up any {_noun(ctx)}, we want the total {label} to be as high as possible?",
     ])
     stages = [{"sense": ctx.model.sense, "measure": "original"}, {"sense": "max", "measure": m}]
     return q, {"objective": stages}, {"measure": m, "second": "max"}, "medium"
