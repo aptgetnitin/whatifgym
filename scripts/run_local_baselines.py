@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import sys
 import time
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,6 +29,13 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import run_baseline  # noqa: E402
 from whatifgym.tasks import current_task_files  # noqa: E402
 import summarise_results  # noqa: E402
+
+
+def _run_file(job):
+    name, argv_run = job
+    t0 = time.time()
+    run_baseline.main(argv_run)
+    return name, time.time() - t0
 
 
 def slug(model: str) -> str:
@@ -47,6 +55,7 @@ def main(argv=None) -> int:
     ap.add_argument("--think-max-tokens", type=int, default=8192, help="output budget when --think is not off")
     ap.add_argument("--label-suffix", default="", help="appended to the result folder name, e.g. -think")
     ap.add_argument("--limit", type=int, default=None, help="tasks per file (smoke test)")
+    ap.add_argument("--jobs", type=int, default=1, help="task files run at once; start the server with OLLAMA_NUM_PARALLEL set to the same number")
     ap.add_argument("--force", action="store_true", help="re-run pairs whose result file exists")
     args = ap.parse_args(argv)
 
@@ -57,6 +66,7 @@ def main(argv=None) -> int:
         folder = out_root / (slug(model) + args.label_suffix)
         folder.mkdir(parents=True, exist_ok=True)
         print(f"\n===== {model} -> {folder.relative_to(ROOT)}")
+        todo = []
         for path in files:
             out = folder / f"{path.parent.name}.{path.stem}.jsonl"
             if out.exists() and not args.force:
@@ -73,10 +83,11 @@ def main(argv=None) -> int:
                 argv_run.append("--no-json-mode")
             if args.limit:
                 argv_run += ["--limit", str(args.limit)]
-            t0 = time.time()
-            print(f"run    {path.relative_to(ROOT)} ...", flush=True)
-            run_baseline.main(argv_run)
-            print(f"       done in {time.time() - t0:.0f}s", flush=True)
+            todo.append((str(path.relative_to(ROOT)), argv_run))
+        # one process per task file; the server must allow as many requests at once (OLLAMA_NUM_PARALLEL=<jobs>)
+        with ProcessPoolExecutor(max_workers=args.jobs) as pool:
+            for name, secs in pool.map(_run_file, todo):
+                print(f"done   {name} in {secs:.0f}s", flush=True)
         summarise_results.main([str(folder), "--out", str(folder / "summary.md")])
     summarise_results.main([str(out_root), "--out", str(out_root / "summary.md")])
     summarise_results.main([str(ROOT / "results" / "baselines"), "--out", str(ROOT / "results" / "baselines" / "summary.md")])
