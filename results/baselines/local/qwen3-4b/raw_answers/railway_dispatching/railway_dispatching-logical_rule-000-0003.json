@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "d_arrival_at_least_18",
+      "measure": "finish_time",
+      "scope": {
+        "train": "D"
+      },
+      "sense": ">=",
+      "value": 18
+    }
+  ]
+}

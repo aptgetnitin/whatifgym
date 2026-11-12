@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "revenue",
+      "where": {
+        "flight": [
+          "4576"
+        ]
+      },
+      "value": "0.5"
+    }
+  ],
+  "note": "A single ticket revenue value change is a set operation on the flights table's revenue column for a specific flight."
+  }

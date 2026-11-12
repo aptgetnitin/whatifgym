@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "meet",
+      "scope": {
+        "resource": "3",
+        "train": "B",
+        "other_train": "E"
+      },
+      "value": 1
+    }
+  ],
+  "relax": [],
+  "logic": []
+}

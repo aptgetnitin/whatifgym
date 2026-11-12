@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j4_step4_start_above_zero",
+      "measure": "start",
+      "scope": {
+        "job": "J4",
+        "step": 4
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "j0_step6_end_at_least_82",
+      "measure": "end",
+      "scope": {
+        "job": "J0",
+        "step": 6
+      },
+      "sense": ">=",
+      "value": 82
+    }
+  ],
+  "logic": [
+    {
+      "name": "j4_step4_start_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "start",
+          "scope": {
+            "job": "J4",
+            "step": 4
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "end",
+          "scope": {
+            "job": "J0",
+            "step": 6
+          },
+          "sense": ">=",
+          "value": 82
+        }
+      ]
+    }
+  ]
+}

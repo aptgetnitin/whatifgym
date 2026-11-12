@@ -1,0 +1,11 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "energy_capacity_kwh",
+      "value": "13.5"
+    }
+  ],
+  "note": "The planner's question is about an upper limit on battery stored energy, but the model's parameter `energy_capacity_kwh` already has a fixed value of 13.5 kWh as per the base model. The question is ambiguous because it doesn't specify whether the limit is a new constraint or a change to the existing capacity. However, the model's schema shows `energy_capacity_kwh` as a parameter with a default value of 13.5 kWh. The question likely refers to a scenario where this capacity is capped at a certain value (e.g., 13.5 kWh), but the base model already uses 13.5 kWh. Since the question is vague about what the 'upper limit' is, it's unclear if this is a change or not. The model's parameter `energy_capacity_kwh` is already set to 13.5 kWh, so the question might be asking about a scenario where the capacity is reduced or increased. However, the question says 'upper limit', which implies a maximum value. Given the ambiguity, the best response is to ask for clarification."
+  }

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "fuels",
+      "column": "fuel_cost",
+      "where": {
+        "fuel": "NG"
+      },
+      "delta": -0.5
+    }
+  ]
+}

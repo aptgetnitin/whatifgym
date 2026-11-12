@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "value": 1000
+    }
+  ],
+  "note": "The planner asks if at least 1000 workers retrained to a higher skill level for year 3 from unskilled to semi_skilled is possible. This is a fixed decision on the retrain measure for year 3, from unskilled to semi_skilled."
+}

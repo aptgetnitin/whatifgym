@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "profit_per_unit",
+      "value": "Prod5"
+    }
+  ],
+  "note": "The planner's question is vague about which parameter to change. The model has a 'profit_per_unit' parameter per product, but the question doesn't specify which product's profit contribution changes. The model schema shows that 'products' table has 'profit_per_unit' as a column, so the change should be specified by product. Since the question says 'product Prod5', we need to set the profit_per_unit for Prod5. However, the model's decision variables and parameters don't have a single 'profit_per_unit' parameter; it's a per-product column in the 'products' table. The question is ambiguous because it doesn't specify whether it's a parameter change or a data change. The model schema shows that 'profit_per_unit' is a column in the 'products' table, so the change should be a data change on the 'products' table for 'Prod5'. But the question says 'moves', which implies a change in value, but doesn't specify the new value. The model's 'products' table has a 'profit_per_unit' column, so the change is a data change on that table for the row with product 'Prod5'. However, the question is too vague to be precise: it doesn't say by how much or to what value. The planner's question is: 'Suppose the profit contribution per unit for product Prod5 moves. What does that do?' — this is too vague because it doesn't specify the new value or the magnitude of the change. The model requires a specific value for the change. Therefore, the answer should be a clarifying question."
+  }

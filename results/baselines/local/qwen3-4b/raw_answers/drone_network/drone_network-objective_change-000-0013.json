@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "linked_load",
+      "scope": {
+        "location": "1700 PLEASURE HOUSE RD",
+        "base": "3769 E. STRATFORD ROAD Rescue Squad"
+      }
+    }
+  ]
+}

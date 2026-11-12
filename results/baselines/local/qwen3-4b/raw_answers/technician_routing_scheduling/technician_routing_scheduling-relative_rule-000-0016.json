@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Lahr/Schwarzwald"
+        ]
+      }
+    }
+  ],
+  "note": "The planner wants at least 40% of the total service start time to be in Lahr/Schwarzwald. This translates to a rule that the sum of start_time for Lahr/Schwarzwald must be at least 40% of the total start_time across all locations."
+  }

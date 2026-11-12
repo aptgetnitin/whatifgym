@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "plants",
+      "column": "on",
+      "where": {
+        "plant": [
+          "Scherer",
+          "OTHER COAL",
+          "Edwin I Hatch",
+          "GAS",
+          "HYDRO"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A non-zero power generated means the plant is on (output > 0). The set operation forces on to 0 for these plants, which implies output = 0."
+}

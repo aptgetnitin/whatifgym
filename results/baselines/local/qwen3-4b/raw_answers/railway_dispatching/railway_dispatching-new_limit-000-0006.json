@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "entry_time_B_limit",
+      "measure": "entry_time[train, resource]",
+      "scope": {
+        "train": "B"
+      },
+      "sense": "<=",
+      "value": 90
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

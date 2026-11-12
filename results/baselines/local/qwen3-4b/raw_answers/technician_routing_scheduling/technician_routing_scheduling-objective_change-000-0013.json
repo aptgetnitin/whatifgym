@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original",
+      "scope": {}
+    },
+    {
+      "sense": "min",
+      "measure": "use",
+      "scope": {}
+    }
+  ]
+}

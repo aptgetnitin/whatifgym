@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "hydro_1824_at_least_2x_1518",
+      "measure": "hydro_on",
+      "scope": {
+        "period": "18-24"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "hydro_on",
+        "scope": {
+          "period": "15-18"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "thermal_running_at_most_50x_started",
+      "measure": "ngen",
+      "scope": {
+        "period": "*"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "nstart",
+        "scope": {
+          "period": "*"
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

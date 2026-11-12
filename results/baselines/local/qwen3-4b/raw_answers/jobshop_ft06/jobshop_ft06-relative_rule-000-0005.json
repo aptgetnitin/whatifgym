@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j4_end_time_30_percent",
+      "measure": "end",
+      "scope": {
+        "job": "J4"
+      },
+      "sense": ">=",
+      "value": 0.3
+    },
+    {
+      "name": "step5_at_least_2x_step3",
+      "measure": "end",
+      "scope": {
+        "job": "J4",
+        "step": 5
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J4",
+          "step": 3
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "undamaged_stock_friday_limit",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Friday"
+      },
+      "sense": "<=",
+      "value": 310
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

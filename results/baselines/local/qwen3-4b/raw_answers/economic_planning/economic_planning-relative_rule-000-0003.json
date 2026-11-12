@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "year2_output_at_most_25_year5",
+      "measure": "production",
+      "scope": {
+        "year": 2,
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "production",
+        "scope": {
+          "year": 5,
+          "industry": [
+            "coal",
+            "steel",
+            "transport"
+          ]
+        }
+      }
+    }
+  ]
+}

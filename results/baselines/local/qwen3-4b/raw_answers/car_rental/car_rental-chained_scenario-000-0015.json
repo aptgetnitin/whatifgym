@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "depots",
+      "column": "repair_capacity",
+      "where": {
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "factor": 1.2
+    }
+  ],
+  "rules": [
+    {
+      "name": "cap_repairs_Monday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": "<=",
+      "value": 16
+    }
+  ]
+  }

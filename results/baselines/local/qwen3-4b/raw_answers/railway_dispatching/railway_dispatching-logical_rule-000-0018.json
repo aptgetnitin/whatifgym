@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "train_b_arrival_delay",
+      "measure": "entry_time",
+      "scope": {
+        "train": "B",
+        "resource": "6"
+      },
+      "sense": ">=",
+      "value": 58
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

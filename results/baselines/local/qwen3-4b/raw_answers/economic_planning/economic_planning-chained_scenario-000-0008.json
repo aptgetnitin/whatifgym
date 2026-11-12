@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": "coal"
+      },
+      "delta": 0
+    },
+    {
+      "op": "shift",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": "steel"
+      },
+      "delta": 0
+    },
+    {
+      "op": "shift",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": "transport"
+      },
+      "delta": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "stock_sum_year1_at_least_123",
+      "measure": "stock",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 123
+    }
+  ]
+}

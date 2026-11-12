@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J1",
+        "step": 5
+      },
+      "value": 14
+    }
+  ],
+  "note": "The question specifies a change to J1's step 5 processing time from 10 to 14, so we set the duration to 14 for that specific operation."
+}

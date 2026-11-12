@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "queue_load_5600_MEER_ST_at_most_50_percent_of_1700_VIRGINIA_BEACH_BL",
+      "measure": "linked_load",
+      "scope": {
+        "location": "5600 MEER ST",
+        "base": [
+          "21 MUNICIPAL CTR Fire Station"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "linked_load",
+        "scope": {
+          "location": "1700 VIRGINIA BEACH BL",
+          "base": [
+            "21 MUNICIPAL CTR Fire Station"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "21_MUNICIPAL_CTR_fire_station_at_most_10_percent_of_bases",
+      "measure": "open",
+      "scope": {
+        "base": "21 MUNICIPAL CTR Fire Station"
+      },
+      "sense": "<=",
+      "value": 0.1,
+      "relative_to": {
+        "measure": "open",
+        "scope": {
+          "base": [
+            "21 MUNICIPAL CTR Fire Station"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

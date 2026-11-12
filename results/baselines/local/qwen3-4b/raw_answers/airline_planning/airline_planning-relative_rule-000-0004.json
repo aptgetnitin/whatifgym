@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "rule_1",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A320#22",
+        "flight": "4564"
+      },
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": "A320#22",
+          "flight": "4575"
+        }
+      }
+    },
+    {
+      "name": "rule_2",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A320#22"
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

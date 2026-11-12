@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "buy",
+      "where": {
+        "month": "Jun",
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The question specifies a constraint on the total tons of oil bought for June, but the model's decision variable is 'buy' (tons of raw oil bought). The constraint should be a rule, not a data change, because it's a limit on the sum of 'buy' over the oils for June. The data change approach is for modifying data, not adding constraints. The correct approach is to add a rule that the sum of buy for June over all oils is <= 1750."
+  }

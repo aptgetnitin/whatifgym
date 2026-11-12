@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A cap on the tons of oil bought would set the price to zero, implying no oil can be bought."
+}

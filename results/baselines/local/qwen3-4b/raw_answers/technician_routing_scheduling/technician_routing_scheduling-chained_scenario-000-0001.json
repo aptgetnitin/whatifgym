@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "mannheim_start_time_sum",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Mannheim"
+        ]
+      },
+      "sense": ">=",
+      "value": 36
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "logic": [
+    {
+      "name": "stock_year1_above_zero",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "stock",
+          "scope": {
+            "year": 1
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "extra_capacity",
+          "scope": {
+            "year": 5,
+            "industry": "coal"
+          },
+          "sense": ">=",
+          "value": 1180
+        }
+      ]
+    }
+  ]
+}

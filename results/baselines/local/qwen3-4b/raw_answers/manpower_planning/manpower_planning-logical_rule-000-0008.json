@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "redundant_unskilled_year2_at_least_250_if_recruit_year3_positive",
+      "measure": "redundant",
+      "scope": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 250
+    }
+  ],
+  "note": "The rule ensures that if recruit[3, skill] > 0, then redundant[2, unskilled] >= 250."
+  }

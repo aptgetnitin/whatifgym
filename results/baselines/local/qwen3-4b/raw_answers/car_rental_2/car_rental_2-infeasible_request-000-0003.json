@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "repaired_plymouth_at_least_150",
+      "measure": "repairs",
+      "scope": {
+        "day": [
+          "Monday"
+        ],
+        "depot": [
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 150
+    }
+  ],
+  "note": "A rule to enforce at least 150 cars repaired for Plymouth on Monday."
+}

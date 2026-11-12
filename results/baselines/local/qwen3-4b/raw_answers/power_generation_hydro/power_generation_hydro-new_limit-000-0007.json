@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 80
+    }
+  ],
+  "note": "The total number of thermal units running summed over everything may not exceed 80. This is a data change to the units_available column for all thermal types to 80."
+}

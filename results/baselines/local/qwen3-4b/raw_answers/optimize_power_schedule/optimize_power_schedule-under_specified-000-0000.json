@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 3
+      },
+      "delta": 0
+    }
+  ],
+  "note": "The planner's question is about a change to the demand for hour 3, but the question does not specify the magnitude of the change. Without knowing the exact change, the scenario cannot be precisely defined."
+}

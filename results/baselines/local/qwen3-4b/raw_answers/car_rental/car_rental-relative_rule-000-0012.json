@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "friday_rentals_at_most_50_percent_of_monday",
+      "measure": "rentals",
+      "scope": {
+        "day": "Friday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "rentals",
+        "scope": {
+          "day": "Monday",
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ]
+        }
+      }
+    }
+  ]
+}

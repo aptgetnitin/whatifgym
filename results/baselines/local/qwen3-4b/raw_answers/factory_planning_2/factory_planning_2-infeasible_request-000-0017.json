@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "make",
+      "column": "make",
+      "where": {
+        "month": "Jan",
+        "product": "Prod3"
+      },
+      "value": 600
+    }
+  ],
+  "note": "The planner commits to exactly 600 units made for Jan, Prod3, so we fix that decision variable to 600."
+}

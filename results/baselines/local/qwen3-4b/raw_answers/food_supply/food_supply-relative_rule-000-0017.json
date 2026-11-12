@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "food": [
+          "all"
+        ],
+        "camp": [
+          "all"
+        ]
+      },
+      "value": 2
+    }
+  ],
+  "note": "The planner wants to keep the total food shipped (flow) at or above 2 times the total food bought (purchase). This is a rule that sets a constraint on the relationship between flow and purchase."
+}

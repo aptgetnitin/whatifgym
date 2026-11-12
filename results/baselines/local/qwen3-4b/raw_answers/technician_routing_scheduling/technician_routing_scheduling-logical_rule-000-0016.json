@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "no_both_nonzero",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Buehl",
+          "Lahr/Schwarzwald"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

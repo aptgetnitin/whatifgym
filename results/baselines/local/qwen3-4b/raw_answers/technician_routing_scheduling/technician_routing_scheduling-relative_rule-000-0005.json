@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "max_dispatched",
+      "measure": "use",
+      "scope": {
+        "technician": [
+          "Albert",
+          "Bob",
+          "Carlos",
+          "Doris",
+          "Ed",
+          "Flor",
+          "Gina"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.8
+    },
+    {
+      "name": "unfilled_jobs",
+      "measure": "unfilled",
+      "scope": {
+        "customer": [
+          "Customer1",
+          "Customer2",
+          "Customer3",
+          "Customer4",
+          "Customer5",
+          "Customer6",
+          "Customer7"
+        ]
+      },
+      "sense": ">=",
+      "value": 1
+    }
+  ]
+}

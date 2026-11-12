@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "skilled"
+      },
+      "value": 9100
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "semi_skilled"
+      },
+      "value": 11900
+    }
+  ],
+  "note": "The planner asks if two minimum workforce requirements for the same year (year 1) can be met simultaneously. The requirements table has rows for each year and skill level, so setting the required column for year 1, skilled and semi_skilled to 9100 and 11900 respectively creates the scenario."
+}

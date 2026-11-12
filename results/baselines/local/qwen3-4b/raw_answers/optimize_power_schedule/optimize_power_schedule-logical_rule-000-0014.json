@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "scherer_hour1_above_zero_vogtle_hour8_at_least_2600",
+      "measure": "output",
+      "scope": {
+        "plant": "Scherer",
+        "hour": 1
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "scherer_hour1_above_zero_vogtle_hour8_at_least_2600",
+      "measure": "output",
+      "scope": {
+        "plant": "Vogtle",
+        "hour": 8
+      },
+      "sense": ">=",
+      "value": 2600
+    }
+  ]
+}

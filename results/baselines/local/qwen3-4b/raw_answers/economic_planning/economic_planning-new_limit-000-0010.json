@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": "transport"
+      },
+      "value": 1110
+    }
+  ]
+}

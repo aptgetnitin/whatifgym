@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "max_bases",
+      "factor": 2.0
+    }
+  ]
+}

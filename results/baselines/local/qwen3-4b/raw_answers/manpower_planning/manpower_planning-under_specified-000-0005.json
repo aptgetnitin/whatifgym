@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "ask": "What does the manpower requirement for year 2, skill level unskilled moving do?"
+}

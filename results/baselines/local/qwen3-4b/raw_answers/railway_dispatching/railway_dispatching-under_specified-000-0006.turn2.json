@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "entry_time",
+      "column": "entry_time",
+      "where": {
+        "resource": "6",
+        "train": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The planner wants to cap the sum of entry times for all trains at resource 6 (a station) to 83 minutes."
+  }

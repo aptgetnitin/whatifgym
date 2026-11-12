@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "no_production_jan_and_may",
+      "measure": "make",
+      "scope": {
+        "month": [
+          "Jan",
+          "May"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "note": "The rule ensures that for both Jan and May, the production is zero."
+  }

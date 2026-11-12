@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_most_2_workers_active",
+      "measure": "works",
+      "scope": {
+        "worker": [
+          "worker_1",
+          "worker_0",
+          "worker_11",
+          "worker_10"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

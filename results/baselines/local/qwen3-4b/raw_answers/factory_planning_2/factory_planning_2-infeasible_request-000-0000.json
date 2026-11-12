@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "month": "Jun",
+        "product": "Prod1"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is about the feasibility of making at least 10250 units in June. However, the model's decision variables are 'make[month, product]', so the question is about the sum of 'make' over a specific product in June. The question does not specify which product, so it's ambiguous. The model requires a specific product to be referenced. The planner's question is not precise enough to be converted into a machine-checkable scenario."
+}

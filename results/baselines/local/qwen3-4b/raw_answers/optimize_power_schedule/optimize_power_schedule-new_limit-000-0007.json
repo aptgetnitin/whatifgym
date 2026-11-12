@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "other_coal_shutdowns_at_least_2",
+      "measure": "stop",
+      "scope": {
+        "plant": "OTHER COAL"
+      },
+      "sense": ">=",
+      "value": 2
+    },
+    {
+      "name": "total_hours_on_at_most_134",
+      "measure": "on",
+      "scope": {},
+      "sense": "<=",
+      "value": 134
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

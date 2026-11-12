@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "finish_time",
+      "scope": {
+        "train": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      }
+    }
+  ],
+  "note": "The planner wants to keep the total arrival time at destination (finish_time) at or below 25% of the total entry time (ready_time). But the model's objective is to minimize total delay, which is (arrival time - minimum remaining running time). The question is unclear because it doesn't specify what 'total entry time' refers to. In the model, 'ready_time' is the time at which the train enters its current resource (0 = now), but 'entry_time' is when the train starts to occupy the resource. The planner's question seems to be asking for a constraint that the total finish_time <= 0.25 * total_ready_time, but the model doesn't have a 'total entry time' measure. The model's objective is to minimize delay, not to minimize finish_time. The question is ambiguous and cannot be precisely formulated as a scenario."
+}

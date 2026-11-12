@@ -1,0 +1,4 @@
+{
+  "role": "agent",
+  "text": "Which row in the downtime table is affected? What is the specific change to the machines_down value for that row?"
+  }

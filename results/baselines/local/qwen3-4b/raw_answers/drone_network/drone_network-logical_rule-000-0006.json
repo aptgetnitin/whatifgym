@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "min_bases_for_5145",
+      "measure": "open",
+      "scope": {
+        "base": "5145 RURITAN COURT Rescue Squad"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "min_bases_for_21",
+      "measure": "open",
+      "scope": {
+        "base": "21 MUNICIPAL CTR Fire Station"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

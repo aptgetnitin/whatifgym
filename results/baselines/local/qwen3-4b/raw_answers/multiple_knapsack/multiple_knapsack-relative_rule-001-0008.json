@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "at_most_5_percent_item5",
+      "measure": "x",
+      "scope": {
+        "item": "item5"
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

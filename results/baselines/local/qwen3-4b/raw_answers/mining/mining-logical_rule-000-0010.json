@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine3_open_year5_at_least_2_worked",
+      "measure": "operate",
+      "scope": {
+        "year": "Year5",
+        "mine": "Mine3"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ],
+  "note": "The rule ensures that if Mine3 is open in Year5, at least 2 mine-years are worked for Mine3 in Year5."
+  }

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "open",
+      "scope": {
+        "base": [
+          "base"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "response_objective",
+      "scope": {
+        "location": [
+          "location"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 15600000
+    }
+  ],
+  "note": "The question asks if the plan can deliver at least 15600000 tons of ore extracted for mine Mine3. This is a fixed decision on the extract measure for Mine3."
+}

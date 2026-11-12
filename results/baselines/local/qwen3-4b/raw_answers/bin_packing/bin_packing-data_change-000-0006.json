@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "items",
+      "rows": [
+        {
+          "item": "new_item"
+        }
+      ]
+    }
+  ],
+  "note": "Adding a new item row to the items table with a new item identifier and weight."
+  }

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "monday_repair_target",
+      "measure": "repairs",
+      "scope": {
+        "day": "Monday",
+        "depot": [
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 94
+    }
+  ],
+  "note": "The planner asks for a minimum of 94 cars repaired on Monday across all repair depots."
+}

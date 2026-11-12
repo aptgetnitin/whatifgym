@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "oils_store_oil3_sum",
+      "measure": "store",
+      "scope": {
+        "oil": "OIL3"
+      },
+      "sense": ">=",
+      "value": 3600
+    },
+    {
+      "name": "food_produce_total_cap",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 2450
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "at_least_50_maintenance_in_feb",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "repair",
+          "scope": {
+            "month": "Feb"
+          },
+          "sense": ">=",
+          "value": 0.5
+        }
+      ]
+    }
+  ]
+}

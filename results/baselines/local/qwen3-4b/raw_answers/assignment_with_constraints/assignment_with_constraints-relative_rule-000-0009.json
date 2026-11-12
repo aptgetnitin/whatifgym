@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "at_most_15_percent_workers_working_for_worker_1",
+      "measure": "works",
+      "scope": {
+        "worker": "worker_1"
+      },
+      "sense": "<=",
+      "value": 0.15
+    },
+    {
+      "name": "workers_working_for_worker_10_at_most_80_percent_of_worker_11",
+      "measure": "works",
+      "scope": {
+        "worker": "worker_10"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "works",
+        "scope": {
+          "worker": "worker_11"
+        }
+      },
+      "factor": 0.8
+    }
+  ]
+}

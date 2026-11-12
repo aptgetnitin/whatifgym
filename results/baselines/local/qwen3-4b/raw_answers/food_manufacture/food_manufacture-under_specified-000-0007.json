@@ -1,0 +1,35 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": [
+          "OIL2"
+        ],
+        "month": [
+          "Feb"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "floor_on_buy",
+      "measure": "buy",
+      "scope": {
+        "month": [
+          "Feb"
+        ],
+        "oil": [
+          "OIL2"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ]
+}

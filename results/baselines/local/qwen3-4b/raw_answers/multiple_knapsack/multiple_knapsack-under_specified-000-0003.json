@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "items",
+      "column": "weight",
+      "where": {
+        "item": [
+          "item0",
+          "item1",
+          "item2",
+          "item3",
+          "item4",
+          "item5",
+          "item6",
+          "item7",
+          "item8",
+          "item9",
+          "item10",
+          "item11",
+          "item12",
+          "item13",
+          "item14"
+        ]
+      },
+      "value": 1
+    }
+  ],
+  "note": "The planner's question is vague: 'upper limit on number of item placements' could mean a global limit on the number of items packed, a limit per bin, or a limit on the total number of items packed across all bins. Without specifying the exact constraint, it's impossible to translate into a precise scenario. The model has 15 items, so a global limit of 15 would mean packing all items, but the question doesn't specify the limit value or the scope."
+}

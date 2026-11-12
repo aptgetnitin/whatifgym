@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Idleb"
+      },
+      "value": 10000
+    },
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": "Qamishli"
+      }
+    },
+    {
+      "op": "add",
+      "table": "camps",
+      "rows": [
+        {
+          "camp": "Homs",
+          "beneficiaries": 3000
+        }
+      ]
+    }
+  ],
+  "note": "The question asks for a total ration per person of at least 169 units (100 g per day). The model's ration measure is per person per camp, so we need to sum over all camps to get total ration per person across the network."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ages",
+      "column": "initial_head",
+      "where": {
+        "age": 2
+      },
+      "value": 149
+    }
+  ],
+  "note": "The initial herd for age 2 is set to 149 head to meet the requirement."
+}

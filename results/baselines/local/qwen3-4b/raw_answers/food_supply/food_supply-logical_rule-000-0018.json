@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "corn_soymilk_min_ration",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "camp": "Daraa"
+      },
+      "sense": ">=",
+      "value": 1.05
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

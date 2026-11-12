@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "start_time",
+      "scope": {
+        "location": "Karlsruhe"
+      }
+    }
+  ]
+}

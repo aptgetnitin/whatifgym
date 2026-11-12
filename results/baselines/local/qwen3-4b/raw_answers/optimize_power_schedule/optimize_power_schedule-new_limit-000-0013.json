@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "plants",
+      "column": "on",
+      "where": {
+        "plant": "Scherer"
+      },
+      "value": 19
+    }
+  ],
+  "note": "The total number of plant-hours on for Scherer is fixed to 19, which corresponds to the sum of the binary variable 'on' over hours 1-24."
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_on_at_start",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 0.7
+    }
+  ],
+  "note": "A relative cap on thermal units started over all types is a scale on the initial units running."
+}

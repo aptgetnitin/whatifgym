@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "resource_3_train_E_other_train_F_fixed",
+      "measure": "meet",
+      "scope": {
+        "resource": "3",
+        "train": "E",
+        "other_train": "F"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "note": "Forced meet condition for resource 3 with trains E and F."
+}

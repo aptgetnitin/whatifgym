@@ -1,0 +1,24 @@
+{
+  "base_model": "economic_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "total_output",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      }
+    }
+  ],
+  "note": "The planner asks if the model can achieve a total output of 8200 million USD over years 1-5. The model's objective is to maximize employment, but the question is about feasibility of a specific output target."
+}

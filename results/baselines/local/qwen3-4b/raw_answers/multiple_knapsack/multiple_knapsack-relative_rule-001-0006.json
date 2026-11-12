@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item5_at_most_75_of_item14",
+      "measure": "x",
+      "scope": {
+        "item": "item5"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": "item14"
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "item10_at_most_5_of_total_placements",
+      "measure": "x",
+      "scope": {
+        "item": "item10"
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

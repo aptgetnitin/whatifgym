@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "rules": [
+    {
+      "name": "at_most_5_percent_saric",
+      "measure": "pick",
+      "scope": {
+        "player": "Dario Saric"
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "pick",
+        "scope": {
+          "player": [
+            "Dario Saric"
+          ]
+        }
+      }
+    },
+    {
+      "name": "embiid_at_most_25_percent_saric",
+      "measure": "pick",
+      "scope": {
+        "player": "Joel Embiid"
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "pick",
+        "scope": {
+          "player": "Dario Saric"
+        }
+      }
+    }
+  ]
+}

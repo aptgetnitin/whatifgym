@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_min_17",
+      "measure": "ration",
+      "scope": {
+        "food": "Oil",
+        "camp": [
+          "all"
+        ]
+      },
+      "sense": ">=",
+      "value": 17
+    },
+    {
+      "name": "wheat_min_55",
+      "measure": "ration",
+      "scope": {
+        "food": "Wheat",
+        "camp": [
+          "all"
+        ]
+      },
+      "sense": ">=",
+      "value": 55
+    }
+  ]
+}

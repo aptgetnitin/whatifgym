@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "min_batch_j2_step6",
+      "measure": "start",
+      "scope": {
+        "job": "J2",
+        "step": 6
+      },
+      "sense": ">=",
+      "value": 84
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "transfer_costs",
+      "column": "cost",
+      "where": {
+        "from_depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ],
+        "to_depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "factor": 1.2
+    }
+  ]
+}

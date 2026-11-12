@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "operate",
+      "column": "operate",
+      "where": {
+        "aircraft": [
+          "all"
+        ],
+        "flight": [
+          "all"
+        ]
+      },
+      "factor": 0.8888888888888888
+    }
+  ],
+  "note": "A relative change to the total number of flights operated is a scale over all rows of the operate measure."
+}

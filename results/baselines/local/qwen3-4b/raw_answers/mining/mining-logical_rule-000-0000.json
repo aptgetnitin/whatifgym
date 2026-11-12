@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": [
+          "Mine4",
+          "Mine2",
+          "Mine3",
+          "Mine1"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A non-zero tons of ore extracted means extract > 0, so setting extract to 0 for these mines ensures no extraction."
+}

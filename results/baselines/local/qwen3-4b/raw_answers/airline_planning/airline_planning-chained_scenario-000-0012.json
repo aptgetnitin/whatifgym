@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_operate_A320#22",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A320#22"
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

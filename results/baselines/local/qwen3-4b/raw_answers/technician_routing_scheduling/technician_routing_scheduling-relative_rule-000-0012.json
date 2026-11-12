@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "flor_dispatch_percentage",
+      "measure": "use",
+      "scope": {
+        "technician": "Flor"
+      },
+      "sense": ">=",
+      "value": 0.75
+    },
+    {
+      "name": "jobs_assigned_vs_unfilled",
+      "measure": "assign",
+      "scope": {
+        "customer": [
+          "Customer1",
+          "Customer2",
+          "Customer3",
+          "Customer4",
+          "Customer5",
+          "Customer6",
+          "Customer7"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.75
+    }
+  ]
+}

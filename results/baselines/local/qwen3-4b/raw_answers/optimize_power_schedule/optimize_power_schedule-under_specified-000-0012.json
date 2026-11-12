@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {
+        "plant": "BIOMASS"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The question is vague about how the capacity changes. A scale factor of 1.0 implies no change, which is not helpful. The planner needs to specify whether the capacity increases or decreases, by how much, and for which hours."
+}

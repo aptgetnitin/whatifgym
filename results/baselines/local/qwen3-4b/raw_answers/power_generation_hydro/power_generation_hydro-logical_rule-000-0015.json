@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "period": "18-24",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "period": "18-24",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 38900
+    }
+  ],
+  "note": "The planner's question specifies a binary condition: output for period 18-24 must be either 0 or at least 38900. This requires two separate data changes: one for the 0 case and one for the 38900+ case. However, in the DSL, we can only set a single value per data change. Since the condition is binary, we need to model it as two possible scenarios, but the DSL does not support conditional data changes. Therefore, the question cannot be precisely made machine-checkable as a single scenario. We must ask for clarification."
+}

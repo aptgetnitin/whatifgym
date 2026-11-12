@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "arcs",
+      "column": "transport_cost",
+      "where": {
+        "from_city": [
+          "Aleppo"
+        ],
+        "to_city": [
+          "Idleb"
+        ]
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "A relative change in transport cost for a specific link is a scale over the matching row."
+}

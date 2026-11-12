@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": "VEG2"
+      },
+      "value": 4.6
+    },
+    {
+      "op": "shift",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "month": "Mar",
+        "oil": "OIL2"
+      },
+      "delta": -30
+    }
+  ]
+}

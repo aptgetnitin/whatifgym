@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine1"
+      },
+      "value": 130458350
+    }
+  ],
+  "note": "The planner asks for a total of at least 130458350 tons of ore extracted. This is a fixed decision on the `extract` measure for Mine1 over the entire horizon."
+}

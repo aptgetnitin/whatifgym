@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_mines",
+      "column": "max_mines",
+      "where": {
+        "year": "Year5"
+      },
+      "value": 7
+    },
+    {
+      "op": "set",
+      "table": "blend",
+      "column": "blend",
+      "where": {
+        "year": "Year5"
+      },
+      "value": 3280000
+    }
+  ],
+  "note": "Capping mine-years and blend in Year5 as specified."
+}

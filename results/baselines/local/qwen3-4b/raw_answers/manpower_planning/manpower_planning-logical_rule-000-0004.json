@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "overmanned",
+      "column": "overmanned",
+      "where": {
+        "year": [
+          1,
+          3
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A non-zero overmanned workers for year 1 and year 3 means overmanned > 0 for those years. Setting overmanned to 0 for those years ensures no overmanning in those years."
+}

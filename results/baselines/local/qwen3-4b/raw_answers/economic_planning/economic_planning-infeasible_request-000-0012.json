@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": "steel"
+      },
+      "value": 3100
+    }
+  ],
+  "note": "The planner asks if steel output can be at least 3100 million USD. This requires setting the external demand for steel to 3100, as the model's steady-state production levels are determined by external demand."
+}

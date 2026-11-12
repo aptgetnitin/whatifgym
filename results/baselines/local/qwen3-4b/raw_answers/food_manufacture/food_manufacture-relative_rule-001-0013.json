@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "storage_apr_at_least_15",
+      "measure": "store",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "value": 0.15
+    },
+    {
+      "name": "oil2_refined_at_most_90_oil2_refined",
+      "measure": "consume",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "oil": "VEG2"
+        }
+      },
+      "factor": 0.9
+    }
+  ]
+}

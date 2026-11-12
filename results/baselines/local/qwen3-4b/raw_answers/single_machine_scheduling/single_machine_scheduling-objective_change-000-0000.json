@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "runs_before",
+      "scope": {
+        "job": [
+          "job_0",
+          "job_1",
+          "job_2",
+          "job_3",
+          "job_4",
+          "job_5",
+          "job_6",
+          "job_7",
+          "job_8",
+          "job_9",
+          "job_10",
+          "job_11",
+          "job_12",
+          "job_13",
+          "job_14"
+        ],
+        "other_job": [
+          "job_0",
+          "job_1",
+          "job_2",
+          "job_3",
+          "job_4",
+          "job_5",
+          "job_6",
+          "job_7",
+          "job_8",
+          "job_9",
+          "job_10",
+          "job_11",
+          "job_12",
+          "job_13",
+          "job_14"
+        ]
+      }
+    }
+  ]
+}

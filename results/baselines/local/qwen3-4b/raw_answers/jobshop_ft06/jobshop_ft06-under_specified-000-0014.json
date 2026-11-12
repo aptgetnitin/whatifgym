@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J0",
+        "step": 1
+      },
+      "value": 14
+    }
+  ],
+  "note": "The question specifies a change to J0's step 1 duration from the base data (10)."
+}

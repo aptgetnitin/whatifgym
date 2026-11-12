@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "steel_at_least_1.25_transport",
+      "measure": "production",
+      "scope": {
+        "industry": "steel"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "production",
+        "scope": {
+          "industry": "transport"
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

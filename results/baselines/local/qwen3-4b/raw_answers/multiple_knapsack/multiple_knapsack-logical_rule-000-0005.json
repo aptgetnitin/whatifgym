@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "fixed_decisions": [
+    {
+      "measure": "x",
+      "scope": {
+        "item": [
+          "item13",
+          "item3",
+          "item14"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "Only two of the three items can be placed in bins; the rest must be zero."
+  }

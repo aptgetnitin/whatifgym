@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "worker_10_at_least_2_workers",
+      "measure": "works",
+      "scope": {
+        "worker": "worker_10"
+      },
+      "sense": ">=",
+      "value": 1
+    },
+    {
+      "name": "worker_1_at_least_2_workers",
+      "measure": "works",
+      "scope": {
+        "worker": "worker_1"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+  }

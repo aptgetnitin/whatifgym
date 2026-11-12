@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": "Thermal0"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "The planner's question is about changing the units available for Thermal0, so we scale the units_available column for Thermal0 by 0.5 (50% change)."
+}

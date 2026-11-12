@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "downtime",
+      "where": {
+        "machine": "horiDrill"
+      }
+    }
+  ],
+  "note": "Retiring a horizontal drill means removing all downtime rows for that machine type."
+  }

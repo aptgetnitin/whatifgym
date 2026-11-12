@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "scherer_hours_at_most_90_hatch",
+      "measure": "on",
+      "scope": {
+        "plant": "Scherer"
+      },
+      "sense": "<=",
+      "value": 0.9,
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "plant": "Edwin I Hatch"
+        }
+      }
+    }
+  ]
+}

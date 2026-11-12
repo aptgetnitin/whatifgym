@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "oil3_storage_limit",
+      "measure": "store",
+      "scope": {
+        "oil": "OIL3"
+      },
+      "sense": "<=",
+      "value": 0.1
+    }
+  ]
+}

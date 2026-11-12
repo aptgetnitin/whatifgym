@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "retrain_unskilled_to_semi",
+      "measure": "retrain",
+      "scope": {
+        "year": 1,
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "value": 300
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

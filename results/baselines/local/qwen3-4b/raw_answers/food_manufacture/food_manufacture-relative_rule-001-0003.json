@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "april_food_limit",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Apr"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.15
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

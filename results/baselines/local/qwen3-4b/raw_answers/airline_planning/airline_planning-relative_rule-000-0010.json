@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "at_least_75_percent_A319_11",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#11"
+      },
+      "sense": ">=",
+      "value": 0.75
+    }
+  ],
+  "note": "The rule ensures that at least 75% of the total number of flights operated by aircraft A319#11 must be at least 75% of the total operated flights."
+  }

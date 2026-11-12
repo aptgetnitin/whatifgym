@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4564_min_share",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A320#22"
+        ],
+        "flight": [
+          "4564"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.75
+    }
+  ]
+}

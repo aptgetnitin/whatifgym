@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_calves_above_zero_year1",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": ">=",
+      "value": 80
+    }
+  ]
+}

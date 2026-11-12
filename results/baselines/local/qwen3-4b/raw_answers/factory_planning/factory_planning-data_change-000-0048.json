@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "downtime",
+      "where": {
+        "month": "Feb",
+        "machine": "horiDrill"
+      }
+    }
+  ],
+  "note": "The planner asks about the value of removing a specific downtime event (Feb horiDrill outage)."
+  }

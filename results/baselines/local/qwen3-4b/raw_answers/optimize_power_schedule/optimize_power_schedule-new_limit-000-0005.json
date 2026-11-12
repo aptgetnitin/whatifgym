@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "plant_hours_on_21_at_least_9",
+      "measure": "on",
+      "scope": {
+        "hour": 21
+      },
+      "sense": ">=",
+      "value": 9
+    },
+    {
+      "name": "oil_generation_at_most_900",
+      "measure": "output",
+      "scope": {
+        "plant": "OIL"
+      },
+      "sense": "<=",
+      "value": 900
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

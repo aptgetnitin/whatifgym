@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [],
+  "rules": [],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "output",
+      "scope": {
+        "plant": "HYDRO",
+        "hour": 5
+      }
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

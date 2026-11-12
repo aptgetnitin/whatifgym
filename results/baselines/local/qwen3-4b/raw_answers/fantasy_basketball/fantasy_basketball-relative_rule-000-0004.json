@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "rules": [
+    {
+      "name": "jarrett_jack_at_least_150_percent_saric",
+      "measure": "pick",
+      "scope": {
+        "player": "Jarrett Jack"
+      },
+      "sense": ">=",
+      "factor": 1.5,
+      "relative_to": {
+        "measure": "pick",
+        "scope": {
+          "player": "Dario Saric"
+        }
+      }
+    },
+    {
+      "name": "trevor_ariza_at_most_15_percent",
+      "measure": "pick",
+      "scope": {
+        "player": "Trevor Ariza"
+      },
+      "sense": "<=",
+      "factor": 0.15,
+      "relative_to": {
+        "measure": "pick",
+        "scope": {
+          "player": "all"
+        }
+      }
+    }
+  ]
+}

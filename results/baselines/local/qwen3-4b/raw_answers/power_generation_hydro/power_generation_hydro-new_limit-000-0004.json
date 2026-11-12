@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": "09-15"
+      },
+      "value": 31600
+    }
+  ],
+  "note": "The planner asks for a minimum thermal output of 31600 MW for period 09-15. In the model, thermal output is captured by the measure 'output' over the scope of period and type. However, the question specifies 'total thermal output', which implies summing over all thermal types. The model's 'output' measure is defined per period and type, so to get the total thermal output for a period, we need to sum over all types. But the question does not specify a particular type, so we interpret it as the sum over all thermal types for period 09-15. The model schema shows that 'output' is a decision measure with scope ['period', 'type'], so the total thermal output for period 09-15 would be the sum of output[period=09-15, type=Thermal0] + output[period=09-15, type=Thermal1] + output[period=09-15, type=Thermal2]. However, the question says 'must be at least 31600', which is a constraint on the total. In the DSL, we can express this as a rule that the sum of output over the scope (period=09-15, type in ['Thermal0','Thermal1','Thermal2']) is at least 31600. But the question is phrased as a 'what-if' scenario, which typically means changing data or adding constraints. Here, the planner is asking for a constraint on the total thermal output, so it's a rule, not a data change. The model schema shows that the base model has a constraint 'reserve' that involves the thermal output. However, the question is about a new constraint: total thermal output for period 09-15 >= 31600. So this is a rule that we add to the model. The DSL allows rules to be added. The rule would be: measure: 'output', scope: {period: '09-15', type: ['Thermal0','Thermal1','Thermal2']}, sense: '>=', value: 31600. But the question says 'must be at least 31600', so it's a lower bound. In the DSL, rules are defined with a sense (<=, >=, ==) and a value. So the rule would be: name: 'thermal_output_09-15_min', measure: 'output', scope: {period: '09-15'}, sense: '>=', value: 31600. Wait, but the scope for 'output' is ['period', 'type'], so to get the total thermal output for period 09-15, we need to sum over all types. The DSL's rule definition says: "		}

@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "counties",
+      "column": "demand",
+      "where": {
+        "county": [
+          "C6"
+        ]
+      },
+      "value": 2
+    },
+    {
+      "op": "scale",
+      "table": "counties",
+      "column": "demand",
+      "where": {
+        "county": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C7",
+          "C8",
+          "C9"
+        ]
+      },
+      "factor": 1.2
+    }
+  ],
+  "note": "Demand rises 20% everywhere except C6, which doubles."
+  }

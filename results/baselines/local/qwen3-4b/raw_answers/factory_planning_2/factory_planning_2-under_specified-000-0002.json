@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": [
+          "grinder",
+          "vertDrill",
+          "horiDrill",
+          "borer",
+          "planer"
+        ]
+      },
+      "value": 1
+    }
+  ],
+  "note": "The planner's question refers to 'shifts for every row of the installed machines table', which means setting the installed count to 1 for all machine types."
+}

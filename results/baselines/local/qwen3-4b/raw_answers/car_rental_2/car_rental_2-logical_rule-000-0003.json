@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "birmingham_thursday_undamaged_stock_min",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Thursday",
+        "depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 250
+    }
+  ]
+}

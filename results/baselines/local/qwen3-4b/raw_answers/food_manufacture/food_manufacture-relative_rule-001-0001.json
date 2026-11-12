@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_buy_limit",
+      "measure": "buy",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.25
+    },
+    {
+      "name": "total_consume_limit",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "sense": ">=",
+      "value": 1.0
+    }
+  ]
+}

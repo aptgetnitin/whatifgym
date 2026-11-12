@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_batch_mannheim",
+      "measure": "start_time",
+      "scope": {
+        "location": "Mannheim"
+      },
+      "sense": ">=",
+      "value": 48
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

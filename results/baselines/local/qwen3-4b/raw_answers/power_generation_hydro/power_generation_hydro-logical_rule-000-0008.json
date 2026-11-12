@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "thermal1_min_run_1824",
+      "measure": "ngen",
+      "scope": {
+        "period": "18-24",
+        "type": "Thermal1"
+      },
+      "sense": ">=",
+      "value": 14
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

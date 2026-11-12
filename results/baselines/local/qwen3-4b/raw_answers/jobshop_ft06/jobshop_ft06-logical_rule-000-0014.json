@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "start",
+      "where": {
+        "job": "J0",
+        "step": 6
+      },
+      "value": 170
+    }
+  ],
+  "rules": [
+    {
+      "name": "j0_step6_start_at_least_170",
+      "measure": "start",
+      "scope": {
+        "job": "J0",
+        "step": 6
+      },
+      "sense": ">=",
+      "value": 170
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "resource_5_train_B_other_train_D_forced",
+      "measure": "meet",
+      "scope": {
+        "resource": "5",
+        "train": "B",
+        "other_train": "D"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "note": "Forced meet condition: exactly one pair of trains sharing a resource at the same time (meet=1) for the specified resource, train, and other train."
+}

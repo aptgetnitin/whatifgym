@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "max_goes_first_for_E",
+      "measure": "goes_first",
+      "scope": {
+        "resource": "*",
+        "train": "E"
+      },
+      "sense": "<=",
+      "value": 5
+    },
+    {
+      "name": "min_entry_time_for_F",
+      "measure": "entry_time",
+      "scope": {
+        "train": "F",
+        "resource": "*"
+      },
+      "sense": ">=",
+      "value": 310
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+  }

@@ -1,0 +1,61 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": [
+          "Mine1"
+        ]
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": [
+          "Mine2"
+        ]
+      },
+      "factor": 0.6
+    },
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": [
+          "Mine3"
+        ]
+      },
+      "factor": 1.6
+    },
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": [
+          "Mine4"
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "Mine5",
+          "royalty": 3000000,
+          "capacity": 1000000,
+          "quality": 1.2
+        }
+      ]
+    }
+  ],
+  "note": "The ore quality is different for one of the rows in the mines table. This scenario adjusts the quality of Mine1 and Mine2, expands Mine3's capacity, removes Mine4, and adds Mine5."
+}

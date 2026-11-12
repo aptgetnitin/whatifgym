@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mining_rule_year1_mine1_min_batch",
+      "measure": "extract",
+      "scope": {
+        "year": "Year1",
+        "mine": "Mine1"
+      },
+      "sense": ">=",
+      "value": 5000000
+    }
+  ],
+  "note": "A minimum batch rule for Year1, Mine1: extract must be at least 5,000,000 tons."
+}

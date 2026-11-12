@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "discharge_efficiency",
+      "value": 0.90
+    }
+  ],
+  "note": "The planner mentions a change in discharging efficiency, so we set the parameter to 0.90 as the new value."
+}

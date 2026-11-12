@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "worker_5_workers_at_most_50_of_worker_11",
+      "measure": "works",
+      "scope": {
+        "worker": "worker_5"
+      },
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "works",
+        "scope": {
+          "worker": "worker_11"
+        }
+      }
+    },
+    {
+      "name": "team_0_1_at_most_10_of_all_teams",
+      "measure": "team",
+      "scope": {
+        "team": "team_0_1"
+      },
+      "sense": "<=",
+      "value": 0.1,
+      "relative_to": {
+        "measure": "team",
+        "scope": {
+          "team": [
+            "team_0_1"
+          ]
+        }
+      }
+    }
+  ]
+}

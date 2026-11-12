@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J0",
+        "step": 3
+      },
+      "value": 14
+    }
+  ],
+  "note": "The planner's question specifies a change to one row in the operations table (J0's step 3 duration)."
+}

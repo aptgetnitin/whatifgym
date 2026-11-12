@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "grow_grain",
+      "column": "grow_grain",
+      "where": {
+        "year": "Year3",
+        "land_group": "Group1"
+      },
+      "value": 110
+    }
+  ],
+  "note": "The planner asks if a specific amount of grain grown in a specific year and land group is achievable. This is a fixed decision for the grow_grain measure in the specified scope."
+}

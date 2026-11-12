@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "production",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      }
+    }
+  ],
+  "note": "The planner asks for a total output produced over years 1-5 (million USD) to be at least 20450. This is a new objective stage that replaces the original model's objective (which maximizes employment). The scope covers all years 1-5 and all industries."
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "csb_5_percent_ration_limit",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "camp": [
+            "Ar Raqqa",
+            "Daraa",
+            "Dayr_Az_Zor",
+            "Hassakeh",
+            "Idleb",
+            "Jubb_al_Jarrah",
+            "Qamishli"
+          ]
+        }
+      }
+    }
+  ]
+}

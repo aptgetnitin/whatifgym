@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "at_least_50_plymouth_rentals",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "rentals",
+        "scope": {
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "manchester_repairs_at_least_80_birmingham_repairs",
+      "measure": "repairs",
+      "scope": {
+        "depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 0.8,
+      "relative_to": {
+        "measure": "repairs",
+        "scope": {
+          "depot": "Birmingham"
+        }
+      }
+    }
+  ]
+}

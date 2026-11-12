@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "route",
+      "column": "route",
+      "where": {
+        "from_location": [
+          "Offenburg",
+          "Heidelberg",
+          "Freiburg im Breisgau",
+          "Mannheim",
+          "Lahr/Schwarzwald"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A non-zero number of legs driven means the route variable is 1 for that location pair. The condition requires that at most one of these locations has a non-zero route count."
+  }

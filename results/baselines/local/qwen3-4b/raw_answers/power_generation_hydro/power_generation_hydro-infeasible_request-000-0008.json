@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": "15-18"
+      },
+      "value": 136500
+    }
+  ],
+  "note": "The planner asks for a minimum thermal output of 136500 MW for Thermal1 in the 15-18 period (peak demand). This is a data change to the demand_mw column for the specific period."
+  }

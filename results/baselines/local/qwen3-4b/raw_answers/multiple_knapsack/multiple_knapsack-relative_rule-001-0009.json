@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item12_at_most_80_of_item10",
+      "measure": "x",
+      "scope": {
+        "item": "item12"
+      },
+      "sense": "<=",
+      "value": 0.8,
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": "item10"
+        }
+      }
+    }
+  ]
+}

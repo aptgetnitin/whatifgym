@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "lateness",
+      "scope": {
+        "customer": [
+          "Customer5"
+        ]
+      }
+    }
+  ],
+  "note": "The total minutes late for Customer5 is bounded by 80."
+  }

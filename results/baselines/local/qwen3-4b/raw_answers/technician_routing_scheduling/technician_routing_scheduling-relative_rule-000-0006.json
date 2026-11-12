@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "doris_ed_ratio",
+      "measure": "use",
+      "scope": {
+        "technician": "Doris"
+      },
+      "sense": "<=",
+      "value": 0.9,
+      "relative_to": {
+        "measure": "use",
+        "scope": {
+          "technician": "Ed"
+        }
+      }
+    },
+    {
+      "name": "customer2_jobs_at_least_50",
+      "measure": "assign",
+      "scope": {
+        "customer": "Customer2"
+      },
+      "sense": ">=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "customer": [
+            "Customer1",
+            "Customer2",
+            "Customer3",
+            "Customer4",
+            "Customer5",
+            "Customer6",
+            "Customer7"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "feb_buy_at_least_40_percent",
+      "measure": "buy",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ]
+}

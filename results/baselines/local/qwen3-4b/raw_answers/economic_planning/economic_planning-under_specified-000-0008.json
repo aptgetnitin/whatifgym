@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 250
+    }
+  ],
+  "rules": [
+    {
+      "name": "cap_on_capacity",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "industry": "coal"
+      },
+      "sense": "<=",
+      "value": 1000
+    }
+  ]
+}

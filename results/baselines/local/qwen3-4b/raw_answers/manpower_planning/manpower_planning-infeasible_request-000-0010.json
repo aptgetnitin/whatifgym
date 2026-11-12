@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "value": 2250
+    }
+  ],
+  "note": "The target is 2250 workers employed above requirement in total, so we set the required column in requirements for year 1, unskilled to 2250."
+}

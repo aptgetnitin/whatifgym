@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "land_groups",
+      "column": "beet_yield",
+      "where": {
+        "land_group": "Group1"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The question is about an upper limit on sugar beet grown, but the model schema shows that 'grow_beet' is a decision measure for the year, not a parameter. The question is vague about what 'upper limit' means (e.g., a maximum value for grow_beet, or a constraint on the land groups). Since the model doesn't have a parameter for the upper limit on sugar beet grown, this question cannot be precisely formulated as a data change or rule. The planner needs to specify whether they mean a maximum value for the grow_beet decision measure or a constraint on the land groups (e.g., reducing the yield of Group1 to 0)."
+}

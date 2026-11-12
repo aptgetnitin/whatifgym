@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": [
+          "1700 PLEASURE HOUSE RD"
+        ]
+      },
+      "factor": 1.25
+    }
+  ]
+}

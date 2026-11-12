@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "total_temp_facilities_cap",
+      "measure": "build",
+      "scope": {
+        "facility": [
+          "T15",
+          "T16",
+          "T17",
+          "T18",
+          "T19",
+          "T20",
+          "T21",
+          "T22",
+          "T23"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "t17_patient_cap",
+      "measure": "assign",
+      "scope": {
+        "county": "*",
+        "facility": "T17"
+      },
+      "sense": "<=",
+      "value": 50
+    }
+  ]
+}

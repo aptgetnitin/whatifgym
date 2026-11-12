@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": [
+          "all"
+        ]
+      },
+      "factor": 0.9999999999999999
+    },
+    {
+      "op": "scale",
+      "table": "purchase",
+      "column": "purchase",
+      "where": {
+        "food": [
+          "Milk"
+        ]
+      },
+      "factor": 0.9999999999999999
+    }
+  ],
+  "note": "The planner's question is about two constraints: one on the total flow (sum over all food) and one on the total purchase for Milk. In the model, the flow and purchase are decision measures. The 'total' constraint is a sum over all food and all cities (for flow) and all suppliers (for purchase). The factor is set to 1 for the original constraint, but the question says 'may not exceed', so it's an upper bound. However, the DSL requires a scale operation for a relative change, but the question is an absolute upper bound. This is a problem: the question is not a scale change but an absolute constraint. The DSL does not support absolute constraints directly; it only supports scale, shift, set, add, remove. So this question cannot be made precise as a data change. We need to ask for clarification."
+}

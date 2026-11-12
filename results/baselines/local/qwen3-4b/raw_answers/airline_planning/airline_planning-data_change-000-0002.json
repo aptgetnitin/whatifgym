@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "departure",
+      "where": {
+        "table": "flights"
+      },
+      "factor": 0.9
+    }
+  ]
+}

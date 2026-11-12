@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "E"
+      },
+      "value": 0
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "entry_time",
+      "scope": {
+        "train": "E",
+        "resource": "2"
+      },
+      "value": 48
+    }
+  ],
+  "note": "The planner's question specifies a minimum batch condition for train E's entry time at resource 2. This is translated into a fixed decision that sets the entry time to at least 48 minutes."
+}

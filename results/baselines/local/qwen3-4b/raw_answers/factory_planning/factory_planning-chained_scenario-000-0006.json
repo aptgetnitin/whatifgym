@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_inventory",
+      "value": 900
+    }
+  ],
+  "note": "The sum of month-end stock over all products and months must stay under 900 units. This is a parameter change to max_inventory, which is the per-product per-month storage limit. However, the question says 'the sum of month-end stock over all products and months', which is a different constraint than the per-product max_inventory. The original model has max_inventory as a per-product limit, so this question is ambiguous. The planner might mean a global inventory cap, but the model doesn't have a global inventory parameter. The model's max_inventory is per product, so the sum of stock over products and months would be a new constraint, not a parameter change. This requires clarification."
+  }

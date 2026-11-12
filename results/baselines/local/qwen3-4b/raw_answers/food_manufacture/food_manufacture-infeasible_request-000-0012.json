@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "refining",
+      "column": "consume",
+      "where": {
+        "month": "Jun",
+        "oil": "VEG1"
+      },
+      "value": 1590
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "costs",
+      "column": "redundancy_cost",
+      "where": {
+        "skill": "unskilled"
+      },
+      "delta": -0.1
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "value": 375
+    }
+  ]
+}

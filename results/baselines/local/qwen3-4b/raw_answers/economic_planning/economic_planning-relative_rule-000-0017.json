@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "stock_year5_at_most_60_of_year2",
+      "measure": "stock",
+      "scope": {
+        "year": 5,
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "stock",
+        "scope": {
+          "year": 2,
+          "industry": [
+            "coal",
+            "steel",
+            "transport"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "relax": [
+    {
+      "constraint": "capacity",
+      "scope": {
+        "technician": [
+          "Albert",
+          "Bob",
+          "Carlos",
+          "Doris",
+          "Ed",
+          "Flor",
+          "Gina"
+        ]
+      }
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "day_length_min",
+      "value": 480
+    }
+  ]
+}

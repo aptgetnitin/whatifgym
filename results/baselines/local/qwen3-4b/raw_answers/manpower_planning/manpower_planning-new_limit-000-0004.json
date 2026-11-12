@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_short_time",
+      "column": "max_short_time",
+      "where": {
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 240
+    }
+  ],
+  "rules": [
+    {
+      "name": "redundant_year2_limit",
+      "measure": "redundant",
+      "scope": {
+        "year": 2
+      },
+      "sense": "<=",
+      "value": 80
+    }
+  ]
+}

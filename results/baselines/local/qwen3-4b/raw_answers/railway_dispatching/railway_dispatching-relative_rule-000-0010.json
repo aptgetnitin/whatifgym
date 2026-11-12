@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "E"
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "A relative arrival time constraint on train E is a scale on its ready_time (which is the time at which the train enters its current resource)."
+}

@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "undamaged_left_saturday_limit",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Saturday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 130
+    }
+  ],
+  "note": "A rule that limits the total undamaged cars kept overnight at all depots on Saturday to 130."
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "j5_start_sum_limit",
+      "measure": "start",
+      "scope": {
+        "job": "J5"
+      },
+      "sense": "<=",
+      "value": 110
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "makespan"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

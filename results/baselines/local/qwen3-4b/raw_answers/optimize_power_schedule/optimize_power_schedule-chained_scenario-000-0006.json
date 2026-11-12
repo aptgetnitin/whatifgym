@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {
+        "plant": [
+          "Scherer",
+          "Bowen",
+          "Jack McDonough",
+          "Edwin I Hatch",
+          "Vogtle",
+          "OIL",
+          "BIOMASS",
+          "GAS",
+          "HYDRO",
+          "OTHER COAL"
+        ]
+      },
+      "factor": 1.2
+    }
+  ],
+  "note": "The capacity_mwh column in the plants table is scaled by 20% for all plants."
+}

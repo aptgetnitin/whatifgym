@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "salary_cap",
+      "value": "30000"
+    }
+  ],
+  "note": "The planner's question is about revisiting the salary cap, but the original model already uses a salary cap of 30,000. Since the question is vague about whether the cap is raised or lowered, we assume the base model's cap is already set to 30,000. The scenario DSL requires precise data changes, so we set the salary cap to 30,000 to reflect the original model's constraint."
+}

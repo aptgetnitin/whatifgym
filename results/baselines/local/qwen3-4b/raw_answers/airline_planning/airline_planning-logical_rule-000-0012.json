@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "no_both_3082_4275",
+      "measure": "operate",
+      "scope": {
+        "flight": [
+          "3082",
+          "4275"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

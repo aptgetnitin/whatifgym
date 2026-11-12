@@ -1,0 +1,21 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "consume",
+      "column": "consume",
+      "where": {
+        "month": "May",
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "value": 45
+    }
+  ]
+}

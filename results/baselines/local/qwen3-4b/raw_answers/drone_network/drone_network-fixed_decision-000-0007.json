@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "assign",
+      "column": "assign",
+      "where": {
+        "location": "1200 FAULKNER RD",
+        "base": "21 MUNICIPAL CTR Fire Station"
+      },
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {
+        "plant": [
+          "Scherer",
+          "Bowen",
+          "Jack McDonough",
+          "Edwin I Hatch",
+          "Vogtle",
+          "OIL",
+          "BIOMASS",
+          "GAS",
+          "HYDRO",
+          "OTHER COAL"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The question is vague: 'changes across the board' could mean any change. Since the model has a fixed capacity_mwh for each plant, scaling by 1.0 (no change) is the only precise interpretation. To make it meaningful, the planner would need to specify a factor (e.g., 0.9 for 10% reduction)."
+}

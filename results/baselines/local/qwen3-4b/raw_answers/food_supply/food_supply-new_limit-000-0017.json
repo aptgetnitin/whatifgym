@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "ration_sum_jubb_al_jarrah",
+      "measure": "ration",
+      "scope": {
+        "camp": "Jubb_al_Jarrah"
+      },
+      "sense": ">=",
+      "value": 7.3
+    },
+    {
+      "name": "flow_sum_hassakeh",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Hassakeh"
+      },
+      "sense": "<=",
+      "value": 57900
+    }
+  ],
+  "note": "A rule for the sum of rations per camp and flow per origin city."
+  }

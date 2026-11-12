@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "customers",
+      "column": "window_end",
+      "factor": 0.75
+    }
+  ]
+  }

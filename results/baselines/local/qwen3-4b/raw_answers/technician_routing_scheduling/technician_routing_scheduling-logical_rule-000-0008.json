@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "route",
+      "column": "from_location",
+      "where": {
+        "from_location": [
+          "Heidelberg",
+          "Baden-Baden"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A non-zero number of legs driven for a location means the technician drives from that location. Setting from_location to 0 for Heidelberg and Baden-Baden means no legs start from these locations."
+}

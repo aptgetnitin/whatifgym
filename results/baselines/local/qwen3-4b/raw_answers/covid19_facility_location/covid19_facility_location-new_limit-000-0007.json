@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "e5_capacity_limit",
+      "measure": "assign",
+      "scope": {
+        "facility": "E5"
+      },
+      "sense": "<=",
+      "value": 170
+    }
+  ]
+}

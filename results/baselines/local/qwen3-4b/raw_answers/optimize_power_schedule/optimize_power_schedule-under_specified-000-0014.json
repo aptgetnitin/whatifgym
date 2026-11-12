@@ -1,0 +1,17 @@
+{
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "1"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is too vague: 'upper limit on power generated' could mean many things (e.g., a global cap, per-plant cap, per-hour cap). Without specifying the exact constraint or the value, it's impossible to turn this into a machine-checkable scenario."
+}

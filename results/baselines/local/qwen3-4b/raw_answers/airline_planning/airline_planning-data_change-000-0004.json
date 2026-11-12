@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "passengers",
+      "where": {
+        "flight": [3086]
+      },
+      "factor": 1.3
+    }
+  ]
+}

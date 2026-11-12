@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "year3_max_mine_years",
+      "measure": "operate",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

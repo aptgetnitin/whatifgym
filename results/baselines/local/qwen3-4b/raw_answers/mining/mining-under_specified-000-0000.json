@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "value": 1.0
+    }
+  ],
+  "note": "The planner's question is vague: 'there is going to be an upper limit on tons of ore extracted' could mean a global limit, a limit per mine, or a limit per year. Since the model has a capacity constraint per mine per year, the most precise interpretation is to set a global capacity limit for all mines. However, the model does not have a global capacity limit parameter; the capacity is per mine. The question is ambiguous and needs clarification."
+  }

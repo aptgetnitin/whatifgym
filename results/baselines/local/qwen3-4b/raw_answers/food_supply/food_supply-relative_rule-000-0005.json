@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "measure": "total_food_bought",
+        "scope": {
+          "food": "*",
+          "supplier": "*"
+        }
+      },
+      "value": 3
+    },
+    {
+      "op": "set",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "measure": "total_food_shipped",
+        "scope": {
+          "food": "*",
+          "from_city": "*",
+          "to_city": "*"
+        }
+      },
+      "value": 1
+    }
+  ],
+  "note": "The planner wants to keep total food bought at or above 3 times total food shipped. This is a constraint on the ratio of two decision measures."
+}

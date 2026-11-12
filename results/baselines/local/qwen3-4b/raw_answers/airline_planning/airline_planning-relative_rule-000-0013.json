@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "a318_5_flight_share",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A318#5"
+      },
+      "sense": ">=",
+      "value": 0.6
+    }
+  ]
+}

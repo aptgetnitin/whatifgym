@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "only_one_nonzero_rentals",
+      "measure": "rentals",
+      "scope": {
+        "day": [
+          "Thursday",
+          "Wednesday",
+          "Saturday"
+        ],
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

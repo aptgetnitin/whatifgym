@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_stock_transport_year1",
+      "measure": "stock",
+      "scope": {
+        "year": 1,
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 118
+    }
+  ],
+  "note": "A minimum stock requirement for transport in year 1."
+  }

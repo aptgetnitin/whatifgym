@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "ask": "What does 'minimum arrival time at destination' mean in this context? How is it defined in the model? Which decision measure or constraint relates to it?"
+}

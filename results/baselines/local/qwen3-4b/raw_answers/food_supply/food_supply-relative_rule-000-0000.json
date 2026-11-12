@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "milk_ration_at_most_2x_dsm",
+      "measure": "ration",
+      "scope": {
+        "food": "Milk",
+        "camp": "*"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Dried skim milk (enriched) (DSM)",
+          "camp": "*"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

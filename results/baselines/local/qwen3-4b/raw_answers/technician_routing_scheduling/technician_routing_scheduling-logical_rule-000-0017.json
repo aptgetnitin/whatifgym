@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "carlos_legs_require_min_technicians",
+      "measure": "route",
+      "scope": {
+        "from_location": "Heidelberg",
+        "technician": "Carlos"
+      },
+      "sense": ">=",
+      "value": 1
+    },
+    {
+      "name": "carlos_technicians_dispatched",
+      "measure": "use",
+      "scope": {
+        "technician": "Carlos"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

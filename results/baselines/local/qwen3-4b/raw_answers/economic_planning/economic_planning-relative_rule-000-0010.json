@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "value": 0.1
+    }
+  ],
+  "note": "The question is ambiguous: it refers to 'all output produced' but doesn't specify which output (production or stock) and which year (year 6 is the steady state, not a production year)."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "facilities",
+      "column": "capacity",
+      "where": {
+        "facility": "T15"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Lifting the bed-capacity limit for T15 means setting its capacity to infinity (scale by 1.0)."
+}

@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "damaged_stock_monday_frac",
+      "measure": "damaged_stock",
+      "scope": {
+        "day": "Monday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.25
+    },
+    {
+      "name": "damaged_stock_friday_frac",
+      "measure": "damaged_stock",
+      "scope": {
+        "day": "Friday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.25
+    }
+  ],
+  "note": "The question compares the damaged stock at Monday and Friday across all depots. The rule ensures that Monday's damaged stock is at most 25% of Friday's."
+}

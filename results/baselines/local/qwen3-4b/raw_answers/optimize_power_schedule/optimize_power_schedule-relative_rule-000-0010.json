@@ -1,0 +1,61 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "start_gas_at_most_50_start_other_coal",
+      "measure": "start",
+      "scope": {
+        "plant": "GAS"
+      },
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "plant": "OTHER COAL"
+        }
+      }
+    },
+    {
+      "name": "other_coal_at_most_5_percent_on_hours",
+      "measure": "on",
+      "scope": {
+        "plant": "OTHER COAL"
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "hour": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"
+          ]
+        }
+      }
+    }
+  ]
+}

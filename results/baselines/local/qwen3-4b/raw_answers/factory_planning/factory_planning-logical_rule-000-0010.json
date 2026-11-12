@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "logic_rule_for_prod3_feb_sell",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "product": "Prod3",
+            "month": "Feb"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "product": "any",
+            "month": "Mar"
+          },
+          "sense": ">=",
+          "value": 800
+        }
+      ]
+    }
+  ]
+}

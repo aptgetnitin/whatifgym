@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "prod3_jun_make_positive",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jun",
+            "product": "Prod3"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "product": "Prod2"
+          },
+          "sense": ">=",
+          "value": 220
+        }
+      ]
+    }
+  ]
+}

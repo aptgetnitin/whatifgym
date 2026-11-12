@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "no_both_non_zero",
+      "measure": "goes_first",
+      "scope": {
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ],
+        "train": [
+          "B"
+        ],
+        "other_train": [
+          "A"
+        ]
+      },
+      "sense": ">=",
+      "value": 1
+    }
+  ]
+}

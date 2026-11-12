@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "logic": [
+    {
+      "name": "at_least_1",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "assign",
+          "scope": {
+            "location": "1000 BELVOIR LA",
+            "base": "5145 RURITAN COURT Rescue Squad"
+          },
+          "sense": ">=",
+          "value": 2
+        },
+        {
+          "measure": "open",
+          "scope": {
+            "base": "21 MUNICIPAL CTR Fire Station"
+          },
+          "sense": ">=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

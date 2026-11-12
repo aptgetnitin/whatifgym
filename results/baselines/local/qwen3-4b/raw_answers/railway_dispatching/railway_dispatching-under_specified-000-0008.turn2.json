@@ -1,0 +1,4 @@
+{
+  "role": "agent",
+  "text": "What does the minimum time on the resource for resource 0 do? Please specify whether you mean the duration parameter of resource 0, or the minimum time required for a train to pass through resource 0 (which may be different from the duration parameter)."
+  }

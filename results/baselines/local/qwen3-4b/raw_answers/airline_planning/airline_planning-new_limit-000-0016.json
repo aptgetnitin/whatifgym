@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "limit_flights_A319_11",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#11"
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ],
+  "note": "A limit on the number of flights operated for a specific aircraft."
+  }

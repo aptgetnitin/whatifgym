@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_batch_for_F",
+      "measure": "entry_time",
+      "scope": {
+        "train": "F",
+        "resource": [
+          "0",
+          "2",
+          "4",
+          "6"
+        ]
+      },
+      "sense": ">=",
+      "value": 620
+    }
+  ],
+  "note": "The planner's question specifies a minimum batch for train F's entry time across all resources. The entry_time measure is defined for each train and resource, so the scope includes all resources that train F uses (0, 2, 4, 6)."
+}

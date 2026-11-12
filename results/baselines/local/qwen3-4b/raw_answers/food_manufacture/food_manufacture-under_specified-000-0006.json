@@ -1,0 +1,48 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": [
+          "VEG1"
+        ],
+        "month": [
+          "Jun"
+        ]
+      },
+      "value": 1.2
+    },
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": [
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ],
+        "month": [
+          "Mar"
+        ]
+      },
+      "value": 0.9
+    },
+    {
+      "op": "remove",
+      "table": "purchase_prices",
+      "where": {
+        "oil": [
+          "OIL2"
+        ],
+        "month": [
+          "Feb"
+        ]
+      }
+    }
+  ],
+  "note": "A cap on the tons of oil bought would be a rule like 'buy at most X tons of oil per month' but the question is too vague to specify X or which oil/month. The scenario DSL requires precise data changes or rules. Since the question doesn't specify the cap value or the oil/month, it's not machine-checkable."
+}

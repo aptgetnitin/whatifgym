@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": [
+          "Mine4"
+        ]
+      }
+    }
+  ],
+  "note": "The planner says 'we lose a mine', but the question is too vague. Which mine? The model has four mines: Mine1, Mine2, Mine3, Mine4. The scenario DSL requires precise table names, column names, etc. The planner's question doesn't specify which mine is lost, so we cannot make a precise scenario."
+  }

@@ -1,0 +1,11 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_discharge_kw",
+      "value": "0.0"
+    }
+  ],
+  "note": "The planner's question is about an upper limit on battery discharging power, which implies a maximum value. However, the question is vague about the specific value of the upper limit. The model requires a specific numerical value for the parameter change. Without knowing the exact upper limit (e.g., 3 kW), the scenario cannot be precisely defined. Therefore, the question needs clarification."
+  }

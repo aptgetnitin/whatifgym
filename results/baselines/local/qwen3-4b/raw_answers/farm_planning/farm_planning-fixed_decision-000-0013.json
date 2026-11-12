@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "fixed_decisions": [
+    {
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year5"
+      },
+      "value": 0
+    }
+  ]
+}

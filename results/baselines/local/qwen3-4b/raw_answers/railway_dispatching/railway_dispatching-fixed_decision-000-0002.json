@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "fixed_pair_5_AC",
+      "measure": "meet",
+      "scope": {
+        "resource": "5",
+        "train": "A",
+        "other_train": "C"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "note": "Forcing a specific pair of trains to share a resource at the same time (meet=1) is a fixed decision on the meet measure for that resource and train pair."
+  }

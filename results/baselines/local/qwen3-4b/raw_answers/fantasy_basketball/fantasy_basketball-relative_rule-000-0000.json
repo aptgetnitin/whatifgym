@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "rules": [
+    {
+      "name": "trevor_ariza_at_most_80_of_dario_saric",
+      "measure": "pick",
+      "scope": {
+        "player": "Trevor Ariza"
+      },
+      "sense": "<=",
+      "value": 0.8,
+      "relative_to": {
+        "measure": "pick",
+        "scope": {
+          "player": "Dario Saric"
+        }
+      }
+    }
+  ]
+}

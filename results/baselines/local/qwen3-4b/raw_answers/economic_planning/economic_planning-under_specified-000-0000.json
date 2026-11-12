@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 60
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 250
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 250
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "labor_per_unit_output",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 0.5
+    }
+  ],
+  "note": "The planner's question is vague: 'There is going to be an upper limit on output produced (million USD)' does not specify which industry, which year, or what the limit is. This scenario assumes a specific change to coal's external demand, initial stock, initial capacity, and labor per unit output as an example of how to model such a change. The planner needs to clarify which industry, year, and the exact limit."
+}

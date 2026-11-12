@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "fixed_decisions": [
+    {
+      "measure": "make",
+      "scope": {
+        "month": [
+          "May",
+          "Feb",
+          "Jan"
+        ],
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner wants only one month (May, Feb, or Jan) to have non-zero production for all products. This is enforced by setting make to zero for all products in the specified months."
+  }

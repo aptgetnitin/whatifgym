@@ -1,0 +1,53 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "plant": [
+          "Scherer",
+          "Bowen",
+          "Jack McDonough",
+          "Edwin I Hatch",
+          "Vogtle",
+          "OIL",
+          "BIOMASS",
+          "GAS",
+          "HYDRO",
+          "OTHER COAL"
+        ],
+        "hour": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'capped' could mean a maximum limit on output, but without specifying the cap value or which plants/hours it applies to, it cannot be precisely defined. The model requires a specific cap value and scope for the data change."
+}

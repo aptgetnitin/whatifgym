@@ -1,0 +1,16 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "refining",
+      "column": "refining_capacity",
+      "where": {
+        "category": "veg",
+        "month": "all"
+      },
+      "value": 1900
+    }
+  ],
+  "note": "The planner's question refers to a cap on the total tons of oil refined over the entire horizon. In the model, the refining capacity is constrained per category and month. The question states 'an overall cap of 1900 applies to the tons of oil refined, summed over everything', which means the total refined oil (sum of consume over all months and oils) cannot exceed 1900 tons. However, the model's constraints are per category and month, so this cap must be applied as a global constraint on the sum of consume. The model does not have a direct 'refining' table with a global cap, so we need to interpret this as a rule that the total consume across all months and oils is <= 1900. This is a rule, not a data change, so it should be in the 'rules' section."
+  }

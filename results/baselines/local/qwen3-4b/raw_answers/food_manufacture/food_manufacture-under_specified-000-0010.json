@@ -1,0 +1,48 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": [
+          "VEG1"
+        ],
+        "month": [
+          "Jun"
+        ]
+      },
+      "value": 1.2
+    },
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": [
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ],
+        "month": [
+          "Mar"
+        ]
+      },
+      "value": 0.9
+    },
+    {
+      "op": "remove",
+      "table": "purchase_prices",
+      "where": {
+        "oil": [
+          "OIL2"
+        ],
+        "month": [
+          "Feb"
+        ]
+      }
+    }
+  ],
+  "note": "The planner's question is vague: 'Suppose the tons of oil bought gets capped.' This means the planner wants to know what happens if there's a cap on the total amount of oil bought. However, the model doesn't have a cap on 'buy' by default; the cap would be a new rule. The question is not precise enough to specify which oil, which month, or what the cap value is. The model's 'buy' variable is already constrained by the purchase prices (no purchase if no price row exists) and the stock balance. The planner likely means a new rule that limits the total 'buy' over time, but without more details, this cannot be made machine-checkable."
+}

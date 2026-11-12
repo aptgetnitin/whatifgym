@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "day_length_min",
+      "where": {
+        "param": "day_length_min"
+      },
+      "factor": 0.5
+    }
+  ]
+}

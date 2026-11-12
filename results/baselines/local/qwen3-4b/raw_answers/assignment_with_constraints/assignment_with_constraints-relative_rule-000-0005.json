@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "rules": [
+    {
+      "name": "teams_at_most_25_percent",
+      "measure": "team",
+      "scope": {
+        "team": [
+          "team_2_3",
+          "team_1_3",
+          "team_1_2",
+          "team_0_1",
+          "team_0_2",
+          "team_6_7",
+          "team_5_7",
+          "team_5_6",
+          "team_4_5",
+          "team_4_7",
+          "team_10_11",
+          "team_9_11",
+          "team_9_10",
+          "team_8_10",
+          "team_8_11"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.25
+    }
+  ]
+  }

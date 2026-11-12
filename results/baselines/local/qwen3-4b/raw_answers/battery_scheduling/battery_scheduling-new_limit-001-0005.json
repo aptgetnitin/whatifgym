@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_charge_kw",
+      "value": 5.9
+    }
+  ]
+  }

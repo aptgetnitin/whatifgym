@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "meet",
+      "where": {
+        "resource": 4,
+        "train": "A",
+        "other_train": "C"
+      },
+      "value": 1
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "meet",
+      "scope": {
+        "resource": 4,
+        "train": "A",
+        "other_train": "C"
+      },
+      "value": 1
+    }
+  ]
+  }

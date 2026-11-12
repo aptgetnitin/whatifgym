@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "assign",
+      "column": "assign",
+      "where": {
+        "customer": "Customer1",
+        "technician": "Albert"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "lateness",
+      "column": "lateness",
+      "where": {
+        "customer": "Customer5"
+      },
+      "value": 80
+    }
+  ]
+}

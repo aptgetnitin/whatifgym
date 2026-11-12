@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "makespan",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "goes_first",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "end",
+      "scope": {}
+    }
+  ]
+}

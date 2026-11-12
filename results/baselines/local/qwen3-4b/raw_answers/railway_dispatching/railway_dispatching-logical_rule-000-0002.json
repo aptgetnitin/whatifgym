@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "F"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "C"
+      },
+      "value": 20
+    }
+  ],
+  "note": "The planner's question is about setting entry times for trains, but the model uses `ready_time` as the starting point for entry times. The question specifies a non-zero entry time for F (which is already set to 0 in the base model) and a total entry time of at least 20 for C. Since the model's decision variables are `entry_time[train, resource]`, the `ready_time` is the time when the train enters its current resource. The question likely means that train F must have a `ready_time` of at least 1 minute (non-zero) and train C must have a `ready_time` of at least 20 minutes. However, the base model sets `ready_time` to 0 for all trains initially, so we need to set these values to meet the condition."
+}

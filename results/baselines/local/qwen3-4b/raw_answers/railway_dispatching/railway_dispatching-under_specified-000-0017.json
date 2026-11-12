@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "resources",
+      "column": "duration",
+      "where": {
+        "resource": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is ambiguous because it doesn't specify how the minimum time shifts. The minimum time on the resource is a duration, but the question says 'shifts for every row of the stations and tracks table'. The model has a 'resources' table with resource ids 0-6, where even ids are stations and odd ids are tracks. The duration is a number (minutes) for each resource. The question doesn't specify whether it's a scale (multiplicative) or shift (additive) change, or by how much. The model schema shows that the 'duration' column is in the 'resources' table, so the change should be applied to the 'resources' table's 'duration' column. However, the question is too vague to be machine-checkable without more details."
+}

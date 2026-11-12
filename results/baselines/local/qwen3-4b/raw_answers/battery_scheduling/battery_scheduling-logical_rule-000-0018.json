@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_min_19-20_if_soc_14-15_positive",
+      "measure": "discharge",
+      "scope": {
+        "hour": "14-15"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "discharge_min_19-20_if_soc_14-15_positive",
+      "measure": "discharge",
+      "scope": {
+        "hour": "19-20"
+      },
+      "sense": ">=",
+      "value": 3.3
+    }
+  ]
+}

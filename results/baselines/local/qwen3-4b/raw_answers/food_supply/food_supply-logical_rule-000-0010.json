@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_purchase_min_flow_cs",
+      "measure": "purchase",
+      "scope": {
+        "food": "Wheat",
+        "supplier": "Aleppo"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "csb_flow_min",
+      "measure": "flow",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "from_city": "Aleppo",
+        "to_city": "Idleb"
+      },
+      "sense": ">=",
+      "value": 7000
+    }
+  ]
+}

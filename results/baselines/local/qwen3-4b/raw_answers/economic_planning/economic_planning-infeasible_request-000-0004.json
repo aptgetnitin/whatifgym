@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": "steel"
+      },
+      "value": 80
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": "transport"
+      },
+      "value": 150
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 250
+    },
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "labor_per_unit_output",
+      "where": {
+        "industry": "coal"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "The planner's question is about feasibility of a production target for steel in year 5. The scenario DSL requires precise data changes to match the what-if surface. The question specifies a minimum output for steel in year 5, but the what-if surface shows that steel demand rises to 80, transport starts with 150 stock, coal capacity is 250, and coal needs less manpower (0.5). These are the relevant data changes from the what-if surface table."
+}

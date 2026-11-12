@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine2"
+      },
+      "value": 21500000
+    }
+  ],
+  "note": "The planner asks if a specific extraction amount for Mine2 is achievable. This is a fixed decision on the extract measure for Mine2."
+}

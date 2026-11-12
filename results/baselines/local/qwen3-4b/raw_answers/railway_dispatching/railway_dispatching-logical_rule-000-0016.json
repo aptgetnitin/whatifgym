@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "finish_time",
+      "scope": {
+        "train": "A"
+      }
+    }
+  ],
+  "note": "The question asks for the finish time of train A to be either 0 or at least 66 minutes. This is a constraint on the finish_time of train A."
+  }

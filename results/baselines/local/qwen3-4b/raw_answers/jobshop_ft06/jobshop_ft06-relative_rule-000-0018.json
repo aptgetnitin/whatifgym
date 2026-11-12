@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j1_start_time_share",
+      "measure": "start",
+      "scope": {
+        "job": "J1"
+      },
+      "sense": ">=",
+      "value": 0.5
+    }
+  ],
+  "note": "The planner asks for J1's start time to be at least 50% of all operation start times. However, the model's decision measure 'start' is a time value per operation, not a sum. The rule as written would be incorrect because it's missing a scope for the total start time. The correct rule should compare the sum of J1's start times to the sum of all start times."
+  }

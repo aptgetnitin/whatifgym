@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "observation_days",
+      "where": {
+        "name": "observation_days"
+      },
+      "factor": 0.75
+    }
+  ]
+}

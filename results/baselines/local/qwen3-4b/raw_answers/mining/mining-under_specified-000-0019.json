@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": "Mine4"
+      },
+      "value": 0.0
+    }
+  ],
+  "note": "The ore quality for mine Mine4 changes to 0.0 (no grade)."
+}

@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": "VEG1"
+      },
+      "factor": 0.25
+    },
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "factor": 0.2
+    }
+  ]
+}

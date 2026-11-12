@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "lateness_penalty",
+      "value": 1
+    }
+  ],
+  "note": "The planner wants to cap the minutes late, but the model's penalty is per minute late. Setting a fixed penalty value for lateness is a way to cap the impact of lateness on the objective."
+  }

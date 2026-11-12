@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "grow_grain",
+      "column": "grow_grain",
+      "where": {
+        "year": "Year4",
+        "land_group": "Group1"
+      },
+      "value": 1
+    }
+  ],
+  "rules": [
+    {
+      "name": "grain_buy_at_least_46_year1",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 46
+    }
+  ]
+}

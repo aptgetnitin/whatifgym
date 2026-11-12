@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "price_2_day_rental_other_depot",
+      "measure": "rentals",
+      "scope": {
+        "rental_days": 2,
+        "price_other_depot": 80
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "years",
+      "column": "housing_capacity",
+      "where": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The housing capacity limit is removed by setting it to zero for all years."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "costs",
+      "column": "cost",
+      "where": {
+        "worker": "worker_8",
+        "task": "task_3"
+      },
+      "delta": -50
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "meet",
+      "scope": {
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ],
+        "train": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "entry_time",
+      "scope": {
+        "train": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ]
+      }
+    }
+  ]
+}

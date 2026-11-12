@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "ask": "What specific closing stock target value should be used? How does it affect the model?"
+}

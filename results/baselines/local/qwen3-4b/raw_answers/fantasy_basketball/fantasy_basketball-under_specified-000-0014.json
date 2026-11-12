@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "salary_cap",
+      "value": "30000"
+    }
+  ],
+  "note": "The planner's question is about revisiting the salary cap, but the original model uses a salary cap of 30,000. Since the question is vague about the new cap value, we need to clarify."
+  }

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "at_most_15_percent_task_5",
+      "measure": "assign",
+      "scope": {
+        "task": "task_5"
+      },
+      "sense": "<=",
+      "value": 0.15
+    }
+  ],
+  "note": "A rule that limits the percentage of total assignments to task_5."
+  }

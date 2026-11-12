@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "coal_capacity_above_zero_year3",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 3,
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "steel_stock_at_least_63_year2",
+      "measure": "stock",
+      "scope": {
+        "year": 2,
+        "industry": "steel"
+      },
+      "sense": ">=",
+      "value": 63
+    }
+  ],
+  "logic": [
+    {
+      "name": "conditional_rule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extra_capacity",
+          "scope": {
+            "year": 3,
+            "industry": "coal"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "stock",
+          "scope": {
+            "year": 2,
+            "industry": "steel"
+          },
+          "sense": ">=",
+          "value": 63
+        }
+      ]
+    }
+  ]
+}

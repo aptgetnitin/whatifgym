@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "ask": "What specific change is intended for task_0's min_workers? Is it a fixed value or a range? How does it affect the existing constraints?"
+}

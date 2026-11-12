@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 250
+    }
+  ],
+  "note": "A floor on capacity built would be a constraint on the extra_capacity variable, but the question is vague about the exact form. The model's capacity constraint already limits production to initial_capacity + extra_capacity built so far. A floor on capacity built might mean a maximum on extra_capacity, but the question doesn't specify whether it's a global floor or per industry/year. Since the question is vague, I'll assume it's a new constraint on extra_capacity, but the planner needs to clarify."
+  }

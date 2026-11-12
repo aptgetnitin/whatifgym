@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_share_of_target",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_share_of_target",
+      "where": {
+        "from_skill": "semi_skilled",
+        "to_skill": "skilled"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'downgraded to a lower skill level gets capped' likely refers to the retraining limit for downward moves (downgrading), but the model only has retraining for upward moves. In the model, downgrading is a separate decision variable with its own constraints. The retraining table defines upward moves only, so the cap on downward moves would be a constraint on the downgrade variable. However, the model's constraints for downgrade are not explicitly capped in the schema. The question might mean that the number of workers downgraded is capped, but the model does not have a direct cap on downgrade. Given the model's structure, the most precise interpretation is to set the max_share_of_target for retraining (upward moves) to 0, which effectively caps retraining at the fixed number (max_per_year) without the share component. This is a common practice in the model to relax the retraining limit for downward moves, but the model does not have downward retraining limits in the retraining table. The question is unclear, so I'll provide a scenario that sets the max_share_of_target to 0 for both upward retraining moves, which is the closest interpretation."
+}

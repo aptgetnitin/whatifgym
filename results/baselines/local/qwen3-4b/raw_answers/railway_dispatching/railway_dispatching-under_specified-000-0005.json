@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "ask": "What is the upper limit on number of trains clearing a resource before another train enters it?"
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "e13_assign_limit",
+      "measure": "assign",
+      "scope": {
+        "county": "*",
+        "facility": "E13"
+      },
+      "sense": "<=",
+      "value": 220
+    }
+  ]
+}

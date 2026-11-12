@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "at_least_30_percent_assignments_to_worker_1",
+      "measure": "assign",
+      "scope": {
+        "worker": [
+          "worker_1"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.3
+    }
+  ]
+}

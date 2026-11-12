@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "steel_stock_zero_or_at_least_660",
+      "measure": "stock",
+      "scope": {
+        "industry": "steel",
+        "year": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "sense": "==",
+      "value": 0
+    },
+    {
+      "name": "steel_stock_at_least_660",
+      "measure": "stock",
+      "scope": {
+        "industry": "steel",
+        "year": [
+          "1",
+          "2",
+        "3",
+        "4",
+        "5"
+        ]
+      },
+      "sense": ">=",
+      "value": 660
+    }
+  ],
+  "note": "The stock for steel must be either zero or at least 660 million USD across all years 1-5."
+}

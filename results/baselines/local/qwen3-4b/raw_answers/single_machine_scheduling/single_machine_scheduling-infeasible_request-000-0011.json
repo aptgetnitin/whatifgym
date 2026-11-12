@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "start_time",
+      "column": "start_time",
+      "where": {
+        "job": "job_13"
+      },
+      "value": 314250
+    },
+    {
+      "op": "set",
+      "table": "start_time",
+      "column": "start_time",
+      "where": {
+        "job": "job_10"
+      },
+      "value": 91400
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "start_time",
+      "scope": {
+        "job": [
+          "job_13",
+          "job_10"
+        ]
+      },
+      "value": 314250
+    },
+    {
+      "measure": "start_time",
+      "scope": {
+        "job": [
+          "job_10"
+        ]
+      },
+      "value": 91400
+    }
+  ]
+}

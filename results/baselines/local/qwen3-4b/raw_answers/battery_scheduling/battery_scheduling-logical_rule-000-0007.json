@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "exactly_one_nonzero_soc",
+      "measure": "soc",
+      "scope": {
+        "hour": [
+          "22-23",
+          "07-08",
+          "11-12"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": []
+}

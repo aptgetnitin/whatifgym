@@ -1,0 +1,63 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "skilled"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 2,
+        "skill": "skilled"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "skilled"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "skilled_recruit_min_50",
+      "measure": "recruit",
+      "scope": {
+        "skill": "skilled"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "total_recruit_min_50",
+      "measure": "recruit",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.5
+    }
+  ]
+}

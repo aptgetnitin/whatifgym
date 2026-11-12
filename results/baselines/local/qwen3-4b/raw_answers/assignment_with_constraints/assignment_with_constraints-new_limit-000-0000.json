@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "task_4_min_assignments",
+      "measure": "assign",
+      "scope": {
+        "task": "task_4"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

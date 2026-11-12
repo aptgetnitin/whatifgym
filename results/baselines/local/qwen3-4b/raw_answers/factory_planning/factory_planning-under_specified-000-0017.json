@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "ask": "What is the upper limit on units made for each product and month? How is this limit determined in the model?"
+}

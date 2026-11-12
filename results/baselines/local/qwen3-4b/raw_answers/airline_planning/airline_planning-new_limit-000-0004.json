@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "revenue",
+      "where": {
+        "flight": [
+          "26"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question refers to a cap on the total number of operated flights. However, the model does not have a direct 'total operated flights' measure. The model's objective is to minimize lost revenue, and the constraint on the number of flights operated is not explicitly defined in the model schema. The question might be referring to a constraint that is not part of the base model, or it might be a misunderstanding of the model's structure."
+}

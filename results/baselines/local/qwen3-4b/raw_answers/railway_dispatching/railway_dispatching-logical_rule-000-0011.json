@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_least_2_clearing_before",
+      "measure": "goes_first",
+      "scope": {
+        "resource": "0",
+        "train": "A",
+        "other_train": "E"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 500
+    }
+  ],
+  "note": "The question asks for a binary condition on year 6 coal output. Since year 6 is the steady state, it's not a decision variable but a fixed level. The model's steady state is defined by external_demand. Setting external_demand to 0 or 500 would correspond to the two cases, but the question requires a logical rule for the condition."
+}

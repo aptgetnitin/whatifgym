@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "steel_production_year2",
+      "measure": "production",
+      "scope": {
+        "year": 2,
+        "industry": "steel"
+      },
+      "sense": "<=",
+      "value": 470
+    },
+    {
+      "name": "steel_production_year2_alt",
+      "measure": "production",
+      "scope": {
+        "year": 2,
+        "industry": "steel"
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ]
+}

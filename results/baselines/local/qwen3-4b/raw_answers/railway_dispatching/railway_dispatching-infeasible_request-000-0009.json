@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "A"
+      },
+      "value": 165
+    }
+  ],
+  "note": "The planner wants to fix train A's arrival time at the destination to exactly 165 minutes."
+}

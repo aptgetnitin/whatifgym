@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "fixed_decisions": [
+    {
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A321#2",
+          "A321#4",
+          "A319#18",
+          "A319#5"
+        ]
+      },
+      "value": 1
+    }
+  ],
+  "note": "The planner wants exactly 2 of the 4 aircraft to have non-zero flights operated. This is a fixed decision constraint on the operate measure over the specified aircraft."
+}

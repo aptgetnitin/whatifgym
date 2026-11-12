@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "refined_oil_apr_at_least_60",
+      "measure": "consume",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "value": 0.6
+    }
+  ],
+  "note": "The planner's question specifies a percentage of total refined oil for April. The rule should be a relative rule comparing the April consumption to the total consumption over all months."
+  }

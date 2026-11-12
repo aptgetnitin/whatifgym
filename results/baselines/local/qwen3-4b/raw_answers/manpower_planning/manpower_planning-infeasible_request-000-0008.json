@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "semi_skilled"
+      },
+      "value": 11900
+    }
+  ],
+  "note": "The question asks for the minimum workforce for semi-skilled in year 3 to be at least 11900. The requirements table has a row for year 3 and semi_skilled, so we set the required value to 11900."
+}

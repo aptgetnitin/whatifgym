@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J0",
+        "step": 5
+      },
+      "value": 14
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "start",
+      "scope": {
+        "job": "J0",
+        "step": 5
+      },
+      "value": 32
+    },
+    {
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M3",
+        "job": "J1",
+        "other_job": "J2"
+      },
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "makespan"
+    }
+  ]
+  }

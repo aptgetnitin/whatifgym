@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "m2_job_pairs_50_percent",
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M2"
+      },
+      "sense": ">=",
+      "value": 0.5
+    }
+  ],
+  "note": "The rule specifies that the number of job pairs where the job goes first on machine M2 must be at least 50% of the total job pairs on that machine."
+}

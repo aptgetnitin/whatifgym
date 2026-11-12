@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "aleppo_flow_at_most_25_hassakeh",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Aleppo"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "from_city": "Hassakeh"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "workers",
+      "column": "size_capacity",
+      "where": {
+        "worker": "worker_1"
+      },
+      "value": 2
+    }
+  ]
+}

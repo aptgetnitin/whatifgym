@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "terminal_soc_kwh",
+      "where": {
+        "key": "terminal_soc_kwh"
+      },
+      "value": 13.5
+    }
+  ],
+  "note": "A cap on stored energy would be a new constraint that the battery's stored energy never exceeds a certain value. However, the model already has a capacity constraint on `soc[hour]` (energy_capacity_kwh). The question is vague about whether it means changing the capacity constraint or adding a new cap. Since the model's `energy_capacity_kwh` parameter already limits the maximum stored energy, the most precise interpretation is to set a new terminal SOC requirement (as the battery must end the day with at least 6 kWh, but the question says 'cap' meaning a maximum). However, the question is ambiguous and needs clarification."
+}

@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "stock_at_least_3x_capacity",
+      "measure": "stock",
+      "scope": {
+        "year": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "sense": ">=",
+      "value": 3,
+      "relative_to": {
+        "measure": "extra_capacity",
+        "scope": {
+          "year": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "industry": [
+            "coal",
+            "steel",
+            "transport"
+          ]
+        }
+      }
+    }
+  ],
+  "note": "The rule requires the total stock over years 1-5 to be at least 3 times the total capacity built over years 1-5."
+  }

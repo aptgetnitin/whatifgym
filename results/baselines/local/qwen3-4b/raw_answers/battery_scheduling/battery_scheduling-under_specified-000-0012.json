@@ -1,0 +1,22 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "initial_soc_kwh",
+      "where": {
+        "key": "initial_soc_kwh"
+      },
+      "value": "2"
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "terminal_soc",
+      "scope": {
+        "key": "terminal_soc_kwh"
+      }
+    }
+  ]
+}

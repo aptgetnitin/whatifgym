@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "skilled"
+      },
+      "value": 2050
+    }
+  ],
+  "note": "The planner has fixed the required workforce for year 1, skilled level to 2050 workers."
+}

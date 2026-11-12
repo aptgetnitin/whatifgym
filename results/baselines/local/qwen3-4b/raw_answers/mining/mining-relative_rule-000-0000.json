@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "at_least_60_percent_mine4",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine4"
+      },
+      "sense": ">=",
+      "value": 0.6
+    }
+  ],
+  "note": "The rule ensures that at least 60% of the total extracted ore goes to Mine4."
+}

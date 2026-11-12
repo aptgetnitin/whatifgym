@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "amman_maize_flow_min_raz",
+      "measure": "flow",
+      "scope": {
+        "food": "Maize meal",
+        "from_city": "Amman",
+        "to_city": [
+          "Dayr_Az_Zor"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.22
+    }
+  ]
+}

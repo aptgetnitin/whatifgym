@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 4200
+    }
+  ],
+  "note": "The question specifies output produced for year 5, but the model's objective is total manpower over years 1-5. The model's output is constrained by the steady state and capacity, so the question likely refers to the external demand for coal (which is the output produced in year 5). However, the question is ambiguous: it could mean the total output produced in year 5, but the model does not have a direct 'output produced' measure for a specific year. The model's 'production' measure is for each year and industry, so the question might be asking for a fixed decision on production for year 5. Given the context, the most precise interpretation is that the planner is asking for a fixed production level for coal in year 5, but the question says 'output produced (million USD) for year 5', which is ambiguous. Since the model does not have a direct measure for 'output produced' in a specific year, and the question is about 'year 5', the most precise change is to set the external demand for coal to 4200, as the external demand is the steady-state production level. However, this is a risky interpretation. Alternatively, the question might be asking for a fixed decision on production for year 5. Given the ambiguity, the answer is to set the external demand for coal to 4200, as the model's steady state is defined by external demand."
+}

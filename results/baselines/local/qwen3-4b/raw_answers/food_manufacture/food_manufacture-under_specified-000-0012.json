@@ -1,0 +1,4 @@
+{
+  "base_model": "food_manufacture",
+  "ask": "What does the planner mean by 'revisit the opening stock per oil'? How is this different from changing the initial_stock parameter?"
+}

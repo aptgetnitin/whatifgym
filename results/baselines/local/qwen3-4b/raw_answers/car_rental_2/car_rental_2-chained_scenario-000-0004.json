@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "marginal_cost",
+      "factor": 1.25
+    }
+  ],
+  "rules": [
+    {
+      "name": "damaged_transfers_manchester_at_least_56",
+      "measure": "damaged_transfers",
+      "scope": {
+        "to_depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 56
+    }
+  ]
+}

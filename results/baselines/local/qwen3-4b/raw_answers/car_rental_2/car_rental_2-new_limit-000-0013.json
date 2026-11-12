@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "undamaged_stock_total_limit",
+      "measure": "undamaged_stock",
+      "scope": {},
+      "sense": "<=",
+      "value": 2650
+    },
+    {
+      "name": "undamaged_transfers_thursday_limit",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "day": "Thursday"
+      },
+      "sense": "<=",
+      "value": 45
+    }
+  ],
+  "note": "The planner asks for two constraints: a global limit on undamaged stock and a specific limit on Thursday's undamaged transfers."
+  }

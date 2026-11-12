@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_most_3_nonzero_years",
+      "measure": "production",
+      "scope": {
+        "year": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ],
+  "note": "The rule limits the number of years with non-zero production to at most 3 among the specified years."
+}

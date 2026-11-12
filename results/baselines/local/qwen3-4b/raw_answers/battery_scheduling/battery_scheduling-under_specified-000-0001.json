@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "energy_capacity_kwh",
+      "where": {
+        "key": "energy_capacity_kwh"
+      },
+      "value": "13.5"
+    }
+  ],
+  "note": "The planner's question is about an upper limit on battery stored energy, but the model's parameter `energy_capacity_kwh` already defines the maximum capacity. The question is ambiguous without specifying the new capacity value or how it changes from the current value."
+  }

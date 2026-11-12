@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "shut_downs_limit",
+      "measure": "stop",
+      "scope": {
+        "plant": "*",
+        "hour": "*"
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "gas_output_limit",
+      "measure": "output",
+      "scope": {
+        "plant": "GAS",
+        "hour": "*"
+      },
+      "sense": "<=",
+      "value": 14750
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

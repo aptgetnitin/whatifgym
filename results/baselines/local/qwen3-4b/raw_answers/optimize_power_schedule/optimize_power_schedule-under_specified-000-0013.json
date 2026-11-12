@@ -1,0 +1,271 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "1"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "2"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "3"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "4"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "5"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "6"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "7"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "8"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "9"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "10"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "11"
+        ]
+      },
+      "delta": ": 0.0"
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "12"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "13"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "14"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "15"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "16"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "17"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "18"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "19"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "20"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "21"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "22"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "23"
+        ]
+      },
+      "delta": 0.0
+    },
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          "24"
+        ]
+      },
+      "delta": 0.0
+    }
+  ],
+  "note": "The planner's question is too vague: 'different for one of the rows' doesn't specify which row or how much it changes. We need to know which hour and by how much."
+}

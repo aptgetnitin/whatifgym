@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "cost_per_mwh_above_min",
+      "where": {
+        "type": "Thermal1"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is about a change in the cost per MWh above minimum for Thermal1. Since the question is about a change, we need to specify the factor. However, the question does not specify the magnitude of the change, so we use a factor of 1.0 to indicate that the change is to be applied (the factor is relative to the original value)."
+}

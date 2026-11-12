@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "day": "Monday",
+        "depot": "Glasgow"
+      },
+      "value": 0.8
+    }
+  ]
+}

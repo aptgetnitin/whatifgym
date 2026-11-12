@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "at_most_30_percent_t18",
+      "measure": "build",
+      "scope": {
+        "facility": "T18"
+      },
+      "sense": "<=",
+      "value": 0.3
+    }
+  ],
+  "note": "The rule ensures that the number of temporary facilities built for T18 is at most 30% of the total number of temporary facilities built."
+  }

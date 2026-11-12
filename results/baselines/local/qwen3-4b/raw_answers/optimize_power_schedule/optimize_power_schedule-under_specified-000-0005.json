@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {
+        "plant": "OTHER COAL"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The question asks about a change in capacity for OTHER COAL, but the specific change (e.g., scale, shift) is not provided. The answer should be a clarifying question to the planner."
+}

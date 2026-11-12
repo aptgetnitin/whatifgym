@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "relax",
+      "table": "capacity",
+      "where": {
+        "bin": "bin3"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Lifting the weight limit for bin3 means removing the capacity constraint for that bin only."
+  }

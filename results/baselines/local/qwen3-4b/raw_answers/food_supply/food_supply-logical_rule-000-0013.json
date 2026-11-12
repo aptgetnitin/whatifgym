@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "min_batch_wheat_dayr_az",
+      "measure": "ration",
+      "scope": {
+        "food": "Wheat",
+        "camp": "Dayr_Az_Zor"
+      },
+      "sense": ">=",
+      "value": 3.9
+    }
+  ]
+}

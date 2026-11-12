@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "start_time",
+      "column": "start_time",
+      "where": {
+        "location": [
+          "Mannheim",
+          "Baden-Baden"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

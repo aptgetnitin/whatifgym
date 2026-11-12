@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "mines",
+      "column": "royalty",
+      "where": {
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "delta": -0.25
+    }
+  ],
+  "note": "A yearly royalty decrease of 25% for all mines is a shift of -0.25 on the royalty column for all mines."
+}

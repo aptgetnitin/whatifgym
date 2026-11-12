@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "trains",
+      "where": {
+        "train": "F"
+      }
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "rules": [
+    {
+      "name": "at_least_6_trains_before_E",
+      "measure": "entry_time",
+      "scope": {
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ],
+        "train": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "other_train": [
+          "E"
+        ]
+      },
+      "sense": ">=",
+      "value": 6
+    }
+  ]
+  }

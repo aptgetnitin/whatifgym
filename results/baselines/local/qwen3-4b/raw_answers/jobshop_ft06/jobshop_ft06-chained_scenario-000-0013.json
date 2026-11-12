@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j3_pairs_limit",
+      "measure": "goes_first",
+      "scope": {
+        "machine": [
+          "M0",
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5"
+        ],
+        "job": "J3",
+        "other_job": [
+          "J0",
+          "J1",
+          "J2",
+          "J4",
+          "J5"
+        ]
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ]
+}

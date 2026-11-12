@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operate",
+      "column": "operate",
+      "where": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": [
+            "all"
+          ],
+          "flight": [
+            "all"
+          ]
+        }
+      },
+      "value": 41
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "at_least_40_flor_jobs",
+      "measure": "assign",
+      "scope": {
+        "customer": [
+          "Customer1",
+          "Customer2",
+          "Customer3",
+          "Customer4",
+          "Customer5",
+          "Customer6",
+          "Customer7"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "note": "A rule that at least 40% of total jobs must be assigned to Flor. The scope is all customers, and the measure is the assign decision variable."
+}

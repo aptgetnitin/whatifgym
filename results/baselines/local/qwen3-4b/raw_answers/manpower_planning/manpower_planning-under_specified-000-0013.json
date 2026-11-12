@@ -1,0 +1,19 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [
+          1,
+          2,
+          3
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The requirement changes across the board, so we scale the required column for all years."
+}

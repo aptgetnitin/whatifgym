@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "no_overlap_karlsruhe_mannheim",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Karlsruhe",
+          "Mannheim"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

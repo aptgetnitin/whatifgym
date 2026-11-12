@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_repair_monday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": ">=",
+      "value": 140
+    },
+    {
+      "name": "min_repair_tuesday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Tuesday"
+      },
+      "sense": ">=",
+      "value": 140
+    }
+  ],
+  "note": "The planner asks if both minimum repair requirements for Monday and Tuesday can be satisfied simultaneously."
+  }

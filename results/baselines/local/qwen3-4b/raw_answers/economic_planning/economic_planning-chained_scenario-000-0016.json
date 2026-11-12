@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "cap_extra_capacity_3",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 3
+      },
+      "sense": "<=",
+      "value": 46
+    }
+  ]
+}

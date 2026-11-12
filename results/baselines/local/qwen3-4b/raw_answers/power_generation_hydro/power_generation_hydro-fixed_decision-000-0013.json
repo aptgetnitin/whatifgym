@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hydro_on",
+      "column": "hydro_on",
+      "where": {
+        "period": "09-15",
+        "hydro": "HydroB"
+      },
+      "value": 1
+    },
+    {
+      "op": "set",
+      "table": "nstart",
+      "column": "nstart",
+      "where": {
+        "period": "15-18",
+        "type": "Thermal2"
+      },
+      "value": 0
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "hydro_on",
+      "scope": {
+        "period": "09-15",
+        "hydro": "HydroB"
+      },
+      "value": 1
+    },
+    {
+      "measure": "nstart",
+      "scope": {
+        "period": "15-18",
+        "type": "Thermal2"
+      },
+      "value": 0
+    }
+  ]
+}

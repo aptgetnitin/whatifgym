@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "ask": "Which specific predicted fantasy points value is changing? Please specify the player and the new value."
+}

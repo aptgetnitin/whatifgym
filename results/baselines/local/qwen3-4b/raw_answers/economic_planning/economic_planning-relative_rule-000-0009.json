@@ -1,0 +1,53 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "year5_output_at_most_25_year3",
+      "measure": "production",
+      "scope": {
+        "year": 5,
+        "industry": "coal"
+      },
+      "sense": "<=",
+      "value": 0.25
+    },
+    {
+      "name": "total_capacity_at_least_50_output",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "production",
+        "scope": {
+          "year": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "industry": [
+            "coal",
+            "steel",
+            "transport"
+          ]
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

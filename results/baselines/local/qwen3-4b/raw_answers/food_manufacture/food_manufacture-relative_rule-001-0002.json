@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "oils_bought_60_percent_OIL2",
+      "measure": "buy",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": ">=",
+      "value": 0.6
+    }
+  ]
+}

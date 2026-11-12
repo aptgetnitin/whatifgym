@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "rentals_saturday_nonzero",
+      "measure": "rentals",
+      "scope": {
+        "day": "Saturday",
+        "depot": [
+          "Manchester"
+        ]
+      },
+      "sense": ">=",
+      "value": 1
+    },
+    {
+      "name": "rentals_tuesday_manchester_min",
+      "measure": "rentals",
+      "scope": {
+        "day": "Tuesday",
+        "depot": [
+          "Manchester"
+        ]
+      },
+      "sense": ">=",
+      "value": 118
+    }
+  ],
+  "note": "The planner's question requires two rules: a non-zero constraint for Saturday rentals in Manchester and a minimum constraint for Tuesday rentals in Manchester."
+  }

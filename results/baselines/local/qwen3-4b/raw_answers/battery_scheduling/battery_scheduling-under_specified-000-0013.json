@@ -1,0 +1,11 @@
+{
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_discharge_kw",
+      "value": "0.0"
+    }
+  ],
+  "note": "The planner's question is about an upper limit on battery discharging power, which implies a new constraint. However, the question is too vague to specify the exact value or how it changes the model. The model's parameter `max_discharge_kw` is a scalar, but the question doesn't state what the upper limit is (e.g., 3 kW, 5 kW, etc.). Without knowing the specific value, we cannot create a precise scenario. The question also doesn't specify whether this is a new constraint or a change to an existing one. Since the question is too vague, we need to ask for clarification."
+  }

@@ -1,0 +1,56 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j0_pairs_le_j4_pairs",
+      "measure": "goes_first",
+      "scope": {
+        "machine": [
+          "M0",
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5"
+        ],
+        "job": "J0",
+        "other_job": [
+          "J0",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    },
+    {
+      "name": "j0_pairs_le_j4_pairs",
+      "measure": "goes_first",
+      "scope": {
+        "machine": [
+          "M0",
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5"
+        ],
+        "job": "J4",
+        "other_job": [
+          "J0",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ]
+}

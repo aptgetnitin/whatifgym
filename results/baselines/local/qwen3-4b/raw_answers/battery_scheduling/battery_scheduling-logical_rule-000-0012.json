@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "soc_01-02_at_least_6_2_charge_03-04",
+      "measure": "soc",
+      "scope": {
+        "hour": "01-02"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "charge_03-04_at_least_6_2",
+      "measure": "charge",
+      "scope": {
+        "hour": "03-04"
+      },
+      "sense": ">=",
+      "value": 6.2
+    }
+  ],
+  "note": "The planner's question implies a conditional relationship: if soc[01-02] > 0, then charge[03-04] >= 6.2. However, the DSL does not support conditional rules directly. The question is ambiguous without specifying the condition. The scenario DSL requires explicit rules for sums of measures, not conditional constraints. The question may be interpreted as requiring soc[01-02] > 0 and charge[03-04] >= 6.2, but this is not a conditional rule. Since the question does not specify the condition, it cannot be directly translated into a machine-checkable scenario. The planner needs to clarify whether the condition is 'soc[01-02] > 0' or another condition."
+}

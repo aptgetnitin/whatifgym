@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "at_least_50_percent_A321_2",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A321#2"
+      },
+      "sense": ">=",
+      "value": 0.5
+    }
+  ],
+  "note": "The rule ensures that at least 50% of the total operated flights are by aircraft A321#2."
+}

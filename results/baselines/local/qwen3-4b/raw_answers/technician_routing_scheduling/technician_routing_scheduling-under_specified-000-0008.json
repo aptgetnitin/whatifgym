@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "assign",
+      "column": "assign",
+      "where": {
+        "measure": "assign",
+        "scope": {
+          "customer": [
+            "Customer1",
+            "Customer2",
+            "Customer3",
+            "Customer4",
+            "Customer5",
+            "Customer6",
+            "Customer7"
+          ]
+        }
+      },
+      "value": 1
+    }
+  ],
+  "note": "A cap on the number of jobs assigned would require setting a maximum number of jobs to be assigned, but the question is vague on the exact cap value and which jobs are affected."
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_most_one_nonzero_stock",
+      "measure": "stock",
+      "scope": {
+        "year": [
+          "2",
+          "5",
+          "1"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "A rule limiting the sum of stock over a specific set of years to at most 1 million USD."
+}

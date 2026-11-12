@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "start_time",
+      "column": "start_time",
+      "where": {
+        "location": "Lahr/Schwarzwald"
+      },
+      "factor": 0.95
+    }
+  ],
+  "note": "A relative change in service start time for a specific location is a scale over the matching rows."
+}

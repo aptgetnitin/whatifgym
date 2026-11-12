@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "land_groups",
+      "column": "grain_yield",
+      "where": {
+        "land_group": [
+          "Group1"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "A relative change in grain yield for a specific land group row is a scale over the matching row."
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "transport_production_year2_at_least_89_capacity_year3",
+      "measure": "production",
+      "scope": {
+        "year": 2,
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "transport_production_year2_capacity_year3",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 3,
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 89
+    }
+  ],
+  "note": "The question specifies a non-zero output for year 2 transport requires at least 89 capacity built in year 3. This translates to two rules: a minimum production of 0 (non-zero) and a minimum capacity of 89 for year 3 transport."
+  }

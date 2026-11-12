@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "stock_transport_year2_at_least_1190_stock_coal",
+      "measure": "stock",
+      "scope": {
+        "year": 2,
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 1190
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "E"
+      },
+      "value": 56
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "meet",
+      "scope": {
+        "resource": "1",
+        "train": "B",
+        "other_train": "E"
+      },
+      "value": 1
+    }
+  ],
+  "note": "The planner wants to set train E's arrival time to 56 minutes and fix the meet condition for resource 1 with trains B and E to be 1."
+  }

@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_repair_saturday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Saturday",
+        "depot": [
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 94
+    },
+    {
+      "name": "min_repair_wednesday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Wednesday",
+        "depot": [
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 94
+    }
+  ],
+  "note": "The planner asks if both minimum repair requirements for Saturday and Wednesday can be satisfied simultaneously."
+  }

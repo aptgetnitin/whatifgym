@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "year5_output_min",
+      "measure": "production",
+      "scope": {
+        "year": 5,
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "sense": ">=",
+      "value": 4200
+    },
+    {
+      "name": "year2_output_min",
+      "measure": "production",
+      "scope": {
+        "year": 2,
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "sense": ">=",
+      "value": 1900
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

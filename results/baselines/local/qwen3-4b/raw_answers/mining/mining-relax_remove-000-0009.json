@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_mines",
+      "where": {},
+      "value": 2
+    },
+    {
+      "op": "set_param",
+      "name": "quality_target",
+      "value": 1.0
+    }
+  ],
+  "note": "The planner wants to drop two limits: the max_mines parameter (set to 2) and the quality_target (set to 1.0)."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operate",
+      "column": "operate",
+      "where": {
+        "aircraft": "A318#4",
+        "flight": 3095
+      },
+      "value": 0
+    }
+  ],
+  "note": "Set the operate value for aircraft A318#4 and flight 3095 to 0, as per the planner's instruction."
+}

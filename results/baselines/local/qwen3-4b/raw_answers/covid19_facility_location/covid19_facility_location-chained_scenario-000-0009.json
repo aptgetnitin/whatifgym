@@ -1,0 +1,51 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "counties",
+      "column": "county",
+      "where": {
+        "county": "new_county"
+      },
+      "value": "new_county"
+    },
+    {
+      "op": "set",
+      "table": "counties",
+      "column": "x",
+      "where": {
+        "county": "new_county"
+      },
+      "value": "1"
+    },
+    {
+      "op": "set",
+      "table": "counties",
+      "column": "y",
+      "where": {
+        "county": "new_county"
+      },
+      "value": "1"
+    },
+    {
+      "op": "set",
+      "table": "counties",
+      "column": "demand",
+      "where": {
+        "county": "new_county"
+      },
+      "value": "339"
+    },
+    {
+      "op": "add",
+      "table": "counties",
+      "rows": [
+        {
+          "county": "new_county"
+        }
+      ]
+    }
+  ]
+}

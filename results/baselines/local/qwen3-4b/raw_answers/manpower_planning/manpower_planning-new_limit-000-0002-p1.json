@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 130
+    }
+  ],
+  "note": "The planner wants to cap total downgrades to a lower skill level at 130 across all years and skill levels. However, the model's 'downgrade' decision variable is not directly in the retraining table. The 'retraining' table defines upward moves (retraining to a higher skill level), while downgrading is a separate decision variable. The planner's question likely refers to the total number of downgrades (workers moved to a lower skill level) across all years and skill levels. In the model schema, the 'downgrade' decision variable is defined as 'downgrade[year, from_skill, to_skill]'. The 'downgrade' variable is not part of the 'retraining' table but is a separate decision variable. Therefore, the correct approach is to set a fixed decision for the total 'downgrade' variable across all years and skill levels to 130."
+  }

@@ -1,0 +1,95 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "revenue",
+      "where": {
+        "flight": [
+          "4576"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "op": "shift",
+      "table": "flights",
+      "column": "departure",
+      "where": {
+        "flight": [
+          "3103"
+        ]
+      },
+      "delta": 60
+    },
+    {
+      "op": "remove",
+      "table": "flights",
+      "where": {
+        "flight": [
+          "4264"
+        ]
+      }
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A321#2"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A318#4"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "departures[airport]",
+      "scope": {
+        "airport": [
+          "NCE"
+        ]
+      }
+    }
+  ],
+  "logic": [
+    {
+      "name": "at_least",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "operate",
+          "scope": {
+            "aircraft": [
+              "A321#2"
+            ]
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "operate",
+          "scope": {
+            "aircraft": [
+              "A318#4"
+            ]
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

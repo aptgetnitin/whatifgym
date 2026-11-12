@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "expand_plymouth_at_most_25_of_manchester",
+      "measure": "expand",
+      "scope": {
+        "depot": "Plymouth",
+        "step": [
+          "1",
+          "2"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "expand",
+        "scope": {
+          "depot": "Manchester",
+          "step": [
+            "1",
+            "2"
+          ]
+        }
+      }
+    }
+  ]
+}

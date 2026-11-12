@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 14
+      },
+      "value": 15200
+    },
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 20
+      },
+      "value": 18850
+    }
+  ],
+  "note": "The planner asks for two minimum generation levels at specific hours. We set the demand_mwh for hour 14 and hour 20 to the requested values."
+}

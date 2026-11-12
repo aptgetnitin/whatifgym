@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "logic": [
+    {
+      "name": "at_least_8_pairs_for_j2",
+      "at_least": 8,
+      "of": [
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "M2",
+            "job": "J1",
+            "other_job": "J5"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "M2",
+            "job": "J2",
+            "other_job": "J5"
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

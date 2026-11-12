@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "start_time",
+      "column": "start_time",
+      "where": {
+        "location": [
+          "Heidelberg",
+          "Freiburg im Breisgau"
+        ]
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "A relative cap on service start time over depots is a scale over the matching rows."
+}

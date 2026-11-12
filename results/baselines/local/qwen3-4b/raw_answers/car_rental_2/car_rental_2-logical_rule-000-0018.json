@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "damaged_transfers_glasgow_above_zero",
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Friday",
+        "from_depot": "Glasgow"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "repaired_plymouth_friday_at_least_7_5",
+      "measure": "repairs",
+      "scope": {
+        "day": "Friday",
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 7.5
+    },
+    {
+      "name": "conditional_rule",
+      "measure": "repairs",
+      "scope": {
+        "day": "Friday",
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 7.5
+    }
+  ]
+}

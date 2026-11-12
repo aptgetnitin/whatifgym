@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "players",
+      "column": "position",
+      "where": {
+        "player": "Kristaps Porzingis"
+      },
+      "value": "PG"
+    }
+  ],
+  "note": "Forcing a specific player to a position by setting their position to the required position type (PG)."
+}

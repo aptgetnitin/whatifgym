@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "scale",
+      "table": "resources",
+      "column": "duration",
+      "where": {
+        "resource": "2"
+      },
+      "factor": 1.0
+    }
+  ]
+}

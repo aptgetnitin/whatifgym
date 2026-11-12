@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "industries",
+      "column": "labor_per_unit_capacity",
+      "where": {
+        "industry": "coal"
+      },
+      "delta": -0.3
+    }
+  ]
+}

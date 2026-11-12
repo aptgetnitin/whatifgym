@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "depot": "Glasgow",
+        "day": "Saturday"
+      },
+      "value": 0.8
+    }
+  ],
+  "note": "A floor on cars rented out means a minimum number of rentals, but the question is vague. The planner might mean a minimum rental floor, but the question says 'floor on the cars rented out', which is ambiguous. However, the model has a demand table with upper bounds on rentals, so a floor would be a lower bound. But the model doesn't have a lower bound on rentals; it's a demand that's an upper bound. So the question might be misstated. The model's demand is an upper bound on rentals, so a floor on rentals would be a lower bound constraint. But the question says 'floor on the cars rented out', which is unclear. Given the context, the planner might mean a minimum number of rentals, but the model doesn't have a lower bound. The question is too vague to be precise."
+}

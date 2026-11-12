@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [],
+  "rules": [],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "start",
+      "scope": {
+        "job": "J5",
+        "step": 3
+      }
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

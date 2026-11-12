@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "ask": "What does 'cap on the entry time' mean? Which entry time should be capped? What is the cap value?"
+}

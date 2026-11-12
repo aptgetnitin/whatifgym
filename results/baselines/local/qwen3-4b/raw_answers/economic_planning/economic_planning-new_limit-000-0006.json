@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": "transport"
+      },
+      "value": 150
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 250
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "labor_per_unit_output",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 0.5
+    }
+  ],
+  "rules": [
+    {
+      "name": "transport_stock_limit",
+      "measure": "stock",
+      "scope": {
+        "industry": "transport"
+      },
+      "sense": "<=",
+      "value": 39
+    }
+  ]
+}

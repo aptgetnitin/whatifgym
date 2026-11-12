@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "unfilled_customer4_legs",
+      "measure": "route",
+      "scope": {
+        "to_location": "Lahr/Schwarzwald"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

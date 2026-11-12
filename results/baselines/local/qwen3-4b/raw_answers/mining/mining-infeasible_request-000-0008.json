@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "year": "Year2"
+      },
+      "value": 60000000
+    }
+  ],
+  "note": "The planner wants to fix the total ore extracted in Year2 to 60000000 tons."
+}

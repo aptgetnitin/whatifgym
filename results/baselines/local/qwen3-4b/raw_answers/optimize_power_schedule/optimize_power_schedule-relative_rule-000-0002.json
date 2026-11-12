@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "min_output_fraction",
+      "where": {
+        "plant": "Scherer"
+      },
+      "factor": 0.1
+    }
+  ],
+  "note": "A relative change in the minimum output fraction for Scherer is a scale over the matching row."
+}

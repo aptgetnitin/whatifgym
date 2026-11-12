@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "ask": "What specific cap on units made do you mean? Which product and month? What is the maximum number of units?"
+}

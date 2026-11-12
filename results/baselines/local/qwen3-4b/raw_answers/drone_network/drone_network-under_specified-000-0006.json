@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "queue_load_cap",
+      "measure": "queue_load",
+      "scope": {
+        "base": [
+          "21 MUNICIPAL CTR Fire Station",
+          "2837 SHORE DR Fire Station",
+          "800 VIRGINIA BEACH BLVD Fire Station",
+          "600 CENTRAL DR Fire Station",
+          "3769 E. STRATFORD ROAD Rescue Squad",
+          "5145 RURITAN COURT Rescue Squad",
+          "333 THALIA ROAD Rescue Squad"
+        ]
+      },
+      "sense": "<=",
+      "value": 1.0
+    }
+  ],
+  "note": "A cap on the base queue load (hours) is a rule that sets an absolute limit on the sum of queue_load over all bases."
+}

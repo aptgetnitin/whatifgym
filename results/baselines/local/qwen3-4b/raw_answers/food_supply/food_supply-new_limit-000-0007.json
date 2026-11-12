@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase",
+      "column": "purchase",
+      "where": {
+        "food": [
+          "all"
+        ],
+        "supplier": [
+          "Daraa"
+        ]
+      },
+      "value": 50450
+    }
+  ]
+}

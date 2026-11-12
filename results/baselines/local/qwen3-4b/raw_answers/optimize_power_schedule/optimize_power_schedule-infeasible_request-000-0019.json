@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          9
+        ]
+      },
+      "value": 14700
+    },
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": [
+          3
+        ]
+      },
+      "value": 17950
+    }
+  ]
+}

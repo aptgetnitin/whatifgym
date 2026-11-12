@@ -1,0 +1,28 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ],
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'cars rented out gets capped' could mean a hard cap on rentals (e.g., total rentals <= X) or a cap on the rental length mix. Without specifying the cap value or which rentals are capped, it's not machine-checkable."
+}

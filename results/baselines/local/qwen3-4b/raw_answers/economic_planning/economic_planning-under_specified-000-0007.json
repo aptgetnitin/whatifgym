@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "ask": "What is the minimum output produced (million USD) that the planner requires? How is this minimum defined (e.g., per industry, per year, total over the horizon)?"
+}

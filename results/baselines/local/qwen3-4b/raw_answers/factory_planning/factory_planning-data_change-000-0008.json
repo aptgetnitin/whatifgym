@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": "borer"
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "scale",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod5"
+      },
+      "factor": 0.75
+    }
+  ]
+}

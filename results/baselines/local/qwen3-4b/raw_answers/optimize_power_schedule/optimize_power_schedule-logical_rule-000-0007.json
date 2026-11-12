@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "hydro_min_6",
+      "measure": "output",
+      "scope": {
+        "plant": "HYDRO",
+        "hour": 6
+      },
+      "sense": ">=",
+      "value": 400
+    }
+  ],
+  "note": "A conditional rule: if OTHER COAL output at hour 17 > 0, then HYDRO output at hour 6 >= 400."
+  }

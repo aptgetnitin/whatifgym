@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "end_j1_at_most_75_end_j4",
+      "measure": "end",
+      "scope": {
+        "job": "J1",
+        "step": [
+          1
+        ]
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J4",
+          "step": [
+            1
+          ]
+        }
+      }
+    }
+  ]
+}

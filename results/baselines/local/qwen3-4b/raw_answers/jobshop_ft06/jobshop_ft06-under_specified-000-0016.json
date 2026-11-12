@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J1",
+        "step": 3
+      },
+      "value": 14
+    },
+    {
+      "op": "scale",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "machine": "M5"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "A floor on the operation end time is a constraint that the end time of each operation must be at least a certain value. However, the question does not specify the exact floor value, so it's unclear what specific constraint to apply. This scenario assumes a floor value of 0 (no floor) as a placeholder, but the planner needs to specify the exact floor value for the constraint."
+}

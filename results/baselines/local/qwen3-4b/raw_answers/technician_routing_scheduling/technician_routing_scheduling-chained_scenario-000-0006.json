@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "unfilled_job_penalty",
+      "where": {
+        "name": "unfilled_job_penalty"
+      },
+      "factor": 0.75
+    }
+  ]
+}

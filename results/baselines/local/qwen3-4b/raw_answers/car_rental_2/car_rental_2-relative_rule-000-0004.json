@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "friday_undamaged_stock_limit",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Friday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ],
+  "note": "The question asks for Friday to account for at most 5% of all undamaged cars at the depot in the morning. This is a rule that limits the sum of undamaged_stock over all depots on Friday to 5% of the total undamaged_stock across all depots."
+  }

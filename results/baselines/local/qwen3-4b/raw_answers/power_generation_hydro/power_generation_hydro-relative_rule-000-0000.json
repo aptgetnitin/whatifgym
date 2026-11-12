@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal2_min_percentage",
+      "measure": "ngen",
+      "scope": {
+        "type": "Thermal2"
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "note": "A rule that at least 40% of thermal units running must be Thermal2 is expressed as a minimum percentage of the total running thermal units. However, the rule needs to be relative to the total running thermal units across all types."
+  }

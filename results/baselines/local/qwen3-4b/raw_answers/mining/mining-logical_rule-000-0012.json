@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "extract",
+      "column": "extract",
+      "where": {
+        "year": "Year5",
+        "mine": "Mine1"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "extract",
+      "column": "extract",
+      "where": {
+        "year": "Year5",
+        "mine": "Mine1"
+      },
+      "value": 6000000
+    }
+  ],
+  "note": "The condition requires two possible values for the same cell, which is not possible in a single data change. This is a logical rule that needs to be expressed as a condition."
+  }

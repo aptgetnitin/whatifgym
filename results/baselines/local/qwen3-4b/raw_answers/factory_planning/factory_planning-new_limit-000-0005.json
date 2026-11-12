@@ -1,0 +1,51 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_inventory",
+      "column": "max_inventory",
+      "where": {
+        "product": "Prod1",
+        "month": "Feb"
+      },
+      "value": 320
+    },
+    {
+      "op": "set",
+      "table": "max_inventory",
+      "column": "max_inventory",
+      "where": {
+        "product": "Prod1",
+        "month": "Mar"
+      },
+      "value": 320
+    },
+    {
+      "op": "set",
+      "table": "max_inventory",
+      "column": "max_inventory",
+      "where": {
+        "product": "Prod1",
+        "month": "Apr"
+      },
+      "value": 320
+    }
+  ],
+  "rules": [
+    {
+      "name": "prod1_make_mar_apr",
+      "measure": "make",
+      "scope": {
+        "product": "Prod1",
+        "month": [
+          "Mar",
+          "Apr"
+        ]
+      },
+      "sense": "<=",
+      "value": 160
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "oil": "VEG1",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "value": 1800
+    },
+    {
+      "op": "set",
+      "table": "buy",
+      "column": "buy",
+      "where": {
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "value": 1900
+    }
+  ]
+}

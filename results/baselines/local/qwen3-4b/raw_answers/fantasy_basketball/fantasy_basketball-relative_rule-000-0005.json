@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "rules": [
+    {
+      "name": "embiid_at_most_5_percent",
+      "measure": "pick",
+      "scope": {
+        "player": "Joel Embiid"
+      },
+      "sense": "<=",
+      "value": 0.05
+    },
+    {
+      "name": "jarrett_jack_at_least_1_5_times_trevor_ariza",
+      "measure": "pick",
+      "scope": {
+        "player": "Jarrett Jack"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "pick",
+        "scope": {
+          "player": "Trevor Ariza"
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

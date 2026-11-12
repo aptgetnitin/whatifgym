@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4513_min_share",
+      "measure": "operate",
+      "scope": {
+        "flight": "4513"
+      },
+      "sense": ">=",
+      "value": 0.05
+    },
+    {
+      "name": "flight_3077_at_least_125_flight_3112",
+      "measure": "operate",
+      "scope": {
+        "flight": "3077"
+      },
+      "sense": ">=",
+      "value": 1.25
+    }
+  ]
+}

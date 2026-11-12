@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "birmingham_rentals_monday",
+      "measure": "rentals",
+      "scope": {
+        "day": "Tuesday",
+        "depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 1
+    },
+    {
+      "name": "birmingham_repair_monday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Monday",
+        "depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 94
+    }
+  ],
+  "note": "The planner's question requires a non-zero rental on Tuesday at Birmingham and at least 94 repairs on Monday at Birmingham. This translates to two rules: a minimum rental value and a minimum repair value."
+}

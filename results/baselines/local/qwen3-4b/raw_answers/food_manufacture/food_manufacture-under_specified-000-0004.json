@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "ask": "What minimum tons of oil in storage do you mean? For which oil? For which month? What is the minimum value?"
+}

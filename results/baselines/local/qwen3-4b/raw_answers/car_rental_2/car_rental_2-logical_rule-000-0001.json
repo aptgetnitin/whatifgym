@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "repair_constraint_plymouth_tuesday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Tuesday",
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "repair_constraint_plymouth_tuesday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Tuesday",
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 12.5
+    }
+  ]
+}

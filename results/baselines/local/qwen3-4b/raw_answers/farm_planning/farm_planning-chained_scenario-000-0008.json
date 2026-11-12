@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "beet_sell_limit_year4",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": "<=",
+      "value": 38
+    }
+  ]
+}

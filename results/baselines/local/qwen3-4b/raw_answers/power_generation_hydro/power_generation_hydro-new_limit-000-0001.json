@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_units_total_limit",
+      "measure": "ngen",
+      "scope": {
+        "period": "*",
+        "type": "*"
+      },
+      "sense": "<=",
+      "value": 80
+    },
+    {
+      "name": "thermal_units_06-09_limit",
+      "measure": "ngen",
+      "scope": {
+        "period": "06-09",
+        "type": "*"
+      },
+      "sense": "<=",
+      "value": 17
+    }
+  ]
+}

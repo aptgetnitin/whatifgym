@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "stock",
+      "scope": {
+        "year": 1
+      }
+    }
+  ]
+}

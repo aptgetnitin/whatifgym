@@ -1,0 +1,26 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "repair_capacity",
+      "where": {
+        "depot": [
+          "Birmingham",
+          "Plymouth"
+        ]
+      }
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "repair_capacity",
+      "scope": {
+        "depot": [
+          "Birmingham",
+          "Plymouth"
+        ]
+      }
+    }
+  ]
+}

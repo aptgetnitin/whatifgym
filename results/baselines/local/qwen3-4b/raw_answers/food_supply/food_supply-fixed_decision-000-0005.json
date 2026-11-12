@@ -1,0 +1,58 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": [
+          "Beans",
+          "Bulgur",
+          "Cheese",
+          "Fish",
+          "Meat",
+          "Corn-soya blend (CSB)",
+          "Dates",
+          "Dried skim milk (enriched) (DSM)",
+          "Milk",
+          "Lentils",
+          "Maize",
+          "Maize meal",
+          "Chickpeas",
+          "Rice",
+          "Sorghum/millet",
+          "Soya-fortified bulgur wheat",
+          "Soya-fortified maize meal",
+          "Soya-fortified sorghum grits",
+          "Soya-fortified wheat flour",
+          "Sugar",
+          "Oil",
+          "Wheat",
+          "Wheatflour",
+          "WSB"
+        ],
+        "from_city": "Homs",
+        "to_city": [
+          "Aleppo",
+          "Amman",
+          "Ar Raqqa",
+          "As_Suweida",
+          "Beirut",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Gaziantep",
+          "Hama",
+          "Hassakeh",
+          "Homs",
+          "Idleb",
+          "Jubb_al_Jarrah"
+        ]
+      },
+      "value": 170
+    }
+  ],
+  "note": "The planner wants Homs to have exactly 170 units of each food shipped to every destination city. This is a set operation on the flow measure."
+}

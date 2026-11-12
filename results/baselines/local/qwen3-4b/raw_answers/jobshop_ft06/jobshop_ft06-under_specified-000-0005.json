@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J5",
+        "step": 5
+      },
+      "value": 14
+    }
+  ],
+  "note": "The question specifies a change to the processing time for job J5, routing step 5. The base model has a table 'operations' with columns 'job', 'step', 'machine', and 'duration'. The change is to set the duration for the specific row where job is J5 and step is 5."
+}

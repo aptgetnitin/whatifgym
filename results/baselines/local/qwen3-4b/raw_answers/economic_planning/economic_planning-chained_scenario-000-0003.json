@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "cap_production_3",
+      "measure": "production",
+      "scope": {
+        "year": 3
+      },
+      "sense": "<=",
+      "value": 750
+    },
+    {
+      "name": "cap_capacity_3",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 3
+      },
+      "sense": ">=",
+      "value": 78
+    }
+  ]
+}

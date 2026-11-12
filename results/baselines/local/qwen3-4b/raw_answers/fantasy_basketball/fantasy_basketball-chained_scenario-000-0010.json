@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "players",
+      "column": "predicted_points",
+      "factor": 0.75
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "shift_param",
+      "name": "salary_cap",
+      "delta": -7500
+    }
+  ]
+}

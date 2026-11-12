@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "observation_days",
+      "factor": 15
+    }
+  ],
+  "note": "The observation window (days) becomes 15, so scale the parameter by 15."
+}

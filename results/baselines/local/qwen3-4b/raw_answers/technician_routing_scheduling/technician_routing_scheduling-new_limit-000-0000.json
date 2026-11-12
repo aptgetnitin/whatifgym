@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "max_legs",
+      "measure": "route",
+      "scope": {},
+      "sense": "<=",
+      "value": 9
+    }
+  ],
+  "note": "The total number of legs driven is the sum of the route decision variable over all locations and technicians."
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "revenue",
+      "where": {
+        "flight": [
+          "4576"
+        ]
+      },
+      "value": "0.5"
+    }
+  ],
+  "note": "The planner's question refers to a specific flight row in the flights table where ticket revenue differs. The data change sets the revenue for flight 4576 to 0.5 (a relative value, but the model expects absolute numbers)."
+}

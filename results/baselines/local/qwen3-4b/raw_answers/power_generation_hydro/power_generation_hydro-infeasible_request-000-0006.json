@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": "18-24"
+      },
+      "value": 21150
+    }
+  ],
+  "note": "The planner asks for a total pumping power of 21150 MW in the last period (18-24)."
+}

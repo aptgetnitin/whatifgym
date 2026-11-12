@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "total_flights_limit",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A321#4",
+          "A318#4",
+          "A321#2",
+          "A318#8",
+          "A320#22",
+          "ERJ145#5",
+          "A319#18",
+          "A320#24",
+          "A319#11",
+          "A318#5",
+          "A319#13",
+          "A318#7",
+          "A320#11",
+          "A320#14",
+          "A319#5",
+          "CRJ700#3",
+          "A319#9"
+        ]
+      },
+      "sense": "<=",
+      "value": 46
+    },
+    {
+      "name": "a321_4_flights_limit",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A321#4"
+        ]
+      },
+      "sense": "<=",
+      "value": 5
+    }
+  ]
+}

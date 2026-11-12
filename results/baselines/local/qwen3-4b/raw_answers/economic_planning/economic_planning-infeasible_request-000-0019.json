@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "stock_year_5_at_least_1550",
+      "measure": "stock",
+      "scope": {
+        "year": 5,
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 1550
+    },
+    {
+      "name": "stock_year_2_at_least_100",
+      "measure": "stock",
+      "scope": {
+        "year": 2,
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 100
+    }
+  ],
+  "note": "The planner asks for two minimum stock levels in specific years and industries. The model's stock variable is defined per year and industry, so we specify the exact scope for each rule."
+}

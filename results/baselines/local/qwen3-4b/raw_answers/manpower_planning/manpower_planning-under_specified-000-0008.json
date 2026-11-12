@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_share_of_target",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_share_of_target",
+      "where": {
+        "from_skill": "semi_skilled",
+        "to_skill": "skilled"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'downgraded to a lower skill level gets capped' likely refers to the retraining limit for downward moves (downgrading), but the model only has retraining for upward moves. In the model, downgrading is a separate decision variable with its own constraints. The retraining table defines upward moves (retraining to higher skill levels), so 'downgraded' here probably means the downward moves (downgrading) which are constrained by the `downgrade` decision variable. However, the model does not have a 'cap' parameter for downgrading in the retraining table. The retraining table is for upward moves only, and downgrading is handled by the `downgrade` decision variable with its own constraints. The planner's question might be referring to the `downgrade_attrition` parameter or the `max_overmanned` parameter. Given the context, it's likely they mean the retraining limit for upward moves (which is capped by the `retraining` table), but the question says 'downgraded', which is downward. This is ambiguous and requires clarification."
+}

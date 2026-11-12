@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "f_clearing_ratio",
+      "measure": "goes_first",
+      "scope": {
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ],
+        "train": [
+          "F"
+        ],
+        "other_train": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

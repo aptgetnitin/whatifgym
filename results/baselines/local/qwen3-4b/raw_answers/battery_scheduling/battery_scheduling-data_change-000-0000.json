@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "energy_capacity_kwh",
+      "where": {
+        "name": "energy_capacity_kwh"
+      },
+      "factor": 2.0
+    }
+  ]
+}

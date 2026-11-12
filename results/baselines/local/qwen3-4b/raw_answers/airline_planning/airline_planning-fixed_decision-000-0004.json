@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "operate",
+      "where": {
+        "flight": 4264,
+        "aircraft": "A321#2"
+      },
+      "value": 0
+    }
+  ]
+}

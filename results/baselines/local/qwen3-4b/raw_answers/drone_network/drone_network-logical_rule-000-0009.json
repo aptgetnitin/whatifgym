@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "no_both_bases",
+      "measure": "open",
+      "scope": {
+        "base": [
+          "5145 RURITAN COURT Rescue Squad",
+          "800 VIRGINIA BEACH BLVD Fire Station"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

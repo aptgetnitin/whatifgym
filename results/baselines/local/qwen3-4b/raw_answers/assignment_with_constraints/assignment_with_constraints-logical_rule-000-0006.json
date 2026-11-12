@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "logic": [
+    {
+      "name": "at_most_one_worker_active",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "works",
+          "scope": {
+            "worker": [
+              "worker_6",
+              "worker_10",
+              "worker_5"
+            ]
+          },
+          "sense": "<=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

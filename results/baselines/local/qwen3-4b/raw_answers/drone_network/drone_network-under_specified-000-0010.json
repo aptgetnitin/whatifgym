@@ -1,0 +1,16 @@
+{
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": [
+          "3600 CROFTS PRIDE DR"
+        ]
+      },
+      "factor": 1.0
+    }
+  ]
+}

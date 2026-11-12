@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "raise_heifers",
+      "column": "raise_heifers",
+      "where": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "value": 26
+    },
+    {
+      "op": "set",
+      "table": "buy_grain",
+      "column": "buy_grain",
+      "where": {
+        "year": [
+          "Year1"
+        ]
+      },
+      "value": 29
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "start_time",
+      "column": "start_time",
+      "where": {
+        "location": [
+          "Buehl",
+          "Karlsruhe",
+          "Lahr/Schwarzwald",
+          "Loerrach"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A non-zero service start time means the location has a service start time; setting it to 0 implies no service starts there."
+}

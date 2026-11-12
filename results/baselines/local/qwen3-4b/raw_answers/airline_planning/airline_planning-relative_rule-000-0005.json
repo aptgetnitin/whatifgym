@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "rule_1",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#11",
+        "flight": [
+          "4568",
+          "4575"
+        ]
+      },
+      "sense": ">=",
+      "value": 1.5
+    },
+    {
+      "name": "rule_2",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#11"
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ]
+}

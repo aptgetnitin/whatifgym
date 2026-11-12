@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "ration",
+      "column": "ration",
+      "where": {
+        "food": "Oil",
+        "camp": [
+          "all"
+        ]
+      },
+      "factor": 6.7
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "cost_per_hour",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "scale",
+      "table": "hydro_units",
+      "column": "cost_per_hour",
+      "where": {
+        "hydro": [
+          "HydroA",
+          "HydroB"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is vague: 'across the board' could mean different things. The model has two types of costs: fixed per unit per hour (cost_per_hour) and variable per MWh above minimum (cost_per_mwh_above_min). The question likely refers to the fixed cost per unit per hour, which is the only cost that changes across the board (the variable cost is per MWh above minimum, so it's not 'across the board')."
+}

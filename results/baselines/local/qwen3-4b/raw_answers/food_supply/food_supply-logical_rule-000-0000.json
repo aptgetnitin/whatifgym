@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "oil_flow_beirut_homs_min",
+      "measure": "flow",
+      "scope": {
+        "food": "Oil",
+        "from_city": "Beirut",
+        "to_city": "Homs"
+      },
+      "sense": ">=",
+      "value": 49800
+    },
+    {
+      "name": "dayr_az_zor_flow_min",
+      "measure": "flow",
+      "scope": {
+        "food": "Oil",
+        "from_city": "Dayr_Az_Zor"
+      },
+      "sense": ">=",
+      "value": 49800
+    }
+  ],
+  "note": "The question asks for a minimum flow of 49800 units of Oil from Dayr_Az_Zor, which is a different scope than the flow from Beirut to Homs."
+  }

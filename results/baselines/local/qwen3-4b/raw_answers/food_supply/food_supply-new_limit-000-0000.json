@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Idleb"
+      },
+      "value": 7.3
+    }
+  ],
+  "note": "The ration per person summed over everything with camp = Idleb must be at least 7.3. This is a data change to the beneficiaries column in the camps table for the Idleb camp."
+}

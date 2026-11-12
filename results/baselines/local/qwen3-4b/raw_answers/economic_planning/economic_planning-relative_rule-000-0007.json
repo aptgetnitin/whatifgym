@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "factor": 0.95
+    }
+  ]
+  }

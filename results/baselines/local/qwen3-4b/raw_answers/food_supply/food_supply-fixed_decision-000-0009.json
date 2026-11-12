@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "fixed_decisions": [
+    {
+      "measure": "purchase",
+      "scope": {
+        "supplier": "Homs",
+        "food": [
+          "Milk",
+          "Cheese",
+          "Fish",
+          "Meat",
+          "Lentils",
+          "Dates",
+          "Rice",
+          "Sugar",
+          "Wheatflour",
+          "Oil",
+          "Wheat",
+          "Bulgur",
+          "Chickpeas",
+          "Maize",
+          "Maize meal",
+          "Corn-soya blend (CSB)",
+          "Dried skim milk (enriched) (DSM)",
+          "Sorghum/millet",
+          "Soya-fortified bulgur wheat",
+          "Soya-fortified maize meal",
+          "Soya-fortified sorghum grits",
+          "Soya-fortified wheat flour"
+        ]
+      },
+      "value": 250
+    },
+    {
+      "measure": "ration",
+      "scope": {
+        "food": "Milk",
+        "camp": "Dayr_Az_Zor"
+      },
+      "value": 0.15
+    }
+  ]
+}

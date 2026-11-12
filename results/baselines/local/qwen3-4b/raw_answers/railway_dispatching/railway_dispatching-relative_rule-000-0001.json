@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "e_clears_at_least_20_percent",
+      "measure": "goes_first",
+      "scope": {
+        "resource": "*",
+        "train": "E",
+        "other_train": "*"
+      },
+      "sense": ">=",
+      "value": 0.2
+    },
+    {
+      "name": "d_pairs_at_least_1_5_times_b_pairs",
+      "measure": "meet",
+      "scope": {
+        "resource": "*",
+        "train": "D",
+        "other_train": "*"
+      },
+      "sense": ">=",
+      "value": 1.5
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Idleb"
+      },
+      "value": 10000
+    },
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": "Qamishli"
+      }
+    },
+    {
+      "op": "add",
+      "table": "camps",
+      "rows": [
+        {
+          "camp": "Homs",
+          "beneficiaries": 3000
+        }
+      ]
+    }
+  ],
+  "note": "A floor on the ration per person is a new constraint that the ration per person of each food in each camp must be at most a certain value."
+}

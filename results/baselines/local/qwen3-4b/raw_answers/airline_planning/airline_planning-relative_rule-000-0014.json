@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_3112_at_least_75_percent",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A318#4"
+        ],
+        "flight": [
+          "3112"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": [
+            "A318#4"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

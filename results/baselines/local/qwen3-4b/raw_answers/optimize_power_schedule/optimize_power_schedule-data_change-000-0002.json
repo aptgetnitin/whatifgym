@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "fuels",
+      "column": "shutdown_cost",
+      "where": {
+        "fuel": "BIT"
+      },
+      "factor": 110
+    },
+    {
+      "op": "scale",
+      "table": "health_costs",
+      "column": "health_cost",
+      "where": {
+        "plant": [
+          "Scherer",
+          "Bowen",
+          "Jack McDonough"
+        ]
+      },
+      "factor": 0.75
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "base_model": "fantasy_basketball",
+  "ask": "Which specific player's predicted fantasy points value is changing?"
+}

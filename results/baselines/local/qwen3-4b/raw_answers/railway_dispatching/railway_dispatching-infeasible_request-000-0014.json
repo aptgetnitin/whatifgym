@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "D"
+      },
+      "value": 27
+    },
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "F"
+      },
+      "value": 160
+    }
+  ],
+  "note": "The planner asks for two minimum arrival times at destination (minutes) for trains D and F. In the model, `ready_time` is the time at which the train enters its current resource (0 = now), so setting `ready_time` to 27 and 160 for trains D and F respectively enforces the minimum arrival times."
+}

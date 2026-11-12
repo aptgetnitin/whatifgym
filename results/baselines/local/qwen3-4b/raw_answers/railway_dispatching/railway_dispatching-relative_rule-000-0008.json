@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "rules": [
+    {
+      "name": "train_e_at_least_2x_train_c",
+      "measure": "finish_time",
+      "scope": {
+        "train": "E"
+      },
+      "sense": ">=",
+      "value": 2.0
+    },
+    {
+      "name": "train_b_at_most_5_percent_of_total_entry_time",
+      "measure": "entry_time",
+      "scope": {
+        "train": "B"
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

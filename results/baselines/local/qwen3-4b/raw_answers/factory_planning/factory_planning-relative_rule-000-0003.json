@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "at_least_20_prod7",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod7"
+        }
+      },
+      "factor": 0.2
+    },
+    {
+      "name": "feb_sold_at_most_50_percent_of_may",
+      "measure": "sell",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "May"
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

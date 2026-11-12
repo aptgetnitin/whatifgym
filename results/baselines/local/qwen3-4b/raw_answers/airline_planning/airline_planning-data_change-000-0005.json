@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "revenue",
+      "where": {
+        "flight": [
+          "all"
+        ]
+      },
+      "factor": 0.2
+    }
+  ]
+}

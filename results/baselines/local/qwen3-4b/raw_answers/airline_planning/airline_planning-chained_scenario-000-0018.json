@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "flights",
+      "column": "departure",
+      "where": {
+        "flight": [
+          3075
+        ]
+      },
+      "delta": 25
+    }
+  ]
+}

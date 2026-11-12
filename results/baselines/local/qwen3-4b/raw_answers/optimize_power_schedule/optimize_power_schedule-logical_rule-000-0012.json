@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "plants",
+      "column": "on",
+      "where": {
+        "plant": [
+          "HYDRO",
+          "Edwin I Hatch",
+          "Scherer",
+          "BIOMASS"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A non-zero power generated means the plant is on (output > 0), so setting on to 0 for these plants ensures no non-zero output."
+}

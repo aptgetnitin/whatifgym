@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "energy_capacity_kwh",
+      "value": 140
+    }
+  ],
+  "note": "The planner's question specifies an overall cap of 140 kWh for the battery stored energy summed over everything. However, the model's `energy_capacity_kwh` parameter already represents the maximum usable energy capacity of the battery (the stored energy never exceeds it). The phrase 'summed over everything' is ambiguous but in this context, it likely refers to the capacity constraint. Since the model uses a single capacity parameter, setting `energy_capacity_kwh` to 140 directly addresses the cap."
+  }

@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "drone_speed_kmh",
+      "factor": 1.0
+    }
+  ],
+  "note": "The drone speed is a parameter that can be scaled to represent a different value."
+}

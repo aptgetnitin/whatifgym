@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "steel_production_at_least_910_year3",
+      "measure": "production",
+      "scope": {
+        "year": 3,
+        "industry": "steel"
+      },
+      "sense": ">=",
+      "value": 910
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

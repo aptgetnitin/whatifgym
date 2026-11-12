@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "fixed_decisions": [
+    {
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A318#8",
+          "A319#5",
+          "A320#22",
+          "A319#11",
+          "A321#4"
+        ]
+      },
+      "value": 1
+    }
+  ],
+  "note": "The planner states that only 4 of these 5 aircraft can have non-zero flights operated. This means exactly 4 of the 5 aircraft must have operate=1, but the question doesn't specify which 4. So we need to fix the number of non-zero flights to 4, not which specific aircraft."
+  }

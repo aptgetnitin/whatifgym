@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original",
+      "scope": {}
+    },
+    {
+      "sense": "min",
+      "measure": "linked_load",
+      "scope": {
+        "location": "5800 PICKERING ST",
+        "base": "21 MUNICIPAL CTR Fire Station"
+      }
+    }
+  ]
+}

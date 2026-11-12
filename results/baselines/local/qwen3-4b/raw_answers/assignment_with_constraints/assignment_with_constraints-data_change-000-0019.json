@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "workers",
+      "column": "size_capacity",
+      "where": {
+        "worker": "worker_5"
+      },
+      "delta": -25
+    }
+  ],
+  "note": "The worker's size capacity decreases by 25 units for worker_5."
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "at_least_3_months_zero_make",
+      "measure": "make",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Apr",
+          "Mar",
+          "Jun"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "note": "The rule ensures that at most 3 months have non-zero production by requiring at least 3 months to have zero production."
+}

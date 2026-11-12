@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_calves_year1_min",
+      "measure": "raise_heifers",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 0.75
+    }
+  ],
+  "note": "A rule that requires Year1 to account for at least 75% of all heifer calves raised."
+  }

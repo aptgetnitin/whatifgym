@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "ask": "What specific damage excess charged value is the planner referring to? The model has parameters `damage_excess` (unit: currency/damaged car) and `damaged_share` (unit: fraction). The question mentions 'damage excess charged', which likely refers to `damage_excess`, but the planner might be conflating it with the damage rate or other parameters."
+}

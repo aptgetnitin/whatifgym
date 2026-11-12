@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "F"
+      },
+      "value": 60
+    }
+  ],
+  "note": "A non-zero arrival time at destination for train F requires a total entry time of at least 60 minutes for train F."
+}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "karlsruhe_start_time_constraint",
+      "measure": "start_time",
+      "scope": {
+        "location": "Karlsruhe"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "karlsruhe_start_time_constraint",
+      "measure": "start_time",
+      "scope": {
+        "location": "Karlsruhe"
+      },
+      "sense": ">=",
+      "value": 320
+    }
+  ],
+  "note": "The constraint requires the start time for Karlsruhe to be either 0 or at least 320 minutes. This is modeled as two rules: one for the minimum value of 0 and another for the minimum value of 320."
+}

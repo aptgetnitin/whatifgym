@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "value": 13045850
+    }
+  ],
+  "note": "The total tons of ore extracted summed over everything is the sum of extract[year, mine] over all years and mines. This is a single value, so we set it to 13045850."
+}

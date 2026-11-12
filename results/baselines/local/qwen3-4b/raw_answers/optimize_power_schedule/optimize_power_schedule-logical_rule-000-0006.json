@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "plants",
+      "column": "on",
+      "where": {
+        "plant": [
+          "Edwin I Hatch",
+          "Scherer",
+          "OIL",
+          "OTHER COAL"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "output",
+      "scope": {
+        "plant": [
+          "Edwin I Hatch",
+          "Scherer",
+          "OIL",
+          "OTHER COAL"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

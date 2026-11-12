@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_operate_A321_4",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A321#4",
+        "flight": []
+      },
+      "sense": "<=",
+      "value": 5
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year2"
+      },
+      "value": 0.1
+    }
+  ],
+  "rules": [
+    {
+      "name": "year2_blend_limit",
+      "measure": "blend",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "value": 0.1
+    }
+  ]
+}

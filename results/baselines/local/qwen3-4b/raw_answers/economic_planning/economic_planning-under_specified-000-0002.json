@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "ask": "What minimum capacity built (million USD/year) do you mean? For which industry? For which year?"
+}

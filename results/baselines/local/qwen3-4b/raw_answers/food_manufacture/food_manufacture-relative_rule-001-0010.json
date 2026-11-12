@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "May",
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "value": 0.2
+    }
+  ],
+  "note": "A relative storage requirement over a subset of periods is a set over the matching rows."
+}

@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "task_1_at_most_25_of_task_5",
+      "measure": "assign",
+      "scope": {
+        "task": "task_1"
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "task": "task_5"
+        }
+      }
+    },
+    {
+      "name": "teams_at_most_25_of_assignments",
+      "measure": "team",
+      "scope": {},
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "assign",
+        "scope": {}
+      }
+    }
+  ]
+}

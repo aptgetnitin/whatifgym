@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "items",
+      "column": "weight",
+      "where": {
+        "item": "item10"
+      },
+      "value": "80"
+    }
+  ],
+  "note": "The planner asks about a specific item's weight change, so we set the weight of item10 to 80."
+}

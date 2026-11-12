@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "overmanned",
+      "where": {
+        "year": 1
+      },
+      "value": 450
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "overmanned",
+      "where": {
+        "year": 3
+      },
+      "value": 450
+    }
+  ],
+  "note": "The overmanned column in requirements is not a standard column; the model uses overmanned as a decision variable. This is a mistake in the question."
+  }

@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "items",
+      "column": "value",
+      "factor": 0.9
+    }
+  ]
+}

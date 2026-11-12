@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "make",
+      "column": "make",
+      "where": {
+        "month": "Feb",
+        "product": "Prod7"
+      },
+      "value": 750
+    }
+  ],
+  "note": "A fixed decision for a specific month and product in the make decision variable."
+  }

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "C"
+      },
+      "factor": 0.95
+    }
+  ],
+  "note": "A relative change in entry time for a specific train is a scale over the matching row."
+}

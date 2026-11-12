@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "max_technicians_for_doris",
+      "measure": "use",
+      "scope": {
+        "technician": "Doris"
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

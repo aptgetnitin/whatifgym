@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "end_time"
+    }
+  ]
+  }

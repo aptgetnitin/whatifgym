@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "retrain_unskilled_to_higher_year2_at_least_190_overmanned_year2_unskilled",
+      "measure": "retrain",
+      "scope": {
+        "year": 2,
+        "from_skill": "unskilled",
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "overmanned_year2_unskilled_at_least_190",
+      "measure": "overmanned",
+      "scope": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 190
+    }
+  ],
+  "note": "The planner's question specifies a condition that non-zero retraining to higher skill for year 2 requires at least 190 overmanned unskilled workers in year 2. This is translated into two rules: a minimum retraining value (0) for the specified scope and a minimum overmanned value (190) for the specified scope."
+}

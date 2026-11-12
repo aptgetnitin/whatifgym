@@ -1,6 +1,6 @@
 # Open solvers and modelling layer (see README "Solvers" for the highspy/ortools import caveat)
 pulp>=2.8,<4
-highspy>=1.8
+highspy>=1.8,<1.16   # references were made with 1.15.1; under 1.16.0 eight gold answers no longer reproduce (training/RUNPOD.md, Nov 12)
 pyscipopt>=5.0
 ortools>=9.10
 jsonschema>=4.18

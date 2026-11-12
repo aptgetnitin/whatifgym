@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "logic": [
+    {
+      "name": "queue_load_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "linked_load",
+          "scope": {
+            "location": "700 LONDON BRIDGE RD",
+            "base": [
+              "21 MUNICIPAL CTR Fire Station",
+              "2837 SHORE DR Fire Station",
+              "800 VIRGINIA BEACH BLVD Fire Station",
+              "600 CENTRAL DR Fire Station",
+              "3769 E. STRATFORD ROAD Rescue Squad",
+              "5145 RURITAN COURT Rescue Squad",
+              "333 THALIA ROAD Rescue Squad"
+            ]
+          },
+          "sense": ">=",
+          "value": 0.01
+        },
+        {
+          "measure": "linked_load",
+          "scope": {
+            "location": "700 LONDON BRIDGE RD",
+            "base": [
+              "21 MUNICIPAL CTR Fire Station",
+              "2837 SHORE DR Fire Station",
+              "800 VIRGINIA BEACH BLVD Fire Station",
+              "600 CENTRAL DR Fire Station",
+              "3769 E. STRATFALL ROAD Rescue Squad",
+              "5145 RURITAN COURT Rescue Squad",
+              "333 THALIA ROAD Rescue Squad"
+            ]
+          },
+          "sense": "<=",
+          "value": 0.0
+        }
+      ]
+    }
+  ]
+}

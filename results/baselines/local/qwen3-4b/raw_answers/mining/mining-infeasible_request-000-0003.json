@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "blend",
+      "scope": {
+        "year": "Year3"
+      }
+    }
+  ]
+}

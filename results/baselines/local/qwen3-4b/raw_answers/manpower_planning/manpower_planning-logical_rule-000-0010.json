@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "retrain_unskilled_to_higher_year1_at_least_860_overmanned_unskilled",
+      "measure": "retrain",
+      "scope": {
+        "year": 1,
+        "from_skill": "unskilled",
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "overmanned_unskilled_at_least_860",
+      "measure": "overmanned",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 860
+    }
+  ],
+  "note": "The question specifies that non-zero retraining to higher skill for year 1 requires at least 860 overmanned unskilled workers. This is translated into two rules: a minimum retraining amount for year 1 (unskilled to higher skills) and a minimum overmanned count for unskilled workers across all years."
+}

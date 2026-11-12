@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "end",
+      "where": {
+        "job": "J3",
+        "step": 4
+      },
+      "value": 260
+    }
+  ],
+  "note": "The planner asks for a non-zero end time for J3 step 4, requiring at least 260 start time for that step. This is a fixed decision on the end time of a specific operation."
+}

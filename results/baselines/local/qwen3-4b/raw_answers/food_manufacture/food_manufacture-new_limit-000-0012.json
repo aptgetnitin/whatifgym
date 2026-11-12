@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "may_produce_limit",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "May"
+        ]
+      },
+      "sense": "<=",
+      "value": 220
+    }
+  ]
+}

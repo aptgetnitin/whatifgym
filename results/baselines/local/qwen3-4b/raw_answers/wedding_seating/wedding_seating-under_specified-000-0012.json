@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "wedding_seating",
+  "ask": "What is the range of possible values for max_tables in the wedding seating model?"
+}

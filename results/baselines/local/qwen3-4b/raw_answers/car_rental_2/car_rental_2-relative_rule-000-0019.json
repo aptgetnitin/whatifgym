@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_transfers_at_least_3x_repairs",
+      "measure": "undamaged_transfers",
+      "scope": {},
+      "sense": ">=",
+      "value": 3,
+      "relative_to": {
+        "measure": "repairs",
+        "scope": {}
+      }
+    },
+    {
+      "name": "at_least_75_percent_expansions_to_manchester",
+      "measure": "expand",
+      "scope": {
+        "depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "expand",
+        "scope": {}
+      }
+    }
+  ]
+}

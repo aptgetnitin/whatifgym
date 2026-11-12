@@ -1,0 +1,17 @@
+{
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": [
+          "1700 PLEASURE HOUSE RD"
+        ]
+      },
+      "value": 3
+    }
+  ],
+  "note": "The incident location '1700 PLEASURE HOUSE RD' has a different number of cardiac arrests observed."
+  }

@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {
+        "plant": [
+          "Scherer",
+          "Bowen",
+          "Jack McDonough",
+          "Edwin I Hatch",
+          "Vogtle",
+          "OIL",
+          "BIOMASS",
+          "GAS",
+          "HYDRO",
+          "OTHER COAL"
+        ]
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "A relative capacity change across all plants is a scale over the matching rows."
+}

@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "ask": "Which grid import price (EUR/kWh) value changes? Please specify the hour range (e.g., 00-01) and the direction of change (e.g., decreases by 0.05 EUR/kWh)."
+}

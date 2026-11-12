@@ -1,0 +1,21 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "A relative hardness change across all oils is a scale over the matching rows."
+}

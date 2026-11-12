@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": "coal"
+      },
+      "factor": 600
+    },
+    {
+      "op": "scale",
+      "table": "input_output",
+      "column": "input_per_unit_capacity",
+      "where": {
+        "supplier": "coal",
+        "user": "transport"
+      },
+      "factor": 0.5
+    }
+  ]
+}

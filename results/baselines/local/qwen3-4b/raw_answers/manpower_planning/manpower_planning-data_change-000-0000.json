@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "skills",
+      "column": "downgrade_attrition",
+      "where": {
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 2.0
+    }
+  ]
+}

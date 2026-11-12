@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "at_least_one_nonzero",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "produce",
+          "scope": {
+            "month": "Feb"
+          }
+        },
+        {
+          "measure": "produce",
+          "scope": {
+            "month": "Mar"
+          }
+        },
+        {
+          "measure": "produce",
+          "scope": {
+            "month": "Jun"
+          }
+        },
+        {
+          "measure": "produce",
+          "scope": {
+            "month": "Jan"
+          }
+        },
+        {
+          "measure": "produce",
+          "scope": {
+            "month": "May"
+          }
+        }
+      ]
+    }
+  ]
+}

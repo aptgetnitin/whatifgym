@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "short_time_60_percent",
+      "measure": "short_time",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 0.6
+    },
+    {
+      "name": "overmanned_below_redundant_50_percent",
+      "measure": "overmanned",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ]
+      },
+      "sense": "<=",
+      "value": 0.5
+    }
+  ]
+}

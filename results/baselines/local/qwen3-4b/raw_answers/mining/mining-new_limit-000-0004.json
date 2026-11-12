@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "total_mine_years_worked",
+      "measure": "operate",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "sense": "<=",
+      "value": 7
+    },
+    {
+      "name": "blend_year5_limit",
+      "measure": "blend",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": "<=",
+      "value": 3280000
+    }
+  ],
+  "note": "Two new limits: total mine-years worked (sum of operate over all years and mines) <= 7, and blend for Year5 <= 3280000."
+}

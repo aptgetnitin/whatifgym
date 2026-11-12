@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "fixed_decisions": [
+    {
+      "measure": "open",
+      "scope": {
+        "base": [
+          "5145 RURITAN COURT Rescue Squad"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "measure": "assign",
+      "scope": {
+        "location": [
+          "700 LONDON BRIDGE RD"
+        ],
+        "base": [
+          "21 MUNICIPAL CTR Fire Station"
+        ]
+      },
+      "value": 1
+    }
+  ]
+}

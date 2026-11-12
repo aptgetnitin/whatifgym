@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "resource": "5"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "resource": "5"
+      },
+      "value": 261
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'total entry time for resource 5' refers to a sum over trains, but the question specifies a single value (either 0 or 261). This is not a valid data change because the 'ready_time' column is per train, not per resource. The correct interpretation would be to set the sum of entry times for resource 5 to either 0 or 261, but the model does not have a direct measure for this sum."
+}

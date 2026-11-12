@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "end",
+      "where": {
+        "job": "J0",
+        "step": 3
+      },
+      "value": 14
+    },
+    {
+      "op": "scale",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "machine": "M5"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The planner's question is vague: 'upper limit on operation end time' could mean different things. The base model has a makespan constraint that the last job finishes by the horizon (197), but the question doesn't specify which operation or how much the limit is. The example data changes in the 'What-if surface' table suggest J1's step 3 takes 14 instead of 10 and M5 runs 20% slower. However, the question doesn't specify which operation or the exact limit. The answer should be a clarifying question."
+  }

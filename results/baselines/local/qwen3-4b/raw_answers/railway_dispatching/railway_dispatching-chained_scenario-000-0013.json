@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "C"
+      },
+      "value": 36
+    }
+  ]
+  }

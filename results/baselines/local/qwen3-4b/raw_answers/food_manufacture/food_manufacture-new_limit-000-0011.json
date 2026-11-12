@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "feb_buy_min",
+      "measure": "buy",
+      "scope": {
+        "month": [
+          "Feb"
+        ],
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "sense": ">=",
+      "value": 940
+    }
+  ]
+}

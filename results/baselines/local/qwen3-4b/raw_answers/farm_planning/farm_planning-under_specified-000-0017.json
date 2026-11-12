@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "land_groups",
+      "column": "beet_yield",
+      "where": {
+        "land_group": "Group1"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The question is about an upper limit on sugar beet grown, but the model schema shows that 'grow_beet' is a decision measure for the year, not a parameter. The question is vague about whether it's a parameter change or a constraint. Since the model has a 'grow_beet' decision variable, the most precise interpretation is that the planner wants to set an upper limit on the amount of sugar beet grown (a rule), not change a parameter. However, the question says 'upper limit on tons of sugar beet grown', which implies a constraint on the decision variable. But the model schema shows that 'grow_beet' is a decision measure, so the constraint would be a rule. The question is not precise enough to be machine-checked without more detail."
+  }

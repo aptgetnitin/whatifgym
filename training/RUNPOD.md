@@ -259,7 +259,20 @@ nohup bash /root/run.sh > /root/run.log 2>&1 &                     # the four ru
 
 About 12 % of qwen3:4b's first 250 answers ended in `HTTP 500: prediction aborted, token repeat limit reached`: the model repeats one token until Ollama stops it. They are scored as wrong and counted in the summary's "request errors" column.
 
-Timeline, continued: 22:02:12 qwen3:4b restarts.
+**qwen3:4b, first pass** (22:02:12 to 22:28:16, 26 min for 3,801 answers with 8 at once): accuracy 25.3 %, valid scenario 72 %. 22.6 % of its answers were aborted by the repeat limit (16.6 % in October on the Mac, so this is the model, not the pod).
+
+**drone_network needs a larger context window.** 137 of its 151 prompts filled the 16,384-token window and were cut (the first base model whose prompt is that long). Its files are therefore answered again with `--num-ctx 32768` for every model, and left out of the main pass of the two models still to run:
+
+```bash
+# for each model, after its main pass (the server restarted with OLLAMA_NUM_PARALLEL=4, or 2 for the two larger models)
+.venv/bin/python scripts/run_local_baselines.py --models qwen3:4b --jobs 4 --num-ctx 32768 --force --tasks tasks/drone_network/*.jsonl
+# main pass of qwen3:14b and gpt-oss:20b: every current task file except drone_network's
+.venv/bin/python scripts/run_local_baselines.py --models qwen3:14b --jobs 4 --tasks $REST
+```
+
+The user raised the cap to $5.50: terminate by 01:50 UTC (5:50 PM Pacific).
+
+Timeline, continued: 22:02:12 qwen3:4b restarts; 22:28:23 qwen3:8b starts.
 
 ## Problems hit, in order
 

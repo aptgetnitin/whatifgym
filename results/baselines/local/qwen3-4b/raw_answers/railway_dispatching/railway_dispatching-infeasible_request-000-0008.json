@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "B"
+      },
+      "value": 160
+    }
+  ],
+  "note": "The planner asks if train B's entry time for resource 4 is at least 160 minutes. This requires setting the ready_time for train B to 160, as ready_time is the time at which the train enters its current resource."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "at_least_40_percent_to_T18",
+      "measure": "assign",
+      "scope": {
+        "facility": "T18"
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "note": "The planner wants at least 40% of total patients assigned to go to facility T18. This is a rule that sets a minimum percentage of the total assignment to T18."
+}

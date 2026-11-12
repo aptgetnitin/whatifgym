@@ -1,0 +1,4 @@
+{
+  "role": "agent",
+  "text": "What is the minimum output produced (million USD) that the planner requires? How is this minimum defined (e.g., per industry, per year, total over the horizon)?"
+  }

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "300 HORACE AV"
+      },
+      "factor": 0.0
+    }
+  ],
+  "note": "The question is about changing the observed cardiac arrests for a specific incident location. Since the question is vague about the change, we assume a scale operation with factor 0 (i.e., setting the incidents to 0) as a minimal change. The planner should specify the exact change (e.g., 10% increase) for a precise scenario."
+}

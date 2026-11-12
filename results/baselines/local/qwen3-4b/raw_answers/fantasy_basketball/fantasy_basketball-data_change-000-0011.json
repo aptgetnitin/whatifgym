@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "positions",
+      "column": "required",
+      "where": {
+        "position": "C"
+      },
+      "value": 0
+    }
+  ]
+}

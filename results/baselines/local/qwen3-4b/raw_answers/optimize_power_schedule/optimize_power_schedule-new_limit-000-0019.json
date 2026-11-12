@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_plant_hours_19",
+      "measure": "on",
+      "scope": {
+        "hour": 19
+      },
+      "sense": ">=",
+      "value": 10
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

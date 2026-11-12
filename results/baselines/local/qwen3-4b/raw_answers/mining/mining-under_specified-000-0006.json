@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is vague: 'Suppose the tons of ore extracted gets capped.' This could mean multiple things. In the context of the model, 'capped' might refer to a capacity constraint on extraction, but the model already has capacity constraints per mine. Without more detail, it's unclear which aspect is being capped or what the cap value is. The model's capacity constraints are already in place (capacity[year, mine] constraint), so this question is not precise enough to be turned into a machine-checkable scenario."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_inventory",
+      "column": "max_inventory",
+      "where": {
+        "product": "Prod1"
+      },
+      "value": 100
+    }
+  ],
+  "note": "A cap on stock would be a new upper bound on the store variable, so we set the max_inventory parameter for a specific product."
+}

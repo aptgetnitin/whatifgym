@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": [
+          "Year3",
+          "Year4"
+        ]
+      },
+      "value": 0.0
+    }
+  ],
+  "note": "The blend-quality target is lifted for Year3 and Year4, meaning the quality target is set to 0 (or effectively removed, as the constraint would be trivially satisfied)."
+}

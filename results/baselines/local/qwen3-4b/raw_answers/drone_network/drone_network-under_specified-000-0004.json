@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "5600 MEER ST"
+      },
+      "factor": 0.0
+    }
+  ],
+  "note": "The question asks about a change in the observed cardiac arrests for a specific location. Since the question is vague about the direction or magnitude of the change, we model it as a scale operation with factor 0 (i.e., setting the incidents to 0) to represent a change. This is a common way to represent a 'change' in the context of what-if scenarios."
+}

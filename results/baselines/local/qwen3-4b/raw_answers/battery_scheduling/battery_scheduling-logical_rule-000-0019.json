@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "soc",
+      "column": "soc",
+      "where": {
+        "hour": "18-19"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "charge",
+      "column": "charge",
+      "where": {
+        "hour": "02-03"
+      },
+      "value": 5.6
+    }
+  ],
+  "note": "The planner's question is about a fixed decision for a specific hour's soc and charge. However, the model's decision variables are charge[hour] and soc[hour], so we set these values directly."
+}

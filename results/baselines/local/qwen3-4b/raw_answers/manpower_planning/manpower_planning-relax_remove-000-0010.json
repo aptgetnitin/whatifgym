@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "relax",
+      "constraint": "retraining_limit",
+      "scope": {
+        "year": [
+          "1",
+          "2"
+        ]
+      }
+    }
+  ],
+  "note": "Lifting the retraining limit for year 1 and 2 means removing the constraint that retraining moves are capped by max_per_year + max_share_of_target * workforce for those years."
+}

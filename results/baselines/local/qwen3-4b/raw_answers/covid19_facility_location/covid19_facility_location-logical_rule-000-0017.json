@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "c3_e3_assign_zero_or_600",
+      "measure": "assign",
+      "scope": {
+        "county": "C3",
+        "facility": "E3"
+      },
+      "sense": "<=",
+      "value": 600
+    },
+    {
+      "name": "c3_e3_assign_zero_or_600",
+      "measure": "assign",
+      "scope": {
+        "county": "C3",
+        "facility": "E3"
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ]
+}

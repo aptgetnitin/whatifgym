@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "d_pairs_limit",
+      "measure": "meet",
+      "scope": {
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ],
+        "train": [
+          "D"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

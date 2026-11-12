@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "nutrients",
+      "column": "min_per_person",
+      "where": {
+        "nutrient": "ration"
+      },
+      "value": 0
+    }
+  ],
+  "note": "A floor on the ration per person would set the minimum intake to zero, effectively removing the ration constraint."
+}

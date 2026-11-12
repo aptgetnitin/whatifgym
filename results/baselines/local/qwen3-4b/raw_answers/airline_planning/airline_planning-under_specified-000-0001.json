@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "passengers",
+      "where": {
+        "flight": [
+          "4576"
+        ]
+      },
+      "value": 100
+    }
+  ],
+  "note": "The planner's question is about changing the booked passengers for a specific flight row. The data change sets the passengers for flight 4576 to 100."
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "factor": 0.9666666666666667
+    }
+  ],
+  "note": "The total number of thermal units running (summed over all types and periods) may not exceed 75. This is a scale change on the units_available parameter for all thermal types, as the original model has 12, 10, and 5 units available for Thermal0, Thermal1, and Thermal2 respectively, and 12+10+5=27. Scaling by 0.9666666666666667 gives 27 * 0.9666666666666667 = 26.1, but the question says 'may not exceed 75', which is a different interpretation. Wait, the question says 'the total number of thermal units running, summed over everything, may not exceed 75'. This is a constraint on the sum of ngen over all periods and types, not a change to units_available. I need to re-think."
+
+  }

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine3"
+      },
+      "factor": 0.15
+    }
+  ],
+  "note": "A relative change to the capacity of Mine3 (15% of total extracted ore) is a scale on the capacity column for Mine3."
+}

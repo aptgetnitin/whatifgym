@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "tasks",
+      "column": "min_workers",
+      "where": {
+        "task": "task_5"
+      },
+      "value": 30
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year1"
+      },
+      "value": 2875000
+    }
+  ],
+  "note": "The sum of blend over year=Year1 is a constraint on the blend measure for Year1. However, the scenario specifies a limit on the sum of blend over year=Year1, which is a single year. In the model, blend[year] is a decision measure per year, so the sum over year=Year1 is just blend[Year1]. The scenario says 'summed over everything with year = Year1', which is equivalent to blend[Year1]. Therefore, the constraint is that blend[Year1] <= 2875000."
+  }

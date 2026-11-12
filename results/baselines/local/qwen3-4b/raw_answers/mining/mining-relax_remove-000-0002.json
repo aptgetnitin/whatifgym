@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year1"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year2"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year3"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year4"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year5"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The blend-quality target is set to 0 for all years, effectively dropping the target constraint."
+}

@@ -1,0 +1,62 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "makespan"
+    },
+    {
+      "sense": "max",
+      "measure": "goes_first",
+      "scope": {
+        "machine": [
+          "M0",
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5"
+        ],
+        "job": [
+          "J0",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5"
+        ],
+        "other_job": [
+          "J0",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "end",
+      "scope": {
+        "job": [
+          "J0",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5"
+        ],
+        "step": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    }
+  ]
+}

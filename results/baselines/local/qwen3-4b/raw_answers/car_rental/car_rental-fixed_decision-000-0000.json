@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "rentals",
+      "column": "rentals",
+      "where": {
+        "depot": "Plymouth",
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ]
+      },
+      "value": 52
+    }
+  ],
+  "note": "Plymouth gets exactly 52 cars rented out in each day (Monday to Saturday)."
+}

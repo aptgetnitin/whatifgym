@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "ask": "What does 'entry time (minutes) gets capped' mean? Which resource, train, and what is the cap value?"
+}

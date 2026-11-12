@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "max_expansions",
+      "where": {
+        "name": "max_expansions"
+      },
+      "factor": 1.5
+    }
+  ]
+}

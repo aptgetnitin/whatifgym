@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "extract_year1_at_least_75",
+      "measure": "extract",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 0.75
+    },
+    {
+      "name": "open_year2_at_most_90_of_year1",
+      "measure": "open",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "open",
+        "scope": {
+          "year": "Year1"
+        }
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "The first rule requires that at least 75% of total ore extracted goes to Year1; the second rule sets a relative limit on open mine-years between Year1 and Year2."
+  }

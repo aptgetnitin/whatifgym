@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "operate",
+      "where": {
+        "flight": [
+          "4576",
+          "3103",
+          "4264"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is vague: 'capped' could mean different things. We assume they mean canceling specific flights (4576, 3103, 4264) as a way to cap the number of operated flights."
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "rentals_below_damaged_stock",
+      "measure": "rentals",
+      "scope": {
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.8,
+      "relative_to": {
+        "measure": "damaged_stock",
+        "scope": {
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ]
+        }
+      }
+    }
+  ]
+}

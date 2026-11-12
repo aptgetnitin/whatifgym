@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "share",
+      "where": {
+        "rental_days": 2
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "price_other_depot",
+      "where": {
+        "rental_days": 2
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "marginal_cost",
+      "where": {
+        "rental_days": 2
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The planner's question is vague: 'price, return to another depot for rental length 2 moves' could mean different things. The model has three parameters for 2-day rentals: share, price_other_depot, and marginal_cost. The question likely refers to a change in one or more of these. Since the question is ambiguous, I'll assume it means a 20% decrease in all three parameters for 2-day rentals (as a common interpretation of 'moves' meaning changes)."
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "jobs",
+      "column": "release_date",
+      "where": {
+        "job": "job_2"
+      },
+      "value": 33800
+    },
+    {
+      "op": "set",
+      "table": "jobs",
+      "column": "release_date",
+      "where": {
+        "job": "job_7"
+      },
+      "value": 73000
+    }
+  ],
+  "note": "The planner asks for minimum start times for job_2 and job_7. In scheduling, the earliest start time is constrained by the release date, so setting the release date to the desired start time effectively enforces the minimum start time."
+}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "min_batch_step4",
+      "measure": "end",
+      "scope": {
+        "job": "*",
+        "step": 4
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "min_batch_step4_at_least_320",
+      "measure": "end",
+      "scope": {
+        "job": "*",
+        "step": 4
+      },
+      "sense": ">=",
+      "value": 320
+    }
+  ]
+}

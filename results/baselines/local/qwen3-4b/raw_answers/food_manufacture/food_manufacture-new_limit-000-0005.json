@@ -1,0 +1,17 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "refining_capacity",
+      "column": "refining_capacity",
+      "where": {
+        "category": [
+          "veg",
+          "nonveg"
+        ]
+      },
+      "value": 2150
+    }
+  ]
+}

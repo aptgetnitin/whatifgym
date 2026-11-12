@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "transport_year2_at_least_115_year6",
+      "measure": "production",
+      "scope": {
+        "year": 2,
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "transport_year6_at_least_115_year2",
+      "measure": "production",
+      "scope": {
+        "year": 6,
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 115
+    }
+  ],
+  "note": "The planner's question specifies a non-zero output in year 2 for transport requires at least 115 million USD in year 6 for transport. This is translated into two rules: a minimum of 0 for year 2 (to ensure non-zero) and a minimum of 115 for year 6."
+  }

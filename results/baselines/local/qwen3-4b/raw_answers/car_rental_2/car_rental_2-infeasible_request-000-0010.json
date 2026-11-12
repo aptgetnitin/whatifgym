@@ -1,0 +1,25 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "repairs",
+      "column": "repairs",
+      "where": {
+        "day": "Saturday",
+        "depot": "Birmingham"
+      },
+      "value": 60
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "repairs",
+      "scope": {
+        "day": "Saturday",
+        "depot": "Birmingham"
+      },
+      "value": 60
+    }
+  ]
+}

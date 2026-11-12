@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "entry_time_sum_at_least_135",
+      "measure": "entry_time[train, resource]",
+      "scope": {
+        "resource": "4"
+      },
+      "sense": ">=",
+      "value": 135
+    }
+  ],
+  "note": "A requirement on the sum of entry times for a specific resource."
+}

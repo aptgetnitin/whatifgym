@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "freiburg_im_breisgau_legs_75%",
+      "measure": "route",
+      "scope": {
+        "to_location": "Freiburg im Breisgau"
+      },
+      "sense": ">=",
+      "value": 0.75
+    },
+    {
+      "name": "jobs_assigned_25%",
+      "measure": "assign",
+      "scope": {
+        "customer": [
+          "Customer1",
+          "Customer2",
+          "Customer3",
+          "Customer4",
+          "Customer5",
+          "Customer6",
+          "Customer7"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.25
+    }
+  ]
+}

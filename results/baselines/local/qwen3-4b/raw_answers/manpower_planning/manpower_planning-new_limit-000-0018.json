@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "short_time",
+      "column": "short_time",
+      "where": {
+        "skill": [
+          "unskilled"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "rules": [
+    {
+      "name": "unskilled_short_time_limit",
+      "measure": "short_time",
+      "scope": {
+        "skill": [
+          "unskilled"
+        ]
+      },
+      "sense": "<=",
+      "value": 110
+    }
+  ]
+}

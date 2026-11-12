@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "total_flights_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A319#11"
+        ]
+      },
+      "sense": "<=",
+      "value": 3
+    },
+    {
+      "name": "overall_flights_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A319#11"
+        ]
+      },
+      "sense": "<=",
+      "value": 38
+    }
+  ]
+}

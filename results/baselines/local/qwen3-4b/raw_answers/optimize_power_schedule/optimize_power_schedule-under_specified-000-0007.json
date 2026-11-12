@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "health_costs",
+      "column": "health_cost",
+      "where": {
+        "plant": [
+          "Bowen"
+        ],
+        "hour": [
+          17
+        ]
+      },
+      "value": 2.0
+    }
+  ],
+  "note": "The health cost per MWh is different for one row in the health_costs table, specifically for Bowen at hour 17."
+}

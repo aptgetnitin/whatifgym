@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "yearly_profit",
+      "scope": {
+        "year": "Year4"
+      }
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "yearly_profit",
+      "scope": {
+        "year": "Year4"
+      },
+      "value": 134150
+    }
+  ]
+  }

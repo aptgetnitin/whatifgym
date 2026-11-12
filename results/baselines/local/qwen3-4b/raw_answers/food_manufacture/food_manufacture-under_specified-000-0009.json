@@ -1,0 +1,4 @@
+{
+  "base_model": "food_manufacture",
+  "ask": "What specific change to the hardness of VEG2 is being considered? (e.g., a new value, a range, or a direction of change?)"
+}

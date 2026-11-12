@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_inventory",
+      "where": {
+        "product": "all"
+      },
+      "value": 1000
+    }
+  ]
+}

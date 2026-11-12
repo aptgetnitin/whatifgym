@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "sell",
+      "scope": {
+        "product": "all"
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "original",
+      "scope": {
+        "product": "all"
+      }
+    }
+  ]
+  }

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "soc",
+      "column": "soc",
+      "where": {
+        "hour": [
+          "15-16",
+          "18-19"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "skills",
+      "column": "current_strength",
+      "where": {
+        "skill": "unskilled"
+      },
+      "delta": 0.1
+    },
+    {
+      "op": "shift_param",
+      "name": "costs.redundancy_cost",
+      "delta": 1000
+    }
+  ]
+}

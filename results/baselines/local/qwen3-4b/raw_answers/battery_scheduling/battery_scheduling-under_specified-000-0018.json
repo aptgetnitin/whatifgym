@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "terminal_soc_kwh",
+      "value": "0.0"
+    }
+  ],
+  "note": "The planner's question is about changing the terminal_soc_kwh parameter, which is the minimum battery charge at the end of the day (kWh). This change is represented by setting the parameter to 0.0, which means the battery must end the day with at least 0 kWh (no reserve)."
+}

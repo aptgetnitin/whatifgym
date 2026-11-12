@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "makespan"
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "jobs",
+      "column": "end_time",
+      "where": {
+        "job": "job_9"
+      },
+      "value": 118700
+    }
+  ]
+}

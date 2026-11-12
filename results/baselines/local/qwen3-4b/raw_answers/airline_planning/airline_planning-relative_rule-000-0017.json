@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "a319_18_at_least_90_of_a321_2",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#18"
+      },
+      "sense": ">=",
+      "value": 0.9,
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": "A321#2"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

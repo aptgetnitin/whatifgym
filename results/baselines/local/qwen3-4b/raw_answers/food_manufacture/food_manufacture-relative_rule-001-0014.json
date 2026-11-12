@@ -1,0 +1,22 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "Jun",
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "value": 0.3
+    }
+  ],
+  "note": "The planner's question is ambiguous: it doesn't specify whether the 30% refers to the total storage across all oils or per oil. The model's `store` variable is per oil and month, so the question likely means that the total storage in June (across all oils) must be at least 30% of the total storage over the horizon. However, the model does not track total storage over the horizon, so this scenario is not machine-checkable without further clarification."
+}

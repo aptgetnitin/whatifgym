@@ -1,0 +1,21 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner's question is vague: 'one of the rows' could mean any row. The scenario assumes a specific row (e.g., VEG1) is changed, but the question doesn't specify which row. This is a clarifying question."
+}

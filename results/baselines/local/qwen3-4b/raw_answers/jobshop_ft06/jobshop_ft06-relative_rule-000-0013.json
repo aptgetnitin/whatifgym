@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J0",
+        "step": 2
+      },
+      "factor": 0.95
+    }
+  ],
+  "note": "A relative change to a specific operation's duration is a scale over the matching row."
+}

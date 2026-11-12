@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "refined_oil_apr_limit",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Apr"
+        ]
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ]
+}

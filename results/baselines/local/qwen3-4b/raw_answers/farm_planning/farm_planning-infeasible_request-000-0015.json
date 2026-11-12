@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "yearly_profit",
+      "scope": {
+        "year": "Year5"
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "yearly_profit",
+      "scope": {
+        "year": "Year2"
+      }
+    }
+  ]
+}

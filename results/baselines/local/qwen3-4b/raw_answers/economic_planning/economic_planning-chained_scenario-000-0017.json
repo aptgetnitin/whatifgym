@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "coal_output_limit",
+      "measure": "production",
+      "scope": {
+        "industry": "coal"
+      },
+      "sense": "<=",
+      "value": 1500
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

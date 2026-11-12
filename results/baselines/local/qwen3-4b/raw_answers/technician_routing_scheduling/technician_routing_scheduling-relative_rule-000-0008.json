@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original",
+      "scope": {}
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "unfilled",
+      "scope": {
+        "customer": [
+          "Customer1",
+          "Customer2",
+          "Customer3",
+          "Customer4",
+          "Customer5",
+          "Customer6",
+          "Customer7"
+        ]
+      },
+      "value": 0.25
+    }
+  ]
+  }

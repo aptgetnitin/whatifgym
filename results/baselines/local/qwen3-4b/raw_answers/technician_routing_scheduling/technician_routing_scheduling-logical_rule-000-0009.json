@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "start_time",
+      "column": "start_time",
+      "where": {
+        "location": "Mannheim"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "start_time",
+      "column": "start_time",
+      "where": {
+        "location": "Mannheim"
+      },
+      "value": 60
+    }
+  ],
+  "note": "The total service start time for Mannheim must be either zero or at least 60. This is a binary choice for the start_time at Mannheim."
+}

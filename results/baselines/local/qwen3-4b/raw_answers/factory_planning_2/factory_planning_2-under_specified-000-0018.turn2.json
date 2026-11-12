@@ -1,0 +1,4 @@
+{
+  "role": "agent",
+  "text": "What does the planner mean by 'machines installed for machine type vertDrill moves'? Does this refer to changing the number of machines installed (installed column in machines table) or the maintenance schedule for vertDrill machines?"
+  }

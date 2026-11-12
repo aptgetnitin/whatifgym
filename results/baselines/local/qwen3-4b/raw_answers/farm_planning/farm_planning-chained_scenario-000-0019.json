@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "max_raise_heifers_Year2",
+      "measure": "raise_heifers",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "value": 6
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "aircraft",
+      "column": "operate",
+      "where": {
+        "aircraft": "A319#5"
+      },
+      "value": 1
+    }
+  ],
+  "note": "The total number of flights operated for aircraft A319#5 may not exceed 1."
+}

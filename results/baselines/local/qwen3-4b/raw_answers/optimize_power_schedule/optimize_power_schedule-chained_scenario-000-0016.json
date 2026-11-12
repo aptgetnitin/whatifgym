@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_output_HYDRO",
+      "measure": "output",
+      "scope": {
+        "plant": "HYDRO"
+      },
+      "sense": "<=",
+      "value": 3500
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

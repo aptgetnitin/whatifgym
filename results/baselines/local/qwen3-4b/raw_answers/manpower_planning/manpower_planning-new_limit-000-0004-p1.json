@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "overmanned",
+      "column": "overmanned",
+      "where": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 0.0
+    },
+    {
+      "op": "scale",
+      "table": "redundant",
+      "column": "redundant",
+      "where": {
+        "year": [
+          "2"
+        ]
+      },
+      "factor": 0.0
+    }
+  ],
+  "note": "The planner asked for two caps: total short-time workers <= 240 (all years, all skills) and total redundancies in year 2 <= 80. The data changes scale the overmanned and redundant measures to 0, which is equivalent to setting an upper bound of 240 on short-time workers and 80 on redundancies in year 2."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_inventory",
+      "column": "max_inventory",
+      "where": {
+        "product": "Prod1",
+        "month": "May"
+      },
+      "value": 180
+    }
+  ],
+  "note": "The warehouse space limit applies to the end of May, so we set the max inventory for May and Prod1 to 180 units."
+}

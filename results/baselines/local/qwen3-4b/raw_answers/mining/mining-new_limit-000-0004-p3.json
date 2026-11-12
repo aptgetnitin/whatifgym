@@ -1,0 +1,85 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine1"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 1600000
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": "Mine2"
+      },
+      "value": 0.6
+    },
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine4"
+      }
+    },
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "Mine5",
+          "royalty": 3000000,
+          "capacity": 1000000,
+          "quality": 1.2
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_mine_years_worked",
+      "measure": "operate",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4",
+          "Mine5"
+        ]
+      },
+      "sense": "<=",
+      "value": 7
+    },
+    {
+      "name": "blend_year5_limit",
+      "measure": "blend",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": "<=",
+      "value": 3280000
+    }
+  ]
+}

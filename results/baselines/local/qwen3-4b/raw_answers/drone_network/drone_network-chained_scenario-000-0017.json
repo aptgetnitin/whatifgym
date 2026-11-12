@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "cap_linked_load_800 VIRGINIA BEACH BLVD Fire Station",
+      "measure": "linked_load",
+      "scope": {
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": "<=",
+      "value": 0.08
+    }
+  ]
+}

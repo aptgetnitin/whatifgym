@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "bins",
+      "column": "capacity",
+      "where": {
+        "bin": [
+          "bin0",
+          "bin1",
+          "bin2",
+          "bin3",
+          "bin4"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is vague: 'capacity changes across the board' could mean scaling all bins by a factor, but the factor is not specified. However, the model schema shows that the base model has five bins with fixed capacities. Since the question does not specify the factor, we cannot precisely define the change. The answer is a clarifying question to the planner."
+}

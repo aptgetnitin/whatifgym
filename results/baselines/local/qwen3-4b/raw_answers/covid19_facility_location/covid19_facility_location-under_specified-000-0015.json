@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "facilities",
+      "column": "capacity",
+      "where": {
+        "facility": "T16"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The question is vague about how the capacity moves. A scale change by 1.0 is a no-op, but the planner likely meant a change in capacity. Since the question doesn't specify the direction or magnitude, I cannot make a precise scenario. However, the question asks what happens if the capacity moves, which implies a change. But without specific details, I must ask for clarification."
+  }

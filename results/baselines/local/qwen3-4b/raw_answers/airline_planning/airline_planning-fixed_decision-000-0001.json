@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "operate",
+      "where": {
+        "flight": 3103,
+        "aircraft": "A318#8"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Set the operate count for flight 3103 on aircraft A318#8 to 0."
+}

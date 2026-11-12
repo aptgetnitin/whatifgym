@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "open",
+      "where": {
+        "mine": "Mine3",
+        "year": "Year3"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fixing the open status of Mine3 in Year3 to 0 means it cannot be kept open in that year, effectively ruling it out for Year3."
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "downtime",
+      "column": "machines_down",
+      "where": {
+        "month": "May",
+        "machine": "vertDrill"
+      },
+      "delta": 0
+    },
+    {
+      "op": "scale",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod5"
+      },
+      "factor": 0.9
+    }
+  ]
+}

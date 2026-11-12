@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "start_time[location]",
+      "scope": {
+        "location": "Loerrach"
+      }
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "sequence",
+      "scope": {
+        "location": "Loerrach"
+      }
+    }
+  ]
+  }

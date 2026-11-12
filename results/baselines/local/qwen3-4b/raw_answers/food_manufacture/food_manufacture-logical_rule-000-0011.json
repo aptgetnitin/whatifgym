@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "at_most_2_nonzero_refined_months",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Feb",
+          "Jan",
+          "May",
+          "Mar"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

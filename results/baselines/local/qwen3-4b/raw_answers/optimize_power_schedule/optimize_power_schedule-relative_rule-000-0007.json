@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "biomass_hours_limit",
+      "measure": "on",
+      "scope": {
+        "plant": "BIOMASS"
+      },
+      "sense": "<=",
+      "value": 0.1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "routing_step_6_40_percent",
+      "measure": "start",
+      "scope": {
+        "step": 6
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "note": "A relative rule comparing the sum of start times for step 6 to the total start time."
+  }

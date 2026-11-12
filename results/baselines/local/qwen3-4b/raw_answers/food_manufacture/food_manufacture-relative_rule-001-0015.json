@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "april_production_at_most_60_percent_of_march",
+      "measure": "produce",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": "<=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "produce",
+        "scope": {
+          "month": "Mar"
+        }
+      }
+    }
+  ]
+}

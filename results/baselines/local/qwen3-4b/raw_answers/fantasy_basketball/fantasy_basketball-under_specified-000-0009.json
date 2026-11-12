@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "salary_cap",
+      "value": "30000"
+    }
+  ],
+  "note": "The planner's question is about the effect of changing the salary cap, but the base model already uses a salary cap of 30,000 (as per the reference optimum). To make this a precise scenario, we need to specify a new value for the salary cap. Since the question is vague about the change, we use the original value as a baseline and require the planner to specify the new cap value."
+}

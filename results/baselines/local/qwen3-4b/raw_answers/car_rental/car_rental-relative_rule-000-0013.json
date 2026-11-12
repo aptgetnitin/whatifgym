@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "monday_undamaged_kept_at_least_40",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ]
+}

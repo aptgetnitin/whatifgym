@@ -1,0 +1,70 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "rule1",
+      "measure": "make",
+      "scope": {
+        "month": "Jun",
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "sense": ">=",
+      "value": 3,
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": "May",
+          "product": [
+            "Prod1",
+            "Prod2",
+            "Prod3",
+            "Prod4",
+            "Prod5",
+            "Prod6",
+            "Prod7"
+          ]
+        }
+      }
+    },
+    {
+      "name": "rule2",
+      "measure": "store",
+      "scope": {
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "sense": ">=",
+      "value": 2,
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": [
+            "Prod1",
+            "Prod2",
+            "Prod3",
+            "Prod4",
+            "Prod5",
+            "Prod6",
+            "Prod7"
+          ]
+        }
+      }
+    }
+  ]
+}

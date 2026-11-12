@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 1
+      },
+      "value": 6250
+    }
+  ],
+  "note": "The question asks for the output of Vogtle in hour 1 to be at least 6250 MWh. However, the model's output variable is 'output[plant, hour]', so this is a fixed decision for the output of Vogtle in hour 1."
+  }

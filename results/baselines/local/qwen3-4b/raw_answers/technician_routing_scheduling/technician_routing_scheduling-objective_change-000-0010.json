@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "sum(use[technician])"
+    },
+    {
+      "sense": "max",
+      "measure": "sum(start_time[location])"
+    }
+  ]
+}

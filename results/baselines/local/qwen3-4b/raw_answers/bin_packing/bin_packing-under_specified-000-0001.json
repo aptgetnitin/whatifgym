@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "bins",
+      "column": "capacity",
+      "where": {
+        "bin": [
+          "bin0"
+        ]
+      },
+      "value": 150
+    }
+  ],
+  "note": "A single bin's capacity is changed to 150 units, while others remain at 100."
+  }

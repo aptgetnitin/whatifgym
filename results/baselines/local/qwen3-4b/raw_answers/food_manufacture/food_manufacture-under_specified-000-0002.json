@@ -1,0 +1,21 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'shifts for every row' could mean a uniform shift (e.g., all hardness values increase by a fixed amount) or a shift per row (e.g., each row has a different shift). Without specifying the shift amount or direction, it cannot be made precise. The model schema shows that `hardness` is a column in the `oils` table, so a uniform shift would be a scale operation on the entire table. However, the question does not specify the magnitude or direction of the shift, so it cannot be converted to a machine-checkable scenario."
+}

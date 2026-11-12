@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "max_short_time",
+      "where": {
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 0.75
+    }
+  ]
+}

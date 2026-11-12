@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "positions",
+      "column": "required",
+      "where": {
+        "position": [
+          "PG"
+        ]
+      },
+      "value": 2
+    },
+    {
+      "op": "remove",
+      "table": "players",
+      "where": {
+        "player": [
+          "Joel Embiid"
+        ]
+      }
+    }
+  ],
+  "note": "The planner wants to change the required number of guards to 2 and remove Joel Embiid from the line-up."
+}

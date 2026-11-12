@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "makespan",
+      "scope": {}
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "end",
+      "scope": {
+        "job": "J5",
+        "step": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "measure": "end",
+      "scope": {
+        "job": "J5",
+        "step": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "value": 460
+    }
+  ]
+}

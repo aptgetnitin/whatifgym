@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "c7_e13_min_450_c5",
+      "measure": "assign",
+      "scope": {
+        "county": "C7",
+        "facility": "E13"
+      },
+      "sense": ">=",
+      "value": 1
+    },
+    {
+      "name": "c5_total_min_450",
+      "measure": "assign",
+      "scope": {
+        "county": "C5"
+      },
+      "sense": ">=",
+      "value": 450
+    }
+  ]
+}

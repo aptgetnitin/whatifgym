@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original",
+      "scope": {}
+    }
+  ],
+  "rules": [
+    {
+      "name": "bins_at_least_60_percent_items",
+      "measure": "y[bin]",
+      "scope": {
+        "bin": []
+      },
+      "sense": ">=",
+      "value": 0.6
+    }
+  ]
+}

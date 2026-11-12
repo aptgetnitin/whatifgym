@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original",
+      "scope": {}
+    },
+    {
+      "sense": "min",
+      "measure": "queue_load",
+      "scope": {
+        "base": [
+          "21 MUNICIPAL CTR Fire Station"
+        ]
+      }
+    }
+  ]
+}

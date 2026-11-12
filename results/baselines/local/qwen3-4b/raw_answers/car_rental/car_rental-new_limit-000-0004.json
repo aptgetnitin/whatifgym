@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "depot": "Glasgow",
+        "day": "Saturday"
+      },
+      "factor": 0.8
+    }
+  ],
+  "rules": [
+    {
+      "name": "rentals_cap",
+      "measure": "rentals",
+      "scope": {
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 1550
+    }
+  ]
+}

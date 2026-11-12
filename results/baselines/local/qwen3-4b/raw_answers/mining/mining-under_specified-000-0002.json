@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_mines",
+      "value": 1
+    }
+  ],
+  "note": "The planner's question 'Suppose the number of mine-years worked gets capped' refers to capping the maximum number of mines that can be worked per year. In the model, this is controlled by the parameter `max_mines`, which is set to 1 in the scenario."
+  }

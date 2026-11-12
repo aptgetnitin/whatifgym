@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "aux1/aux2/aux3",
+      "column": "linked_load",
+      "where": {
+        "location": [
+          "1700 PLEASURE HOUSE RD"
+        ],
+        "base": [
+          "21 MUNICIPAL CTR Fire Station"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A floor on the queue load linked to an assigned location (hours) is a fixed decision on the linked_load measure for specific location-base pairs."
+}

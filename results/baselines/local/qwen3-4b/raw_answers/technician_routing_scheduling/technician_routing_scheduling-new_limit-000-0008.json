@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "customer5_lateness_min",
+      "measure": "lateness",
+      "scope": {
+        "customer": "Customer5"
+      },
+      "sense": ">=",
+      "value": 120
+    },
+    {
+      "name": "total_legs_cap",
+      "measure": "route",
+      "scope": {
+        "technician": [
+          "Albert",
+          "Bob",
+          "Carlos",
+          "Doris",
+          "Ed",
+          "Flor",
+          "Gina"
+        ]
+      },
+      "sense": "<=",
+      "value": 9
+    }
+  ]
+}

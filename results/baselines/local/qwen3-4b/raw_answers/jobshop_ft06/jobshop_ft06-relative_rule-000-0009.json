@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "end_j2_at_least_80_percent_end_j1",
+      "measure": "end",
+      "scope": {
+        "job": "J2",
+        "step": [
+          "1"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.8,
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J1",
+          "step": [
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "at_most_5_percent_end_j0",
+      "measure": "end",
+      "scope": {
+        "job": "J0"
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J0",
+          "step": [
+            "1"
+          ]
+        }
+      }
+    }
+  ]
+}

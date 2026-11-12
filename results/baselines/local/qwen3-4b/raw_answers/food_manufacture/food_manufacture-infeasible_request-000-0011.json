@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "refined_apr_at_least_1350",
+      "measure": "consume",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "value": 1350
+    },
+    {
+      "name": "refined_jan_at_least_1350",
+      "measure": "consume",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "value": 1350
+    }
+  ]
+}

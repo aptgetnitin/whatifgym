@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "at_least_3x_clearing",
+      "measure": "goes_first",
+      "scope": {
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ],
+        "train": [
+          "F"
+        ],
+        "other_train": [
+          "A"
+        ]
+      },
+      "sense": ">=",
+      "value": 3
+    }
+  ]
+}

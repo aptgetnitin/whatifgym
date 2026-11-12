@@ -1,0 +1,4 @@
+{
+  "base_model": "food_manufacture",
+  "ask": "What is the upper limit on tons of oil refined that the planner is referring to? The question is vague without specifying whether it's a global limit, per oil, per refining line, or over time."
+}

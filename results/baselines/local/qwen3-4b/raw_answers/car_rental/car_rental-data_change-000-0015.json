@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "price_same_depot_3_days_30_percent_higher",
+      "measure": "price_same_depot",
+      "scope": {
+        "rental_days": "3"
+      },
+      "sense": ">=",
+      "value": 1.3
+    }
+  ]
+}

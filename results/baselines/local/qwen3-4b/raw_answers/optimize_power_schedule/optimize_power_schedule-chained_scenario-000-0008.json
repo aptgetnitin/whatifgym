@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {
+        "plant": "Vogtle"
+      },
+      "value": 4200
+    }
+  ],
+  "note": "The capacity of Vogtle is set to 4200 MWh per hour."
+}

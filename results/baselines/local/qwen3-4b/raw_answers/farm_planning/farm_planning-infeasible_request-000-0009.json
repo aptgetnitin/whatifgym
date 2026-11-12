@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "grow_grain",
+      "column": "grow_grain",
+      "where": {
+        "year": "Year1",
+        "land_group": "Group1"
+      },
+      "value": 110
+    }
+  ]
+}

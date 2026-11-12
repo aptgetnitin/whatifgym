@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "plants",
+      "column": "must_run",
+      "where": {
+        "plant": [
+          "Scherer",
+          "Bowen",
+          "Jack McDonough",
+          "Edwin I Hatch",
+          "Vogtle"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "must_run[plant, hour]",
+      "scope": {
+        "plant": [
+          "Scherer",
+          "Bowen",
+          "Jack McDonough",
+          "Edwin I Hatch",
+          "Vogtle"
+        ]
+      }
+    }
+  ],
+  "note": "The planner's question is ambiguous: 'capped' could mean a maximum limit on plant-hours on, but the model doesn't have a parameter for this. The model's decision variables include 'on[plant, hour]' which counts plant-hours on, but there's no existing constraint that caps it. To make it machine-checkable, we need to specify a cap value. Since the question doesn't provide a value, we ask for clarification."
+}

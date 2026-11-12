@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "scherer_hour11_at_least_2_if_gas_hour15_on",
+      "measure": "on",
+      "scope": {
+        "plant": "Scherer",
+        "hour": 11
+      },
+      "sense": ">=",
+      "value": 2
+    },
+    {
+      "name": "gas_hour15_on_condition",
+      "measure": "on",
+      "scope": {
+        "plant": "GAS",
+        "hour": 15
+      },
+      "sense": ">=",
+      "value": 1
+    }
+  ]
+}

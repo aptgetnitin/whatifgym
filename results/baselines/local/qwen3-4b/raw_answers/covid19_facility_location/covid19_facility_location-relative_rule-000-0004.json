@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "t18_at_least_40_percent",
+      "measure": "build",
+      "scope": {
+        "facility": "T18"
+      },
+      "sense": ">=",
+      "value": 0.4
+    },
+    {
+      "name": "t15_at_most_90_percent",
+      "measure": "build",
+      "scope": {
+        "facility": "T15"
+      },
+      "sense": "<=",
+      "value": 0.9
+    }
+  ]
+}

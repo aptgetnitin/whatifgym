@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": [
+          "Mine4"
+        ]
+      }
+    }
+  ],
+  "note": "The planner says 'we lose a mine', which likely refers to Mine4 being removed from the model as it's the only mine that closes after year 4 in the reference optimum."
+}

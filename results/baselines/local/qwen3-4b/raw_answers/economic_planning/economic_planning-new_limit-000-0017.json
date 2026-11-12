@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "capacity_sum_year5",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 5
+      },
+      "sense": ">=",
+      "value": 710
+    },
+    {
+      "name": "stock_limit_transport",
+      "measure": "stock",
+      "scope": {
+        "industry": "transport"
+      },
+      "sense": "<=",
+      "value": 39
+    }
+  ],
+  "note": "The capacity built in year 5 (extra_capacity) must sum to at least 710, and transport stock must not exceed 39 million USD."
+}

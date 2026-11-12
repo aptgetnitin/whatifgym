@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "ask": "What is the upper limit on power generated (MWh) that the planner is referring to? The question is vague without specifying the exact value or context for the upper limit."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "min_batch_coal_year5",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 5,
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 1180
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "buy",
+      "where": {
+        "oil": "OIL2",
+        "month": "Feb"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "must_buy_3000_OIL2",
+      "measure": "buy",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": ">=",
+      "value": 3000
+    }
+  ]
+}

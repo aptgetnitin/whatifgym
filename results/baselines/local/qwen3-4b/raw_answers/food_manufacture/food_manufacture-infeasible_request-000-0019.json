@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jan"
+        ]
+      },
+      "value": 900
+    },
+    {
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jun"
+        ]
+      },
+      "value": 900
+    }
+  ]
+  }

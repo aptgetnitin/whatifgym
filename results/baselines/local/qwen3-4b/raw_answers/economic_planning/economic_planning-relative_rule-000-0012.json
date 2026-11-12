@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "capacity_3_at_least_50_of_5",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 3,
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "extra_capacity",
+        "scope": {
+          "year": 5,
+          "industry": [
+            "coal",
+            "steel",
+            "transport"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

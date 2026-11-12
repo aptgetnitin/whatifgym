@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "make",
+      "column": "make",
+      "where": {
+        "month": "Jan",
+        "product": "Prod2"
+      },
+      "value": 0
+    }
+  ]
+}

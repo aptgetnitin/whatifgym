@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 70
+    }
+  ],
+  "note": "A cap on the total number of thermal units running across all types and periods is a set on the units_available parameter for all thermal types."
+}

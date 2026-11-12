@@ -1,0 +1,50 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "sell_feb_at_most_60_of_sell_jan",
+      "measure": "sell",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "Jan"
+        }
+      },
+      "factor": 0.6
+    },
+    {
+      "name": "total_sell_at_most_75_of_total_stock",
+      "measure": "sell",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

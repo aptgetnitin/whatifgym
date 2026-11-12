@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "facilities",
+      "column": "capacity",
+      "where": {
+        "facility": "T23"
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The capacity for T23 is being scaled by 1.0, which means it's unchanged. This is a bit odd, but the question is about what happens if the capacity moves, so we need to represent it as a scale change with factor 1.0 to indicate no change."
+}

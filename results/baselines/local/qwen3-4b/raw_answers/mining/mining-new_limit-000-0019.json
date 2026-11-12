@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "blend",
+      "column": "blend",
+      "where": {
+        "year": "Year4"
+      },
+      "value": 4218750
+    },
+    {
+      "op": "set",
+      "table": "blend",
+      "column": "blend",
+      "where": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "value": 13045850
+    }
+  ]
+}

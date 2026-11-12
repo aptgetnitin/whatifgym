@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "technicians",
+      "column": "capacity_min",
+      "where": {
+        "technician": [
+          "Albert",
+          "Bob",
+          "Carlos",
+          "Doris",
+          "Ed",
+          "Flor",
+          "Gina"
+        ]
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "scale",
+      "table": "travel_times",
+      "column": "travel_min",
+      "where": {
+        "from_location": "Baden-Baden",
+        "to_location": "Buehl"
+      },
+      "factor": 24
+    }
+  ]
+}

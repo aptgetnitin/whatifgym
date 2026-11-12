@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "ask": "What does the minimum time on the resource for resource 4 move mean? What specific change is intended? (e.g., increase, decrease, by how much?)"
+}

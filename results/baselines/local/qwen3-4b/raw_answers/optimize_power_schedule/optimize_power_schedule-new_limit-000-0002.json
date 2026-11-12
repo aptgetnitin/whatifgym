@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "plant_hours_on_hour_6",
+      "measure": "on",
+      "scope": {
+        "hour": 6
+      },
+      "sense": ">=",
+      "value": 9
+    },
+    {
+      "name": "vogtle_power_limit",
+      "measure": "output",
+      "scope": {
+        "plant": "Vogtle"
+      },
+      "sense": "<=",
+      "value": 45100
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

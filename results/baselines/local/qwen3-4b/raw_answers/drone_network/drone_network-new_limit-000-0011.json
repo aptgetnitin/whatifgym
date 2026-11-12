@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "max_bases_cap",
+      "measure": "open",
+      "scope": {
+        "base": [
+          "all"
+        ]
+      },
+      "sense": "<=",
+      "value": 3
+    },
+    {
+      "name": "assign_limit_5145_RURITAN_COURT",
+      "measure": "assign",
+      "scope": {
+        "base": [
+          "5145 RURITAN COURT Rescue Squad"
+        ]
+      },
+      "sense": "<=",
+      "value": 29
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "assign",
+      "column": "assign",
+      "where": {
+        "location": "3800 JEFFERSON BL",
+        "base": "3769 E. STRATFORD ROAD Rescue Squad"
+      },
+      "value": 0
+    }
+  ]
+}

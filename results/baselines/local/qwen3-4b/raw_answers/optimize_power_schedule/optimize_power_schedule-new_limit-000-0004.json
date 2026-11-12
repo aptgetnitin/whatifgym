@@ -1,0 +1,66 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "plants",
+      "column": "must_run",
+      "where": {
+        "plant": [
+          "Edwin I Hatch"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_plant_hours_cap",
+      "measure": "on",
+      "scope": {
+        "plant": [
+          "Scherer",
+          "Bowen",
+          "Jack McDonough",
+          "Edwin I Hatch",
+          "Vogtle",
+          "OIL",
+          "BIOMASS",
+          "GAS",
+          "HYDRO",
+          "OTHER COAL"
+        ],
+        "hour": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      },
+      "sense": "<=",
+      "value": 161
+    }
+  ],
+  "note": "An overall cap of 161 applies to the number of plant-hours on, summed over everything."
+}

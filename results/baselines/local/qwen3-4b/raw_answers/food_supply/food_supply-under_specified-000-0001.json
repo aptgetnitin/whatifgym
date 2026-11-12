@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "nutrients",
+      "column": "min_per_person",
+      "where": {
+        "nutrient": "NicacinB3(mg)"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The minimum daily intake per person for NicacinB3(mg) is set to 0, which means it's no longer required."
+}

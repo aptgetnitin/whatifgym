@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "homs_at_least_twice_hassakeh",
+      "measure": "purchase",
+      "scope": {
+        "food": "*",
+        "supplier": "Homs"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "*",
+          "supplier": "Hassakeh"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

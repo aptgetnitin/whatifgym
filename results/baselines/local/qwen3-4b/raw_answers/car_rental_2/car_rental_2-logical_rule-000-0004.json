@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "no_nonzero_step2_and_step1",
+      "measure": "expand",
+      "scope": {
+        "depot": [
+          "Manchester"
+        ],
+        "step": [
+          1,
+          2
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ]
+}

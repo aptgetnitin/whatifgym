@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "max_recruit",
+      "where": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled"
+        ]
+      },
+      "value": 500
+    }
+  ],
+  "note": "A floor on workers recruited means setting a maximum recruitment limit per year and skill level."
+}

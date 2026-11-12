@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "B"
+      },
+      "value": 0
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "entry_time",
+      "scope": {
+        "train": "B",
+        "resource": "2"
+      },
+      "value": 18
+    }
+  ],
+  "note": "The planner's question specifies a minimum batch condition: if entry_time for train B on resource 2 is above zero, it must be at least 18. This is translated into a fixed decision that entry_time[B,2] >= 18, with the base case (ready_time[B] = 0) as the starting point."
+}

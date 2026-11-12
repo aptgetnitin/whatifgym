@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": "transport"
+      },
+      "delta": -10
+    }
+  ],
+  "note": "The question asks for a constraint on total output for transport. However, the model's constraints are on production and stock, not directly on output. The 'external_demand' in the industries table is the steady-state production level, but the question refers to the total output produced (which is production) over the horizon. Since the model does not have a direct measure for 'total output produced' as a single value, the question cannot be precisely translated into a data change or rule. The planner likely meant to ask about the steady-state level or a production constraint, but the model's structure requires a different approach. Therefore, a clarifying question is needed."
+}

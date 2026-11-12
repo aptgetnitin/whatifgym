@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "min_batch_milk_idleb",
+      "measure": "ration",
+      "scope": {
+        "food": "Milk",
+        "camp": "Idleb"
+      },
+      "sense": ">=",
+      "value": 2.15
+    }
+  ]
+}

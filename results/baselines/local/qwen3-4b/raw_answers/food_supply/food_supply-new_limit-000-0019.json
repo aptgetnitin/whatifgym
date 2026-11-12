@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flow",
+      "column": "flow",
+      "where": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "value": 18500
+    }
+  ]
+}

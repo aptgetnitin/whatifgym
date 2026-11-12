@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "downtime",
+      "where": {
+        "month": "Mar",
+        "machine": "borer"
+      }
+    }
+  ],
+  "note": "The planner is asking about the impact of removing a downtime event for borers in March. The original downtime row for March and borer is removed to reflect that no borers are down in March."
+  }

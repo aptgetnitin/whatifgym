@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "queue_load_link",
+      "measure": "linked_load",
+      "scope": {
+        "location": "900 S MILITARY HWY",
+        "base": "21 MUNICIPAL CTR Fire Station"
+      },
+      "sense": ">=",
+      "value": 0.01
+    },
+    {
+      "name": "queue_load_base",
+      "measure": "queue_load",
+      "scope": {
+        "base": "21 MUNICIPAL CTR Fire Station"
+      },
+      "sense": ">=",
+      "value": 0.01
+    }
+  ]
+}

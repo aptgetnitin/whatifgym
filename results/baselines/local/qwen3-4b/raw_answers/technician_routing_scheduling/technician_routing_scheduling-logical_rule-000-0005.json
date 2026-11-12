@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "lateness",
+      "scope": {
+        "location": [
+          "Lahr/Schwarzwald"
+        ]
+      }
+    }
+  ]
+}

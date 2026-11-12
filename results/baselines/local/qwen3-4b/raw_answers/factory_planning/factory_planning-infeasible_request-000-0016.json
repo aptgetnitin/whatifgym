@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod7",
+        "month": "Feb"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The question asks if the plan can deliver at least 500 units made for month Feb, product Prod7. This is a fixed decision question, but the question is about the feasibility of a specific production level, not a change to the model. However, the question is phrased as 'can the plan deliver', which implies a feasibility check. Since the model's decision variables are 'make', 'sell', and 'store', the question is about the 'make' decision variable for Feb and Prod7. The question is not a what-if scenario but a feasibility check. But the instructions say to turn a planner's what-if question into a machine-checkable scenario. The question is not a what-if but a feasibility check. However, the problem states: 'turn a planner's what-if question into a machine-checkable scenario'. The question here is not a what-if but a feasibility check. But the problem says 'planner's what-if question', so this might be a misnomer. Alternatively, the question might be asking if the model can produce at least 500 units of Prod7 in Feb, which would be a fixed decision. But the question says 'can the plan deliver', which is about the model's ability to produce. Since the model is a maximization problem, the feasibility of producing 500 units of Prod7 in Feb would be checked by setting a fixed decision. However, the question is not a what-if but a feasibility check. Given the instructions, I think the best approach is to interpret this as a fixed decision question. But the problem says 'what-if', so perhaps the question is not a what-if. Wait, the problem says: 'Planner's question: Can the plan deliver at least 500 units made for month Feb, product Prod7?' This is not a what-if question but a feasibility question. However, the problem states: 'turn a planner's what-if question into a machine-checkable scenario'. So maybe this is not a what-if question. But the problem says 'planner's what-if question', so perhaps the user made a mistake. Alternatively, the question might be asking what-if the plan delivers at least 500 units made for Feb, Prod7. But the question is phrased as 'Can the plan deliver...', which is a yes/no question. Given the instructions, I think the answer should be a fixed decision scenario. But the problem says 'what-if', so maybe the question is not a what-if. Let me re-read the problem: 'Planner's question: Can the plan deliver at least 500 units made for month Feb, product Prod7?' This is a feasibility question, not a what-if. However, the problem says 'turn a planner's what-if question', so perhaps this is not a what-if question. But the user says: 'Planner's question', so I have to answer with a JSON object. The instructions say: 'only when the question cannot be made precise from the information available, {"}

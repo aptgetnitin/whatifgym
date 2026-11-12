@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "at_least_5_percent_to_glasgow",
+      "measure": "damaged_transfers",
+      "scope": {
+        "to_depot": "Glasgow"
+      },
+      "sense": ">=",
+      "value": 0.05
+    }
+  ],
+  "note": "A rule that at least 5% of the total damaged cars transferred must go to return depot Glasgow."
+  }

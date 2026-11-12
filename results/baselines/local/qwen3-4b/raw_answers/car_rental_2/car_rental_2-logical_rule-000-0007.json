@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "at_most_2_non_zero_rentals",
+      "measure": "rentals",
+      "scope": {
+        "day": [
+          "Wednesday",
+          "Saturday",
+          "Friday"
+        ],
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

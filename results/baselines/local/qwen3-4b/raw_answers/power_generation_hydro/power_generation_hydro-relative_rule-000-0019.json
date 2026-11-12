@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal0_output_limit",
+      "measure": "output",
+      "scope": {
+        "type": "Thermal0"
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "output",
+        "scope": {
+          "type": [
+            "Thermal0",
+            "Thermal1",
+            "Thermal2"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

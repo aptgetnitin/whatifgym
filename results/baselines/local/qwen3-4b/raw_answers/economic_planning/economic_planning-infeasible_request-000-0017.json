@@ -1,0 +1,63 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 60
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": "transport"
+      },
+      "value": 150
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 250
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "labor_per_unit_output",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 0.5
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "stock",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      }
+    }
+  ],
+  "note": "The planner asks for the total stock over years 1-5. The model's stock is per year and industry, so we sum over all years and industries."
+}

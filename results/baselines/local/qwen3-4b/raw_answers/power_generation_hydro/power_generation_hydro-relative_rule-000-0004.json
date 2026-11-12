@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_least_75_percent_start_in_00-06",
+      "measure": "nstart",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "value": 0.75
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "at_least_2_assignments_for_task_3",
+      "measure": "assign",
+      "scope": {
+        "task": "task_3"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "fixed_decisions": [
+    {
+      "measure": "team",
+      "scope": {
+        "team": "team_4_5"
+      },
+      "value": 1
+    },
+    {
+      "measure": "assign",
+      "scope": {
+        "worker": "worker_10",
+        "task": "task_0"
+      },
+      "value": 0
+    }
+  ]
+}

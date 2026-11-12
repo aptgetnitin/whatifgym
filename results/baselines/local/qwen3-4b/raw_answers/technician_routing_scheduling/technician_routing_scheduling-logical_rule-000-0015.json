@@ -1,0 +1,64 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "customers",
+      "column": "unfilled",
+      "where": {
+        "customer": [
+          "Customer2",
+          "Customer1",
+          "Customer3"
+        ]
+      },
+      "value": 1
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "assign",
+      "scope": {
+        "customer": [
+          "Customer2",
+          "Customer1",
+          "Customer3"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "logic": [
+    {
+      "name": "exactly_one_unfilled",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "unfilled",
+          "scope": {
+            "customer": [
+              "Customer2",
+              "Customer1",
+              "Customer3"
+            ]
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "unfilled",
+          "scope": {
+            "customer": [
+              "Customer2",
+              "Customer1",
+              "Customer3"
+            ]
+          },
+          "sense": "<=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "rule_3107_3112_ratio",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A320#22"
+        ],
+        "flight": [
+          "3107",
+          "3112"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.75
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "jobs",
+      "column": "duration",
+      "where": {
+        "job": "job_6"
+      },
+      "factor": 0.0
+    }
+  ],
+  "note": "The question is vague: 'moves' could mean any change. We assume a scale factor of 0 (no change) to test the model's response to a null change."
+  }

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "m0_pairs_at_least_15",
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M0"
+      },
+      "sense": ">=",
+      "value": 15
+    }
+  ]
+}

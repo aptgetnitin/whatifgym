@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "storage_min_may",
+      "measure": "store",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "value": 1100
+    }
+  ],
+  "note": "A minimum storage requirement for a specific month across all oils is a rule on the sum of store over the month."
+}

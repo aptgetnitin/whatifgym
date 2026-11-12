@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j3_pairs_at_most_2x_j2_pairs",
+      "measure": "goes_first",
+      "scope": {
+        "machine": "*",
+        "job": "J3",
+        "other_job": "*"
+      },
+      "sense": "<=",
+      "value": 2,
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {
+          "machine": "*",
+          "job": "J2",
+          "other_job": "*"
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "j3_start_time_at_least_60_percent",
+      "measure": "start",
+      "scope": {
+        "job": "J3"
+      },
+      "sense": ">=",
+      "value": 0.6
+    }
+  ]
+}

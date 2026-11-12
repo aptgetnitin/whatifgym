@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "E"
+      },
+      "value": 450
+    }
+  ],
+  "note": "The planner asks for a fixed entry time for resource 4, but the model's decision variables are entry_time[train, resource]. The question is ambiguous because it doesn't specify which train or resource 4 is. Resource 4 is a station (even id), so it's a station. The model requires a train to be associated with a resource to have an entry time. The question likely means a fixed entry time for train E at resource 4, but the planner didn't specify the resource. The model has a constraint that trains must enter resources in order, so the entry time for a specific train at a specific resource is a decision variable. The question is not precise enough to be machine-checked without clarification."
+}

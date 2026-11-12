@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "mannheim_start_time_constraint",
+      "measure": "start_time",
+      "scope": {
+        "location": "Mannheim"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "mannheim_start_time_constraint_2",
+      "measure": "start_time",
+      "scope": {
+        "location": "Mannheim"
+      },
+      "sense": ">=",
+      "value": 72
+    }
+  ],
+  "note": "The constraint requires the start time for Mannheim to be either 0 or at least 72 minutes. This is achieved by two rules: one that sets a minimum of 0 and another that sets a minimum of 72. The logical interpretation is that the start time must be 0 or >=72."
+}

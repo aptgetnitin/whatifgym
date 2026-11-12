@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "month": "Feb",
+        "oil": "OIL2"
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "set",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": "OIL1"
+      },
+      "value": 1.0
+    }
+  ]
+}

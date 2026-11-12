@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "gla_undamaged_stock_limit",
+      "measure": "undamaged_stock",
+      "scope": {
+        "depot": "Glasgow"
+      },
+      "sense": "<=",
+      "value": 0.15
+    }
+  ]
+}

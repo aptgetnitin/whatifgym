@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mining_rule_year4_mine1_min_batch",
+      "measure": "extract",
+      "scope": {
+        "year": "Year4",
+        "mine": "Mine1"
+      },
+      "sense": ">=",
+      "value": 312500
+    }
+  ],
+  "note": "A minimum batch rule for Year4, Mine1 extract: if the total tons of ore extracted for year Year4, mine Mine1 is above zero, it must be at least 312500."
+  }

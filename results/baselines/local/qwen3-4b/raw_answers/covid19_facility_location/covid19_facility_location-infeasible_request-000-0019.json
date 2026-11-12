@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_least_200_for_T17",
+      "measure": "assign",
+      "scope": {
+        "facility": "T17"
+      },
+      "sense": ">=",
+      "value": 200
+    },
+    {
+      "name": "at_least_560_for_E5",
+      "measure": "assign",
+      "scope": {
+        "facility": "E5"
+      },
+      "sense": ">=",
+      "value": 560
+    }
+  ],
+  "note": "Two minimum assignment requirements for specific facilities."
+  }

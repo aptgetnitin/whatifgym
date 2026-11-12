@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "m4_job_pairs_limit",
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M4"
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ]
+}

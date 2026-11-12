@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "expand",
+      "scope": {
+        "depot": [
+          "Birmingham",
+          "Manchester",
+          "Plymouth"
+        ],
+        "step": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "profit",
+      "scope": {}
+    }
+  ]
+}

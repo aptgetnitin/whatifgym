@@ -1,0 +1,18 @@
+{
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "at_most_two_oils_bought",
+      "measure": "buy",
+      "scope": {
+        "oil": [
+          "VEG2",
+          "OIL2",
+          "VEG1"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

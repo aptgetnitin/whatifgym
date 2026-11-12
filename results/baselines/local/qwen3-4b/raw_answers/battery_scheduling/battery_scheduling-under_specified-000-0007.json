@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "terminal_soc_kwh",
+      "where": {
+        "key": "terminal_soc_kwh"
+      },
+      "value": 13.5
+    }
+  ],
+  "note": "A cap on stored energy would be a new constraint that the battery's stored energy (soc) at the end of the day is at most 13.5 kWh."
+}

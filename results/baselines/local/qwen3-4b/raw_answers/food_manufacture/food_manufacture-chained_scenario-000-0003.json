@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "factor": 1.25
+    }
+  ],
+  "note": "A 25% increase in hardness for every raw oil is a scale operation on the hardness column across all oils."
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A321#2"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A321#2"
+        ]
+      }
+    }
+  ]
+}

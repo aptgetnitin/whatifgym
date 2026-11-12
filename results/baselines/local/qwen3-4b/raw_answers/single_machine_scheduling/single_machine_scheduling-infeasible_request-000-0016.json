@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "data_changes": [],
+  "rules": [],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "makespan"
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "start_time",
+      "scope": {
+        "job": "job_14"
+      },
+      "value": 213800
+    }
+  ],
+  "relax": [],
+  "logic": []
+}

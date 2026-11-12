@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "total_make_at_most_stock",
+      "measure": "make",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.25
+    }
+  ],
+  "note": "The rule states that the total units made across all months and products must be at most 25% of the total units in stock across all months and products."
+}

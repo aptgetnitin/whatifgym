@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "initial_soc_kwh",
+      "value": 3
+    },
+    {
+      "op": "shift_param",
+      "name": "export_price",
+      "delta": -0.25
+    }
+  ]
+}

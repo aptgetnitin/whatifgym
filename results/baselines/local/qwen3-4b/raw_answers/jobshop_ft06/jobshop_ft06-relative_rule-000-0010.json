@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "routing_step_5_end_time_limit",
+      "measure": "end",
+      "scope": {
+        "job": [
+          "J0",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5"
+        ],
+        "step": 5
+      },
+      "sense": "<=",
+      "value": 0.15
+    }
+  ],
+  "note": "The question refers to 'all operation end time', which is the sum of end times for all operations. However, the model's end measure is per operation, so the rule should be applied to the sum of end times for step 5 across all jobs."
+  }

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "output",
+      "where": {
+        "type": "Thermal1",
+        "period": "09-15"
+      },
+      "value": 157500
+    }
+  ],
+  "note": "The planner wants to fix the output of Thermal1 for period 09-15 to 157500 MW, which is a data change to the model's decision variable 'output[period, type]' for the specified period and type."
+}

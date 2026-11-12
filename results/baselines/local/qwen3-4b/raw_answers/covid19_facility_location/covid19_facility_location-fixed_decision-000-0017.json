@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "fixed_decisions": [
+    {
+      "measure": "assign",
+      "scope": {
+        "county": "C5",
+        "facility": "E7"
+      },
+      "value": 63
+    },
+    {
+      "measure": "build",
+      "scope": {
+        "facility": "T15"
+      },
+      "value": 0
+    }
+  ]
+}

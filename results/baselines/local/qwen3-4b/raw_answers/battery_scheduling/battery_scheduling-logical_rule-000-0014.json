@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_min_2122_if_soc_1617_positive",
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": ">=",
+      "value": 10,
+      "relative_to": {
+        "measure": "soc",
+        "scope": {
+          "hour": "16-17"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

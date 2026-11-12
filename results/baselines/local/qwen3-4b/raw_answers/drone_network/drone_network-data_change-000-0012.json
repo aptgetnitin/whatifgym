@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "300 HORACE AV"
+      },
+      "factor": 0.1
+    }
+  ]
+}

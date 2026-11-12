@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item4_at_least_60_percent",
+      "measure": "x",
+      "scope": {
+        "item": "item4"
+      },
+      "sense": ">=",
+      "value": 0.6
+    }
+  ],
+  "note": "The rule ensures that item4 accounts for at least 60% of all item placements."
+}

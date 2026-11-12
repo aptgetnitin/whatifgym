@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "min_assign_800_vb_blvd_3x_21_mun",
+      "measure": "assign",
+      "scope": {
+        "location": [
+          "all"
+        ],
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "location": [
+            "all"
+          ],
+          "base": "21 MUNICIPAL CTR Fire Station"
+        }
+      },
+      "factor": 3.0
+    }
+  ]
+}

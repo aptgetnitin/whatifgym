@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_calves_sold_year1",
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 182
+    }
+  ],
+  "note": "A conditional rule: if heifer calves sold for Year1 is above zero, then sugar beet grown for Year1 must be at least 182."
+  }

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "items",
+      "column": "weight",
+      "where": {
+        "item": [
+          "item0"
+        ]
+      },
+      "value": 80
+    },
+    {
+      "op": "set",
+      "table": "items",
+      "column": "weight",
+      "where": {
+        "item": [
+          "item2"
+        ]
+      },
+      "value": 49
+    }
+  ],
+  "note": "The planner's question is vague: which item weight changes? The scenario DSL requires precise data changes. We assume the two examples from the what-if surface: item0 now weighs 80 and item2 weighs 49."
+}

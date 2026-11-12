@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "operate",
+      "where": {
+        "flight": [
+          "4572",
+          "3095",
+          "3112",
+          "3069",
+          "4571"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "A non-zero number of flights operated means the flight is flown (operate=1). Setting to 0 means it's cancelled."
+  }

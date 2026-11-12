@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "entry_time_2_at_most_50_of_4",
+      "measure": "entry_time[train, resource]",
+      "scope": {
+        "resource": "2"
+      },
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "entry_time[train, resource]",
+        "scope": {
+          "resource": "4"
+        }
+      }
+    }
+  ]
+}

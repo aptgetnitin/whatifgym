@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "royalty",
+      "where": {
+        "mine": "Mine1"
+      },
+      "value": 2500000
+    }
+  ]
+}

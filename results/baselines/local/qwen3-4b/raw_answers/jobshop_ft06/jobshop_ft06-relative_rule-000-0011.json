@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "start",
+      "scope": {
+        "job": "J4"
+      }
+    }
+  ],
+  "note": "The planner wants the total start time for job J4 to be at least 60% of the total operation start time across all jobs. However, the scenario DSL does not support percentage-based constraints directly. The correct approach would be to express this as a constraint on the sum of start times for J4 relative to the sum of start times for all jobs."
+  }

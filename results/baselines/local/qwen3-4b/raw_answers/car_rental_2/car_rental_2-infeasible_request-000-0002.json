@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "repaired_saturday",
+      "measure": "repairs",
+      "scope": {
+        "day": "Saturday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": ">=",
+      "value": 141
+    }
+  ],
+  "note": "A requirement for the number of cars repaired on Saturday across all depots."
+}

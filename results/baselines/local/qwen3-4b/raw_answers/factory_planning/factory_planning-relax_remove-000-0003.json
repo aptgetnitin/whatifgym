@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "store_target",
+      "where": {
+        "product": "Prod4"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Lifting the end-of-horizon stock target for product Prod4 means setting its store_target to 0 (no closing stock required)."
+}

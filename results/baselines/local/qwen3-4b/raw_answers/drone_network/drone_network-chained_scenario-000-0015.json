@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "1000 COLLEGE PARK BL"
+      },
+      "value": 1
+    }
+  ]
+}

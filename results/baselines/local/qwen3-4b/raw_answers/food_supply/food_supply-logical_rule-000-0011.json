@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_idleb_ration_positive",
+      "measure": "ration",
+      "scope": {
+        "food": "Wheat",
+        "camp": "Idleb"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "wheat_flow_at_least_86400",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat",
+        "from_city": "*",
+        "to_city": "*"
+      },
+      "sense": ">=",
+      "value": 86400
+    }
+  ]
+}

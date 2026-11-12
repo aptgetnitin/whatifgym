@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin2_at_most_10_percent",
+      "measure": "x",
+      "scope": {
+        "bin": "bin2"
+      },
+      "sense": "<=",
+      "value": 0.1
+    }
+  ],
+  "note": "A rule that limits the number of items placed in bin2 to at most 10% of the total placements."
+}

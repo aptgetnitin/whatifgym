@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "resource_1_e_f_no_clearing",
+      "measure": "goes_first",
+      "scope": {
+        "resource": "1",
+        "train": "E",
+        "other_train": "F"
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ],
+  "note": "The planner specifies that for resource 1, train E and train F, the number of trains clearing a resource before another train enters it there is fixed at 0, meaning they cannot go first (goes_first is 0). This is a fixed decision on the goes_first measure for this specific resource and train pair."
+}

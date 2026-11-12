@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "max_items_per_bin",
+      "measure": "x",
+      "scope": {
+        "item": [
+          "item0",
+          "item1",
+          "item2",
+          "item3",
+          "item4",
+          "item5",
+          "item6",
+          "item7",
+          "item8",
+          "item9",
+          "item10"
+        ]
+      },
+      "sense": "<=",
+      "value": 1.5
+    }
+  ],
+  "note": "The planner's question is about the total number of items packed (sum of x) and the total number of bins used (sum of y). The rule should be expressed as a constraint on the sum of x over all items and the sum of y over all bins."
+  }

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j0_step4_end_at_least_57",
+      "measure": "end",
+      "scope": {
+        "job": "J0",
+        "step": 4
+      },
+      "sense": ">=",
+      "value": 57
+    }
+  ]
+}

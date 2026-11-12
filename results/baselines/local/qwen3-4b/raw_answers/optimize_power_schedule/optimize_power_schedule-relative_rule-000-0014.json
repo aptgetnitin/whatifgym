@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "hydro_hours_at_most_75_hatch_hours",
+      "measure": "on",
+      "scope": {
+        "plant": "HYDRO"
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "plant": "Edwin I Hatch"
+        }
+      }
+    }
+  ]
+}

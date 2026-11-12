@@ -1,0 +1,229 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Idleb"
+      },
+      "factor": 2.0
+    },
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": "Qamishli"
+      }
+    },
+    {
+      "op": "add",
+      "table": "camps",
+      "rows": [
+        {
+          "camp": "Homs",
+          "beneficiaries": 3000
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "name": "oil_price_fall",
+      "measure": "local_prices",
+      "scope": {
+        "supplier": "Hassakeh",
+        "food": "Oil"
+      },
+      "sense": "<=",
+      "value": 2591.32
+    },
+    {
+      "name": "international_prices_rise",
+      "measure": "foods",
+      "scope": {
+        "food": [
+          "Beans",
+          "Bulgur",
+          "Cheese",
+          "Fish",
+          "Meat",
+          "Corn-soya blend (CSB)",
+          "Dates",
+          "Dried skim milk (enriched) (DSM)",
+          "Milk",
+          "Lentils",
+          "Maize",
+          "Maize meal",
+          "Chickpeas",
+          "Rice",
+          "Sorghum/millet",
+          "Soya-fortified bulgur wheat",
+          "Soya-fortified maize meal",
+          "Soya-fortified sorghum grits",
+          "Soya-fortified wheat flour",
+          "Sugar",
+          "Oil",
+          "Wheat",
+          "Wheatflour",
+          "WSB"
+        ]
+      },
+      "sense": ">=",
+      "value": 1.1
+    },
+    {
+      "name": "transport_costs_rise",
+      "measure": "arcs",
+      "scope": {
+        "from_city": "Aleppo",
+        "to_city": "Idleb"
+      },
+      "sense": ">=",
+      "value": 25
+    },
+    {
+      "name": "road_closes",
+      "measure": "arcs",
+      "scope": {
+        "from_city": "Aleppo",
+        "to_city": "Idleb"
+      },
+      "sense": "<=",
+      "value": 0
+    },
+    {
+      "name": "road_adds",
+      "measure": "arcs",
+      "scope": {
+        "from_city": "Homs",
+        "to_city": "Idleb"
+      },
+      "sense": ">=",
+      "value": 1
+    },
+    {
+      "name": "energy_req_rise",
+      "measure": "nutrients",
+      "scope": {
+        "nutrient": "Energy(kcal)"
+      },
+      "sense": ">=",
+      "value": 2300
+    },
+    {
+      "name": "requirements_fall",
+      "measure": "nutrients",
+      "scope": {
+        "nutrient": [
+          "Protein(g)",
+          "Fat(g)",
+          "Calcium(mg)",
+          "Iron(mg)",
+          "VitaminA(ug)",
+          "ThiamineB1(mg)",
+          "RiboflavinB2(mg)",
+          "NicacinB3(mg)",
+          "Folate(ug)",
+          "VitaminC(mg)"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.8
+    },
+    {
+      "name": "vitamin_c_removed",
+      "measure": "nutrients",
+      "scope": {
+        "nutrient": "VitaminC(mg)"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "corn_soyma_blend_vitamin_c_raise",
+      "measure": "food_nutrients",
+      "scope": {
+        "food": "Corn-soya blend (CSB)",
+        "nutrient": "VitaminC(mg)"
+      },
+      "sense": ">=",
+      "value": 25
+    },
+    {
+      "name": "beirut_stops_selling",
+      "measure": "suppliers",
+      "scope": {
+        "supplier": "Beirut"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "qamishli_starts_selling",
+      "measure": "suppliers",
+      "scope": {
+        "supplier": "Qamishli"
+      },
+      "sense": ">=",
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "ration",
+      "scope": {
+        "food": "Oil",
+        "camp": "Idleb"
+      },
+      "value": 0
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "nutrition",
+      "scope": {
+        "nutrient": [
+          "Energy(kcal)"
+        ],
+        "camp": [
+          "Idleb"
+        ]
+      }
+    }
+  ],
+  "logic": [
+    {
+      "name": "at_least",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Oil",
+            "camp": "Idleb"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Oil",
+            "camp": "Idleb"
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

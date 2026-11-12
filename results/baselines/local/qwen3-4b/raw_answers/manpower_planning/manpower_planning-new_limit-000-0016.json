@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "downgrade_min_year1",
+      "measure": "downgrade",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 210
+    }
+  ],
+  "note": "A minimum total downgrade count for year 1 is a rule on the sum of the downgrade measure over year 1."
+}

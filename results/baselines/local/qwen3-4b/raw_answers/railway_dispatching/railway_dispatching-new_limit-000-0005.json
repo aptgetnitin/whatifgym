@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "arrival_time_B_limit",
+      "measure": "finish_time",
+      "scope": {
+        "train": "B"
+      },
+      "sense": "<=",
+      "value": 37
+    },
+    {
+      "name": "meet_pairs_B_at_least_2",
+      "measure": "meet",
+      "scope": {
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ],
+        "train": "B",
+        "other_train": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

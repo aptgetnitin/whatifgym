@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "sold_at_most_twice_stock",
+      "measure": "sell",
+      "scope": {
+        "product": "all"
+      },
+      "sense": "<=",
+      "value": 2.0
+    }
+  ],
+  "note": "The rule requires the total units sold across all products to be at most twice the total units in stock across all products."
+  }

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3
+      },
+      "value": 0
+    }
+  ],
+  "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "at_most_5_percent_teams_0_1",
+      "measure": "team",
+      "scope": {
+        "team": [
+          "team_0_1"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

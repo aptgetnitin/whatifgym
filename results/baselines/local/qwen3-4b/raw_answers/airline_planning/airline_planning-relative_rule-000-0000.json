@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "at_least_40_percent_flights_to_4514",
+      "measure": "operate",
+      "scope": {
+        "flight": [
+          "4514"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ],
+  "note": "A relative rule comparing the number of flights operated to flight 4514 with the total number of operated flights."
+  }

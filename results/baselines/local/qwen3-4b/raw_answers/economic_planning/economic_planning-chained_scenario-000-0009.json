@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": "transport"
+      },
+      "factor": 1.25
+    }
+  ],
+  "rules": [
+    {
+      "name": "stock_cap_overall",
+      "measure": "stock",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "sense": "<=",
+      "value": 1050
+    }
+  ]
+}

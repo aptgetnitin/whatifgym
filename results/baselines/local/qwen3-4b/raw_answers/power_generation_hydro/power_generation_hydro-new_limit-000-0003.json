@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "thermal1_min_sum",
+      "measure": "ngen",
+      "scope": {
+        "type": "Thermal1"
+      },
+      "sense": ">=",
+      "value": 43
+    },
+    {
+      "name": "thermal0_max_sum",
+      "measure": "output",
+      "scope": {
+        "type": "Thermal0"
+      },
+      "sense": "<=",
+      "value": 39950
+    }
+  ],
+  "note": "The planner specifies two constraints: one on the sum of Thermal1 units running (ngen) and one on the sum of Thermal0 output (output)."
+}

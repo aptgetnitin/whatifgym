@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "undamaged_stock_sat_at_most_90_of_wed",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Saturday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.9,
+      "relative_to": {
+        "measure": "undamaged_stock",
+        "scope": {
+          "day": "Wednesday",
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ]
+        }
+      }
+    }
+  ]
+}

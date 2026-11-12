@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "workers",
+      "column": "size_capacity",
+      "where": {
+        "worker": "worker_0"
+      },
+      "value": 2
+    }
+  ],
+  "note": "The planner asked for the total number of task assignments for worker_0 to be at least 2. However, the model's decision variable `works[worker]` is a binary indicator (1 if the worker has at least one task). The total number of task assignments for a worker is captured by `sum_t assign[worker, t]`, which is a linear measure. To enforce at least 2 assignments, we need to add a rule that `sum_t assign[worker_0, t] >= 2`. But the question is phrased as a 'what-if' scenario, which typically implies data changes. Since the model doesn't have a direct 'assignments' column, the most precise way is to interpret this as a rule (not a data change) because it's a constraint on the decision measure. However, the question says 'must be at least 2', which is a constraint on the sum of assignments, so it's a rule. But the problem states: 'You never solve the model yourself. You answer with ONE JSON object that validates against the scenario DSL schema'. The question is: 'What if the total number of task assignments for worker worker_0 must be at least 2?' This is a rule that needs to be added. But the scenario DSL has a 'rules' field for such things. However, the question says 'must be at least 2' - this is a constraint that the planner is asking about, so it's a rule. But the problem says: 'turns a planner's what-if question into a machine-checkable scenario'. The planner is asking what happens if this constraint is added. So it's a rule. But the question is phrased as 'what if', so it's a scenario where we add this rule. However, the model schema shows that the decision measure for the number of assignments is `assign[worker, task]` (a binary variable). The total assignments for worker_0 is `sum_t assign[worker_0, t]`. To enforce at least 2, we need a rule: `sum_t assign[worker_0, t] >= 2`. This is a rule. But the problem says: 'only when the question cannot be made precise from the information available, {"}

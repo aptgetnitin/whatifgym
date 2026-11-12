@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "downgrade",
+      "column": "downgrade",
+      "where": {
+        "year": [
+          "1",
+          "2",
+          "3"
+        ],
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 130
+    }
+  ]
+}

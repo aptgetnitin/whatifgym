@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "finish_time",
+      "scope": {
+        "train": "A"
+      },
+      "value": 0
+    },
+    {
+      "measure": "finish_time",
+      "scope": {
+        "train": "F"
+      },
+      "value": 65
+    }
+  ]
+  }

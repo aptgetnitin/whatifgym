@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "min_batch_scherer_hour_10",
+      "measure": "output",
+      "scope": {
+        "plant": "Scherer",
+        "hour": 10
+      },
+      "sense": ">=",
+      "value": 8600
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "short_time_limit_year1",
+      "measure": "short_time",
+      "scope": {
+        "year": 1
+      },
+      "sense": "<=",
+      "value": 0.25
+    }
+  ],
+  "note": "A rule that limits the short-time workers in year 1 to at most 25% of the total workforce in that year."
+  }

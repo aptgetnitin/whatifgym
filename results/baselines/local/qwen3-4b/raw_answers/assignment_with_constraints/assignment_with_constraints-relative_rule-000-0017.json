@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "task5_at_most_50_of_task3",
+      "measure": "assign",
+      "scope": {
+        "task": "task_5"
+      },
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "task": "task_3"
+        }
+      }
+    }
+  ]
+}

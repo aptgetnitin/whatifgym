@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "at_least_75_in_bin0",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "bin": "bin0"
+          },
+          "sense": ">=",
+          "value": 0.75
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "bin": "bin0"
+          },
+          "sense": "<=",
+          "value": 1.0
+        }
+      ]
+    }
+  ]
+}

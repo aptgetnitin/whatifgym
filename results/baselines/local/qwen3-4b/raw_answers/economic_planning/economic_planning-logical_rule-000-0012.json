@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "no_output_year2_and_year4",
+      "measure": "production",
+      "scope": {
+        "year": [
+          2,
+          4
+        ],
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "note": "The rule ensures that for both year 2 and year 4, the production across all industries is non-zero."
+  }

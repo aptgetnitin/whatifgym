@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "ask": "Which position values are required to change? What specific change (e.g., increase, decrease) is intended for which position?"
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "consume",
+      "scope": {
+        "month": [
+          "Jan"
+        ]
+      }
+    }
+  ]
+}

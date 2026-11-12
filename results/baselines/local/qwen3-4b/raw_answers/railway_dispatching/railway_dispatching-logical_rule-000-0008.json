@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "finish_time",
+      "scope": {
+        "train": "A"
+      }
+    }
+  ],
+  "note": "The question asks for a constraint on the finish_time of train A: it must be either 0 or at least 99. This is a logical rule (at least 1 of two conditions hold)."
+  }

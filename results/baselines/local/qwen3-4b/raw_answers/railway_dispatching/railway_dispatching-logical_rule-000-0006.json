@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "D_arrival_above_zero",
+      "measure": "finish_time",
+      "scope": {
+        "train": "D"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "F_arrival_at_least_104",
+      "measure": "finish_time",
+      "scope": {
+        "train": "F"
+      },
+      "sense": ">=",
+      "value": 104
+    }
+  ]
+}

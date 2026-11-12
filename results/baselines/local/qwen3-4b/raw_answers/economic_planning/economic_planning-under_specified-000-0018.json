@@ -1,0 +1,61 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": [
+          "coal"
+        ]
+      },
+      "value": 60
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": [
+          "steel"
+        ]
+      },
+      "value": 80
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": [
+          "transport"
+        ]
+      },
+      "value": 150
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": [
+          "coal"
+        ]
+      },
+      "value": 250
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "labor_per_unit_output",
+      "where": {
+        "industry": [
+          "coal"
+        ]
+      },
+      "value": 0.5
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "logic": [
+    {
+      "name": "E9_min_380_if_E1_positive",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "assign",
+          "scope": {
+            "county": [
+              "E1"
+            ],
+            "facility": [
+              "E1"
+            ]
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "assign",
+          "scope": {
+            "county": [
+              "E9"
+            ],
+            "facility": [
+              "E9"
+            ]
+          },
+          "sense": ">=",
+          "value": 380
+        }
+      ]
+    }
+  ]
+}

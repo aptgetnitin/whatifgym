@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "output",
+      "where": {
+        "type": "Thermal0",
+        "period": "06-09"
+      },
+      "value": 142500
+    }
+  ]
+}

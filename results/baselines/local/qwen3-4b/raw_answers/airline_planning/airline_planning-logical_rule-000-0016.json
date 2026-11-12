@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "no_overlap_4576_4577",
+      "measure": "operate",
+      "scope": {
+        "flight": [
+          "4576",
+          "4577"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

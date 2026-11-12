@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "assign",
+      "column": "assign",
+      "where": {
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "value": 20
+    }
+  ]
+}

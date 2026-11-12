@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "start_time_lahr_offenburg",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Lahr/Schwarzwald",
+          "Offenburg"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

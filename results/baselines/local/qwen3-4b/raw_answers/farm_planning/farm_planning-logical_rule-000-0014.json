@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "beet_sell_year1_grain_buy_year2",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "beet_sell_year1_grain_buy_year2",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "value": 44
+    },
+    {
+      "name": "beet_sell_year1_grain_buy_year2",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy_grain",
+        "scope": {
+          "year": "Year2"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": [
+          "1700 PLEASURE HOUSE RD"
+        ]
+      },
+      "value": 3
+    }
+  ],
+  "note": "The planner's question refers to a specific incident location row in the incidents table. The '1700 PLEASURE HOUSE RD' location is one of the existing rows in the incidents table (as per the key values provided). The question implies a change in the incident count for this location, so we set the 'incidents' column to a new value (e.g., 3) for this specific location."
+}

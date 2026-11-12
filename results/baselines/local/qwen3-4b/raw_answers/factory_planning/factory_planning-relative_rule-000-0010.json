@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "at_least_25_percent_jun",
+      "measure": "make",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

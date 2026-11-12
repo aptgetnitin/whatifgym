@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "e7_assign_cap",
+      "measure": "assign",
+      "scope": {
+        "county": "*",
+        "facility": "E7"
+      },
+      "sense": "<=",
+      "value": 170
+    },
+    {
+      "name": "temp_facilities_cap",
+      "measure": "build",
+      "scope": {
+        "facility": "*"
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "rule_for_A318_8_flight_3073",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A318#8",
+        "flight": "3073"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "rule_for_flight_4563",
+      "measure": "operate",
+      "scope": {
+        "flight": "4563"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

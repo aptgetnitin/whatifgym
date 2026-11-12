@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "beet_per_cow",
+      "value": 1.4
+    },
+    {
+      "op": "set_param",
+      "name": "grain_yield",
+      "value": 40
+    }
+  ]
+}
