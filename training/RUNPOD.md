@@ -245,7 +245,21 @@ The run, one model after the other (the server is restarted with the matching `O
 
 The three qwen3 tags have the same ids as on the Mac (`359d7dd4bcda`, `500a1f067a9f`, `bdbd181c33f2`). `gpt-oss:20b` is `f38aa0c53da5` on the pod and `17052f91a42e` on the Mac (pulled 5 weeks earlier): the tag was updated, so its numbers are not comparable with October's. All four models of the new table come from the pod.
 
-Timeline (UTC): 21:52:56 pod created; 21:55:25 qwen3:4b starts.
+Timeline (UTC): 21:52:56 pod created; 21:55:25 qwen3:4b starts, about 2.5 answers a second (8 at once, GPU at 88 %, 22 GB used).
+
+**Restart at 22:02 on reworded questions.** While the pod ran, two reviewer agents read the 200-task audit sample (`audit/audit_v1.md`): no wrong label, 5 ambiguous questions, 26 awkward ones. The templates were fixed and the same text changes applied to 747 existing questions; 5 tasks were dropped (commit `9423377`, ids in `tasks/reworded_2026-11-12.txt`). So that no model answers the old wording, the run was stopped after 55 files of qwen3:4b, the 28 finished result files whose task file changed were deleted, and the run restarted on the new commit (it skips the 27 files kept). About 7 min of pod time were repeated.
+
+```bash
+pkill -f '[r]un\.sh'; pkill -f '[r]un_local_base'                 # stop the driver and the workers
+git fetch --depth=2 origin main && git reset --hard FETCH_HEAD     # 9423377
+for f in $(git diff --name-only HEAD~1 HEAD -- tasks | grep jsonl); do   # result files of changed task files
+  rm -f results/baselines/local/qwen3-4b/$(echo $f | cut -d/ -f2).$(basename $f .jsonl).jsonl; done
+nohup bash /root/run.sh > /root/run.log 2>&1 &                     # the four runs above, in order
+```
+
+About 12 % of qwen3:4b's first 250 answers ended in `HTTP 500: prediction aborted, token repeat limit reached`: the model repeats one token until Ollama stops it. They are scored as wrong and counted in the summary's "request errors" column.
+
+Timeline, continued: 22:02:12 qwen3:4b restarts.
 
 ## Problems hit, in order
 

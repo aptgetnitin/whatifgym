@@ -10,7 +10,7 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 > |---|---|
 > | Base models | 25 of 30, verified on HiGHS, SCIP and CBC |
 > | Task families | 10 of 10 |
-> | Tasks (current set) | 3,761 template tasks + 45 verified paraphrases, in 224 files; shared outcomes removed (`_v1`, section 11) |
+> | Tasks (current set) | 3,756 template tasks + 45 verified paraphrases, in 224 files; shared outcomes removed (`_v1`, section 11) |
 > | Tests | 766 pass, 7 slow tests skipped |
 > | Untrained LLMs (`_v0` set) | Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % (section 11) |
 > | Training result | GRPO on Qwen3 4B, one GPU, three base models held out: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds; section 11) |
@@ -421,17 +421,17 @@ Column names: data = `data_change`, limit = `new_limit`, relative = `relative_ru
 | `farm_planning` | 20 | 20 | 20 | 20 | 20 | 7 | 20 | 20 | 20 | 20 | 187 |
 | `food_manufacture` | 20† | 20 | 20† | 11† | 20 | 1 | 20 | 20 | 20 | 20 | 172 |
 | `food_supply` | 20 | 20 | 20 | 4 | 20 | – | 20 | 20 | 20 | 20 | 164 |
-| `jobshop_ft06` | 20 | 13 | 20 | 20 | 20 | – | 20 | 20 | 20 | 20 | 173 |
+| `jobshop_ft06` | 20 | 13 | 20 | 20 | 20 | – | 16 | 20 | 20 | 20 | 169 |
 | `manpower_planning` | 20 | 20 | 20 | 20 | 20 | 12 | 20 | 20 | 20 | 20 | 192 |
 | `mining` | 20 | 20 | 20 | 2† | 20 | 20 | 20 | 20 | 20 | 20 | 182 |
 | `multiple_knapsack` | 20 | 6† | 20† | 1 | 2† | 1 | 18 | – | 20 | 20 | 108 |
 | `optimize_power_schedule` | 20 | 20 | 16 | 2 | 20 | – | 20 | 20 | 20 | 20 | 158 |
 | `power_generation_hydro` | 20 | 20 | 20 | 14† | 20 | – | 20 | 19 | 20 | 20 | 173 |
-| `railway_dispatching` | 20 | 8 | 20 | 20 | 20 | – | 20 | 20 | 20 | 20 | 168 |
+| `railway_dispatching` | 20 | 8 | 20 | 20 | 20 | – | 19 | 20 | 20 | 20 | 167 |
 | `single_machine_scheduling` | 7 | 3 | – | 8 | 1 | – | – | 18 | 2 | 6 | 45 |
 | `technician_routing_scheduling` | 20 | 20 | 20 | 15 | 20 | – | 20 | 2 | 20 | 20 | 157 |
 | `wedding_seating` | 5† | – | – | – | – | 1 | – | – | 7 | 20 | 33 |
-| **total** | 512 | 378 | 429 | 219 | 423 | 108 | 412 | 325 | 469 | 486 | **3761** |
+| **total** | 512 | 378 | 429 | 219 | 423 | 108 | 407 | 325 | 469 | 486 | **3756** |
 
 † a `_v1` file: regenerated on Nov 1 with the shared-outcome filter (the `_v0` file had more tasks). The table counts the current set; the `_v0` set of 14 models had 2,290.
 
@@ -716,6 +716,7 @@ flowchart TB
 | next | GRPO with a pass-rate filter, three held-out base models and 3 seeds |
 | done | 6 more base models (economic planning, fantasy basketball, assignment, COVID-19 facilities, railway dispatching, power schedule): 20 models, 3,093 tasks (Nov 2) |
 | done | 5 more base models (technician routing, drone network, airline planning, job-shop ft06, single-machine scheduling): 25 models, 3,761 tasks (Nov 2) |
+| done | Hand-audit sample drawn (`audit/audit_v1.md`, 200 tasks, `scripts/make_audit_pack.py`). A first read by two reviewer agents found no wrong label, 5 ambiguous questions and 26 awkward ones; the templates were fixed, 747 questions reworded in place (`tasks/reworded_2026-11-12.txt`) and 5 tasks dropped: 3,756 tasks (Nov 12). The audit by a person is still to do. |
 | next | Port 5 more models (the gate needs 25) |
 | later | New families: explanation ("why") questions, goal seeking, nearest feasible alternative, scenario comparison, sensitivity and robustness |
 
