@@ -133,6 +133,8 @@ def main(argv=None) -> int:
     ap.add_argument("--num-generations", type=int, default=4, help="completions per prompt (the GRPO group)")
     ap.add_argument("--grad-accum", type=int, default=8, help="prompts per step (one prompt per micro-batch)")
     ap.add_argument("--eval-tasks", type=int, default=200, help="test tasks scored before and after training; 0 skips")
+    ap.add_argument("--eval-every", type=int, default=0, metavar="N",
+                    help="also score the evaluation tasks every N training steps (the learning curve); 0 = before and after only")
     ap.add_argument("--max-prompt-tokens", type=int, default=7000, help="tasks with longer prompts are left out")
     ap.add_argument("--max-completion", type=int, default=768)
     ap.add_argument("--lora-rank", type=int, default=32)
@@ -234,6 +236,24 @@ def main(argv=None) -> int:
 
     trainer = GRPOTrainer(model=model, processing_class=tokenizer, reward_funcs=[whatifgym_reward],
                           args=config, train_dataset=dataset)
+    eval_curve: list[dict] = []
+    if args.eval_every > 0:
+        from transformers import TrainerCallback
+
+        class EvalEvery(TrainerCallback):
+            def on_step_end(self, cb_args, state, control, **kwargs):
+                if state.global_step % args.eval_every or state.global_step >= args.max_steps:
+                    return  # the last step is the "after training" evaluation below
+                step_dir = str(out / f"lora_step{state.global_step}")  # a new folder each time: an adapter path may be cached
+                model.save_lora(step_dir)
+                step_lora = model.load_lora(step_dir)
+                point = {"step": state.global_step,
+                         **{n: evaluate(model, tokenizer, rs, pool, args.max_completion, lora_request=step_lora)
+                            for n, rs in eval_sets.items()}}
+                eval_curve.append(point)
+                print(f"EVAL step {state.global_step}: {json.dumps(point)}", flush=True)
+
+        trainer.add_callback(EvalEvery())
     torch.cuda.reset_peak_memory_stats()
     t0 = time.perf_counter()
     trainer.train()
@@ -253,7 +273,7 @@ def main(argv=None) -> int:
         "model": args.model, "seed": args.seed, "holdout_models": sorted(holdout), "pass_rates": args.pass_rates,
         "pass_range": list(args.pass_range) if args.pass_rates else None,
         "steps": args.max_steps, "tasks": len(rows), "num_generations": args.num_generations,
-        "prompts_per_step": args.grad_accum, "eval_before": eval_before, "eval_after": eval_after,
+        "prompts_per_step": args.grad_accum, "eval_before": eval_before, "eval_after": eval_after, "eval_curve": eval_curve,
         "max_prompt_tokens": args.max_prompt_tokens, "max_completion": args.max_completion,
         "peak_gpu_memory_gb": round(torch.cuda.max_memory_reserved() / 1e9, 2),
         "gpu": torch.cuda.get_device_name(0), "seconds_total": round(wall, 1),
