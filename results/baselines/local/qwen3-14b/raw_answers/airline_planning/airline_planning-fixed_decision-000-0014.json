@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "fixed_decisions": [
+    {
+      "measure": "operate",
+      "scope": {
+        "aircraft": "ERJ145#5",
+        "flight": 4699
+      },
+      "value": 1
+    }
+  ]
+}

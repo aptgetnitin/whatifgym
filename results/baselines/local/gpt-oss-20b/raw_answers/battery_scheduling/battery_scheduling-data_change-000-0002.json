@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "import_price",
+      "factor": 0.75
+    }
+  ],
+  "note": "Reduce grid import price by 25% for all hourly rows."
+}

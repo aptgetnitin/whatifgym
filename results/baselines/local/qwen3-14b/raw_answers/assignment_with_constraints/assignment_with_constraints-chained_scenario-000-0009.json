@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "workers",
+      "column": "size_capacity",
+      "factor": 1.2
+    }
+  ],
+  "rules": [
+    {
+      "name": "worker_0_min_assignments",
+      "measure": "assign",
+      "scope": {
+        "worker": "worker_0"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

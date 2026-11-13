@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"grain_growth_year4_group1_implies_buy_grain_year1","at_least":1,"of":[{"measure":"grow_grain","scope":{"year":"Year4","land_group":"Group1"},"sense":"<=","value":0},{"measure":"buy_grain","scope":{"year":"Year1"},"sense":">=","value":46}]}]}

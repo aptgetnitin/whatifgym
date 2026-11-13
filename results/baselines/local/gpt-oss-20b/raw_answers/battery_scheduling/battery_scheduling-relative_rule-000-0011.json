@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_vs_soc",
+      "measure": "discharge",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "soc",
+        "scope": {}
+      },
+      "factor": 3.0
+    }
+  ],
+  "note": "Enforce that the total discharge power over the day is at least three times the total stored energy."
+}

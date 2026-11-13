@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j1_start_time_constraint",
+      "measure": "start",
+      "scope": {
+        "job": "J1",
+        "step": 6
+      },
+      "sense": ">=",
+      "value": 170
+    }
+  ]
+}

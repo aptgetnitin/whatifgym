@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"J3_step4_start_min_260","measure":"start","scope":{"job":"J3","step":4},"sense":">=","value":260}],"note":"Ensures the start time of job J3, step 4 is at least 260 (the end time is always >0 in this model)."}

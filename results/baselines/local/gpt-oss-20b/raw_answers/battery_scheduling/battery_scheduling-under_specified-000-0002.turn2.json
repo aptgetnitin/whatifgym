@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "export_price",
+      "factor": 0.8
+    }
+  ],
+  "note": "Export prices fall by 20% for all hours."
+}

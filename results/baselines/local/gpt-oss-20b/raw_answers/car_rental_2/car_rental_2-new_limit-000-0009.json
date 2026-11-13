@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"damaged_to_Birmingham_cap","measure":"damaged_transfers","scope":{"to_depot":"Birmingham"},"sense":"<=","value":25},{"name":"undamaged_total_cap","measure":"undamaged_transfers","sense":"<=","value":31}]}

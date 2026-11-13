@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "setup_times",
+      "column": "setup_time",
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "jobs",
+      "column": "duration",
+      "where": {
+        "job": "job_0"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "All setup times reduced by 20% and job_0 duration reduced by 20%."
+}

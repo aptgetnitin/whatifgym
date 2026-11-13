@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "logic": [
+    {
+      "name": "damaged_transfer_glasgow_repair_plymouth_friday",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "damaged_transfers",
+          "scope": {
+            "day": "Friday",
+            "from_depot": "Glasgow",
+            "to_depot": {
+              "$neq": "Glasgow"
+            }
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "repairs",
+          "scope": {
+            "day": "Friday",
+            "depot": "Plymouth"
+          },
+          "sense": ">=",
+          "value": 7.5
+        }
+      ]
+    }
+  ]
+}

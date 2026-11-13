@@ -1,0 +1,104 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "J1_end_at_most_75pct_of_J4_end_step_1",
+      "measure": "end",
+      "scope": {
+        "job": "J1",
+        "step": 1
+      },
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J4",
+          "step": 1
+        }
+      },
+      "sense": "<=",
+      "factor": 0.75
+    },
+    {
+      "name": "J1_end_at_most_75pct_of_J4_end_step_2",
+      "measure": "end",
+      "scope": {
+        "job": "J1",
+        "step": 2
+      },
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J4",
+          "step": 2
+        }
+      },
+      "sense": "<=",
+      "factor": 0.75
+    },
+    {
+      "name": "J1_end_at_most_75pct_of_J4_end_step_3",
+      "measure": "end",
+      "scope": {
+        "job": "J1",
+        "step": 3
+      },
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J4",
+          "step": 3
+        }
+      },
+      "sense": "<=",
+      "factor": 0.75
+    },
+    {
+      "name": "J1_end_at_most_75pct_of_J4_end_step_4",
+      "measure": "end",
+      "scope": {
+        "job": "J1",
+        "step": 4
+      },
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J4",
+          "step": 4
+        }
+      },
+      "sense": "<=",
+      "factor": 0.75
+    },
+    {
+      "name": "J1_end_at_most_75pct_of_J4_end_step_5",
+      "measure": "end",
+      "scope": {
+        "job": "J1",
+        "step": 5
+      },
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J4",
+          "step": 5
+        }
+      },
+      "sense": "<=",
+      "factor": 0.75
+    },
+    {
+      "name": "J1_end_at_most_75pct_of_J4_end_step_6",
+      "measure": "end",
+      "scope": {
+        "job": "J1",
+        "step": 6
+      },
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J4",
+          "step": 6
+        }
+      },
+      "

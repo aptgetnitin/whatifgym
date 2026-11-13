@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"measure":"entry_time","scope":{"train":"B"},"sense":">=","relative_to":{"measure":"entry_time"},"factor":0.4}],"note":"At least 40% of total entry time must be for train B."}

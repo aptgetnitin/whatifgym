@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "facilities",
+      "column": "capacity",
+      "where": {
+        "facility": "T18"
+      },
+      "value": 200
+    },
+    {
+      "op": "scale",
+      "table": "counties",
+      "column": "demand",
+      "where": {
+        "county": "C2"
+      },
+      "factor": 1.2
+    }
+  ],
+  "note": "Capacity of T18 set to 200 beds; demand of C2 increased by 20%."
+}

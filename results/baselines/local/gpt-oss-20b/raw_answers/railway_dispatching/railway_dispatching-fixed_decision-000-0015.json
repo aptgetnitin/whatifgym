@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "fixed_decisions": [
+    {
+      "measure": "goes_first",
+      "scope": {
+        "resource": 3,
+        "train": "F",
+        "other_train": "E"
+      },
+      "value": 1
+    },
+    {
+      "measure": "meet",
+      "scope": {
+        "resource": 6,
+        "train": "D",
+        "other_train": "F"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Force F to clear resource 3 before E enters; forbid D and F overlapping on resource 6."
+}

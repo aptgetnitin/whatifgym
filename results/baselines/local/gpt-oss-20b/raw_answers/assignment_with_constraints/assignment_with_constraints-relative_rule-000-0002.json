@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "min_assignments",
+      "measure": "assign",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "works"
+      },
+      "factor": 1.5
+    }
+  ]
+}

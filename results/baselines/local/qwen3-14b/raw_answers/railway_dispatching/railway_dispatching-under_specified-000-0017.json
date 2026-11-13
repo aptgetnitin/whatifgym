@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "resources",
+      "column": "duration",
+      "where": {
+        "kind": [
+          "station",
+          "track"
+        ]
+      },
+      "delta": 0
+    }
+  ],
+  "note": "The question is ambiguous. It refers to a shift in the minimum time on the resource for every row of the stations and tracks table, but the magnitude of the shift is not specified."
+}

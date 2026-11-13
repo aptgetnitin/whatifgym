@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "Plymouth_min_undamaged",
+      "measure": "undamaged_stock",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 270
+    }
+  ],
+  "note": "Ensure at least 270 undamaged cars at Plymouth in the morning across the week."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "worker_1_min_assignments",
+      "measure": "assign",
+      "scope": {
+        "worker": "worker_1"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

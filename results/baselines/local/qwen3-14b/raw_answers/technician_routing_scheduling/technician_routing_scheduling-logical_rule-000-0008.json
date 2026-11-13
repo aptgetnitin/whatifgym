@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "relax": [
+    {
+      "constraint": "route[from_location, to_location, technician]",
+      "scope": {
+        "from_location": [
+          "Heidelberg",
+          "Baden-Baden"
+        ]
+      }
+    }
+  ]
+}

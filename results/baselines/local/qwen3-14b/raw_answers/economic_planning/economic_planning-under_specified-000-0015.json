@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[{"op":"set","table":"industries","column":"labor_per_unit_output","where":{"industry":"steel"},"value":0.5}]}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "rules": [
+    {
+      "name": "job_4_earlier_pairs_limit",
+      "measure": "runs_before",
+      "scope": {
+        "job": "job_4"
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

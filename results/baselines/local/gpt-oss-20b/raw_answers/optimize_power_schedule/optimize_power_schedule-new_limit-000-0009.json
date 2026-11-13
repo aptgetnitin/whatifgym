@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"max_startups","measure":"start","sense":"<=","value":1},{"name":"min_gas_output","measure":"output","scope":{"plant":"GAS"},"sense":">=","value":32500}],"note":"Limit total start-ups to 1 and require at least 32500 MWh from GAS."}

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "jun_purchase_share",
+      "measure": "buy",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy",
+        "scope": {}
+      },
+      "factor": 0.75
+    }
+  ]
+}

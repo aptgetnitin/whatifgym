@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "max_plants_on",
+      "measure": "on",
+      "scope": {
+        "plant": [
+          "Vogtle",
+          "OTHER COAL",
+          "Scherer",
+          "Edwin I Hatch"
+        ]
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_transfer_monday_vs_friday",
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "damaged_transfers",
+        "scope": {
+          "day": "Friday"
+        }
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "Limit damaged transfers on Monday to at most 60% of those on Friday."
+}

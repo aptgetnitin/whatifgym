@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "fixed_decisions": [
+    {
+      "measure": "start_time",
+      "scope": {
+        "location": "Loerrach"
+      },
+      "value": 270
+    }
+  ]
+}

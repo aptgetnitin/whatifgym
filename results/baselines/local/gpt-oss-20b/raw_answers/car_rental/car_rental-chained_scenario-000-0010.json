@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "measure": "rentals",
+      "scope": {},
+      "sense": "<=",
+      "value": 1600,
+      "name": "cap_rentals_total"
+    }
+  ]
+}

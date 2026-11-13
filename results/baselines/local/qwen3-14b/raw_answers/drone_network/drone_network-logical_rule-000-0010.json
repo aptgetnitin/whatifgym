@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_rule",
+   "measure": "linked_load",
+   "scope": {
+    "location": "1500 BROOKFIELD CV",
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": ">=",
+   "value": 0.01,
+   "relative_to": {
+    "measure": "queue_load",
+    "scope": {
+     "base": "800 VIRGINIA BEACH BLVD Fire Station"
+    }
+   },
+   "factor": 1.0
+  }
+ ]
+}

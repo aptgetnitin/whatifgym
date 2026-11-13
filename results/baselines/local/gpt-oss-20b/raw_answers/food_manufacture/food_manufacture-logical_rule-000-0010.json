@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "veg1_veg2_dependency",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "buy",
+          "scope": {
+            "oil": "VEG1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "buy",
+          "scope": {
+            "oil": "VEG2"
+          },
+          "sense": ">=",
+          "value": 680
+        }
+      ]
+    }
+  ],
+  "note": "If any VEG1 is bought, then total VEG2 buy must be at least 680 tons."
+}

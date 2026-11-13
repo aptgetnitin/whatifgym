@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "lateness_customer5_at_least_120",
+      "measure": "lateness[customer]",
+      "scope": {
+        "customer": "Customer5"
+      },
+      "sense": ">=",
+      "value": 120
+    },
+    {
+      "name": "total_legs_cap_9",
+      "measure": "route[from_location, to_location, technician]",
+      "sense": "<=",
+      "value": 9
+    }
+  ]
+}

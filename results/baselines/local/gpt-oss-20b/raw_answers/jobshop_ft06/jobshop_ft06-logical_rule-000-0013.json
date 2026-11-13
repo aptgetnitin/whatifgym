@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "logic": [
+    {
+      "name": "require_M5_J4_if_J2_exists",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "goes_first",
+          "scope": {
+            "other_job": "J2"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "M5",
+            "other_job": "J4"
+          },
+          "sense": ">=",
+          "value": 2
+        }
+      ]
+    }
+  ]
+}

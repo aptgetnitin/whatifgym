@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 24
+      },
+      "factor": 1.3
+    }
+  ],
+  "note": "Hourly demand for hour 24 increased by 30%."
+}

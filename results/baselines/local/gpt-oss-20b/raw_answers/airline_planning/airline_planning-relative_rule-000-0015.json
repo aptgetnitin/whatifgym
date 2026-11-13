@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "measure": "operate",
+      "scope": {
+        "flight": 4264
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate"
+      },
+      "factor": 0.25
+    }
+  ]
+}

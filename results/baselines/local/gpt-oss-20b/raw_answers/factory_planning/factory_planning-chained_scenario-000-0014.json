@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "feb_total_stock_cap",
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "value": 320
+    }
+  ],
+  "note": "Total stock at end of February limited to 320 units."
+}

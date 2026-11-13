@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "store_feb_implication",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Feb"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Jun",
+            "product": "Prod7"
+          },
+          "sense": ">=",
+          "value": 100
+        }
+      ]
+    }
+  ],
+  "note": "If any inventory in Feb > 0 then must sell at least 100 of Prod7 in Jun."
+}

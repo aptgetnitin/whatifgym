@@ -1,0 +1,67 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "logic": [
+    {
+      "name": "at_most_one_food_non_zero_ration",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Wheat",
+            "camp": {
+              "$wildcard": true
+            }
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Corn-soya blend (CSB)",
+            "camp": {
+              "$wildcard": true
+            }
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Oil",
+            "camp": {
+              "$wildcard": true
+            }
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Dried skim milk (enriched) (DSM)",
+            "camp": {
+              "$wildcard": true
+            }
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Milk",
+            "camp": {
+              "$wildcard": true
+            }
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

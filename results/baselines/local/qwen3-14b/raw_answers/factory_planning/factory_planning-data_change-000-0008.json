@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "installed",
+      "value": 2
+    },
+    {
+      "op": "scale_param",
+      "name": "profit_per_unit",
+      "factor": 0.75
+    }
+  ],
+  "note": "Adding a borer increases the installed count, and scaling profit_per_unit by 0.75 reflects the 25% reduction in contribution for Prod5."
+}

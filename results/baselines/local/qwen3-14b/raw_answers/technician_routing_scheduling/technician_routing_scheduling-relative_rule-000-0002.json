@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "unfilled_jobs_ratio",
+      "measure": "unfilled",
+      "scope": {
+        "customer": [
+          "Customer1",
+          "Customer2",
+          "Customer3",
+          "Customer4",
+          "Customer5",
+          "Customer6",
+          "Customer7"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "customer": [
+            "Customer1",
+            "Customer2",
+            "Customer3",
+            "Customer4",
+            "Customer5",
+            "Customer6",
+            "Customer7"
+          ]
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

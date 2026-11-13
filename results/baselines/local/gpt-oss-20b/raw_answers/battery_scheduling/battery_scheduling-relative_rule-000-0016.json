@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_21_22_limit",
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "discharge"
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "Limit discharging in hour 21-22 to at most 60% of total discharging power."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min_extract_mine3_year3",
+      "measure": "extract",
+      "scope": {
+        "year": "Year3",
+        "mine": "Mine3"
+      },
+      "sense": ">=",
+      "value": 2600000
+    }
+  ],
+  "note": "Enforce a minimum extraction of 2.6 million tons from Mine3 in Year3."
+}

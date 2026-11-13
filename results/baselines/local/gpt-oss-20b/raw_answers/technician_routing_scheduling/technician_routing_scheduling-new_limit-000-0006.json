@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "measure": "start_time",
+      "scope": {},
+      "sense": "<=",
+      "value": 750
+    },
+    {
+      "measure": "start_time",
+      "scope": {
+        "location": "Baden-Baden"
+      },
+      "sense": ">=",
+      "value": 80
+    }
+  ]
+}

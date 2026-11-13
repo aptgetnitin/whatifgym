@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": "Thermal0"
+      },
+      "value": 24
+    }
+  ],
+  "rules": [
+    {
+      "measure": "reservoir_level",
+      "sense": "<=",
+      "value": 5.2,
+      "scope": {}
+    }
+  ],
+  "note": "Total reservoir level summed over all periods may not exceed 5.2."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"A319_to_A321_ratio","measure":"operate","scope":{"aircraft":"A319#18"},"sense":">=","relative_to":{"measure":"operate","scope":{"aircraft":"A321#2"}},"factor":0.9}],"note":"Number of flights operated for A319#18 must be at least 90% of those for A321#2."}

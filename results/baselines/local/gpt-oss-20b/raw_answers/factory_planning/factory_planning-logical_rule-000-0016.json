@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "not_both_jan_may_nonzero",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jan"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": "May"
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "note": "At least one of January or May must have zero production."
+}

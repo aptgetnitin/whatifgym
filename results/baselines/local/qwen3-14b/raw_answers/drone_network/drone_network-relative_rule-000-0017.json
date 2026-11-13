@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "base_3769_assignments",
+   "measure": "assign",
+   "scope": {
+    "base": "3769 E. STRATFORD ROAD Rescue Squad"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "assign",
+    "scope": {
+     "base": "all"
+    }
+   },
+   "factor": 0.15
+  }
+ ]
+}

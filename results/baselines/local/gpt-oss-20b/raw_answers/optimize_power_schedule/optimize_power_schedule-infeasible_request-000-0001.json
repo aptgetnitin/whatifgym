@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"measure":"output","scope":{"hour":6},"sense":">=","value":15700},{"measure":"output","scope":{"hour":1},"sense":">=","value":22400}]}

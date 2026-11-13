@@ -1,0 +1,1 @@
+{"ask":"The model’s rule syntax cannot directly express a weighted sum of rentals that return to Birmingham. Would you like to approximate by requiring that the sum of rentals from depots that return to Birmingham is at most 25 % of total rentals, or would you prefer to adjust the return_shares to enforce this constraint?"}

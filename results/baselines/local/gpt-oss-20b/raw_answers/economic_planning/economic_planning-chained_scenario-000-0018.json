@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[{"op":"scale","table":"industries","column":"labor_per_unit_output","where":{"industry":"coal"},"factor":1.2}],"rules":[{"measure":"stock","scope":{"year":1},"sense":">=","value":123,"name":"floor_stock_1"}],"note":"Increase coal labor per unit output by 20% and keep stock floor rule."}

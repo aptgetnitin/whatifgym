@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "fixed_decisions": [
+    {
+      "measure": "pick",
+      "scope": {
+        "player": "Jeff Green"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Force Jeff Green to be selected."
+}

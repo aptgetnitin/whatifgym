@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "conditional_make_mar",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Feb",
+            "product": "Prod3"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Mar"
+          },
+          "sense": ">=",
+          "value": 800
+        }
+      ]
+    }
+  ]
+}

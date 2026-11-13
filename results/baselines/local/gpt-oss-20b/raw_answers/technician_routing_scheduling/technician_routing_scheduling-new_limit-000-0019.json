@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"measure":"start_time","sense":"<=","value":900}],"note":"Total service start time across all locations must not exceed 900 minutes."}

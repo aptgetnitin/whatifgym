@@ -1,0 +1,66 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "logic": [
+    {
+      "name": "min_job_pairs_m0",
+      "at_least": 15,
+      "of": [
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "M0",
+            "job": "J0"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "M0",
+            "job": "J1"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "M0",
+            "job": "J2"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "M0",
+            "job": "J3"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "M0",
+            "job": "J4"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "M0",
+            "job": "J5"
+          },
+          "sense": ">=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

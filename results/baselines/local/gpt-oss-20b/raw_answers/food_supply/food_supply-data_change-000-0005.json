@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"foods","column":"international_price","factor":1.25},{"op":"scale","table":"nutrients","column":"min_per_person","where":{"nutrient":"Protein(g)"},"factor":1.2}],"note":"International prices up 25% and protein requirement up 20%."}

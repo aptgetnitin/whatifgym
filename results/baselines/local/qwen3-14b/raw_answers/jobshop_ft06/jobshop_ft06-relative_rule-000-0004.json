@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "job_j1_start_time_limit",
+      "measure": "start",
+      "scope": {
+        "job": "J1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "job": [
+            "J0",
+            "J1",
+            "J2",
+            "J3",
+            "J4",
+            "J5"
+          ]
+        }
+      },
+      "factor": 0.05
+    },
+    {
+      "name": "job_j5_start_time_relation",
+      "measure": "start",
+      "scope": {
+        "job": "J5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "job": "J0"
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

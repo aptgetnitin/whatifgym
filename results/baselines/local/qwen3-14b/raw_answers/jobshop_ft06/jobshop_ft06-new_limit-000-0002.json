@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "job_pairs_with_other_job_j5",
+      "measure": "goes_first",
+      "scope": {
+        "other_job": "J5"
+      },
+      "sense": "<=",
+      "value": 9
+    },
+    {
+      "name": "start_time_for_j5",
+      "measure": "start",
+      "scope": {
+        "job": "J5"
+      },
+      "sense": ">=",
+      "value": 190
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "fixed_decisions": [
+    {
+      "measure": "finish_time",
+      "scope": {
+        "train": "F"
+      },
+      "value": 65
+    },
+    {
+      "measure": "goes_first",
+      "scope": {
+        "resource": 1,
+        "train": "F",
+        "other_train": "E"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Fix finish time of train F to 65 minutes and enforce that F clears resource 1 before train E enters it."
+}

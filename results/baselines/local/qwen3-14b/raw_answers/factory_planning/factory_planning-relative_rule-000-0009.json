@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "jan_production_rule",
+      "measure": "make",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {}
+      },
+      "factor": 0.5
+    }
+  ]
+}

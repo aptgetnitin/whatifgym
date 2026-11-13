@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","objective":[{"sense":"min","measure":"original"},{"sense":"max","measure":"linked_load","scope":{"base":"3769 E. STRATFORD ROAD Rescue Squad"}}]}

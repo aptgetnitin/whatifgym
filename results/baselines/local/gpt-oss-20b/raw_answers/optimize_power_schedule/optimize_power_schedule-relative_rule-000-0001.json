@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"measure":"stop","scope":{"hour":8},"sense":"<=","relative_to":{"measure":"stop","scope":{}},"factor":0.15},{"measure":"on","scope":{"plant":"Scherer"},"sense":">=","relative_to":{"measure":"on","scope":{"plant":"BIOMASS"}},"factor":3.0}]}

@@ -1,0 +1,47 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "route",
+      "scope": {
+        "from_location": [
+          "Heidelberg",
+          "Freiburg im Breisgau",
+          "Mannheim",
+          "Karlsruhe",
+          "Baden-Baden",
+          "Buehl",
+          "Offenburg",
+          "Lahr/Schwarzwald",
+          "Loerrach"
+        ],
+        "to_location": [
+          "Heidelberg",
+          "Freiburg im Breisgau",
+          "Mannheim",
+          "Karlsruhe",
+          "Baden-Baden",
+          "Buehl",
+          "Offenburg",
+          "Lahr/Schwarzwald",
+          "Loerrach"
+        ],
+        "technician": [
+          "Albert",
+          "Bob",
+          "Carlos",
+          "Doris",
+          "Ed",
+          "Flor",
+          "Gina"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

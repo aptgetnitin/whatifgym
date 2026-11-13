@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"min_grow_beet_year5","measure":"grow_beet","scope":{"year":"Year5"},"sense":">=","value":160},{"name":"max_sell_beet_total","measure":"sell_beet","sense":"<=","value":170}],"note":"Enforce minimum 160 tons of beet grown in Year5 and cap total beet sales at 170 tons."}

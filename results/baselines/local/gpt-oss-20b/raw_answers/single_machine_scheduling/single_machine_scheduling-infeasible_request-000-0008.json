@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "rules": [
+    {
+      "measure": "start_time",
+      "scope": {
+        "job": "job_2"
+      },
+      "sense": ">=",
+      "value": 67650
+    }
+  ],
+  "note": "Check feasibility of start_time[job_2] >= 67650"
+}

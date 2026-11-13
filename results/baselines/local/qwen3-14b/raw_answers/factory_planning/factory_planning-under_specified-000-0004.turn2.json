@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "downtime",
+      "column": "machines_down",
+      "where": {
+        "month": "Feb",
+        "machine": "horiDrill"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner indicated that no horizontal drills are down in February, so the machines_down value for that row is set to 0."
+}

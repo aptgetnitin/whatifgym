@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "min_queue_load_21_MUNICIPAL",
+      "measure": "linked_load",
+      "scope": {
+        "base": "21 MUNICIPAL CTR Fire Station"
+      },
+      "sense": ">=",
+      "value": 0.06
+    }
+  ],
+  "note": "Floor on queue load linked to assigned location for base 21 MUNICIPAL CTR Fire Station."
+}

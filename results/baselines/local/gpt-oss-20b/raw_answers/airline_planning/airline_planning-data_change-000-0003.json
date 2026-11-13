@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "revenue",
+      "where": {
+        "flight": 4269
+      },
+      "value": 43550
+    }
+  ],
+  "note": "Updated revenue for flight 4269."
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "oil3_storage_min",
+      "measure": "store",
+      "scope": {
+        "oil": "OIL3"
+      },
+      "sense": ">=",
+      "value": 3600
+    },
+    {
+      "name": "total_food_production_cap",
+      "measure": "produce",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 2450
+    }
+  ]
+}

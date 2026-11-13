@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "train_b_entry_time_rule",
+      "measure": "entry_time",
+      "scope": {
+        "train": "B",
+        "resource": 6
+      },
+      "sense": ">=",
+      "value": 58,
+      "relative_to": {
+        "measure": "finish_time",
+        "scope": {
+          "train": "B"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

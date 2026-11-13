@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": ["Thermal0", "Thermal1", "Thermal2"]
+      },
+      "value": 0
+    }
+  ],
+  "note": "Setting units_available to 0 for all thermal types to simulate the scenario where one of the thermal generator types drops out."
+}

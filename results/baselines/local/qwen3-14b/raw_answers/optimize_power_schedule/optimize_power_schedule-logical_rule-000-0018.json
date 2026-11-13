@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "logic": [
+    {
+      "name": "gas_15_scherer_11_rule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "on",
+          "scope": {
+            "plant": "GAS",
+            "hour": 15
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "on",
+          "scope": {
+            "plant": "Scherer",
+            "hour": 11
+          },
+          "sense": ">=",
+          "value": 2
+        }
+      ]
+    }
+  ]
+}

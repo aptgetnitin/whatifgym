@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "sell_Mar_Prod6_zero_or_at_least_600",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Mar",
+            "product": "Prod6"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Mar",
+            "product": "Prod6"
+          },
+          "sense": ">=",
+          "value": 600
+        }
+      ]
+    }
+  ]
+}

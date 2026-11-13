@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "year6_output_share",
+      "measure": "production",
+      "scope": {
+        "year": 6
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "production",
+        "scope": {
+          "year": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "factor": 0.1
+    }
+  ]
+}

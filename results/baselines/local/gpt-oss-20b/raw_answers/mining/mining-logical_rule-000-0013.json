@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "min_batch_rule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year1",
+            "mine": "Mine1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year1",
+            "mine": "Mine1"
+          },
+          "sense": ">=",
+          "value": 5000000
+        }
+      ]
+    }
+  ]
+}

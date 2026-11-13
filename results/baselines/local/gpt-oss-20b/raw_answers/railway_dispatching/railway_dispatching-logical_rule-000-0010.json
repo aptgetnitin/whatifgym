@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"entry_time_F_resource2_min60","measure":"entry_time","scope":{"train":"F","resource":2},"sense":">=","value":60}],"note":"Ensure train F enters resource 2 at least 60 minutes after start if it arrives at destination."}

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "train_f_goes_first_limit",
+      "measure": "goes_first",
+      "scope": {
+        "train": "F"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ]
+}

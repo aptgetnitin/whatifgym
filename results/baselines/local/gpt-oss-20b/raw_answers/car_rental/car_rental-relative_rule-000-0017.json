@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"repair_vs_undamaged","measure":"repairs","scope":{},"sense":">=","relative_to":{"measure":"undamaged_left","scope":{}},"factor":2.0}]}

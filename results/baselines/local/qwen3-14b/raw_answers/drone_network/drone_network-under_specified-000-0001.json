@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","data_changes":[{"op":"set","table":"incidents","column":"incidents","where":{"location":"1700 PLEASURE HOUSE RD"},"value":3}],"note":"Adjusting the incidents for the location 1700 PLEASURE HOUSE RD to 3 as per the scenario question."}

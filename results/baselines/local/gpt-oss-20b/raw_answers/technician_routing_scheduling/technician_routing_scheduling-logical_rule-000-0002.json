@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","logic":[{"name":"unfilled_customer4_requires_legs_to_Lahr","at_least":1,"of":[{"measure":"unfilled","scope":{"customer":"Customer4"},"sense":"==","value":0},{"measure":"route","scope":{"to_location":"Lahr/Schwarzwald"},"sense":">=","value":2}]}]}

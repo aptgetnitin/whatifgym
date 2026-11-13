@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "arrival_time_entry_time_ratio",
+      "measure": "finish_time",
+      "scope": {
+        "train": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {
+          "train": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ]
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

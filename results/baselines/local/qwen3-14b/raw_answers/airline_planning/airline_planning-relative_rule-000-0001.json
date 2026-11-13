@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4564_operate_percentage",
+      "measure": "operate",
+      "scope": {
+        "flight": 4564
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "flight": "all"
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

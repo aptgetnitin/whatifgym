@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","rules":[{"name":"worker6_min_25pct","measure":"assign","scope":{"worker":"worker_6"},"sense":">=","relative_to":{"measure":"assign","scope":{}},"factor":0.25}]}

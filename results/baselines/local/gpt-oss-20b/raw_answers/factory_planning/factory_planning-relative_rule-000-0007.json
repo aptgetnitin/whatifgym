@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"Jun_to_Mar_production_ratio","measure":"make","scope":{"month":"Jun"},"sense":"<=","relative_to":{"measure":"make","scope":{"month":"Mar"}},"factor":0.75}],"note":"Units made in June must be at most 75% of units made in March."}

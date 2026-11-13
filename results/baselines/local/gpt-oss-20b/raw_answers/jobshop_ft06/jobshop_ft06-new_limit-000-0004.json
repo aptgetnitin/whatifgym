@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"min_goes_first_M0","measure":"goes_first","scope":{"machine":"M0"},"sense":">=","value":15}]}

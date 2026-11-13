@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j5_end_time_rule",
+      "measure": "end",
+      "scope": {
+        "job": "J5",
+        "step": 6
+      },
+      "sense": ">=",
+      "value": 460
+    }
+  ]
+}

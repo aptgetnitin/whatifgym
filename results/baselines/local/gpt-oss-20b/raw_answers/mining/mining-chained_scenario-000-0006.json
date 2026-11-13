@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine3"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "measure": "operate",
+      "sense": "<=",
+      "value": 7
+    }
+  ]
+}

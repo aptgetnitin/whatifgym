@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"measure":"extra_capacity","scope":{"year":3},"sense":">=","value":78,"name":"floor_extra_capacity_3"}],"data_changes":[{"op":"scale","table":"industries","column":"labor_per_unit_output","where":{"industry":"transport"},"factor":1.1}]}

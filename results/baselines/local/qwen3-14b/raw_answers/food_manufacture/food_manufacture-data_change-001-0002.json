@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "holding_cost",
+      "factor": 0.8
+    },
+    {
+      "op": "set",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": "VEG1"
+      },
+      "value": 13.2
+    }
+  ]
+}

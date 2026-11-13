@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "min_charge_to_soc_ratio",
+      "measure": "charge",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "soc",
+        "scope": {
+          "hour": "23-24"
+        }
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Require total charging power to be at least 25% of the final stored energy."
+}

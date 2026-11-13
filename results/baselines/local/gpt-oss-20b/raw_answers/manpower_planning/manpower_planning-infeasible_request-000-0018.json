@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "min_redundant_8420",
+      "measure": "redundant",
+      "scope": {},
+      "sense": ">=",
+      "value": 8420
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"flight3107_to_3112_ratio","measure":"operate","scope":{"flight":3107},"sense":"<=","relative_to":{"measure":"operate","scope":{"flight":3112}},"factor":0.75}],"note":"Number of flights operated for flight 3107 must be at most 75% of those for flight 3112."}

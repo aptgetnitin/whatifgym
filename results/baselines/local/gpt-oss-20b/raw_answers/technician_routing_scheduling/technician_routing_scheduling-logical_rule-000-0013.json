@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "logic": [
+    {
+      "name": "mannheim_start_time_constraint",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "start_time",
+          "scope": {
+            "location": "Mannheim"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "start_time",
+          "scope": {
+            "location": "Mannheim"
+          },
+          "sense": ">=",
+          "value": 72
+        }
+      ]
+    }
+  ],
+  "note": "The service start time at Mannheim must be either zero or at least 72 minutes."
+}

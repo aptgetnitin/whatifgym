@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","data_changes":[{"op":"add","table":"bins","rows":[{"bin":"new_bin","capacity":125}]},{"op":"remove","table":"items","where":{"item":"item8"}}],"note":"Add a new bin with capacity 125 and remove item8 from the items to pack."}

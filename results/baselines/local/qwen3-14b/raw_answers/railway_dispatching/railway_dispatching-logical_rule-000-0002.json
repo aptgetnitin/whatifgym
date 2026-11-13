@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "entry_time_rule",
+      "measure": "entry_time",
+      "scope": {
+        "train": "C",
+        "resource": 5
+      },
+      "sense": ">=",
+      "value": 20
+    }
+  ]
+}

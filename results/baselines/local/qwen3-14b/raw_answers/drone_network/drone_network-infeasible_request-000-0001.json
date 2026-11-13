@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "total_queue_load",
+   "measure": "queue_load",
+   "scope": {
+    "base": {
+     "type": "string"
+    }
+   },
+   "sense": ">=",
+   "value": 0.12
+  }
+ ]
+}

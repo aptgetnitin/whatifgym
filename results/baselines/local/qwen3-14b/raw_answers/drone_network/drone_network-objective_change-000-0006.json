@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "max",
+   "measure": "open",
+   "scope": {}
+  }
+ ],
+ "note": "First, minimize the original response objective, then maximize the total number of drone bases opened."
+}

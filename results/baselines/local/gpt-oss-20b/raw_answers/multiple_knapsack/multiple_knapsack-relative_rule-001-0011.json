@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin1_at_most_60_percent_of_bin0",
+      "measure": "x",
+      "scope": {
+        "bin": "bin1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "bin": "bin0"
+        }
+      },
+      "factor": 0.6
+    },
+    {
+      "name": "item5_at_least_30_percent_of_total",
+      "measure": "x",
+      "scope": {
+        "item": "item5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x"
+      },
+      "factor": 0.3
+    }
+  ]
+}

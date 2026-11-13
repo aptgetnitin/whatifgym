@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","rules":[{"measure":"team","scope":{"team":"team_10_11"},"sense":">=","relative_to":{"measure":"team","scope":{"team":"team_0_1"}},"factor":1.5},{"measure":"works","scope":{"worker":"worker_10"},"sense":"<=","relative_to":{"measure":"works"},"factor":0.05}]}

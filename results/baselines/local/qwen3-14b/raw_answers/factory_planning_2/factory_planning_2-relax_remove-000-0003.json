@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "relax": [
+    {
+      "constraint": "end_stock",
+      "scope": {
+        "product": [
+          "Prod5",
+          "Prod1"
+        ]
+      }
+    }
+  ]
+}

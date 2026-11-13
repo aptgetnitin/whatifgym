@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item14_placement_percentage",
+      "measure": "x",
+      "scope": {
+        "item": "item14"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {}
+      },
+      "factor": 0.6
+    }
+  ]
+}

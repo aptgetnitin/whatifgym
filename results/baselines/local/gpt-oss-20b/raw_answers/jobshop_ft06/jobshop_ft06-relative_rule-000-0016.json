@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "step6_start_time_fraction",
+      "measure": "start",
+      "scope": {
+        "step": 6
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {}
+      },
+      "factor": 0.4
+    }
+  ],
+  "note": "At least 40% of total start time must be from step 6."
+}

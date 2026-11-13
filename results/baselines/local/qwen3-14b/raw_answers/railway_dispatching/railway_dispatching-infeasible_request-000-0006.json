@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"total_entry_time","measure":"entry_time","scope":{},"sense":">=","value":5690}]}

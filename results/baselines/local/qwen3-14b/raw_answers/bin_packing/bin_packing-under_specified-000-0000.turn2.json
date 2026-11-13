@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "items",
+      "column": "weight",
+      "where": {
+        "item": "item8"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "The weight of item item8 is scaled by 50%."
+}

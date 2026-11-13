@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "max_flights_A321#2",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A321#2"
+      },
+      "sense": "<=",
+      "value": 7
+    }
+  ]
+}

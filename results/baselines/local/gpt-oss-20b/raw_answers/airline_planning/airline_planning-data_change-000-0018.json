@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "revenue",
+      "where": {
+        "flight": 4504
+      },
+      "factor": 0.7
+    }
+  ],
+  "note": "Revenue of flight 4504 reduced by 30%."
+}

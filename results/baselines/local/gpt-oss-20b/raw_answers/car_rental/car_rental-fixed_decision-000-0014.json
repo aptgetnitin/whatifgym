@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","fixed_decisions":[{"measure":"undamaged_stock","scope":{"day":"Saturday","depot":["Glasgow","Manchester","Birmingham","Plymouth"]},"value":45}],"note":"Set Saturday morning undamaged stock to 45 at each depot."}

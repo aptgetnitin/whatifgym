@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "min_entry_time_for_train_F",
+      "measure": "entry_time",
+      "scope": {
+        "train": "F"
+      },
+      "sense": ">=",
+      "value": 620
+    }
+  ]
+}

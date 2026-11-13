@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","logic":[{"name":"Wheat_purchase_implies_CSB_flow","at_least":1,"of":[{"measure":"purchase","scope":{"food":"Wheat","supplier":"Aleppo"},"sense":"<=","value":0},{"measure":"flow","scope":{"food":"Corn-soya blend (CSB)","from_city":"Aleppo","to_city":"Idleb"},"sense":">=","value":7000}]}]}

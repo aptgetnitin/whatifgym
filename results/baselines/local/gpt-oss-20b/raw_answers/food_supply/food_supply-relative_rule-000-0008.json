@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"milk_wheat_flow_ratio","measure":"flow","scope":{"food":"Milk"},"sense":"<=","relative_to":{"measure":"flow","scope":{"food":"Wheat"}},"factor":0.25}],"note":"Milk shipments at most 25% of Wheat shipments."}

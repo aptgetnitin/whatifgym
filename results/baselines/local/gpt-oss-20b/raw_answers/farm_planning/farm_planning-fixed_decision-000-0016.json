@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","fixed_decisions":[{"measure":"grow_beet","scope":{"year":"Year5"},"value":0}],"objective":[{"sense":"max","measure":"original"}],"note":"Fix sugar beet grown in Year5 to 0 and optimise remaining decisions."}

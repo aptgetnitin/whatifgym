@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "ask": "What is the new observation window (days) value?"
+}

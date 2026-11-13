@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "no_both_T18_and_E11",
+      "measure": "assign",
+      "scope": {
+        "facility": [
+          "T18",
+          "E11"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "facility": [
+            "T18"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

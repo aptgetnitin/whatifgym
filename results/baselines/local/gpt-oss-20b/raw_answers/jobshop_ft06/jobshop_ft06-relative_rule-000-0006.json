@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "measure": "start",
+      "scope": {
+        "job": "J5",
+        "step": 1
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "job": "J2",
+          "step": 1
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Restrict J5's first operation start to at most 75% of J2's first operation start."
+}

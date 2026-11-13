@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "max_one_location_with_legs",
+      "measure": "route",
+      "scope": {
+        "from_location": [
+          "Offenburg",
+          "Heidelberg",
+          "Freiburg im Breisgau",
+          "Mannheim",
+          "Lahr/Schwarzwald"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

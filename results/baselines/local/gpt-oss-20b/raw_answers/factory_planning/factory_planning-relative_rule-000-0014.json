@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"may_store_le_75_jun","measure":"store","scope":{"month":"May"},"sense":"<=","relative_to":{"measure":"store","scope":{"month":"Jun"}},"factor":0.75}],"note":"Units in stock for May must be at most 75% of units in stock for Jun."}

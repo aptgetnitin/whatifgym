@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"cap_entry_time_B","measure":"entry_time","scope":{"train":"B"},"sense":"<=","value":80}],"note":"Sum of entry times for train B must not exceed 80 minutes."}

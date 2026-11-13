@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"A3185_at_most_25pct_A31918","measure":"operate","scope":{"aircraft":"A318#5"},"sense":"<=","relative_to":{"measure":"operate","scope":{"aircraft":"A319#18"}},"factor":0.25}],"note":"Number of flights operated for A318#5 may be at most 25% of those for A319#18."}

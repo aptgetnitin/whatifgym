@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "rental_lengths",
+      "column": "price_same_depot",
+      "where": {
+        "rental_days": 1
+      },
+      "value": 38
+    },
+    {
+      "op": "set_param",
+      "name": "cost_per_car",
+      "value": 30
+    }
+  ],
+  "note": "Price for 1‑day rentals returned to the same depot set to 38, and weekly cost of owning a car set to 30."
+}

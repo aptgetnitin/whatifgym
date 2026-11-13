@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "transport_output_floor",
+      "measure": "production",
+      "scope": {
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 1110
+    }
+  ]
+}

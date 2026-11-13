@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "C_entry_time_5pct",
+      "measure": "entry_time",
+      "scope": {
+        "train": "C"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {
+          "train": ["A", "B", "C", "D", "E", "F"]
+        }
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "At most 5% of total entry time may be spent by train C."
+}

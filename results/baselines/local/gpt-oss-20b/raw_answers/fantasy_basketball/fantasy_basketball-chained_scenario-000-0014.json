@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "positions",
+      "column": "required",
+      "where": {
+        "position": "SF"
+      },
+      "value": 2
+    },
+    {
+      "op": "set_param",
+      "name": "salary_cap",
+      "value": 60000
+    }
+  ],
+  "note": "Keep SF required 2 and set salary cap to 60000."
+}

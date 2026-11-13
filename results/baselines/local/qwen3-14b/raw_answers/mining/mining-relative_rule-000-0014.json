@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "year2_worked_vs_year4_worked",
+      "measure": "operate",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "year": "Year4"
+        }
+      },
+      "factor": 3.0
+    },
+    {
+      "name": "year1_blend_vs_total_blend",
+      "measure": "blend",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "blend",
+        "scope": {}
+      },
+      "factor": 0.2
+    }
+  ]
+}

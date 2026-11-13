@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "profit_per_unit",
+      "factor": 1.2,
+      "where": {
+        "product": "Prod5"
+      }
+    }
+  ]
+}

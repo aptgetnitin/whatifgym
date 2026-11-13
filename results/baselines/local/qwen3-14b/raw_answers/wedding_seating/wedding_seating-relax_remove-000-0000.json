@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "base_model": "wedding_seating",
+  "relax": [
+    {
+      "constraint": "max_tables"
+    }
+  ],
+  "note": "Removing the limit on the number of tables by relaxing the 'max_tables' constraint."
+}

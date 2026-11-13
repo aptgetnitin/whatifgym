@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"prod7_make_cap_may_jun","measure":"make","scope":{"product":"Prod7","month":["May","Jun"]},"sense":"<=","value":90},{"name":"total_stock_limit","measure":"store","sense":"<=","value":800}],"note":"Limit on production of Prod7 in May/Jun and total stock over horizon."}

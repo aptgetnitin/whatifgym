@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "fixed_decisions": [
+    {
+      "measure": "raise_heifers",
+      "scope": {
+        "year": "Year1"
+      },
+      "value": 11
+    },
+    {
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year3"
+      },
+      "value": 0
+    }
+  ]
+}

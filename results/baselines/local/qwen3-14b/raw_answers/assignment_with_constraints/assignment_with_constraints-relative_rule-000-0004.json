@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "task_assignments_vs_workers",
+      "measure": "assign",
+      "scope": {
+        "worker": "all",
+        "task": "all"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "works",
+        "scope": {
+          "worker": "all"
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

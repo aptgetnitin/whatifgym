@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "logic": [
+    {
+      "name": "Scherer_hour2_output_disjunction",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "output",
+          "scope": {
+            "plant": "Scherer",
+            "hour": 2
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "output",
+          "scope": {
+            "plant": "Scherer",
+            "hour": 2
+          },
+          "sense": ">=",
+          "value": 5700
+        }
+      ]
+    }
+  ],
+  "note": "Enforce that the output of plant Scherer in hour 2 is either zero or at least 5700 MWh."
+}

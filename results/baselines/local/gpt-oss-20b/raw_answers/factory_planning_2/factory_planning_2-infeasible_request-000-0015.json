@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"min_make_Feb_Prod7","measure":"make","scope":{"month":"Feb","product":"Prod7"},"sense":">=","value":750}]}

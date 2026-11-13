@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "goes_first_J3_vs_J2",
+      "measure": "goes_first",
+      "scope": {
+        "other_job": "J3"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {
+          "other_job": "J2"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "start_time_J3_percentage",
+      "measure": "start",
+      "scope": {
+        "job": "J3"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {}
+      },
+      "factor": 0.6
+    }
+  ]
+}

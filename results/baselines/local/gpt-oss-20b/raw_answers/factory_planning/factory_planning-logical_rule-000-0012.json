@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "at_most_3_production_months",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "make",
+          "scope": { "month": "Jan" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": { "month": "Feb" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": { "month": "Mar" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": { "month": "Apr" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": { "month": "Jun" },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

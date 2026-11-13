@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "year5_output_min",
+      "measure": "production",
+      "scope": {
+        "year": 5
+      },
+      "sense": ">=",
+      "value": 4200
+    }
+  ],
+  "note": "Require total production in year 5 to be at least 4200 million USD."
+}

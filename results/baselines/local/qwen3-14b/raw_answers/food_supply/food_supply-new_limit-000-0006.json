@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "idleb_ration_min",
+   "measure": "ration",
+   "scope": {
+    "camp": "Idleb"
+   },
+   "sense": ">=",
+   "value": 6.1
+  },
+  {
+   "name": "total_flow_max",
+   "measure": "flow",
+   "scope": {
+    "food": "all",
+    "from_city": "all",
+    "to_city": "all"
+   },
+   "sense": "<=",
+   "value": 121500
+  }
+ ]
+}

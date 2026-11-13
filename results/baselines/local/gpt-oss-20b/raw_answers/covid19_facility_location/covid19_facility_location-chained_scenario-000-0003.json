@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "facilities",
+      "where": {
+        "facility": "E14"
+      }
+    },
+    {
+      "op": "set_param",
+      "name": "travel_cost_per_patient_distance",
+      "value": 3.8
+    }
+  ]
+}

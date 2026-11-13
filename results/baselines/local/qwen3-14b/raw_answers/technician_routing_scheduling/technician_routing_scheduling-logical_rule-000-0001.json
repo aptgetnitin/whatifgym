@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "limit_assigned_jobs",
+      "measure": "assign",
+      "scope": {
+        "customer": [
+          "Customer1",
+          "Customer2",
+          "Customer5",
+          "Customer6"
+        ]
+      },
+      "sense": "==",
+      "value": 3
+    }
+  ]
+}

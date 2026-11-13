@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "fixed_decisions": [
+    {
+      "measure": "pick",
+      "scope": {
+        "player": "Joel Embiid"
+      },
+      "value": 0
+    }
+  ]
+}

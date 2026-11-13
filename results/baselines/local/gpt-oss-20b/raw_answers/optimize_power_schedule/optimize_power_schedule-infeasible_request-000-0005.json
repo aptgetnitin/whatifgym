@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","fixed_decisions":[{"measure":"output","scope":{"plant":"Scherer","hour":17},"value":8600}],"note":"Fix output of Scherer at hour 17 to 8600 MWh."}

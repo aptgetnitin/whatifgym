@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "J4_end_sum_limit",
+      "measure": "end",
+      "scope": {
+        "job": "J4"
+      },
+      "sense": "<=",
+      "value": 170
+    }
+  ]
+}

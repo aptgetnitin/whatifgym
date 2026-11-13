@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"grow_beet_implies_buy_grain","at_least":1,"of":[{"measure":"grow_beet","scope":{"year":"Year5"},"sense":"<=","value":0},{"measure":"buy_grain","scope":{"year":"Year5"},"sense":">=","value":42}]}],"note":"If any beet is grown in Year5, grain bought must be at least 42."}

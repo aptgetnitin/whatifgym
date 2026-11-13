@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod5_min_40pct_of_total_make",
+      "measure": "make",
+      "scope": {
+        "product": "Prod5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make"
+      },
+      "factor": 0.4
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"sell_heifers_min_batch","at_least":1,"of":[{"measure":"sell_heifers","scope":{"year":"Year1"},"sense":"<=","value":0},{"measure":"sell_heifers","scope":{"year":"Year1"},"sense":">=","value":46}]}]}

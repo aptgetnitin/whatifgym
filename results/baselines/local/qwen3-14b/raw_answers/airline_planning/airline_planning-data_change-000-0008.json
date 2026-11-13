@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "passengers",
+      "where": {
+        "passengers": {
+          "type": "number",
+          "description": "Booked passengers (reported only)"
+        }
+      },
+      "factor": 0.9
+    }
+  ]
+}

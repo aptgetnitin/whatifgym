@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "allowed_teams",
+      "column": "works",
+      "where": {
+        "team": "team_5_6",
+        "worker": "worker_5"
+      },
+      "factor": 0.75
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": "Qamishli"
+      }
+    }
+  ],
+  "params": [
+    {
+      "op": "set_param",
+      "name": "max_nutrient_factor",
+      "value": 1.5
+    }
+  ]
+}

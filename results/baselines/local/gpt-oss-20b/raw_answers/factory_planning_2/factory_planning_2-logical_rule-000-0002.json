@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "makeJan_zero_or_sellJun_ge_6100",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jan"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Jun"
+          },
+          "sense": ">=",
+          "value": 6100
+        }
+      ]
+    }
+  ]
+}

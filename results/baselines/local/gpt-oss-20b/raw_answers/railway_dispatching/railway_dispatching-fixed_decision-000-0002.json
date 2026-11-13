@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "fixed_decisions": [
+    {
+      "measure": "meet",
+      "scope": {
+        "resource": 5,
+        "train": "A",
+        "other_train": "C"
+      },
+      "value": 1
+    }
+  ],
+  "rules": [
+    {
+      "measure": "meet",
+      "scope": {
+        "resource": 5
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "note": "Force trains A and C to meet on resource 5 and ensure exactly one pair of trains shares that resource at the same time."
+}

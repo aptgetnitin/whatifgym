@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "measure": "reservoir_level",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "value": 0.99
+    },
+    {
+      "measure": "nstart",
+      "scope": {
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ],
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "value": 7
+    }
+  ],
+  "note": "Reservoir level at period 00-06 must be at least 0.99 m, and total thermal units started across all periods and types must not exceed 7."
+}

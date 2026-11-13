@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "measure": "finish_time",
+      "scope": {
+        "train": "E"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "finish_time"
+      },
+      "factor": 0.1
+    }
+  ],
+  "note": "Finish time of train E must not exceed 10% of the sum of all trains' finish times."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "max_three_on",
+      "measure": "on",
+      "scope": {
+        "plant": ["Edwin I Hatch", "Scherer", "OIL", "OTHER COAL"]
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ],
+  "note": "At most 3 of the specified plants may be on at any hour."
+}

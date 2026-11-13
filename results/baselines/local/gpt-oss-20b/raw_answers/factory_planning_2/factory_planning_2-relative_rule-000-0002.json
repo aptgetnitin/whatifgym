@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "make_at_least_2x_sell",
+      "measure": "make",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell"
+      },
+      "factor": 2.0
+    }
+  ]
+}

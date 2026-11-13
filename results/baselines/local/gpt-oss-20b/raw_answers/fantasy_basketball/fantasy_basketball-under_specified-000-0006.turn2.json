@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "players",
+      "column": "predicted_points",
+      "where": {
+        "player": "LeBron James"
+      },
+      "value": 96
+    }
+  ],
+  "note": "Predicted points updated for LeBron James."
+}

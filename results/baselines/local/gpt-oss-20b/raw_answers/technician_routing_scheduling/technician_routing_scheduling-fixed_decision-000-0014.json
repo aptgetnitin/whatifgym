@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","fixed_decisions":[{"measure":"unfilled","scope":{"customer":"Customer7"},"value":1}]}

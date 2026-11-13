@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "purchase",
+   "scope": {
+    "food": {
+     "all": true
+    },
+    "supplier": {
+     "all": true
+    }
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_purchase",
+   "measure": "purchase",
+   "scope": {
+    "food": {
+     "all": true
+    },
+    "supplier": {
+     "all": true
+    }
+   },
+   "sense": ">=",
+   "value": 1621950
+  }
+ ]
+}

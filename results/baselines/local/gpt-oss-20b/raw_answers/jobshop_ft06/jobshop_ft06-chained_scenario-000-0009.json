@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J1",
+        "step": 2
+      },
+      "factor": 1.25
+    }
+  ],
+  "rules": [
+    {
+      "measure": "end",
+      "scope": {},
+      "sense": "<=",
+      "value": 1000,
+      "name": "cap_end_total"
+    }
+  ],
+  "note": "Processing time of J1 step 2 increased by 25%."
+}

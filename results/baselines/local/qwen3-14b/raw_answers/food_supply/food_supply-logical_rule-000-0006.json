@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_ration_idleb_amman_purchase",
+      "measure": "purchase",
+      "scope": {
+        "supplier": "Amman"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Oil",
+          "camp": "Idleb"
+        }
+      },
+      "factor": 12050
+    }
+  ]
+}

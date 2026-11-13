@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","logic":[{"name":"GAS_hour19_zero_or_min","at_least":1,"of":[{"measure":"output","scope":{"plant":"GAS","hour":19},"sense":"==","value":0},{"measure":"output","scope":{"plant":"GAS","hour":19},"sense":">=","value":2650}]}]}

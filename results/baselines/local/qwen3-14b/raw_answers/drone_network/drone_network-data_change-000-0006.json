@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "700 20TH ST"
+   },
+   "factor": 0.7
+  }
+ ],
+ "note": "A 30% reduction in incidents for location 700 20TH ST is achieved by scaling the incidents column for that location by 0.7."
+}

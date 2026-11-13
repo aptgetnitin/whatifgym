@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_vs_soc",
+      "measure": "discharge",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "soc"
+      },
+      "factor": 1.25
+    }
+  ]
+}

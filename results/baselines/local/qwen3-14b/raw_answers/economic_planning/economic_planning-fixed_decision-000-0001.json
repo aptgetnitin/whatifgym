@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "fixed_decisions": [
+    {
+      "measure": "stock",
+      "scope": {
+        "year": 5,
+        "industry": ["coal", "steel", "transport"]
+      },
+      "value": 260
+    }
+  ]
+}

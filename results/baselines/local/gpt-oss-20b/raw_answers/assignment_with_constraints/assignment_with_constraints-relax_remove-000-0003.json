@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "relax": [
+    {
+      "constraint": "team_pattern",
+      "scope": {
+        "worker": ["worker_1", "worker_10"]
+      }
+    }
+  ],
+  "note": "Lift the allowed‑team restriction for worker_1 and worker_10."
+}

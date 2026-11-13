@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "logic": [
+    {
+      "name": "J3_J4_nonzero_goes_first",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "goes_first",
+          "scope": {
+            "job": "J3"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "job": "J4"
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "note": "Ensure that J3 and J4 cannot both have any goes_first assignments."
+}

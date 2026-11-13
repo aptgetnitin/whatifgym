@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "semi_skilled_short_time_fraction",
+      "measure": "short_time",
+      "scope": {
+        "skill": "semi_skilled"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "short_time"
+      },
+      "factor": 0.05
+    }
+  ]
+}

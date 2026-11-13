@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "D_at_least_25pct_F",
+      "measure": "finish_time",
+      "scope": {
+        "train": "D"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "finish_time",
+        "scope": {
+          "train": "F"
+        }
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Finish time of D must be at least 25% of finish time of F."
+}

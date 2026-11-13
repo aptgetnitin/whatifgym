@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "year2_blend_limit",
+      "measure": "blend",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "blend",
+        "scope": {
+          "year": [
+            "Year1",
+            "Year2",
+            "Year3",
+            "Year4",
+            "Year5"
+          ]
+        }
+      },
+      "factor": 0.1
+    }
+  ]
+}

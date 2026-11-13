@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "required",
+      "value": 2
+    },
+    {
+      "op": "scale",
+      "table": "players",
+      "column": "salary",
+      "where": {
+        "player": "Taj Gibson"
+      },
+      "factor": 0.5
+    }
+  ]
+}

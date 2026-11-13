@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "goes_first_limit_for_E",
+      "measure": "goes_first",
+      "scope": {
+        "train": "E"
+      },
+      "sense": "<=",
+      "value": 5
+    },
+    {
+      "name": "entry_time_for_F",
+      "measure": "entry_time",
+      "scope": {
+        "train": "F"
+      },
+      "sense": ">=",
+      "value": 310
+    }
+  ]
+}

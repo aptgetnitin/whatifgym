@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "only_one_facility_used",
+      "measure": "assign",
+      "scope": {
+        "facility": [
+          "E11",
+          "E10",
+          "E7",
+          "E2"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

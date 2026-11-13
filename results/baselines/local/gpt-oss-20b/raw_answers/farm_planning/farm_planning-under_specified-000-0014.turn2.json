@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "grain_buy_floor_year3",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": ">=",
+      "value": 45
+    }
+  ],
+  "note": "Floor on grain bought in Year3"
+}

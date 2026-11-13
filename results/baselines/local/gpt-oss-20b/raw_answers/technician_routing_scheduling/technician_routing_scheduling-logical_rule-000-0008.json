@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "no_legs_from_Heidelberg",
+      "measure": "route",
+      "scope": {
+        "from_location": "Heidelberg"
+      },
+      "sense": "==",
+      "value": 0
+    },
+    {
+      "name": "no_legs_from_Baden-Baden",
+      "measure": "route",
+      "scope": {
+        "from_location": "Baden-Baden"
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ],
+  "note": "No legs driven from Heidelberg or Baden-Baden"
+}

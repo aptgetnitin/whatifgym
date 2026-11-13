@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "manchester_rentals_fixed",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Manchester"
+      },
+      "sense": "==",
+      "value": 97
+    }
+  ]
+}

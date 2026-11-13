@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "logic": [
+    {
+      "name": "minimum_batch_other_coal_hour18",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "output",
+          "scope": {
+            "plant": "OTHER COAL",
+            "hour": 18
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "output",
+          "scope": {
+            "plant": "OTHER COAL",
+            "hour": 18
+          },
+          "sense": ">=",
+          "value": 6050
+        }
+      ]
+    }
+  ]
+}

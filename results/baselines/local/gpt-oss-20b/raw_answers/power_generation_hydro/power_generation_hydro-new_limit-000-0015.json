@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "max_thermal0_output",
+      "measure": "output",
+      "scope": {
+        "type": ["Thermal0"]
+      },
+      "sense": "<=",
+      "value": 33300
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","relax":[{"constraint":"team_pattern"}],"note":"Drop the rule that only allowed teams may work."}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min4_extract_min",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine4"
+      },
+      "sense": ">=",
+      "value": 9562500
+    }
+  ],
+  "note": "Total extraction from Mine4 must be at least 9,562,500 tons."
+}

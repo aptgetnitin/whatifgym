@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","data_changes":[{"op":"scale","table":"operations","column":"duration","where":{"job":"J0","step":3},"factor":0.8}],"rules":[{"measure":"end","scope":{"job":"J0"},"sense":">=","value":280,"name":"floor_end_J0"}]}

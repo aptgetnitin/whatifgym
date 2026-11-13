@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","fixed_decisions":[{"measure":"soc","scope":{"hour":"03-04"},"value":40}],"note":"This fixes the stored energy at 40 kWh in hour 03-04, which exceeds the battery capacity and will likely render the model infeasible."}

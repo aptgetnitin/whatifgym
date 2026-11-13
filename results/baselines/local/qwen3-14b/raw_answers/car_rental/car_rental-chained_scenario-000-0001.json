@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "measure": "rentals",
+      "scope": {
+        "day": "Saturday"
+      },
+      "sense": ">=",
+      "value": 440,
+      "name": "floor_rentals_Saturday"
+    }
+  ]
+}

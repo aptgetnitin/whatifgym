@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "F_resource4_entry_time",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "F",
+            "resource": 4
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "F",
+            "resource": 4
+          },
+          "sense": ">=",
+          "value": 65
+        }
+      ]
+    }
+  ]
+}

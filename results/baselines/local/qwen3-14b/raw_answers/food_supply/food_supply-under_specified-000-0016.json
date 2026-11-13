@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "ask": "What is the minimum ration per person (in units of 100 g a day) that should be enforced?"
+}

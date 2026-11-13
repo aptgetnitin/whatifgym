@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "nstart"
+    },
+    {
+      "sense": "max",
+      "measure": "pump"
+    }
+  ],
+  "note": "Lexicographic objective: keep total generating cost at its minimum, then maximize the total number of thermal units started, and finally maximize total pumping power."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "rules": [
+    {
+      "name": "job_1_end_time",
+      "measure": "end_time",
+      "scope": {
+        "job": "job_1"
+      },
+      "sense": ">=",
+      "value": 49900
+    }
+  ]
+}

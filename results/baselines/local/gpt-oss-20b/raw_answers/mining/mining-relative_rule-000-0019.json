@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "blend_year4_at_most_75_percent_of_year3",
+      "measure": "blend",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "blend",
+        "scope": {
+          "year": "Year3"
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Policy: blended ore sold in Year4 must be at most 75% of the blended ore sold in Year3."
+}

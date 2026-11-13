@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "import_price",
+      "where": {},
+      "factor": 1.25
+    }
+  ],
+  "note": "The grid import price (EUR/kWh) for all hours is increased by 25%."
+}

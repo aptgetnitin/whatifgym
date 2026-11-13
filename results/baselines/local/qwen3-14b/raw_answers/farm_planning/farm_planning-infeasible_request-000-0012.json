@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "age2_cattle_head",
+   "measure": "herd",
+   "scope": {
+    "age": 2
+   },
+   "sense": "==",
+   "value": 149
+  }
+ ]
+}

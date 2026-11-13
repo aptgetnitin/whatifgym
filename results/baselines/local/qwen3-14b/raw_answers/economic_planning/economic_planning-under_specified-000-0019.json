@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "stock_cap",
+      "measure": "stock",
+      "scope": {
+        "year": [1, 2, 3, 4, 5],
+        "industry": ["coal", "steel", "transport"]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ],
+  "note": "A cap on the output held in stock is implemented as a rule limiting the sum of the stock measure over all years and industries to zero."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J1",
+        "step": 2
+      },
+      "delta": 2.5
+    }
+  ],
+  "note": "Increased processing time of J1's step 2 by 25% (original duration * 0.25)."
+}

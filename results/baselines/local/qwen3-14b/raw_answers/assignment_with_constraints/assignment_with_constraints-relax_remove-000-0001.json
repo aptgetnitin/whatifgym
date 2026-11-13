@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "relax": [
+    {
+      "constraint": "size[worker]"
+    },
+    {
+      "constraint": "one_team[group]"
+    },
+    {
+      "constraint": "team_pattern[worker]"
+    }
+  ],
+  "note": "Relaxing the size limit, team selection, and team pattern constraints to allow any worker to take any task without team restrictions."
+}

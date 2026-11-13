@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[{"op":"set","table":"industries","column":"initial_capacity","where":{"industry":"steel"},"value":180}],"note":"Set initial capacity for steel to 180."}

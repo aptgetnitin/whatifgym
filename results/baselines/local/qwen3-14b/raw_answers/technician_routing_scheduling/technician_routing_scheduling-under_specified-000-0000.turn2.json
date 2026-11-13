@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "customers",
+      "column": "due_time",
+      "where": {
+        "customer": "Customer6"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "The due time for Customer6 is scaled by 50% as per the planner's statement."
+}

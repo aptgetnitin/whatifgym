@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "measure": "production",
+      "sense": "<=",
+      "value": 2050
+    }
+  ]
+}

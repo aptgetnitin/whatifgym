@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "input_output",
+      "column": "input_per_unit_output",
+      "where": {},
+      "factor": 0.8
+    },
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": "coal"
+      },
+      "value": 30
+    }
+  ]
+}

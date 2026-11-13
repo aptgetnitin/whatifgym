@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "jan_prod1_prod5_output_limit",
+      "measure": "make",
+      "scope": {
+        "product": [
+          "Prod1",
+          "Prod5"
+        ],
+        "month": "Jan"
+      },
+      "sense": "<=",
+      "value": 1150
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "transport_stock_min_year1",
+      "measure": "stock",
+      "scope": {
+        "year": 1,
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 118
+    }
+  ]
+}

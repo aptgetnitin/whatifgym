@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "C_finish_time_min_34",
+      "measure": "finish_time",
+      "scope": {
+        "train": "C"
+      },
+      "sense": ">=",
+      "value": 34
+    }
+  ],
+  "note": "Ensures train C arrives at destination at least 34 minutes if arrival time > 0."
+}

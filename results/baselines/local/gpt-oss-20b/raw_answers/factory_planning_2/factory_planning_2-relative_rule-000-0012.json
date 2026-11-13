@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "store_prod2_le_90pct_prod7",
+      "measure": "store",
+      "scope": {
+        "product": "Prod2",
+        "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod7",
+          "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+        }
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "Ensure inventory of Prod2 never exceeds 90% of Prod7 each month."
+}

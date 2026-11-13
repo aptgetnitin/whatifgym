@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "coal_production_year2_min",
+      "measure": "production",
+      "scope": {
+        "year": 2,
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 600
+    }
+  ]
+}

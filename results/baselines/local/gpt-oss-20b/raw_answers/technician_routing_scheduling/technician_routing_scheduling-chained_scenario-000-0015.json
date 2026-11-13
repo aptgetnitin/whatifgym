@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "cap_start_time_total",
+      "measure": "start_time",
+      "scope": {},
+      "sense": "<=",
+      "value": 600
+    },
+    {
+      "name": "cap_legs_total",
+      "measure": "route",
+      "scope": {},
+      "sense": "<=",
+      "value": 7
+    }
+  ]
+}

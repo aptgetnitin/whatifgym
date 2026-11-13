@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "logic": [
+    {
+      "name": "coal_output_year6",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "production",
+          "scope": {
+            "year": 6,
+            "industry": "coal"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "production",
+          "scope": {
+            "year": 6,
+            "industry": "coal"
+          },
+          "sense": ">=",
+          "value": 500
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "skilled_recruitment_share",
+      "measure": "recruit",
+      "scope": {
+        "skill": "skilled"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "recruit",
+        "scope": {
+          "skill": [
+            "unskilled",
+            "semi_skilled",
+            "skilled"
+          ]
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

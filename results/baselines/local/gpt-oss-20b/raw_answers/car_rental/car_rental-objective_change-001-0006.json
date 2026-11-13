@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "damaged_stock",
+      "scope": {
+        "depot": "Manchester"
+      }
+    }
+  ],
+  "note": "First maximize weekly profit, then minimize damaged cars at Manchester in the morning."
+}

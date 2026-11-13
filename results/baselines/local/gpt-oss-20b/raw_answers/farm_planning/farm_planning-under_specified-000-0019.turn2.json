@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"total_raise_heifers_cap","measure":"raise_heifers","sense":"<=","value":21}]}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "health_costs",
+      "column": "health_cost",
+      "where": {
+        "plant": "Scherer",
+        "hour": 9
+      },
+      "value": 3
+    }
+  ],
+  "note": "Set health cost for Scherer at hour 9 to 3"
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "measure": "operate",
+      "scope": {},
+      "sense": "<=",
+      "value": 13,
+      "name": "cap_mine_years_worked"
+    }
+  ]
+}

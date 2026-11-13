@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j3_go_first_limit",
+      "measure": "goes_first",
+      "scope": {
+        "job": "J3"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ]
+}

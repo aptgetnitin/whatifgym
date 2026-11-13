@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"veg1_vs_veg2_buy","measure":"buy","scope":{"oil":"VEG1"},"sense":"<=","relative_to":{"measure":"buy","scope":{"oil":"VEG2"}},"factor":1.0},{"name":"veg1_storage_fraction","measure":"store","scope":{"oil":"VEG1"},"sense":"<=","relative_to":{"measure":"store"},"factor":0.05}]}

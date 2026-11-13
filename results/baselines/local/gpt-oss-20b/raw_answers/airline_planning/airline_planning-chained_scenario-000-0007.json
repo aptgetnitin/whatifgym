@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "passengers",
+      "where": {
+        "flight": 3073
+      },
+      "value": 152
+    }
+  ],
+  "rules": [
+    {
+      "name": "max_operated_flights",
+      "measure": "operate",
+      "sense": "<=",
+      "value": 46
+    }
+  ],
+  "note": "Total flights operated <= 46"
+}

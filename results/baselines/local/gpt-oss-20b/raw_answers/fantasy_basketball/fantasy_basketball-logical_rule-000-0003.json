@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "rules": [
+    {
+      "name": "at_most_one_of_four",
+      "measure": "pick",
+      "scope": {
+        "player": [
+          "Jarrett Jack",
+          "Trevor Ariza",
+          "Markieff Morris",
+          "Joel Embiid"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "At most one of the four specified players can be selected."
+}

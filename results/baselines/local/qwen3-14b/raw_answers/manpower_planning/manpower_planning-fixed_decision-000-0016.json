@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "fixed_decisions": [
+    {
+      "measure": "workforce",
+      "scope": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "value": 0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

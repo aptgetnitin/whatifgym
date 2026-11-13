@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "sell_heifers",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ]
+}

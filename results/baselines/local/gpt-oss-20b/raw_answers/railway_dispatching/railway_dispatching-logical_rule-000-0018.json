@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "finish_time_conditional_entry_time",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "finish_time",
+          "scope": {
+            "train": "B"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "B",
+            "resource": 6
+          },
+          "sense": ">=",
+          "value": 58
+        }
+      ]
+    }
+  ]
+}

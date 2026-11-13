@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "meet"
+    }
+  ],
+  "note": "Maximize the number of overlapping train pairs while keeping total delay at its optimal value."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_transfers_min",
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Wednesday",
+        "from_depot": "Plymouth",
+        "to_depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 47.6
+    }
+  ]
+}

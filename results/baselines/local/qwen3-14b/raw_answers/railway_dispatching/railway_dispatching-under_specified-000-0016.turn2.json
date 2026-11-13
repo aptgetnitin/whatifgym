@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "minimum_arrival_time_for_train_C",
+      "measure": "finish_time",
+      "scope": {
+        "train": "C"
+      },
+      "sense": ">=",
+      "value": 26
+    }
+  ]
+}

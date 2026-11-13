@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set_param","name":"salary_cap","value":45000}],"note":"Salary cap increased by 50%."}

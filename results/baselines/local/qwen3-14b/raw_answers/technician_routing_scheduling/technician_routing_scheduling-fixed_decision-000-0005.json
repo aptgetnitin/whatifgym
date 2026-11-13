@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "travel_times",
+      "column": "travel_min",
+      "where": {
+        "from_location": "Loerrach",
+        "to_location": {
+          "$in": ["Heidelberg", "Freiburg im Breisgau", "Mannheim", "Karlsruhe", "Baden-Baden", "Buehl", "Offenburg", "Lahr/Schwarzwald"]
+        }
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "travel_times",
+      "column": "travel_min",
+      "where": {
+        "from_location": {
+          "$in": ["Heidelberg", "Freiburg im Breisgau", "Mannheim", "Karlsruhe", "Baden-Baden", "Buehl", "Offenburg", "Lahr/Schwarzwald"]
+        },
+        "to_location": "Loerrach"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Setting travel times from and to Loerrach to zero effectively fixes the start time at zero for Loerrach."
+}

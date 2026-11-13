@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "short_time_productivity",
+      "factor": 0.75
+    }
+  ],
+  "note": "Short‑time worker productivity scaled by 0.75."
+}

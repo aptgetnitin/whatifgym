@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "measure": "route",
+      "sense": "<=",
+      "value": 7
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"max_total_store_prod1","measure":"store","scope":{"product":"Prod1"},"sense":"<=","value":80}],"note":"Total stock of Prod1 across all months limited to 80."}

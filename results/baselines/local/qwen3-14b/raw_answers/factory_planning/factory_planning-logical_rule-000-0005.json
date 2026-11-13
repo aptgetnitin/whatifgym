@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "feb_stock_rule",
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "==",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Feb"
+        }
+      },
+      "factor": 0.0
+    },
+    {
+      "name": "feb_stock_rule_2",
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "value": 600
+    }
+  ]
+}

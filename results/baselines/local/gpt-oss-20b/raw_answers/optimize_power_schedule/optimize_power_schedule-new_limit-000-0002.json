@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"min_plant_hours_hour6","measure":"on","scope":{"hour":6},"sense":">=","value":9},{"name":"max_output_vogtle","measure":"output","scope":{"plant":"Vogtle"},"sense":"<=","value":45100}],"note":"Enforce at least 9 plant‑hours on at hour 6 and limit Vogtle total output to 45100 MWh."}

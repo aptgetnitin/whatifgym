@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "VEG2_storage_min_batch",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "oil": "VEG2"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "oil": "VEG2"
+          },
+          "sense": ">=",
+          "value": 3100
+        }
+      ]
+    }
+  ]
+}

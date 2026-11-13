@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "B2_min18_if_nonzero",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "B",
+            "resource": 2
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "B",
+            "resource": 2
+          },
+          "sense": ">=",
+          "value": 18
+        }
+      ]
+    }
+  ]
+}

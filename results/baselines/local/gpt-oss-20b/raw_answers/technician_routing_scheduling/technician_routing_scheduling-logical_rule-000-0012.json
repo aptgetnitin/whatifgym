@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "logic": [
+    {
+      "name": "Mannheim_start_time_conditional",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "start_time",
+          "scope": {
+            "location": "Mannheim"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "start_time",
+          "scope": {
+            "location": "Mannheim"
+          },
+          "sense": ">=",
+          "value": 48
+        }
+      ]
+    }
+  ],
+  "note": "If the start time at Mannheim is above zero, it must be at least 48 minutes."
+}

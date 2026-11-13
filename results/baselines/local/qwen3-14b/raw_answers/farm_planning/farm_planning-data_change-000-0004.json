@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "land_area",
+   "factor": 1.25
+  }
+ ],
+ "note": "Increasing the grain-suitable acres by 25% for every row of the land groups suitable for grain table is equivalent to scaling the land_area parameter by 1.25."
+}

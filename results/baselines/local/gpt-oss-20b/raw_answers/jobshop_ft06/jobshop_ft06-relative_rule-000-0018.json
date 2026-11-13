@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "J1_start_time_share",
+      "measure": "start",
+      "scope": {
+        "job": "J1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "start"
+      },
+      "factor": 0.5
+    }
+  ]
+}

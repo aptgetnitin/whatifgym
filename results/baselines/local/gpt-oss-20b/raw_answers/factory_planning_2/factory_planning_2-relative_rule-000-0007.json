@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"may_production_50pct","measure":"make","scope":{"month":"May"},"sense":">=","relative_to":{"measure":"make"},"factor":0.5},{"name":"feb_sales_1.5x_jan","measure":"sell","scope":{"month":"Feb"},"sense":">=","relative_to":{"measure":"sell","scope":{"month":"Jan"}},"factor":1.5}]}

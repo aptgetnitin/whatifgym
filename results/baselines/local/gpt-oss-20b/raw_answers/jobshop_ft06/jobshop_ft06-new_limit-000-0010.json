@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"J1_first_pairs_min18","measure":"goes_first","scope":{"job":"J1","other_job":["J2","J3","J4","J5"]},"sense":">=","value":18}],"note":"Ensure at least 18 of the 24 possible pairs where J1 is first on a machine are scheduled with J1 first."}

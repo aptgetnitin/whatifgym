@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_3107_to_3112_ratio",
+      "measure": "operate",
+      "scope": {
+        "flight": [
+          3107
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "flight": [
+            3112
+          ]
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

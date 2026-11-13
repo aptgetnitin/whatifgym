@@ -1,0 +1,51 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "mine2_open_years_year5",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year5",
+            "mine": "Mine2"
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "mine2_open_years_year4",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year4",
+            "mine": "Mine2"
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "mine1_open_years_year4",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "open",
+          "scope": {
+            "year": "Year4",
+            "mine": "Mine1"
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

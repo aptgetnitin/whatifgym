@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "resources",
+      "column": "duration",
+      "where": {
+        "resource": 2
+      },
+      "value": 3
+    }
+  ],
+  "note": "Set minimum time on resource 2 to 3 minutes."
+}

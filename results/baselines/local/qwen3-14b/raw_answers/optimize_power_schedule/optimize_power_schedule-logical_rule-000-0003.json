@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "at_most_one_plant_on",
+      "measure": "on",
+      "scope": {
+        "plant": [
+          "BIOMASS",
+          "GAS",
+          "Vogtle"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","data_changes":[{"op":"scale","table":"fuels","column":"fuel_cost","where":{"fuel":"NG"},"factor":0.5}],"note":"Fuel cost for natural gas falls by 50%."}

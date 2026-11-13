@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "salary_cap",
+      "factor": 1.25
+    }
+  ]
+}

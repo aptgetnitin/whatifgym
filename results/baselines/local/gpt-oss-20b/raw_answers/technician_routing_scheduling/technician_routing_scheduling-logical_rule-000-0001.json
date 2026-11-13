@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"name":"max_three_of_four_customers_assigned","measure":"assign","scope":{"customer":["Customer6","Customer5","Customer1","Customer2"]},"sense":"<=","value":3}],"note":"At most three of the four specified customers may be assigned to technicians."}

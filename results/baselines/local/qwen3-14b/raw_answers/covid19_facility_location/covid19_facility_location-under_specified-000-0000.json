@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"covid19_facility_location","ask":"What is the upper limit on patients assigned? Please specify the maximum number of patients that can be assigned to any facility or any constraint related to patient assignment limits."}

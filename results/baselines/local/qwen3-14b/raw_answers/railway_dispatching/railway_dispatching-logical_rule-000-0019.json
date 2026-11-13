@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "train_b_and_a_goes_first_exclusion",
+      "measure": "goes_first",
+      "scope": {
+        "resource": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "train": [
+          "A",
+          "B"
+        ],
+        "other_train": [
+          "A",
+          "B"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

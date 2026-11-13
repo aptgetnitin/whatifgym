@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "stock_may_jun_ratio",
+      "measure": "store",
+      "scope": {
+        "month": "May",
+        "product": "all"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Jun",
+          "product": "all"
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

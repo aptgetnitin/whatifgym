@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "capacity_year_5",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 5
+      },
+      "sense": ">=",
+      "value": 710
+    },
+    {
+      "name": "transport_stock_limit",
+      "measure": "stock",
+      "scope": {
+        "industry": "transport"
+      },
+      "sense": "<=",
+      "value": 39
+    }
+  ]
+}

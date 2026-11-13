@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"covid19_facility_location","data_changes":[{"op":"remove","table":"counties","where":{"county":"C7"}},{"op":"set_param","name":"travel_cost_per_patient_distance","value":3.8}],"note":"Travel cost per patient per distance unit set to 3.8."}

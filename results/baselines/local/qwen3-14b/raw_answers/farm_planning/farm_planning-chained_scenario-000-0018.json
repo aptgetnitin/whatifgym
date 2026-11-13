@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "year4_grain_buy_min",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": ">=",
+      "value": 60
+    }
+  ]
+}

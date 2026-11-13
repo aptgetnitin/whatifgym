@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","logic":[{"name":"no_double_charge_02_03_03_04","at_least":1,"of":[{"measure":"charge","scope":{"hour":"02-03"},"sense":"==","value":0},{"measure":"charge","scope":{"hour":"03-04"},"sense":"==","value":0}]}]}

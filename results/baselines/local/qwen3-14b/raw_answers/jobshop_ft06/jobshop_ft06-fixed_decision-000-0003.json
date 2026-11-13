@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "fixed_decisions": [
+    {
+      "measure": "end",
+      "scope": {
+        "job": "J2",
+        "step": 1
+      },
+      "value": 6.2
+    },
+    {
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M5",
+        "job": "J0",
+        "other_job": "J5"
+      },
+      "value": 1
+    }
+  ]
+}

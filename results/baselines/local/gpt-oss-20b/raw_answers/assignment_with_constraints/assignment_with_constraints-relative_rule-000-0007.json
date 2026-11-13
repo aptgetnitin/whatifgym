@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "worker1_min_30pct",
+      "measure": "assign",
+      "scope": {
+        "worker": "worker_1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {}
+      },
+      "factor": 0.3
+    }
+  ],
+  "note": "At least 30% of total task assignments must go to worker_1."
+}

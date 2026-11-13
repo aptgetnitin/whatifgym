@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "factor": 1.25
+    },
+    {
+      "op": "set",
+      "table": "health_costs",
+      "column": "health_cost",
+      "where": {
+        "plant": "Bowen",
+        "hour": 7
+      },
+      "value": 5.6
+    }
+  ]
+}

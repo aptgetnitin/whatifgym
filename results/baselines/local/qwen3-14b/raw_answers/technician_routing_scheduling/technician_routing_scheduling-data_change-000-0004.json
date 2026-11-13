@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "skills",
+      "column": "qualified",
+      "where": {
+        "technician": [
+          "Albert",
+          "Bob",
+          "Carlos",
+          "Doris",
+          "Ed",
+          "Flor",
+          "Gina"
+        ],
+        "job_type": [
+          "Equipment Installation",
+          "Equipment Setup",
+          "Inspect/Service Equipment",
+          "Repair - Regular",
+          "Repair - Important",
+          "Repair - Urgent",
+          "Repair - Critical"
+        ]
+      },
+      "factor": 0.9
+    },
+    {
+      "op": "set",
+      "table": "job_types",
+      "column": "priority",
+      "where": {
+        "job_type": "Equipment Setup"
+      },
+      "value": 6
+    }
+  ]
+}

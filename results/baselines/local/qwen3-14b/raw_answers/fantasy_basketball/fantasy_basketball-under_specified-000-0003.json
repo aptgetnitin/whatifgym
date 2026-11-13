@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set_param","name":"salary_cap","value":35000}],"note":"Adjusting the salary cap parameter to 35,000."}

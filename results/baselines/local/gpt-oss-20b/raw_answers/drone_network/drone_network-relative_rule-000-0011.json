@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"measure":"linked_load","scope":{"base":"5145 RURITAN COURT Rescue Squad"},"sense":"<=","relative_to":{"measure":"linked_load"},"factor":0.05}],"note":"Base 5145 must account for at most 5% of total linked load (hours)."}

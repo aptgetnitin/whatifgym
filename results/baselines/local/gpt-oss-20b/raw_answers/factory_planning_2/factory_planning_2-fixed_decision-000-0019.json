@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "fixed_decisions": [
+    {
+      "measure": "store",
+      "scope": {
+        "month": "Mar",
+        "product": "Prod4"
+      },
+      "value": 120
+    },
+    {
+      "measure": "sell",
+      "scope": {
+        "month": "Jan"
+      },
+      "value": 570
+    }
+  ],
+  "note": "Fixed store for Prod4 in Mar and fixed sales for all products in Jan."
+}

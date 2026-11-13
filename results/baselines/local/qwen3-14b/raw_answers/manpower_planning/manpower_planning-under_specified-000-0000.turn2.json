@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "recruit_limit_skilled",
+      "measure": "recruit",
+      "scope": {
+        "skill": "skilled"
+      },
+      "sense": "<=",
+      "value": 750
+    }
+  ]
+}

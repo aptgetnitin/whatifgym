@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","data_changes":[{"op":"set","table":"flights","column":"revenue","where":{"flight":4569},"value":22600}],"rules":[{"measure":"operate","scope":{"aircraft":"A318#8"},"sense":"<=","value":4,"name":"cap_operate_A318#8"}]}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "other_coal_shutdown_min",
+      "measure": "stop",
+      "scope": {
+        "plant": "OTHER COAL"
+      },
+      "sense": ">=",
+      "value": 2
+    },
+    {
+      "name": "total_on_hours_max",
+      "measure": "on",
+      "scope": {},
+      "sense": "<=",
+      "value": 134
+    }
+  ]
+}

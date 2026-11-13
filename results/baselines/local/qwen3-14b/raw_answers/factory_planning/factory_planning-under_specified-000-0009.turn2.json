@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod1_total_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod1"
+      },
+      "sense": "<=",
+      "value": 1350
+    }
+  ],
+  "note": "A supplier constraint limits Prod1 to 1350 units in total."
+}

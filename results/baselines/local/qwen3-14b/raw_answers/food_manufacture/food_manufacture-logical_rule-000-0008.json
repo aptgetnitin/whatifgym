@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "oil3_storage_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "buy",
+          "scope": {
+            "month": "Jun",
+            "oil": {
+              "$wildcard": true
+            }
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "month": "May",
+            "oil": "OIL3"
+          },
+          "sense": ">=",
+          "value": 1000
+        }
+      ]
+    }
+  ]
+}

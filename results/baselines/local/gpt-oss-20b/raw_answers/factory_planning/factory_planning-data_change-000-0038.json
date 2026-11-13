@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","fixed_decisions":[{"measure":"sell","scope":{"month":"Mar","product":"Prod2"},"value":0}],"data_changes":[{"op":"add","table":"downtime","rows":[{"month":"Jan","machine":"borer","machines_down":1}]}],"note":"No sales of Prod2 in March and 1 borer unavailable in January."}

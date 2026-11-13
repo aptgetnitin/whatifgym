@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"shutdown_ratio","measure":"stop","scope":{},"sense":">=","relative_to":{"measure":"on","scope":{}},"factor":0.25}],"note":"Ensure at least 25% of plant‑hours on are shut‑downs."}

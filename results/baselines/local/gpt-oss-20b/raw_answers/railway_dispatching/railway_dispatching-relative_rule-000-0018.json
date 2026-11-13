@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "B_finish_at_most_2x_D_finish",
+      "measure": "finish_time",
+      "scope": { "train": "B" },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "finish_time",
+        "scope": { "train": "D" }
+      },
+      "factor": 2.0
+    }
+  ],
+  "note": "Arrival time of train B must be at most twice the arrival time of train D."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "relax": [
+    {
+      "constraint": "capacity",
+      "scope": {
+        "machine": [
+          "grinder",
+          "horiDrill"
+        ]
+      }
+    }
+  ],
+  "note": "Relaxing the capacity constraints for grinder and horiDrill machines."
+}

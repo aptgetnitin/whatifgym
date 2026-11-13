@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_to_charge_ratio",
+      "measure": "discharge",
+      "scope": {
+        "hour": {
+          "all": true
+        }
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "charge",
+        "scope": {
+          "hour": {
+            "all": true
+          }
+        }
+      },
+      "factor": 3.0
+    }
+  ]
+}

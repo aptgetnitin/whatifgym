@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "ration",
+   "scope": {
+    "food": {
+     "type": "string"
+    },
+    "camp": {
+     "type": "string"
+    }
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The objective stages prioritize minimizing total ration per person first, then minimizing total cost."
+}

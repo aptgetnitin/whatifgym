@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "blend_year5_min",
+      "measure": "blend",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "value": 8200000
+    },
+    {
+      "name": "blend_year1_min",
+      "measure": "blend",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 8625000
+    }
+  ],
+  "note": "Requests for blended ore sales in Year5 and Year1."
+}

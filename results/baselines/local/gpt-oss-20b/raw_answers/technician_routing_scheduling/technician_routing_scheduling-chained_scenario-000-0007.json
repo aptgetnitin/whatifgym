@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[{"op":"scale","table":"job_types","column":"duration_min","where":{"job_type":"Equipment Setup"},"factor":2.0}],"note":"100% higher duration for Equipment Setup"}

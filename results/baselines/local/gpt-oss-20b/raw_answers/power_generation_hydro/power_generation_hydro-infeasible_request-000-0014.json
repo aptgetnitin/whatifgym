@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","fixed_decisions":[{"measure":"output","scope":{"period":"15-18","type":"Thermal0"},"value":64050}],"note":"Fix Thermal0 output in period 15-18 to 64050 MW."}

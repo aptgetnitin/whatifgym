@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "F_entry_at_most_75_percent_of_C",
+      "measure": "entry_time",
+      "scope": {
+        "train": "F"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {
+          "train": "C"
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

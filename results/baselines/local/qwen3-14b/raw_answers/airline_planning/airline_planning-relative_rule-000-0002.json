@@ -1,0 +1,58 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "A320_22_flight_share",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A320#22"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": [
+            "TranspCom#1",
+            "TranspCom#3",
+            "TranspCom#2",
+            "TranspCom#4",
+            "A320#22",
+            "ERJ145#5",
+            "A321#2",
+            "A318#8",
+            "A318#4",
+            "A321#4",
+            "A319#18",
+            "A320#24",
+            "A319#11",
+            "A318#5",
+            "A319#13",
+            "A318#7",
+            "A320#11",
+            "A320#14",
+            "A319#5",
+            "CRJ700#3",
+            "A319#9"
+          ]
+        }
+      },
+      "factor": 0.6
+    },
+    {
+      "name": "A318_8_flight_limit",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A318#8"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": "A320#22"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

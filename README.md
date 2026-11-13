@@ -12,7 +12,7 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 > | Task families | 10 of 10 |
 > | Tasks (current set) | 3,756 template tasks + 45 verified paraphrases, in 224 files; shared outcomes removed (`_v1`, section 11) |
 > | Tests | 766 pass, 7 slow tests skipped |
-> | Untrained LLMs (`_v0` set) | Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % (section 11) |
+> | Untrained LLMs (current set, Nov 12) | Qwen3 4B 25.0 %, 8B 58.4 %, 14B 71.8 %, gpt-oss 20B 88.8 % (section 11) |
 > | Training result | GRPO on Qwen3 4B, one GPU, three base models held out: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds; section 11) |
 
 ---
@@ -478,78 +478,58 @@ Where `nearest_example` scores high, several questions share one scored outcome.
 
 On the 60 `factory_planning` data-change tasks: Claude Sonnet 59/60, Claude Opus 60/60, every answer valid DSL. This family is saturated for frontier models. It shows that the pipeline and the reward work.
 
-### Untrained open LLMs (Ollama, M4 Max)
+### Untrained open LLMs (Ollama)
 
-These runs (Oct 5–7) used the `_v0` set, before shared outcomes were removed.
-
-The first 399 tasks (`data_change` and `new_limit` on 10 base models):
-
-```mermaid
-xychart-beta
-    title "Accuracy on the first 399 tasks (%)"
-    x-axis ["Qwen3 4B", "Qwen3 8B", "8B thinking", "Qwen3 14B", "Qwen3 32B", "gpt-oss 20B"]
-    y-axis "accuracy (%)" 0 --> 100
-    bar [50.1, 78.7, 89.5, 90.2, 89.5, 98.5]
-```
-
-- Accuracy rises fast from 4B to 14B, then stops.
-- Reasoning at inference closes most of the remaining gap.
-- Thus the RL target is a 4B to 8B model.
-
-All ten families, complete run (Oct 7). Accuracy; every family has the same tasks for every LLM:
+Complete run of Nov 12 on the current set: all 3,756 template tasks and 45 paraphrases, 25 base models, every task the same for every LLM. Run on one rented RTX 5090 (Ollama 0.35.1, four requests at once, thinking off); commands in [training/RUNPOD.md](training/RUNPOD.md). The October runs on the first task-set version are in `results/archive/local_2026-10/`.
 
 | Family | Tasks | Qwen3 4B | Qwen3 8B | Qwen3 14B | gpt-oss 20B |
 |---|---|---|---|---|---|
-| data_change | 320 | 57 % | 87 % | 84 % | 98 % |
-| new_limit | 239 | 41 % | 67 % | 91 % | 98 % |
-| relative_rule | 258 | 26 % | 60 % | 81 % | 92 % |
-| objective_change | 168 | 23 % | 45 % | 74 % | 96 % |
-| fixed_decision | 235 | 28 % | 46 % | 91 % | 99 % |
-| relax_remove | 84 | 10 % | 56 % | 82 % | 100 % |
-| **logical_rule** | 238 | **18 %** | **24 %** | **30 %** | **70 %** |
-| infeasible_request | 201 | 12 % | 69 % | 92 % | 89 % |
-| chained_scenario | 267 | 48 % | 70 % | 75 % | 97 % |
-| under_specified | 280 | 1 % | 41 % | 41 % | 58 % |
-| **all 2,290 template tasks** | | **28.6 %** | **57.7 %** | **73.0 %** | **88.4 %** |
-| data_change, paraphrased | 33 | 42 % | 79 % | 88 % | 100 % |
-| new_limit, paraphrased | 45 | 22 % | 67 % | 93 % | 100 % |
+| data_change | 512 | 51 % | 82 % | 76 % | 95 % |
+| new_limit | 378 | 44 % | 74 % | 91 % | 98 % |
+| relative_rule | 429 | 18 % | 57 % | 81 % | 91 % |
+| objective_change | 219 | 20 % | 58 % | 78 % | 91 % |
+| fixed_decision | 423 | 16 % | 60 % | 90 % | 94 % |
+| relax_remove | 108 | 6 % | 54 % | 86 % | 98 % |
+| **logical_rule** | 407 | **15 %** | **23 %** | **29 %** | **74 %** |
+| infeasible_request | 325 | 9 % | 69 % | 87 % | 93 % |
+| chained_scenario | 469 | 48 % | 72 % | 78 % | 97 % |
+| under_specified | 486 | 1 % | 33 % | 42 % | 68 % |
+| **all 3,756 template tasks** | | **25.0 %** | **58.4 %** | **71.8 %** | **88.8 %** |
+| valid scenario | | 72 % | 82 % | 87 % | 96 % |
+| answers the server aborted (repeat limit) | | 23 % | 0 % | 0 % | 0 % |
+| data_change, paraphrased | 6 | 50 % | 100 % | 100 % | 100 % |
+| new_limit, paraphrased | 39 | 38 % | 59 % | 92 % | 97 % |
 
 ```mermaid
 xychart-beta
-    title "Accuracy on all 2,290 template tasks (%)"
+    title "Accuracy on all 3,756 template tasks (%)"
     x-axis ["Qwen3 4B", "Qwen3 8B", "Qwen3 14B", "gpt-oss 20B"]
     y-axis "accuracy (%)" 0 --> 100
-    bar [28.6, 57.7, 73.0, 88.4]
+    bar [25.0, 58.4, 71.8, 88.8]
 ```
 
 What this shows:
 
-1. **The full benchmark separates the models.** The first two families did not: 14B and 32B scored the same there. On all ten families, the scores spread from 29 % to 88 %.
-2. **`logical_rule` is the hardest family.** Qwen3 14B gets 30 %, gpt-oss 20B 70 %. It is the family that can separate a strong open model from a frontier one.
-3. **Qwen3 4B fails most of the new families** (10 to 12 % on relax and infeasible). This is the headroom for RL.
-4. **Natural wording costs the small models.** Qwen3 4B loses 15 to 18 points on paraphrases; 14B and gpt-oss lose nothing.
-5. **gpt-oss 20B is weaker than 14B on one family:** infeasible requests, 89 % against 92 %.
+1. **The benchmark separates the models:** from 25 % to 89 %.
+2. **`logical_rule` is the hardest family** for the three larger models. Qwen3 14B gets 29 %, gpt-oss 20B 74 %.
+3. **Qwen3 4B fails most families** (6 to 9 % on relax and infeasible). Ollama ended 23 % of its answers because the model repeated itself. This is the headroom for RL.
+4. **Natural wording:** on the 39 new-limit paraphrases, Qwen3 8B gets 59 % against 74 % on the templates; 14B and gpt-oss lose nothing. The sample is small.
+5. **Notes on the run:** `drone_network` prompts are longer than 16,384 tokens, so that model was answered with a 32,768-token window. All answers are scored with HiGHS 1.15.1 (`scripts/rescore_results.py`).
 
-### Asking: a correction, and the real numbers
+### Asking
 
-```mermaid
-flowchart LR
-    B["Before Oct 6:<br/>LLM agents wrapped every reply<br/>as a scenario"] --> X["An {ask} reply was scored<br/>as a bad scenario: 0<br/>The planner never answered"]
-    F["Fix 6c76e54:<br/>an ask-only object is a question<br/>in any wrapper"] --> OK["The planner answers;<br/>the agent gets a second turn"]
-```
-
-An earlier report said that the LLMs never asked. That was this harness bug. With the fix, on the 280 under-specified tasks:
+On the 486 under-specified tasks:
 
 | | Qwen3 4B | Qwen3 8B | Qwen3 14B | gpt-oss 20B |
 |---|---|---|---|---|
-| Asked first | 25 % | 62 % | 50 % | 99 % |
-| Correct after asking | 3 % | 66 % | 83 % | 58 % |
-| Correct overall | 1 % | 41 % | 41 % | 58 % |
-| Needless questions (of 2,088 clear tasks) | 3 | 0 | 3 | 35 |
+| Asked first | 17 % | 47 % | 48 % | 99 % |
+| Correct after asking | 4 % | 71 % | 86 % | 68 % |
+| Correct overall | 1 % | 33 % | 42 % | 68 % |
+| Needless questions (of 3,270 clear tasks) | 0 | 0 | 6 | 41 |
 
-1. **The decision to ask and the answer after it are two skills.** gpt-oss asks almost always, but answers well only 58 % of the time. Qwen3 14B asks half the time, but answers well 83 % of the time.
-2. **Qwen3 4B almost never benefits from asking.** It asks on 25 % of the tasks and then answers 3 % of them correctly.
-3. **Asking is cheap to get right on clear tasks:** at most 35 needless questions in 2,088.
+1. **The decision to ask and the answer after it are two skills.** gpt-oss asks almost always, but answers well only 68 % of the time. Qwen3 14B asks half the time, but answers well 86 % of the time.
+2. **Qwen3 4B almost never benefits from asking.** It asks on 17 % of the tasks and then answers 4 % of them correctly.
+3. **Asking is cheap to get right on clear tasks:** at most 41 needless questions in 3,270.
 
 Claude, Qwen3 32B and Qwen3 8B with thinking never asked, so their earlier results do not change.
 
@@ -708,7 +688,7 @@ flowchart TB
 | done | 10 families; current set 2,194 tasks + 45 paraphrases (`_v0`: 2,290 + 78) |
 | done | Trivial agents exact on every file; probes 0.1 % and 1.7 % on the current set |
 | done | Frontier baseline (Sonnet 59/60, Opus 60/60); LLM ladder on the first 399 tasks |
-| done | Untrained LLM ladder on all 10 families: Qwen3 4B 28.6 %, 8B 57.7 %, 14B 73.0 %, gpt-oss 20B 88.4 % |
+| done | Untrained LLMs on the current set (3,756 tasks, 25 base models, Nov 12): Qwen3 4B 25.0 %, 8B 58.4 %, 14B 71.8 %, gpt-oss 20B 88.8 % |
 | next | Frontier APIs on all 10 families, with pinned ids |
 | done | All 10 families: `infeasible_request` and `chained_scenario` built Oct 7 |
 | done | Shared outcomes removed: 16 files regenerated as `_v1`, 4 paraphrase files dropped; probe 1.7 % (Nov 1) |

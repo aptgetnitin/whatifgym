@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "apr_refine_60pct",
+      "measure": "consume",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "consume"
+      },
+      "factor": 0.6
+    }
+  ]
+}

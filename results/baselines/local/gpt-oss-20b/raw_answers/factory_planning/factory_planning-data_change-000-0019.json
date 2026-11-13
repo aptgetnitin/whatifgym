@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod3"
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "Profit per unit for Prod3 decreased by 10% due to raw material price increase."
+}

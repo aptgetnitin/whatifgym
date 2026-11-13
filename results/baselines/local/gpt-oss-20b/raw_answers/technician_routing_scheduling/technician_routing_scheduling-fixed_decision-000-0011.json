@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","fixed_decisions":[{"measure":"route","scope":{"from_location":"Karlsruhe","to_location":"Mannheim","technician":"Ed"},"value":1},{"measure":"assign","scope":{"customer":"Customer1","technician":"Albert"},"value":0}],"note":"Force Ed to drive leg Karlsruhe->Mannheim and forbid Albert from Customer1."}

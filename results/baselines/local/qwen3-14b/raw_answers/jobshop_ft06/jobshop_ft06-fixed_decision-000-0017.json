@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "fixed_decisions": [
+    {
+      "measure": "end",
+      "scope": {
+        "job": "J1",
+        "step": 4
+      },
+      "value": 76
+    }
+  ],
+  "rules": [
+    {
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M3",
+        "job": "J0",
+        "other_job": "J2"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

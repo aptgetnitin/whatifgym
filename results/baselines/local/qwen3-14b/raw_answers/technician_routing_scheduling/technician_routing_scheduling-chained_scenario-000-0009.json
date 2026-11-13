@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "job_types",
+      "column": "duration_min",
+      "factor": 0.75
+    }
+  ],
+  "rules": [
+    {
+      "measure": "lateness",
+      "scope": {
+        "customer": "Customer5"
+      },
+      "sense": ">=",
+      "value": 160,
+      "name": "floor_lateness_Customer5"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "end_time_j1_vs_j4",
+      "measure": "end",
+      "scope": {
+        "job": "J1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J4"
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "relax": [
+    {
+      "constraint": "end_stock"
+    }
+  ],
+  "note": "Remove the end-of-horizon stock target constraint."
+}

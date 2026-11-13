@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","logic":[{"name":"soc_12_13_discharge_21_22","at_least":1,"of":[{"measure":"soc","scope":{"hour":"12-13"},"sense":"==","value":0},{"measure":"discharge","scope":{"hour":"21-22"},"sense":">=","value":6.2}]}],"note":"If stored energy at 12-13 is non‑zero, then discharge at 21‑22 must be at least 6.2 kW."}

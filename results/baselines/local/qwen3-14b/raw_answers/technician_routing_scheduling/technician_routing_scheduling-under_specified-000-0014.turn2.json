@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "customers",
+      "column": "window_start",
+      "where": {
+        "customer": "Customer6"
+      },
+      "value": 600
+    }
+  ]
+}

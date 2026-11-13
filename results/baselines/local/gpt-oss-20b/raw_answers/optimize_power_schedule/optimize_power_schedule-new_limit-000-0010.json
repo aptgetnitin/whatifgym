@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "measure": "on",
+      "scope": {
+        "hour": 23
+      },
+      "sense": ">=",
+      "value": 10
+    }
+  ],
+  "note": "Require at least 10 plant-hours on at hour 23."
+}

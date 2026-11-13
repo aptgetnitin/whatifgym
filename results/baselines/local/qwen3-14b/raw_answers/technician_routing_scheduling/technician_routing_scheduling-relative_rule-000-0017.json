@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "leg_limit",
+      "measure": "route",
+      "scope": {
+        "from_location": "all",
+        "to_location": "all",
+        "technician": "all"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "use",
+        "scope": {
+          "technician": "all"
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

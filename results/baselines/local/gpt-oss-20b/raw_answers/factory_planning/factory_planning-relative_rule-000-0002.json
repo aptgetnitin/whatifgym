@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"total_sold_vs_stock","measure":"sell","scope":{},"sense":"<=","relative_to":{"measure":"store","scope":{}},"factor":1.5}],"note":"Total units sold may be at most 1.5 times total units in stock."}

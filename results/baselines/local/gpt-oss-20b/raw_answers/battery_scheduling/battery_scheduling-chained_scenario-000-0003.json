@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","data_changes":[{"op":"scale","table":"hours","column":"import_price","factor":1.25},{"op":"set","table":"hours","column":"import_price","where":{"hour":"03-04"},"value":0.28}]}

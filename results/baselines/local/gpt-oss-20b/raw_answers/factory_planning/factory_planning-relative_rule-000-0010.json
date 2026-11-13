@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"Jun_make_min_25pct","measure":"make","scope":{"month":"Jun"},"sense":">=","relative_to":{"measure":"make"},"factor":0.25}],"note":"At least 25% of total production must be in June."}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "resources",
+      "column": "duration",
+      "factor": 1.2
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_entry_time_F_at_least_310",
+      "measure": "entry_time",
+      "scope": {
+        "train": "F"
+      },
+      "sense": ">=",
+      "value": 310
+    }
+  ],
+  "note": "Keep the 20% increase in all resource durations; enforce that the sum of entry times for train F is at least 310 minutes."
+}

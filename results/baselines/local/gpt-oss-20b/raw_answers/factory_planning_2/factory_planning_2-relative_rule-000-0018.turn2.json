@@ -1,0 +1,98 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod5_at_least_2x_prod7_Jan",
+      "measure": "store",
+      "scope": {
+        "product": "Prod5",
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod7",
+          "month": "Jan"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "prod5_at_least_2x_prod7_Feb",
+      "measure": "store",
+      "scope": {
+        "product": "Prod5",
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod7",
+          "month": "Feb"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "prod5_at_least_2x_prod7_Mar",
+      "measure": "store",
+      "scope": {
+        "product": "Prod5",
+        "month": "Mar"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod7",
+          "month": "Mar"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "prod5_at_least_2x_prod7_Apr",
+      "measure": "store",
+      "scope": {
+        "product": "Prod5",
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod7",
+          "month": "Apr"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "prod5_at_least_2x_prod7_May",
+      "measure": "store",
+      "scope": {
+        "product": "Prod5",
+        "month": "May"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod7",
+          "month": "May"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "prod5_at_least_2x_prod7_Jun",
+      "measure": "store",
+      "scope": {
+        "product": "Prod5",
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to":

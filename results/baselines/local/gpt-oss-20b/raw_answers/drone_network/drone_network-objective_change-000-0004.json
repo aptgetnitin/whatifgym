@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","objective":[{"sense":"min","measure":"original"},{"sense":"max","measure":"linked_load","scope":{"location":"400 TROON CHASE"}}],"note":"First minimize response objective, then maximize linked_load for location 400 TROON CHASE."}

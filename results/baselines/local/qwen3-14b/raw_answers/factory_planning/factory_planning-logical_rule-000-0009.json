@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"stock_condition","measure":"sell","scope":{"month":"Feb","product":"Prod7"},"sense":">=","relative_to":{"measure":"store","scope":{"month":"Jun","product":"Prod3"}},"factor":75}]}

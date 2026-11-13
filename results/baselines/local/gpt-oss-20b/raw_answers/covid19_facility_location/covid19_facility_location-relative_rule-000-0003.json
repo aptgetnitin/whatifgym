@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "T17_at_most_half_T18",
+      "measure": "build",
+      "scope": {
+        "facility": "T17"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "build",
+        "scope": {
+          "facility": "T18"
+        }
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Number of temporary facilities built for T17 must be at most 50% of those built for T18."
+}

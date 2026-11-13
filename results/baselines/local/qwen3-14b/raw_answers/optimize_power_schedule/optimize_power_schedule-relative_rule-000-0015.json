@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "edwin_scherer_on_hours",
+      "measure": "on",
+      "scope": {
+        "plant": "Edwin I Hatch"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "plant": "Scherer"
+        }
+      },
+      "factor": 1.25
+    },
+    {
+      "name": "shutdowns_startups_ratio",
+      "measure": "stop",
+      "scope": {
+        "plant": "all"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "plant": "all"
+        }
+      },
+      "factor": 3.0
+    }
+  ]
+}

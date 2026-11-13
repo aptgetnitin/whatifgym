@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "Jun_buys_75pct",
+      "measure": "buy",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Jun must account for at least 75% of all oil bought."
+}

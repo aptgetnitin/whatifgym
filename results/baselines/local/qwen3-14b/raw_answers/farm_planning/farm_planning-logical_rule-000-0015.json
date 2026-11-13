@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "logic": [
+    {
+      "name": "grain_growth_non_zero",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "grow_grain",
+          "scope": {
+            "year": "Year1",
+            "land_group": {
+              "land_group": "Group1",
+              "Group2": "Group3",
+              "Group4": "Group1"
+            }
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "grow_grain",
+          "scope": {
+            "year": "Year5",
+            "land_group": {
+              "land_group": "Group1",
+              "Group2": "Group3",
+              "Group4": "Group1"
+            }
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

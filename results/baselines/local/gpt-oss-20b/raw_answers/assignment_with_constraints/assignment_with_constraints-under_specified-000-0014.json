@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "fixed_decisions": [
+    {
+      "measure": "team",
+      "scope": {
+        "team": "team_10_11"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Fixes the chosen team to team_10_11, forcing workers 8,9,10,11 to work and restricting assignments to that group."
+}

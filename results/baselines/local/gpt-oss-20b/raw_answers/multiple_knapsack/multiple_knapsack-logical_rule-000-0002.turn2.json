@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","logic":[{"name":"item12_requires_item1_bin0","at_least":1,"of":[{"measure":"x","scope":{"item":"item12"},"sense":"<=","value":0},{"measure":"x","scope":{"item":"item1","bin":"bin0"},"sense":">=","value":2}]}]}

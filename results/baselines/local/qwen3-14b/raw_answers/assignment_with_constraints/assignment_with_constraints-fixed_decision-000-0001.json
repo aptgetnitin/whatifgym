@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "allowed_teams",
+      "column": "works",
+      "where": {
+        "team": "team_10_11",
+        "worker": [
+          "worker_8",
+          "worker_9",
+          "worker_10",
+          "worker_11"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"ration_floor_Daraa","measure":"ration","scope":{"camp":"Daraa"},"sense":">=","value":6.1}],"note":"Require the total ration per person in Daraa to be at least 6.1 units of 100 g per day."}

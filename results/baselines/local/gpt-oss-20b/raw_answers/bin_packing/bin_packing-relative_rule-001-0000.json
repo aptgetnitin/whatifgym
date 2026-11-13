@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "min_bins_used_90pct",
+      "measure": "y",
+      "sense": ">=",
+      "value": 10
+    }
+  ],
+  "note": "Enforce that at least 90% of the 11 items are represented by used bins, i.e., at least 10 bins must be used."
+}

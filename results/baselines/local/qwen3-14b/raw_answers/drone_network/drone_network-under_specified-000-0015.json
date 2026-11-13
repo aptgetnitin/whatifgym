@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "cap_linked_load",
+   "measure": "linked_load",
+   "scope": {
+    "location": "location",
+    "base": "base"
+   },
+   "sense": "<=",
+   "value": 1.0
+  }
+ ],
+ "note": "A rule is added to cap the linked load measure to 1 hour for all locations and bases."
+}

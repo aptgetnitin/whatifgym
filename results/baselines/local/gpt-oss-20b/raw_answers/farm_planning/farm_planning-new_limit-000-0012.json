@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"max_raise_heifers_year1","measure":"raise_heifers","scope":{"year":"Year1"},"sense":"<=","value":21}],"note":"Limit the number of heifer calves raised in Year1 to at most 21"}

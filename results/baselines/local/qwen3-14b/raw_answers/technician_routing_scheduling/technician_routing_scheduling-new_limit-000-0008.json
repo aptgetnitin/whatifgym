@@ -1,0 +1,54 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "customer5_lateness_min",
+      "measure": "lateness",
+      "scope": {
+        "customer": "Customer5"
+      },
+      "sense": ">=",
+      "value": 120
+    },
+    {
+      "name": "total_legs_cap",
+      "measure": "route",
+      "scope": {
+        "from_location": [
+          "Heidelberg",
+          "Freiburg im Breisgau",
+          "Mannheim",
+          "Karlsruhe",
+          "Baden-Baden",
+          "Buehl",
+          "Offenburg",
+          "Lahr/Schwarzwald",
+          "Loerrach"
+        ],
+        "to_location": [
+          "Heidelberg",
+          "Freiburg im Breisgau",
+          "Mannheim",
+          "Karlsruhe",
+          "Baden-Baden",
+          "Buehl",
+          "Offenburg",
+          "Lahr/Schwarzwald",
+          "Loerrach"
+        ],
+        "technician": [
+          "Albert",
+          "Bob",
+          "Carlos",
+          "Doris",
+          "Ed",
+          "Flor",
+          "Gina"
+        ]
+      },
+      "sense": "<=",
+      "value": 9
+    }
+  ]
+}

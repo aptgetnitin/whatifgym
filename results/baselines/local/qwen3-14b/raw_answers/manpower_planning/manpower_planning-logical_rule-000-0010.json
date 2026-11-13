@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "retrain_impact_on_overmanning",
+      "measure": "retrain",
+      "scope": {
+        "year": 1,
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "overmanned",
+        "scope": {
+          "year": 1,
+          "skill": "unskilled"
+        }
+      },
+      "factor": 860
+    }
+  ]
+}

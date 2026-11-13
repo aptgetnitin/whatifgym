@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "A_arrival_conditional_F_arrival",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "finish_time",
+          "scope": {
+            "train": "A"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "finish_time",
+          "scope": {
+            "train": "F"
+          },
+          "sense": ">=",
+          "value": 65
+        }
+      ]
+    }
+  ],
+  "note": "If A's arrival time > 0 then F's arrival time must be at least 65 minutes."
+}

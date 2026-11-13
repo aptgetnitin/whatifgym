@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "fixed_decisions": [
+    {
+      "measure": "entry_time",
+      "scope": {
+        "train": "A",
+        "resource": "5"
+      },
+      "value": 130
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "meet",
+      "scope": {
+        "resource": "*",
+        "train": "*",
+        "other_train": "*"
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "goes_first",
+      "scope": {
+        "resource": "*",
+        "train": "*",
+        "other_train": "*"
+      }
+    }
+  ]
+}

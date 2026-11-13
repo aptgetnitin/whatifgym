@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","rules":[{"measure":"pick","scope":{"player":"Joel Embiid"},"sense":"<=","relative_to":{"measure":"pick","scope":{}},"factor":0.15}]}

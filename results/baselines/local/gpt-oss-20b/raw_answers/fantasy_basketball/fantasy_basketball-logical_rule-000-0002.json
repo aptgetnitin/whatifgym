@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "rules": [
+    {
+      "name": "single_of_four",
+      "measure": "pick",
+      "scope": {
+        "player": [
+          "Jarrett Jack",
+          "Dario Saric",
+          "Trevor Ariza",
+          "Joel Embiid"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "Only one of the four specified players may be selected."
+}

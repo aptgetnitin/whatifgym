@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","rules":[{"measure":"works","scope":{"worker":["worker_10","worker_0","worker_11","worker_1"]},"sense":"<=","value":1}],"note":"At most one of the specified workers may be assigned any task."}

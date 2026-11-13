@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item7_min_75_percent",
+      "measure": "x",
+      "scope": {
+        "item": "item7"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {}
+      },
+      "factor": 0.75
+    }
+  ]
+}

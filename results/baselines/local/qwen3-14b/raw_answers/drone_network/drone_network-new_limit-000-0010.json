@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "min_locations_for_800_virginia_beach_blvd",
+   "measure": "assign",
+   "scope": {
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": ">=",
+   "value": 20
+  }
+ ]
+}

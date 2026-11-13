@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"single_machine_scheduling","rules":[{"measure":"end_time","scope":{"job":"job_0"},"sense":">=","value":62700}],"note":"Check feasibility of end_time >= 62700 for job_0"}

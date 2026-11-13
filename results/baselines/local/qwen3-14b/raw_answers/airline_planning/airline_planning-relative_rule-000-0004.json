@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4564_limit",
+      "measure": "operate",
+      "scope": {
+        "flight": 4564
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "flight": 4575
+        }
+      },
+      "factor": 0.5
+    },
+    {
+      "name": "A320_22_limit",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A320#22"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ]
+}

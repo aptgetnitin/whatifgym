@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "resource2_entry_time_fraction",
+      "measure": "entry_time",
+      "scope": {
+        "resource": 2
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "entry_time"
+      },
+      "factor": 0.1
+    }
+  ],
+  "note": "Resource 2 entry time must be at most 10% of total entry time."
+}

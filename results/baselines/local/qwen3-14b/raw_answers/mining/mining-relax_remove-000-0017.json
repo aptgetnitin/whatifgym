@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "stay_closed",
+      "scope": {
+        "mine": "Mine4"
+      }
+    }
+  ],
+  "note": "Relaxing the 'stay_closed' constraint for Mine4 allows it to reopen after being closed."
+}

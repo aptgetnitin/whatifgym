@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","ask":"What is the minimum tons of oil in storage required?","note":"The planner needs to specify the minimum tons of oil in storage for the scenario to be defined."}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "bins",
+      "column": "capacity",
+      "factor": 0.5
+    }
+  ],
+  "note": "Correction: make that 50% lower, not 25% lower."
+}

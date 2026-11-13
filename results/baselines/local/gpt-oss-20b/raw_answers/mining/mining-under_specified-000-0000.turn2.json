@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Mine4_extract_limit",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine4"
+      },
+      "sense": "<=",
+      "value": 5737500
+    }
+  ],
+  "note": "Upper limit on total extraction from Mine4."
+}

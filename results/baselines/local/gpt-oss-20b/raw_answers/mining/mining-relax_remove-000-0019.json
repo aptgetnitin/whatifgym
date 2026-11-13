@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "stay_closed",
+      "scope": {
+        "year": ["Year4", "Year5"]
+      }
+    }
+  ],
+  "note": "Lift the stay_closed rule for Year4 and Year5 only."
+}

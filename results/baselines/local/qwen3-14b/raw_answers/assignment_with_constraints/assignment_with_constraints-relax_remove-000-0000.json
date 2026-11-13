@@ -1,0 +1,9 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "relax": [
+    {
+      "constraint": "one_team"
+    }
+  ]
+}

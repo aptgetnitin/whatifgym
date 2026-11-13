@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "J1_start_time_fraction",
+      "measure": "start",
+      "scope": {
+        "job": "J1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start"
+      },
+      "factor": 0.05
+    },
+    {
+      "name": "J5_start_at_least_1_25_J0",
+      "measure": "start",
+      "scope": {
+        "job": "J5",
+        "step": 1
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "job": "J0",
+          "step": 1
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

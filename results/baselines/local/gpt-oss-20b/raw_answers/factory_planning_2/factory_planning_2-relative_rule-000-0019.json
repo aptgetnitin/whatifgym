@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod4_min_10_percent_sales",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {}
+      },
+      "factor": 0.10
+    }
+  ],
+  "note": "Product Prod4 must account for at least 10% of all units sold."
+}

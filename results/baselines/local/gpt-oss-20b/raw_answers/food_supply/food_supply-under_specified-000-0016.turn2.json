@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"ration_floor_Hassakeh","measure":"ration","scope":{"camp":"Hassakeh"},"sense":">=","value":6.1}],"note":"Floor on ration per person for Hassakeh camp."}

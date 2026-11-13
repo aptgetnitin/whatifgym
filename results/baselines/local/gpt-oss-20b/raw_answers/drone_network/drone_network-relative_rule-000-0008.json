@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "linked_load_5600_vs_1700",
+      "measure": "linked_load",
+      "scope": {
+        "location": "5600 MEER ST"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "linked_load",
+        "scope": {
+          "location": "1700 VIRGINIA BEACH BL"
+        }
+      },
+      "factor": 0.5
+    },
+    {
+      "name": "open_21pct",
+      "measure": "open",
+      "scope": {
+        "base": "21 MUNICIPAL CTR Fire Station"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "open"
+      },
+      "factor": 0.1
+    }
+  ]
+}

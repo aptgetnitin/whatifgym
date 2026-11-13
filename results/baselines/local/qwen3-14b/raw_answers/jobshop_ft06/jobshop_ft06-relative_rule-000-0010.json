@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "step5_end_time_limit",
+      "measure": "end",
+      "scope": {
+        "step": 5
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {}
+      },
+      "factor": 0.15
+    }
+  ]
+}

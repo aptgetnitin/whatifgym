@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "veg1_veg2_purchase",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "buy",
+          "scope": {
+            "oil": "VEG1"
+          },
+          "sense": ">=",
+          "value": 1300
+        },
+        {
+          "measure": "buy",
+          "scope": {
+            "oil": "VEG2"
+          },
+          "sense": ">=",
+          "value": 1100
+        }
+      ]
+    }
+  ]
+}

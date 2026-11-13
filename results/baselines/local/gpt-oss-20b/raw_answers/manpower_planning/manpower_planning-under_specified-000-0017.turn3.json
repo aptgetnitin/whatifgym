@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"total_retrain_limit","measure":"retrain","sense":"<=","value":750}],"note":"Upper limit on total workers retrained to a higher skill level."}

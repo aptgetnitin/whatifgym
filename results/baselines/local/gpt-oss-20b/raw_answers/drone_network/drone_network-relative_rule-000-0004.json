@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"max_15pct_3769","measure":"open","scope":{"base":"3769 E. STRATFORD ROAD Rescue Squad"},"sense":"<=","relative_to":{"measure":"open","scope":{}},"factor":0.15}],"note":"Limit 3769 base to at most 15% of total open bases."}

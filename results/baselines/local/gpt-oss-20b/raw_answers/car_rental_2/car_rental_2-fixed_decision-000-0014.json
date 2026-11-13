@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","fixed_decisions":[{"measure":"undamaged_stock","scope":{"depot":"Glasgow"},"value":80},{"measure":"expand","scope":{"depot":"Birmingham","step":2},"value":1}],"note":"Fix undamaged_stock at Glasgow to 80 for all days and set expand Birmingham step 2 to 1."}

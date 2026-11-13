@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "total_output_stock_limit",
+      "measure": "production",
+      "scope": {
+        "year": [1, 2, 3, 4, 5],
+        "industry": ["coal", "steel", "transport"]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "stock",
+        "scope": {
+          "year": [1, 2, 3, 4, 5],
+          "industry": ["coal", "steel", "transport"]
+        }
+      },
+      "factor": 0.9
+    }
+  ]
+}

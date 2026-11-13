@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "county_c5_total_assigned",
+      "measure": "assign",
+      "scope": {
+        "county": "C5"
+      },
+      "sense": ">=",
+      "value": 450
+    }
+  ]
+}

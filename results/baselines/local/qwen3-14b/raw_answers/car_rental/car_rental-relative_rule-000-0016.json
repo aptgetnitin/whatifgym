@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "plymouth_rental_share",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "rentals",
+        "scope": {}
+      },
+      "factor": 0.5
+    },
+    {
+      "name": "manchester_repair_share",
+      "measure": "repairs",
+      "scope": {
+        "depot": "Manchester"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "repairs",
+        "scope": {
+          "depot": "Birmingham"
+        }
+      },
+      "factor": 0.8
+    }
+  ]
+}

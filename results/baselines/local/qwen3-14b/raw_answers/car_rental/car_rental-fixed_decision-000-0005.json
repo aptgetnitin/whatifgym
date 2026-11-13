@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "fixed_decisions": [
+    {
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Thursday",
+        "from_depot": "Glasgow",
+        "to_depot": "Birmingham"
+      },
+      "value": 0
+    }
+  ]
+}

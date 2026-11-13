@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "prod_stock_ratio",
+      "measure": "production",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "stock"
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "Production must be at most 90% of total stock."
+}

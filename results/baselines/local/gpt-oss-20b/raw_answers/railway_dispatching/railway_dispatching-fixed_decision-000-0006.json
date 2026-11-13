@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","fixed_decisions":[{"measure":"goes_first","scope":{"resource":6,"train":"A","other_train":"C"},"value":1}]}

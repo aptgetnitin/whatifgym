@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "Jun_sell_limit",
+      "measure": "sell",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 2450
+    }
+  ],
+  "note": "Limit total units sold in June to 2450."
+}

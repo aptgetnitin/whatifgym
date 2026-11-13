@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"min_entry_time_resource1","measure":"entry_time","scope":{"resource":1},"sense":">=","value":350}]}

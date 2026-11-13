@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "store",
+      "scope": {
+        "oil": "VEG1"
+      }
+    }
+  ],
+  "note": "Keep profit at its maximum, then maximise the tons of oil in storage for oil VEG1."
+}

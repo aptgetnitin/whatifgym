@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","data_changes":[{"op":"scale","table":"incidents","column":"incidents","where":{"location":"4800 FROSTBURG LA"},"factor":0.5},{"op":"scale_param","name":"drone_speed_kmh","factor":0.5}]}

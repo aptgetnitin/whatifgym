@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "charge_power_for_03-04",
+      "measure": "charge",
+      "scope": {
+        "hour": "03-04"
+      },
+      "sense": ">=",
+      "value": 7.5
+    }
+  ]
+}

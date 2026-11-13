@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "passengers",
+      "factor": 1.2
+    }
+  ],
+  "rules": [
+    {
+      "name": "flight_operated_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": {
+          "type": "string"
+        },
+        "flight": {
+          "type": "int"
+        }
+      },
+      "sense": "<=",
+      "value": 41
+    }
+  ]
+}

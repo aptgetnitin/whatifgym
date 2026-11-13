@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "measure": "extract",
+      "scope": {
+        "year": "Year2",
+        "mine": "Mine3"
+      },
+      "sense": ">=",
+      "value": 6500000
+    }
+  ]
+}

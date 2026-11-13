@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","logic":[{"name":"task4_implies_task1_at_least_2","at_least":1,"of":[{"measure":"assign","scope":{"task":"task_4"},"sense":"<=","value":0},{"measure":"assign","scope":{"task":"task_1"},"sense":">=","value":2}]}]}

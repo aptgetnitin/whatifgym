@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "day": "Thursday"
+      }
+    }
+  ]
+}

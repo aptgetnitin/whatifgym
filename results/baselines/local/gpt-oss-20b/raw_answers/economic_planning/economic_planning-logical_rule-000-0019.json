@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "logic": [
+    {
+      "name": "steel_year2_output_either_zero_or_at_least_470",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "production",
+          "scope": {
+            "year": 2,
+            "industry": "steel"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "production",
+          "scope": {
+            "year": 2,
+            "industry": "steel"
+          },
+          "sense": ">=",
+          "value": 470
+        }
+      ]
+    }
+  ]
+}

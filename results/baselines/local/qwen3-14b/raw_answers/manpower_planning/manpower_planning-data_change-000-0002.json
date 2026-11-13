@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "redundancy_cost",
+      "factor": 0.9
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "value": 375
+    }
+  ]
+}

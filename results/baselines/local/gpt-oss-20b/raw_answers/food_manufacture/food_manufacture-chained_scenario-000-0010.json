@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_produce_limit",
+      "measure": "produce",
+      "sense": "<=",
+      "value": 1900
+    }
+  ]
+}

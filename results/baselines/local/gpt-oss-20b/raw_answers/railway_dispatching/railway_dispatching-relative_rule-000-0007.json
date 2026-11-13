@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"E_entry_time_5percent","measure":"entry_time","scope":{"train":"E"},"sense":"<=","relative_to":{"measure":"entry_time","scope":{}},"factor":0.05}],"note":"Limit train E's total entry time to at most 5% of all trains' entry time."}

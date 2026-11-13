@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "scherer_hour5_either_zero_or_min",
+      "measure": "output",
+      "scope": {
+        "plant": "Scherer",
+        "hour": 5
+      },
+      "sense": ">=",
+      "value": 8600
+    }
+  ],
+  "logic": [
+    {
+      "name": "scherer_hour5_either_zero_or_min",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "output",
+          "scope": {
+            "plant": "Scherer",
+            "hour": 5
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "output",
+          "scope": {
+            "plant": "Scherer",
+            "hour": 5
+          },
+          "sense": ">=",
+          "value": 8600
+        }
+      ]
+    }
+  ]
+}

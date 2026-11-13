@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"prod4_make_min","measure":"make","scope":{"product":"Prod4"},"sense":">=","value":8500}],"note":"Require at least 8500 units made of Prod4 over the horizon."}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "rules": [
+    {
+      "name": "job_13_before_job_14",
+      "measure": "runs_before",
+      "scope": {
+        "job": "job_13",
+        "other_job": "job_14"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

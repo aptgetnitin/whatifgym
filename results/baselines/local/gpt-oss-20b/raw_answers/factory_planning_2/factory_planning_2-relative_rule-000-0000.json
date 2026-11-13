@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"prod5_min_75_percent_of_make","measure":"make","scope":{"product":"Prod5"},"sense":">=","relative_to":{"measure":"make"},"factor":0.75}],"note":"At least 75% of total production must be for Prod5."}

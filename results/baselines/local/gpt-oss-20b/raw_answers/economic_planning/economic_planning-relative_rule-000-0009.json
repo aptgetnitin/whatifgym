@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "year5_to_year3_production_ratio",
+      "measure": "production",
+      "scope": {
+        "year": 5
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "production",
+        "scope": {
+          "year": 3
+        }
+      },
+      "factor": 0.25
+    },
+    {
+      "name": "capacity_to_output_ratio",
+      "measure": "extra_capacity",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "production",
+        "scope": {}
+      },
+      "factor": 0.5
+    }
+  ]
+}

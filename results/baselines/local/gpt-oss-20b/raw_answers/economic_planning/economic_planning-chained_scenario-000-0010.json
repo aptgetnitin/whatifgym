@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"measure":"production","scope":{},"sense":"<=","value":3400,"name":"cap_production_total"}]}

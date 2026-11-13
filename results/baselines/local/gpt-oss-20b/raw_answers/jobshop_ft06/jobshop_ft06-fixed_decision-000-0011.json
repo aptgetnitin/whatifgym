@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","fixed_decisions":[{"measure":"start","scope":{"job":"J0","step":5},"value":32},{"measure":"goes_first","scope":{"machine":"M3","job":"J1","other_job":"J2"},"value":1}],"note":"Fix start time of J0 step5 to 32 and enforce J1 before J2 on M3."}

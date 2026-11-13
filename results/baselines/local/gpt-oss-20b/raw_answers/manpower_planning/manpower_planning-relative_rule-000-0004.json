@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"measure":"short_time","scope":{"year":1},"sense":">=","relative_to":{"measure":"short_time","scope":{}},"factor":0.6},{"measure":"overmanned","scope":{},"sense":"<=","relative_to":{"measure":"redundant","scope":{}},"factor":0.5}],"note":"Relative limits on short‑time and overmanning."}

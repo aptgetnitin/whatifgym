@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "tasks",
+   "column": "min_workers",
+   "where": {
+    "task": [
+     "task_0",
+     "task_1",
+     "task_2",
+     "task_3",
+     "task_4",
+     "task_5"
+    ]
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "A 20% reduction in the number of workers required per task is applied to all tasks."
+}

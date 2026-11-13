@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "linked_load",
+   "scope": {
+    "location": "*",
+    "base": "*"
+   }
+  }
+ ],
+ "note": "Two-stage objective: first minimize the original response objective, then minimize the total linked load across all locations and bases."
+}

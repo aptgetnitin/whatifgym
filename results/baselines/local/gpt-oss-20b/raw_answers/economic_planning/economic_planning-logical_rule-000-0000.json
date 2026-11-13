@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","logic":[{"name":"stock_year5_minimum","at_least":1,"of":[{"measure":"stock","scope":{"year":5},"sense":"<=","value":0},{"measure":"stock","scope":{"year":5},"sense":">=","value":1550}]}],"note":"If total stock in year 5 > 0, it must be at least 1550."}

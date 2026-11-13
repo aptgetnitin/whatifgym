@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"rentals_vs_damaged","measure":"rentals","scope":{},"sense":"<=","relative_to":{"measure":"damaged_stock","scope":{}},"factor":0.8}]}

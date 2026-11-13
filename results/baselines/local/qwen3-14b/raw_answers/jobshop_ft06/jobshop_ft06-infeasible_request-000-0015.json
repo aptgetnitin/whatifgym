@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "operation_start_time_step_5",
+      "measure": "start",
+      "scope": {
+        "job": "*",
+        "step": 5
+      },
+      "sense": ">=",
+      "value": 1140
+    }
+  ]
+}

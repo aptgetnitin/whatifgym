@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"min_assign_800","measure":"assign","scope":{"base":"800 VIRGINIA BEACH BLVD Fire Station"},"sense":">=","value":20}]}

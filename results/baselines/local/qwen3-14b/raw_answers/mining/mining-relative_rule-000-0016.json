@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "year1_extraction_share",
+      "measure": "extract",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "extract",
+        "scope": {
+          "year": [
+            "Year1",
+            "Year2",
+            "Year3",
+            "Year4",
+            "Year5"
+          ]
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "year2_open_mine_years_limit",
+      "measure": "open",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "open",
+        "scope": {
+          "year": "Year1"
+        }
+      },
+      "factor": 0.9
+    }
+  ]
+}

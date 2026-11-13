@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "service_start_time_cap",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Heidelberg",
+          "Freiburg im Breisgau",
+          "Mannheim",
+          "Karlsruhe",
+          "Baden-Baden",
+          "Buehl",
+          "Offenburg",
+          "Lahr/Schwarzwald",
+          "Loerrach"
+        ]
+      },
+      "sense": "<=",
+      "value": 500
+    }
+  ]
+}

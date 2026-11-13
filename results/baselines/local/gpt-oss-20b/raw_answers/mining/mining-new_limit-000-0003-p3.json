@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 4
+    },
+    {
+      "measure": "extract",
+      "sense": "<=",
+      "value": 20873350
+    }
+  ]
+}

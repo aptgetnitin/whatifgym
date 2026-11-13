@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "process_hours",
+      "column": "hours_per_unit",
+      "where": {
+        "machine": "grinder",
+        "product": "Prod1"
+      },
+      "value": 0.25
+    }
+  ],
+  "note": "Process improvement reduces grinder time for Prod1 to 0.25 hours per unit."
+}

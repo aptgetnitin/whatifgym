@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"scale_param","name":"discount_rate","factor":2.0},{"op":"scale","table":"mines","column":"royalty","where":{"mine":["Mine1","Mine2","Mine3","Mine4"]},"factor":1.2}]}

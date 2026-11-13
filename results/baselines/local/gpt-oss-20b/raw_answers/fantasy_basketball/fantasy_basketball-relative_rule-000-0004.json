@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","rules":[{"name":"jarrett_vs_saric","measure":"pick","scope":{"player":"Jarrett Jack"},"sense":">=","relative_to":{"measure":"pick","scope":{"player":"Dario Saric"}},"factor":1.5},{"name":"trevor_ariza_share","measure":"pick","scope":{"player":"Trevor Ariza"},"sense":"<=","relative_to":{"measure":"pick"},"factor":0.15}]}

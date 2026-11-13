@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod6_stock_limit",
+      "measure": "store",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "Prod2"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

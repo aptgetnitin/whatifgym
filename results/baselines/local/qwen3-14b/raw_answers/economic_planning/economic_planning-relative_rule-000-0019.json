@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "capacity_stock_ratio",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": [1, 2, 3, 4, 5],
+        "industry": ["coal", "steel", "transport"]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "stock",
+        "scope": {
+          "year": [1, 2, 3, 4, 5],
+          "industry": ["coal", "steel", "transport"]
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

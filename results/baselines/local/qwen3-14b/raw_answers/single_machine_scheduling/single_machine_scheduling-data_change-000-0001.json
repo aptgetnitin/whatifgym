@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "jobs",
+      "column": "duration",
+      "where": {
+        "job": "job_13"
+      },
+      "value": 3930
+    }
+  ]
+}

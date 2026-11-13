@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"max_goes_first_with_J5","measure":"goes_first","scope":{"other_job":"J5"},"sense":"<=","value":9},{"name":"min_start_sum_J5","measure":"start","scope":{"job":"J5"},"sense":">=","value":190}]}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "depots",
+      "column": "repair_capacity",
+      "where": {},
+      "factor": 0.75
+    }
+  ]
+}

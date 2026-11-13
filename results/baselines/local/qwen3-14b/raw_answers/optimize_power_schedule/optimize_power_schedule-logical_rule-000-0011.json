@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "max_on_plants",
+      "measure": "on",
+      "scope": {
+        "plant": [
+          "Edwin I Hatch",
+          "OTHER COAL",
+          "GAS"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

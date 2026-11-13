@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod6",
+        "month": "May"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Prod6 market disappears in May; set max sales to zero."
+}

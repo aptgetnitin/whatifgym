@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_growth_if_heifer_sales",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "value": 182,
+   "relative_to": {
+    "measure": "sell_heifers",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 1.0
+  }
+ ]
+}

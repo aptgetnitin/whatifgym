@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "unfilled_job_penalty",
+      "value": 3050
+    }
+  ],
+  "note": "Set unfilled job penalty to 3050"
+}

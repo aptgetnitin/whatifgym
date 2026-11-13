@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "prod1_stock_zero_or_at_least_380",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "product": "Prod1"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "product": "Prod1"
+          },
+          "sense": ">=",
+          "value": 380
+        }
+      ]
+    }
+  ],
+  "note": "Total stock of Prod1 must be either zero or at least 380."
+}

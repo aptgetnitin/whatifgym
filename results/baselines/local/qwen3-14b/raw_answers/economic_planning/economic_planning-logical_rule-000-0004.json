@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "transport_capacity_year3",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 3,
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 89
+    }
+  ]
+}

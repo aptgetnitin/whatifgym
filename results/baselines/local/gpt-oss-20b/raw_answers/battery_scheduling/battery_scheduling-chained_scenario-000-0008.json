@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"soc_sum_cap","measure":"soc","scope":{},"sense":"<=","value":210}],"note":"Cap on the total stored energy over all hours."}

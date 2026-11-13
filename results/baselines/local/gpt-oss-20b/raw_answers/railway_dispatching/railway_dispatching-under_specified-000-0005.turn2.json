@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "overall_goes_first_cap",
+      "measure": "goes_first",
+      "scope": {},
+      "sense": "<=",
+      "value": 50
+    }
+  ],
+  "note": "Overall cap of 50 on the total number of trains that may clear a resource before another train enters it."
+}

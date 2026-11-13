@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "J1_first_pairs_60pct",
+      "measure": "goes_first",
+      "scope": {
+        "job": "J1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "goes_first"
+      },
+      "factor": 0.6
+    }
+  ]
+}

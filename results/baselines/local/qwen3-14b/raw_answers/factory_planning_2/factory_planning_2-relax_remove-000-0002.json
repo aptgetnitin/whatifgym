@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "relax": [
+    {
+      "constraint": "end_stock",
+      "scope": {
+        "product": []
+      }
+    }
+  ],
+  "note": "Removing the end-of-horizon stock target constraint allows the closing stock to vary freely."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","fixed_decisions":[{"measure":"make","scope":{"month":"Jun","product":"Prod1"},"value":1650}],"note":"Re-plan with fixed production of 1650 units of Prod1 in June."}

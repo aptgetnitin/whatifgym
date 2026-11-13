@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "sugar_beet_total_limit",
+      "measure": "grow_beet",
+      "scope": {},
+      "sense": "<=",
+      "value": 400
+    }
+  ]
+}

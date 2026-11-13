@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "T15_30pct_of_total_temp",
+      "measure": "build",
+      "scope": {
+        "facility": "T15"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "build",
+        "scope": {
+          "facility": [
+            "T15",
+            "T16",
+            "T17",
+            "T18",
+            "T19",
+            "T20",
+            "T21",
+            "T22",
+            "T23"
+          ]
+        }
+      },
+      "factor": 0.3
+    },
+    {
+      "name": "T18_at_most_90pct_T15",
+      "measure": "build",
+      "scope": {
+        "facility": "T18"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "build",
+        "scope": {
+          "facility": "T15"
+        }
+      },
+      "factor": 0.9
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[{"op":"scale","table":"job_types","column":"priority","where":{"job_type":"Equipment Installation"},"factor":0.9}]}

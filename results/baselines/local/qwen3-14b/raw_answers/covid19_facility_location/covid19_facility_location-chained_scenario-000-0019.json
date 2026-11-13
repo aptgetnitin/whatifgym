@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "measure": "assign",
+      "scope": {
+        "facility": "E11"
+      },
+      "sense": "<=",
+      "value": 140,
+      "name": "cap_assign_E11"
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "temporary_build_cost",
+      "factor": 1.25
+    }
+  ]
+}

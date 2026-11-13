@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "expansion_options",
+      "column": "added_capacity",
+      "factor": 1.1
+    }
+  ],
+  "rules": [
+    {
+      "name": "undamaged_left_glasgow_cap",
+      "measure": "undamaged_left",
+      "scope": {
+        "depot": "Glasgow"
+      },
+      "sense": "<=",
+      "value": 9
+    }
+  ]
+}

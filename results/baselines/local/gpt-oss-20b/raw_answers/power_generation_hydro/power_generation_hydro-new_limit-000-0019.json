@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "overall_thermal_cap",
+      "measure": "ngen",
+      "scope": {},
+      "sense": "<=",
+      "value": 70
+    }
+  ]
+}

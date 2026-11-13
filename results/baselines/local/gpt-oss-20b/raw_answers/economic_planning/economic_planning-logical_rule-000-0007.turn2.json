@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","logic":[{"name":"stock_ge_1190_if_capacity_nonzero","at_least":1,"of":[{"measure":"extra_capacity","scope":{"year":3,"industry":"coal"},"sense":"<=","value":0},{"measure":"stock","scope":{"year":5,"industry":"coal"},"sense":">=","value":1190}]}]}

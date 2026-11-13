@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "ask": "What is the total number of cattle (heifers and dairy cows) in each year, and how can the plan be adjusted to meet a target of 1170 head in total?"
+}

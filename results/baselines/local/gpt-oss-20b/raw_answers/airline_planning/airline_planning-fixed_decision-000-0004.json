@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","fixed_decisions":[{"measure":"operate","scope":{"aircraft":"A321#2","flight":4264},"value":0}],"note":"Flight 4264 is ruled out for aircraft A321#2, fixing its operate variable to 0."}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "total_service_start_time_limit",
+      "measure": "start_time",
+      "scope": {},
+      "sense": "<=",
+      "value": 750
+    },
+    {
+      "name": "baden_baden_service_start_time_min",
+      "measure": "start_time",
+      "scope": {
+        "location": "Baden-Baden"
+      },
+      "sense": ">=",
+      "value": 80
+    }
+  ]
+}

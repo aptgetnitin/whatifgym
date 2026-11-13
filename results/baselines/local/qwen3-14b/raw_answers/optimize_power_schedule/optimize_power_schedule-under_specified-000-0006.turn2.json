@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "hydro_generation_cap",
+   "measure": "output",
+   "scope": {
+    "plant": "HYDRO"
+   },
+   "sense": "<=",
+   "value": 4500
+  }
+ ],
+ "note": "A rule limits the sum of output for HYDRO plants to 4500 MWh."
+}

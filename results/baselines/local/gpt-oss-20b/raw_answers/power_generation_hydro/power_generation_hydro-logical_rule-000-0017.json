@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "logic": [
+    {
+      "name": "thermal_output_06-09_zero_or_at_least_60000",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "output",
+          "scope": {
+            "period": "06-09"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "output",
+          "scope": {
+            "period": "06-09"
+          },
+          "sense": ">=",
+          "value": 60000
+        }
+      ]
+    }
+  ]
+}

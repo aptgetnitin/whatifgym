@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_bases",
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "assign",
+   "column": "assign",
+   "where": {
+    "location": "700 LONDON BRIDGE RD",
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Set max_bases to 0 to exclude 5145 RURITAN COURT Rescue Squad and fix assign for 700 LONDON BRIDGE RD to 21 MUNICIPAL CTR Fire Station."
+}

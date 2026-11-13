@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "fixed_decisions": [
+    {
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A320#22",
+        "flight": [
+          "4578"
+        ]
+      },
+      "value": 0
+    }
+  ]
+}

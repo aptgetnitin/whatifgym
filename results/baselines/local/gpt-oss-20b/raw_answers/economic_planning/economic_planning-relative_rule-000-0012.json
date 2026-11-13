@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "capacity3_at_least_half_capacity5",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 3
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "extra_capacity",
+        "scope": {
+          "year": 5
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

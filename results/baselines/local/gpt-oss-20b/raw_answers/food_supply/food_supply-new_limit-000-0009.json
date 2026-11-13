@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "csb_ration_limit",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "sense": "<=",
+      "value": 2.4
+    }
+  ],
+  "note": "Limit total daily ration of CSB per person across all camps to 2.4 units (100 g)."
+}

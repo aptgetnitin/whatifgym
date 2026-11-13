@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "logic": [
+    {
+      "name": "ration_wheat_idleb_implies_flow_wheat_min",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Wheat",
+            "camp": "Idleb"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "flow",
+          "scope": {
+            "food": "Wheat"
+          },
+          "sense": ">=",
+          "value": 86400
+        }
+      ]
+    }
+  ],
+  "note": "If ration for Wheat in Idleb >0 then total Wheat flow >=86400."
+}

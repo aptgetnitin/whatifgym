@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "max_flights_A321#4",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A321#4"
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ],
+  "note": "Limit the number of flights operated by aircraft A321#4 to at most 4."
+}

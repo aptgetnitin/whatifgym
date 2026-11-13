@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "manchester_damaged_transfer_share",
+      "measure": "damaged_transfers",
+      "scope": { "to_depot": "Manchester" },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "damaged_transfers",
+        "scope": {}
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Return depot Manchester must account for at least 25% of all damaged cars transferred."
+}

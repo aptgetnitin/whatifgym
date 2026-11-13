@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"no_manchester_expansion","measure":"expand","scope":{"depot":"Manchester"},"sense":"==","value":0}],"note":"No expansion options are carried out at Manchester."}

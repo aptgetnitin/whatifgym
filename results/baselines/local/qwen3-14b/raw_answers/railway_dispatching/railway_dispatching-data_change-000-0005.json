@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "resources",
+      "column": "duration",
+      "where": {
+        "kind": [
+          "station",
+          "track"
+        ]
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "remove",
+      "table": "trains",
+      "where": {
+        "train": "E"
+      }
+    }
+  ]
+}

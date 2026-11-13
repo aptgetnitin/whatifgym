@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "arrival_time_e_relation_to_c",
+      "measure": "finish_time",
+      "scope": {
+        "train": "E"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "finish_time",
+        "scope": {
+          "train": "C"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "entry_time_b_limit",
+      "measure": "entry_time",
+      "scope": {
+        "train": "B",
+        "resource": {
+          "resource": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        }
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

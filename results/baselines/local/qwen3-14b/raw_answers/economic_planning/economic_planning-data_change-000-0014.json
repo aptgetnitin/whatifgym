@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "factor": 1.1
+    }
+  ]
+}

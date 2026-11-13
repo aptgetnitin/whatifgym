@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "biomass_on_limit",
+      "measure": "on",
+      "scope": {
+        "plant": "BIOMASS"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "on",
+        "scope": {}
+      },
+      "factor": 0.1
+    }
+  ]
+}

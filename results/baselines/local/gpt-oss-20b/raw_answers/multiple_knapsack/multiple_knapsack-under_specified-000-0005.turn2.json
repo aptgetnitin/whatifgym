@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "items",
+      "rows": [
+        {
+          "item": "new_item",
+          "weight": 29,
+          "value": 30
+        }
+      ]
+    }
+  ],
+  "note": "Add new item new_item with weight 29 and value 30."
+}

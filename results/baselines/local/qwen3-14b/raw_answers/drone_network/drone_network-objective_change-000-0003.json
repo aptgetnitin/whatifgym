@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "queue_load",
+   "scope": {
+    "base": {
+     "type": "string"
+    }
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "First minimize total queue load across all bases, then minimize the original response objective."
+}

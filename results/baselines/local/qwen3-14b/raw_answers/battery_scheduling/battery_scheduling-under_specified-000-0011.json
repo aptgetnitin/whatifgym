@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "ask": "By what percentage and in which direction does the grid import price change across the board?"
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"F_at_least_3x_A","measure":"goes_first","scope":{"train":"F"},"sense":">=","relative_to":{"measure":"goes_first","scope":{"train":"A"}},"factor":3.0}],"note":"Number of trains that clear a resource before another train enters it for F must be at least 3 times that for A."}

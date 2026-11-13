@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","data_changes":[{"op":"scale","table":"incidents","column":"incidents","where":{"location":"*"},"factor":0.75}],"note":"Reduce incident counts by 25% across all locations."}

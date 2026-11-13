@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "transfer_costs",
+      "column": "cost",
+      "where": {},
+      "factor": 1.2
+    }
+  ],
+  "note": "All transfer costs are scaled by 1.2, representing a 20% increase."
+}

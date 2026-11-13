@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "both_requests",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "blend",
+          "scope": {
+            "year": "Year4"
+          },
+          "sense": ">=",
+          "value": 8437500
+        },
+        {
+          "measure": "blend",
+          "scope": {
+            "year": "Year1"
+          },
+          "sense": ">=",
+          "value": 8625000
+        }
+      ]
+    }
+  ]
+}

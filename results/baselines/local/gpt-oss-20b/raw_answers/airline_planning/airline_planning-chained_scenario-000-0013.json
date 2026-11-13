@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"measure":"operate","scope":{},"sense":"<=","value":47,"name":"cap_operate_total"}]}

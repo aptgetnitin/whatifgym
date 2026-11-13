@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "total_soc_limit",
+      "measure": "soc",
+      "sense": "<=",
+      "value": 210
+    }
+  ],
+  "note": "The sum of stored energy across all hours must not exceed 210 kWh."
+}

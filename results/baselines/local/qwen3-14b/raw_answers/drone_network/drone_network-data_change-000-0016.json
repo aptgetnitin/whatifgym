@@ -1,0 +1,18 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": {
+     "type": "string"
+    }
+   },
+   "factor": 1.1
+  }
+ ],
+ "note": "A 10% increase in cardiac arrests for every location is achieved by scaling the 'incidents' column in the 'incidents' table by a factor of 1.1."
+}

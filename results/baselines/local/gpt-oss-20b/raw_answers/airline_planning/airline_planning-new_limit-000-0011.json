@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "measure": "operate",
+      "sense": "<=",
+      "value": 46
+    },
+    {
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A321#4"
+      },
+      "sense": "<=",
+      "value": 5
+    }
+  ],
+  "note": "Limit total flights to 46 and flights for A321#4 to 5."
+}

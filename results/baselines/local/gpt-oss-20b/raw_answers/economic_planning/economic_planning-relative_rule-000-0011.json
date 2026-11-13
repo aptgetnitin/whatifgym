@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "stock_at_least_2x_capacity",
+      "measure": "stock",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "extra_capacity"
+      },
+      "factor": 2.0
+    }
+  ]
+}

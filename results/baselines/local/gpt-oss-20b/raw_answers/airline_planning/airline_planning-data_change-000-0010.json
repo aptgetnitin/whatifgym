@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","data_changes":[{"op":"scale","table":"flights","column":"revenue","factor":1.25}],"note":"All ticket revenues increased by 25%."}

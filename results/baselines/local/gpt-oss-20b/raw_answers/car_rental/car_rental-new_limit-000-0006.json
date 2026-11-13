@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "max_undamaged_friday",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Friday"
+      },
+      "sense": "<=",
+      "value": 250
+    }
+  ],
+  "note": "Limit the total undamaged cars at all depots in the morning of Friday to 250."
+}

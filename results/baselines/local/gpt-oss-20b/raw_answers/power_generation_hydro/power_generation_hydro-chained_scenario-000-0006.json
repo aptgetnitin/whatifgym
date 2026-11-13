@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "measure": "hydro_start",
+      "scope": {
+        "hydro": "HydroB"
+      },
+      "sense": ">=",
+      "value": 2,
+      "name": "floor_hydro_start_HydroB"
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "thermal_types",
+      "where": {
+        "type": "Thermal1"
+      }
+    }
+  ],
+  "note": "Remove Thermal1 from the problem."
+}

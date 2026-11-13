@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "facilities",
+      "column": "capacity",
+      "where": {
+        "facility": "E7"
+      },
+      "value": 444
+    }
+  ]
+}

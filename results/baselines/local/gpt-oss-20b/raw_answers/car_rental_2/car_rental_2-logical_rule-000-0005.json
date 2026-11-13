@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","logic":[{"name":"Saturday_Glasgow_min_batch","at_least":1,"of":[{"measure":"rentals","scope":{"day":"Saturday","depot":"Glasgow"},"sense":"==","value":0},{"measure":"rentals","scope":{"day":"Saturday","depot":"Glasgow"},"sense":">=","value":310}]}]}

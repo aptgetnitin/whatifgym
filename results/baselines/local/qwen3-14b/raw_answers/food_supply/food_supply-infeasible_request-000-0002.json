@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"ration_total","measure":"ration","scope":{"food":"*","camp":"*"},"sense":">=","value":102}]}

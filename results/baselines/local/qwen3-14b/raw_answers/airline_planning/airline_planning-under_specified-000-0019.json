@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "ask": "What is the new ticket revenue for flight 3083?"
+}

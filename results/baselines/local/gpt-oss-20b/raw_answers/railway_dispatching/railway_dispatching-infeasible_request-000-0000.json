@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"min_total_arrival_time","measure":"finish_time","sense":">=","value":900}],"note":"Check feasibility of total arrival time at destination at least 900 minutes."}

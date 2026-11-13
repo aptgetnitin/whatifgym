@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4578_operated",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#18",
+        "flight": 4578
+      },
+      "sense": ">=",
+      "value": 1
+    },
+    {
+      "name": "total_flights_operated_A319_18_flight_4514",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#18",
+        "flight": 4514
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

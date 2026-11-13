@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"measure":"store","scope":{},"sense":"<=","value":1040,"name":"stock_cap_total"}]}

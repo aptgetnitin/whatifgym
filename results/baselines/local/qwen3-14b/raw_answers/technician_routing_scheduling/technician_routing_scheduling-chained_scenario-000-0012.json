@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "job_types",
+      "column": "duration_min",
+      "factor": 0.8
+    }
+  ],
+  "rules": [
+    {
+      "measure": "lateness",
+      "scope": {},
+      "sense": "<=",
+      "value": 90,
+      "name": "cap_lateness_total"
+    }
+  ]
+}

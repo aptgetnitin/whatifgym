@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "overall_work_cap",
+      "measure": "operate",
+      "sense": "<=",
+      "value": 13
+    }
+  ],
+  "note": "Overall cap of 13 mine-years worked across all years and mines."
+}

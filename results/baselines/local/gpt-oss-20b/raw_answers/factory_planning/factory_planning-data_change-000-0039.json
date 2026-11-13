@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"shift","table":"machines","column":"installed","where":{"machine":"grinder"},"delta":-1},{"op":"set","table":"downtime","column":"machines_down","where":{"month":"Apr","machine":"vertDrill"},"value":0}],"note":"Retire one grinder and cancel vertical drill maintenance in April."}

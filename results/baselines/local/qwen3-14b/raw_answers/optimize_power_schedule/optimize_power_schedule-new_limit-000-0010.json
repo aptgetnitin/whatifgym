@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "plant_hours_on_23",
+      "measure": "on",
+      "scope": {
+        "hour": 23
+      },
+      "sense": ">=",
+      "value": 10
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "linked_load",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   }
+  }
+ ]
+}

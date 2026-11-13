@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"covid19_facility_location","rules":[{"name":"one_of_T15_T17_T18","measure":"build","scope":{"facility":["T15","T17","T18"]},"sense":"<=","value":1}],"note":"Only one of T15, T17, T18 may be built."}

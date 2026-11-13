@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"scale","table":"mines","column":"quality","where":{"mine":"Mine1"},"factor":1.25},{"op":"scale","table":"mines","column":"royalty","where":{"mine":"Mine4"},"factor":1.1}]}

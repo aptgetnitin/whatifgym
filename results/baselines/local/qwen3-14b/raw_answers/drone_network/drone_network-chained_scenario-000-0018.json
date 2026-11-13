@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "measure": "linked_load",
+   "scope": {
+    "location": "3400 CHAMPLAIN LA"
+   },
+   "sense": "<=",
+   "value": 0.01,
+   "name": "cap_linked_load_3400 CHAMPLAIN LA"
+  }
+ ],
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "observation_days",
+   "value": 15
+  }
+ ]
+}

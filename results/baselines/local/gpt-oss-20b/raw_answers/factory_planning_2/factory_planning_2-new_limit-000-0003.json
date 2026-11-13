@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "feb_sell_limit",
+      "measure": "sell",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "value": 1100
+    }
+  ],
+  "note": "Limit total sales in February to 1100 units."
+}

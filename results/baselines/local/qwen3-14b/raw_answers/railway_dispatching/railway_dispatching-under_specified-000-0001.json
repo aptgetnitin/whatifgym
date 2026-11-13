@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "trains",
+      "where": {
+        "train": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      }
+    }
+  ],
+  "note": "The question is ambiguous as it does not specify which train drops out. All trains are removed as a placeholder."
+}

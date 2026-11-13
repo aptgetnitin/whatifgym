@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "shift",
+   "table": "fuels",
+   "column": "operating_cost",
+   "where": {
+    "fuel": "WAT"
+   },
+   "delta": 20
+  },
+  {
+   "op": "set",
+   "table": "hours",
+   "column": "demand_mwh",
+   "where": {
+    "hour": 5
+   },
+   "value": 4000
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_transfers_rule",
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Tuesday"
+      },
+      "sense": ">=",
+      "value": 15,
+      "relative_to": {
+        "measure": "repairs",
+        "scope": {
+          "day": "Wednesday"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

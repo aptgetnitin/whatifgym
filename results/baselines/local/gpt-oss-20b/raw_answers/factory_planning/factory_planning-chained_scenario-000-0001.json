@@ -1,0 +1,67 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod4_cap_Jan",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4",
+        "month": "Jan"
+      },
+      "sense": "<=",
+      "value": 300
+    },
+    {
+      "name": "prod4_cap_Feb",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4",
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "value": 300
+    },
+    {
+      "name": "prod4_cap_Mar",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4",
+        "month": "Mar"
+      },
+      "sense": "<=",
+      "value": 300
+    },
+    {
+      "name": "prod4_cap_Apr",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4",
+        "month": "Apr"
+      },
+      "sense": "<=",
+      "value": 300
+    },
+    {
+      "name": "prod4_cap_May",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4",
+        "month": "May"
+      },
+      "sense": "<=",
+      "value": 300
+    },
+    {
+      "name": "prod4_cap_Jun",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4",
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 300
+    }
+  ],
+  "note": "Limit production of Prod4 to 300 units per month."
+}

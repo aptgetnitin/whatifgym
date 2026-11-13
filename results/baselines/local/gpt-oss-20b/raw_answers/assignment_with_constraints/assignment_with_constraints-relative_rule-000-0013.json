@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "measure": "assign",
+      "scope": {
+        "task": "task_2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {}
+      },
+      "factor": 0.25
+    }
+  ]
+}

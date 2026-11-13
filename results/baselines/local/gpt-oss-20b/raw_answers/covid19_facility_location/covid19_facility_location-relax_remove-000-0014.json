@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "relax": [
+    {
+      "constraint": "capacity",
+      "scope": {
+        "facility": "E13"
+      }
+    }
+  ],
+  "note": "Remove the bed‑capacity limit for facility E13."
+}

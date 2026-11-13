@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "weekly_cost",
+      "factor": 0.8
+    }
+  ]
+}

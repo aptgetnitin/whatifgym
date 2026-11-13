@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_oil_ration","measure":"ration","scope":{"food":"Oil"},"sense":">=","value":11},{"name":"min_wheat_ration","measure":"ration","scope":{"food":"Wheat"},"sense":">=","value":37}],"note":"Check feasibility of both requests."}

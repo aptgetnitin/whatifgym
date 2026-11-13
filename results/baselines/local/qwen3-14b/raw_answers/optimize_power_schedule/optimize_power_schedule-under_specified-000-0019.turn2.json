@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {},
+      "factor": 1.1
+    }
+  ],
+  "note": "All generation capacities are increased by 10%."
+}

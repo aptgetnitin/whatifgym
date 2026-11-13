@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"measure":"rentals","sense":">=","relative_to":{"measure":"rentals"},"factor":0.5,"scope":{"depot":"Plymouth"}},{"measure":"repairs","sense":">=","relative_to":{"measure":"repairs","scope":{"depot":"Birmingham"}},"factor":0.8,"scope":{"depot":"Manchester"}}]}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "capacity_stock_ratio",
+      "measure": "extra_capacity",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "stock"
+      },
+      "factor": 1.5
+    }
+  ]
+}

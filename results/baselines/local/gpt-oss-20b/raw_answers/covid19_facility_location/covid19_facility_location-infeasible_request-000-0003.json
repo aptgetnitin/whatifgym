@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "E2_assign_560",
+      "measure": "assign",
+      "scope": {
+        "facility": "E2"
+      },
+      "sense": "==",
+      "value": 560
+    }
+  ]
+}

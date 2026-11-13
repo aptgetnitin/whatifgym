@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "max_bases_rule",
+   "measure": "open",
+   "scope": {
+    "base": {
+     "type": "string"
+    }
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ]
+}

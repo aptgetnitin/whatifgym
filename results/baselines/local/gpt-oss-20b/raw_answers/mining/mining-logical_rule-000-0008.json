@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "no_both_Mine3_Mine1_year1",
+      "measure": "operate",
+      "scope": {
+        "year": "Year1",
+        "mine": ["Mine3", "Mine1"]
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "no_both_Mine3_Mine1_year2",
+      "measure": "operate",
+      "scope": {
+        "year": "Year2",
+        "mine": ["Mine3", "Mine1"]
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "no_both_Mine3_Mine1_year3",
+      "measure": "operate",
+      "scope": {
+        "year": "Year3",
+        "mine": ["Mine3", "Mine1"]
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "no_both_Mine3_Mine1_year

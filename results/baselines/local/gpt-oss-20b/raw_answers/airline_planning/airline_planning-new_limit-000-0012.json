@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "max_flights_A319#18",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#18"
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ]
+}

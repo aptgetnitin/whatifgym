@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "resources",
+      "column": "duration",
+      "where": {
+        "kind": [
+          "station",
+          "track"
+        ]
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Scaling the duration column in the resources table by 75% for all station and track rows."
+}

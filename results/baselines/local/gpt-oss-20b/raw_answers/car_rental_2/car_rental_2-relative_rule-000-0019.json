@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"undamaged_to_repair_ratio","measure":"undamaged_transfers","sense":">=","relative_to":{"measure":"repairs"},"factor":3},{"name":"manchester_expansion_share","measure":"expand","scope":{"depot":"Manchester"},"sense":">=","relative_to":{"measure":"expand"},"factor":0.75}]}

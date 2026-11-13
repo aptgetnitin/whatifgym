@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","objective":[{"sense":"max","measure":"blend","scope":{"year":[]}}],"note":"Maximizing the total tons of blended ore sold over all years to reach at least 130458350 tons."}

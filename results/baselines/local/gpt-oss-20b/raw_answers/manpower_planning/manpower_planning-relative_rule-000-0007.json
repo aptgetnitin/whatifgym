@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "recruit",
+      "scope": {
+        "skill": "skilled"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "recruit",
+        "scope": {}
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "At least 50% of all workers recruited must be skilled."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "cap_J3_goes_first",
+      "measure": "goes_first",
+      "scope": {
+        "job": "J3"
+      },
+      "sense": "<=",
+      "value": 5
+    }
+  ],
+  "note": "Cap on the number of job pairs where job J3 goes first on any machine."
+}

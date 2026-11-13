@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_transfers_cap",
+      "measure": "damaged_transfers",
+      "scope": {},
+      "sense": "<=",
+      "value": 55
+    }
+  ]
+}

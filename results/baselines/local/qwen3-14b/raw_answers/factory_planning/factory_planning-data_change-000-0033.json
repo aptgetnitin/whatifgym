@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod3",
+        "month": "Apr"
+      },
+      "factor": 1.5
+    }
+  ],
+  "note": "A relative demand increase over a specific period is a scale over the matching rows."
+}

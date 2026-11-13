@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "relax": [
+    {
+      "constraint": "team_pattern",
+      "scope": {
+        "worker": "worker_7"
+      }
+    }
+  ],
+  "note": "Remove the team_pattern constraint for worker_7 so that any team may work for this worker."
+}

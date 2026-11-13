@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "max_repair_days",
+      "measure": "repairs",
+      "scope": {
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ]
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ]
+}

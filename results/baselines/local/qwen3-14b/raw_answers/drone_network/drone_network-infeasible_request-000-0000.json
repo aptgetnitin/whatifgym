@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "fixed_decisions": [
+  {
+   "measure": "linked_load",
+   "scope": {
+    "location": "600 PAWLEYS AR",
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "value": 0.06
+  }
+ ]
+}

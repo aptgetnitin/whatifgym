@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "land_groups",
+   "where": {
+    "land_group": "Group4"
+   }
+  }
+ ],
+ "note": "Removing a land group from the farm planning model."
+}

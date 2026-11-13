@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"stock_to_make_ratio","measure":"store","sense":">=","relative_to":{"measure":"make"},"factor":0.6}]}

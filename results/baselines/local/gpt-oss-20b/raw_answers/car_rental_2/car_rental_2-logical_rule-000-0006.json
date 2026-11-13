@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "logic": [
+    {
+      "name": "rentals_monday_requires_undamaged_left",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Monday"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "undamaged_left",
+          "scope": {
+            "day": "Monday"
+          },
+          "sense": ">=",
+          "value": 290
+        }
+      ]
+    }
+  ]
+}

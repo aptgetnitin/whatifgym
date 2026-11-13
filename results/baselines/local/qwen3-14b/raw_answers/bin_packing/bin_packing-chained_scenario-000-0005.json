@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "bins",
+      "column": "capacity",
+      "where": {
+        "bin": [
+          "bin0",
+          "bin1",
+          "bin2",
+          "bin3",
+          "bin4",
+          "bin5",
+          "bin6",
+          "bin7",
+          "bin8",
+          "bin9",
+          "bin10"
+        ]
+      },
+      "factor": 0.9
+    }
+  ]
+}

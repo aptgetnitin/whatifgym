@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "downgrade_cap",
+      "measure": "downgrade",
+      "scope": {
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "unskilled",
+          "semi_skilled"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "fixed_decisions": [
+    {
+      "measure": "damaged_stock",
+      "scope": {
+        "day": "Saturday",
+        "depot": "Birmingham"
+      },
+      "value": 0
+    }
+  ]
+}

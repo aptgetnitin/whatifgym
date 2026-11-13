@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "total_legs_limit",
+      "measure": "route",
+      "scope": {},
+      "sense": "<=",
+      "value": 7
+    }
+  ]
+}

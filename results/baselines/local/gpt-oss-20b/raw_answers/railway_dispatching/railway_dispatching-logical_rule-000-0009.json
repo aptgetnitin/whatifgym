@@ -1,0 +1,1 @@
+{"ask":"Could you clarify whether you want to enforce that entry_time[B,2] is either 0 or at least 18, or simply set a lower bound of 18 regardless of whether it is zero? The current DSL does not support conditional rules directly."}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "fixed_decisions": [
+    {
+      "measure": "end",
+      "scope": {
+        "job": "J0",
+        "step": 3
+      },
+      "value": 310
+    }
+  ]
+}

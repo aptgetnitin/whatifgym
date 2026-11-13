@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "rules": [
+    {
+      "name": "embiid_5_percent_limit",
+      "measure": "pick",
+      "scope": {
+        "player": "Joel Embiid"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "pick",
+        "scope": {}
+      },
+      "factor": 0.05
+    },
+    {
+      "name": "jarrett_jack_vs_trevor_ariza",
+      "measure": "pick",
+      "scope": {
+        "player": "Jarrett Jack"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "pick",
+        "scope": {
+          "player": "Trevor Ariza"
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

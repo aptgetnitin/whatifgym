@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "fixed_decisions": [
+    {
+      "measure": "sell",
+      "scope": {
+        "month": "Apr",
+        "product": "Prod3"
+      },
+      "value": 0
+    }
+  ]
+}

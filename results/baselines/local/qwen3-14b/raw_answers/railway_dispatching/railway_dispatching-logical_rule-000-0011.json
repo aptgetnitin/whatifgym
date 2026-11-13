@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "at_least_two_clearances",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "goes_first",
+          "scope": {
+            "resource": 6,
+            "train": "F",
+            "other_train": "A"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "resource": 0,
+            "train": "A",
+            "other_train": "E"
+          },
+          "sense": ">=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

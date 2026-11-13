@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "stock_vs_capacity",
+      "measure": "stock",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "extra_capacity"
+      },
+      "factor": 3.0
+    }
+  ],
+  "note": "Ensure total stock held in all years and industries is at least three times the total capacity built."
+}

@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "ask": "What is the new discharging efficiency value and how should it be adjusted in the model?"
+}

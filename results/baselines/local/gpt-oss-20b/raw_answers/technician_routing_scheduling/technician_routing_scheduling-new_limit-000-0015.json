@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "max_legs_Doris",
+      "measure": "route",
+      "scope": {
+        "technician": "Doris"
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "Limit Doris to at most one route leg."
+}

@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_vs_charge_total",
+      "measure": "discharge",
+      "scope": {
+        "hour": {
+          "all": true
+        }
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "charge",
+        "scope": {
+          "hour": {
+            "all": true
+          }
+        }
+      },
+      "factor": 1.25
+    },
+    {
+      "name": "hour_03_04_charge_share",
+      "measure": "charge",
+      "scope": {
+        "hour": [
+          "03-04"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "charge",
+        "scope": {
+          "hour": {
+            "all": true
+          }
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

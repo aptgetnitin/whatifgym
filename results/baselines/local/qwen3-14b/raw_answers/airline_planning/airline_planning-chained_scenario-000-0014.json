@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "revenue",
+      "where": {
+        "flight": 3081
+      },
+      "factor": 0.5
+    }
+  ],
+  "rules": [
+    {
+      "name": "overall_flight_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": {
+          "type": "string"
+        },
+        "flight": {
+          "type": "int"
+        }
+      },
+      "sense": "<=",
+      "value": 46
+    }
+  ]
+}

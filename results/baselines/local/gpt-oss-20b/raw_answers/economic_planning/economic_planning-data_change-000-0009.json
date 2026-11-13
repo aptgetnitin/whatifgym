@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "labor_per_unit_capacity",
+      "where": {
+        "industry": "coal"
+      },
+      "factor": 0.7
+    }
+  ]
+}

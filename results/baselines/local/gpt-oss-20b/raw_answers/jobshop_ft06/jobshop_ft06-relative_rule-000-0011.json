@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "measure": "start",
+      "scope": {
+        "job": "J4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {}
+      },
+      "factor": 0.6
+    }
+  ]
+}

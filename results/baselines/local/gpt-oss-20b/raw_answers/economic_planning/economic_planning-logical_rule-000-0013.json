@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","logic":[{"name":"transport_stock_minimum","at_least":1,"of":[{"measure":"stock","scope":{"year":1,"industry":"transport"},"sense":"<=","value":0},{"measure":"stock","scope":{"year":1,"industry":"transport"},"sense":">=","value":118}]}]}

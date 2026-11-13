@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "goes_first_ratio_F_vs_A",
+      "measure": "goes_first",
+      "scope": {
+        "resource": "resource",
+        "other_train": "F"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {
+          "resource": "resource",
+          "other_train": "A"
+        }
+      },
+      "factor": 3.0
+    }
+  ]
+}

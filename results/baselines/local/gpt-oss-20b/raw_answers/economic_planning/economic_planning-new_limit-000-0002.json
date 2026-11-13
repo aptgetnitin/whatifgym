@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "coal_capacity_limit",
+      "measure": "extra_capacity",
+      "scope": {
+        "industry": "coal"
+      },
+      "sense": "<=",
+      "value": 530
+    }
+  ],
+  "note": "Limit total coal capacity built to 530."
+}

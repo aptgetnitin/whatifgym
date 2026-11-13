@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_year5_min_30_percent",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "grow_beet",
+    "scope": {
+     "year": [
+      "Year1",
+      "Year2",
+      "Year3",
+      "Year4",
+      "Year5"
+     ]
+    }
+   },
+   "factor": 0.3
+  },
+  {
+   "name": "sugar_beet_year1_max_60_percent_year5",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "grow_beet",
+    "scope": {
+     "year": "Year5"
+    }
+   },
+   "factor": 0.6
+  }
+ ]
+}

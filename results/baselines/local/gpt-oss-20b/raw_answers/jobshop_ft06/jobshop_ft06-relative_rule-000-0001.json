@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "J2_first_pairs_min_15pct",
+      "measure": "goes_first",
+      "scope": {
+        "job": "J2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {}
+      },
+      "factor": 0.15
+    }
+  ],
+  "note": "J2 must be first in at least 15% of all job pairs on machines."
+}

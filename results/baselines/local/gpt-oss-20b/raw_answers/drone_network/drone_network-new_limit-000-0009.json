@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"measure":"queue_load","sense":">=","value":0.01,"scope":{"base":"21 MUNICIPAL CTR Fire Station"}},{"measure":"open","sense":"<=","value":3,"scope":{}}],"note":"Enforce minimum queue load for 21 MUNICIPAL CTR and limit total drones to 3."}

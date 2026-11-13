@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"floor_ration_Idleb","measure":"ration","scope":{"camp":"Idleb"},"sense":">=","value":6.1}]}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "train_d_resource_overlap_limit",
+      "measure": "meet",
+      "scope": {
+        "resource": {
+          "train": "D"
+        }
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

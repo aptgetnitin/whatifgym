@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "logic": [
+    {
+      "name": "non_zero_rentals_man_glas",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Monday",
+            "depot": "Manchester"
+          },
+          "sense": ">=",
+          "value": 0.0001
+        },
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Monday",
+            "depot": "Glasgow"
+          },
+          "sense": ">=",
+          "value": 0.0001
+        }
+      ]
+    }
+  ]
+}

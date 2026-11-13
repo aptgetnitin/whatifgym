@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "overall_food_shipped_cap",
+   "measure": "flow",
+   "scope": {},
+   "sense": "<=",
+   "value": 156250
+  }
+ ]
+}

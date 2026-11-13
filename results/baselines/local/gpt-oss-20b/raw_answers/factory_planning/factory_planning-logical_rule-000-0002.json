@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "Mar_make_zero_or_Jun_make_at_least_4000",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Mar"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jun"
+          },
+          "sense": ">=",
+          "value": 4000
+        }
+      ]
+    }
+  ],
+  "note": "If any units are made in March, then at least 4000 units must be made in June."
+}

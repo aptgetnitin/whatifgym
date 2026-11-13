@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","fixed_decisions":[{"measure":"operate","scope":{"aircraft":"A319#11","flight":3107},"value":0}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","data_changes":[{"op":"scale","table":"plants","column":"capacity_mwh","where":{"plant":"OTHER COAL"},"factor":0.75}],"note":"Reduce OTHER COAL capacity by 25%"}

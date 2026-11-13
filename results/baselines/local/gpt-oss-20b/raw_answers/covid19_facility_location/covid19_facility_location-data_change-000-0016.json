@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "counties",
+      "column": "demand",
+      "where": {
+        "county": "C2"
+      },
+      "value": 345
+    },
+    {
+      "op": "scale",
+      "table": "facilities",
+      "column": "capacity",
+      "where": {
+        "facility": "T20"
+      },
+      "factor": 1.1
+    }
+  ],
+  "note": "Set demand for C2 to 345 and increase capacity of T20 by 10%."
+}

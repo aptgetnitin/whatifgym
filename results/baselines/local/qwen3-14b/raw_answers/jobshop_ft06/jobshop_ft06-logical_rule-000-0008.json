@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "logic": [
+    {
+      "name": "non_zero_goes_first_for_J3_and_J4",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "all",
+            "job": "J3"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "all",
+            "job": "J4"
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

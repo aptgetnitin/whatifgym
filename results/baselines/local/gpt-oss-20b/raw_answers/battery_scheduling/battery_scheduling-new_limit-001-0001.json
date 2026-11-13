@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "max_total_charge",
+      "measure": "charge",
+      "sense": "<=",
+      "value": 5.5
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "store",
+      "sense": ">=",
+      "value": 22500
+    }
+  ],
+  "note": "Check feasibility of achieving a total storage of at least 22500 tons across all months and oils."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"name":"unfilled_at_least_1.5_assigned","measure":"unfilled","sense":">=","relative_to":{"measure":"assign"},"factor":1.5},{"name":"legs_to_freiburg_at_least_50_percent","measure":"route","scope":{"to_location":"Freiburg im Breisgau"},"sense":">=","relative_to":{"measure":"route"},"factor":0.5}]}

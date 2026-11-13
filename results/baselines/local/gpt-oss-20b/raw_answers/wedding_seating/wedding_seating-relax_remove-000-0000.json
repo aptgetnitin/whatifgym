@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"wedding_seating","relax":[{"constraint":"max_tables"}],"note":"Remove the limit on the number of tables."}

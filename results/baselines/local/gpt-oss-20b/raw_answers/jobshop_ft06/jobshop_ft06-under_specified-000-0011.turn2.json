@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": ["J0", "J1", "J2", "J3", "J4", "J5"]
+      },
+      "factor": 1.1
+    }
+  ],
+  "note": "All processing times increased by 10%."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "minimum_workforce_year3_skilled",
+      "measure": "workforce",
+      "scope": {
+        "year": 3,
+        "skill": "skilled"
+      },
+      "sense": ">=",
+      "value": 20000
+    }
+  ]
+}

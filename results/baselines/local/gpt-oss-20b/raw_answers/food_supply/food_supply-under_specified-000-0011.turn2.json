@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"local_prices","column":"price","factor":1.1}],"note":"All local procurement prices increased by 10%."}

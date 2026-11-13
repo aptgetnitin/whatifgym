@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"min_total_thermal_output","measure":"output","scope":{},"sense":">=","value":681600}],"note":"Check feasibility of achieving at least 681600 MW total thermal output."}

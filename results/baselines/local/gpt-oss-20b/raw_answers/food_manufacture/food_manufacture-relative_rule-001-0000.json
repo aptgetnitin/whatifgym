@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg2_at_least_80_percent_of_oil2",
+      "measure": "buy",
+      "scope": {
+        "oil": "VEG2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "oil": "OIL2"
+        }
+      },
+      "factor": 0.8
+    },
+    {
+      "name": "apr_at_least_50_percent_of_total_produce",
+      "measure": "produce",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "produce"
+      },
+      "factor": 0.5
+    }
+  ]
+}

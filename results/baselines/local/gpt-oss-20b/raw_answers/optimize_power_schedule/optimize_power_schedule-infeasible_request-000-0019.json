@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "hour9_min_output",
+      "measure": "output",
+      "scope": { "hour": 9 },
+      "sense": ">=",
+      "value": 14700
+    },
+    {
+      "name": "hour3_min_output",
+      "measure": "output",
+      "scope": { "hour": 3 },
+      "sense": ">=",
+      "value": 17950
+    }
+  ],
+  "note": "Check feasibility of both requests."
+}

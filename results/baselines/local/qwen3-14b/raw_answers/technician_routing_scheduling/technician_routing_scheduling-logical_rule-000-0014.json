@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "limit_service_start_locations",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Offenburg",
+          "Karlsruhe",
+          "Mannheim",
+          "Baden-Baden",
+          "Buehl"
+        ]
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ]
+}

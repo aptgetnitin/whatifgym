@@ -1,0 +1,51 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "reservoir_level_15-18_min",
+      "measure": "reservoir_level",
+      "scope": {
+        "period": "15-18"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "reservoir_level",
+        "scope": {
+          "period": [
+            "00-06",
+            "06-09",
+            "09-15",
+            "18-24"
+          ]
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "thermal_start_00-06_max",
+      "measure": "nstart",
+      "scope": {
+        "period": "00-06",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "nstart",
+        "scope": {
+          "period": "15-18",
+          "type": [
+            "Thermal0",
+            "Thermal1",
+            "Thermal2"
+          ]
+        }
+      },
+      "factor": 0.6
+    }
+  ]
+}

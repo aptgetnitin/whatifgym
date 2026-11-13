@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "finish_time",
+      "scope": {
+        "train": "A"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4510_and_3107_exclusion",
+      "measure": "operate",
+      "scope": {
+        "flight": [
+          4510,
+          3107
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

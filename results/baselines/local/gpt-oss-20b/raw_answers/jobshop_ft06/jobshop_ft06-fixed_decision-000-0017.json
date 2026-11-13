@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "fixed_decisions": [
+    {
+      "measure": "end",
+      "scope": {
+        "job": "J1",
+        "step": 4
+      },
+      "value": 76
+    },
+    {
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M3",
+        "job": "J0",
+        "other_job": "J2"
+      },
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "note": "Fix end time of J1 step 4 to 76 and enforce J0 before J2 on M3."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"single_machine_scheduling","objective":[{"measure":"original","sense":"min"},{"measure":"start_time","sense":"max"}]}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Mine3_extract_limit",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine3"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "extract"
+      },
+      "factor": 0.15
+    }
+  ]
+}

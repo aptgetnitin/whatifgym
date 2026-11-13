@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J4",
+        "step": 6
+      },
+      "factor": 0.7
+    }
+  ],
+  "note": "Processing time for J4 step 6 reduced by 30%."
+}

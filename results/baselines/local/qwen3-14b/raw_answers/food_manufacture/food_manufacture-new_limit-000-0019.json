@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg1_storage_min",
+      "measure": "store",
+      "scope": {
+        "oil": "VEG1"
+      },
+      "sense": ">=",
+      "value": 1800
+    },
+    {
+      "name": "total_buy_max",
+      "measure": "buy",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "sense": "<=",
+      "value": 1900
+    }
+  ]
+}

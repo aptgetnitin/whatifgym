@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "measure": "output",
+      "scope": {
+        "period": "09-15"
+      },
+      "sense": ">=",
+      "value": 131550
+    }
+  ],
+  "note": "Require at least 131,550 MW of thermal output in period 09-15."
+}

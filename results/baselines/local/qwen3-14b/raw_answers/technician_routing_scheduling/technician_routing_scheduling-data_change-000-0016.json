@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "travel_times",
+      "column": "travel_min",
+      "where": {
+        "from_location": "Baden-Baden",
+        "to_location": "Buehl"
+      },
+      "value": 24
+    },
+    {
+      "op": "scale",
+      "table": "technicians",
+      "column": "capacity_min",
+      "where": {},
+      "factor": 0.75
+    }
+  ]
+}

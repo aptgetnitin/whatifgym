@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "other_coal_generation_limit",
+      "measure": "output",
+      "scope": {
+        "plant": "OTHER COAL"
+      },
+      "sense": "<=",
+      "value": 16100
+    }
+  ]
+}

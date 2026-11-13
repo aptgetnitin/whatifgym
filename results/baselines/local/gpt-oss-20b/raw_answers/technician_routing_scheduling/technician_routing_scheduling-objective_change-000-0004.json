@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","objective":[{"sense":"min","measure":"original"},{"sense":"max","measure":"unfilled"},{"sense":"min","measure":"start_time"}],"note":"Lexicographic optimization: minimize total penalty, then maximize number of unfilled jobs, then minimize total service start time."}

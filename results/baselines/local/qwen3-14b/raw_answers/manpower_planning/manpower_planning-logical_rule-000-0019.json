@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "downgrade_rule",
+      "measure": "downgrade",
+      "scope": {
+        "year": 1,
+        "from_skill": "skilled",
+        "to_skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "value": 210
+    }
+  ]
+}

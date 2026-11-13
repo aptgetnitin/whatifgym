@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "technicians",
+      "column": "capacity_min",
+      "where": {},
+      "factor": 1.5
+    }
+  ],
+  "note": "Scaling the capacity_min column in the technicians table by 1.5 to reflect a change in daily working capacity across the board."
+}

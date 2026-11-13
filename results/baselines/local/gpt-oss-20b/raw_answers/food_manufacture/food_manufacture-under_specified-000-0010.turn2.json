@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "Jun_buy_cap",
+      "measure": "buy",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 1000
+    }
+  ]
+}

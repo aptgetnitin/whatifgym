@@ -291,6 +291,24 @@ Open item: these 8 labels depend on the solver release (degenerate optima, or a 
 
 Timeline, continued: 22:02:12 qwen3:4b restarts; 22:28:23 qwen3:8b starts; 22:54:33 it ends (26 min); 22:54:40 to 23:02:51 drone_network again for both models with the 32k window; 23:02:58 qwen3:14b starts (4 at once).
 
+Timeline, end (UTC): 23:33:22 qwen3:14b ends (30 min); 23:33:29 to 23:36:06 its drone_network pass; 23:36:13 gpt-oss:20b starts; 01:03:02 it ends (87 min); 01:03:09 to 01:09:44 its drone_network pass. Then the pod re-scored all four folders with HiGHS 1.15.1 (`RESCORED 15204 records in 896 files: 6 now better, 1 now worse`), rebuilt the summaries and packed `final.tgz`.
+
+**Result** (3,756 template tasks): qwen3:4b 25.0 %, qwen3:8b 58.4 %, qwen3:14b 71.8 %, gpt-oss:20b 88.8 %. Tables in README section 11 and `results/baselines/local/summary.md`.
+
+**Cost, and a mistake.** The work was done at 01:09 UTC (5:09 PM PST), 3 h 17 min after the pod started: about $4.60, inside the $5.50 cap. The pod was terminated only at about 03:40 UTC (7:40 PM PST), so it billed about 5 h 50 min: **about $8.10, about $2.60 over the cap**. (The billing read timed out; this is time x $1.39.) Cause: the watcher on the Mac that should have fetched the results and woken the agent was
+
+```bash
+until curl -s -f $U/FINAL_DONE.txt -o /dev/null || [ "$(date -u +%H%M)" \> "0134" -a "$(date -u +%H)" = "01" ]; do sleep 45; done
+```
+
+zsh rejects `\>` inside `[ ]` (`condition expected: >`), so the time limit never fired, and the loop saw the finish only at 03:32 UTC, most likely because the Mac slept. Rules from now on:
+
+1. Put the deadline on the pod, not on the Mac: start every run with `(sleep <seconds>; runpodctl remove pod $RUNPOD_POD_ID) &` or the pod's own stop command, so the pod ends itself.
+2. Test the time check of a watcher once before relying on it (`[[ $(date -u +%H%M) > 0134 ]]` is the zsh form).
+3. Do not rely on a sleeping laptop to stop a paid machine.
+
+Terminated with `delete-pod`; `list-pods` then returned no pods.
+
 ## Problems hit, in order
 
 1. `check_gpu.py` said `not sm_89` on the RTX 4090: a false alarm, fixed in `da6e3a8` (an `sm_86` build runs on `sm_89`).

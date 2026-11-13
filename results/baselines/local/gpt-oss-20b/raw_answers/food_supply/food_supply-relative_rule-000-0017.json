@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"flow_at_least_2x_purchase","measure":"flow","sense":">=","relative_to":{"measure":"purchase","scope":{}},"factor":2.0}],"note":"Enforce total shipped >= 2 * total purchased."}

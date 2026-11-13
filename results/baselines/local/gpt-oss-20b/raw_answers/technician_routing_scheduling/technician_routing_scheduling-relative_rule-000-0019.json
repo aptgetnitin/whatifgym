@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"name":"baden_baden_start_time_min_60_percent","measure":"start_time","scope":{"location":"Baden-Baden"},"sense":">=","relative_to":{"measure":"start_time"},"factor":0.6}],"note":"Baden-Baden start time must be at least 60% of total start times."}

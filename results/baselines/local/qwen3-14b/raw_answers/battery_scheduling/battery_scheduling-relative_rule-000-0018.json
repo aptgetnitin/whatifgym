@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "soc_01_02_vs_08_09",
+      "measure": "soc",
+      "scope": {
+        "hour": "01-02"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "soc",
+        "scope": {
+          "hour": "08-09"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

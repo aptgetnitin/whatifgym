@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "oil_shipment_beirut_homs",
+   "measure": "flow",
+   "scope": {
+    "food": "Oil",
+    "from_city": "Beirut",
+    "to_city": "Homs"
+   },
+   "sense": ">=",
+   "value": 49800
+  }
+ ]
+}

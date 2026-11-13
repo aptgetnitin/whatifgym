@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "consume",
+      "scope": {
+        "month": "all",
+        "oil": "all"
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ]
+}

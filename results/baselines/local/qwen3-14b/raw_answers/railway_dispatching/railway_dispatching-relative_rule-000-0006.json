@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "entry_time_resource_3_constraint",
+      "measure": "entry_time",
+      "scope": {
+        "resource": 3
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {
+          "resource": 2
+        }
+      },
+      "factor": 3
+    }
+  ]
+}

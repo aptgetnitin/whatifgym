@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"min_total_output","measure":"production","sense":">=","value":20450}],"note":"Check feasibility of achieving at least 20450 total production."}

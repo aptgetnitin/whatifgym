@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "labor_per_unit_capacity",
+      "factor": 0.5
+    }
+  ]
+}

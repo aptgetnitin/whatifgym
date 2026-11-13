@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "measure": "output",
+      "scope": { "hour": 12 },
+      "sense": ">=",
+      "value": 24550
+    },
+    {
+      "measure": "output",
+      "scope": { "hour": 11 },
+      "sense": ">=",
+      "value": 23800
+    }
+  ],
+  "note": "Requests for at least 24550 MWh at hour 12 and 23800 MWh at hour 11."
+}

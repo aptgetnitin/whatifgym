@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "redundant_year1_le_1.5_year2",
+      "measure": "redundant",
+      "scope": {
+        "year": 1
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "redundant",
+        "scope": {
+          "year": 2
+        }
+      },
+      "factor": 1.5
+    }
+  ],
+  "note": "Limit total redundancies in year 1 to at most 1.5 times total redundancies in year 2."
+}

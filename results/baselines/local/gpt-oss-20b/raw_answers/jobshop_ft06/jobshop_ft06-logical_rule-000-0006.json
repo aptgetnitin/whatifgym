@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","logic":[{"name":"start_J4_4_implies_end_J0_6","at_least":1,"of":[{"measure":"start","scope":{"job":"J4","step":4},"sense":"<=","value":0},{"measure":"end","scope":{"job":"J0","step":6},"sense":">=","value":82}]}]}

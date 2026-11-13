@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"soc_limit_05-06","measure":"soc","scope":{"hour":"05-06"},"sense":"<=","value":10}],"note":"Upper bound on stored energy for hour 05-06."}

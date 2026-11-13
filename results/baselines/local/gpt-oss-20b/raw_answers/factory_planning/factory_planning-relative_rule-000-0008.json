@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "make_at_most_25_percent_of_stock",
+      "measure": "make",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {}
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Total units made may be at most 25% of total units in stock."
+}

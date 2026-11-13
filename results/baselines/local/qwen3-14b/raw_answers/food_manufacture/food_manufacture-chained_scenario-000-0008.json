@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "produce",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": "<=",
+      "value": 270,
+      "name": "cap_produce_Jan"
+    }
+  ]
+}

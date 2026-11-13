@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "blend_year4_cap",
+      "measure": "blend",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": "<=",
+      "value": 4218750
+    },
+    {
+      "name": "blend_total_cap",
+      "measure": "blend",
+      "sense": "<=",
+      "value": 13045850
+    }
+  ],
+  "note": "Cap on blended ore sold for Year4 and overall horizon."
+}

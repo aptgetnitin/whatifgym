@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"measure":"make","sense":"==","value":39800}],"note":"Enforce total production of 39800 units."}

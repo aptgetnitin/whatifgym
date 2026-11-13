@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "measure": "start_time",
+      "scope": {
+        "location": "Offenburg"
+      },
+      "sense": ">=",
+      "value": 54
+    }
+  ],
+  "note": "Enforce that the service start time at Offenburg is at least 54 minutes."
+}

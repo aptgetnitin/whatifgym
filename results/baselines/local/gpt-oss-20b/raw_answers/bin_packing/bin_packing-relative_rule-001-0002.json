@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "bins_at_least_60_percent_items",
+      "measure": "y",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {}
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "Enforce that the number of used bins is at least 60% of the total items packed."
+}

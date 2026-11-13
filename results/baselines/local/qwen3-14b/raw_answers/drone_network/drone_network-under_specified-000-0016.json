@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_floor",
+   "measure": "linked_load",
+   "scope": {
+    "location": "location",
+    "base": "base"
+   },
+   "sense": ">=",
+   "value": 0.1
+  }
+ ],
+ "note": "A floor on the queue load linked to an assigned location is implemented as a rule with a lower bound on the linked_load measure."
+}

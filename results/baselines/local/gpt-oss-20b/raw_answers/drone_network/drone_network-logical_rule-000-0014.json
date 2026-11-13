@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "logic": [
+    {
+      "name": "linked_load_implies_min_queue",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "linked_load",
+          "scope": {
+            "location": "900 S MILITARY HWY",
+            "base": "21 MUNICIPAL CTR Fire Station"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "queue_load",
+          "scope": {
+            "base": "21 MUNICIPAL CTR Fire Station"
+          },
+          "sense": ">=",
+          "value": 0.01
+        }
+      ]
+    }
+  ],
+  "note": "If a non‑zero linked load exists for location 900 S MILITARY HWY at base 21 MUNICIPAL CTR Fire Station, then that base’s queue load must be at least 0.01 hours."
+}

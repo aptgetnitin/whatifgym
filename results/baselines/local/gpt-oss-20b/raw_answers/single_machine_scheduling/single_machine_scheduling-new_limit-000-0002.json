@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"single_machine_scheduling","rules":[{"name":"runs_before_job_14_at_least_9","measure":"runs_before","scope":{"other_job":"job_14"},"sense":">=","value":9},{"name":"follows_from_job_6_at_most_1","measure":"follows","scope":{"from_job":"job_6"},"sense":"<=","value":1}]}

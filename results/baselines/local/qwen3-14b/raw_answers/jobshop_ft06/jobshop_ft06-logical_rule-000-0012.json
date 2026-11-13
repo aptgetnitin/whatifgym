@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "no_both_machines_nonzero_goes_first",
+      "measure": "goes_first",
+      "scope": {
+        "machine": [
+          "M4",
+          "M0"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

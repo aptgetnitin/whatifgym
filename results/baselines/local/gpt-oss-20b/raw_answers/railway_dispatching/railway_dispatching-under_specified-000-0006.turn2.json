@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "entry_time_resource6_cap",
+      "measure": "entry_time",
+      "scope": {
+        "resource": 6
+      },
+      "sense": "<=",
+      "value": 83
+    }
+  ],
+  "note": "Cap the total entry time for all trains on resource 6 at 83 minutes."
+}

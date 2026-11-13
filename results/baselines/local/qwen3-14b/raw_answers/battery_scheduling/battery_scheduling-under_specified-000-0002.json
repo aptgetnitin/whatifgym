@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","data_changes":[{"op":"shift","table":"hours","column":"export_price","where":{},"delta":0}]}

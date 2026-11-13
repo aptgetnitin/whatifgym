@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "damaged_transfers_manchester_min",
+      "measure": "damaged_transfers",
+      "scope": {
+        "from_depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 56
+    }
+  ]
+}

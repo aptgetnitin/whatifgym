@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "process_hours",
+      "column": "hours_per_unit",
+      "where": {
+        "product": "Prod3",
+        "machine": "horiDrill"
+      },
+      "value": 1.2
+    }
+  ],
+  "note": "Process improvement increases horizontal drill time for Prod3 to 1.2 hours per unit."
+}

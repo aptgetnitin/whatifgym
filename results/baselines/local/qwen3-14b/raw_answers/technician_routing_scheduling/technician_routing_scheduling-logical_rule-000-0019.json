@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "max_non_zero_start_times",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Buehl",
+          "Karlsruhe",
+          "Lahr/Schwarzwald",
+          "Loerrach"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

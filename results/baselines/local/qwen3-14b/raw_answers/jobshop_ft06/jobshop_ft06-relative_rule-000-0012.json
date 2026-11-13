@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "step1_end_relative_to_step6_end",
+      "measure": "end",
+      "scope": {
+        "job": "*",
+        "step": 1
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "*",
+          "step": 6
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

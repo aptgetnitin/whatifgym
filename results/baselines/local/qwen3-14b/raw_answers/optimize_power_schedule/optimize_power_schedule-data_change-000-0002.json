@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "fuels.shutdown_cost",
+      "value": 110
+    },
+    {
+      "op": "scale_param",
+      "name": "health_costs.health_cost",
+      "factor": 0.75
+    }
+  ]
+}

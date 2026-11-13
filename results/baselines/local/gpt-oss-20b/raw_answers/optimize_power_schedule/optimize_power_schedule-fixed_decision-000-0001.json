@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "fixed_decisions": [
+    {
+      "measure": "on",
+      "scope": {
+        "plant": "GAS",
+        "hour": 22
+      },
+      "value": 0
+    }
+  ],
+  "note": "Set GAS plant off at hour 22."
+}

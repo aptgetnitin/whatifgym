@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "min_queue_load_for_4100_rainbow_dr",
+   "measure": "linked_load",
+   "scope": {
+    "location": "4100 RAINBOW DR"
+   },
+   "sense": ">=",
+   "value": 0.02
+  }
+ ]
+}

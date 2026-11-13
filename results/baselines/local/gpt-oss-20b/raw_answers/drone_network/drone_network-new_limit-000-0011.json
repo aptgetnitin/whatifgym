@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"max_bases_cap","measure":"open","scope":{},"sense":"<=","value":3},{"name":"assign_to_5145_cap","measure":"assign","scope":{"base":"5145 RURITAN COURT Rescue Squad"},"sense":"<=","value":29}],"note":"Overall cap of 3 bases and limit of 29 assignments to 5145 RURITAN COURT."}

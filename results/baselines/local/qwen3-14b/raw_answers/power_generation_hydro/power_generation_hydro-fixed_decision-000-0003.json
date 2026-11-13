@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal0_start_equal",
+      "measure": "nstart",
+      "scope": {
+        "type": "Thermal0"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ]
+}

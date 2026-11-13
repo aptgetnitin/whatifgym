@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": "Thermal0"
+      },
+      "value": 36
+    }
+  ],
+  "note": "Cap the number of Thermal0 units running to 36."
+}

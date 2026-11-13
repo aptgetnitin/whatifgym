@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg2_to_veg1_ratio",
+      "measure": "consume",
+      "scope": {
+        "oil": "VEG2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "oil": "VEG1"
+        }
+      },
+      "factor": 3.0
+    },
+    {
+      "name": "jun_produce_share",
+      "measure": "produce",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "produce"
+      },
+      "factor": 0.75
+    }
+  ]
+}

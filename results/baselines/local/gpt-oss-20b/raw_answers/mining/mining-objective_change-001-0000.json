@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","objective":[{"sense":"min","measure":"open"},{"sense":"max","measure":"original"}],"note":"Prioritize minimizing open mine-years, then maximize discounted profit."}

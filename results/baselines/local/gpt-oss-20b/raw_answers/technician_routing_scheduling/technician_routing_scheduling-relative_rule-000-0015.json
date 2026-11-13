@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "customer5_at_most_75pct_customer1",
+      "measure": "assign",
+      "scope": {
+        "customer": "Customer5"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "customer": "Customer1"
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Limit number of jobs assigned to Customer5 to at most 75% of those assigned to Customer1."
+}

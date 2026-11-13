@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[{"op":"scale","table":"skills","column":"qualified","where":{"technician":["Albert","Bob","Carlos","Doris","Ed","Flor","Gina"]},"factor":0.9}],"note":"All qualified flags in the skills table are scaled by 0.9, effectively reducing qualification probabilities."}

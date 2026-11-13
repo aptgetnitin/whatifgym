@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"max_open_bases","measure":"open","sense":"<=","value":3}],"note":"Cap on total number of drone bases opened."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"item12_at_most_80_percent_of_item10","measure":"x","scope":{"item":"item12"},"sense":"<=","relative_to":{"measure":"x","scope":{"item":"item10"}},"factor":0.8}],"note":"Limit placements of item12 to at most 80% of item10 placements."}

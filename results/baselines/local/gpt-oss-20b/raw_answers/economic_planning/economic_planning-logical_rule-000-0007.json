@@ -1,0 +1,1 @@
+{"ask":"Do you want to enforce that stock[5, coal] >= 1190 only when extra_capacity[3, coal] > 0, or do you want to enforce it regardless of capacity?"}

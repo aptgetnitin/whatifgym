@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "total_make_vs_sell",
+      "measure": "make",
+      "scope": {
+        "product": "all",
+        "month": "all"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "all",
+          "month": "all"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

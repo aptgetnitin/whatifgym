@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"mar_sales_fraction","measure":"sell","scope":{"month":"Mar"},"sense":"<=","relative_to":{"measure":"sell"},"factor":0.05}],"note":"At most 5% of total units sold may go to month Mar."}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "fixed_decisions": [
+    {
+      "measure": "grow_grain",
+      "scope": {
+        "year": ["Year1", "Year2", "Year3", "Year4", "Year5"],
+        "land_group": ["Group1"]
+      },
+      "value": 11
+    }
+  ]
+}

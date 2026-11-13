@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"food_nutrients","column":"amount","factor":0.5}],"note":"nutrient content per 100 g is 50% lower for every row of the nutritional content of foods table"}

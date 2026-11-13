@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "resources",
+      "column": "duration",
+      "where": {
+        "kind": [
+          "station",
+          "track"
+        ]
+      },
+      "factor": 1.2
+    }
+  ],
+  "note": "Scaling the duration of all resources (stations and tracks) by 20% to reflect the increased minimum time on each resource."
+}

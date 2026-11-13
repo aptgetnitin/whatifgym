@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 3
+      },
+      "value": 0
+    }
+  ],
+  "note": "The demand for hour 3 is set to 0 to simulate a scenario where the hourly power demand moves."
+}

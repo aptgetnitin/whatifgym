@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin4_placement_ratio",
+      "measure": "x",
+      "scope": {
+        "bin": "bin4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {}
+      },
+      "factor": 0.6
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "x",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4578_min_30_percent",
+      "measure": "operate",
+      "scope": {
+        "flight": 4578
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "flight": "all"
+        }
+      },
+      "factor": 0.3
+    },
+    {
+      "name": "flight_3097_max_25_percent_flight_4265",
+      "measure": "operate",
+      "scope": {
+        "flight": 3097
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "flight": 4265
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

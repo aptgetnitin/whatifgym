@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "heifer_sales_dependency",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "raise_heifers",
+    "scope": {
+     "year": "Year2"
+    }
+   },
+   "factor": 39
+  }
+ ]
+}

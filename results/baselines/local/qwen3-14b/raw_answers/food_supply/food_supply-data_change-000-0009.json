@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "camps",
+   "column": "beneficiaries",
+   "where": {
+    "camp": "Idleb"
+   },
+   "factor": 0.5
+  },
+  {
+   "op": "scale_param",
+   "name": "max_nutrient_factor",
+   "factor": 1.2
+  }
+ ],
+ "note": "Scaling the beneficiaries of Idleb by 50% and increasing the max_nutrient_factor by 20% to reflect the increase in nutrient requirements."
+}

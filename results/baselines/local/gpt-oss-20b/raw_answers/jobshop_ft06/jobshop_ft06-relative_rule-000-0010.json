@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "step5_end_time_ratio",
+      "measure": "end",
+      "scope": {
+        "step": 5
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {}
+      },
+      "factor": 0.15
+    }
+  ],
+  "note": "The total end time of all operations in step 5 must not exceed 15% of the total end time of all operations."
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "grain_bought_at_most_25pct_beet",
+      "measure": "buy_grain",
+      "scope": {
+        "year": ["Year1", "Year2", "Year3", "Year4", "Year5"]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "grow_beet",
+        "scope": {
+          "year": ["Year1", "Year2", "Year3", "Year4", "Year5"]
+        }
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Limit total grain purchases to at most 25% of total sugar beet grown."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "store",
+      "scope": {
+        "oil": "OIL1"
+      },
+      "sense": ">=",
+      "value": 4500
+    }
+  ],
+  "note": "Enforce that the total storage of OIL1 across all months is at least 4500 if any storage exists."
+}

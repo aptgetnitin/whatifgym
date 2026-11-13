@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "resources",
+      "column": "duration",
+      "factor": 1.2
+    }
+  ],
+  "rules": [
+    {
+      "name": "train_f_entry_time",
+      "measure": "entry_time",
+      "scope": {
+        "train": "F"
+      },
+      "sense": ">=",
+      "value": 310
+    }
+  ]
+}

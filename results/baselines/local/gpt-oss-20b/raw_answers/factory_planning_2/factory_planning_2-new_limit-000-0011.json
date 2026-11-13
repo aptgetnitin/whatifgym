@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "max_total_sales",
+      "measure": "sell",
+      "scope": {},
+      "sense": "<=",
+      "value": 10350
+    }
+  ],
+  "note": "Total sales capped at 10,350 units."
+}

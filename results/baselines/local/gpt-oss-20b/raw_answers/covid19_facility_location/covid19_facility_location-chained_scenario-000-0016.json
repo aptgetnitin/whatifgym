@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "facilities",
+      "column": "capacity",
+      "where": {
+        "facility": "T16"
+      },
+      "value": 150
+    }
+  ],
+  "note": "Set the capacity of temporary facility T16 to 150 beds."
+}

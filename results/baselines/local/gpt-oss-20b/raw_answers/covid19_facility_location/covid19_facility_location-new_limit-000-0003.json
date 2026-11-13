@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "max_temp_build",
+      "measure": "build",
+      "scope": {
+        "facility": ["T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", "T23"]
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "T17_assign_cap",
+      "measure": "assign",
+      "scope": {
+        "facility": "T17"
+      },
+      "sense": "<=",
+      "value": 50
+    }
+  ]
+}

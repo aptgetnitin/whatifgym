@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours_per_month",
+      "column": "hours_per_month",
+      "where": {
+        "machine": "borer"
+      },
+      "factor": 0
+    }
+  ],
+  "note": "Lifting the machine-hours limit for borer means scaling the hours_per_month parameter for borer to infinity, which is represented by a factor of 0 in the scale operation."
+}

@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "logic": [
+    {
+      "name": "other_coal_17_conditional_hydro_6",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "output",
+          "scope": {
+            "plant": "OTHER COAL",
+            "hour": 17
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "output",
+          "scope": {
+            "plant": "HYDRO",
+            "hour": 6
+          },
+          "sense": ">=",
+          "value": 400
+        }
+      ]
+    }
+  ]
+}

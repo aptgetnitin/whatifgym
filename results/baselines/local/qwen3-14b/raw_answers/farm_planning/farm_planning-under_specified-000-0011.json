@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "grain_yield",
+   "factor": 1.2
+  }
+ ],
+ "note": "Scaling the grain yield parameter across all land groups by 20%."
+}

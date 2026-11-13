@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "min_beet_grow_year4",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year4"
+   },
+   "sense": ">=",
+   "value": 340
+  },
+  {
+   "name": "min_beet_grow_year5",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "value": 390
+  }
+ ]
+}

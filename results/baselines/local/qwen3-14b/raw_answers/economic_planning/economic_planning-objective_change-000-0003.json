@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "stock",
+      "scope": {
+        "year": [1, 2, 3, 4, 5],
+        "industry": ["coal", "steel", "transport"]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","data_changes":[{"op":"scale","table":"costs","column":"cost","where":{"worker":["worker_0","worker_1","worker_2","worker_3","worker_4","worker_5","worker_6","worker_7","worker_8","worker_9","worker_10","worker_11"]},"factor":1.25}],"note":"All assignment costs increased by 25%."}

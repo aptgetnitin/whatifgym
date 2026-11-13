@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Mine2_worked_at_least_4_years",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 4
+    },
+    {
+      "name": "total_extracted_capped",
+      "measure": "extract",
+      "scope": {},
+      "sense": "<=",
+      "value": 20873350
+    }
+  ],
+  "note": "Two new limits: Mine2 worked in at least 4 years; total ore extracted capped at 20,873,350 tons."
+}

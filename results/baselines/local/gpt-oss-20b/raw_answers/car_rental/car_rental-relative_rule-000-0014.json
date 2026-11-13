@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_at_least_3x_repairs",
+      "measure": "damaged_stock",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "repairs"
+      },
+      "factor": 3.0
+    }
+  ],
+  "note": "Damaged stock at each depot and day must be at least 3 times the repairs at that depot and day."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","data_changes":[{"op":"set","table":"incidents","column":"incidents","where":{"location":"3600 CROFTS PRIDE DR"},"value":0}],"note":"Set incidents to 0 for location 3600 CROFTS PRIDE DR."}

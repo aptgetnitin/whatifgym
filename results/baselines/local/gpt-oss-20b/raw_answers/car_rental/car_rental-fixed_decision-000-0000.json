@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "fixed_decisions": [
+    {
+      "measure": "rentals",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "value": 52
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "Fix rentals at Plymouth to 52 each day."
+}

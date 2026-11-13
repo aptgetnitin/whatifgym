@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "feb_purchase_min",
+      "measure": "buy",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "value": 940
+    }
+  ]
+}

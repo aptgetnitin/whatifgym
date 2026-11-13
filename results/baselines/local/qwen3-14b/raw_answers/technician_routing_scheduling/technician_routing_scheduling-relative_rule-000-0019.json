@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "baden_baden_service_time",
+      "measure": "start_time",
+      "scope": {
+        "location": "Baden-Baden"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "start_time",
+        "scope": {}
+      },
+      "factor": 0.6
+    }
+  ]
+}

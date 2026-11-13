@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "logic": [
+  {
+   "name": "assign_4400_sanibel_ci_if_3769_open",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "open",
+     "scope": {
+      "base": "3769 E. STRATFORD ROAD Rescue Squad"
+     },
+     "sense": ">=",
+     "value": 0
+    },
+    {
+     "measure": "assign",
+     "scope": {
+      "location": "4400 SANIBEL CI",
+      "base": "3769 E. STRATFORD ROAD Rescue Squad"
+     },
+     "sense": ">=",
+     "value": 2
+    }
+   ]
+  }
+ ]
+}

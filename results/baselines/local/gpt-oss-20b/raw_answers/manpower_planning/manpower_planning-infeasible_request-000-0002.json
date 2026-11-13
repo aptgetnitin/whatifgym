@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","fixed_decisions":[{"measure":"overmanned","scope":{"year":2,"skill":"unskilled"},"value":300}],"note":"Commit to exactly 300 workers employed above requirement for year 2, skill level unskilled."}

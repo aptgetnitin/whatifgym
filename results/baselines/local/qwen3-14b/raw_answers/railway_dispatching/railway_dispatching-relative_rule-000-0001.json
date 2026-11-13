@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "other_train_e_clearing_resource",
+      "measure": "goes_first",
+      "scope": {
+        "other_train": "E"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {}
+      },
+      "factor": 0.2
+    },
+    {
+      "name": "train_d_meet_pairs",
+      "measure": "meet",
+      "scope": {
+        "train": "D"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "meet",
+        "scope": {
+          "train": "B"
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

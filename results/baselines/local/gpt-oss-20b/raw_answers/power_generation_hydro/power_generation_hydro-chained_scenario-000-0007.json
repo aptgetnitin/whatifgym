@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"measure":"ngen","scope":{},"sense":"<=","value":72,"name":"cap_ngen_total"}]}

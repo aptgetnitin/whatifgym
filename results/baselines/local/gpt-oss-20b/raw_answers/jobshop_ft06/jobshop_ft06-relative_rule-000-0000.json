@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "J2_start_at_most_60_percent_of_J1_start",
+      "measure": "start",
+      "scope": {
+        "job": "J2",
+        "step": 1
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "job": "J1",
+          "step": 1
+        }
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "Ensure J2's first operation starts no later than 60% of J1's first operation start time."
+}

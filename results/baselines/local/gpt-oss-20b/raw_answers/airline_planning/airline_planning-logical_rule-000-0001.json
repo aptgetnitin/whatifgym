@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"max_three_of_four_flights","measure":"operate","scope":{"flight":[3074,3108,3097,3068]},"sense":"<=","value":3}],"note":"Only 3 of the specified flights may be operated."}

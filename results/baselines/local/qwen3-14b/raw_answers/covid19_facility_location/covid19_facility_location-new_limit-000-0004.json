@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "facility_e7_capacity_limit",
+      "measure": "assign",
+      "scope": {
+        "facility": "E7"
+      },
+      "sense": "<=",
+      "value": 170
+    },
+    {
+      "name": "temporary_facility_build_limit",
+      "measure": "build",
+      "scope": {
+        "facility": [
+          "T15",
+          "T16",
+          "T17",
+          "T18",
+          "T19",
+          "T20",
+          "T21",
+          "T22",
+          "T23"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

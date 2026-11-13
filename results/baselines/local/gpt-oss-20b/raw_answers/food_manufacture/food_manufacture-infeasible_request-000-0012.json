@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"min_consume_VEG1_Jun","measure":"consume","scope":{"month":"Jun","oil":"VEG1"},"sense":">=","value":1590}],"note":"Ensure at least 1590 tons of VEG1 are refined in June."}

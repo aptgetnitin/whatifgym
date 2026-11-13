@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "drone_cap",
+   "measure": "open",
+   "scope": {
+    "base": {
+     "kind": [
+      "Fire Station",
+      "Rescue Squad"
+     ]
+    }
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ]
+}

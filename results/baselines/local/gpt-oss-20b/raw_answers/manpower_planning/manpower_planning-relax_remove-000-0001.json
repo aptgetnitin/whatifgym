@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "relax": [
+    {
+      "constraint": "retraining_limit",
+      "scope": {
+        "to_skill": "semi_skilled"
+      }
+    }
+  ],
+  "note": "Remove retraining limits for moves into semi_skilled."
+}

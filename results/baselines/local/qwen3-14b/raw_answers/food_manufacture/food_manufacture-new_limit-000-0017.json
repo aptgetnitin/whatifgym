@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "april_refining_limit",
+      "measure": "consume",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ]
+}

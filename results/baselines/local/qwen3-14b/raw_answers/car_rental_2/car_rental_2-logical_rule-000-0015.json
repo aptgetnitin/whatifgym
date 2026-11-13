@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "max_one_day_rentals_non_zero",
+      "measure": "rentals",
+      "scope": {
+        "day": [
+          "Monday",
+          "Friday",
+          "Tuesday",
+          "Saturday"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

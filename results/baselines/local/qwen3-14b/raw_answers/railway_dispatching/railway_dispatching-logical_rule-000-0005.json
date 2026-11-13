@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "train_f_entry_time_rule",
+      "measure": "entry_time",
+      "scope": {
+        "train": "F",
+        "resource": 4
+      },
+      "sense": ">=",
+      "value": 65
+    }
+  ],
+  "logic": [
+    {
+      "name": "train_f_entry_time_logic",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "F",
+            "resource": 4
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "F",
+            "resource": 4
+          },
+          "sense": ">=",
+          "value": 65
+        }
+      ]
+    }
+  ]
+}

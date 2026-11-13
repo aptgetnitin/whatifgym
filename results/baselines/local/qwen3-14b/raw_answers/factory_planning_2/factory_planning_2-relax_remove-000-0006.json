@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "hours_per_month",
+      "where": {
+        "machine": "planer"
+      },
+      "factor": 1000
+    }
+  ],
+  "note": "Scaling the hours_per_month parameter for the planer machine type to a very high value effectively removes the machine-hour capacity constraint for the planer."
+}

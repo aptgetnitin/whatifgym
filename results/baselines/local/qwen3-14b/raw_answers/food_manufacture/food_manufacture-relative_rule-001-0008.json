@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg2_refine_min_3x_veg1",
+      "measure": "consume",
+      "scope": {
+        "oil": "VEG2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "oil": "VEG1"
+        }
+      },
+      "factor": 3.0
+    },
+    {
+      "name": "jun_food_production_min_75_percent",
+      "measure": "produce",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "produce",
+        "scope": {}
+      },
+      "factor": 0.75
+    }
+  ]
+}

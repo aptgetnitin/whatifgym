@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "start_time"
+    }
+  ],
+  "note": "Keep total penalty at its minimum, then maximise the total service start time."
+}

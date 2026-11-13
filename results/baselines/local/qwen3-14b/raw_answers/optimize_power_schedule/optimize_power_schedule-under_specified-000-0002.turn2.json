@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {},
+      "factor": 1.25
+    }
+  ],
+  "note": "Scaling the capacity_mwh column in the plants table by 25% to reflect the increased generation capacity across the board."
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight4564_vs_4575",
+      "measure": "operate",
+      "scope": { "flight": 4564 },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": { "flight": 4575 }
+      },
+      "factor": 0.5
+    },
+    {
+      "name": "A320#22_flight_share",
+      "measure": "operate",
+      "scope": { "aircraft": "A320#22" },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "Two relative limits: flight 4564 <= 50% of flight 4575; A320#22 flights <= 5% of all flights."
+}

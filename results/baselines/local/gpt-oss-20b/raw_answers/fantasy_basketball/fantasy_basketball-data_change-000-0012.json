@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "players",
+      "column": "predicted_points",
+      "where": {
+        "player": "Robert Covington"
+      },
+      "factor": 1.25
+    }
+  ],
+  "note": "Increase predicted points for Robert Covington by 25%."
+}

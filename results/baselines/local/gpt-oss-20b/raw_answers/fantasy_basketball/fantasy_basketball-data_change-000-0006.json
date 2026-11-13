@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set","table":"positions","column":"required","where":{"position":"SF"},"value":2},{"op":"scale","table":"players","column":"salary","where":{"player":"Taj Gibson"},"factor":0.5}],"note":"Increase SF requirement to 2 and halve Taj Gibson's salary."}

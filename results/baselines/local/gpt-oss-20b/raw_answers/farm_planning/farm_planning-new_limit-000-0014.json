@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"min_sugar_beet_sold_year1","measure":"sell_beet","scope":{"year":"Year1"},"sense":">=","value":34},{"name":"max_heifer_calves_raised_total","measure":"raise_heifers","sense":"<=","value":31}],"note":"Enforce minimum sugar beet sales in Year1 and cap total raised heifer calves."}

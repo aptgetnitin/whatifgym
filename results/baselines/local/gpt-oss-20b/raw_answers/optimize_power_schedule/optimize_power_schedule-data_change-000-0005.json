@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 22
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "scale",
+      "table": "fuels",
+      "column": "shutdown_cost",
+      "where": {
+        "fuel": [
+          "SUB",
+          "BIT",
+          "NUC",
+          "BLQ",
+          "NG",
+          "WAT"
+        ]
+      },
+      "factor": 1.2
+    }
+  ],
+  "note": "Hour 22 demand reduced by 25%; all shutdown costs increased by 20%."
+}

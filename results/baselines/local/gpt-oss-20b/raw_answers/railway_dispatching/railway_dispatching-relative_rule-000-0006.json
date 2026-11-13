@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "resource3_at_least_3_times_resource2",
+      "measure": "entry_time",
+      "scope": {
+        "resource": 3
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {
+          "resource": 2
+        }
+      },
+      "factor": 3.0
+    }
+  ],
+  "note": "Entry time for resource 3 must be at least 3 times the entry time for resource 2 (summed over all trains)."
+}

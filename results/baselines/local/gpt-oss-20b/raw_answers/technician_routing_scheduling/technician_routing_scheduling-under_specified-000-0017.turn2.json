@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[{"op":"scale","table":"technicians","column":"capacity_min","where":{"technician":["Albert","Bob","Carlos","Doris","Ed","Flor","Gina"]},"factor":1.2}],"note":"Daily working capacity increased by 20% for all technicians."}

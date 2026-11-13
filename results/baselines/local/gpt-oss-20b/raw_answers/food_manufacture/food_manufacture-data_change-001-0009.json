@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": "VEG1"
+      },
+      "factor": 1.25
+    },
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+      },
+      "factor": 1.20
+    }
+  ],
+  "note": "Increase VEG1 hardness by 25% and raise all purchase prices by 20%."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {
+        "plant": "OTHER COAL"
+      },
+      "value": 3300
+    }
+  ],
+  "note": "Set capacity of OTHER COAL to 3300 MWh per hour."
+}

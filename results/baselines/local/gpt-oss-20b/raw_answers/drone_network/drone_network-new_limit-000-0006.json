@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"max_assign_3769","measure":"assign","scope":{"base":"3769 E. STRATFORD ROAD Rescue Squad"},"sense":"<=","value":3}],"note":"Limit assignments to base 3769 E. STRATFORD ROAD Rescue Squad to at most 3 locations."}

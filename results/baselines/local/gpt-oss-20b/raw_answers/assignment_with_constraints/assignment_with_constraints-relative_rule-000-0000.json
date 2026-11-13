@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","rules":[{"name":"worker5_at_most_80pct_worker1","measure":"assign","scope":{"worker":"worker_5"},"sense":"<=","relative_to":{"measure":"assign","scope":{"worker":"worker_1"}},"factor":0.8}]}

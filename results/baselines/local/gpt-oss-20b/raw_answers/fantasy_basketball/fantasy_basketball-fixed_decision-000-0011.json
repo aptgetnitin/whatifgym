@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "fixed_decisions": [
+    {
+      "measure": "pick",
+      "scope": {
+        "player": "Jerryd Bayless"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Commit to Jerryd Bayless"
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "hour_23_power",
+      "measure": "output",
+      "scope": {
+        "hour": 23
+      },
+      "sense": ">=",
+      "value": 35000
+    },
+    {
+      "name": "hour_21_power",
+      "measure": "output",
+      "scope": {
+        "hour": 21
+      },
+      "sense": ">=",
+      "value": 37200
+    }
+  ]
+}

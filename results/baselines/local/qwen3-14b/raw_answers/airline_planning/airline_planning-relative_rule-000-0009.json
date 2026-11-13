@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_operate_ratio_A318_4_5",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A318#4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": "A318#5"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

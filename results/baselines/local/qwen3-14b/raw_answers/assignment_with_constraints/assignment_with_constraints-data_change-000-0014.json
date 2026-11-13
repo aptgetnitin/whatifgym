@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "tasks",
+      "column": "min_workers",
+      "where": {},
+      "factor": 0.8
+    }
+  ],
+  "note": "Scaling the min_workers column in the tasks table by 80% to reflect the 20% reduction in required workers per task."
+}

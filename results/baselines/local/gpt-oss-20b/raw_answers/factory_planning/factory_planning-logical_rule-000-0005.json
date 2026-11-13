@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","logic":[{"name":"Feb_stock_zero_or_at_least_600","at_least":1,"of":[{"measure":"store","scope":{"month":"Feb"},"sense":"==","value":0},{"measure":"store","scope":{"month":"Feb"},"sense":">=","value":600}]}]}

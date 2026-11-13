@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "May_at_least_1.5_Jun",
+      "measure": "produce",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "produce",
+        "scope": {
+          "month": "Jun"
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

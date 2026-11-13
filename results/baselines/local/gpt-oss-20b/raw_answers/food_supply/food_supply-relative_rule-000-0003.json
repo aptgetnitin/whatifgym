@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"aleppo_to_hassakeh_flow_ratio","measure":"flow","scope":{"from_city":"Aleppo"},"sense":"<=","relative_to":{"measure":"flow","scope":{"from_city":"Hassakeh"}},"factor":0.25}],"note":"New policy: Aleppo shipments <= 25% of Hassakeh shipments."}

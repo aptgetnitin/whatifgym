@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set","table":"positions","column":"required","where":{"position":"PF"},"value":0},{"op":"scale","table":"players","column":"salary","factor":1.25}],"note":"Set PF required to 0 and increase all salaries by 25%."}

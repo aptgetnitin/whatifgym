@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_start_min_00-06",
+      "measure": "nstart",
+      "scope": {
+        "period": "00-06",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": ">=",
+      "value": 14
+    }
+  ]
+}

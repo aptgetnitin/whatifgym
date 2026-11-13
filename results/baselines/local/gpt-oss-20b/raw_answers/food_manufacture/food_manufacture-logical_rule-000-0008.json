@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "Jun_buy_cond_May_OIL3_store",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "buy",
+          "scope": {
+            "month": "Jun"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "month": "May",
+            "oil": "OIL3"
+          },
+          "sense": ">=",
+          "value": 1000
+        }
+      ]
+    }
+  ]
+}

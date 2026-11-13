@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "damaged_transfers_birmingham_cap",
+      "measure": "damaged_transfers",
+      "scope": {
+        "from_depot": "Birmingham"
+      },
+      "sense": "<=",
+      "value": 25
+    },
+    {
+      "name": "undamaged_transfers_total_cap",
+      "measure": "undamaged_transfers",
+      "scope": {},
+      "sense": "<=",
+      "value": 31
+    }
+  ]
+}

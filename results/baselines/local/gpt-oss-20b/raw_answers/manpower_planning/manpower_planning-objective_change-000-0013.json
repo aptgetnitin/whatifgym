@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "short_time"
+    },
+    {
+      "sense": "min",
+      "measure": "redundant"
+    }
+  ],
+  "note": "New priority: minimize short‑time workers first, then minimize total redundancies."
+}

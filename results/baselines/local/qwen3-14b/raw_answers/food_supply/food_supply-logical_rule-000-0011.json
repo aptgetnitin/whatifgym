@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_shipment_rule_idleb",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Wheat",
+          "camp": "Idleb"
+        }
+      },
+      "factor": 86400
+    }
+  ]
+}

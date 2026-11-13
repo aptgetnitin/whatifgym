@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "min_store_OIL3",
+      "measure": "store",
+      "scope": {
+        "oil": "OIL3"
+      },
+      "sense": ">=",
+      "value": 3600
+    },
+    {
+      "name": "max_total_produce",
+      "measure": "produce",
+      "sense": "<=",
+      "value": 2450
+    }
+  ]
+}

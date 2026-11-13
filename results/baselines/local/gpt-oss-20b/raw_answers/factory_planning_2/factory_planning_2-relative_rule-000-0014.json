@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "Jun_stock_at_least_75_percent_Mar",
+      "measure": "store",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Mar"
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Require total stock in June to be at least 75% of total stock in March."
+}

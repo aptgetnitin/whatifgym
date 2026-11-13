@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "train_d_arrival_time_rule",
+      "measure": "finish_time",
+      "scope": {
+        "train": "D"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {
+          "resource": 1,
+          "train": "D"
+        }
+      },
+      "factor": 18
+    }
+  ]
+}

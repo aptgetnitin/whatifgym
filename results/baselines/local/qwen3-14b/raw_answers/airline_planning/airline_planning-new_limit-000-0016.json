@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_operated_limit_A319_11",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A319#11"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

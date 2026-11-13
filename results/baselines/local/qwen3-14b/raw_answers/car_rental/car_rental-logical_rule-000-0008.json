@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "logic": [
+    {
+      "name": "non_zero_rentals_fri_wed",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Friday",
+            "depot": {
+              "$in": ["Glasgow", "Manchester", "Birmingham", "Plymouth"]
+            }
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Wednesday",
+            "depot": {
+              "$in": ["Glasgow", "Manchester", "Birmingham", "Plymouth"]
+            }
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "friday_undamaged_stock_rule",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Friday"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "undamaged_stock",
+        "scope": {}
+      },
+      "factor": 0.4
+    }
+  ]
+}

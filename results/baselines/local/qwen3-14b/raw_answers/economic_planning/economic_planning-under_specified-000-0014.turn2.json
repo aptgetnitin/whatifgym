@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "minimum_stock",
+      "measure": "stock",
+      "scope": {
+        "industry": "steel"
+      },
+      "sense": ">=",
+      "value": 360
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4513_min_percentage",
+      "measure": "operate",
+      "scope": {
+        "flight": 4513
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {}
+      },
+      "factor": 0.05
+    },
+    {
+      "name": "flight_3077_vs_3112",
+      "measure": "operate",
+      "scope": {
+        "flight": 3077
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "flight": 3112
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

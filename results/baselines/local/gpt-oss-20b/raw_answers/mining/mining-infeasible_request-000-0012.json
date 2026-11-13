@@ -1,0 +1,5 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "ask": "Do you mean that the total ore extracted from Mine2 over the entire planning horizon should be at least 21,500,000 tons?"
+}

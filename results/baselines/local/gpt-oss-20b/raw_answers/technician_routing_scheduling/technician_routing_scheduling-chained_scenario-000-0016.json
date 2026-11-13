@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[{"op":"set","table":"job_types","column":"duration_min","where":{"job_type":"Repair - Critical"},"value":30}],"rules":[{"name":"lateness_customer5_limit","measure":"lateness","scope":{"customer":"Customer5"},"sense":"<=","value":60}],"note":"Add limit on lateness for Customer5"}

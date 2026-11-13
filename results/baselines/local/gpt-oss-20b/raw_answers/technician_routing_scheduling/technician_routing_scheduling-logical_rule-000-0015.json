@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"name":"only_one_of_c1_c2_c3","measure":"assign","scope":{"customer":["Customer1","Customer2","Customer3"]},"sense":"<=","value":1}],"note":"At most one of customers 1-3 can be assigned."}

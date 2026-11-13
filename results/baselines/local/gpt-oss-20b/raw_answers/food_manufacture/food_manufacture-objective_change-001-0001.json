@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","objective":[{"sense":"min","measure":"store"},{"sense":"max","measure":"original"}],"note":"New priority: as little tons of oil in storage as possible, then the maximum profit that allows."}

@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "scherer_on_hours_limit",
+      "measure": "on",
+      "scope": {
+        "plant": "Scherer"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "on",
+        "scope": {}
+      },
+      "factor": 0.05
+    },
+    {
+      "name": "shutdowns_to_startups_ratio",
+      "measure": "stop",
+      "scope": {},
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {}
+      },
+      "factor": 0.9
+    }
+  ]
+}

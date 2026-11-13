@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "logic": [
+    {
+      "name": "Karlsruhe_Mannheim_nonzero_start",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "start_time",
+          "scope": { "location": "Karlsruhe" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "start_time",
+          "scope": { "location": "Mannheim" },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "note": "Ensure that at most one of Karlsruhe and Mannheim has a non‑zero service start time."
+}

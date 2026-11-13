@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "service_start_time_mannheim",
+      "measure": "start_time",
+      "scope": {
+        "location": "Mannheim"
+      },
+      "sense": "<=",
+      "value": 19
+    },
+    {
+      "name": "technicians_dispatched_cap",
+      "measure": "use",
+      "scope": {
+        "technician": [
+          "Albert",
+          "Bob",
+          "Carlos",
+          "Doris",
+          "Ed",
+          "Flor",
+          "Gina"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

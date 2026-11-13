@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "departure",
+      "factor": 0.9
+    },
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "arrival",
+      "factor": 0.9
+    }
+  ],
+  "note": "Scaling departure and arrival times by 90% to reflect a 10% reduction in all planned flight times."
+}

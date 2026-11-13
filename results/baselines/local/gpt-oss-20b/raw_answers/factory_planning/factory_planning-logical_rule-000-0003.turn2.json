@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "at_least_one_month_zero_sales",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": { "month": "Apr" },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": { "month": "May" },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": { "month": "Jun" },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "note": "Only two of Apr, May, Jun may have non‑zero sales."
+}

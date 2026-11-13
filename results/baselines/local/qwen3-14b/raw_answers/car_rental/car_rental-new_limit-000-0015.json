@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "undamaged_left_thursday_cap",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Thursday"
+      },
+      "sense": "<=",
+      "value": 2.3
+    }
+  ]
+}

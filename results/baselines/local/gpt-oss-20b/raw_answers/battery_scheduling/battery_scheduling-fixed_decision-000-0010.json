@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "fixed_decisions": [
+    {
+      "measure": "soc",
+      "scope": {
+        "hour": "23-24"
+      },
+      "value": 7.5
+    },
+    {
+      "measure": "charge",
+      "scope": {
+        "hour": "02-03"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fix SOC at 7.5 kWh at 23-24 and charge 0 kW at 02-03, optimize the rest."
+}

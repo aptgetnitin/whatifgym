@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [1, 2, 3],
+        "skill": ["unskilled", "semi_skilled", "skilled"]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Scaling the 'required' column in the 'requirements' table by 0.8 for all years and skill levels reduces manpower requirements by 20%."
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "initial_soc_kwh",
+      "factor": 1.25
+    },
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "import_price",
+      "where": {},
+      "factor": 1.1
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "fixed_decisions": [
+    {
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 5,
+        "industry": "coal"
+      },
+      "value": 440
+    },
+    {
+      "measure": "production",
+      "scope": {
+        "year": 5,
+        "industry": "transport"
+      },
+      "value": 0
+    }
+  ]
+}

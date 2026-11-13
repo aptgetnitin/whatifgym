@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "cap_sell_total_10350",
+      "measure": "sell",
+      "scope": {},
+      "sense": "<=",
+      "value": 10350
+    }
+  ],
+  "note": "Overall cap of 10,350 units sold, summed over all months and products."
+}

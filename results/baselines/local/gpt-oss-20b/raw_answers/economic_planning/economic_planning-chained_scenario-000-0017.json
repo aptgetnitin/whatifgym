@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"max_output_coal_1500","measure":"production","scope":{"industry":"coal"},"sense":"<=","value":1500}]}

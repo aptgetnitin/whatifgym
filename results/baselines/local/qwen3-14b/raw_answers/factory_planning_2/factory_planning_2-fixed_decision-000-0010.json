@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "fixed_decisions": [
+    {
+      "measure": "repair",
+      "scope": {
+        "month": "May",
+        "machine": [
+          "grinder",
+          "vertDrill",
+          "horiDrill",
+          "borer",
+          "planer"
+        ]
+      },
+      "value": 1
+    }
+  ]
+}

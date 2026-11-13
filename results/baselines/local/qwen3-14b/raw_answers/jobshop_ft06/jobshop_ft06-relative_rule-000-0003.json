@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "job_pair_limit_j0_j4",
+      "measure": "goes_first",
+      "scope": {
+        "machine": "all",
+        "job": "J0"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {
+          "machine": "all",
+          "job": "J4"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

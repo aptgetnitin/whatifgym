@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "raise_heifers_year2_min",
+      "measure": "raise_heifers",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "value": 35
+    },
+    {
+      "name": "raise_heifers_year1_min",
+      "measure": "raise_heifers",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 68
+    }
+  ],
+  "note": "Check feasibility of both constraints."
+}

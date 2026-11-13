@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_purchase_total","measure":"purchase","scope":{},"sense":">=","value":973150}],"note":"Check if total purchases can reach at least 973150 units."}

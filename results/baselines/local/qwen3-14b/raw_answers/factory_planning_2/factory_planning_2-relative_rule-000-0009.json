@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "stock_jun_vs_mar",
+      "measure": "store",
+      "scope": {
+        "month": "Jun",
+        "product": "all"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Mar",
+          "product": "all"
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

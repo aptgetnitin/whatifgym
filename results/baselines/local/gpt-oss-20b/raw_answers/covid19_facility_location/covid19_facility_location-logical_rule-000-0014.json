@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "logic": [
+    {
+      "name": "E1_E9_conditional",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "assign",
+          "scope": {
+            "facility": "E1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "assign",
+          "scope": {
+            "facility": "E9"
+          },
+          "sense": ">=",
+          "value": 380
+        }
+      ]
+    }
+  ]
+}

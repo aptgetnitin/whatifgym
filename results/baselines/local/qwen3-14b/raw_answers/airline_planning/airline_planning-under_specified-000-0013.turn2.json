@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_operate_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": {
+          "type": "string"
+        },
+        "flight": {
+          "type": "int"
+        }
+      },
+      "sense": "<=",
+      "value": 31
+    }
+  ]
+}

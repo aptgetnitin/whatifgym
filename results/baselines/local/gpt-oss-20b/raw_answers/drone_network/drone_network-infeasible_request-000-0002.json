@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"total_queue_load_limit","measure":"queue_load","scope":{},"sense":"<=","value":0.07}],"note":"Check feasibility of total queue load <= 0.07 hours."}

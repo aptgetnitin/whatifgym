@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "Loerrach_start_time_limit",
+      "measure": "start_time",
+      "scope": {
+        "location": "Loerrach"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start_time"
+      },
+      "factor": 0.2
+    },
+    {
+      "name": "legs_vs_technicians",
+      "measure": "route",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "use"
+      },
+      "factor": 3
+    }
+  ],
+  "note": "Limit Loerrach start time to 20% of total, and ensure legs >= 3 * technicians."
+}

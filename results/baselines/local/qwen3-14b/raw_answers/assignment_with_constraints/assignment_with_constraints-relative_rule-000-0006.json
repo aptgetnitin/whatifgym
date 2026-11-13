@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "worker_11_at_least_1_25_worker_10",
+      "measure": "works",
+      "scope": {
+        "worker": "worker_11"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "works",
+        "scope": {
+          "worker": "worker_10"
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

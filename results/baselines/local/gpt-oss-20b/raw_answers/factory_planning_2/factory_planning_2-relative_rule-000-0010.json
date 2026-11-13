@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"Prod6_share","measure":"make","scope":{"product":"Prod6"},"sense":"<=","relative_to":{"measure":"make","scope":{}},"factor":0.1}],"note":"Prod6 must account for at most 10% of all units made."}

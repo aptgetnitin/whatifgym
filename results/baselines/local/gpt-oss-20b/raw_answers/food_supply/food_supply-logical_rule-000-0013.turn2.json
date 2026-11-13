@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "logic": [
+    {
+      "name": "Wheat_Dayr_Az_Zor_min_batch",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Wheat",
+            "camp": "Dayr_Az_Zor"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Wheat",
+            "camp": "Dayr_Az_Zor"
+          },
+          "sense": ">=",
+          "value": 3.9
+        }
+      ]
+    }
+  ],
+  "note": "If ration for Wheat in Dayr_Az_Zor is >0, it must be at least 3.9."
+}

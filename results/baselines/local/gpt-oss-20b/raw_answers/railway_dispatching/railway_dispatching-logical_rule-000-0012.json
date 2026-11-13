@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "entry_time_E3_if_F_finish_positive",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "finish_time",
+          "scope": {
+            "train": "F"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "E",
+            "resource": 3
+          },
+          "sense": ">=",
+          "value": 12
+        }
+      ]
+    }
+  ]
+}

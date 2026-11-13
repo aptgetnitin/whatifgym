@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min2_extract_min",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 21500000
+    }
+  ],
+  "note": "Check feasibility of extraction target for Mine2."
+}

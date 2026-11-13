@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "resource_pair_cap",
+      "measure": "meet",
+      "scope": {
+        "resource": "all"
+      },
+      "sense": "<=",
+      "value": 4
+    },
+    {
+      "name": "entry_time_resource_0",
+      "measure": "entry_time",
+      "scope": {
+        "resource": 0
+      },
+      "sense": ">=",
+      "value": 114
+    }
+  ]
+}

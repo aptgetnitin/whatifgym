@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "fixed_decisions": [
+    {
+      "measure": "finish_time",
+      "scope": {
+        "train": "F"
+      },
+      "value": 65
+    }
+  ],
+  "rules": [
+    {
+      "name": "resource_1_train_F_other_train_E",
+      "measure": "goes_first",
+      "scope": {
+        "resource": 1,
+        "train": "F",
+        "other_train": "E"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ]
+}

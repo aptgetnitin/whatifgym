@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "assign",
+   "column": "assign",
+   "where": {
+    "location": "1200 FAULKNER RD",
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting the assign value for location 1200 FAULKNER RD and base 21 MUNICIPAL CTR Fire Station to 0 to reflect the decision against assigning that location to the base."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "customers",
+      "column": "due_time",
+      "where": {
+        "customer": "Customer6"
+      },
+      "factor": 0.5
+    }
+  ]
+}

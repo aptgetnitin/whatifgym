@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"measure":"workforce","sense":">=","value":125000}],"note":"Check if total workforce can reach 125000"}

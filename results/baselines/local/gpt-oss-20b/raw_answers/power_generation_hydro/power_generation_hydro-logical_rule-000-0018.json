@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","logic":[{"name":"Thermal0_output_00-06_zero_or_at_least_20400","at_least":1,"of":[{"measure":"output","scope":{"period":"00-06","type":"Thermal0"},"sense":"==","value":0},{"measure":"output","scope":{"period":"00-06","type":"Thermal0"},"sense":">=","value":20400}]}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"soc_overall_cap","measure":"soc","scope":{},"sense":"<=","value":140}]}

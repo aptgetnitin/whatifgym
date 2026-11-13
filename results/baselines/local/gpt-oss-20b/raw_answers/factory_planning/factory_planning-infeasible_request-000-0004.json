@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"prod3_min_make","measure":"make","scope":{"product":"Prod3"},"sense":">=","value":15000}],"note":"Require at least 15000 units of Prod3 to be produced across all months."}

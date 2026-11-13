@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod5",
+        "month": "Feb"
+      },
+      "value": 500
+    }
+  ],
+  "note": "Market limit for Prod5 sales in February set to 500."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","data_changes":[{"op":"scale","table":"fuels","column":"fuel_cost","where":{"fuel":["SUB","BIT","NUC","BLQ","NG","WAT"]},"factor":0.75}],"note":"Fuel cost per MWh reduced by 25% across all fuels."}

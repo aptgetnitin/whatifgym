@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "max_one_month_sales",
+      "measure": "sell",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

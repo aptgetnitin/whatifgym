@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "max_recruit",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "factor": 0.8
+    }
+  ]
+}

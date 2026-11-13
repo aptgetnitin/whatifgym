@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"total_stock_target","measure":"stock","scope":{},"sense":">=","value":2400}],"note":"Enforce that the sum of all stock variables across all years and industries is at least 2400 million USD."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","rules":[{"measure":"team","scope":{"team":["team_0_1","team_10_11","team_5_6"]},"sense":"<=","value":1}]}

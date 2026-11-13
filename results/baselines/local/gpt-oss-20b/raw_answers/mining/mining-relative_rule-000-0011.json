@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "open_to_operate_ratio",
+      "measure": "open",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate"
+      },
+      "factor": 1.5
+    }
+  ]
+}

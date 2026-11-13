@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "flow_balance_homs",
+   "measure": "flow",
+   "scope": {
+    "from_city": "Homs"
+   },
+   "sense": "==",
+   "value": 170
+  }
+ ]
+}

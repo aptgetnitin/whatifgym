@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"measure":"extra_capacity","scope":{"year":5},"sense":">=","value":760,"name":"floor_extra_capacity_5"}]}

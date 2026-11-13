@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","logic":[{"name":"short_time_minimum_batch","at_least":1,"of":[{"measure":"short_time","scope":{"skill":"unskilled"},"sense":"<=","value":0},{"measure":"short_time","scope":{"skill":"unskilled"},"sense":">=","value":220}]}]}

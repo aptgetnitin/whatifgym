@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "team_0_1_vs_team_10_11",
+      "measure": "team",
+      "scope": {
+        "team": "team_0_1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "team",
+        "scope": {
+          "team": "team_10_11"
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

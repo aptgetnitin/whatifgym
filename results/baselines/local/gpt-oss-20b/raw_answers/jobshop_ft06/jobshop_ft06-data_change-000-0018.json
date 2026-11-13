@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","data_changes":[{"op":"scale","table":"operations","column":"duration","where":{"job":"J1","step":2},"factor":1.5}],"note":"Processing time of J1 step 2 increased by 50%."}

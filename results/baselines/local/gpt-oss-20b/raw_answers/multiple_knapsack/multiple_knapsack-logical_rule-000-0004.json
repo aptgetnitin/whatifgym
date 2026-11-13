@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"item1_or_item8_at_most_one","measure":"x","scope":{"item":["item1","item8"]},"sense":"<=","value":1}],"note":"At most one of item1 and item8 may be placed in any bin."}

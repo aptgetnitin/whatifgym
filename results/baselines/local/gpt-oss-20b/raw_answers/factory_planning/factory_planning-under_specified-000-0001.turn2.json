@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"measure":"store","sense":"<=","value":900}],"note":"Upper limit on total units in stock over the horizon."}

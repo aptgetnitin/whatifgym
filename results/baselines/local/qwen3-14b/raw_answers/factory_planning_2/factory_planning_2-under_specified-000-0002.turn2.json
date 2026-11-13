@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "machines",
+      "column": "installed",
+      "where": {},
+      "factor": 1.1
+    }
+  ],
+  "note": "Scaling the installed machines by 10% for all rows."
+}

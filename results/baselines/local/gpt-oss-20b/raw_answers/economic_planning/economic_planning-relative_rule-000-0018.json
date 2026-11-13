@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"transport_at_least_2x_steel","measure":"production","scope":{"industry":"transport"},"sense":">=","relative_to":{"measure":"production","scope":{"industry":"steel"}},"factor":2.0}]}

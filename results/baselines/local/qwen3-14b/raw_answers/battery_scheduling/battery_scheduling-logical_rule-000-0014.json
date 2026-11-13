@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "logic": [
+    {
+      "name": "discharge_rule_21_22",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "discharge",
+          "scope": {
+            "hour": "21-22"
+          },
+          "sense": ">=",
+          "value": 10
+        },
+        {
+          "measure": "soc",
+          "scope": {
+            "hour": "16-17"
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

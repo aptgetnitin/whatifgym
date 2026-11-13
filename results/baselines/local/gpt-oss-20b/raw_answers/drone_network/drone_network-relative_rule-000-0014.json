@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "queue_load_800_limit",
+      "measure": "queue_load",
+      "scope": {
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "queue_load"
+      },
+      "factor": 0.1
+    },
+    {
+      "name": "open_800_vs_21_ratio",
+      "measure": "open",
+      "scope": {
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "open",
+        "scope": {
+          "base": "21 MUNICIPAL CTR Fire Station"
+        }
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "Limit queue load at 800 to 10% of total, and open 800 to at most 90% of open 21."
+}

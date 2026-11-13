@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "only_one_stock_non_zero",
+      "measure": "stock",
+      "scope": {
+        "industry": ["coal", "steel", "transport"]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

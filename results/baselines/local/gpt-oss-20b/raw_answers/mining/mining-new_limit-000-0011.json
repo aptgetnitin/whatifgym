@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"total_extract_limit","measure":"extract","scope":{},"sense":"<=","value":23482500}]}

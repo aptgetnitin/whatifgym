@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "logic": [
+    {
+      "name": "sat_nonzero_requires_tue_manchester_118",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Saturday"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Tuesday",
+            "depot": "Manchester"
+          },
+          "sense": ">=",
+          "value": 118
+        }
+      ]
+    }
+  ]
+}

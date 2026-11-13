@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","logic":[{"name":"csb_purchase_requires_ration","at_least":1,"of":[{"measure":"purchase","scope":{"food":"Corn-soya blend (CSB)"},"sense":"==","value":0},{"measure":"ration","scope":{"food":"Corn-soya blend (CSB)","camp":"Daraa"},"sense":">=","value":1.05}]}]}

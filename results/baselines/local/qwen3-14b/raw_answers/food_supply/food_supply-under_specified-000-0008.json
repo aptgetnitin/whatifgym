@@ -1,0 +1,53 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "local_prices",
+   "column": "price",
+   "where": {
+    "supplier": {
+     "Aleppo": true,
+     "Amman": true,
+     "As_Suweida": true,
+     "Beirut": true,
+     "Damascus": true,
+     "Daraa": true,
+     "Dayr_Az_Zor": true,
+     "Gaziantep": true,
+     "Hama": true,
+     "Hassakeh": true,
+     "Homs": true
+    },
+    "food": {
+     "Beans": true,
+     "Bulgur": true,
+     "Cheese": true,
+     "Fish": true,
+     "Meat": true,
+     "Corn-soya blend (CSB)": true,
+     "Dates": true,
+     "Dried skim milk (enriched) (DSM)": true,
+     "Milk": true,
+     "Lentils": true,
+     "Maize": true,
+     "Maize meal": true,
+     "Chickpeas": true,
+     "Rice": true,
+     "Sorghum/millet": true,
+     "Soya-fortified bulgur wheat": true,
+     "Soya-fortified maize meal": true,
+     "Soya-fortified sorghum grits": true,
+     "Soya-fortified wheat flour": true,
+     "Sugar": true,
+     "Oil": true,
+     "Wheat": true,
+     "Wheatflour": true,
+     "WSB": true
+    }
+   },
+   "factor": 0.9
+  }
+ ]
+}

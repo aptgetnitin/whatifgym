@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "task_1_assignments_limit",
+      "measure": "assign",
+      "scope": {
+        "task": "task_1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "task": "task_5"
+        }
+      },
+      "factor": 0.25
+    },
+    {
+      "name": "teams_limit",
+      "measure": "team",
+      "scope": {},
+      "sense": "<=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {}
+      },
+      "factor": 0.25
+    }
+  ]
+}

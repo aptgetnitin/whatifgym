@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","data_changes":[{"op":"scale","table":"fuels","column":"fuel_cost","factor":0.5}],"note":"Fuel cost per MWh in the fuels table falls by 50%."}

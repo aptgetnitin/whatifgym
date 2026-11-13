@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "open_year2_fraction",
+      "measure": "open",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "open"
+      },
+      "factor": 0.15
+    },
+    {
+      "name": "blend_year1_to_year4_ratio",
+      "measure": "blend",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "blend",
+        "scope": {
+          "year": "Year4"
+        }
+      },
+      "factor": 0.8
+    }
+  ]
+}

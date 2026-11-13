@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","data_changes":[{"op":"scale","table":"flights","column":"departure","factor":1.2}],"note":"All departure times increased by 20%."}

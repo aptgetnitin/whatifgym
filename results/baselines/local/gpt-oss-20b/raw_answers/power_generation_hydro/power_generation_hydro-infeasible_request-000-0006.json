@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"measure":"pump","sense":"==","value":21150}],"note":"Enforce total pumping power to 21150 MW."}

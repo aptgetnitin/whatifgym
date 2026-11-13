@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"measure":"purchase","scope":{"food":"Milk"},"sense":"<=","value":23100,"name":"cap_purchase_Milk"}]}

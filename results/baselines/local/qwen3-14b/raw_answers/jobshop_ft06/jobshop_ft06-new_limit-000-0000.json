@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "step5_start_time_min",
+      "measure": "start",
+      "scope": {
+        "step": 5
+      },
+      "sense": ">=",
+      "value": 340
+    }
+  ]
+}

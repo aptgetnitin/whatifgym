@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "min_pairs_M0",
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M0"
+      },
+      "sense": ">=",
+      "value": 11
+    }
+  ],
+  "note": "Require at least 11 job pairs where the job goes first on machine M0."
+}

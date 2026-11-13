@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"measure":"damaged_left","scope":{"day":"Saturday"},"sense":">=","value":1.9},{"measure":"damaged_stock","scope":{"depot":"Manchester"},"sense":"<=","value":67}],"note":"Damaged cars kept overnight on Saturday at least 1.9; damaged cars in morning at Manchester at most 67."}

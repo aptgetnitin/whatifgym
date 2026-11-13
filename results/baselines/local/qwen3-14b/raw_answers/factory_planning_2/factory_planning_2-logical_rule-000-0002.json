@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "jan_make_impact_jun_sell",
+      "measure": "sell",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "value": 6100,
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": "Jan",
+          "product": "Prod1"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

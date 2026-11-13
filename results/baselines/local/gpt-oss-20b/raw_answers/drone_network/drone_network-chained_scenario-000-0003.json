@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"measure":"linked_load","scope":{"location":"5600 MEER ST"},"sense":">=","value":0.01,"name":"floor_linked_load_5600 MEER ST"}],"data_changes":[{"op":"scale_param","name":"observation_days","factor":0.75}],"note":"Observation window reduced to 75% of original."}

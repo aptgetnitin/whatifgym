@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "transport_min_output",
+      "measure": "production",
+      "scope": {
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 1110
+    },
+    {
+      "name": "total_capacity_max",
+      "measure": "extra_capacity",
+      "sense": "<=",
+      "value": 460
+    }
+  ],
+  "note": "Transport output must be at least 1110; total capacity built across all industries and years must not exceed 460."
+}

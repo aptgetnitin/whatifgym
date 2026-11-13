@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "extract_year4_mine4_zero_or_min",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year4",
+            "mine": "Mine4"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "extract",
+          "scope": {
+            "year": "Year4",
+            "mine": "Mine4"
+          },
+          "sense": ">=",
+          "value": 7500000
+        }
+      ]
+    }
+  ],
+  "note": "Total ore extracted for Year4, Mine4 must be either zero or at least 7.5 million tons."
+}

@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg2_vs_oil2_purchase",
+      "measure": "buy",
+      "scope": {
+        "oil": "VEG2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "oil": "OIL2"
+        }
+      },
+      "factor": 0.8
+    },
+    {
+      "name": "april_production_share",
+      "measure": "produce",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "produce",
+        "scope": {}
+      },
+      "factor": 0.5
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "fixed_decisions": [
+    {
+      "measure": "finish_time",
+      "scope": {
+        "train": "B"
+      },
+      "value": 51
+    }
+  ]
+}

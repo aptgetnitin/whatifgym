@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","logic":[{"name":"no_both_year2_and_year4_nonzero","at_least":1,"of":[{"measure":"production","scope":{"year":2},"sense":"==","value":0},{"measure":"production","scope":{"year":4},"sense":"==","value":0}]}]}

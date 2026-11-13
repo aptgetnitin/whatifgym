@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_cap_A318_5_vs_A319_18",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A318#5"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": "A319#18"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

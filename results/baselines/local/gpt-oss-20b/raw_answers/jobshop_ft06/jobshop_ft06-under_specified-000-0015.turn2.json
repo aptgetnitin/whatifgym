@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "measure": "goes_first",
+      "sense": "<=",
+      "value": 24
+    }
+  ],
+  "note": "Cap on the total number of job pairs where the job goes first on the machine."
+}

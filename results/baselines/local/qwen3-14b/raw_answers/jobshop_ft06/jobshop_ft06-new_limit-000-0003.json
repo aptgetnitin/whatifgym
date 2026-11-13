@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "limit_goes_first_on_m4",
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M4"
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ]
+}

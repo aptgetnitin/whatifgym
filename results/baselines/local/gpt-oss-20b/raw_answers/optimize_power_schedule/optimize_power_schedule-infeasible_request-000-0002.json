@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"total_generation_target","measure":"output","scope":{},"sense":">=","value":717000}]}

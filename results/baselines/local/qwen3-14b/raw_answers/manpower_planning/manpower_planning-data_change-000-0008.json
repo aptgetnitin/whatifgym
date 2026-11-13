@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {},
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "max_recruit",
+      "where": {},
+      "factor": 0.8
+    }
+  ],
+  "note": "Scaling required and max_recruit columns in the requirements table by 20% for all rows."
+}

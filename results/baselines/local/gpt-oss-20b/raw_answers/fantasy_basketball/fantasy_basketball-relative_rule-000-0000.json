@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","rules":[{"measure":"pick","scope":{"player":"Trevor Ariza"},"sense":"<=","relative_to":{"measure":"pick","scope":{"player":"Dario Saric"}},"factor":0.8}]}

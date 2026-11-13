@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "jun_make_ge_3x_may_make",
+      "measure": "make",
+      "scope": {
+        "month": "Jun",
+        "product": "all"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": "May",
+          "product": "all"
+        }
+      },
+      "factor": 3.0
+    },
+    {
+      "name": "total_stock_ge_2x_total_sold",
+      "measure": "store",
+      "scope": {
+        "month": "all",
+        "product": "all"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "all",
+          "product": "all"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

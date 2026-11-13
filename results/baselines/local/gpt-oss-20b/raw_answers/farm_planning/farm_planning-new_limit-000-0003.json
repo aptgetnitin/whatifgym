@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"max_cattle_year4","measure":"herd","scope":{"year":"Year4","age":[1,2,3,4,5,6,7,8,9,10,11]},"sense":"<=","value":100}],"note":"Total head of cattle in Year4 must not exceed 100."}

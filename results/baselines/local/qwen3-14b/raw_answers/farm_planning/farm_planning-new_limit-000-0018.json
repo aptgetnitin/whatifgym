@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_grow_year5_min",
+   "measure": "grow_beet",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "value": 160
+  },
+  {
+   "name": "sugar_beet_sell_total_cap",
+   "measure": "sell_beet",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "<=",
+   "value": 170
+  }
+ ]
+}

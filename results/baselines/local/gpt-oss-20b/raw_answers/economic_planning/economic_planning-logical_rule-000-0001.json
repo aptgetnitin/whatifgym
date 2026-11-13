@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","logic":[{"name":"coal_capacity_minimum_batch","at_least":1,"of":[{"measure":"extra_capacity","scope":{"year":5,"industry":"coal"},"sense":"<=","value":0},{"measure":"extra_capacity","scope":{"year":5,"industry":"coal"},"sense":">=","value":1180}]}],"note":"If coal capacity built in year 5 is positive, it must be at least 1180."}

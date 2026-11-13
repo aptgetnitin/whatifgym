@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "900 BAJA CT"
+   },
+   "value": 2
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","fixed_decisions":[{"measure":"goes_first","scope":{"machine":"M3","job":"J1","other_job":"J2"},"value":1}],"objective":[{"sense":"min","measure":"original"}],"note":"Fix J1 before J2 on M3 and optimize makespan."}

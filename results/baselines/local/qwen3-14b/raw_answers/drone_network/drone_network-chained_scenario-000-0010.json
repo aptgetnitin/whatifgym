@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "500 PINE TOPS CT"
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "A 20% increase in incidents at location 500 PINE TOPS CT is modeled by scaling the incidents column for that location by 1.2."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "stock"
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "Prioritize minimizing total stock, then maximize employment."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","fixed_decisions":[{"measure":"grow_grain","scope":{"year":"Year1"},"value":0},{"measure":"grow_grain","scope":{"year":"Year5"},"value":0}],"note":"No grain grown in Year1 and Year5."}

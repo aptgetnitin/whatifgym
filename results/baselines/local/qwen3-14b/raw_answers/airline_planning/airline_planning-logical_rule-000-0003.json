@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "logic": [
+    {
+      "name": "flight_operate_limit",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "operate",
+          "scope": {
+            "flight": [
+              "4265",
+              "3074",
+              "4514"
+            ]
+          },
+          "sense": "<=",
+          "value": 2
+        }
+      ]
+    }
+  ]
+}

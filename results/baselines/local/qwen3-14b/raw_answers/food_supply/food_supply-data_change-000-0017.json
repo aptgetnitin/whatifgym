@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "food_nutrients",
+      "column": "amount",
+      "where": {},
+      "factor": 1.1
+    }
+  ],
+  "note": "Scaling all nutrient amounts by 10% to reflect increased nutrient content per 100g."
+}

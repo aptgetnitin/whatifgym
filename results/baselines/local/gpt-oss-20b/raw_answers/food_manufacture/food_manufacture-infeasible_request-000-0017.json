@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "fixed_decisions": [
+    {
+      "measure": "store",
+      "scope": {
+        "month": "Mar",
+        "oil": "VEG2"
+      },
+      "value": 2410
+    }
+  ],
+  "note": "Commit to exactly 2410 tons of VEG2 in storage in March."
+}

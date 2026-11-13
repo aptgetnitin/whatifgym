@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"measure":"stop","scope":{},"sense":"<=","value":1,"name":"cap_stop_total"},{"measure":"on","scope":{"plant":"OTHER COAL"},"sense":"<=","value":9,"name":"cap_other_coal_on_hours"}]}

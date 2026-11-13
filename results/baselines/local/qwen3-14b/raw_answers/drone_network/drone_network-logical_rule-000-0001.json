@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_linked_to_assigned_location",
+   "measure": "linked_load",
+   "scope": {
+    "location": "500 PINE TOPS CT",
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": ">=",
+   "value": 0.02
+  }
+ ]
+}

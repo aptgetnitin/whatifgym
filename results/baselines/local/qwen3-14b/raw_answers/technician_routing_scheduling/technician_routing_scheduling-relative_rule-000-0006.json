@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "doris_dispatched_limit",
+      "measure": "use",
+      "scope": {
+        "technician": "Doris"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "use",
+        "scope": {
+          "technician": "Ed"
+        }
+      },
+      "factor": 0.9
+    },
+    {
+      "name": "customer2_job_assignment",
+      "measure": "assign",
+      "scope": {
+        "customer": "Customer2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {}
+      },
+      "factor": 0.5
+    }
+  ]
+}

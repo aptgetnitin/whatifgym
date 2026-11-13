@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "measure": "extra_capacity",
+      "sense": "<=",
+      "value": 590
+    }
+  ],
+  "note": "Cap on total capacity built across all years and industries."
+}

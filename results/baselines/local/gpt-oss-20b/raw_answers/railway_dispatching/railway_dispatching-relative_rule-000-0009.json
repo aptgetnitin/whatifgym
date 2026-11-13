@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "A_finish_at_least_2x_E_finish",
+      "measure": "finish_time",
+      "scope": {
+        "train": "A"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "finish_time",
+        "scope": {
+          "train": "E"
+        }
+      },
+      "factor": 2.0
+    }
+  ],
+  "note": "Ensure train A arrives at destination at least twice as late as train E."
+}

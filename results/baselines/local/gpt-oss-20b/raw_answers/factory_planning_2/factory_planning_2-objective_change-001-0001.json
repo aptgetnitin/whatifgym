@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","objective":[{"measure":"store","sense":"min"},{"measure":"original","sense":"max"}],"note":"Least possible total units in stock first, profit second."}

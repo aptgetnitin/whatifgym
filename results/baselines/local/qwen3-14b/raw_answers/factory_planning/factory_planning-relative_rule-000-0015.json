@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "jun_sales_limit",
+      "measure": "sell",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {}
+      },
+      "factor": 0.05
+    },
+    {
+      "name": "prod3_vs_prod1_sales",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod3"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod1"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

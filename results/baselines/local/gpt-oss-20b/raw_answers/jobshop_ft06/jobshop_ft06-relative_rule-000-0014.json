@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"J3_other_job_first_ratio","measure":"goes_first","scope":{"other_job":"J3"},"sense":"<=","relative_to":{"measure":"goes_first"},"factor":0.05}],"note":"Limit the number of pairs where J3 is the other job and goes_first=1 to at most 5% of all goes_first pairs."}

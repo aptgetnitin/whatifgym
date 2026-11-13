@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"measure":"store","scope":{},"sense":"<=","value":1020,"name":"stock_cap_total"}],"note":"Updated inventory cap to 1020 units."}

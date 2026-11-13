@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","data_changes":[{"op":"set_param","name":"maintenance_minutes","value":19}],"note":"Set maintenance time per mission to 19 minutes."}

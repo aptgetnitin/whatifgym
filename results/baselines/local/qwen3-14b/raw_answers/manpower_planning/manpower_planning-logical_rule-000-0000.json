@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "short_time_impact_year3",
+      "measure": "overmanned",
+      "scope": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "sense": ">=",
+      "value": 220
+    }
+  ]
+}

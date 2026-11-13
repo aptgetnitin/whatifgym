@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "max_total_assignments",
+      "measure": "assign",
+      "sense": "<=",
+      "value": 3
+    }
+  ],
+  "note": "Cap on the total number of jobs assigned to technicians."
+}

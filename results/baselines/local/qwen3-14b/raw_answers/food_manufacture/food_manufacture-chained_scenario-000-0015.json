@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "produce",
+      "scope": {},
+      "sense": "<=",
+      "value": 2350,
+      "name": "cap_produce_total"
+    }
+  ]
+}

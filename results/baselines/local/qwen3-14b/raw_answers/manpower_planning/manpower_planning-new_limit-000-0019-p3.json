@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "redundancy_min_year1",
+      "measure": "redundant",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 530
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "storage_apr_requirement",
+      "measure": "store",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {}
+      },
+      "factor": 0.15
+    },
+    {
+      "name": "oil2_to_veg2_ratio",
+      "measure": "consume",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "oil": "VEG2"
+        }
+      },
+      "factor": 0.9
+    }
+  ]
+}

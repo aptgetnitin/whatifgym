@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"overall_capacity_cap","measure":"extra_capacity","sense":"<=","value":500}]}

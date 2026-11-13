@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"max_total_flow","measure":"flow","scope":{},"sense":"<=","value":138900},{"name":"max_purchase_milk","measure":"purchase","scope":{"food":"Milk"},"sense":"<=","value":17500}],"note":"Total flow and Milk purchase limits"}

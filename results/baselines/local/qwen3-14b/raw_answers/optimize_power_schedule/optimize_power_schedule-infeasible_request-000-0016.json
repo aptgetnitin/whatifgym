@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "vogtle_hour_17_output",
+      "measure": "output",
+      "scope": {
+        "plant": "Vogtle",
+        "hour": 17
+      },
+      "sense": "==",
+      "value": 4200
+    }
+  ]
+}

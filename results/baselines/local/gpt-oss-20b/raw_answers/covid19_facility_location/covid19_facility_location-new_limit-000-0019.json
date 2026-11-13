@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "E11_capacity_cap",
+      "measure": "assign",
+      "scope": {
+        "facility": "E11"
+      },
+      "sense": "<=",
+      "value": 140
+    },
+    {
+      "name": "temp_build_cap",
+      "measure": "build",
+      "scope": {
+        "facility": [
+          "T15",
+          "T16",
+          "T17",
+          "T18",
+          "T19",
+          "T20",
+          "T21",
+          "T22",
+          "T23"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ],
+  "note": "Cap on patients at E11 and total temporary facilities built"
+}

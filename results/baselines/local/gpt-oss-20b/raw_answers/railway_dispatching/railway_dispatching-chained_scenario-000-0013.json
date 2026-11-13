@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "total_entry_time_C_at_least_36",
+      "measure": "entry_time",
+      "scope": {
+        "train": "C"
+      },
+      "sense": ">=",
+      "value": 36
+    }
+  ]
+}

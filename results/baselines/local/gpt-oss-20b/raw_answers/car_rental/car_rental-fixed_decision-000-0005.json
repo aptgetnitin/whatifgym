@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "fixed_decisions": [
+    {
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Thursday",
+        "from_depot": "Glasgow",
+        "to_depot": "Birmingham"
+      },
+      "value": 0
+    }
+  ],
+  "note": "No damaged transfers from Glasgow to Birmingham on Thursday."
+}

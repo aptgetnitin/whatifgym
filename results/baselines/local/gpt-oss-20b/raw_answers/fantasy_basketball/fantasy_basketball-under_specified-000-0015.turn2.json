@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"scale","table":"players","column":"salary","factor":1.2}],"note":"Increase all player salaries by 20%."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"discharge_21_22_pct","measure":"discharge","scope":{"hour":"21-22"},"sense":"<=","relative_to":{"measure":"discharge"},"factor":0.2}],"note":"Hour 21-22 discharge must be at most 20% of total discharge."}

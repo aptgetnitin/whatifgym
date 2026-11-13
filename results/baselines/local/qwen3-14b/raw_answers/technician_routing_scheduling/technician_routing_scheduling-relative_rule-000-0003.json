@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "karlsruhe_service_time",
+      "measure": "start_time",
+      "scope": {
+        "location": "Karlsruhe"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "start_time",
+        "scope": {}
+      },
+      "factor": 0.2
+    },
+    {
+      "name": "carlos_dispatched_limit",
+      "measure": "use",
+      "scope": {
+        "technician": "Carlos"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "use",
+        "scope": {
+          "technician": "Ed"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

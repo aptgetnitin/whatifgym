@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","logic":[{"name":"start_J0_6_implies_sum_start_J1_ge_170","at_least":1,"of":[{"measure":"start","scope":{"job":"J0","step":6},"sense":"<=","value":0},{"measure":"start","scope":{"job":"J1"},"sense":">=","value":170}]}]}

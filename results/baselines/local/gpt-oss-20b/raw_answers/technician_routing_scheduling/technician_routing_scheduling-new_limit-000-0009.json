@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "measure": "start_time",
+      "scope": {
+        "location": "Loerrach"
+      },
+      "sense": ">=",
+      "value": 540
+    },
+    {
+      "measure": "use",
+      "sense": "<=",
+      "value": 4
+    }
+  ],
+  "note": "Loerrach start time must be at least 540 minutes and no more than 4 technicians may be dispatched."
+}

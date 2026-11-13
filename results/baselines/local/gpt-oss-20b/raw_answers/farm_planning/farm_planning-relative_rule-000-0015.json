@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"beet_growth_ratio","measure":"grow_beet","scope":{"year":"Year2"},"sense":">=","relative_to":{"measure":"grow_beet","scope":{"year":"Year4"}},"factor":2.0}],"note":"New policy: beet grown in Year2 must be at least twice the beet grown in Year4."}

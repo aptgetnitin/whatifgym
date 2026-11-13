@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","data_changes":[{"op":"set_param","name":"terminal_soc_kwh","value":4.5}],"note":"Minimum end‑of‑day battery charge reduced by 25% (from 6 kWh to 4.5 kWh)."}

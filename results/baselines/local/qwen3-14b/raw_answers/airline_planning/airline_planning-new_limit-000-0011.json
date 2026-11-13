@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "total_flights_operated_limit",
+      "measure": "operate",
+      "scope": {},
+      "sense": "<=",
+      "value": 46
+    },
+    {
+      "name": "a321_4_flights_operated_limit",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A321#4"
+      },
+      "sense": "<=",
+      "value": 5
+    }
+  ]
+}

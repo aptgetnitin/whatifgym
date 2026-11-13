@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "total_on_hours_19",
+      "measure": "on",
+      "scope": {
+        "hour": 19
+      },
+      "sense": ">=",
+      "value": 10
+    }
+  ]
+}

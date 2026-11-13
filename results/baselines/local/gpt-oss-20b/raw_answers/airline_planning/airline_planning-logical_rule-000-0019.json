@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "no_both_f4510_3107",
+      "measure": "operate[aircraft, flight]",
+      "scope": {
+        "flight": [4510, 3107]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "At most one of flights 4510 and 3107 may be operated."
+}

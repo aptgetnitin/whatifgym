@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j4_step4_start_impact",
+      "measure": "end",
+      "scope": {
+        "job": "J0",
+        "step": 6
+      },
+      "sense": ">=",
+      "value": 82,
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "job": "J4",
+          "step": 4
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

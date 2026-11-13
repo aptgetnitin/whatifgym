@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"total_profit_target","measure":"yearly_profit","sense":">=","value":608600}],"note":"Check if the plan can achieve a total yearly profit of at least 608,600 USD."}

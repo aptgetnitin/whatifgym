@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","logic":[{"name":"prod5_stock_disjunction","at_least":1,"of":[{"measure":"store","scope":{"product":"Prod5"},"sense":"<=","value":0},{"measure":"store","scope":{"product":"Prod5"},"sense":">=","value":500}]}],"note":"Total stock of Prod5 must be either zero or at least 500."}

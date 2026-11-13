@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"linked_load_ratio","measure":"linked_load","scope":{"base":"5145 RURITAN COURT Rescue Squad"},"sense":"<=","relative_to":{"measure":"linked_load","scope":{"base":"21 MUNICIPAL CTR Fire Station"}},"factor":1.5}],"note":"Limit linked load at 5145 to 1.5 times that at 21 MUNICIPAL CTR"}

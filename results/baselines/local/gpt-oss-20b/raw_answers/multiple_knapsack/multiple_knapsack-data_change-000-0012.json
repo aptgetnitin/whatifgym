@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","data_changes":[{"op":"scale","table":"items","column":"weight","factor":1.1}],"note":"All item weights increased by 10%."}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "Feb_buy_at_least_half_total",
+      "measure": "buy",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy"
+      },
+      "factor": 0.5
+    }
+  ]
+}

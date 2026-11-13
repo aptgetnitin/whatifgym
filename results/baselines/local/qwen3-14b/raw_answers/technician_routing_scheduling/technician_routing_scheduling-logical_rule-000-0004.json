@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "karlsruhe_mannheim_exclusion",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Karlsruhe",
+          "Mannheim"
+        ]
+      },
+      "sense": "<=",
+      "value": 1,
+      "relative_to": {
+        "measure": "start_time",
+        "scope": {
+          "location": [
+            "Karlsruhe",
+            "Mannheim"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

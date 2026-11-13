@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "max_one_plant_active",
+      "measure": "output",
+      "scope": {
+        "plant": [
+          "HYDRO",
+          "Edwin I Hatch",
+          "Scherer",
+          "BIOMASS"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

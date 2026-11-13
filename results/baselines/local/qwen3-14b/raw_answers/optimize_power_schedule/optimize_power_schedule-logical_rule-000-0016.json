@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "biomass_min_output",
+      "measure": "output",
+      "scope": {
+        "plant": "BIOMASS"
+      },
+      "sense": ">=",
+      "value": 16950
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"fixed_assign_base3769","measure":"assign","scope":{"base":"3769 E. STRATFORD ROAD Rescue Squad"},"sense":"==","value":1}],"note":"Fix the number of incident locations assigned to base 3769 E. STRATFORD ROAD Rescue Squad to 1."}

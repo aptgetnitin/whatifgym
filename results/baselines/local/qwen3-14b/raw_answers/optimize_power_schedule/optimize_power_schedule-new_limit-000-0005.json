@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "plant_hours_on_hour_21",
+      "measure": "on",
+      "scope": {
+        "hour": 21
+      },
+      "sense": ">=",
+      "value": 9
+    },
+    {
+      "name": "oil_power_generated",
+      "measure": "output",
+      "scope": {
+        "plant": "OIL"
+      },
+      "sense": "<=",
+      "value": 900
+    }
+  ]
+}

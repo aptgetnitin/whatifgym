@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","logic":[{"name":"at_most_one_blend_year","at_least":3,"of":[{"measure":"blend","scope":{"year":"Year1"},"sense":"==","value":0},{"measure":"blend","scope":{"year":"Year2"},"sense":"==","value":0},{"measure":"blend","scope":{"year":"Year3"},"sense":"==","value":0},{"measure":"blend","scope":{"year":"Year4"},"sense":"==","value":0}]}]}

@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "karlsruhe_start_time_rule",
+      "measure": "start_time",
+      "scope": {
+        "location": "Karlsruhe"
+      },
+      "sense": ">=",
+      "value": 320
+    }
+  ],
+  "logic": [
+    {
+      "name": "karlsruhe_start_time_logic",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "start_time",
+          "scope": {
+            "location": "Karlsruhe"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "start_time",
+          "scope": {
+            "location": "Karlsruhe"
+          },
+          "sense": ">=",
+          "value": 320
+        }
+      ]
+    }
+  ]
+}

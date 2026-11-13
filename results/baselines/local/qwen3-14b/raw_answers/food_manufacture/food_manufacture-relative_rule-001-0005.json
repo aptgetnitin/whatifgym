@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg1_veg2_buy_limit",
+      "measure": "buy",
+      "scope": {
+        "oil": "VEG1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "oil": "VEG2"
+        }
+      }
+    },
+    {
+      "name": "veg1_storage_limit",
+      "measure": "buy",
+      "scope": {
+        "oil": "VEG1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "oil": [
+            "VEG1",
+            "VEG2",
+            "OIL1",
+            "OIL2",
+            "OIL3"
+          ]
+        }
+      },
+      "factor": 0.05
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "year4_at_most_half_year3",
+      "measure": "production",
+      "scope": {
+        "year": 4
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "production",
+        "scope": {
+          "year": 3
+        }
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Output produced in year 4 must be at most 50% of the output produced in year 3."
+}

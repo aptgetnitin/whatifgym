@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "rules": [
+    {
+      "name": "min_start_job4",
+      "measure": "start_time",
+      "scope": {
+        "job": "job_4"
+      },
+      "sense": ">=",
+      "value": 149300
+    },
+    {
+      "name": "min_start_job8",
+      "measure": "start_time",
+      "scope": {
+        "job": "job_8"
+      },
+      "sense": ">=",
+      "value": 204050
+    }
+  ],
+  "note": "Check feasibility of both start time constraints."
+}

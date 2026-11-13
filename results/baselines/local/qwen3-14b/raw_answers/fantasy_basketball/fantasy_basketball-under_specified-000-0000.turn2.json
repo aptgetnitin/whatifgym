@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "players",
+   "column": "predicted_points",
+   "where": {
+    "player": "Trevor Ariza"
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "The predicted fantasy points of player Trevor Ariza is scaled by 80%."
+}

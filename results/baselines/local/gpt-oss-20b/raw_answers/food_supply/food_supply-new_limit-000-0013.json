@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"measure":"flow","scope":{"food":"Wheat"},"sense":">=","value":86400}],"note":"Require at least 86,400 units of Wheat shipped per day"}

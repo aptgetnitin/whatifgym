@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "hours_per_month",
+      "value": 1000000
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "capacity",
+      "scope": {
+        "month": [
+          "May",
+          "Jun"
+        ]
+      }
+    }
+  ],
+  "note": "Lifting the machine-hours limit for May and June by setting hours_per_month to a very high value and relaxing the capacity constraints for those months."
+}

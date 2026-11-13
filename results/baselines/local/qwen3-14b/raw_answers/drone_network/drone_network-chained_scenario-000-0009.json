@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "incidents",
+   "column": "incidents",
+   "factor": 1.25
+  },
+  {
+   "op": "set_param",
+   "name": "max_bases",
+   "value": 6
+  }
+ ]
+}

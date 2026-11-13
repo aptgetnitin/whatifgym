@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "rental_lengths",
+      "column": "price_other_depot",
+      "factor": 1.25
+    }
+  ],
+  "note": "Increase price_other_depot by 25% for all rental lengths."
+}

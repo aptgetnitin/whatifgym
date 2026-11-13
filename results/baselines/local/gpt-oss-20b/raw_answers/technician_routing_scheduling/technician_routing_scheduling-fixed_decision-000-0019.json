@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "fixed_decisions": [
+    {
+      "measure": "start_time",
+      "scope": {
+        "location": "Karlsruhe"
+      },
+      "value": 160
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "note": "Commit start time at Karlsruhe to 160 and optimize the rest."
+}

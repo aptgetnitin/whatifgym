@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"oil_csb_ratio","measure":"purchase","sense":"<=","relative_to":{"measure":"purchase"},"factor":0.25}],"note":"Oil purchases must be at most 25% of CSB purchases."}

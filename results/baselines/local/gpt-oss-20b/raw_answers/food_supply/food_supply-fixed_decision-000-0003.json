@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","fixed_decisions":[{"measure":"purchase","scope":{"supplier":"Daraa"},"value":1700}],"note":"Fix purchase at 1700 units per food for supplier Daraa."}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Year2_extract_limit",
+      "measure": "extract",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "value": 5400000
+    }
+  ],
+  "note": "Limit total extraction in Year2 to 5,400,000 tons."
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "rules": [
+    {
+      "name": "end_time_cap",
+      "measure": "end_time",
+      "scope": {
+        "job": {
+          "job_0": true,
+          "job_1": true,
+          "job_2": true,
+          "job_3": true,
+          "job_4": true,
+          "job_5": true,
+          "job_6": true,
+          "job_7": true,
+          "job_8": true,
+          "job_9": true,
+          "job_10": true,
+          "job_11": true,
+          "job_12": true,
+          "job_13": true,
+          "job_14": true
+        }
+      },
+      "sense": "<=",
+      "value": 100000
+    }
+  ]
+}

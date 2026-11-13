@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"C_finish_time_min","measure":"finish_time","scope":{"train":"C"},"sense":">=","value":21}]}

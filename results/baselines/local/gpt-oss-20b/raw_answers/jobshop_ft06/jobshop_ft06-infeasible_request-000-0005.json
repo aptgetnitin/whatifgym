@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","fixed_decisions":[{"measure":"end","scope":{"job":"J3","step":5},"value":380}]}

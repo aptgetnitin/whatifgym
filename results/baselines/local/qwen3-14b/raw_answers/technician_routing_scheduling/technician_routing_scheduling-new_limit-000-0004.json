@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "min_start_time_lahr",
+      "measure": "start_time",
+      "scope": {
+        "location": "Lahr/Schwarzwald"
+      },
+      "sense": ">=",
+      "value": 450
+    }
+  ]
+}

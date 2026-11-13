@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "logic": [
+    {
+      "name": "non_zero_flights_for_aircraft",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "operate",
+          "scope": {
+            "aircraft": "A321#2"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "operate",
+          "scope": {
+            "aircraft": "A318#5"
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

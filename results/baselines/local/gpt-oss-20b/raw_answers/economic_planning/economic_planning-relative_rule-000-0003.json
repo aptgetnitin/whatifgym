@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"year2_to_year5_ratio","measure":"production","scope":{"year":2},"sense":"<=","relative_to":{"measure":"production","scope":{"year":5}},"factor":0.25}],"note":"Output in year 2 must be at most 25% of output in year 5."}

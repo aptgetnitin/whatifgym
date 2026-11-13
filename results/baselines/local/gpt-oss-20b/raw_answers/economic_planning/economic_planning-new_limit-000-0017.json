@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "min_capacity_year5",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 5
+      },
+      "sense": ">=",
+      "value": 710
+    },
+    {
+      "name": "max_stock_transport",
+      "measure": "stock",
+      "scope": {
+        "industry": "transport"
+      },
+      "sense": "<=",
+      "value": 39
+    }
+  ],
+  "note": "Capacity built in year 5 must be at least 710; total stock of transport across years 1–5 must not exceed 39."
+}

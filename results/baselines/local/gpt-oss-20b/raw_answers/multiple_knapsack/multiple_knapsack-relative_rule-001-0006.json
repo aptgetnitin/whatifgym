@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"item5_to_item14_ratio","measure":"x","scope":{"item":"item5"},"sense":"<=","relative_to":{"measure":"x","scope":{"item":"item14"}},"factor":0.75},{"name":"item10_total_ratio","measure":"x","scope":{"item":"item10"},"sense":"<=","relative_to":{"measure":"x"},"factor":0.05}]}

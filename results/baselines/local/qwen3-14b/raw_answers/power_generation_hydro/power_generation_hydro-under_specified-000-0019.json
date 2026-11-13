@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","data_changes":[{"op":"set_param","name":"thermal_types.cost_per_mwh_above_min","value":null}],"ask":"What is the new value of the cost per MWh above minimum for generator type Thermal1?"}

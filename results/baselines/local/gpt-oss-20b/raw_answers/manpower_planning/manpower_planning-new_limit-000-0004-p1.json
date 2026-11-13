@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "short_time",
+      "scope": {},
+      "sense": "<=",
+      "value": 240
+    },
+    {
+      "measure": "redundant",
+      "scope": {
+        "year": 2
+      },
+      "sense": "<=",
+      "value": 80
+    }
+  ],
+  "note": "Two caps: total short_time <=240, redundant in year 2 <=80."
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "fixed_decisions": [
+    {
+      "measure": "grow_grain",
+      "scope": {
+        "year": "Year5"
+      },
+      "value": 5.5
+    }
+  ],
+  "rules": [
+    {
+      "name": "sell_heifers_year3",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": "==",
+      "value": 29
+    }
+  ]
+}

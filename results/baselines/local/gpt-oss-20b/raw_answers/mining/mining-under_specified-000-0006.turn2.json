@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "extract_cap_mine4",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine4"
+      },
+      "sense": "<=",
+      "value": 3825000
+    }
+  ],
+  "note": "Cap on total extraction from Mine4."
+}

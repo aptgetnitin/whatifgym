@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"short_time_cap","measure":"short_time","scope":{},"sense":"<=","value":240},{"name":"redundant_year2_cap","measure":"redundant","scope":{"year":2},"sense":"<=","value":80}],"note":"Cap short-time at 240 overall and redundancies in year 2 at most 80."}

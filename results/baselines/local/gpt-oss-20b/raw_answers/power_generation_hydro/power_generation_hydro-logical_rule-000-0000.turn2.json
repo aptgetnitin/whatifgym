@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","logic":[{"name":"at_most_two_thermal_types_active","at_least":1,"of":[{"measure":"ngen","scope":{"type":"Thermal0"},"sense":"<=","value":0},{"measure":"ngen","scope":{"type":"Thermal1"},"sense":"<=","value":0},{"measure":"ngen","scope":{"type":"Thermal2"},"sense":"<=","value":0}]}]}

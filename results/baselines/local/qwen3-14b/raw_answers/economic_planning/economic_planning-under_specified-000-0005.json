@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[{"op":"set","table":"input_output","column":"input_per_unit_output","where":{"supplier":"transport","user":"transport"},"value":0}],"note":"Setting the input per unit of output for transport industry to zero as per the question."}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_raised_year2_limit",
+      "measure": "raise_heifers",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "value": 6
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "end_time",
+      "scope": {
+        "job": {
+          "type": "all"
+        }
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "runs_before",
+      "scope": {
+        "job": {
+          "type": "all"
+        },
+        "other_job": {
+          "type": "all"
+        }
+      }
+    }
+  ]
+}

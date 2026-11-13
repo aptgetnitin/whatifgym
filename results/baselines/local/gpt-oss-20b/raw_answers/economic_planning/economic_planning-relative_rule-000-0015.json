@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"steel_transport_ratio","measure":"production","scope":{"industry":"steel"},"sense":">=","relative_to":{"measure":"production","scope":{"industry":"transport"}},"factor":1.25}]}

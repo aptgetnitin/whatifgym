@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "pump_mwh_per_m",
+      "value": 2250
+    }
+  ]
+}

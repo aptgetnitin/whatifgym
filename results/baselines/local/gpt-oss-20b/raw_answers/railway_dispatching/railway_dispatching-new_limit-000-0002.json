@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"max_goes_first_total","measure":"goes_first","sense":"<=","value":50}],"note":"Limit total number of trains clearing a resource before another train enters to 50."}

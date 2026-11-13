@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_linked_condition",
+   "measure": "linked_load",
+   "scope": {
+    "location": "2600 CANTWELL RD",
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "sense": ">=",
+   "value": 0.02
+  }
+ ],
+ "note": "A rule is added to enforce a minimum linked load for a specific location and base."
+}

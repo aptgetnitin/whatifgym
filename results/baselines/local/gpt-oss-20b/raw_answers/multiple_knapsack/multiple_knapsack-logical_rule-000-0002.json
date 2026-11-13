@@ -1,0 +1,1 @@
+{"ask":"Could you clarify whether you intend to require at least two placements of item1 in bin0, or at least two placements of item1 across all bins? Since each item can be placed at most once in a bin, the former would be infeasible."}

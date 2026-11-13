@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "coal_capacity_min_730",
+      "measure": "extra_capacity",
+      "scope": {
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 730
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_oil_bought_feb",
+      "measure": "buy",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "wedding_seating",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "guests",
+      "where": {
+        "guest": "Q"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "max_tables_increase",
+      "measure": "x",
+      "scope": {
+        "table": "all"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "params.max_tables",
+        "scope": {}
+      },
+      "factor": 1.5
+    }
+  ]
+}

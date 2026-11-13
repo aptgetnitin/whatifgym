@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_transfer_cap",
+      "measure": "undamaged_transfers",
+      "sense": "<=",
+      "value": 50
+    }
+  ],
+  "note": "Cap total undamaged transfers at 50."
+}

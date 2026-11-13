@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "min_apr_storage",
+      "measure": "store",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store"
+      },
+      "factor": 0.15
+    },
+    {
+      "name": "OIL2_vs_VEG2",
+      "measure": "consume",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "oil": "VEG2"
+        }
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "At least 15% of total storage in Apr; OIL2 refined <= 90% of VEG2 refined."
+}

@@ -6,7 +6,7 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 
 | model | episodes | accuracy | mean reward | valid DSL | route ok | chained_scenario | data_change | data_change (nl) | fixed_decision | infeasible_request | logical_rule | new_limit | new_limit (nl) | objective_change | relative_rule | relax_remove | under_specified | easy | medium | hard | s/episode |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `ollama/qwen3:8b` | 3801 | 0.585 | 0.662 | 0.82 | 0.93 | 0.72 (469) | 0.82 (512) | 1.00 (6) | 0.60 (423) | 0.69 (325) | 0.23 (407) | 0.73 (378) | 0.59 (39) | 0.58 (219) | 0.57 (429) | 0.54 (108) | 0.33 (486) | 0.64 (465) | 0.59 (2198) | 0.56 (1138) | 3.0 |
+| `ollama/qwen3:8b` | 3801 | 0.585 | 0.662 | 0.82 | 0.93 | 0.72 (469) | 0.82 (512) | 1.00 (6) | 0.60 (423) | 0.69 (325) | 0.23 (407) | 0.74 (378) | 0.59 (39) | 0.58 (219) | 0.57 (429) | 0.54 (108) | 0.33 (486) | 0.64 (465) | 0.59 (2198) | 0.56 (1138) | 3.0 |
 
 ## By base model
 
@@ -24,14 +24,14 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | `factory_planning` | 0.52 (223) |
 | `factory_planning_2` | 0.69 (174) |
 | `fantasy_basketball` | 0.73 (90) |
-| `farm_planning` | 0.47 (187) |
+| `farm_planning` | 0.48 (187) |
 | `food_manufacture` | 0.70 (178) |
 | `food_supply` | 0.52 (164) |
 | `jobshop_ft06` | 0.58 (169) |
 | `manpower_planning` | 0.54 (210) |
 | `mining` | 0.60 (194) |
 | `multiple_knapsack` | 0.57 (108) |
-| `optimize_power_schedule` | 0.58 (158) |
+| `optimize_power_schedule` | 0.59 (158) |
 | `power_generation_hydro` | 0.71 (173) |
 | `railway_dispatching` | 0.57 (167) |
 | `single_machine_scheduling` | 0.78 (45) |
@@ -106,12 +106,12 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | objective_change | o_then_scoped | 0.80 (96) | result differs from reference |
 | infeasible_request | i_floor | 0.81 (88) | result differs from reference |
 | data_change | g_set_column | 0.84 (86) | result differs from reference |
+| infeasible_request | i_two_floors | 0.84 (58) | invalid DSL: table 'hours' has no column 'soc'; columns are ['export_price', 'hour', 'import_ |
 | fixed_decision | f_force_one | 0.85 (67) | invalid DSL: '4696' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '1 |
 | chained_scenario | c_undo | 0.86 (144) | invalid DSL: no row of 'costs' matches {"worker": "*", "task": "*"} |
-| infeasible_request | i_two_floors | 0.86 (58) | invalid DSL: table 'hours' has no column 'soc'; columns are ['export_price', 'hour', 'import_ |
-| new_limit | g_cap_measure_scope | 0.89 (107) | result differs from reference |
 | new_limit | g_floor_measure_scope | 0.90 (82) | result differs from reference |
 | relative_rule | r_two_values | 0.90 (136) | result differs from reference |
+| new_limit | g_cap_measure_scope | 0.91 (107) | result differs from reference |
 | data_change | g_param | 0.92 (60) | result differs from reference |
 | data_change | g_scale_column | 0.93 (76) | result differs from reference |
 | data_change | g_add_row | 0.94 (18) | invalid DSL: row is missing columns ['rank'] |
@@ -133,4 +133,4 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 
 | model | wrong result | invalid DSL | unparseable | cut off at max tokens | truncated prompt | request errors |
 |---|---|---|---|---|---|---|
-| `ollama/qwen3:8b` | 897 | 682 | 5 | 5 | 0 | 1 |
+| `ollama/qwen3:8b` | 896 | 682 | 5 | 5 | 0 | 1 |

@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "worker_5_to_worker_11_ratio",
+      "measure": "works",
+      "scope": {
+        "worker": "worker_5"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "works",
+        "scope": {
+          "worker": "worker_11"
+        }
+      },
+      "factor": 0.5
+    },
+    {
+      "name": "team_0_1_ratio",
+      "measure": "team",
+      "scope": {
+        "team": "team_0_1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "team",
+        "scope": {}
+      },
+      "factor": 0.1
+    }
+  ]
+}

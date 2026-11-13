@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "worker_1_limit",
+      "measure": "works",
+      "scope": {
+        "worker": "worker_1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "works",
+        "scope": {}
+      },
+      "factor": 0.15
+    },
+    {
+      "name": "worker_10_11_ratio",
+      "measure": "works",
+      "scope": {
+        "worker": "worker_10"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "works",
+        "scope": {
+          "worker": "worker_11"
+        }
+      },
+      "factor": 0.8
+    }
+  ]
+}

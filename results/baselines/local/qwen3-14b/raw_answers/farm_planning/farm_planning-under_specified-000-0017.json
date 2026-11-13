@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "ask": "What is the upper limit on tons of sugar beet grown?"
+}

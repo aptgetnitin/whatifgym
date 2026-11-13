@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "measure": "operate",
+      "scope": {},
+      "sense": "<=",
+      "value": 46,
+      "name": "cap_total_operate"
+    }
+  ],
+  "note": "Limit the total number of operated flights across all aircraft to 46."
+}

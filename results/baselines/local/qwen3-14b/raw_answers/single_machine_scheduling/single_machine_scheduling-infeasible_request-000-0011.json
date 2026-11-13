@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "rules": [
+    {
+      "name": "job_13_start_time",
+      "measure": "start_time",
+      "scope": {
+        "job": "job_13"
+      },
+      "sense": ">=",
+      "value": 314250
+    },
+    {
+      "name": "job_10_start_time",
+      "measure": "start_time",
+      "scope": {
+        "job": "job_10"
+      },
+      "sense": ">=",
+      "value": 91400
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"max_bases_cap","measure":"open","sense":"<=","value":2}]}

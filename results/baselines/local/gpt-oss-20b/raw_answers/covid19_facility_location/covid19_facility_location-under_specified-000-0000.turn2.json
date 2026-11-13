@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"covid19_facility_location","rules":[{"measure":"assign","scope":{"facility":"T18"},"sense":"<=","value":75}]}

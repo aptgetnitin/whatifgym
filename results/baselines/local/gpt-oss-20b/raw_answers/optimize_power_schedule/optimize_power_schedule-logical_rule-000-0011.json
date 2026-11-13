@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","logic":[{"name":"at_most_two_plants_on","at_least":1,"of":[{"measure":"on","scope":{"plant":"Edwin I Hatch"},"sense":"==","value":0},{"measure":"on","scope":{"plant":"OTHER COAL"},"sense":"==","value":0},{"measure":"on","scope":{"plant":"GAS"},"sense":"==","value":0}]}]}

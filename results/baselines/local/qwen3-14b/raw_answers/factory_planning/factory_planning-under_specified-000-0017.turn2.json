@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod4_prod6_jun_cap",
+   "measure": "make",
+   "scope": {
+    "product": [
+     "Prod4",
+     "Prod6"
+    ],
+    "month": "Jun"
+   },
+   "sense": "<=",
+   "value": 450
+  }
+ ],
+ "note": "A new rule limits the total production of Prod4 and Prod6 in June to 450 units."
+}

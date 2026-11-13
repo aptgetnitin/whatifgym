@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","fixed_decisions":[{"measure":"team","scope":{"team":"team_1_2"},"value":1},{"measure":"works","scope":{"worker":"worker_6"},"value":0}],"note":"Team team_1_2 must be chosen; worker_6 cannot work."}

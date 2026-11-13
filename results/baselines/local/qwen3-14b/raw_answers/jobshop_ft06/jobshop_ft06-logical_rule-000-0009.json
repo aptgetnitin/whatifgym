@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "min_batch_step4",
+      "measure": "end",
+      "scope": {
+        "step": 4
+      },
+      "sense": ">=",
+      "value": 320
+    }
+  ]
+}

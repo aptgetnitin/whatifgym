@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"feb_total_store_limit","measure":"store","scope":{"month":"Feb"},"sense":"<=","value":200}]}

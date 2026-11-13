@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "workers",
+      "column": "size_capacity",
+      "where": {
+        "worker": "worker_1"
+      },
+      "value": 2
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "team",
+      "scope": {
+        "team": "team_0_1"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Assume worker_1 has size capacity 2 and team team_0_1 is chosen."
+}

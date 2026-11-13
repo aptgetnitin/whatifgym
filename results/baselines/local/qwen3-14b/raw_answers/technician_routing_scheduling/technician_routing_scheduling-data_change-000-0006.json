@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "priority",
+      "factor": 1.2
+    },
+    {
+      "op": "set",
+      "table": "travel_times",
+      "column": "travel_min",
+      "where": {
+        "from_location": "Karlsruhe",
+        "to_location": "Baden-Baden"
+      },
+      "value": 16
+    }
+  ]
+}

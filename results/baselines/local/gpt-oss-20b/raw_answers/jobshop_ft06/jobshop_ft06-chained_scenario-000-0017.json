@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "measure": "goes_first",
+      "scope": {
+        "job": "J0"
+      },
+      "sense": "<=",
+      "value": 6,
+      "name": "cap_goes_first_J0"
+    },
+    {
+      "measure": "start",
+      "scope": {
+        "job": "J3"
+      },
+      "sense": "<=",
+      "value": 110,
+      "name": "cap_start_J3"
+    }
+  ]
+}

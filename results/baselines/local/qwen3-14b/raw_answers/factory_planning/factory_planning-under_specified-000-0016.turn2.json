@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod4_make_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 250
+    }
+  ]
+}

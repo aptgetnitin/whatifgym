@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_oil_flow_ratio",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "food": "Oil"
+        }
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "Wheat shipments at most 60% of Oil shipments"
+}

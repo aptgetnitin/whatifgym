@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j2_end_relative_to_j1_end",
+      "measure": "end",
+      "scope": {
+        "job": "J2",
+        "step": {
+          "type": "int",
+          "minimum": 1,
+          "maximum": 6
+        }
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J1",
+          "step": {
+            "type": "int",
+            "minimum": 1,
+            "maximum": 6
+          }
+        }
+      },
+      "factor": 0.8
+    },
+    {
+      "name": "j0_end_total_limit",
+      "measure": "end",
+      "scope": {
+        "job": "J0",
+        "step": {
+          "type": "int",
+          "minimum": 1,
+          "maximum": 6
+        }
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

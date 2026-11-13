@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "limit_operated_aircraft",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A318#8",
+          "A319#5",
+          "A320#22",
+          "A319#11",
+          "A321#4"
+        ]
+      },
+      "sense": "==",
+      "value": 4
+    }
+  ]
+}

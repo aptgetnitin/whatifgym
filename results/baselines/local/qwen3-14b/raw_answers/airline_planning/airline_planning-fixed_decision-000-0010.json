@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "aircraft",
+      "where": {
+        "flight": 3112
+      },
+      "value": "A319#5"
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#5",
+        "flight": 3112
+      },
+      "value": 0
+    }
+  ]
+}

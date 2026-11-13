@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "may_jun_production_ratio",
+      "measure": "produce",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "produce",
+        "scope": {
+          "month": "Jun"
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

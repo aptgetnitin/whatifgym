@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","fixed_decisions":[{"measure":"linked_load","scope":{"location":"600 PAWLEYS AR","base":"5145 RURITAN COURT Rescue Squad"},"value":0.06}],"note":"Commit to exactly 0.06 queue load linked to an assigned location (hours) for incident location 600 PAWLEYS AR, drone base 5145 RURITAN COURT Rescue Squad, and plan the rest around it."}

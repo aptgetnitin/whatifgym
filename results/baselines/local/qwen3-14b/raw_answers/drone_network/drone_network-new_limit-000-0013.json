@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "min_linked_load_3400_CHAMPLAIN_LA",
+   "measure": "linked_load",
+   "scope": {
+    "location": "3400 CHAMPLAIN LA"
+   },
+   "sense": ">=",
+   "value": 0.02
+  }
+ ]
+}

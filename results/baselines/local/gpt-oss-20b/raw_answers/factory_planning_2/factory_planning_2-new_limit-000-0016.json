@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "measure": "sell",
+      "sense": "<=",
+      "value": 9700
+    },
+    {
+      "measure": "sell",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "value": 720
+    }
+  ],
+  "note": "Total sales capped at 9700; Apr sales at least 720."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "min_semi_skilled_recruitment",
+      "measure": "recruit",
+      "scope": {
+        "skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "value": 2000
+    }
+  ]
+}

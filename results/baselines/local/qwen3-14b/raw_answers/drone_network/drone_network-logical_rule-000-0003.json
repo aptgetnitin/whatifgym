@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "only_one_base_opened",
+   "measure": "open",
+   "scope": {
+    "base": [
+     "800 VIRGINIA BEACH BLVD Fire Station",
+     "3769 E. STRATFORD ROAD Rescue Squad",
+     "5145 RURITAN COURT Rescue Squad",
+     "21 MUNICIPAL CTR Fire Station"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "open",
+    "scope": {
+     "base": [
+      "800 VIRGINIA BEACH BLVD Fire Station",
+      "3769 E. STRATFORD ROAD Rescue Squad",
+      "5145 RURITAN COURT Rescue Squad",
+      "21 MUNICIPAL CTR Fire Station"
+     ]
+    }
+   },
+   "factor": 1.0
+  }
+ ]
+}

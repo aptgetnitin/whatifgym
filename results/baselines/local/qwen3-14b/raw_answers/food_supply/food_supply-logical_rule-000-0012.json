@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "non_zero_purchase_for_daraa_or_hassakeh",
+   "measure": "purchase",
+   "scope": {
+    "supplier": [
+     "Daraa",
+     "Hassakeh"
+    ]
+   },
+   "sense": ">=",
+   "value": 0,
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "supplier": [
+      "Daraa",
+      "Hassakeh"
+     ]
+    }
+   },
+   "factor": 1.0
+  }
+ ]
+}

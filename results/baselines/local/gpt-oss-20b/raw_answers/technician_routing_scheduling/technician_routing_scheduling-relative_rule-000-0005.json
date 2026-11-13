@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "tech_to_unfilled_ratio",
+      "measure": "use",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "unfilled"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Limit technicians dispatched to at most 80% of unfilled jobs."
+}

@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "worker_1_max_10_percent",
+      "measure": "works",
+      "scope": {
+        "worker": "worker_1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "works",
+        "scope": {}
+      },
+      "factor": 0.1
+    },
+    {
+      "name": "team_10_11_vs_team_0_1",
+      "measure": "team",
+      "scope": {
+        "team": "team_10_11"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "team",
+        "scope": {
+          "team": "team_0_1"
+        }
+      },
+      "factor": 1.5
+    }
+  ]
+}

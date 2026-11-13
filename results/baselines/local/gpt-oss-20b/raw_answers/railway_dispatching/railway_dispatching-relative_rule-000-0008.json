@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "E_at_least_2x_C_finish",
+      "measure": "finish_time",
+      "scope": {
+        "train": "E"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "finish_time",
+        "scope": {
+          "train": "C"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "B_entry_time_at_most_5pct_total",
+      "measure": "entry_time",
+      "scope": {
+        "train": "B"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "entry_time"
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "Constraint that E's arrival time is at least twice C's, and B's entry time is at most 5% of total entry time."
+}

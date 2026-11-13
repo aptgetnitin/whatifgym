@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "land_groups",
+      "column": "area",
+      "factor": 1.2
+    }
+  ],
+  "rules": [
+    {
+      "name": "min_beet_year4",
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": ">=",
+      "value": 140
+    }
+  ],
+  "note": "Require at least 140 tons of sugar beet grown in Year4."
+}

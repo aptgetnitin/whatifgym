@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "doris_technician_limit",
+      "measure": "use",
+      "scope": {
+        "technician": "Doris"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "use",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ]
+}

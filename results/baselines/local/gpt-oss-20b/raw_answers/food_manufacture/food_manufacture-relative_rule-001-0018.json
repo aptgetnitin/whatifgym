@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "OIL2_fraction_rule",
+      "measure": "consume",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "consume"
+      },
+      "factor": 0.1
+    }
+  ]
+}

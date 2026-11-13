@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "max_total_thermal_units",
+      "measure": "ngen",
+      "sense": "<=",
+      "value": 80
+    }
+  ],
+  "note": "Total running thermal units across all periods and types limited to 80."
+}

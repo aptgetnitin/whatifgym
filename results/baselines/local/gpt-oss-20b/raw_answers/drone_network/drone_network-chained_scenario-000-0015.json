@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "1600 OLD DONATION PKWY"
+      },
+      "value": 2
+    },
+    {
+      "op": "scale",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "1000 COLLEGE PARK BL"
+      },
+      "factor": 0.7
+    }
+  ],
+  "note": "Cardiac arrests at 1000 COLLEGE PARK BL reduced by 30%."
+}

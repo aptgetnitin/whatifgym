@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","rules":[{"name":"task1_at_most_25pct_task5","measure":"assign","scope":{"task":"task_1"},"sense":"<=","relative_to":{"measure":"assign","scope":{"task":"task_5"}},"factor":0.25},{"name":"teams_at_most_25pct_assignments","measure":"team","sense":"<=","relative_to":{"measure":"assign"},"factor":0.25}]}

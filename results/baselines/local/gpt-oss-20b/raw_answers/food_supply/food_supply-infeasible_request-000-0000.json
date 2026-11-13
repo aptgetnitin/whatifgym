@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_total_purchase","measure":"purchase","sense":">=","value":1621950}],"note":"Check feasibility of achieving at least 1,621,950 units of food purchased per day."}

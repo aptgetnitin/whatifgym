@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "csb_shipment_requirement",
+   "measure": "flow",
+   "scope": {
+    "food": "Corn-soya blend (CSB)",
+    "from_city": "Aleppo",
+    "to_city": "Idleb"
+   },
+   "sense": ">=",
+   "value": 7000
+  }
+ ]
+}

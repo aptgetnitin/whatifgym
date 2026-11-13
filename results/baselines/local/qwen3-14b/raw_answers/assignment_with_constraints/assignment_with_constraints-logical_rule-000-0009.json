@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "only_one_worker_group",
+      "measure": "works",
+      "scope": {
+        "worker": [
+          "worker_5",
+          "worker_6",
+          "worker_0",
+          "worker_11"
+        ]
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ]
+}

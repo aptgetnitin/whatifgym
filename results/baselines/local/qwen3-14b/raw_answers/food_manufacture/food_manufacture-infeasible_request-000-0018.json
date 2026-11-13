@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "oil2_total_purchase",
+      "measure": "buy",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": "==",
+      "value": 3000
+    }
+  ]
+}

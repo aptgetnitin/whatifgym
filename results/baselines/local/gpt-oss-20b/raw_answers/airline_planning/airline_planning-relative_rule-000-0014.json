@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"flight3112_min_75pct","measure":"operate","scope":{"flight":3112},"sense":">=","relative_to":{"measure":"operate"},"factor":0.75}],"note":"Flight 3112 must account for at least 75% of all operated flights."}

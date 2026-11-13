@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "installed",
+      "value": 2
+    }
+  ],
+  "note": "Increasing the number of grinders by 1 changes the 'installed' parameter for the grinder machine type."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","data_changes":[{"op":"scale","table":"operations","column":"duration","factor":2.0}]}

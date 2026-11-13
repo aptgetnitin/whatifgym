@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "team_0_1_limit",
+      "measure": "team",
+      "scope": {
+        "team": "team_0_1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "team",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ]
+}

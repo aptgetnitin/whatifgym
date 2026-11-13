@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": "coal"
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "set",
+      "table": "input_output",
+      "column": "input_per_unit_output",
+      "where": {
+        "supplier": "coal",
+        "user": "coal"
+      },
+      "value": 0.2
+    }
+  ],
+  "note": "Initial stock for coal increased by 10%; coal-to-coal input per unit output set to 0.2."
+}

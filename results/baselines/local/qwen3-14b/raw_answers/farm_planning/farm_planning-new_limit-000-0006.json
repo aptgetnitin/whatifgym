@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "grain_group1_limit",
+   "measure": "grow_grain",
+   "scope": {
+    "land_group": "Group1"
+   },
+   "sense": "<=",
+   "value": 70
+  }
+ ]
+}

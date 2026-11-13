@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"max_total_flights","measure":"operate","sense":"<=","value":36}],"note":"Limit total operated flights to 36."}

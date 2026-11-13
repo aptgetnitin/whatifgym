@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "no_both_f4576_f4577",
+      "measure": "operate",
+      "scope": {
+        "flight": [4576, 4577]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "Ensure that flights 4576 and 4577 are not both operated."
+}

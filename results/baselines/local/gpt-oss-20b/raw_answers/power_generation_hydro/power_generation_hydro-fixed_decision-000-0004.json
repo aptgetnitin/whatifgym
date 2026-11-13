@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "fixed_decisions": [
+    {
+      "measure": "nstart",
+      "scope": {
+        "period": "06-09"
+      },
+      "value": 2
+    },
+    {
+      "measure": "reservoir_level",
+      "scope": {
+        "period": "06-09"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Fix nstart to 2 for all thermal types in period 06-09 and reservoir_level to 0 for that period."
+}

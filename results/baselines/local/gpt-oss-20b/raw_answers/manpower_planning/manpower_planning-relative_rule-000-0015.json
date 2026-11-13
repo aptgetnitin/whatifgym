@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"unskilled_short_time_fraction","measure":"short_time","scope":{"skill":"unskilled"},"sense":"<=","relative_to":{"measure":"short_time"},"factor":0.4},{"name":"redundant_year3_vs_year1","measure":"redundant","scope":{"year":3},"sense":"<=","relative_to":{"measure":"redundant","scope":{"year":1}},"factor":0.25}]}

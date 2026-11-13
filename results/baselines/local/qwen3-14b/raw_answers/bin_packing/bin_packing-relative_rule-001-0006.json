@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "min_bins_used",
+      "measure": "y",
+      "scope": {
+        "bin": {
+          "type": "string"
+        }
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": {
+            "type": "string"
+          },
+          "bin": {
+            "type": "string"
+          }
+        }
+      },
+      "factor": 0.8
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "customer1_customer6_ratio",
+      "measure": "assign",
+      "scope": {
+        "customer": "Customer1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "customer": "Customer6"
+        }
+      },
+      "factor": 0.6
+    }
+  ]
+}

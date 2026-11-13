@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "buy",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": "==",
+      "value": 3000
+    }
+  ],
+  "note": "Must buy exactly 3000 tons of OIL2 over the planning horizon."
+}

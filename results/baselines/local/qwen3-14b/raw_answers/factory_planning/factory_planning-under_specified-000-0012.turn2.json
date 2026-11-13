@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod6_make_cap_jan_feb",
+      "measure": "make",
+      "scope": {
+        "product": "Prod6",
+        "month": [
+          "Jan",
+          "Feb"
+        ]
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ]
+}

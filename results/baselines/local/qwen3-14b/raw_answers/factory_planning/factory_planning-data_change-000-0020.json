@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "process_hours",
+      "column": "hours_per_unit",
+      "where": {
+        "machine": "grinder",
+        "product": "Prod2"
+      },
+      "value": 1.4
+    }
+  ]
+}

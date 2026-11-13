@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "min_goes_first_with_J4",
+      "measure": "goes_first",
+      "scope": {
+        "other_job": "J4"
+      },
+      "sense": ">=",
+      "value": 24
+    }
+  ]
+}

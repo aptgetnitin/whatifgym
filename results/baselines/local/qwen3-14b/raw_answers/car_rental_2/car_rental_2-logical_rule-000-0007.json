@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "max_rentals_days",
+      "measure": "rentals",
+      "scope": {
+        "day": [
+          "Wednesday",
+          "Saturday",
+          "Friday"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

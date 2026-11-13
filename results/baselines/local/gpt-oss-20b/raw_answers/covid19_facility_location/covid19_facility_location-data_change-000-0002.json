@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "counties",
+      "column": "demand",
+      "factor": 0.75
+    }
+  ],
+  "note": "Scale the forecast demand for all counties by 25% lower."
+}

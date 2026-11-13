@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "fixed_decisions": [
+    {
+      "measure": "operate",
+      "scope": {
+        "year": "Year4",
+        "mine": "Mine4"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Set operate[Year4, Mine4] to 0."
+}

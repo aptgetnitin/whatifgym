@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "F_at_most_5_percent_of_clears",
+      "measure": "goes_first",
+      "scope": {
+        "train": "F"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "Train F must account for at most 5% of all trains clearing a resource before another train enters it."
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "total_flights_operated_limit",
+      "measure": "operate",
+      "scope": {},
+      "sense": "<=",
+      "value": 31
+    }
+  ]
+}

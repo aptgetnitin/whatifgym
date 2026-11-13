@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "min_coal_capacity_year3",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 3,
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 213
+    }
+  ]
+}

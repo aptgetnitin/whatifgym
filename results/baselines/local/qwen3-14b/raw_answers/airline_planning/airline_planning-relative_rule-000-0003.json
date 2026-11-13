@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4572_operated_at_least_1_25_flight_3065",
+      "measure": "operate",
+      "scope": {
+        "flight": [
+          4572
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "flight": [
+            3065
+          ]
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

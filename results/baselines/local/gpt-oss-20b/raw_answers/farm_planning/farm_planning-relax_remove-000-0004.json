@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","relax":[{"constraint":"housing[year]","scope":{"year":["Year1","Year2","Year3","Year4","Year5"]}},{"constraint":"labour[year]","scope":{"year":["Year1","Year2","Year3","Year4","Year5"]}}],"note":"Drop labour-hours and housing capacity limits."}

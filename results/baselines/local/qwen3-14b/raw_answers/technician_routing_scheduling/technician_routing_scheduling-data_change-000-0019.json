@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "lateness_penalty",
+      "factor": 1.5
+    }
+  ]
+}

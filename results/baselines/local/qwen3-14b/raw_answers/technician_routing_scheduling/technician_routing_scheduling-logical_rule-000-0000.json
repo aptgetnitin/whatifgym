@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "single_service_start_location",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Loerrach",
+          "Offenburg",
+          "Mannheim"
+        ]
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ]
+}

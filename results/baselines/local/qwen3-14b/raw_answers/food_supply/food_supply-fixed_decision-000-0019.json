@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "fixed_decisions": [
+  {
+   "measure": "purchase",
+   "scope": {
+    "food": "Corn-soya blend (CSB)",
+    "supplier": {
+     "Aleppo": true,
+     "Amman": true,
+     "As_Suweida": true,
+     "Beirut": true,
+     "Damascus": true,
+     "Daraa": true,
+     "Dayr_Az_Zor": true,
+     "Gaziantep": true,
+     "Hama": true,
+     "Hassakeh": true,
+     "Homs": true
+    }
+   },
+   "value": 5350
+  }
+ ]
+}

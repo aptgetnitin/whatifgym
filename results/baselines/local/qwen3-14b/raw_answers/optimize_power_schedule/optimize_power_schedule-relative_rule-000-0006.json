@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "hydro_on_hours_limit",
+      "measure": "on",
+      "scope": {
+        "plant": "HYDRO"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "plant": "all"
+        }
+      },
+      "factor": 0.05
+    }
+  ]
+}

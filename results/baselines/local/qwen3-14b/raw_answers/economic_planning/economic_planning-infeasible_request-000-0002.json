@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "total_stock_target",
+      "measure": "stock",
+      "scope": {
+        "year": [1, 2, 3, 4, 5],
+        "industry": ["coal", "steel", "transport"]
+      },
+      "sense": ">=",
+      "value": 2400
+    }
+  ]
+}

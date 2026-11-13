@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "max_two_workers_active",
+      "measure": "works",
+      "scope": {
+        "worker": [
+          "worker_1",
+          "worker_0",
+          "worker_11",
+          "worker_10"
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ],
+  "note": "At most two of the specified workers may be assigned any task."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "Vogtle_output_hour17_min",
+      "measure": "output",
+      "scope": {
+        "plant": "Vogtle",
+        "hour": 17
+      },
+      "sense": ">=",
+      "value": 4200
+    }
+  ],
+  "note": "Ensure Vogtle generates at least 4200 MWh at hour 17."
+}

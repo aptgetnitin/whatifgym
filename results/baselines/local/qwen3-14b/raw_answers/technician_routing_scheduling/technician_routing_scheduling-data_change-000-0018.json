@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "unfilled_job_penalty",
+      "factor": 0.9
+    },
+    {
+      "op": "scale_param",
+      "name": "window_violation_penalty",
+      "factor": 0.9
+    },
+    {
+      "op": "scale_param",
+      "name": "lateness_penalty",
+      "factor": 0.9
+    }
+  ],
+  "note": "Scaling the penalties by 90% to reflect a 10% decrease in job priority across all job types."
+}

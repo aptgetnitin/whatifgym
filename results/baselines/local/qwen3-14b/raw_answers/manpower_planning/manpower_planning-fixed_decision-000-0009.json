@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "fixed_decisions": [
+    {
+      "measure": "overmanned",
+      "scope": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "value": 0
+    }
+  ]
+}

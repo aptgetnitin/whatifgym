@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 22
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "scale_param",
+      "name": "fuels.shutdown_cost",
+      "factor": 1.2
+    }
+  ]
+}

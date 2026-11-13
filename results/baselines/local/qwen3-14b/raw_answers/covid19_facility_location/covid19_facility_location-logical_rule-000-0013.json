@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "facility_e2_min_or_zero",
+      "measure": "assign",
+      "scope": {
+        "facility": "E2"
+      },
+      "sense": ">=",
+      "value": 370
+    }
+  ],
+  "logic": [
+    {
+      "name": "either_zero_or_370",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "assign",
+          "scope": {
+            "facility": "E2"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "assign",
+          "scope": {
+            "facility": "E2"
+          },
+          "sense": ">=",
+          "value": 370
+        }
+      ]
+    }
+  ]
+}

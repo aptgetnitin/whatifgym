@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "installed",
+      "value": 0
+    }
+  ],
+  "note": "Retiring one horizontal drill reduces the number of installed machines of that type to zero."
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "birmingham_rentals_min",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 750
+    },
+    {
+      "name": "total_repairs_max",
+      "measure": "repairs",
+      "scope": {},
+      "sense": "<=",
+      "value": 150
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "Apr_at_most_60_percent_of_Mar",
+      "measure": "produce",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "produce",
+        "scope": {
+          "month": "Mar"
+        }
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "New policy: Apr production <= 60% of Mar production"
+}

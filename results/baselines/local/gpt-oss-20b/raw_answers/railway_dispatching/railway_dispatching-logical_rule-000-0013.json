@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"min_entry_F5","measure":"entry_time","scope":{"train":"F","resource":5},"sense":">=","value":22}],"note":"Enforce entry_time[F,5] >= 22"}

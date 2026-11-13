@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "fixed_decisions": [
+    {
+      "measure": "short_time",
+      "scope": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "value": 42
+    },
+    {
+      "measure": "short_time",
+      "scope": {
+        "year": 2,
+        "skill": "semi_skilled"
+      },
+      "value": 42
+    },
+    {
+      "measure": "short_time",
+      "scope": {
+        "year": 2,
+        "skill": "skilled"
+      },
+      "value": 42
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "min_make_Mar_Prod7",
+      "measure": "make",
+      "scope": {
+        "month": "Mar",
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "value": 2000
+    }
+  ],
+  "note": "Check feasibility of making at least 2000 units of Prod7 in March."
+}

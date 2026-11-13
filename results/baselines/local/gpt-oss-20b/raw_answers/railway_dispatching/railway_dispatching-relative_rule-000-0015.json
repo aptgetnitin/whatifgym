@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"resource2_at_most_half_resource4","measure":"entry_time","scope":{"resource":2,"train":["A","B","C","D","E","F"]},"sense":"<=","relative_to":{"measure":"entry_time","scope":{"resource":4,"train":["A","B","C","D","E","F"]}},"factor":0.5}]}

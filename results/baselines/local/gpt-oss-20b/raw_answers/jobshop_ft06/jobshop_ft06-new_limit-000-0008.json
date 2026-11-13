@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "max_pairs_before_J3",
+      "measure": "goes_first",
+      "scope": {
+        "job": ["J0", "J1", "J2"],
+        "other_job": "J3"
+      },
+      "sense": "<=",
+      "value": 8
+    }
+  ],
+  "note": "Limit the number of jobs that go before J3 on any machine to at most 8."
+}

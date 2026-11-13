@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "logic": [
+    {
+      "name": "job_pairs_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "runs_before",
+          "scope": {
+            "other_job": "job_14"
+          },
+          "sense": ">=",
+          "value": 9
+        },
+        {
+          "measure": "follows",
+          "scope": {
+            "from_job": "job_6"
+          },
+          "sense": "<=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

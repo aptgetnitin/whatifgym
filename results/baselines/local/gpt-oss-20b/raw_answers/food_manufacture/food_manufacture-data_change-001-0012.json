@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "month": "Mar",
+        "oil": "OIL3"
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Purchase price of OIL3 in March falls by 20%."
+}

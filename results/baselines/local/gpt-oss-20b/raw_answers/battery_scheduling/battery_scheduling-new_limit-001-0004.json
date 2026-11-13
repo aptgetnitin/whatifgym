@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"total_charge_cap","measure":"charge","sense":"<=","value":3.9},{"name":"charge_02_03_cap","measure":"charge","scope":{"hour":"02-03"},"sense":"<=","value":2}],"note":"Overall charging power capped at 3.9 kW, with hour 02-03 capped at 2 kW."}

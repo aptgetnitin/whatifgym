@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "Feb_vs_Jan_sales",
+      "measure": "sell",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "Jan"
+        }
+      },
+      "factor": 0.6
+    },
+    {
+      "name": "sell_vs_stock_ratio",
+      "measure": "sell",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store"
+      },
+      "factor": 0.75
+    }
+  ]
+}

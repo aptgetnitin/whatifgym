@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4264_operated_rule",
+      "measure": "operate",
+      "scope": {
+        "flight": [
+          4264
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "flight": [
+            "all"
+          ]
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

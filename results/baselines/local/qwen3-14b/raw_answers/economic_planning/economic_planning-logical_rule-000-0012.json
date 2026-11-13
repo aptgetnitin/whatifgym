@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "logic": [
+    {
+      "name": "non_zero_output_in_year_2_or_4",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "production",
+          "scope": {
+            "year": 2,
+            "industry": {
+              "industry": [
+                "coal",
+                "steel",
+                "transport"
+              ]
+            }
+          },
+          "sense": ">=",
+          "value": 0.0001
+        },
+        {
+          "measure": "production",
+          "scope": {
+            "year": 4,
+            "industry": {
+              "industry": [
+                "coal",
+                "steel",
+                "transport"
+              ]
+            }
+          },
+          "sense": ">=",
+          "value": 0.0001
+        }
+      ]
+    }
+  ]
+}

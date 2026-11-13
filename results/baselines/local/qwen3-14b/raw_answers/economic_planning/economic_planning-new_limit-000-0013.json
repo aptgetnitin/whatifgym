@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "coal_output_requirement",
+      "measure": "production",
+      "scope": {
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 2700
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "min_queue_load_for_location_base",
+   "measure": "linked_load",
+   "scope": {
+    "location": "1900 LANDSTOWN CENTRE WAY",
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "sense": ">=",
+   "value": 0.01
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "single_assignment_3769",
+      "measure": "assign",
+      "scope": {
+        "base": "3769 E. STRATFORD ROAD Rescue Squad"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "assign",
+      "scope": {
+        "location": "5800 N OTTAWA RD",
+        "base": "3769 E. STRATFORD ROAD Rescue Squad"
+      },
+      "value": 1
+    },
+    {
+      "measure": "open",
+      "scope": {
+        "base": "3769 E. STRATFORD ROAD Rescue Squad"
+      },
+      "value": 1
+    }
+  ]
+}

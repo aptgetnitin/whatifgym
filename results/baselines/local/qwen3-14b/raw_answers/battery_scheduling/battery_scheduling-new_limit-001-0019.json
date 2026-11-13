@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "energy_capacity_cap",
+      "measure": "soc",
+      "scope": {
+        "hour": {
+          "all": true
+        }
+      },
+      "sense": "<=",
+      "value": 220
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"Mine4_work_share","measure":"operate","scope":{"mine":"Mine4"},"sense":">=","relative_to":{"measure":"operate","scope":{}},"factor":0.75}]}

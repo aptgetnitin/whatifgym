@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"sell_beet_year1_implies_grain_buy_year2","at_least":1,"of":[{"measure":"sell_beet","scope":{"year":"Year1"},"sense":"<=","value":0},{"measure":"buy_grain","scope":{"year":"Year2"},"sense":">=","value":44}]}],"note":"If any sugar beet is sold in Year1, then at least 44 tons of grain must be bought in Year2."}

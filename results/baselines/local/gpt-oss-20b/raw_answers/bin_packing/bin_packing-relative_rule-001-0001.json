@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","rules":[{"name":"max_items_per_bin_ratio","measure":"x","scope":{},"sense":"<=","relative_to":{"measure":"y","scope":{}},"factor":1.5}]}

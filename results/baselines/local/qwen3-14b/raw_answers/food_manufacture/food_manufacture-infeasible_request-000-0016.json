@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","ask":"What is the minimum total storage across all oils in June?","note":"The question asks about total storage in June, but the model's storage variables are per oil and month. The scenario DSL requires a precise objective or constraint, which is not directly provided here."}

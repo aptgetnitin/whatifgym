@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine2_operate_zero",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2",
+        "year": "Year2"
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ]
+}

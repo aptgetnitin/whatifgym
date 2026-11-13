@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "jan_make_fraction",
+      "measure": "make",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "At least 50% of total production must be in January."
+}

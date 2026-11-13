@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"heifer_raise_year1_grain_buy_year4","at_least":1,"of":[{"measure":"raise_heifers","scope":{"year":"Year1"},"sense":"<=","value":0},{"measure":"buy_grain","scope":{"year":"Year4"},"sense":">=","value":80}]}],"note":"If heifer calves raised in Year1 > 0 then grain bought in Year4 >= 80."}

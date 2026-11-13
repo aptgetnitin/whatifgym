@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "hour_02_03_charge_limit",
+      "measure": "charge",
+      "scope": {
+        "hour": "02-03"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "charge"
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Limit the charging power in hour 02-03 to at most 25% of the total charging power over the day."
+}

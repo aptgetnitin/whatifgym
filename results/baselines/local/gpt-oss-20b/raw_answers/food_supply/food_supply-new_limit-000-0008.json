@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"overall_flow_cap","measure":"flow","sense":"<=","value":156250}],"note":"Cap on total food shipped"}

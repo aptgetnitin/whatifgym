@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "overmanned",
+      "scope": {
+        "skill": "semi_skilled"
+      },
+      "sense": "<=",
+      "value": 16,
+      "name": "cap_overmanned_semi_skilled"
+    }
+  ]
+}

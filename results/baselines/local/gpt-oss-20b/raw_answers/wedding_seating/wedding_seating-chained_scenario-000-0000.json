@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "wedding_seating",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_tables",
+      "value": 10
+    },
+    {
+      "op": "add",
+      "table": "guests",
+      "rows": [
+        {
+          "guest": "new_guest",
+          "rank": 19
+        }
+      ]
+    }
+  ]
+}

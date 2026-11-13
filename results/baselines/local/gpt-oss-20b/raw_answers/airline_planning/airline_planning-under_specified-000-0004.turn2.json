@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "revenue",
+      "where": {
+        "flight": 3068
+      },
+      "value": 10850
+    }
+  ],
+  "note": "Set ticket revenue for flight 3068 to 10850."
+}

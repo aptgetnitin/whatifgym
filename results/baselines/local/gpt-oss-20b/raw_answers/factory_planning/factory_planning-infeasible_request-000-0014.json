@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"total_make_min","measure":"make","sense":">=","value":119400}],"note":"Check if total production can reach at least 119400 units."}

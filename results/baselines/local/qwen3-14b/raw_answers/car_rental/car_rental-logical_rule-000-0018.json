@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "sat_rental_min",
+      "measure": "rentals",
+      "scope": {
+        "day": "Saturday",
+        "depot": {
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ]
+        }
+      },
+      "sense": ">=",
+      "value": 118
+    }
+  ]
+}

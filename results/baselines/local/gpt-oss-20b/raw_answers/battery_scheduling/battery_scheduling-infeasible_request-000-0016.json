@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"soc_01-02_min12","measure":"soc","scope":{"hour":"01-02"},"sense":">=","value":12},{"name":"soc_00-01_min12","measure":"soc","scope":{"hour":"00-01"},"sense":">=","value":12}]}

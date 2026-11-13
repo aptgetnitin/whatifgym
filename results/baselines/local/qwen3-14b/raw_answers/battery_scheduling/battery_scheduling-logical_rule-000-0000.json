@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "no_simultaneous_charging_02_03_03_04",
+      "measure": "charge",
+      "scope": {
+        "hour": [
+          "02-03",
+          "03-04"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "charge",
+        "scope": {
+          "hour": [
+            "02-03"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

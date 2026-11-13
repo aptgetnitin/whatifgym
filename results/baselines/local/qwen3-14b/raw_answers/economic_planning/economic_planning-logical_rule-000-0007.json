@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "stock_requirement_year5_coal",
+      "measure": "stock",
+      "scope": {
+        "year": 5,
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 1190
+    }
+  ]
+}

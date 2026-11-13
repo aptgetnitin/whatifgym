@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "foods",
+   "column": "international_price",
+   "where": {
+    "food": "Lentils"
+   },
+   "value": 750
+  },
+  {
+   "op": "scale",
+   "table": "arcs",
+   "column": "transport_cost",
+   "factor": 0.9
+  }
+ ]
+}

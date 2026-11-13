@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_operated_ratio_A319_18_A321_2",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#18"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": "A321#2"
+        }
+      },
+      "factor": 0.9
+    }
+  ]
+}

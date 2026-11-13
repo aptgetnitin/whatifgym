@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","fixed_decisions":[{"measure":"end","scope":{"job":"J0","step":6},"value":275}],"note":"Promised end time for J0 step 6 fixed to 275."}

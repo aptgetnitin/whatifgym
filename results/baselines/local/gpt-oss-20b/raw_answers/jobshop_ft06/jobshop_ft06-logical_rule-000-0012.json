@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","logic":[{"at_least":1,"of":[{"measure":"goes_first","scope":{"machine":"M4"},"sense":"<=","value":0},{"measure":"goes_first","scope":{"machine":"M0"},"sense":"<=","value":0}]}],"note":"At least one of M4 or M0 must have zero job pairs where the job goes first."}

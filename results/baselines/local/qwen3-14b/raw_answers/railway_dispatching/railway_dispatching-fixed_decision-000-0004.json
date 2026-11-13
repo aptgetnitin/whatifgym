@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "fixed_decisions": [
+    {
+      "measure": "meet",
+      "scope": {
+        "resource": 4,
+        "train": "A",
+        "other_train": "D"
+      },
+      "value": 1
+    }
+  ]
+}

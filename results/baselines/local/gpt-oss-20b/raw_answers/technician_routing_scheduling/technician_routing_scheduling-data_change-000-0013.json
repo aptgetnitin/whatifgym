@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "job_types",
+      "column": "duration_min",
+      "where": {
+        "job_type": "Equipment Installation"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Reduce duration of Equipment Installation jobs by 25%."
+}

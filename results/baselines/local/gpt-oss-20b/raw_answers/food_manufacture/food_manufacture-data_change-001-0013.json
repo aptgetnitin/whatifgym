@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "nonveg_refining_capacity",
+      "value": 500
+    }
+  ],
+  "note": "Set non-vegetable refining capacity to 500 tons/month."
+}

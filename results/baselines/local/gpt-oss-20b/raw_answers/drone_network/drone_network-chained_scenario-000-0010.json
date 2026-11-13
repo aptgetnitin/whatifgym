@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","data_changes":[{"op":"scale","table":"incidents","column":"incidents","where":{"location":"500 PINE TOPS CT"},"factor":1.2}],"rules":[{"measure":"linked_load","scope":{"base":"21 MUNICIPAL CTR Fire Station"},"sense":"<=","value":0.03,"name":"cap_linked_load_21 MUNICIPAL CTR Fire Station"}]}

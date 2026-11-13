@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "steel_output_min",
+      "measure": "production",
+      "scope": {
+        "industry": "steel"
+      },
+      "sense": ">=",
+      "value": 1550
+    }
+  ]
+}

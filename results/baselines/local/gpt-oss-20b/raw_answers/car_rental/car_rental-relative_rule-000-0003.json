@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "manchester_repair_ratio",
+      "measure": "repairs",
+      "scope": {
+        "depot": "Manchester"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "repairs",
+        "scope": {
+          "depot": "Birmingham"
+        }
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Cars repaired at Manchester may be at most 50% of those at Birmingham."
+}

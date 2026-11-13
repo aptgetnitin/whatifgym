@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item9_placement_limit",
+      "measure": "x",
+      "scope": {
+        "item": "item9"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "item": "item13"
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

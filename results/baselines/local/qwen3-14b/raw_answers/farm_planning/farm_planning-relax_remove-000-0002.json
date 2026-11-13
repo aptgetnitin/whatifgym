@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "relax": [
+    {
+      "constraint": "housing",
+      "scope": {}
+    }
+  ],
+  "note": "Removing the housing-capacity limit by relaxing the housing constraint."
+}

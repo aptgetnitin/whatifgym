@@ -1,0 +1,1 @@
+{"ask":"Could you clarify which values you want to shift? For example, do you want to adjust the price_same_depot and price_other_depot for each rental length, and adjust the return_shares for each from_depot‑to_depot pair? Also, what kind of shift (scale, shift, set) and by how much?"}

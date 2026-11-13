@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"name":"max_doris_dispatch_ratio","measure":"use","scope":{"technician":"Doris"},"sense":"<=","relative_to":{"measure":"use"},"factor":0.05}],"note":"At most 5% of dispatched technicians may be Doris."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"measure":"ration","sense":">=","value":714}],"note":"Enforce that the average ration per person across all camps is at least 102 units (100 g) per day, i.e. total ration over all camps ≥ 102 × 7 camps."}

@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "drone_bases_cap",
+   "measure": "open",
+   "scope": {
+    "base": {
+     "type": "string"
+    }
+   },
+   "sense": "<=",
+   "value": 3
+  },
+  {
+   "name": "incident_locations_assigned_to_5145_ruritan_court",
+   "measure": "assign",
+   "scope": {
+    "base": "5145 RURITAN COURT Rescue Squad"
+   },
+   "sense": "<=",
+   "value": 29
+  }
+ ]
+}

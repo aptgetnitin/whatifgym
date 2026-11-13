@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "no_both_start_times",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Mannheim",
+          "Baden-Baden"
+        ]
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

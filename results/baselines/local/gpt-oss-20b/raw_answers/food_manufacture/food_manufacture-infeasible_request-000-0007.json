@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"min_total_buy","measure":"buy","sense":">=","value":13500}]}

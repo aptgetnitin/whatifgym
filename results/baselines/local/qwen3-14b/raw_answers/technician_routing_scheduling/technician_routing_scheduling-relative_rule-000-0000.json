@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "flor_job_share",
+      "measure": "assign",
+      "scope": {
+        "technician": "Flor"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {}
+      },
+      "factor": 0.4
+    }
+  ]
+}

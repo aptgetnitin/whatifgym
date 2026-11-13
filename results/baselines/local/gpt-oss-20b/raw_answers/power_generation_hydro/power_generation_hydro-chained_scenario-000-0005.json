@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "min_output_mw",
+      "factor": 1.1
+    },
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": "Thermal2"
+      },
+      "value": 2
+    }
+  ],
+  "note": "Scale minimum output per unit by 10% and set the available units of Thermal2 to 2."
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "damaged_share",
+      "factor": 2
+    }
+  ]
+}

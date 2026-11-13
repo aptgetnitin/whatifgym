@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "job_types",
+      "column": "priority",
+      "where": {
+        "job_type": [
+          "Equipment Installation",
+          "Equipment Setup",
+          "Inspect/Service Equipment",
+          "Repair - Regular",
+          "Repair - Important",
+          "Repair - Urgent",
+          "Repair - Critical"
+        ]
+      },
+      "factor": 1.2
+    },
+    {
+      "op": "set",
+      "table": "travel_times",
+      "column": "travel_min",
+      "where": {
+        "from_location": "Karlsruhe",
+        "to_location": "Baden-Baden"
+      },
+      "value": 16
+    }
+  ],
+  "note": "Job priorities increased by 20% and travel time from Karlsruhe to Baden-Baden set to 16 minutes."
+}

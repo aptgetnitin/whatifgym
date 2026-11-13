@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_for_700_LONDON_BRIDGE_RD",
+   "measure": "linked_load",
+   "scope": {
+    "location": "700 LONDON BRIDGE RD"
+   },
+   "sense": ">=",
+   "value": 0.01
+  }
+ ],
+ "logic": [
+  {
+   "name": "either_or_condition",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "linked_load",
+     "scope": {
+      "location": "700 LONDON BRIDGE RD"
+     },
+     "sense": "==",
+     "value": 0
+    },
+    {
+     "measure": "linked_load",
+     "scope": {
+      "location": "700 LONDON BRIDGE RD"
+     },
+     "sense": ">=",
+     "value": 0.01
+    }
+   ]
+  }
+ ]
+}

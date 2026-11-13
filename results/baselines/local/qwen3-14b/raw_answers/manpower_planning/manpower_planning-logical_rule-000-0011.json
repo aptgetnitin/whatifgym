@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "only_one_short_time_skill",
+      "measure": "short_time",
+      "scope": {
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "short_time",
+        "scope": {
+          "skill": [
+            "unskilled",
+            "semi_skilled",
+            "skilled"
+          ]
+        }
+      },
+      "factor": 0.0
+    }
+  ]
+}

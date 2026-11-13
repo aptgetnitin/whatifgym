@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "max_total_discharge",
+      "measure": "discharge",
+      "sense": "<=",
+      "value": 4.3
+    }
+  ]
+}

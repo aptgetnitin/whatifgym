@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "arrival_time_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "finish_time",
+          "scope": {
+            "train": "D"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "finish_time",
+          "scope": {
+            "train": "F"
+          },
+          "sense": ">=",
+          "value": 104
+        }
+      ]
+    }
+  ]
+}

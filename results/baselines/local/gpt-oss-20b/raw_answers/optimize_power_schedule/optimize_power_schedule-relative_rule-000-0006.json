@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"hydro_max_5pct_on","measure":"on","scope":{"plant":"HYDRO"},"sense":"<=","relative_to":{"measure":"on"},"factor":0.05}]}

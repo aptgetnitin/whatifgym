@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "travel_times",
+      "column": "travel_min",
+      "factor": 0.9
+    },
+    {
+      "op": "set",
+      "table": "job_types",
+      "column": "priority",
+      "where": {
+        "job_type": "Repair - Urgent"
+      },
+      "value": 2
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"purchase_at_least_3_flow","measure":"purchase","sense":">=","relative_to":{"measure":"flow"},"factor":3.0}],"note":"Ensure total purchase >= 3 * total flow."}

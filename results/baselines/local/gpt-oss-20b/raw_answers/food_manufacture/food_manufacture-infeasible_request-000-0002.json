@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "consume",
+      "sense": ">=",
+      "value": 27000
+    }
+  ],
+  "note": "Require total refined oil (sum of consume over all months and oils) to be at least 27,000 tons."
+}

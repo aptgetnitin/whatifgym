@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "total_open_limit",
+      "measure": "open",
+      "sense": "<=",
+      "value": 10
+    }
+  ]
+}

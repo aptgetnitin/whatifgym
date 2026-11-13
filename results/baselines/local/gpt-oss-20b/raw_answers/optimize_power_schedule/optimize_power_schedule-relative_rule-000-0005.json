@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "measure": "output",
+      "scope": {
+        "plant": "OTHER COAL"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "output"
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "At least 25% of total generation must come from OTHER COAL."
+}

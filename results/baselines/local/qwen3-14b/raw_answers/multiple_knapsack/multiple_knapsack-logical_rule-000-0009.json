@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "at_most_one_of_items",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item5"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item7"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item14"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item4"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item2"
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "logic": [
+    {
+      "name": "Mine4_min_batch",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extract",
+          "scope": {
+            "mine": "Mine4"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "extract",
+          "scope": {
+            "mine": "Mine4"
+          },
+          "sense": ">=",
+          "value": 15300000
+        }
+      ]
+    }
+  ]
+}

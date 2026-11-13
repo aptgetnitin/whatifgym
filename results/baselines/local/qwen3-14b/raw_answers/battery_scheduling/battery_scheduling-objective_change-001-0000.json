@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "soc",
+      "scope": {
+        "hour": "23-24"
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ]
+}

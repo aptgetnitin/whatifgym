@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "workers",
+      "column": "works",
+      "where": {
+        "worker": "worker_10"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Setting the 'works' column for worker_10 to 0 ensures that the worker is not assigned any tasks."
+}

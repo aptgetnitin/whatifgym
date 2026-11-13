@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"set","table":"foods","column":"international_price","where":{"food":"Maize meal"},"value":1100}]}

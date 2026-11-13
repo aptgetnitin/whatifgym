@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "fixed_decisions": [
+    {
+      "measure": "operate",
+      "scope": {
+        "year": "Year5",
+        "mine": "Mine3"
+      },
+      "value": 0
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "downgrade",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 210
+    }
+  ],
+  "note": "Require at least 210 workers to be downgraded in year 1."
+}

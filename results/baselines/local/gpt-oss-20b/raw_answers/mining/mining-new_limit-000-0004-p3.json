@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "max_mine_years",
+      "measure": "operate",
+      "sense": "<=",
+      "value": 7
+    },
+    {
+      "name": "max_blend_year5",
+      "measure": "blend",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": "<=",
+      "value": 3280000
+    }
+  ]
+}

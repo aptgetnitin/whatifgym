@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "max_plants_on",
+      "measure": "on",
+      "scope": {
+        "plant": [
+          "HYDRO",
+          "OTHER COAL",
+          "OIL",
+          "Vogtle",
+          "BIOMASS"
+        ]
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ]
+}

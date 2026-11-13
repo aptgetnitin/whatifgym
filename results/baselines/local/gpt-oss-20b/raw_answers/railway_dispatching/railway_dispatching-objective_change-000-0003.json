@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "entry_time",
+      "scope": {
+        "resource": 1
+      }
+    }
+  ],
+  "note": "Keep total delay at its minimum, then minimise the entry time for resource 1."
+}

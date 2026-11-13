@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "trains",
+      "where": {
+        "train": "A"
+      }
+    }
+  ],
+  "note": "Delete train A and re-plan."
+}

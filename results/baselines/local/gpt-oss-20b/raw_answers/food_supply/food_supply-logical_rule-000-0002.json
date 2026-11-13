@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "DSM_nonzero_ration",
+      "measure": "ration",
+      "scope": {
+        "food": "Dried skim milk (enriched) (DSM)",
+        "camp": "Dayr_Az_Zor"
+      },
+      "sense": ">=",
+      "value": 0.0001
+    },
+    {
+      "name": "Wheat_flow_min",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat",
+        "from_city": "Hassakeh",
+        "to_city": "Qamishli"
+      },
+      "sense": ">=",
+      "value": 16350
+    }
+  ],
+  "note": "Enforce a non‑zero ration for DSM in Dayr_Az_Zor and a minimum flow of Wheat from Hassakeh to Qamishli."
+}

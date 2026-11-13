@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "oil_purchase_hassakeh",
+   "measure": "purchase",
+   "scope": {
+    "food": "Oil",
+    "supplier": "Hassakeh"
+   },
+   "sense": ">=",
+   "value": 200550
+  }
+ ]
+}

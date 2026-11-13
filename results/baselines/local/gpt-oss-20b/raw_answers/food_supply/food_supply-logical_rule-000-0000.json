@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "logic": [
+    {
+      "name": "Oil_Beirut_Homs_imp_Dayr_Az_Zor_flow",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "flow",
+          "scope": {
+            "food": "Oil",
+            "from_city": "Beirut",
+            "to_city": "Homs"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "flow",
+          "scope": {
+            "from_city": "Dayr_Az_Zor"
+          },
+          "sense": ">=",
+          "value": 49800
+        }
+      ]
+    }
+  ]
+}

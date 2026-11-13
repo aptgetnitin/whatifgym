@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "skilled_workforce_min",
+      "measure": "workforce",
+      "scope": {
+        "skill": "skilled"
+      },
+      "sense": ">=",
+      "value": 9100
+    },
+    {
+      "name": "semi_skilled_workforce_min",
+      "measure": "workforce",
+      "scope": {
+        "skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "value": 11900
+    }
+  ]
+}

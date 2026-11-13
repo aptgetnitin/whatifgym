@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"store_at_least_sell","measure":"store","sense":">=","relative_to":{"measure":"sell"},"factor":1.0}],"note":"Ensure total inventory across all months and products is at least total sales."}

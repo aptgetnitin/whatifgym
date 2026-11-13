@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "max_flights_A321#2",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A321#2"
+      },
+      "sense": "<=",
+      "value": 7
+    },
+    {
+      "name": "max_total_flights",
+      "measure": "operate",
+      "sense": "<=",
+      "value": 36
+    }
+  ],
+  "note": "Limit flights for A321#2 to 7 and overall to 36."
+}

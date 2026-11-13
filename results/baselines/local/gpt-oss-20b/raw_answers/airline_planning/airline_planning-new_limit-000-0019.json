@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"overall_flight_cap","measure":"operate","sense":"<=","value":38},{"name":"A319#11_flight_cap","measure":"operate","scope":{"aircraft":"A319#11"},"sense":"<=","value":3}],"note":"Cap total flights to 38 and A319#11 to 3."}

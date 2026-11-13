@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "step3_start_min_50_step6_start",
+      "measure": "start",
+      "scope": {
+        "step": 3
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "step": 6
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

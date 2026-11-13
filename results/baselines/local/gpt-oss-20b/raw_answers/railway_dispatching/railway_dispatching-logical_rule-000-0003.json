@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "entry_time1_finish_time_D",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "D",
+            "resource": 1
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "finish_time",
+          "scope": {
+            "train": "D"
+          },
+          "sense": ">=",
+          "value": 18
+        }
+      ]
+    }
+  ]
+}

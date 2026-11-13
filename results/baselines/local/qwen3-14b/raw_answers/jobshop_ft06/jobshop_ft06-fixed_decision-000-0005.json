@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "goes_first",
+      "column": "goes_first",
+      "where": {
+        "machine": "M3",
+        "job": "J2",
+        "other_job": "J3"
+      },
+      "value": 0
+    }
+  ]
+}

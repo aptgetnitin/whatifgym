@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_operated_for_A320_22_4575",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A320#22",
+        "flight": 4575
+      },
+      "sense": ">=",
+      "value": 1
+    },
+    {
+      "name": "total_flights_operated_for_A318_4",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A318#4"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

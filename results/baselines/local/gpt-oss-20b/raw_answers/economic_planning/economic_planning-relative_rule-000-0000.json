@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"year4_at_most_80_percent_year3","measure":"production","scope":{"year":4},"sense":"<=","relative_to":{"measure":"production","scope":{"year":3}},"factor":0.8}]}

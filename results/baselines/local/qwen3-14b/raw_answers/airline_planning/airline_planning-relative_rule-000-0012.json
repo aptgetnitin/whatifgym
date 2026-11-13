@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_cap_A321_2_vs_A318_4",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A321#2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": "A318#4"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

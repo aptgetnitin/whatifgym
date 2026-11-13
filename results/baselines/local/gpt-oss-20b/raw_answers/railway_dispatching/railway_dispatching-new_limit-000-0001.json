@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "D_max_overlap_pairs",
+      "measure": "meet",
+      "scope": {
+        "train": "D"
+      },
+      "sense": "<=",
+      "value": 2
+    }
+  ],
+  "note": "Ensures that train D overlaps with at most one other train across all resources (each pair counted twice)."
+}

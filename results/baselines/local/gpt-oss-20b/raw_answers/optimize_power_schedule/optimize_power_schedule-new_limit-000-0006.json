@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"min_shutdown_hour5","measure":"stop","scope":{"hour":5},"sense":">=","value":1},{"name":"max_on_hours_total","measure":"on","sense":"<=","value":107}],"note":"Two new limits: at least one shutdown at hour 5 and total on hours <=107."}

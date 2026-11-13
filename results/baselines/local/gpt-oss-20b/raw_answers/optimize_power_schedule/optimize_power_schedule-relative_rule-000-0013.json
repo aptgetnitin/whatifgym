@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"measure":"output","scope":{"plant":"Edwin I Hatch"},"sense":"<=","relative_to":{"measure":"output","scope":{}},"factor":0.15}],"note":"At most 15% of total generation may come from Edwin I Hatch."}

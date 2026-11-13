@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "offenburg_start_time",
+      "measure": "start_time",
+      "scope": {
+        "location": "Offenburg"
+      },
+      "sense": ">=",
+      "value": 54
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","objective":[{"sense":"min","measure":"original"},{"sense":"max","measure":"operate"}],"note":"Maximize the total number of flights operated while keeping lost revenue at its optimal value."}

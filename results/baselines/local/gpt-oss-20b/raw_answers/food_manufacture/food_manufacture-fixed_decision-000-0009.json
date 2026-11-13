@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","fixed_decisions":[{"measure":"store","scope":{"month":"Jan","oil":"OIL3"},"value":1000}]}

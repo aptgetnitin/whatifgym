@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "steel_total_production_min",
+      "measure": "production",
+      "scope": {
+        "industry": "steel",
+        "year": [1, 2, 3, 4, 5]
+      },
+      "sense": ">=",
+      "value": 1550
+    }
+  ],
+  "note": "Enforce minimum total steel production over years 1-5."
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "linked_load_cap",
+      "measure": "linked_load",
+      "sense": "<=",
+      "value": 0.53
+    },
+    {
+      "name": "queue_load_min_800",
+      "measure": "queue_load",
+      "scope": {
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": ">=",
+      "value": 0.01
+    }
+  ],
+  "note": "Overall cap on linked load and minimum queue load for base 800 VIRGINIA BEACH BLVD Fire Station."
+}

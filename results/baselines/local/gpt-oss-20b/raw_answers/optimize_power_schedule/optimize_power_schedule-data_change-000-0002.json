@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "fuels",
+      "column": "shutdown_cost",
+      "where": {
+        "fuel": "BIT"
+      },
+      "value": 110
+    },
+    {
+      "op": "scale",
+      "table": "health_costs",
+      "column": "health_cost",
+      "where": {
+        "plant": [
+          "Bowen",
+          "Jack McDonough",
+          "Scherer"
+        ]
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Shutdown cost for BIT set to 110; health costs scaled down by 25%."
+}

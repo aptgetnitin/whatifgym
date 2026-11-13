@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "max_pairs_M4",
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M4"
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ],
+  "note": "Limit number of job pairs where a job goes first on machine M4 to at most 4."
+}

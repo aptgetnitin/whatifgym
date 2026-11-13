@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "unfilled_job_penalty",
+      "value": 9150
+    }
+  ],
+  "rules": [
+    {
+      "measure": "start_time",
+      "scope": {},
+      "sense": "<=",
+      "value": 600,
+      "name": "cap_start_time_total"
+    }
+  ],
+  "note": "Penalty per unfilled job changed to 9150."
+}

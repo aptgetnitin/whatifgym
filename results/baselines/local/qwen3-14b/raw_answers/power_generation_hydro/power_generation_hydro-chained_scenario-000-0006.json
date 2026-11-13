@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "thermal_types",
+      "where": {
+        "type": "Thermal1"
+      }
+    }
+  ],
+  "note": "Removing Thermal1 from the thermal_types table to reflect its exclusion from the problem."
+}

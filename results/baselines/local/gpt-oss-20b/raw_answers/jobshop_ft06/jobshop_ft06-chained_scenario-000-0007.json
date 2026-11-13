@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "duration",
+      "where": {
+        "job": "J1",
+        "step": 2
+      },
+      "value": 10
+    }
+  ],
+  "rules": [
+    {
+      "name": "overall_goes_first_cap",
+      "measure": "goes_first",
+      "sense": "<=",
+      "value": 36
+    }
+  ],
+  "note": "Cap on number of job pairs where job goes first on machine."
+}

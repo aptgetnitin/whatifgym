@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "undamaged_left_cap",
+      "measure": "undamaged_left",
+      "sense": "<=",
+      "value": 150
+    }
+  ],
+  "note": "Overall cap of 150 on undamaged cars kept overnight across all days and depots."
+}

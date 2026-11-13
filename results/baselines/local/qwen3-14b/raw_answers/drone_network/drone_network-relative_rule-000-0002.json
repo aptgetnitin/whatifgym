@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_ratio",
+   "measure": "queue_load",
+   "scope": {
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "queue_load",
+    "scope": {
+     "base": "3769 E. STRATFORD ROAD Rescue Squad"
+    }
+   },
+   "factor": 0.75
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "fixed_decisions": [
+    {
+      "measure": "entry_time",
+      "scope": {
+        "train": "F",
+        "resource": 6
+      },
+      "value": 1040
+    }
+  ],
+  "note": "Set the entry time of train F at resource 6 to 1040 minutes."
+}

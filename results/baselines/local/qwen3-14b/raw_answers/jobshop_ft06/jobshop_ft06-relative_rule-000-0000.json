@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j2_start_limit_relative_to_j1",
+      "measure": "start",
+      "scope": {
+        "job": "J2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "job": "J1"
+        }
+      },
+      "factor": 0.6
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j2_step6_start_time_rule",
+      "measure": "start",
+      "scope": {
+        "job": "J2",
+        "step": 6
+      },
+      "sense": ">=",
+      "value": 84
+    }
+  ]
+}

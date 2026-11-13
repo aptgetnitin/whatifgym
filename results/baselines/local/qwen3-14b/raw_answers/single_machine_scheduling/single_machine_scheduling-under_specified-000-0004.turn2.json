@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "rules": [
+    {
+      "name": "minimum_start_time_for_job14",
+      "measure": "start_time",
+      "scope": {
+        "job": "job_14"
+      },
+      "sense": ">=",
+      "value": 78400
+    }
+  ]
+}

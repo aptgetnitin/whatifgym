@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "stock_year2_at_least_twice_year1",
+      "measure": "stock",
+      "scope": {
+        "year": 2
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "stock",
+        "scope": {
+          "year": 1
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

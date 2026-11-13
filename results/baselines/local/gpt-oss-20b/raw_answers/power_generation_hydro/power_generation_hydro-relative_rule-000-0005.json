@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_00_06_vs_06_09",
+      "measure": "ngen",
+      "scope": {
+        "period": "00-06"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "ngen",
+        "scope": {
+          "period": "06-09"
+        }
+      },
+      "factor": 1.5
+    },
+    {
+      "name": "pump_18_24_fraction",
+      "measure": "pump",
+      "scope": {
+        "period": "18-24"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "pump",
+        "scope": {}
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "Ensure 00-06 thermal units >=1.5×06-09 and 60% of total pumping in 18-24."
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "E_goes_first_limit",
+      "measure": "goes_first",
+      "scope": {
+        "train": "E"
+      },
+      "sense": "<=",
+      "value": 5
+    },
+    {
+      "name": "F_entry_time_min",
+      "measure": "entry_time",
+      "scope": {
+        "train": "F"
+      },
+      "sense": ">=",
+      "value": 310
+    }
+  ],
+  "note": "Limit on the number of times train E clears a resource before another train enters, and a minimum total entry time for train F."
+}

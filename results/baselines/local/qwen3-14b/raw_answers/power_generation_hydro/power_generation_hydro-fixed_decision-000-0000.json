@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal2_units_equal_across_periods",
+      "measure": "ngen",
+      "scope": {
+        "type": "Thermal2"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ]
+}

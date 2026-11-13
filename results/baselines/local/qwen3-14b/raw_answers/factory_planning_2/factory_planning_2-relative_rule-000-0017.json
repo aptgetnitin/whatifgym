@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod7_sell_ge_prod4_sell",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod4"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

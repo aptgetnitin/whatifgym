@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "incidents",
+   "column": "incidents",
+   "where": {
+    "location": "5600 MEER ST"
+   },
+   "value": 2
+  }
+ ],
+ "note": "The cardiac arrests observed for incident location 5600 MEER ST is set to 2."
+}

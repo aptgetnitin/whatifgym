@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "camps",
+   "column": "beneficiaries",
+   "where": {
+    "camp": "Hassakeh"
+   },
+   "factor": 0.7
+  }
+ ],
+ "note": "The number of beneficiaries for camp Hassakeh is reduced by 30%."
+}

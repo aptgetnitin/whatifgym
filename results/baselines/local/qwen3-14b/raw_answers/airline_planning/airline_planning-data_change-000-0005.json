@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "revenue",
+      "where": {
+        "revenue": {
+          "min": 0
+        }
+      },
+      "factor": 1.2
+    }
+  ],
+  "note": "Scaling the revenue column in the flights table by 20% to reflect the increased ticket revenue."
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "measure": "goes_first",
+      "scope": {
+        "other_train": "B"
+      },
+      "sense": "<=",
+      "value": 8,
+      "name": "cap_goes_first_B"
+    },
+    {
+      "measure": "entry_time",
+      "scope": {
+        "train": "B"
+      },
+      "sense": ">=",
+      "value": 160,
+      "name": "min_entry_time_B"
+    }
+  ]
+}

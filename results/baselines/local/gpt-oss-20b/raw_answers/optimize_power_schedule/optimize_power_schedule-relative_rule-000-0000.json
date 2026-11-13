@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "biomass_edwin_ratio",
+      "measure": "on",
+      "scope": {
+        "plant": "BIOMASS"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "plant": "Edwin I Hatch"
+        }
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Policy: BIOMASS plant-hours on <= 80% of Edwin I Hatch plant-hours on."
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "blend_total_cap",
+      "measure": "blend",
+      "scope": {},
+      "sense": "<=",
+      "value": 13045850
+    }
+  ]
+}

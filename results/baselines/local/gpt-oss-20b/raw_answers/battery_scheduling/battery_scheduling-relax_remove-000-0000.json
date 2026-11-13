@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","relax":[{"constraint":"terminal_soc"}],"note":"Remove the terminal SOC constraint to allow the battery to end the day at any charge level."}

@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "measure": "start",
+      "sense": "<=",
+      "scope": {
+        "plant": "GAS"
+      },
+      "relative_to": {
+        "measure": "start",
+        "scope": {
+          "plant": "OTHER COAL"
+        }
+      },
+      "factor": 0.5
+    },
+    {
+      "measure": "on",
+      "sense": "<=",
+      "scope": {
+        "plant": "OTHER COAL"
+      },
+      "relative_to": {
+        "measure": "on"
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "Limit GAS start‑ups to at most 50% of OTHER COAL start‑ups; limit OTHER COAL on‑hours to at most 5% of total on‑hours."
+}

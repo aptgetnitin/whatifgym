@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "stock_constraint",
+      "measure": "stock",
+      "scope": {
+        "year": 2,
+        "industry": "transport"
+      },
+      "sense": ">=",
+      "value": 1190
+    }
+  ]
+}

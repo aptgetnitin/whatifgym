@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"total_units_sold_limit","measure":"sell","sense":"<=","value":6450}]}

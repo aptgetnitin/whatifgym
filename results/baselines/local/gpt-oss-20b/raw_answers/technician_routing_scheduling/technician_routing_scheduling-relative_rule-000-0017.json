@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "legs_vs_technicians",
+      "measure": "route",
+      "scope": {},
+      "sense": "<=",
+      "relative_to": {
+        "measure": "use",
+        "scope": {}
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Limit total legs driven to 75% of dispatched technicians."
+}

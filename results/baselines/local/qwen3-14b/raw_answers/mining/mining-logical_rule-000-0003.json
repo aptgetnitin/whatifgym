@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"open_mines_limit","measure":"open","scope":{"year":["Year1","Year2","Year3","Year4","Year5"],"mine":[]},"sense":"<=","value":4}]}

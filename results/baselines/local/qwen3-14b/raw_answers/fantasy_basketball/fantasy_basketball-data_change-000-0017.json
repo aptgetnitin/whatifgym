@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "rules": [
+    {
+      "name": "pg_required_2",
+      "measure": "pick",
+      "scope": {
+        "position": "PG"
+      },
+      "sense": "==",
+      "value": 2
+    }
+  ]
+}

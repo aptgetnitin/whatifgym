@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "max_5pct_Lahr",
+      "measure": "start_time",
+      "scope": {
+        "location": "Lahr/Schwarzwald"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start_time",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "At most 5% of total service start time may be at Lahr/Schwarzwald."
+}

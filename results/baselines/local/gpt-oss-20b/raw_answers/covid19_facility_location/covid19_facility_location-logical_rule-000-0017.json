@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "logic": [
+    {
+      "name": "assign_C3_E3_zero_or_at_least_600",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "assign",
+          "scope": {
+            "county": "C3",
+            "facility": "E3"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "assign",
+          "scope": {
+            "county": "C3",
+            "facility": "E3"
+          },
+          "sense": ">=",
+          "value": 600
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "flow",
+   "scope": {}
+  },
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

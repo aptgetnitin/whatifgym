@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        "oil": ["VEG1", "VEG2", "OIL1", "OIL2", "OIL3"]
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "set",
+      "table": "oils",
+      "column": "hardness",
+      "where": {
+        "oil": "VEG1"
+      },
+      "value": 13.2
+    }
+  ],
+  "note": "All purchase prices reduced by 20% and VEG1 hardness set to 13.2."
+}

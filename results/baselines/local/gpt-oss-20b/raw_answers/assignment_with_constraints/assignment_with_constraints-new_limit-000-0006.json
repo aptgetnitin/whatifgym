@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","rules":[{"name":"min_assign_task_0","measure":"assign","scope":{"task":"task_0"},"sense":">=","value":2}]}

@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "Scherer_on_percentage",
+      "measure": "on",
+      "scope": {
+        "plant": "Scherer"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "on"
+      },
+      "factor": 0.05
+    },
+    {
+      "name": "shutdown_startup_ratio",
+      "measure": "stop",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start"
+      },
+      "factor": 0.9
+    }
+  ]
+}

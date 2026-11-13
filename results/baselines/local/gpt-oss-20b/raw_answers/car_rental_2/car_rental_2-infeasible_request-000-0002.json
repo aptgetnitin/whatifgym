@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"Saturday_repair_target","measure":"repairs","scope":{"day":"Saturday"},"sense":">=","value":141}]}

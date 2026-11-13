@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "location_lahr_schwarzwald_time_limit",
+      "measure": "start_time",
+      "scope": {
+        "location": "Lahr/Schwarzwald"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start_time",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ]
+}

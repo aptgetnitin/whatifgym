@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "energy_capacity_kwh",
+      "value": 27
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "soc",
+      "scope": {
+        "hour": "10-11"
+      },
+      "value": 27
+    }
+  ],
+  "note": "Commit to exactly 27 kWh stored at end of hour 10-11."
+}

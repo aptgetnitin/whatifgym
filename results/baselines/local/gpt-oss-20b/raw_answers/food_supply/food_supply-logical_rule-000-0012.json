@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","fixed_decisions":[{"measure":"purchase","scope":{"supplier":["Daraa","Hassakeh"]},"value":0}],"note":"Set purchase to zero for suppliers Daraa and Hassakeh."}

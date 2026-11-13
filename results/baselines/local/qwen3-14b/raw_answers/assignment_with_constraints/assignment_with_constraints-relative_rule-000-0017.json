@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "rules": [
+    {
+      "name": "task5_to_task3_ratio",
+      "measure": "assign",
+      "scope": {
+        "task": "task_5"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "task": "task_3"
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

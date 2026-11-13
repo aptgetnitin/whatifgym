@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "resource_5_entry_time_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "entry_time",
+          "scope": {
+            "resource": 5
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "entry_time",
+          "scope": {
+            "resource": 5
+          },
+          "sense": ">=",
+          "value": 261
+        }
+      ]
+    }
+  ]
+}

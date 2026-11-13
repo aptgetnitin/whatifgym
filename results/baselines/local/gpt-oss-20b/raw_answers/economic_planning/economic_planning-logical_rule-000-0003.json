@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "logic": [
+    {
+      "name": "coal_capacity_batch_rule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extra_capacity",
+          "scope": {
+            "year": 3,
+            "industry": "coal"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "extra_capacity",
+          "scope": {
+            "year": 3,
+            "industry": "coal"
+          },
+          "sense": ">=",
+          "value": 213
+        }
+      ]
+    }
+  ]
+}

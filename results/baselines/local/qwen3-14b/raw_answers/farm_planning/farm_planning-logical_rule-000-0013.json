@@ -1,0 +1,39 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sugar_beet_sell_year2",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "value": 41
+  }
+ ],
+ "logic": [
+  {
+   "name": "either_or_sugar_beet_year2",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "sell_beet",
+     "scope": {
+      "year": "Year2"
+     },
+     "sense": "==",
+     "value": 0
+    },
+    {
+     "measure": "sell_beet",
+     "scope": {
+      "year": "Year2"
+     },
+     "sense": ">=",
+     "value": 41
+    }
+   ]
+  }
+ ]
+}

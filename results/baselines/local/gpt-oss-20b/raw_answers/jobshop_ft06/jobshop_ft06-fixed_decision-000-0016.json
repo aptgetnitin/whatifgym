@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "fixed_decisions": [
+    {
+      "measure": "start",
+      "scope": {
+        "job": "J4",
+        "step": 1
+      },
+      "value": 6
+    },
+    {
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M0",
+        "job": "J1",
+        "other_job": "J3"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Fixed start time for J4 step1 and forced order on M0 between J1 and J3."
+}

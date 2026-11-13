@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "A319#11_min_75pct",
+      "measure": "operate",
+      "scope": { "aircraft": "A319#11" },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {}
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "At least 75% of all operated flights must be operated by aircraft A319#11."
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "edwin_i_hatch_power_limit",
+      "measure": "output",
+      "scope": {
+        "plant": "Edwin I Hatch"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "output",
+        "scope": {
+          "plant": "all"
+        }
+      },
+      "factor": 0.15
+    }
+  ]
+}

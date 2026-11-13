@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","ask":"Which row in the resources table has a different minimum time on the resource, and what is the new value?"}

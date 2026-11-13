@@ -1,0 +1,1 @@
+{"ask":"Do you mean that at most one month among May, Mar, Jan, Apr, and Feb can have any sales for any product, or that for each product at most one of those months can have sales? Also, would you allow the introduction of binary variables to enforce this rule, or must it be expressed using only the existing decision variables?"}

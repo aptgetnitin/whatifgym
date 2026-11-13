@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_operate_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "all",
+        "flight": "all"
+      },
+      "sense": "<=",
+      "value": 100
+    }
+  ],
+  "note": "Imposes a cap on the total number of flights operated across all aircraft."
+}

@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "freiburg_legs_percentage",
+      "measure": "route",
+      "scope": {
+        "to_location": "Freiburg im Breisgau"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "route",
+        "scope": {}
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "assigned_jobs_legs_ratio",
+      "measure": "assign",
+      "scope": {},
+      "sense": "<=",
+      "relative_to": {
+        "measure": "route",
+        "scope": {}
+      },
+      "factor": 0.25
+    }
+  ]
+}

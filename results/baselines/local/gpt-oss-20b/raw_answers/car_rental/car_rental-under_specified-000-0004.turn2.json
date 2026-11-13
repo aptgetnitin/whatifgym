@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "wednesday_rentals_floor",
+      "measure": "rentals",
+      "scope": {
+        "day": "Wednesday"
+      },
+      "sense": ">=",
+      "value": 470
+    }
+  ],
+  "note": "Enforces a minimum of 470 cars rented out on Wednesday across all depots."
+}

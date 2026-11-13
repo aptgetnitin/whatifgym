@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "total_stock_may_limit",
+      "measure": "store",
+      "scope": {
+        "month": "May"
+      },
+      "sense": "<=",
+      "value": 150
+    }
+  ]
+}

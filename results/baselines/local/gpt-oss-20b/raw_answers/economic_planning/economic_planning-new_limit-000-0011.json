@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"total_stock_cap","measure":"stock","sense":"<=","value":600}]}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_operated_limit_A321_2",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A321#2"
+      },
+      "sense": "<=",
+      "value": 7
+    }
+  ]
+}

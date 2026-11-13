@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"set","table":"oils","column":"hardness","where":{"oil":"VEG1"},"value":17.6}],"rules":[{"measure":"buy","sense":"<=","value":1350}],"note":"Overall cap on total oil bought."}

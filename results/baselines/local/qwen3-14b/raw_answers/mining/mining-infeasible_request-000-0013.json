@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "fixed_decisions": [
+    {
+      "measure": "blend",
+      "scope": {
+        "year": "Year2"
+      },
+      "value": 18000000
+    }
+  ]
+}

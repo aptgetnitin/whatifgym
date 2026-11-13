@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "fixed_decisions": [
+    {
+      "measure": "repairs",
+      "scope": {
+        "depot": "Manchester"
+      },
+      "value": 9
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "Fix repairs at Manchester to 9 cars per day and optimise the rest."
+}

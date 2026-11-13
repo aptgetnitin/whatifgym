@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "import_price",
+      "factor": 1.25
+    }
+  ],
+  "note": "All grid import prices increased by 25%."
+}

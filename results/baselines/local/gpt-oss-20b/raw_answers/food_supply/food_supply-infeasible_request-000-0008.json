@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"min_oil_purchase_hassakeh","measure":"purchase","scope":{"food":"Oil","supplier":"Hassakeh"},"sense":">=","value":200550}],"note":"Management wants at least 200550 units of Oil purchased at Hassakeh."}

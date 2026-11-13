@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","logic":[{"name":"linked_load_zero_or_min","at_least":1,"of":[{"measure":"linked_load","scope":{"location":"700 LONDON BRIDGE RD"},"sense":"==","value":0},{"measure":"linked_load","scope":{"location":"700 LONDON BRIDGE RD"},"sense":">=","value":0.01}]}]}

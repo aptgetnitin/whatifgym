@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "total_stock_cap",
+      "measure": "stock",
+      "scope": {},
+      "sense": "<=",
+      "value": 600
+    }
+  ],
+  "note": "Cap on total stock across all years and industries."
+}

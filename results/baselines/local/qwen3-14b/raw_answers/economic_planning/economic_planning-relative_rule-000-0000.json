@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "year4_production_limit",
+      "measure": "production",
+      "scope": {
+        "year": 4
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "production",
+        "scope": {
+          "year": 3
+        }
+      },
+      "factor": 0.8
+    }
+  ]
+}

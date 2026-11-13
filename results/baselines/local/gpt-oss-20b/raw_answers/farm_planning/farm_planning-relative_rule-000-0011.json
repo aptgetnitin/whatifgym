@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"raise_heifers_to_grain_ratio","measure":"raise_heifers","sense":"<=","relative_to":{"measure":"grow_grain"},"factor":0.25}]}

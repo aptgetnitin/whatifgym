@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "skills",
+      "column": "current_strength",
+      "where": {
+        "skill": "semi_skilled"
+      },
+      "factor": 1.25
+    }
+  ],
+  "note": "The current workforce for the semi_skilled skill level is increased by 25%."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "birmingham_rental_limit",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Birmingham"
+      },
+      "sense": "<=",
+      "value": 540
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "new_mine",
+          "royalty": 3000000,
+          "capacity": 1600000,
+          "quality": 1.5
+        }
+      ]
+    }
+  ]
+}

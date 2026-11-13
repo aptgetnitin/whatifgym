@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "non_zero_production",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jan",
+            "product": {
+              "$wildcard": true
+            }
+          },
+          "sense": ">=",
+          "value": 0.0001
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": "May",
+            "product": {
+              "$wildcard": true
+            }
+          },
+          "sense": ">=",
+          "value": 0.0001
+        }
+      ]
+    }
+  ],
+  "note": "Logical rule ensuring that at least one of Jan or May has non-zero production."
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "logic": [
+    {
+      "name": "nonzero_rentals_monday_requires_undamaged_stock",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Monday"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "undamaged_stock",
+          "scope": {
+            "day": "Monday"
+          },
+          "sense": ">=",
+          "value": 710
+        }
+      ]
+    }
+  ],
+  "note": "If any cars are rented on Monday, the total undamaged cars at depots in the morning must be at least 710."
+}

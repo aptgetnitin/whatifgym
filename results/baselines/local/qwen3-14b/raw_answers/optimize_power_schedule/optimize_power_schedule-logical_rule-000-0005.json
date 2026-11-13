@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "hydro_zero_or_min",
+      "measure": "output",
+      "scope": {
+        "plant": "HYDRO"
+      },
+      "sense": ">=",
+      "value": 12850
+    }
+  ],
+  "logic": [
+    {
+      "name": "hydro_either_zero_or_min",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "output",
+          "scope": {
+            "plant": "HYDRO"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "output",
+          "scope": {
+            "plant": "HYDRO"
+          },
+          "sense": ">=",
+          "value": 12850
+        }
+      ]
+    }
+  ]
+}

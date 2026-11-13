@@ -26,7 +26,7 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | `fantasy_basketball` | 0.27 (90) |
 | `farm_planning` | 0.33 (187) |
 | `food_manufacture` | 0.31 (178) |
-| `food_supply` | 0.29 (164) |
+| `food_supply` | 0.28 (164) |
 | `jobshop_ft06` | 0.22 (169) |
 | `manpower_planning` | 0.20 (210) |
 | `mining` | 0.23 (194) |
@@ -35,7 +35,7 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | `power_generation_hydro` | 0.29 (173) |
 | `railway_dispatching` | 0.08 (167) |
 | `single_machine_scheduling` | 0.20 (45) |
-| `technician_routing_scheduling` | 0.29 (157) |
+| `technician_routing_scheduling` | 0.30 (157) |
 | `wedding_seating` | 0.03 (33) |
 
 ## By template (where the misses are)
@@ -56,7 +56,6 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | new_limit | cap_total_make | 0.00 (5) | result differs from reference |
 | new_limit | cap_total_store | 0.00 (3) | result differs from reference |
 | new_limit (nl) | g_cap_measure_total | 0.00 (12) | invalid DSL: unknown table 'damaged_transfers'; tables are ['days', 'demand', 'depots', 'rent |
-| objective_change | o_then_min | 0.00 (12) | result differs from reference |
 | relax_remove | combo | 0.00 (6) | result differs from reference |
 | under_specified | ask_cap_each_month | 0.00 (1) | needed clarification not asked |
 | under_specified | ask_cap_make_months | 0.00 (1) | needed clarification not asked |
@@ -88,6 +87,7 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | fixed_decision | f_force_one | 0.07 (67) | result differs from reference |
 | infeasible_request | i_floor | 0.08 (88) | result differs from reference |
 | fixed_decision | f_fix_zero | 0.08 (122) | invalid DSL: table 'flights' has no column 'operate'; columns are ['aircraft', 'arrival', 'de |
+| objective_change | o_then_min | 0.08 (12) | result differs from reference |
 | objective_change | o_reorder | 0.10 (48) | invalid DSL: unknown measure 'revenue'; measures are ['connect', 'operate']; for the model's  |
 | relative_rule | r_two_measures | 0.12 (52) | invalid DSL: a rule carries either `value` (absolute) or `relative_to` + `factor` (relative), |
 | data_change | g_param | 0.12 (60) | invalid DSL: unknown table 'params'; tables are ['hours'] |
@@ -100,7 +100,7 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | relative_rule | combo | 0.18 (93) | invalid DSL: {'measure': 'operate', 'scope': {'aircraft': 'A320#22'}} is not of type 'number' |
 | logical_rule | l_if_then | 0.19 (129) | invalid DSL: '4578' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '1 |
 | logical_rule | l_none_or_batch | 0.19 (122) | result differs from reference |
-| infeasible_request | i_two_floors | 0.22 (58) | result differs from reference |
+| infeasible_request | i_two_floors | 0.21 (58) | result differs from reference |
 | objective_change | o_three_stages | 0.23 (40) | invalid DSL: '*' is not a hour; known values: ['00-01', '01-02', '02-03', '03-04', '04-05', ' |
 | relative_rule | r_two_values | 0.26 (136) | invalid DSL: a rule carries either `value` (absolute) or `relative_to` + `factor` (relative), |
 | new_limit | g_cap_measure_total | 0.26 (87) | invalid DSL: invalid set change: {'aircraft': ['all'], 'flight': ['all']} is not valid under  |

@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "J2_end_at_least_80_percent_J1_end",
+      "measure": "end",
+      "scope": {
+        "job": "J2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J1"
+        }
+      },
+      "factor": 0.8
+    },
+    {
+      "name": "J0_end_at_most_5_percent_total_end",
+      "measure": "end",
+      "scope": {
+        "job": "J0"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "Relative limits on end times."
+}

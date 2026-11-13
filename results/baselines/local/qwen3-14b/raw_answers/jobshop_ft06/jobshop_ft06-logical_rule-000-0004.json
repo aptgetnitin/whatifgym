@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "logic": [
+    {
+      "name": "no_job_pair_goes_first_for_J2_and_J1",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "any",
+            "job": "J2",
+            "other_job": "J1"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "any",
+            "job": "J1",
+            "other_job": "J2"
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

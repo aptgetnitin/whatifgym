@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","data_changes":[{"op":"set_param","name":"drone_speed_kmh","value":80}],"note":"Set drone speed to 80 km/h"}

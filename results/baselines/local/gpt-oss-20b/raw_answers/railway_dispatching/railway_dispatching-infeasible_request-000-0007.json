@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "total_finish_time_limit",
+      "measure": "finish_time",
+      "scope": {},
+      "sense": "<=",
+      "value": 1800
+    }
+  ],
+  "note": "Check whether the sum of all trains' finish times can be at most 1800 minutes."
+}

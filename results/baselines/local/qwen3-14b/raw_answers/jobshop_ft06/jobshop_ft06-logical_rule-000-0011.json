@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j2_step1_end_time",
+      "measure": "end",
+      "scope": {
+        "job": "J2",
+        "step": 1
+      },
+      "sense": ">=",
+      "value": 15
+    }
+  ],
+  "logic": [
+    {
+      "name": "j2_step1_end_time_zero_or_at_least_15",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "end",
+          "scope": {
+            "job": "J2",
+            "step": 1
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "end",
+          "scope": {
+            "job": "J2",
+            "step": 1
+          },
+          "sense": ">=",
+          "value": 15
+        }
+      ]
+    }
+  ]
+}

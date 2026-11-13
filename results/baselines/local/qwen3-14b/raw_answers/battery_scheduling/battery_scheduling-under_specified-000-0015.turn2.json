@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "battery_energy_limit",
+      "measure": "soc",
+      "scope": {
+        "hour": [
+          "05-06"
+        ]
+      },
+      "sense": "<=",
+      "value": 10
+    }
+  ]
+}

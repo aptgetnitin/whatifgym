@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"age4_min","measure":"herd","scope":{"age":4},"sense":">=","value":110},{"name":"age11_min","measure":"herd","scope":{"age":11},"sense":">=","value":94}]}

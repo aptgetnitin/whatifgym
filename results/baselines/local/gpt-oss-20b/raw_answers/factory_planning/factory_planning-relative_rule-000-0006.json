@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"total_stock_at_least_2x_make","measure":"store","sense":">=","relative_to":{"measure":"make"},"factor":2.0}],"note":"Total stock must be at least twice total production."}

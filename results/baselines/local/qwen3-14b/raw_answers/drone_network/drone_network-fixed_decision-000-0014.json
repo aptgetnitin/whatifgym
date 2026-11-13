@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "assign",
+   "column": "assign",
+   "where": {
+    "location": "1300 HAWKS NEST WAY",
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "value": 0
+  }
+ ]
+}

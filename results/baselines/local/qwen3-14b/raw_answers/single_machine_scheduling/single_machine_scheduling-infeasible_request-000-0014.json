@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "fixed_decisions": [
+    {
+      "measure": "start_time",
+      "scope": {
+        "job": "job_1"
+      },
+      "value": 80400
+    }
+  ]
+}

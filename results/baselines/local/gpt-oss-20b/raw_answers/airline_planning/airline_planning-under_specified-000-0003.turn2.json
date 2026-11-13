@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "max_flights_operated",
+      "measure": "operate",
+      "sense": "<=",
+      "value": 46,
+      "scope": {}
+    }
+  ]
+}

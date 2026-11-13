@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "only_one_of_prod3_prod4_prod5_sellable",
+      "measure": "sell",
+      "scope": {
+        "product": [
+          "Prod3",
+          "Prod4",
+          "Prod5"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": [
+            "Prod3",
+            "Prod4",
+            "Prod5"
+          ]
+        }
+      },
+      "factor": 0.0
+    }
+  ]
+}

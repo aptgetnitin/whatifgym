@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","logic":[{"name":"coal_year2_min_batch","at_least":1,"of":[{"measure":"production","scope":{"year":2,"industry":"coal"},"sense":"<=","value":0},{"measure":"production","scope":{"year":2,"industry":"coal"},"sense":">=","value":600}]}],"note":"If coal production in year 2 is positive, it must be at least 600."}

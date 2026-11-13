@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","data_changes":[{"op":"scale","table":"items","column":"weight","factor":1.25}],"note":"Correction: make that 25% higher, not 20% higher."}

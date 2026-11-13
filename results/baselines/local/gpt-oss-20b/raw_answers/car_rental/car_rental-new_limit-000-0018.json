@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "max_birmingham_rentals",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Birmingham"
+      },
+      "sense": "<=",
+      "value": 510
+    }
+  ],
+  "note": "Limit total rentals from Birmingham to 510 cars per week."
+}

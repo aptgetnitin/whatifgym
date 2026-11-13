@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "logic": [
+    {
+      "name": "job2_goes_first_at_least_15_percent",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "goes_first",
+          "scope": {
+            "job": "J2"
+          },
+          "sense": ">=",
+          "value": 0.15
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "job": "J2"
+          },
+          "sense": "<=",
+          "value": 0.15
+        }
+      ]
+    }
+  ]
+}

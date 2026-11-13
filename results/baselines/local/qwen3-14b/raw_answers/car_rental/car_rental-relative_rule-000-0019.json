@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_transfers_to_glasgow",
+      "measure": "damaged_transfers",
+      "scope": {
+        "to_depot": "Glasgow"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "damaged_transfers",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ]
+}

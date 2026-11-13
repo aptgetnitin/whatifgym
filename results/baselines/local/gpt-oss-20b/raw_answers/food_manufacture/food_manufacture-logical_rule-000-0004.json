@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "produce",
+          "scope": { "month": "Feb" },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "produce",
+          "scope": { "month": "Mar" },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

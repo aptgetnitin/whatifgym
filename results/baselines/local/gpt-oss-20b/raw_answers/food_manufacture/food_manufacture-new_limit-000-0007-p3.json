@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "measure": "produce",
+      "sense": "<=",
+      "value": 2150
+    },
+    {
+      "measure": "consume",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ],
+  "note": "Total food production capped at 2150 tons; total oil refined in January capped at 400 tons."
+}

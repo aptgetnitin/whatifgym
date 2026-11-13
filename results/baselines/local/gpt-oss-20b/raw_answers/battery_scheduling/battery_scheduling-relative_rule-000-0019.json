@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_21_22_min_75pct",
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "discharge"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Hour 21-22 must account for at least 75% of total discharging power."
+}

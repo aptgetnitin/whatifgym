@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "shutdown_limit_hour8",
+      "measure": "stop",
+      "scope": {
+        "hour": 8
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "stop",
+        "scope": {}
+      },
+      "factor": 0.15
+    },
+    {
+      "name": "scherer_on_hours",
+      "measure": "on",
+      "scope": {
+        "plant": "Scherer"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "plant": "BIOMASS"
+        }
+      },
+      "factor": 3.0
+    }
+  ]
+}

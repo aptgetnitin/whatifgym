@@ -1,0 +1,5 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "ask": "What is the new minimum daily intake per person for nutrient VitaminA(ug)?"
+}

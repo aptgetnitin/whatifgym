@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"original"},{"sense":"min","measure":"entry_time"},{"sense":"max","measure":"goes_first"}],"note":"Priorities: minimize total delay, then total entry time, then maximize number of trains clearing a resource before another enters."}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "jun_total_buy_limit",
+      "measure": "buy",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 1750
+    }
+  ]
+}

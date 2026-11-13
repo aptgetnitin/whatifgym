@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"purchase_vs_flow","measure":"purchase","sense":"<=","relative_to":{"measure":"flow"},"factor":0.5},{"name":"csb_vs_milk","measure":"purchase","scope":{"food":"Corn-soya blend (CSB)"},"sense":">=","relative_to":{"measure":"purchase","scope":{"food":"Milk"}},"factor":1.5}]}

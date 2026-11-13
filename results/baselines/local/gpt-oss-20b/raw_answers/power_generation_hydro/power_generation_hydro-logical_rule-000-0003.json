@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "logic": [
+    {
+      "name": "ngen_start_implication",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ngen",
+          "scope": {
+            "period": "00-06"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "nstart",
+          "scope": {
+            "period": "00-06"
+          },
+          "sense": ">=",
+          "value": 14
+        }
+      ]
+    }
+  ],
+  "note": "If any thermal units run in period 00-06, at least 14 units must be started in that period."
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "routing_step_2_end_time_limit",
+      "measure": "end",
+      "scope": {
+        "step": 2
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ]
+}

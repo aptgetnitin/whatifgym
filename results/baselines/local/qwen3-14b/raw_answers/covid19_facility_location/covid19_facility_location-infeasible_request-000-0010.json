@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "min_patients_E14",
+      "measure": "assign",
+      "scope": {
+        "facility": "E14"
+      },
+      "sense": ">=",
+      "value": 340
+    },
+    {
+      "name": "min_patients_E13",
+      "measure": "assign",
+      "scope": {
+        "facility": "E13"
+      },
+      "sense": ">=",
+      "value": 450
+    }
+  ]
+}

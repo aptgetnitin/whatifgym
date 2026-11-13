@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "loerrach_start_time_limit",
+      "measure": "start_time",
+      "scope": {
+        "location": "Loerrach"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "start_time",
+        "scope": {}
+      },
+      "factor": 0.2
+    },
+    {
+      "name": "legs_vs_technicians",
+      "measure": "route",
+      "scope": {},
+      "sense": ">=",
+      "relative_to": {
+        "measure": "use",
+        "scope": {}
+      },
+      "factor": 3.0
+    }
+  ]
+}

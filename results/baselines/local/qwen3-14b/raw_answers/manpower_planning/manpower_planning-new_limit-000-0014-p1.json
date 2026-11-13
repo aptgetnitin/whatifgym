@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "total_short_time_cap",
+      "measure": "short_time",
+      "scope": {
+        "year": [1, 2, 3],
+        "skill": ["unskilled", "semi_skilled", "skilled"]
+      },
+      "sense": "<=",
+      "value": 220
+    }
+  ]
+}

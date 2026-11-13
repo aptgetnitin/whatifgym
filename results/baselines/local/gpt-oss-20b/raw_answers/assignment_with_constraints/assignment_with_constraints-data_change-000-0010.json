@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "costs",
+      "column": "cost",
+      "where": {
+        "task": [
+          "task_0",
+          "task_1",
+          "task_2",
+          "task_3",
+          "task_4",
+          "task_5"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "Scale all assignment costs by 20% lower."
+}

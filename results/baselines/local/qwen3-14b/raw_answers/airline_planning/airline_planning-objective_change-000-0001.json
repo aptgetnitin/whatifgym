@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "all",
+        "flight": "all"
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "total_service_start_time_limit",
+      "measure": "start_time",
+      "scope": {
+        "location": {
+          "type": "string"
+        }
+      },
+      "sense": "<=",
+      "value": 900
+    }
+  ]
+}

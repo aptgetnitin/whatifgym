@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"oil_hour6_min_output","measure":"output","scope":{"plant":"OIL","hour":6},"sense":">=","value":379}]}

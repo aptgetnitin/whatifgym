@@ -1,0 +1,82 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "non_zero_make_limit",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": [
+              "Feb",
+              "Jan",
+              "Apr",
+              "Mar",
+              "Jun"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": [
+              "Feb",
+              "Jan",
+              "Apr",
+              "Mar",
+              "Jun"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": [
+              "Feb",
+              "Jan",
+              "Apr",
+              "Mar",
+              "Jun"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": [
+              "Feb",
+              "Jan",
+              "Apr",
+              "Mar",
+              "Jun"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": [
+              "Feb",
+              "Jan",
+              "Apr",
+              "Mar",
+              "Jun"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

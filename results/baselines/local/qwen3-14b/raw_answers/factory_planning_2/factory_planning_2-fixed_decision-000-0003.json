@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "mar_sales_exact",
+      "measure": "sell",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": "==",
+      "value": 140
+    }
+  ],
+  "note": "Enforces exact sales of 140 units for each product in March."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "J3_start_time_sum",
+      "measure": "start",
+      "scope": {
+        "job": "J3"
+      },
+      "sense": ">=",
+      "value": 220
+    }
+  ]
+}

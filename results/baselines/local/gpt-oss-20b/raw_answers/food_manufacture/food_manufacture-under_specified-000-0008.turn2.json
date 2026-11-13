@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "total_produce_cap",
+      "measure": "produce",
+      "sense": "<=",
+      "value": 2450
+    }
+  ],
+  "note": "Cap on total food production over the horizon."
+}

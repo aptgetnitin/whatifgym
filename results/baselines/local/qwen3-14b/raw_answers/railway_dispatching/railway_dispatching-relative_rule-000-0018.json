@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "arrival_time_B_vs_D",
+      "measure": "finish_time",
+      "scope": {
+        "train": "B"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "finish_time",
+        "scope": {
+          "train": "D"
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

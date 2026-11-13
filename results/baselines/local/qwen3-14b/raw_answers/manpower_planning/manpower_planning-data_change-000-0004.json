@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "current_strength",
+      "factor": 0.75
+    },
+    {
+      "op": "scale_param",
+      "name": "short_time_cost",
+      "factor": 1.2
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","data_changes":[{"op":"remove","table":"trains","where":{"train":"D"}}],"rules":[{"measure":"finish_time","scope":{"train":"F"},"sense":"<=","value":31}]}

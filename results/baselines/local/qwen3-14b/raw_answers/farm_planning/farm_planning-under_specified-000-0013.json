@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"sugar_beet_growth_limit","measure":"grow_beet","sense":"<=","value":0}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","logic":[{"name":"grain_batch_rule","at_least":1,"of":[{"measure":"buy_grain","scope":{"year":"Year3"},"sense":"<=","value":0},{"measure":"buy_grain","scope":{"year":"Year3"},"sense":">=","value":57}]}]}

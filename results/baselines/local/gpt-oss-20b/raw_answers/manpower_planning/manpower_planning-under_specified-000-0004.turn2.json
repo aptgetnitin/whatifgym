@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "overmanned_cap_year3",
+      "measure": "overmanned",
+      "scope": {
+        "year": 3
+      },
+      "sense": "<=",
+      "value": 110
+    }
+  ],
+  "note": "Cap on workers employed above requirement in year 3."
+}

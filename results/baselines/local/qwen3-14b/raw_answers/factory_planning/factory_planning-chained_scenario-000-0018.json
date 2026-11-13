@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod3",
+        "month": "Jan"
+      },
+      "value": 200
+    },
+    {
+      "op": "scale_param",
+      "name": "profit_per_unit",
+      "factor": 1.25,
+      "where": {
+        "product": "Prod5"
+      }
+    }
+  ]
+}

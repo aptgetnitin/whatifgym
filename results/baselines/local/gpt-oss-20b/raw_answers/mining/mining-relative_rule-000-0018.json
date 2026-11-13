@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "extract_year1_at_least_3x_year2",
+      "measure": "extract",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "extract",
+        "scope": {
+          "year": "Year2"
+        }
+      },
+      "factor": 3.0
+    }
+  ]
+}

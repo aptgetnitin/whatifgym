@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 20
+      },
+      "factor": 0.8
+    }
+  ],
+  "rules": [
+    {
+      "measure": "on",
+      "scope": {
+        "hour": 13
+      },
+      "sense": "<=",
+      "value": 4,
+      "name": "cap_on_13"
+    }
+  ]
+}

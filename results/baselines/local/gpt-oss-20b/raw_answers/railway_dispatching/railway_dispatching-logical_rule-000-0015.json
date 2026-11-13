@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "trainF_entry_time_conditional",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "F"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "F"
+          },
+          "sense": ">=",
+          "value": 620
+        }
+      ]
+    }
+  ],
+  "note": "If train F has any delay, total entry time must be at least 620 minutes."
+}

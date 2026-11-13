@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "mar_jun_production_rule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Mar"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jun"
+          },
+          "sense": ">=",
+          "value": 4000
+        }
+      ]
+    }
+  ]
+}

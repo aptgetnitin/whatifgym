@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"arcs","column":"transport_cost","factor":0.75}],"note":"Transport cost per unit reduced by 25% across all links."}

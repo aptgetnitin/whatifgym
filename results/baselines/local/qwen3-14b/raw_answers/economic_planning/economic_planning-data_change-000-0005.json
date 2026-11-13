@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "input_output",
+      "column": "input_per_unit_capacity",
+      "where": {},
+      "factor": 1.1
+    }
+  ]
+}

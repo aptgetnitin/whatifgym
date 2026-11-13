@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "measure": "store",
+      "scope": {},
+      "sense": "<=",
+      "value": 550
+    }
+  ],
+  "note": "Finance caps inventory: sum of month‑end stock over all products and months must stay under 550 units."
+}
