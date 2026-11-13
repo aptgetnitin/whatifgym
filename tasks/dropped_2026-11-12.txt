@@ -1,0 +1,37 @@
+# Tasks removed on Nov 12, 2026: the gold answer depends on the HiGHS release (1.15.1 and 1.16.0 return different
+# optimal plans of a degenerate model, or stop at different points inside the MIP gap). See training/RUNPOD.md.
+drone_network-infeasible_request-000-0003
+farm_planning-new_limit-000-0002
+optimize_power_schedule-new_limit-000-0011
+railway_dispatching-new_limit-000-0005
+railway_dispatching-relative_rule-000-0010
+railway_dispatching-relative_rule-000-0011
+technician_routing_scheduling-objective_change-000-0005
+technician_routing_scheduling-objective_change-000-0013
+# Removed in the same pass: an if-then rule that asks for 2 or more of one yes/no decision (it could only forbid the condition).
+airline_planning-logical_rule-000-0002
+airline_planning-logical_rule-000-0006
+airline_planning-logical_rule-000-0007
+airline_planning-logical_rule-000-0009
+airline_planning-logical_rule-000-0010
+airline_planning-logical_rule-000-0014
+airline_planning-logical_rule-000-0018
+assignment_with_constraints-logical_rule-000-0000
+assignment_with_constraints-logical_rule-000-0001
+assignment_with_constraints-logical_rule-000-0002
+assignment_with_constraints-logical_rule-000-0005
+drone_network-logical_rule-000-0004
+drone_network-logical_rule-000-0006
+drone_network-logical_rule-000-0012
+fantasy_basketball-logical_rule-000-0001
+jobshop_ft06-logical_rule-000-0002
+jobshop_ft06-logical_rule-000-0013
+mining-logical_rule-000-0007
+mining-logical_rule-000-0010
+mining-logical_rule-000-0018
+multiple_knapsack-logical_rule-000-0002
+multiple_knapsack-logical_rule-000-0007
+optimize_power_schedule-logical_rule-000-0018
+power_generation_hydro-logical_rule-000-0006
+railway_dispatching-logical_rule-000-0011
+technician_routing_scheduling-logical_rule-000-0017

@@ -24,6 +24,15 @@ def _ratio_phrase(f: float) -> str:
     return f"{f:g} times"
 
 
+def _bound(sense: str, f: float, must: bool = False) -> str:
+    """"may be at most 50% of" / "must be at least 2 times"; with factor 1, "may not exceed" / "must be at least"."""
+    if f == 1.0:
+        return ("must not exceed" if must else "may not exceed") if sense == "<=" else "must be at least"
+    if sense == "<=":
+        return f"{'must' if must else 'may'} be at most {_ratio_phrase(f)}"
+    return f"must be at least {_ratio_phrase(f)}"
+
+
 def _pick_binding(base_ratio: float, sense: str, rng, candidates=RATIOS):
     """A factor that makes the rule bind: below the current ratio for a cap, above it for a floor."""
     if sense == "<=":
@@ -62,8 +71,8 @@ def r_two_values(rng, ctx: FamilyContext):
         return None
     label, dl = _label(ctx, measure), ctx.dim_label(dim)
     q = rng.choice([
-        f"What if the {label} for {dl} {a} {'may be at most' if sense == '<=' else 'must be at least'} {_ratio_phrase(f)} the {label} for {dl} {b}?",
-        f"New policy: the {label} for {dl} {a} must be at {'most' if sense == '<=' else 'least'} {_ratio_phrase(f)} the {label} for {dl} {b}.",
+        f"What if the {label} for {dl} {a} {_bound(sense, f)} the {label} for {dl} {b}?",
+        f"New policy: the {label} for {dl} {a} {_bound(sense, f, must=True)} the {label} for {dl} {b}.",
     ])
     rule = _rel_rule(measure, {dim: a}, sense, measure, {dim: b}, f, f"rel_{measure}_{a}_vs_{b}")
     return q, {"rules": [rule]}, {"measure": measure, "dim": dim, "a": a, "b": b, "factor": f, "sense": sense}, "medium"
@@ -85,7 +94,7 @@ def r_share_of_total(rng, ctx: FamilyContext):
     label, dl = _label(ctx, measure), ctx.dim_label(dim)
     pct = int(round(f * 100))
     q = rng.choice([
-        f"What if {dl} {a} must account for at {'most' if sense == '<=' else 'least'} {pct}% of all {label}?",
+        f"What if {dl} {a} must account for at {'most' if sense == '<=' else 'least'} {pct}% of {'the total' if label.startswith('number of ') else 'all'} {label}?",
         f"Suppose at {'most' if sense == '<=' else 'least'} {pct}% of the total {label} {'may' if sense == '<=' else 'must'} go to {dl} {a}.",
     ])
     rule = _rel_rule(measure, {dim: a}, sense, measure, {}, f, f"share_{measure}_{a}")
@@ -107,8 +116,8 @@ def r_two_measures(rng, ctx: FamilyContext):
         return None
     la, lb = _label(ctx, a), _label(ctx, b)
     q = rng.choice([
-        f"What if the total {la} {'may be at most' if sense == '<=' else 'must be at least'} {_ratio_phrase(f)} the total {lb}?",
-        f"Keep the total {la} at {'or below' if sense == '<=' else 'or above'} {_ratio_phrase(f)} the total {lb}. Effect on the plan?",
+        f"What if the total {la} {_bound(sense, f)} the total {lb}?",
+        f"Keep the total {la} at {'or below' if sense == '<=' else 'or above'} {'' if f == 1.0 else _ratio_phrase(f) + ' '}the total {lb}. Effect on the plan?",
     ])
     rule = _rel_rule(a, {}, sense, b, {}, f, f"rel_{a}_vs_{b}")
     return q, {"rules": [rule]}, {"measure": a, "ref_measure": b, "factor": f, "sense": sense}, "medium"

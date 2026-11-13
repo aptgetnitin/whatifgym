@@ -57,6 +57,7 @@ class CarRental2(BaseModel):
         "repairs": ("day", "depot"),
         "expand": ("depot", "step"),
     }
+    DIM_LABELS = {"from_depot": "origin depot", "to_depot": "destination depot"}  # transfer lanes; the schema labels are for rentals
     # KPIs that are unique at the optimum (the expansion plan included); the scorer compares these
     SCORING_KPIS = ["profit", "rental_contribution", "transfer_cost", "fleet_cost", "fleet_size",
                     "expansion_cost", "capacity_added"]

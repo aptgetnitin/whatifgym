@@ -47,6 +47,7 @@ class FamilyContext:
     base: ScenarioResult                      # base plan solved with decisions kept
     measure_values: dict[str, dict[tuple, float]] = field(default_factory=dict)  # measure -> index tuple -> value
     measure_integral: dict[str, bool] = field(default_factory=dict)              # measure -> all variables integer/binary?
+    measure_binary: dict[str, bool] = field(default_factory=dict)                # measure -> all variables 0/1?
 
     # ---- helpers for templates
     def measure_sum(self, measure: str, scope: dict[str, Any] | None = None) -> float:
@@ -89,7 +90,11 @@ class FamilyContext:
         return path[-1].replace("_", " ")
 
     def dim_label(self, dim: str) -> str:
-        """Label of a measure dimension: the label of the key column of the same name, when a table has one."""
+        """Label of a measure dimension: the model's own DIM_LABELS entry, else the label of the key column of the
+        same name, when a table has one."""
+        own = getattr(self.model, "DIM_LABELS", {})
+        if dim in own:
+            return own[dim]
         for t, ts in self.schema["tables"].items():
             if dim in ts.get("key", []):
                 return self.label("column", t, dim)
@@ -209,8 +214,10 @@ class TaskFamily:
         values = {name: {k: (v.value() or 0.0) for k, v in m.vars.items()} for name, m in measures.items()}
         integral = {name: all(getattr(v, "cat", "Continuous") in ("Integer", "Binary") for v in m.vars.values())
                     for name, m in measures.items()}
+        binary = {name: all(getattr(v, "cat", "") == "Binary" or (getattr(v, "cat", "") == "Integer" and v.upBound == 1)
+                            for v in m.vars.values()) for name, m in measures.items()}
         self.ctx = FamilyContext(model=self.model, data=self.data, schema=self.model.schema(), base=base,
-                                 measure_values=values, measure_integral=integral)
+                                 measure_values=values, measure_integral=integral, measure_binary=binary)
 
     @property
     def base_result(self) -> ScenarioResult:

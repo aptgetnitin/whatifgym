@@ -101,6 +101,11 @@ def l_if_then(rng, ctx: FamilyContext):
     q_min = ctx.round_for(mb, base_b * rng.choice([1.25, 1.5, 2.0]), base_b)
     if q_min <= base_b * 1.05:
         return None
+    if ctx.measure_binary.get(mb):
+        dims_b = ctx.model.MEASURE_DIMS[mb]
+        n_b = sum(all(key[dims_b.index(d)] == v for d, v in b.items()) for key in ctx.measure_values[mb])
+        if q_min > n_b:
+            return None  # more than the yes/no decisions in the scope can supply: the rule would only forbid A
     la, lb = _label(ctx, ma), _label(ctx, mb)
     q = rng.choice([
         f"What if a non-zero {la} for {_where(ctx, a)} requires a total {lb} of at least {q_min} for {_where(ctx, b)}?",
