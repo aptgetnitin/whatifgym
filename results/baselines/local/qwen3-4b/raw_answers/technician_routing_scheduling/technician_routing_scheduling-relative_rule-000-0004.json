@@ -20,7 +20,7 @@
       "value": 1.5
     },
     {
-      "name": "freiburg_im_breisgau_legs_50_percent",
+      "name": "freiburg_im_breisgau_50_percent_of_legs",
       "measure": "route",
       "scope": {
         "to_location": [

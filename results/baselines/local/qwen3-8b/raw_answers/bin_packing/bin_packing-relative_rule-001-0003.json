@@ -3,50 +3,20 @@
  "base_model": "bin_packing",
  "rules": [
   {
-   "name": "bins_used_at_least_items_packed",
+   "name": "min_bins_at_least_items",
    "measure": "y",
    "scope": {
-    "bin": [
-     "bin0",
-     "bin1",
-     "bin2",
-     "bin3",
-     "bin4",
-     "bin5",
-     "bin6",
-     "bin7",
-     "bin8",
-     "bin9",
-     "bin10"
-    ]
+    "bin": "bin0"
    },
    "sense": ">=",
    "relative_to": {
-    "measure": "x",
+    "measure": "y",
     "scope": {
-     "item": [
-      "item0",
-      "item1",
-      "item2",
-      "item3",
-      "item4",
-      "item5",
-      "item6",
-      "item7",
-      "item8",
-      "item9",
-      "item10"
-     ]
+     "bin": "bin0"
     }
    },
    "factor": 1.0
   }
  ],
- "objective": [
-  {
-   "sense": "min",
-   "measure": "original"
-  }
- ],
- "note": "The total number of bins used must be at least the total number of items packed."
+ "note": "The rule enforces that the number of bins used is at least the number of items packed."
 }

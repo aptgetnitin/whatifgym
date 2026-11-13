@@ -12,7 +12,7 @@
             "day": "Friday",
             "from_depot": "Glasgow",
             "to_depot": {
-              "$neq": "Glasgow"
+              "$wildcard": true
             }
           },
           "sense": ">=",

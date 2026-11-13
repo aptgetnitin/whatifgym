@@ -1,1 +1,33 @@
-{"version":"0.1","base_model":"airline_planning","rules":[{"name":"A319#11_at_most_5_percent","measure":"operate","scope":{"aircraft":"A319#11"},"sense":"<=","relative_to":{"measure":"operate"},"factor":0.05},{"name":"A319#5_at_most_25_percent_of_A318#5","measure":"operate","scope":{"aircraft":"A319#5"},"sense":"<=","relative_to":{"measure":"operate","scope":{"aircraft":"A318#5"}},"factor":0.25}]}
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "A319#11_flight_share",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#11"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate"
+      },
+      "factor": 0.05
+    },
+    {
+      "name": "A319#5_vs_A318#5",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#5"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": "A318#5"
+        }
+      },
+      "factor": 0.25
+    }
+  ]
+}

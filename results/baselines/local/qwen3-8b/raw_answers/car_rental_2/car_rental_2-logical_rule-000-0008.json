@@ -32,5 +32,5 @@
    "factor": 78
   }
  ],
- "note": "A rule enforces that the sum of undamaged transfers to Manchester is at least 78 times the sum of damaged transfers from Glasgow to Manchester on Wednesday."
+ "note": "A rule that requires a minimum number of undamaged transfers to a destination depot based on the number of damaged transfers from a specific origin depot on a specific day."
 }

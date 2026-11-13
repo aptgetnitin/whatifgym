@@ -3,7 +3,7 @@
   "base_model": "car_rental_2",
   "rules": [
     {
-      "name": "step1_at_most_25_of_step2",
+      "name": "expansion_step1_at_most_25_of_step2",
       "measure": "expand",
       "scope": {
         "step": 1
@@ -18,7 +18,7 @@
       }
     },
     {
-      "name": "at_least_50_percent_to_glasgow",
+      "name": "at_least_50_percent_of_damaged_transfers_to_glasgow",
       "measure": "damaged_transfers",
       "scope": {
         "to_depot": "Glasgow"

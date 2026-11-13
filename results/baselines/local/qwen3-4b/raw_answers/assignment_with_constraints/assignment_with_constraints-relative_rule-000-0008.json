@@ -18,7 +18,7 @@
       }
     },
     {
-      "name": "team_0_1_at_most_10_of_all_teams",
+      "name": "team_0_1_at_most_10_of_total_teams",
       "measure": "team",
       "scope": {
         "team": "team_0_1"

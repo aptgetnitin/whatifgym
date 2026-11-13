@@ -3,7 +3,7 @@
   "base_model": "optimize_power_schedule",
   "rules": [
     {
-      "name": "Scherer_on_percentage",
+      "name": "Scherer_on_fraction",
       "measure": "on",
       "scope": {
         "plant": "Scherer"

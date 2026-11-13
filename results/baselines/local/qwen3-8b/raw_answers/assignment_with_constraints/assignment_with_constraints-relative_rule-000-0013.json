@@ -3,7 +3,7 @@
  "base_model": "assignment_with_constraints",
  "rules": [
   {
-   "name": "task_2_at_least_25_percent_of_all_assignments",
+   "name": "task_2_at_least_25_percent",
    "measure": "assign",
    "scope": {
     "task": "task_2"

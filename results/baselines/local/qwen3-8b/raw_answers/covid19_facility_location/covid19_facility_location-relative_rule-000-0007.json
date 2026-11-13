@@ -3,7 +3,7 @@
  "base_model": "covid19_facility_location",
  "rules": [
   {
-   "name": "facility_e3_assigned_at_most_t18",
+   "name": "e3_less_than_t18",
    "measure": "assign",
    "scope": {
     "facility": "E3"
@@ -18,5 +18,5 @@
    "factor": 1.0
   }
  ],
- "note": "A rule that limits the sum of the assign measure for facility E3 to be at most the sum for facility T18."
+ "note": "A rule bounds the sum of the assign measure for facility E3 relative to the sum for facility T18."
 }

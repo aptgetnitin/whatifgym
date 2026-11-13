@@ -11,7 +11,9 @@
       "sense": ">=",
       "relative_to": {
         "measure": "operate",
-        "scope": {}
+        "scope": {
+          "flight": "all"
+        }
       },
       "factor": 0.05
     },

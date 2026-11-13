@@ -6,14 +6,12 @@
    "name": "expansion_step_1_limit",
    "measure": "expand",
    "scope": {
-    "depot": "Birmingham",
     "step": 1
    },
    "sense": "<=",
    "relative_to": {
     "measure": "expand",
     "scope": {
-     "depot": "Birmingham",
      "step": 2
     }
    },
@@ -23,21 +21,17 @@
    "name": "damaged_transfers_to_glasgow",
    "measure": "damaged_transfers",
    "scope": {
-    "day": "Monday",
-    "from_depot": "Glasgow",
     "to_depot": "Glasgow"
    },
    "sense": ">=",
    "relative_to": {
     "measure": "damaged_transfers",
     "scope": {
-     "day": "Monday",
-     "from_depot": "Glasgow",
-     "to_depot": "Glasgow"
+     "to_depot": "all"
     }
    },
    "factor": 0.5
   }
  ],
- "note": "Two relative limits are applied: one on the number of expansion options carried out for step 1 relative to step 2, and another on the proportion of damaged transfers to Glasgow."
+ "note": "Two relative limits: expansion step 1 is at most 25% of expansion step 2, and at least 50% of total damaged transfers go to Glasgow."
 }

@@ -1,6 +1,6 @@
 {
  "version": "0.1",
- "base_model": "multiple_knaps",
+ "base_model": "multiple_knapsack",
  "rules": [
   {
    "name": "item2_placement_limit",
@@ -40,5 +40,5 @@
    "measure": "original"
   }
  ],
- "note": "The rule limits the proportion of item placements for item2 relative to all items."
+ "note": "The rule limits the proportion of item2 placements relative to all item placements, and the objective remains to maximise the original total value."
 }

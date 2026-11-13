@@ -3,7 +3,7 @@
  "base_model": "drone_network",
  "rules": [
   {
-   "name": "base_opening_share",
+   "name": "base_5145_ruritan_court_limit",
    "measure": "open",
    "scope": {
     "base": "5145 RURITAN COURT Rescue Squad"
@@ -12,19 +12,11 @@
    "relative_to": {
     "measure": "open",
     "scope": {
-     "base": [
-      "21 MUNICIPAL CTR Fire Station",
-      "2837 SHORE DR Fire Station",
-      "800 VIRGINIA BEACH BLVD Fire Station",
-      "600 CENTRAL DR Fire Station",
-      "3769 E. STRATFORD ROAD Rescue Squad",
-      "5145 RURITAN COURT Rescue Squad",
-      "333 THALIA ROAD Rescue Squad"
-     ]
+     "base": "base"
     }
    },
    "factor": 0.15
   }
  ],
- "note": "Restrict the share of the 5145 RURITAN COURT Rescue Squad in the total number of open bases to 15%."
+ "note": "Limits the proportion of open bases that can be 5145 RURITAN COURT Rescue Squad to 15% of total bases opened."
 }

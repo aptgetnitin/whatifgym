@@ -1,1 +1,19 @@
-{"version":"0.1","base_model":"airline_planning","rules":[{"name":"A318#5_flight_share","measure":"operate","scope":{"aircraft":"A318#5"},"sense":">=","relative_to":{"measure":"operate","scope":{}},"factor":0.75}]}
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "A318#5_flight_share",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A318#5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate"
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Ensure aircraft A318#5 operates at least 75% of the total flights."
+}

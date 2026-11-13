@@ -11,6 +11,16 @@
         "to_depot": "Manchester"
       },
       "sense": ">=",
+      "value": 1
+    },
+    {
+      "name": "undamaged_transfer_rule",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "day": "Wednesday",
+        "to_depot": "Manchester"
+      },
+      "sense": ">=",
       "value": 78
     }
   ]

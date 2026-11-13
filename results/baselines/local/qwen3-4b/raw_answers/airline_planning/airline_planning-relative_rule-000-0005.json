@@ -3,7 +3,7 @@
   "base_model": "airline_planning",
   "rules": [
     {
-      "name": "rule_1",
+      "name": "flight_4568_at_least_15_flight_4575",
       "measure": "operate",
       "scope": {
         "aircraft": "A319#11",
@@ -16,7 +16,7 @@
       "value": 1.5
     },
     {
-      "name": "rule_2",
+      "name": "a319_11_at_least_40_percent",
       "measure": "operate",
       "scope": {
         "aircraft": "A319#11"

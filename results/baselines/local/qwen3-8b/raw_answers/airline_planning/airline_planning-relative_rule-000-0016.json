@@ -18,5 +18,5 @@
    "factor": 0.75
   }
  ],
- "note": "Aircraft A318#5 must operate at least 75% of all flights operated in the scenario."
+ "note": "Aircraft A318#5 must operate at least 75% of the total number of flights operated."
 }

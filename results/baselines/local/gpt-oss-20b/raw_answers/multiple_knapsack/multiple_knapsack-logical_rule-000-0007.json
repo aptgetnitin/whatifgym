@@ -1,1 +1,0 @@
-{"ask":"Could you clarify the constraint? If item4 is placed, does item7 need to be placed in bin4 at least once, or at least twice? Since x[item7, bin4] is binary, a value of 2 is impossible. Do you mean that item7 must be placed in bin4 and also in another bin?"}

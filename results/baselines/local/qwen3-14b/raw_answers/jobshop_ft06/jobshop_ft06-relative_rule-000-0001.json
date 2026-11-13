@@ -3,7 +3,7 @@
   "base_model": "jobshop_ft06",
   "logic": [
     {
-      "name": "job2_goes_first_at_least_15_percent",
+      "name": "job2_goes_first_min_15_percent",
       "at_least": 1,
       "of": [
         {

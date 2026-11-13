@@ -10,10 +10,10 @@
       },
       "sense": ">=",
       "relative_to": {
-        "measure": "operate"
+        "measure": "operate",
+        "scope": {}
       },
       "factor": 0.5
     }
-  ],
-  "note": "Year5 must account for at least 50% of all mine-years worked."
+  ]
 }

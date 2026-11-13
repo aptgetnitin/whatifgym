@@ -14,5 +14,5 @@
    "value": 0
   }
  ],
- "note": "Setting the damaged_transfers to zero for the specified day and depot pair."
+ "note": "Fix the damaged transfers from Glasgow to Manchester on Wednesday to zero."
 }

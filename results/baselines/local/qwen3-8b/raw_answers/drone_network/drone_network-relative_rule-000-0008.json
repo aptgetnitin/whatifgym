@@ -20,7 +20,7 @@
    "factor": 0.5
   },
   {
-   "name": "open_21_municipal_ctr_to_10_percent_of_all_bases",
+   "name": "open_21_municipal_ctr_to_total_bases",
    "measure": "open",
    "scope": {
     "base": "21 MUNICIPAL CTR Fire Station"
@@ -35,5 +35,5 @@
    "factor": 0.1
   }
  ],
- "note": "Two relative limits: one on the linked load between two locations, and one on the proportion of bases opened at a specific base."
+ "note": "Two relative limits: linked_load for 5600 MEER ST is at most 50% of linked_load for 1700 VIRGINIA BEACH BL; open for 21 MUNICIPAL CTR Fire Station is at most 10% of total bases opened."
 }

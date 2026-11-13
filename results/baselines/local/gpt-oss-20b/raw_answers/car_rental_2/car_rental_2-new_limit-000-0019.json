@@ -1,1 +1,16 @@
-{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"min_transfers_to_Manchester","measure":"undamaged_transfers","scope":{"to_depot":"Manchester"},"sense":">=","value":78}]}
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "min_undamaged_transfers_to_Manchester",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "to_depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 78
+    }
+  ],
+  "note": "Require at least 78 undamaged cars transferred to Manchester."
+}

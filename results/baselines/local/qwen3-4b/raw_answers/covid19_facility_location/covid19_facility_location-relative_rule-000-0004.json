@@ -12,13 +12,19 @@
       "value": 0.4
     },
     {
-      "name": "t15_at_most_90_percent",
+      "name": "t15_at_most_90_percent_of_t18",
       "measure": "build",
       "scope": {
         "facility": "T15"
       },
       "sense": "<=",
-      "value": 0.9
+      "relative_to": {
+        "measure": "build",
+        "scope": {
+          "facility": "T18"
+        }
+      },
+      "factor": 0.9
     }
   ]
 }

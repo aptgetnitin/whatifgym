@@ -3,7 +3,7 @@
   "base_model": "covid19_facility_location",
   "rules": [
     {
-      "name": "T15_min_half_temp",
+      "name": "T15_min_50pct",
       "measure": "build",
       "scope": {
         "facility": "T15"
@@ -28,5 +28,5 @@
       "factor": 0.5
     }
   ],
-  "note": "T15 must account for at least 50% of all temporary facilities built."
+  "note": "T15 must account for at least 50% of the total number of temporary facilities built."
 }

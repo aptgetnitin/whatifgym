@@ -7,25 +7,16 @@
       "measure": "store",
       "scope": {
         "month": {
-          "month": [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun"
-          ]
+          "order": {
+            "gte": 1,
+            "lte": 6
+          }
         },
         "product": {
-          "product": [
-            "Prod1",
-            "Prod2",
-            "Prod3",
-            "Prod4",
-            "Prod5",
-            "Prod6",
-            "Prod7"
-          ]
+          "product": {
+            "gte": "Prod1",
+            "lte": "Prod7"
+          }
         }
       },
       "sense": ">=",
@@ -33,25 +24,16 @@
         "measure": "sell",
         "scope": {
           "month": {
-            "month": [
-              "Jan",
-              "Feb",
-              "Mar",
-              "Apr",
-              "May",
-              "Jun"
-            ]
+            "order": {
+              "gte": 1,
+              "lte": 6
+            }
           },
           "product": {
-            "product": [
-              "Prod1",
-              "Prod2",
-              "Prod3",
-              "Prod4",
-              "Prod5",
-              "Prod6",
-              "Prod7"
-            ]
+            "product": {
+              "gte": "Prod1",
+              "lte": "Prod7"
+            }
           }
         }
       },

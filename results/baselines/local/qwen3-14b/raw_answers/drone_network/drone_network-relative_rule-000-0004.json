@@ -3,7 +3,7 @@
  "base_model": "drone_network",
  "rules": [
   {
-   "name": "base_3769_stratford_limit",
+   "name": "base_3769_stratford_max_15_percent",
    "measure": "open",
    "scope": {
     "base": "3769 E. STRATFORD ROAD Rescue Squad"
@@ -11,7 +11,11 @@
    "sense": "<=",
    "relative_to": {
     "measure": "open",
-    "scope": {}
+    "scope": {
+     "base": {
+      "type": "string"
+     }
+    }
    },
    "factor": 0.15
   }

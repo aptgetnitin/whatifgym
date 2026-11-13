@@ -21,7 +21,7 @@
       "value": 2
     },
     {
-      "name": "damaged_transfers_birmingham",
+      "name": "damaged_transfers_to_birmingham",
       "measure": "damaged_transfers",
       "scope": {
         "to_depot": "Birmingham"

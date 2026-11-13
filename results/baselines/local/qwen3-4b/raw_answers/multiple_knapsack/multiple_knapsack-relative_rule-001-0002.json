@@ -12,5 +12,5 @@
       "value": 0.5
     }
   ],
-  "note": "The rule requires that the number of items placed in bin4 is at least 50% of the total number of item placements."
-  }
+  "note": "The rule ensures that bin4 accounts for at least 50% of the total item placements."
+}

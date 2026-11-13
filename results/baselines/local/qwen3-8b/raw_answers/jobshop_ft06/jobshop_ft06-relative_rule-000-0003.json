@@ -3,7 +3,7 @@
  "base_model": "jobshop_ft06",
  "logic": [
   {
-   "name": "job0_first_pairs_le_job4_first_pairs",
+   "name": "job0_first_pairs_at_most_job4",
    "at_least": 1,
    "of": [
     {

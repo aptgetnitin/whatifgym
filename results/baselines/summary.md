@@ -8,31 +8,40 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | `cowork-opus` | 60 | 1.000 | 1.100 | 1.00 | 1.00 | – | 1.00 (60) | – | – | – | – | – | – | – | – | – | – | 1.00 (28) | 1.00 (16) | 1.00 (16) | – |
 | `cowork-sonnet` | 60 | 0.983 | 1.083 | 1.00 | 1.00 | – | 0.98 (60) | – | – | – | – | – | – | – | – | – | – | 1.00 (28) | 1.00 (16) | 0.94 (16) | – |
-| `ollama/gpt-oss:20b` | 2368 | 0.888 | 0.981 | 0.95 | 0.98 | 0.97 (267) | 0.97 (320) | 1.00 (33) | 0.99 (235) | 0.89 (201) | 0.70 (238) | 0.98 (239) | 1.00 (45) | 0.96 (168) | 0.91 (258) | 1.00 (84) | 0.57 (280) | 0.97 (324) | 0.86 (1328) | 0.90 (716) | 14.2 |
-| `ollama/qwen3:14b` | 2368 | 0.736 | 0.820 | 0.89 | 0.94 | 0.75 (267) | 0.84 (320) | 0.88 (33) | 0.91 (235) | 0.92 (201) | 0.30 (238) | 0.91 (239) | 0.93 (45) | 0.74 (168) | 0.81 (258) | 0.82 (84) | 0.41 (280) | 0.89 (324) | 0.72 (1328) | 0.70 (716) | 4.6 |
-| `ollama/qwen3:32b` | 399 | 0.895 | 0.987 | 0.92 | 1.00 | – | 0.85 (240) | – | – | – | – | 0.96 (159) | – | – | – | – | – | 0.97 (131) | 0.90 (173) | 0.79 (95) | 8.5 |
-| `ollama/qwen3:4b` | 2368 | 0.287 | 0.348 | 0.68 | 0.91 | 0.48 (267) | 0.57 (320) | 0.42 (33) | 0.28 (235) | 0.12 (201) | 0.18 (238) | 0.41 (239) | 0.22 (45) | 0.23 (168) | 0.26 (258) | 0.10 (84) | 0.01 (280) | 0.25 (324) | 0.24 (1328) | 0.39 (716) | 3.6 |
-| `ollama/qwen3:8b` | 2368 | 0.582 | 0.659 | 0.81 | 0.95 | 0.70 (267) | 0.87 (320) | 0.79 (33) | 0.46 (235) | 0.69 (201) | 0.24 (238) | 0.67 (239) | 0.67 (45) | 0.45 (168) | 0.60 (258) | 0.56 (84) | 0.41 (280) | 0.65 (324) | 0.59 (1328) | 0.54 (716) | 4.6 |
-| `ollama/qwen3:8b+think=on` | 399 | 0.895 | 0.993 | 0.98 | 1.00 | – | 0.93 (240) | – | – | – | – | 0.85 (159) | – | – | – | – | – | 0.89 (131) | 0.98 (173) | 0.75 (95) | 24.0 |
+| `ollama/gpt-oss:20b` | 3767 | 0.895 | 0.989 | 0.96 | 0.99 | 0.97 (469) | 0.95 (512) | 1.00 (6) | 0.94 (423) | 0.93 (324) | 0.78 (381) | 0.98 (375) | 0.97 (39) | 0.91 (217) | 0.91 (427) | 0.98 (108) | 0.68 (486) | 0.97 (464) | 0.88 (2192) | 0.90 (1111) | 6.4 |
+| `ollama/qwen3:14b` | 3767 | 0.724 | 0.807 | 0.87 | 0.93 | 0.78 (469) | 0.76 (512) | 1.00 (6) | 0.90 (423) | 0.87 (324) | 0.31 (381) | 0.91 (375) | 0.92 (39) | 0.78 (217) | 0.81 (427) | 0.86 (108) | 0.42 (486) | 0.86 (464) | 0.71 (2192) | 0.70 (1111) | 2.0 |
+| `ollama/qwen3:4b` | 3767 | 0.255 | 0.319 | 0.72 | 0.89 | 0.48 (469) | 0.51 (512) | 0.50 (6) | 0.16 (423) | 0.09 (324) | 0.16 (381) | 0.45 (375) | 0.38 (39) | 0.20 (217) | 0.18 (427) | 0.06 (108) | 0.01 (486) | 0.24 (464) | 0.21 (2192) | 0.35 (1111) | 3.3 |
+| `ollama/qwen3:8b` | 3767 | 0.591 | 0.668 | 0.82 | 0.93 | 0.72 (469) | 0.82 (512) | 1.00 (6) | 0.60 (423) | 0.69 (324) | 0.25 (381) | 0.74 (375) | 0.59 (39) | 0.59 (217) | 0.58 (427) | 0.54 (108) | 0.33 (486) | 0.64 (464) | 0.59 (2192) | 0.57 (1111) | 3.1 |
 
 ## By base model
 
-| base model | `cowork-opus` | `cowork-sonnet` | `ollama/gpt-oss:20b` | `ollama/qwen3:14b` | `ollama/qwen3:32b` | `ollama/qwen3:4b` | `ollama/qwen3:8b` | `ollama/qwen3:8b+think=on` |
-|---|---|---|---|---|---|---|---|---|
-| `battery_scheduling` | – | – | 0.83 (177) | 0.62 (177) | – | 0.19 (177) | 0.67 (177) | – |
-| `bin_packing` | – | – | 0.85 (82) | 0.62 (82) | 0.92 (24) | 0.29 (82) | 0.67 (82) | 1.00 (24) |
-| `car_rental` | – | – | 0.90 (177) | 0.80 (177) | 0.93 (40) | 0.24 (177) | 0.55 (177) | 0.93 (40) |
-| `car_rental_2` | – | – | 0.92 (194) | 0.72 (194) | – | 0.26 (194) | 0.51 (194) | – |
-| `factory_planning` | 1.00 (60) | 0.98 (60) | 0.89 (223) | 0.77 (223) | 0.78 (80) | 0.27 (223) | 0.56 (223) | 0.88 (80) |
-| `factory_planning_2` | – | – | 0.90 (180) | 0.76 (180) | 0.93 (40) | 0.28 (180) | 0.61 (180) | 0.90 (40) |
-| `farm_planning` | – | – | 0.88 (187) | 0.73 (187) | – | 0.35 (187) | 0.50 (187) | – |
-| `food_manufacture` | – | – | 0.90 (196) | 0.77 (196) | 0.95 (40) | 0.33 (196) | 0.68 (196) | 0.90 (40) |
-| `food_supply` | – | – | 0.78 (164) | 0.63 (164) | – | 0.32 (164) | 0.49 (164) | – |
-| `manpower_planning` | – | – | 0.90 (210) | 0.73 (210) | 0.93 (40) | 0.21 (210) | 0.53 (210) | 0.90 (40) |
-| `mining` | – | – | 0.90 (203) | 0.80 (203) | 0.93 (40) | 0.27 (203) | 0.59 (203) | 0.88 (40) |
-| `multiple_knapsack` | – | – | 0.95 (130) | 0.77 (130) | 0.89 (35) | 0.51 (130) | 0.65 (130) | 0.77 (35) |
-| `power_generation_hydro` | – | – | 0.91 (197) | 0.82 (197) | 0.90 (40) | 0.30 (197) | 0.62 (197) | 0.93 (40) |
-| `wedding_seating` | – | – | 0.92 (48) | 0.52 (48) | 1.00 (20) | 0.27 (48) | 0.52 (48) | 0.95 (20) |
+| base model | `cowork-opus` | `cowork-sonnet` | `ollama/gpt-oss:20b` | `ollama/qwen3:14b` | `ollama/qwen3:4b` | `ollama/qwen3:8b` |
+|---|---|---|---|---|---|---|
+| `airline_planning` | – | – | 0.83 (135) | 0.63 (135) | 0.16 (135) | 0.52 (135) |
+| `assignment_with_constraints` | – | – | 0.87 (124) | 0.79 (124) | 0.36 (124) | 0.57 (124) |
+| `battery_scheduling` | – | – | 0.89 (169) | 0.64 (169) | 0.22 (169) | 0.63 (169) |
+| `bin_packing` | – | – | 0.94 (68) | 0.69 (68) | 0.26 (68) | 0.71 (68) |
+| `car_rental` | – | – | 0.94 (164) | 0.76 (164) | 0.23 (164) | 0.57 (164) |
+| `car_rental_2` | – | – | 0.91 (194) | 0.70 (194) | 0.29 (194) | 0.53 (194) |
+| `covid19_facility_location` | – | – | 0.91 (181) | 0.78 (181) | 0.21 (181) | 0.67 (181) |
+| `drone_network` | – | – | 0.79 (147) | 0.59 (147) | 0.37 (147) | 0.49 (147) |
+| `economic_planning` | – | – | 0.87 (174) | 0.70 (174) | 0.28 (174) | 0.64 (174) |
+| `factory_planning` | 1.00 (60) | 0.98 (60) | 0.93 (223) | 0.70 (223) | 0.21 (223) | 0.52 (223) |
+| `factory_planning_2` | – | – | 0.97 (174) | 0.75 (174) | 0.31 (174) | 0.70 (174) |
+| `fantasy_basketball` | – | – | 0.91 (89) | 0.81 (89) | 0.27 (89) | 0.74 (89) |
+| `farm_planning` | – | – | 0.90 (186) | 0.73 (186) | 0.33 (186) | 0.47 (186) |
+| `food_manufacture` | – | – | 0.94 (178) | 0.76 (178) | 0.31 (178) | 0.70 (178) |
+| `food_supply` | – | – | 0.80 (164) | 0.65 (164) | 0.28 (164) | 0.52 (164) |
+| `jobshop_ft06` | – | – | 0.83 (167) | 0.75 (167) | 0.23 (167) | 0.59 (167) |
+| `manpower_planning` | – | – | 0.90 (210) | 0.78 (210) | 0.20 (210) | 0.54 (210) |
+| `mining` | – | – | 0.92 (191) | 0.81 (191) | 0.24 (191) | 0.61 (191) |
+| `multiple_knapsack` | – | – | 0.95 (106) | 0.65 (106) | 0.31 (106) | 0.61 (106) |
+| `optimize_power_schedule` | – | – | 0.92 (156) | 0.76 (156) | 0.26 (156) | 0.60 (156) |
+| `power_generation_hydro` | – | – | 0.94 (172) | 0.83 (172) | 0.29 (172) | 0.72 (172) |
+| `railway_dispatching` | – | – | 0.83 (163) | 0.75 (163) | 0.08 (163) | 0.59 (163) |
+| `single_machine_scheduling` | – | – | 0.93 (45) | 0.78 (45) | 0.20 (45) | 0.78 (45) |
+| `technician_routing_scheduling` | – | – | 0.89 (154) | 0.68 (154) | 0.30 (154) | 0.51 (154) |
+| `wedding_seating` | – | – | 0.85 (33) | 0.27 (33) | 0.03 (33) | 0.30 (33) |
 
 ## By template (where the misses are)
 
@@ -78,55 +87,60 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | under_specified | ask_cap_each_month | 0.00 (1) | result differs from reference |
 | under_specified | ask_cap_make_months | 0.00 (1) | invalid scenario |
 | under_specified | ask_cap_total_make | 0.00 (2) | invalid scenario |
-| under_specified | ask_install | 0.00 (1) | invalid scenario |
-| under_specified | ask_margin_set | 0.00 (1) | invalid scenario |
+| under_specified | ask_outage | 0.00 (1) | invalid scenario |
 | under_specified | ask_outage_cancel | 0.00 (1) | invalid scenario |
 | under_specified | ask_retire | 0.00 (2) | invalid scenario |
-| under_specified | ask_g_set_column | 0.44 (36) | invalid scenario |
-| data_change | demand_set | 0.50 (6) | result differs from reference |
-| under_specified | ask_g_cap_measure_total | 0.50 (32) | invalid scenario |
-| under_specified | ask_g_scale_column | 0.50 (34) | invalid scenario |
-| under_specified | ask_g_param | 0.53 (30) | invalid scenario |
-| under_specified | ask_g_cap_measure_scope | 0.56 (27) | invalid scenario |
-| under_specified | ask_g_scale_all_rows | 0.61 (38) | result differs from reference |
-| logical_rule | l_at_most_k | 0.63 (63) | unparseable output |
-| logical_rule | l_if_then | 0.64 (75) | result differs from reference |
-| under_specified | ask_g_add_row | 0.64 (14) | invalid scenario |
+| under_specified | ask_g_cap_measure_total | 0.56 (45) | invalid scenario |
+| under_specified | ask_g_set_column | 0.56 (84) | invalid scenario |
+| logical_rule | l_at_most_k | 0.61 (108) | result differs from reference |
+| under_specified | ask_g_add_row | 0.65 (17) | invalid scenario |
+| logical_rule | l_never_both | 0.67 (48) | invalid DSL: unknown measure 'operate[aircraft, flight]'; measures are ['connect', 'operate'] |
 | under_specified | ask_demand_scale | 0.67 (3) | invalid scenario |
-| logical_rule | l_never_both | 0.72 (29) | result differs from reference |
-| under_specified | ask_g_floor_measure_scope | 0.73 (22) | invalid scenario |
-| infeasible_request | i_floor_total | 0.79 (29) | result differs from reference |
-| logical_rule | l_none_or_batch | 0.80 (71) | result differs from reference |
-| under_specified | ask_g_remove_row | 0.85 (27) | invalid scenario |
-| infeasible_request | i_commit | 0.88 (81) | result differs from reference |
-| infeasible_request | i_two_floors | 0.89 (35) | result differs from reference |
-| relative_rule | combo | 0.89 (54) | unparseable output |
-| fixed_decision | f_force_one | 0.90 (20) | result differs from reference |
-| relative_rule | r_share_of_total | 0.90 (81) | invalid scenario |
-| relative_rule | r_two_values | 0.91 (80) | result differs from reference |
-| objective_change | o_then_max | 0.92 (12) | result differs from reference |
-| objective_change | o_reorder | 0.92 (37) | result differs from reference |
-| chained_scenario | c_undo | 0.93 (87) | unparseable output |
-| data_change | combo | 0.94 (69) | result differs from reference |
-| objective_change | o_three_stages | 0.95 (43) | result differs from reference |
-| infeasible_request | i_floor | 0.96 (56) | result differs from reference |
-| new_limit | g_floor_measure_scope | 0.98 (43) | result differs from reference |
-| relative_rule | r_two_measures | 0.98 (43) | invalid DSL: unknown measure 'y[bin]'; measures are ['x', 'y'] |
-| fixed_decision | combo | 0.98 (46) | result differs from reference |
-| data_change | g_scale_all_rows | 0.98 (49) | result differs from reference |
-| new_limit | combo | 0.98 (52) | result differs from reference |
-| new_limit | g_cap_measure_total | 0.98 (64) | result differs from reference |
-| new_limit | g_cap_measure_scope | 0.98 (65) | result differs from reference |
-| objective_change | o_then_scoped | 0.99 (70) | result differs from reference |
-| chained_scenario | c_add | 0.99 (99) | invalid DSL: '{' is not valid under any of the given schemas: '{' is not of type 'object' |
-| chained_scenario | c_revise | 1.00 (81) |  |
+| under_specified | ask_g_scale_column | 0.68 (77) | invalid scenario |
+| under_specified | ask_g_param | 0.68 (41) | invalid scenario |
+| objective_change | o_then_min | 0.70 (10) | result differs from reference |
+| under_specified | ask_g_cap_measure_scope | 0.73 (48) | invalid scenario |
+| under_specified | ask_g_floor_measure_scope | 0.75 (44) | invalid scenario |
+| under_specified | ask_g_scale_all_rows | 0.79 (77) | result differs from reference |
+| under_specified | ask_g_remove_row | 0.82 (33) | invalid scenario |
+| infeasible_request | i_floor_total | 0.82 (45) | result differs from reference |
+| relax_remove | combo | 0.83 (6) | invalid DSL: unknown constraint family 'housing[year]'; families are ['ageing', 'beet_feed',  |
+| logical_rule | l_if_then | 0.83 (103) | invalid DSL: Additional properties are not allowed ('logical' was unexpected) |
+| fixed_decision | f_force_one | 0.84 (67) | result differs from reference |
+| data_change | g_scale_all_rows | 0.85 (95) | result differs from reference |
+| relative_rule | combo | 0.87 (93) | result differs from reference |
+| fixed_decision | combo | 0.90 (82) | result differs from reference |
+| relative_rule | r_two_values | 0.90 (136) | result differs from reference |
+| objective_change | o_then_scoped | 0.91 (96) | result differs from reference |
+| objective_change | o_then_max | 0.91 (23) | result differs from reference |
+| new_limit (nl) | g_cap_measure_total | 0.92 (12) | invalid DSL: 'unskilled' is not a from_skill; known values: ['semi_skilled', 'skilled'] |
+| relative_rule | r_share_of_total | 0.92 (146) | result differs from reference |
+| objective_change | o_three_stages | 0.93 (40) | result differs from reference |
+| data_change | combo | 0.93 (114) | result differs from reference |
+| relax_remove | x_full | 0.94 (16) | invalid DSL: removing these rows empties table 'maintenance' |
+| logical_rule | l_none_or_batch | 0.94 (122) | result differs from reference |
+| infeasible_request | i_floor | 0.94 (88) | result differs from reference |
+| chained_scenario | c_undo | 0.94 (144) | result differs from reference |
+| infeasible_request | i_commit | 0.95 (133) | result differs from reference |
+| infeasible_request | i_two_floors | 0.95 (58) | result differs from reference |
+| fixed_decision | f_fix_scope | 0.96 (67) | unparseable output |
+| objective_change | o_reorder | 0.96 (48) | result differs from reference |
+| data_change | g_scale_column | 0.96 (76) | result differs from reference |
+| relative_rule | r_two_measures | 0.96 (52) | result differs from reference |
+| new_limit | combo | 0.97 (86) | result differs from reference |
+| chained_scenario | c_add | 0.97 (174) | result differs from reference |
+| fixed_decision | f_fix_zero | 0.98 (122) | invalid DSL: '5145 RURITAN COURT' is not a base; known values: ['21 MUNICIPAL CTR Fire Statio |
+| new_limit | g_floor_measure_scope | 0.98 (82) | result differs from reference |
+| new_limit | g_cap_measure_scope | 0.98 (105) | result differs from reference |
+| data_change | g_param | 0.98 (60) | invalid DSL: unknown table 'params'; tables are ['costs', 'requirements', 'retraining', 'skil |
+| fixed_decision | f_fix_level | 0.99 (85) | result differs from reference |
+| data_change | g_set_column | 0.99 (86) | result differs from reference |
+| chained_scenario | c_revise | 1.00 (151) |  |
 | data_change | demand_scale | 1.00 (5) |  |
+| data_change | demand_set | 1.00 (6) |  |
 | data_change | demand_zero | 1.00 (2) |  |
-| data_change | g_add_row | 1.00 (14) |  |
-| data_change | g_param | 1.00 (47) |  |
-| data_change | g_remove_row | 1.00 (26) |  |
-| data_change | g_scale_column | 1.00 (34) |  |
-| data_change | g_set_column | 1.00 (37) |  |
+| data_change | g_add_row | 1.00 (18) |  |
+| data_change | g_remove_row | 1.00 (19) |  |
 | data_change | install | 1.00 (1) |  |
 | data_change | margin_scale | 1.00 (5) |  |
 | data_change | margin_set | 1.00 (6) |  |
@@ -135,372 +149,291 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 | data_change | param | 1.00 (5) |  |
 | data_change | process_hours | 1.00 (3) |  |
 | data_change | retire | 1.00 (3) |  |
-| data_change (nl) | combo | 1.00 (3) |  |
-| data_change (nl) | g_param | 1.00 (12) |  |
 | data_change (nl) | g_scale_all_rows | 1.00 (3) |  |
-| data_change (nl) | g_scale_column | 1.00 (6) |  |
-| data_change (nl) | g_set_column | 1.00 (9) |  |
-| fixed_decision | f_fix_level | 1.00 (54) |  |
-| fixed_decision | f_fix_scope | 1.00 (51) |  |
-| fixed_decision | f_fix_zero | 1.00 (64) |  |
+| data_change (nl) | g_set_column | 1.00 (3) |  |
 | new_limit | cap_store_month | 1.00 (4) |  |
 | new_limit | cap_total_make | 1.00 (5) |  |
 | new_limit | cap_total_store | 1.00 (3) |  |
 | new_limit | cap_two_products_month | 1.00 (2) |  |
+| new_limit | g_cap_measure_total | 1.00 (87) |  |
 | new_limit (nl) | combo | 1.00 (15) |  |
 | new_limit (nl) | g_cap_measure_scope | 1.00 (3) |  |
-| new_limit (nl) | g_cap_measure_total | 1.00 (15) |  |
-| new_limit (nl) | g_floor_measure_scope | 1.00 (12) |  |
-| objective_change | o_then_min | 1.00 (6) |  |
-| relax_remove | combo | 1.00 (5) |  |
-| relax_remove | x_full | 1.00 (14) |  |
-| relax_remove | x_scoped | 1.00 (65) |  |
+| new_limit (nl) | g_floor_measure_scope | 1.00 (9) |  |
+| relax_remove | x_scoped | 1.00 (86) |  |
 | under_specified | ask_cap_store_month | 1.00 (1) |  |
 | under_specified | ask_cap_total_store | 1.00 (2) |  |
 | under_specified | ask_cap_two_products_month | 1.00 (2) |  |
 | under_specified | ask_demand_zero | 1.00 (1) |  |
+| under_specified | ask_install | 1.00 (1) |  |
 | under_specified | ask_margin_scale | 1.00 (1) |  |
-| under_specified | ask_outage | 1.00 (1) |  |
+| under_specified | ask_margin_set | 1.00 (1) |  |
 
 ### `ollama/qwen3:14b`
 
 | family | template | accuracy (n) | typical miss |
 |---|---|---|---|
-| data_change | install | 0.00 (1) | result differs from reference |
+| data_change | install | 0.00 (1) | invalid DSL: unknown parameter 'installed'; parameters are ['holding_cost', 'hours_per_month' |
+| data_change | margin_set | 0.00 (6) | invalid DSL: unknown parameter 'profit_per_unit'; parameters are ['holding_cost', 'hours_per_ |
 | data_change | outage | 0.00 (4) | invalid DSL: no row of 'downtime' matches {"month": "Feb", "machine": "planer"} |
 | new_limit | cap_each_month | 0.00 (1) | result differs from reference |
 | under_specified | ask_cap_each_month | 0.00 (1) | result differs from reference |
 | under_specified | ask_cap_store_month | 0.00 (1) | needed clarification not asked |
-| under_specified | ask_demand_zero | 0.00 (1) | needed clarification not asked |
-| under_specified | ask_g_remove_row | 0.00 (27) | needed clarification not asked |
 | under_specified | ask_install | 0.00 (1) | result differs from reference |
 | under_specified | ask_margin_set | 0.00 (1) | needed clarification not asked |
-| under_specified | ask_g_cap_measure_total | 0.16 (32) | invalid DSL: {'hour': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06', '06-07', '07-08' |
-| logical_rule | l_at_most_k | 0.17 (63) | result differs from reference |
-| logical_rule | l_if_then | 0.19 (75) | result differs from reference |
-| data_change | demand_set | 0.33 (6) | result differs from reference |
-| logical_rule | l_none_or_batch | 0.34 (71) | result differs from reference |
-| under_specified | ask_g_scale_all_rows | 0.34 (38) | invalid DSL: invalid shift change: {} should be non-empty |
-| under_specified | ask_g_floor_measure_scope | 0.41 (22) | needed clarification not asked |
-| chained_scenario | c_add | 0.45 (99) | result differs from reference |
-| under_specified | ask_g_cap_measure_scope | 0.48 (27) | needed clarification not asked |
-| data_change (nl) | g_scale_column | 0.50 (6) | invalid DSL: unknown parameter 'startup_cost'; parameters are ['pump_mwh_per_m', 'reserve_mar |
-| objective_change | o_then_max | 0.50 (12) | invalid DSL: {'hour': ['23-24']} is not valid under any of the given schemas: {'hour': ['23-2 |
-| under_specified | ask_cap_total_store | 0.50 (2) | result differs from reference |
-| under_specified | ask_g_add_row | 0.50 (14) | needed clarification not asked |
-| under_specified | ask_g_param | 0.50 (30) | invalid DSL: unknown table 'params'; tables are ['hours'] |
+| under_specified | ask_outage | 0.00 (1) | invalid DSL: row is missing columns ['machines_down'] |
+| under_specified | ask_g_remove_row | 0.03 (33) | needed clarification not asked |
+| under_specified | ask_g_cap_measure_total | 0.18 (45) | invalid DSL: 'all' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8',  |
+| logical_rule | l_if_then | 0.18 (103) | result differs from reference |
+| logical_rule | l_at_most_k | 0.24 (108) | invalid DSL: [{'measure': 'operate', 'scope': {'flight': ['4265', '3074', '4514']}, 'sense':  |
+| under_specified | ask_g_scale_all_rows | 0.26 (77) | needed clarification not asked |
+| under_specified | ask_g_floor_measure_scope | 0.34 (44) | invalid DSL: [] is not valid under any of the given schemas: [] should be non-empty |
+| data_change | margin_scale | 0.40 (5) | invalid DSL: invalid scale_param change: Additional properties are not allowed ('where' was u |
+| under_specified | ask_g_add_row | 0.41 (17) | needed clarification not asked |
+| logical_rule | l_never_both | 0.42 (48) | result differs from reference |
+| under_specified | ask_g_cap_measure_scope | 0.42 (48) | invalid DSL: 'all' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8',  |
+| objective_change | o_then_max | 0.43 (23) | invalid DSL: 'all' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8',  |
+| logical_rule | l_none_or_batch | 0.44 (122) | result differs from reference |
+| under_specified | ask_g_param | 0.49 (41) | result differs from reference |
+| infeasible_request | i_floor_total | 0.49 (45) | invalid DSL: {'type': 'string'} is not valid under any of the given schemas: {'type': 'string |
+| relax_remove | combo | 0.50 (6) | invalid DSL: unknown constraint family 'size[worker]'; families are ['cover', 'one_team', 'si |
 | under_specified | ask_retire | 0.50 (2) | result differs from reference |
-| under_specified | ask_g_scale_column | 0.53 (34) | needed clarification not asked |
-| data_change | combo | 0.62 (69) | invalid DSL: invalid scale change: {} should be non-empty |
-| objective_change | o_three_stages | 0.63 (43) | invalid DSL: {'hour': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06', '06-07', '07-08' |
-| relative_rule | r_two_measures | 0.65 (43) | invalid DSL: {'hour': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06', '06-07', '07-08' |
-| objective_change | o_then_min | 0.67 (6) | result differs from reference |
+| data_change | g_scale_all_rows | 0.51 (95) | unparseable output |
+| chained_scenario | c_add | 0.53 (174) | invalid DSL: {'type': 'string'} is not valid under any of the given schemas: {'type': 'string |
+| data_change | combo | 0.55 (114) | invalid DSL: invalid scale change: {} should be non-empty |
+| objective_change | o_then_min | 0.60 (10) | result differs from reference |
+| under_specified | ask_g_set_column | 0.61 (84) | needed clarification not asked |
+| under_specified | ask_g_scale_column | 0.61 (77) | invalid DSL: column 'revenue' is numeric; got 'new_revenue_value' |
+| relative_rule | r_two_measures | 0.63 (52) | invalid DSL: 'all' is not a worker; known values: ['worker_0', 'worker_1', 'worker_10', 'work |
 | under_specified | ask_demand_scale | 0.67 (3) | needed clarification not asked |
-| under_specified | ask_g_set_column | 0.67 (36) | needed clarification not asked |
-| infeasible_request | i_floor_total | 0.69 (29) | invalid DSL: '=' is not one of ['<=', '>=', '=='] |
-| data_change | g_scale_all_rows | 0.69 (49) | invalid DSL: invalid scale change: {} should be non-empty |
-| objective_change | o_reorder | 0.70 (37) | invalid DSL: {'hour': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06', '06-07', '07-08' |
-| fixed_decision | f_fix_scope | 0.73 (51) | result differs from reference |
-| logical_rule | l_never_both | 0.76 (29) | result differs from reference |
-| relative_rule | combo | 0.76 (54) | invalid DSL: {'hour': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06', '06-07', '07-08' |
-| relative_rule | r_share_of_total | 0.78 (81) | invalid DSL: {'hour': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06', '06-07', '07-08' |
-| relax_remove | x_full | 0.79 (14) | invalid DSL: [] is not valid under any of the given schemas: [] should be non-empty |
-| new_limit (nl) | g_cap_measure_total | 0.80 (15) | invalid DSL: 'unskilled' is not a from_skill; known values: ['semi_skilled', 'skilled'] |
-| relax_remove | combo | 0.80 (5) | invalid DSL: unknown table 'params'; tables are ['mines', 'years'] |
-| new_limit | g_cap_measure_total | 0.81 (64) | invalid DSL: {'hour': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06', '06-07', '07-08' |
-| infeasible_request | i_two_floors | 0.83 (35) | result differs from reference |
-| relax_remove | x_scoped | 0.83 (65) | result differs from reference |
-| chained_scenario | c_undo | 0.85 (87) | invalid DSL: {'hour': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06', '06-07', '07-08' |
-| objective_change | o_then_scoped | 0.87 (70) | invalid DSL: {'depot': ['Glasgow', 'Manchester', 'Birmingham', 'Plymouth']} is not valid unde |
-| new_limit | combo | 0.88 (52) | invalid DSL: {'hour': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06', '06-07', '07-08' |
-| fixed_decision | combo | 0.89 (46) | result differs from reference |
-| data_change (nl) | g_param | 0.92 (12) | invalid DSL: unknown table 'params'; tables are ['months', 'oils', 'purchase_prices'] |
-| relative_rule | r_two_values | 0.96 (80) | invalid DSL: 'all' is not a product; known values: ['Prod1', 'Prod2', 'Prod3', 'Prod4', 'Prod |
-| fixed_decision | f_fix_zero | 0.97 (64) | invalid DSL: unknown table 'grow_grain'; tables are ['ages', 'land_groups', 'years'] |
-| new_limit | g_cap_measure_scope | 0.97 (65) | result differs from reference |
-| data_change | g_scale_column | 0.97 (34) | invalid DSL: unknown parameter 'startup_cost'; parameters are ['pump_mwh_per_m', 'reserve_mar |
-| infeasible_request | i_commit | 0.98 (81) | invalid DSL: unknown table 'grow_grain'; tables are ['ages', 'land_groups', 'years'] |
-| new_limit | g_floor_measure_scope | 0.98 (43) | result differs from reference |
-| data_change | g_param | 0.98 (47) | result differs from reference |
-| fixed_decision | f_fix_level | 0.98 (54) | invalid DSL: unknown table 'undamaged_stock'; tables are ['days', 'demand', 'depots', 'rental |
-| chained_scenario | c_revise | 1.00 (81) |  |
+| fixed_decision | f_fix_scope | 0.70 (67) | result differs from reference |
+| objective_change | o_three_stages | 0.72 (40) | invalid DSL: {'type': 'array', 'items': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06' |
+| relative_rule | combo | 0.74 (93) | invalid DSL: 'all' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '10 |
+| new_limit (nl) | g_cap_measure_total | 0.75 (12) | invalid DSL: 'unskilled' is not a from_skill; known values: ['semi_skilled', 'skilled'] |
+| relative_rule | r_share_of_total | 0.79 (146) | invalid DSL: 'all' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '10 |
+| objective_change | o_reorder | 0.81 (48) | invalid DSL: 'all' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8',  |
+| relax_remove | x_full | 0.81 (16) | invalid DSL: constraint family 'one_team' cannot be relaxed in this model; change the data or |
+| new_limit | combo | 0.84 (86) | invalid DSL: {'hour': ['00-01', '01-02', '02-03', '03-04', '04-05', '05-06', '06-07', '07-08' |
+| new_limit | g_cap_measure_total | 0.84 (87) | invalid DSL: {'all': True} is not valid under any of the given schemas: {'all': True} is not  |
+| chained_scenario | c_undo | 0.86 (144) | invalid DSL: invalid scale change: {} should be non-empty |
+| infeasible_request | i_two_floors | 0.86 (58) | result differs from reference |
+| fixed_decision | combo | 0.87 (82) | result differs from reference |
+| objective_change | o_then_scoped | 0.89 (96) | invalid DSL: {'depot': ['Glasgow', 'Manchester', 'Birmingham', 'Plymouth']} is not valid unde |
+| relax_remove | x_scoped | 0.90 (86) | invalid DSL: unknown constraint family 'team_pattern[worker]'; families are ['cover', 'one_te |
+| data_change | g_scale_column | 0.91 (76) | result differs from reference |
+| fixed_decision | f_fix_zero | 0.91 (122) | invalid DSL: '4265' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '1 |
+| relative_rule | r_two_values | 0.93 (136) | result differs from reference |
+| infeasible_request | i_floor | 0.94 (88) | result differs from reference |
+| data_change | g_param | 0.95 (60) | invalid DSL: invalid scale change: {} should be non-empty |
+| infeasible_request | i_commit | 0.95 (133) | result differs from reference |
+| new_limit | g_floor_measure_scope | 0.98 (82) | invalid DSL: at_least is 15 but there are only 6 conditions |
+| fixed_decision | f_force_one | 0.99 (67) | result differs from reference |
+| fixed_decision | f_fix_level | 0.99 (85) | invalid DSL: '2' is not a resource; known values: ['0', '1', '2', '3', '4', '5', '6'] |
+| data_change | g_set_column | 0.99 (86) | invalid DSL: measure 'pick' has dimensions ['player'], not 'position' |
+| new_limit | g_cap_measure_scope | 0.99 (105) | invalid DSL: {'train': 'D'} is not valid under any of the given schemas: {'train': 'D'} is no |
+| chained_scenario | c_revise | 1.00 (151) |  |
 | data_change | demand_scale | 1.00 (5) |  |
+| data_change | demand_set | 1.00 (6) |  |
 | data_change | demand_zero | 1.00 (2) |  |
-| data_change | g_add_row | 1.00 (14) |  |
-| data_change | g_remove_row | 1.00 (26) |  |
-| data_change | g_set_column | 1.00 (37) |  |
-| data_change | margin_scale | 1.00 (5) |  |
-| data_change | margin_set | 1.00 (6) |  |
+| data_change | g_add_row | 1.00 (18) |  |
+| data_change | g_remove_row | 1.00 (19) |  |
 | data_change | outage_cancel | 1.00 (4) |  |
 | data_change | param | 1.00 (5) |  |
 | data_change | process_hours | 1.00 (3) |  |
 | data_change | retire | 1.00 (3) |  |
-| data_change (nl) | combo | 1.00 (3) |  |
 | data_change (nl) | g_scale_all_rows | 1.00 (3) |  |
-| data_change (nl) | g_set_column | 1.00 (9) |  |
-| fixed_decision | f_force_one | 1.00 (20) |  |
-| infeasible_request | i_floor | 1.00 (56) |  |
+| data_change (nl) | g_set_column | 1.00 (3) |  |
 | new_limit | cap_store_month | 1.00 (4) |  |
 | new_limit | cap_total_make | 1.00 (5) |  |
 | new_limit | cap_total_store | 1.00 (3) |  |
 | new_limit | cap_two_products_month | 1.00 (2) |  |
 | new_limit (nl) | combo | 1.00 (15) |  |
 | new_limit (nl) | g_cap_measure_scope | 1.00 (3) |  |
-| new_limit (nl) | g_floor_measure_scope | 1.00 (12) |  |
+| new_limit (nl) | g_floor_measure_scope | 1.00 (9) |  |
 | under_specified | ask_cap_make_months | 1.00 (1) |  |
 | under_specified | ask_cap_total_make | 1.00 (2) |  |
+| under_specified | ask_cap_total_store | 1.00 (2) |  |
 | under_specified | ask_cap_two_products_month | 1.00 (2) |  |
+| under_specified | ask_demand_zero | 1.00 (1) |  |
 | under_specified | ask_margin_scale | 1.00 (1) |  |
-| under_specified | ask_outage | 1.00 (1) |  |
 | under_specified | ask_outage_cancel | 1.00 (1) |  |
-
-### `ollama/qwen3:32b`
-
-| family | template | accuracy (n) | typical miss |
-|---|---|---|---|
-| data_change | outage | 0.00 (4) | invalid DSL: no row of 'downtime' matches {"month": "Feb", "machine": "planer"} |
-| new_limit | cap_each_month | 0.00 (1) | result differs from reference |
-| data_change | demand_set | 0.33 (6) | result differs from reference |
-| new_limit | cap_store_month | 0.50 (4) | result differs from reference |
-| data_change | g_scale_all_rows | 0.52 (25) | invalid DSL: invalid scale change: {} should be non-empty |
-| data_change | combo | 0.72 (58) | invalid DSL: invalid scale change: {} should be non-empty |
-| new_limit | combo | 0.91 (33) | invalid DSL: 'all' is not a day; known values: ['Friday', 'Monday', 'Saturday', 'Thursday', ' |
-| data_change | demand_scale | 1.00 (5) |  |
-| data_change | demand_zero | 1.00 (2) |  |
-| data_change | g_add_row | 1.00 (12) |  |
-| data_change | g_param | 1.00 (33) |  |
-| data_change | g_remove_row | 1.00 (24) |  |
-| data_change | g_scale_column | 1.00 (23) |  |
-| data_change | g_set_column | 1.00 (21) |  |
-| data_change | install | 1.00 (1) |  |
-| data_change | margin_scale | 1.00 (5) |  |
-| data_change | margin_set | 1.00 (6) |  |
-| data_change | outage_cancel | 1.00 (4) |  |
-| data_change | param | 1.00 (5) |  |
-| data_change | process_hours | 1.00 (3) |  |
-| data_change | retire | 1.00 (3) |  |
-| new_limit | cap_total_make | 1.00 (5) |  |
-| new_limit | cap_total_store | 1.00 (3) |  |
-| new_limit | cap_two_products_month | 1.00 (2) |  |
-| new_limit | g_cap_measure_scope | 1.00 (44) |  |
-| new_limit | g_cap_measure_total | 1.00 (44) |  |
-| new_limit | g_floor_measure_scope | 1.00 (23) |  |
 
 ### `ollama/qwen3:4b`
 
 | family | template | accuracy (n) | typical miss |
 |---|---|---|---|
 | data_change | demand_zero | 0.00 (2) | result differs from reference |
-| data_change | install | 0.00 (1) | invalid DSL: row is missing columns ['installed'] |
+| data_change | install | 0.00 (1) | result differs from reference |
 | data_change | margin_set | 0.00 (6) | invalid DSL: unknown parameter 'profit_per_unit'; parameters are ['holding_cost', 'hours_per_ |
 | data_change | outage | 0.00 (4) | invalid DSL: row is missing columns ['machines_down'] |
 | data_change | param | 0.00 (5) | result differs from reference |
-| infeasible_request | i_floor_total | 0.00 (29) | result differs from reference |
+| data_change | retire | 0.00 (3) | result differs from reference |
+| infeasible_request | i_floor_total | 0.00 (45) | result differs from reference |
 | new_limit | cap_each_month | 0.00 (1) | result differs from reference |
-| new_limit | cap_store_month | 0.00 (4) | invalid DSL: unknown table 'params'; tables are ['downtime', 'machines', 'max_sales', 'months |
+| new_limit | cap_store_month | 0.00 (4) | invalid DSL: unknown table 'max_inventory'; tables are ['downtime', 'machines', 'max_sales',  |
 | new_limit | cap_total_make | 0.00 (5) | result differs from reference |
-| new_limit | cap_two_products_month | 0.00 (2) | result differs from reference |
-| objective_change | o_then_min | 0.00 (6) | result differs from reference |
-| relax_remove | combo | 0.00 (5) | result differs from reference |
-| under_specified | ask_cap_each_month | 0.00 (1) | invalid DSL: Additional properties are not allowed ('role', 'text' were unexpected) |
+| new_limit | cap_total_store | 0.00 (3) | result differs from reference |
+| new_limit (nl) | g_cap_measure_total | 0.00 (12) | invalid DSL: unknown table 'damaged_transfers'; tables are ['days', 'demand', 'depots', 'rent |
+| objective_change | o_then_min | 0.00 (10) | result differs from reference |
+| relax_remove | combo | 0.00 (6) | result differs from reference |
+| under_specified | ask_cap_each_month | 0.00 (1) | needed clarification not asked |
 | under_specified | ask_cap_make_months | 0.00 (1) | needed clarification not asked |
-| under_specified | ask_cap_store_month | 0.00 (1) | invalid DSL: unknown table 'params'; tables are ['downtime', 'machines', 'max_sales', 'months |
+| under_specified | ask_cap_store_month | 0.00 (1) | invalid DSL: unknown table 'max_inventory'; tables are ['downtime', 'machines', 'max_sales',  |
 | under_specified | ask_cap_total_make | 0.00 (2) | needed clarification not asked |
 | under_specified | ask_cap_total_store | 0.00 (2) | invalid DSL: Additional properties are not allowed ('role', 'text' were unexpected) |
 | under_specified | ask_cap_two_products_month | 0.00 (2) | invalid DSL: Additional properties are not allowed ('role', 'text' were unexpected) |
 | under_specified | ask_demand_scale | 0.00 (3) | needed clarification not asked |
 | under_specified | ask_demand_zero | 0.00 (1) | needed clarification not asked |
-| under_specified | ask_g_add_row | 0.00 (14) | needed clarification not asked |
-| under_specified | ask_g_cap_measure_scope | 0.00 (27) | invalid DSL: unknown table 'params'; tables are ['hours'] |
-| under_specified | ask_g_cap_measure_total | 0.00 (32) | invalid DSL: parameter 'energy_capacity_kwh' is numeric; got 'upper_limit' |
-| under_specified | ask_g_floor_measure_scope | 0.00 (22) | needed clarification not asked |
-| under_specified | ask_g_param | 0.00 (30) | needed clarification not asked |
-| under_specified | ask_g_remove_row | 0.00 (27) | needed clarification not asked |
-| under_specified | ask_g_scale_all_rows | 0.00 (38) | needed clarification not asked |
+| under_specified | ask_g_add_row | 0.00 (17) | invalid DSL: row is missing columns ['weight'] |
+| under_specified | ask_g_cap_measure_scope | 0.00 (48) | invalid DSL: no row of 'flights' matches {"flight": ["4576", "3103", "4264"]} |
+| under_specified | ask_g_cap_measure_total | 0.00 (45) | invalid DSL: no row of 'flights' matches {"flight": ["4576", "3103", "4264"]} |
+| under_specified | ask_g_floor_measure_scope | 0.00 (44) | needed clarification not asked |
+| under_specified | ask_g_param | 0.00 (41) | needed clarification not asked |
+| under_specified | ask_g_remove_row | 0.00 (33) | needed clarification not asked |
+| under_specified | ask_g_scale_all_rows | 0.00 (77) | invalid DSL: no row of 'flights' matches {"flight": ["1", "2", "3", "4", "5", "6", "7", "8",  |
 | under_specified | ask_install | 0.00 (1) | invalid DSL: Additional properties are not allowed ('role', 'text' were unexpected) |
-| under_specified | ask_margin_scale | 0.00 (1) | invalid DSL: Additional properties are not allowed ('role', 'text' were unexpected) |
+| under_specified | ask_margin_scale | 0.00 (1) | invalid DSL: "The planner's question is vague about which parameter to change. The model has  |
 | under_specified | ask_margin_set | 0.00 (1) | invalid DSL: Additional properties are not allowed ('role', 'text' were unexpected) |
 | under_specified | ask_outage | 0.00 (1) | needed clarification not asked |
 | under_specified | ask_outage_cancel | 0.00 (1) | invalid DSL: Additional properties are not allowed ('role', 'text' were unexpected) |
-| under_specified | ask_retire | 0.00 (2) | invalid DSL: Additional properties are not allowed ('role', 'text' were unexpected) |
-| under_specified | ask_g_set_column | 0.03 (36) | needed clarification not asked |
-| under_specified | ask_g_scale_column | 0.03 (34) | needed clarification not asked |
-| logical_rule | l_at_most_k | 0.03 (63) | invalid DSL: table 'hours' has no column 'soc'; columns are ['export_price', 'hour', 'import_ |
-| new_limit (nl) | g_cap_measure_total | 0.07 (15) | invalid DSL: unknown table 'damaged_transfers'; tables are ['days', 'demand', 'depots', 'rent |
-| objective_change | o_reorder | 0.08 (37) | invalid DSL: unknown measure 'profit'; measures are ['charge', 'discharge', 'soc'] |
-| data_change (nl) | g_param | 0.08 (12) | invalid DSL: unknown table 'params'; tables are ['days', 'demand', 'depots', 'rental_lengths' |
-| infeasible_request | i_floor | 0.09 (56) | invalid DSL: [] should be non-empty |
-| relax_remove | x_scoped | 0.09 (65) | result differs from reference |
-| fixed_decision | f_fix_zero | 0.09 (64) | result differs from reference |
-| infeasible_request | i_commit | 0.11 (81) | invalid DSL: table 'hours' has no column 'soc'; columns are ['export_price', 'hour', 'import_ |
-| relative_rule | r_share_of_total | 0.11 (81) | invalid DSL: a rule carries either `value` (absolute) or `relative_to` + `factor` (relative), |
-| relative_rule | r_two_measures | 0.12 (43) | result differs from reference |
-| relax_remove | x_full | 0.14 (14) | result differs from reference |
-| fixed_decision | f_fix_scope | 0.18 (51) | invalid DSL: unknown table 'undamaged_left'; tables are ['days', 'demand', 'depots', 'rental_ |
-| objective_change | o_then_scoped | 0.19 (70) | result differs from reference |
-| logical_rule | l_if_then | 0.19 (75) | result differs from reference |
-| fixed_decision | f_fix_level | 0.20 (54) | result differs from reference |
-| logical_rule | l_never_both | 0.21 (29) | result differs from reference |
-| new_limit | g_cap_measure_total | 0.23 (64) | result differs from reference |
-| relative_rule | combo | 0.24 (54) | result differs from reference |
-| objective_change | o_then_max | 0.25 (12) | result differs from reference |
-| new_limit (nl) | combo | 0.27 (15) | invalid DSL: unknown measure 'profit'; measures are ['damaged_left', 'damaged_stock', 'damage |
-| logical_rule | l_none_or_batch | 0.28 (71) | result differs from reference |
-| infeasible_request | i_two_floors | 0.29 (35) | invalid DSL: unknown table 'soc'; tables are ['hours'] |
-| chained_scenario | c_add | 0.29 (99) | result differs from reference |
-| data_change | g_param | 0.30 (47) | invalid DSL: unknown table 'params'; tables are ['hours'] |
-| new_limit | g_floor_measure_scope | 0.30 (43) | invalid DSL: unknown measure 'profit'; measures are ['charge', 'discharge', 'soc'] |
+| under_specified | ask_retire | 0.00 (2) | needed clarification not asked |
+| under_specified | ask_g_set_column | 0.01 (84) | invalid DSL: no row of 'flights' matches {"flight": ["4576"]} |
+| under_specified | ask_g_scale_column | 0.03 (77) | invalid DSL: column 'revenue' is numeric; got 'revenue' |
+| objective_change | o_then_max | 0.04 (23) | result differs from reference |
+| relax_remove | x_scoped | 0.05 (86) | result differs from reference |
+| logical_rule | l_at_most_k | 0.06 (108) | invalid DSL: no row of 'flights' matches {"flight": ["4572", "3095", "3112", "3069", "4571"]} |
+| fixed_decision | f_force_one | 0.07 (67) | result differs from reference |
+| infeasible_request | i_commit | 0.08 (133) | result differs from reference |
+| infeasible_request | i_floor | 0.08 (88) | result differs from reference |
+| fixed_decision | f_fix_zero | 0.08 (122) | invalid DSL: table 'flights' has no column 'operate'; columns are ['aircraft', 'arrival', 'de |
+| objective_change | o_reorder | 0.10 (48) | invalid DSL: unknown measure 'revenue'; measures are ['connect', 'operate']; for the model's  |
+| relative_rule | r_two_measures | 0.12 (52) | invalid DSL: a rule carries either `value` (absolute) or `relative_to` + `factor` (relative), |
+| data_change | g_param | 0.12 (60) | invalid DSL: unknown table 'params'; tables are ['hours'] |
+| fixed_decision | f_fix_scope | 0.12 (67) | invalid DSL: unknown table 'rentals'; tables are ['days', 'demand', 'depots', 'rental_lengths |
+| logical_rule | l_never_both | 0.12 (48) | invalid DSL: table 'flights' has no column 'operate'; columns are ['aircraft', 'arrival', 'de |
+| relax_remove | x_full | 0.12 (16) | result differs from reference |
+| relative_rule | r_share_of_total | 0.13 (146) | invalid DSL: '4514' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '1 |
+| data_change | demand_set | 0.17 (6) | result differs from reference |
+| fixed_decision | f_fix_level | 0.18 (85) | result differs from reference |
+| relative_rule | combo | 0.18 (93) | result differs from reference |
+| logical_rule | l_none_or_batch | 0.19 (122) | result differs from reference |
+| infeasible_request | i_two_floors | 0.21 (58) | result differs from reference |
+| objective_change | o_three_stages | 0.23 (40) | invalid DSL: '*' is not a hour; known values: ['00-01', '01-02', '02-03', '03-04', '04-05', ' |
+| logical_rule | l_if_then | 0.23 (103) | result differs from reference |
+| relative_rule | r_two_values | 0.26 (136) | invalid DSL: a rule carries either `value` (absolute) or `relative_to` + `factor` (relative), |
+| new_limit | g_cap_measure_total | 0.26 (87) | invalid DSL: invalid set change: {'aircraft': ['all'], 'flight': ['all']} is not valid under  |
+| objective_change | o_then_scoped | 0.29 (96) | result differs from reference |
+| chained_scenario | c_add | 0.31 (174) | result differs from reference |
 | data_change | process_hours | 0.33 (3) | result differs from reference |
-| data_change | retire | 0.33 (3) | result differs from reference |
 | data_change (nl) | g_scale_all_rows | 0.33 (3) | invalid DSL: no row of 'requirements' matches {"year": ["1", "2", "3"], "skill": ["unskilled" |
-| new_limit | cap_total_store | 0.33 (3) | result differs from reference |
-| new_limit (nl) | g_cap_measure_scope | 0.33 (3) | invalid DSL: table 'retraining' has no column 'year'; columns are ['cost', 'from_skill', 'max |
-| new_limit (nl) | g_floor_measure_scope | 0.33 (12) | invalid DSL: unknown table 'store'; tables are ['months', 'oils', 'purchase_prices'] |
-| objective_change | o_three_stages | 0.44 (43) | invalid DSL: '*' is not a hour; known values: ['00-01', '01-02', '02-03', '03-04', '04-05', ' |
-| data_change | outage_cancel | 0.50 (4) | result differs from reference |
-| relative_rule | r_two_values | 0.50 (80) | invalid DSL: a rule carries either `value` (absolute) or `relative_to` + `factor` (relative), |
-| new_limit | g_cap_measure_scope | 0.54 (65) | invalid DSL: unknown table 'soc'; tables are ['hours'] |
-| chained_scenario | c_undo | 0.54 (87) | result differs from reference |
-| data_change | combo | 0.57 (69) | invalid DSL: row is missing columns ['weight'] |
-| fixed_decision | combo | 0.57 (46) | result differs from reference |
-| data_change | g_scale_column | 0.59 (34) | result differs from reference |
-| chained_scenario | c_revise | 0.63 (81) | result differs from reference |
-| new_limit | combo | 0.63 (52) | result differs from reference |
-| data_change | g_add_row | 0.64 (14) | invalid DSL: row is missing columns ['weight'] |
-| data_change (nl) | combo | 0.67 (3) | result differs from reference |
-| data_change (nl) | g_scale_column | 0.67 (6) | result differs from reference |
-| data_change (nl) | g_set_column | 0.67 (9) | invalid DSL: unknown parameter 'cost_per_mwh_above_min'; parameters are ['pump_mwh_per_m', 'r |
-| data_change | g_remove_row | 0.69 (26) | result differs from reference |
-| fixed_decision | f_force_one | 0.70 (20) | result differs from reference |
-| data_change | g_set_column | 0.73 (37) | result differs from reference |
-| data_change | g_scale_all_rows | 0.78 (49) | result differs from reference |
-| data_change | demand_set | 0.83 (6) | result differs from reference |
+| fixed_decision | combo | 0.37 (82) | result differs from reference |
+| new_limit (nl) | g_floor_measure_scope | 0.44 (9) | result differs from reference |
+| new_limit | g_floor_measure_scope | 0.45 (82) | result differs from reference |
+| data_change | combo | 0.46 (114) | result differs from reference |
+| chained_scenario | c_undo | 0.47 (144) | invalid DSL: '1' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '104' |
+| data_change | g_scale_column | 0.49 (76) | result differs from reference |
+| new_limit | cap_two_products_month | 0.50 (2) | result differs from reference |
+| new_limit | g_cap_measure_scope | 0.54 (105) | invalid DSL: '1' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '104' |
+| data_change | g_add_row | 0.56 (18) | invalid DSL: row is missing columns ['weight'] |
+| new_limit | combo | 0.57 (86) | invalid DSL: '1' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '104' |
+| data_change | g_remove_row | 0.58 (19) | result differs from reference |
+| new_limit (nl) | combo | 0.60 (15) | result differs from reference |
+| data_change (nl) | g_set_column | 0.67 (3) | result differs from reference |
+| new_limit (nl) | g_cap_measure_scope | 0.67 (3) | invalid DSL: unknown table 'retrain'; tables are ['costs', 'requirements', 'retraining', 'ski |
+| data_change | g_scale_all_rows | 0.69 (95) | invalid DSL: no row of 'flights' matches {"flight": ["1", "2", "3", "4", "5", "6", "7", "8",  |
+| chained_scenario | c_revise | 0.70 (151) | result differs from reference |
+| data_change | g_set_column | 0.71 (86) | result differs from reference |
 | data_change | demand_scale | 1.00 (5) |  |
 | data_change | margin_scale | 1.00 (5) |  |
+| data_change | outage_cancel | 1.00 (4) |  |
 
 ### `ollama/qwen3:8b`
 
 | family | template | accuracy (n) | typical miss |
 |---|---|---|---|
+| data_change | install | 0.00 (1) | invalid DSL: invalid set_param change: Additional properties are not allowed ('table', 'where |
+| data_change | margin_set | 0.00 (6) | invalid DSL: unknown parameter 'profit_per_unit'; parameters are ['holding_cost', 'hours_per_ |
 | data_change | outage | 0.00 (4) | invalid DSL: no row of 'downtime' matches {"month": "Feb", "machine": "planer"} |
 | new_limit | cap_each_month | 0.00 (1) | result differs from reference |
 | new_limit | cap_store_month | 0.00 (4) | result differs from reference |
-| under_specified | ask_cap_each_month | 0.00 (1) | result differs from reference |
-| under_specified | ask_cap_make_months | 0.00 (1) | result differs from reference |
-| under_specified | ask_cap_store_month | 0.00 (1) | invalid DSL: unknown table 'params'; tables are ['downtime', 'machines', 'max_sales', 'months |
+| under_specified | ask_cap_each_month | 0.00 (1) | invalid scenario |
+| under_specified | ask_cap_make_months | 0.00 (1) | needed clarification not asked |
+| under_specified | ask_cap_store_month | 0.00 (1) | needed clarification not asked |
+| under_specified | ask_cap_total_make | 0.00 (2) | needed clarification not asked |
 | under_specified | ask_cap_total_store | 0.00 (2) | result differs from reference |
 | under_specified | ask_cap_two_products_month | 0.00 (2) | invalid scenario |
+| under_specified | ask_demand_zero | 0.00 (1) | invalid scenario |
+| under_specified | ask_install | 0.00 (1) | result differs from reference |
 | under_specified | ask_margin_scale | 0.00 (1) | invalid scenario |
 | under_specified | ask_outage | 0.00 (1) | invalid DSL: row is missing columns ['machines_down'] |
-| under_specified | ask_retire | 0.00 (2) | invalid scenario |
-| logical_rule | l_at_most_k | 0.06 (63) | invalid DSL: '>' is not one of ['<=', '>=', '=='] |
-| objective_change | o_reorder | 0.16 (37) | result differs from reference |
-| objective_change | o_then_min | 0.17 (6) | invalid DSL: unknown measure 'weekly_profit'; measures are ['damaged_left', 'damaged_stock',  |
-| under_specified | ask_g_param | 0.17 (30) | needed clarification not asked |
-| logical_rule | l_if_then | 0.17 (75) | result differs from reference |
-| relax_remove | combo | 0.20 (5) | invalid DSL: '*' is not a product; known values: ['Prod1', 'Prod2', 'Prod3', 'Prod4', 'Prod5' |
-| under_specified | ask_g_remove_row | 0.22 (27) | needed clarification not asked |
-| under_specified | ask_g_cap_measure_total | 0.25 (32) | result differs from reference |
-| fixed_decision | f_fix_scope | 0.25 (51) | result differs from reference |
-| under_specified | ask_g_cap_measure_scope | 0.30 (27) | invalid DSL: unknown table 'params'; tables are ['hours'] |
-| logical_rule | l_none_or_batch | 0.31 (71) | invalid DSL: a rule carries either `value` (absolute) or `relative_to` + `factor` (relative), |
-| fixed_decision | combo | 0.33 (46) | invalid DSL: table 'hours' has no column 'charge'; columns are ['export_price', 'hour', 'impo |
+| under_specified | ask_g_cap_measure_total | 0.04 (45) | invalid DSL: 'all' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8',  |
+| logical_rule | l_if_then | 0.08 (103) | invalid DSL: '>' is not one of ['<=', '>=', '=='] |
+| under_specified | ask_g_remove_row | 0.09 (33) | needed clarification not asked |
+| under_specified | ask_g_param | 0.15 (41) | needed clarification not asked |
+| logical_rule | l_at_most_k | 0.16 (108) | invalid DSL: '3074' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '1 |
+| relax_remove | combo | 0.17 (6) | invalid DSL: '*' is not a worker; known values: ['worker_0', 'worker_1', 'worker_10', 'worker |
+| under_specified | ask_g_add_row | 0.24 (17) | needed clarification not asked |
+| under_specified | ask_g_cap_measure_scope | 0.27 (48) | invalid DSL: 'all' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8',  |
+| under_specified | ask_g_floor_measure_scope | 0.27 (44) | invalid DSL: '*' is not a task; known values: ['task_0', 'task_1', 'task_2', 'task_3', 'task_ |
+| infeasible_request | i_floor_total | 0.31 (45) | result differs from reference |
+| logical_rule | l_never_both | 0.31 (48) | invalid DSL: '*' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8', 'A |
 | data_change | process_hours | 0.33 (3) | result differs from reference |
-| data_change | retire | 0.33 (3) | result differs from reference |
-| chained_scenario | c_add | 0.35 (99) | invalid DSL: invalid set change: {} should be non-empty |
-| relax_remove | x_full | 0.36 (14) | invalid DSL: constraint family 'terminal_soc' has dimensions [], not 'hour' |
-| relative_rule | combo | 0.39 (54) | invalid DSL: '*' is not a hour; known values: ['00-01', '01-02', '02-03', '03-04', '04-05', ' |
-| relative_rule | r_two_measures | 0.40 (43) | invalid DSL: 'all' is not a hour; known values: ['00-01', '01-02', '02-03', '03-04', '04-05', |
-| under_specified | ask_g_floor_measure_scope | 0.41 (22) | needed clarification not asked |
-| under_specified | ask_g_add_row | 0.43 (14) | needed clarification not asked |
-| objective_change | o_three_stages | 0.47 (43) | invalid DSL: '*' is not a hour; known values: ['00-01', '01-02', '02-03', '03-04', '04-05', ' |
-| infeasible_request | i_floor_total | 0.48 (29) | result differs from reference |
-| fixed_decision | f_fix_zero | 0.48 (64) | invalid DSL: table 'hours' has no column 'max_discharge_kw'; columns are ['export_price', 'ho |
-| objective_change | o_then_max | 0.50 (12) | invalid DSL: unknown measure 'weekly_profit'; measures are ['damaged_left', 'damaged_stock',  |
-| under_specified | ask_cap_total_make | 0.50 (2) | result differs from reference |
-| under_specified | ask_g_set_column | 0.50 (36) | needed clarification not asked |
-| new_limit | combo | 0.52 (52) | result differs from reference |
-| relative_rule | r_share_of_total | 0.53 (81) | result differs from reference |
-| new_limit | g_cap_measure_total | 0.53 (64) | result differs from reference |
-| new_limit (nl) | g_cap_measure_total | 0.53 (15) | invalid DSL: unknown table 'damaged_transfers'; tables are ['days', 'demand', 'depots', 'rent |
-| logical_rule | l_never_both | 0.59 (29) | result differs from reference |
-| under_specified | ask_g_scale_column | 0.59 (34) | result differs from reference |
-| objective_change | o_then_scoped | 0.60 (70) | invalid DSL: unknown measure 'weekly_profit'; measures are ['damaged_left', 'damaged_stock',  |
-| fixed_decision | f_fix_level | 0.61 (54) | invalid DSL: table 'hours' has no column 'charge'; columns are ['export_price', 'hour', 'impo |
-| infeasible_request | i_commit | 0.63 (81) | invalid DSL: unknown table 'damaged_transfers'; tables are ['days', 'demand', 'depots', 'rent |
-| relax_remove | x_scoped | 0.63 (65) | invalid DSL: '*' is not a depot; known values: ['Birmingham', 'Glasgow', 'Manchester', 'Plymo |
-| data_change | margin_set | 0.67 (6) | invalid DSL: unknown parameter 'profit_per_unit'; parameters are ['holding_cost', 'hours_per_ |
-| data_change (nl) | g_scale_column | 0.67 (6) | invalid DSL: invalid scale_param change: Additional properties are not allowed ('where' was u |
+| new_limit | cap_total_store | 0.33 (3) | invalid DSL: '*' is not a product; known values: ['Prod1', 'Prod2', 'Prod3', 'Prod4', 'Prod5' |
+| new_limit (nl) | g_cap_measure_total | 0.33 (12) | invalid DSL: unknown table 'damaged_transfers'; tables are ['days', 'demand', 'depots', 'rent |
+| objective_change | o_reorder | 0.35 (48) | invalid DSL: '*' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8', 'A |
+| chained_scenario | c_add | 0.36 (174) | result differs from reference |
+| fixed_decision | f_fix_scope | 0.37 (67) | result differs from reference |
+| relax_remove | x_full | 0.38 (16) | invalid DSL: '*' is not a worker; known values: ['worker_0', 'worker_1', 'worker_10', 'worker |
+| relative_rule | r_share_of_total | 0.41 (146) | result differs from reference |
+| under_specified | ask_g_set_column | 0.44 (84) | needed clarification not asked |
+| relative_rule | combo | 0.44 (93) | invalid DSL: '*' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8', 'A |
+| logical_rule | l_none_or_batch | 0.44 (122) | invalid DSL: a rule carries either `value` (absolute) or `relative_to` + `factor` (relative), |
+| objective_change | o_three_stages | 0.45 (40) | invalid DSL: 'all' is not a day; known values: ['Friday', 'Monday', 'Saturday', 'Thursday', ' |
+| under_specified | ask_g_scale_all_rows | 0.45 (77) | invalid DSL: invalid scale change: [1, 73, 2, 74, 75, 3, 76, 4, 5, 77, 6, 78, 79, 7, 80, 8, 9 |
+| objective_change | o_then_max | 0.48 (23) | invalid DSL: '*' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8', 'A |
+| relative_rule | r_two_measures | 0.48 (52) | invalid DSL: '*' is not a worker; known values: ['worker_0', 'worker_1', 'worker_10', 'worker |
+| objective_change | o_then_min | 0.50 (10) | result differs from reference |
+| under_specified | ask_retire | 0.50 (2) | result differs from reference |
+| fixed_decision | f_fix_zero | 0.52 (122) | invalid DSL: table 'flights' has no column 'operate'; columns are ['aircraft', 'arrival', 'de |
+| new_limit | combo | 0.53 (86) | invalid DSL: '*' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8', 'A |
+| fixed_decision | combo | 0.56 (82) | invalid DSL: unknown table 'assign'; tables are ['allowed_teams', 'costs', 'tasks', 'workers' |
+| under_specified | ask_g_scale_column | 0.57 (77) | needed clarification not asked |
+| relax_remove | x_scoped | 0.59 (86) | result differs from reference |
+| new_limit | cap_total_make | 0.60 (5) | result differs from reference |
+| new_limit | g_cap_measure_total | 0.64 (87) | invalid DSL: '*' is not a aircraft; known values: ['A318#4', 'A318#5', 'A318#7', 'A318#8', 'A |
+| data_change | retire | 0.67 (3) | result differs from reference |
 | new_limit (nl) | g_cap_measure_scope | 0.67 (3) | invalid DSL: table 'retraining' has no column 'year'; columns are ['cost', 'from_skill', 'max |
+| new_limit (nl) | g_floor_measure_scope | 0.67 (9) | invalid DSL: unknown table 'redundant'; tables are ['costs', 'requirements', 'retraining', 's |
 | under_specified | ask_demand_scale | 0.67 (3) | invalid scenario |
-| under_specified | ask_g_scale_all_rows | 0.71 (38) | needed clarification not asked |
+| infeasible_request | i_commit | 0.67 (133) | invalid DSL: unknown table 'damaged_transfers'; tables are ['days', 'demand', 'depots', 'rent |
+| data_change | combo | 0.70 (114) | invalid DSL: no row of 'costs' matches {"worker": "*", "task": "*"} |
+| fixed_decision | f_fix_level | 0.72 (85) | result differs from reference |
 | new_limit (nl) | combo | 0.73 (15) | result differs from reference |
-| data_change (nl) | g_param | 0.75 (12) | invalid DSL: unknown table 'params'; tables are ['months', 'oils', 'purchase_prices'] |
-| new_limit (nl) | g_floor_measure_scope | 0.75 (12) | result differs from reference |
-| data_change | combo | 0.75 (69) | result differs from reference |
-| data_change (nl) | g_set_column | 0.78 (9) | result differs from reference |
-| new_limit | g_floor_measure_scope | 0.79 (43) | result differs from reference |
-| data_change | param | 0.80 (5) | result differs from reference |
-| fixed_decision | f_force_one | 0.80 (20) | invalid DSL: table 'mines' has no column 'open'; columns are ['capacity', 'mine', 'quality',  |
-| infeasible_request | i_two_floors | 0.80 (35) | invalid DSL: table 'hours' has no column 'soc'; columns are ['export_price', 'hour', 'import_ |
-| new_limit | cap_total_make | 0.80 (5) | result differs from reference |
-| infeasible_request | i_floor | 0.80 (56) | invalid DSL: unknown table 'damaged_transfers'; tables are ['days', 'demand', 'depots', 'rent |
-| chained_scenario | c_undo | 0.84 (87) | invalid DSL: unknown table 'params'; tables are ['hours'] |
-| new_limit | g_cap_measure_scope | 0.88 (65) | result differs from reference |
-| data_change | g_scale_all_rows | 0.88 (49) | result differs from reference |
-| data_change | g_set_column | 0.89 (37) | result differs from reference |
-| data_change | g_add_row | 0.93 (14) | invalid DSL: '*' is not a bin; known values: ['bin0', 'bin1', 'bin10', 'bin2', 'bin3', 'bin4' |
-| data_change | g_param | 0.94 (47) | invalid DSL: unknown table 'params'; tables are ['ages', 'land_groups', 'years'] |
-| relative_rule | r_two_values | 0.94 (80) | invalid DSL: 'depot' is not a depot; known values: ['Birmingham', 'Glasgow', 'Manchester', 'P |
-| chained_scenario | c_revise | 0.99 (81) | result differs from reference |
+| data_change | g_scale_all_rows | 0.80 (95) | invalid DSL: invalid shift change: [1, 73, 2, 74, 75, 3, 76, 4, 5, 77, 6, 78, 79, 7, 80, 8, 9 |
+| objective_change | o_then_scoped | 0.80 (96) | result differs from reference |
+| infeasible_request | i_floor | 0.81 (88) | invalid DSL: unknown table 'damaged_transfers'; tables are ['days', 'demand', 'depots', 'rent |
+| data_change | g_set_column | 0.84 (86) | result differs from reference |
+| infeasible_request | i_two_floors | 0.84 (58) | invalid DSL: table 'hours' has no column 'soc'; columns are ['export_price', 'hour', 'import_ |
+| fixed_decision | f_force_one | 0.85 (67) | invalid DSL: '4696' is not a flight; known values: ['1', '10', '100', '101', '102', '103', '1 |
+| chained_scenario | c_undo | 0.86 (144) | invalid DSL: no row of 'costs' matches {"worker": "*", "task": "*"} |
+| new_limit | g_floor_measure_scope | 0.90 (82) | result differs from reference |
+| relative_rule | r_two_values | 0.90 (136) | result differs from reference |
+| new_limit | g_cap_measure_scope | 0.90 (105) | result differs from reference |
+| data_change | g_param | 0.92 (60) | result differs from reference |
+| data_change | g_scale_column | 0.93 (76) | result differs from reference |
+| data_change | g_add_row | 0.94 (18) | invalid DSL: row is missing columns ['rank'] |
+| chained_scenario | c_revise | 0.99 (151) | result differs from reference |
 | data_change | demand_scale | 1.00 (5) |  |
 | data_change | demand_set | 1.00 (6) |  |
 | data_change | demand_zero | 1.00 (2) |  |
-| data_change | g_remove_row | 1.00 (26) |  |
-| data_change | g_scale_column | 1.00 (34) |  |
-| data_change | install | 1.00 (1) |  |
+| data_change | g_remove_row | 1.00 (19) |  |
 | data_change | margin_scale | 1.00 (5) |  |
-| data_change | outage_cancel | 1.00 (4) |  |
-| data_change (nl) | combo | 1.00 (3) |  |
-| data_change (nl) | g_scale_all_rows | 1.00 (3) |  |
-| new_limit | cap_total_store | 1.00 (3) |  |
-| new_limit | cap_two_products_month | 1.00 (2) |  |
-| under_specified | ask_demand_zero | 1.00 (1) |  |
-| under_specified | ask_install | 1.00 (1) |  |
-| under_specified | ask_margin_set | 1.00 (1) |  |
-| under_specified | ask_outage_cancel | 1.00 (1) |  |
-
-### `ollama/qwen3:8b+think=on`
-
-| family | template | accuracy (n) | typical miss |
-|---|---|---|---|
-| data_change | install | 0.00 (1) | result differs from reference |
-| new_limit | cap_each_month | 0.00 (1) | result differs from reference |
-| new_limit | combo | 0.61 (33) | result differs from reference |
-| new_limit | g_cap_measure_total | 0.80 (44) | invalid DSL: 'Glasmond' is not a to_depot; known values: ['Birmingham', 'Glasgow', 'Mancheste |
-| data_change | combo | 0.83 (58) | result differs from reference |
-| data_change | g_param | 0.88 (33) | invalid DSL: unknown table 'params'; tables are ['machines', 'maintenance', 'max_sales', 'mon |
-| data_change | g_scale_all_rows | 0.88 (25) | result differs from reference |
-| new_limit | g_cap_measure_scope | 0.98 (44) | result differs from reference |
-| data_change | demand_scale | 1.00 (5) |  |
-| data_change | demand_set | 1.00 (6) |  |
-| data_change | demand_zero | 1.00 (2) |  |
-| data_change | g_add_row | 1.00 (12) |  |
-| data_change | g_remove_row | 1.00 (24) |  |
-| data_change | g_scale_column | 1.00 (23) |  |
-| data_change | g_set_column | 1.00 (21) |  |
-| data_change | margin_scale | 1.00 (5) |  |
-| data_change | margin_set | 1.00 (6) |  |
-| data_change | outage | 1.00 (4) |  |
 | data_change | outage_cancel | 1.00 (4) |  |
 | data_change | param | 1.00 (5) |  |
-| data_change | process_hours | 1.00 (3) |  |
-| data_change | retire | 1.00 (3) |  |
-| new_limit | cap_store_month | 1.00 (4) |  |
-| new_limit | cap_total_make | 1.00 (5) |  |
-| new_limit | cap_total_store | 1.00 (3) |  |
+| data_change (nl) | g_scale_all_rows | 1.00 (3) |  |
+| data_change (nl) | g_set_column | 1.00 (3) |  |
 | new_limit | cap_two_products_month | 1.00 (2) |  |
-| new_limit | g_floor_measure_scope | 1.00 (23) |  |
+| under_specified | ask_margin_set | 1.00 (1) |  |
+| under_specified | ask_outage_cancel | 1.00 (1) |  |
 
 ## Failure modes
 
@@ -508,9 +441,7 @@ Accuracy = share of episodes whose re-solved result matched the hidden reference
 |---|---|---|---|---|---|---|
 | `cowork-opus` | 0 | 0 | 0 | 0 | 0 | 0 |
 | `cowork-sonnet` | 1 | 0 | 0 | 0 | 0 | 0 |
-| `ollama/gpt-oss:20b` | 141 | 124 | 16 | 100 | 0 | 0 |
-| `ollama/qwen3:14b` | 371 | 255 | 0 | 0 | 0 | 0 |
-| `ollama/qwen3:32b` | 11 | 31 | 0 | 0 | 0 | 0 |
-| `ollama/qwen3:4b` | 920 | 769 | 2 | 2 | 0 | 392 |
-| `ollama/qwen3:8b` | 541 | 450 | 2 | 2 | 0 | 0 |
-| `ollama/qwen3:8b+think=on` | 36 | 6 | 3 | 29 | 0 | 0 |
+| `ollama/gpt-oss:20b` | 239 | 157 | 16 | 164 | 0 | 0 |
+| `ollama/qwen3:14b` | 562 | 476 | 3 | 3 | 0 | 0 |
+| `ollama/qwen3:4b` | 1760 | 1048 | 3 | 3 | 0 | 853 |
+| `ollama/qwen3:8b` | 878 | 662 | 5 | 5 | 0 | 1 |

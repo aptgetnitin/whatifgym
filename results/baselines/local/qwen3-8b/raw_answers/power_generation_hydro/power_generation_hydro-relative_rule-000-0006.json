@@ -18,5 +18,5 @@
    "factor": 1.0
   }
  ],
- "note": "The thermal output for period 15-18 is limited to be at most the same as the thermal output for period 00-06."
+ "note": "The thermal output for period 15-18 must not exceed the thermal output for period 00-06."
 }

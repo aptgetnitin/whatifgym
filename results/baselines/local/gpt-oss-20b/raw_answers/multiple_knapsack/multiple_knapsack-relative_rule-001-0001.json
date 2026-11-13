@@ -1,1 +1,1 @@
-{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"bin2_10percent_rule","measure":"x","scope":{"bin":"bin2"},"sense":"<=","relative_to":{"measure":"x","scope":{}},"factor":0.1}],"note":"Limit bin2 placements to at most 10% of total placements."}
+{"version":"0.1","base_model":"multiple_knapsack","rules":[{"name":"bin2_10pct","measure":"x","scope":{"bin":"bin2"},"sense":"<=","relative_to":{"measure":"x"},"factor":0.1}]}

@@ -3,7 +3,7 @@
   "base_model": "assignment_with_constraints",
   "rules": [
     {
-      "name": "worker_1_worker_share",
+      "name": "worker_1_max_workers",
       "measure": "works",
       "scope": {
         "worker": "worker_1"

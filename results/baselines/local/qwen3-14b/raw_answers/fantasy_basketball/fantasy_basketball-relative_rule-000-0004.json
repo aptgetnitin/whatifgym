@@ -18,7 +18,7 @@
       "factor": 1.5
     },
     {
-      "name": "trevor_ariza_max_15_percent",
+      "name": "trevor_ariza_relative_to_total_players",
       "measure": "pick",
       "scope": {
         "player": "Trevor Ariza"
@@ -26,15 +26,7 @@
       "sense": "<=",
       "relative_to": {
         "measure": "pick",
-        "scope": {
-          "position": [
-            "PG",
-            "SG",
-            "SF",
-            "PF",
-            "C"
-          ]
-        }
+        "scope": {}
       },
       "factor": 0.15
     }

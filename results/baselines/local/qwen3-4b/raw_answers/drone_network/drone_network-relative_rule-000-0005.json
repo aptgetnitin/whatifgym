@@ -3,7 +3,7 @@
   "base_model": "drone_network",
   "rules": [
     {
-      "name": "base_5145_ruritan_limit",
+      "name": "base_5145_ruritan_court_limit",
       "measure": "open",
       "scope": {
         "base": [

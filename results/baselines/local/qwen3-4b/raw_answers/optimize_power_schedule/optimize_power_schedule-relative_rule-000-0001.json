@@ -3,7 +3,7 @@
   "base_model": "optimize_power_schedule",
   "rules": [
     {
-      "name": "hour_8_shutdown_limit",
+      "name": "shut_downs_15_percent",
       "measure": "stop",
       "scope": {
         "hour": 8
@@ -12,7 +12,7 @@
       "value": 0.15
     },
     {
-      "name": "scherer_on_at_least_3x_biomass_on",
+      "name": "scherer_at_least_3x_biomass",
       "measure": "on",
       "scope": {
         "plant": "Scherer"

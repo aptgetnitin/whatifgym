@@ -40,5 +40,5 @@
    "factor": 1
   }
  ],
- "note": "Two relative limits are imposed on the reservoir level and the total number of hydro unit-periods running compared to the total number of thermal units started."
+ "note": "Two relative limits are imposed on the reservoir level and the number of hydro unit-periods running compared to thermal units started."
 }

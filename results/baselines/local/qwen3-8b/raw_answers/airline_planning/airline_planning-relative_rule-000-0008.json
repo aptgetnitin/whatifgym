@@ -12,7 +12,7 @@
    "relative_to": {
     "measure": "operate",
     "scope": {
-     "aircraft": "*"
+     "aircraft": "aircraft"
     }
    },
    "factor": 0.05

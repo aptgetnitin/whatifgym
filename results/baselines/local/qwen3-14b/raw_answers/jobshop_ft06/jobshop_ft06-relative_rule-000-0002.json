@@ -1,20 +1,21 @@
 {
   "version": "0.1",
   "base_model": "jobshop_ft06",
-  "logic": [
+  "rules": [
     {
-      "name": "machine_m2_coverage",
-      "at_least": 1,
-      "of": [
-        {
-          "measure": "goes_first",
-          "scope": {
-            "machine": "M2"
-          },
-          "sense": ">=",
-          "value": 0.5
+      "name": "m2_job_pairs_coverage",
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {
+          "machine": "M2"
         }
-      ]
+      },
+      "factor": 0.5
     }
   ]
 }

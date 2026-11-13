@@ -12,7 +12,9 @@
    "relative_to": {
     "measure": "nstart",
     "scope": {
-     "type": "all"
+     "type": "Thermal0",
+     "type": "Thermal1",
+     "type": "Thermal2"
     }
    },
    "factor": 0.1
@@ -33,5 +35,5 @@
    "factor": 1.0
   }
  ],
- "note": "Two relative limits: Thermal1 starts at most 10% of all starts, and 15-18 starts are at least as much as 00-06 starts."
+ "note": "Two relative limits: Thermal1 starts at most 10% of total thermal starts; 15-18 starts at least equal to 00-06 starts."
 }

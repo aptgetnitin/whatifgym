@@ -18,7 +18,7 @@
       "factor": 3.0
     },
     {
-      "name": "hydro_unit_periods_running_at_least_thermal_starts",
+      "name": "hydro_unit_periods_at_least_thermal_starts",
       "measure": "hydro_on",
       "scope": {
         "period": "*"
@@ -27,8 +27,7 @@
       "relative_to": {
         "measure": "nstart",
         "scope": {
-          "period": "*",
-          "type": "*"
+          "period": "*"
         }
       },
       "factor": 1.0

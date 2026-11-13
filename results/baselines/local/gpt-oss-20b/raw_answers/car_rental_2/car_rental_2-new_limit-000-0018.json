@@ -1,1 +1,1 @@
-{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"max_expansions_total","measure":"expand","sense":"<=","value":2},{"name":"min_damaged_transfers_birmingham","measure":"damaged_transfers","scope":{"to_depot":"Birmingham"},"sense":">=","value":40}]}
+{"version":"0.1","base_model":"car_rental_2","rules":[{"measure":"expand","sense":"<=","value":2},{"measure":"damaged_transfers","sense":">=","value":40,"scope":{"to_depot":"Birmingham"}}]}

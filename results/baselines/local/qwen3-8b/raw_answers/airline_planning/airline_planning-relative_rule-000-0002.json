@@ -18,7 +18,7 @@
    "factor": 0.6
   },
   {
-   "name": "a318_8_flights_at_most_a320_22_flights",
+   "name": "a318_8_flights_not_exceed_a320_22",
    "measure": "operate",
    "scope": {
     "aircraft": "A318#8"
@@ -33,5 +33,5 @@
    "factor": 1.0
   }
  ],
- "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+ "note": "Rules enforce that A320#22 operates at least 60% of all flights and A318#8 operates no more than A320#22."
 }

@@ -41,5 +41,5 @@
    "factor": 0.25
   }
  ],
- "note": "Two relative limits: Freiburg legs account for at least 75% of all legs, and jobs assigned are at most 25% of legs."
+ "note": "Two relative limits at once: to location Freiburg im Breisgau must account for at least 75% of the total number of legs driven; and we keep the total number of jobs assigned at or below 25% of the total number of legs driven."
 }

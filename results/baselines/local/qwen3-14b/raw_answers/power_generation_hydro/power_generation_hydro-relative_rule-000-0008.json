@@ -21,33 +21,33 @@
       "name": "hydro_running_vs_thermal_start",
       "measure": "hydro_on",
       "scope": {
+        "hydro": [
+          "HydroA",
+          "HydroB"
+        ],
         "period": [
           "00-06",
           "06-09",
           "09-15",
           "15-18",
           "18-24"
-        ],
-        "hydro": [
-          "HydroA",
-          "HydroB"
         ]
       },
       "sense": ">=",
       "relative_to": {
         "measure": "nstart",
         "scope": {
+          "type": [
+            "Thermal0",
+            "Thermal1",
+            "Thermal2"
+          ],
           "period": [
             "00-06",
             "06-09",
             "09-15",
             "15-18",
             "18-24"
-          ],
-          "type": [
-            "Thermal0",
-            "Thermal1",
-            "Thermal2"
           ]
         }
       },

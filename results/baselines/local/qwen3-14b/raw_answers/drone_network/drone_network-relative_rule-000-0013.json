@@ -18,7 +18,7 @@
    "factor": 3.0
   },
   {
-   "name": "base_percentage",
+   "name": "base_count_ratio",
    "measure": "open",
    "scope": {
     "base": "5145 RURITAN COURT Rescue Squad"
@@ -26,7 +26,9 @@
    "sense": ">=",
    "relative_to": {
     "measure": "open",
-    "scope": {}
+    "scope": {
+     "base": "all"
+    }
    },
    "factor": 0.3
   }

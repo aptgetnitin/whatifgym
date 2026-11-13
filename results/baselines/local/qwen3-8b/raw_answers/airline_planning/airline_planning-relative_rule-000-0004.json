@@ -3,7 +3,7 @@
  "base_model": "airline_planning",
  "rules": [
   {
-   "name": "flight4564_op_at_most_50_of_4575",
+   "name": "flight4564_op_at_most_50_of_flight4575_op",
    "measure": "operate",
    "scope": {
     "flight": "4564"
@@ -18,7 +18,7 @@
    "factor": 0.5
   },
   {
-   "name": "a320_22_op_at_most_5_of_all",
+   "name": "a320_22_op_at_most_5_of_total_op",
    "measure": "operate",
    "scope": {
     "aircraft": "A320#22"
@@ -55,5 +55,5 @@
    "factor": 0.05
   }
  ],
- "note": "Two relative limits: flight 4564's operated flights are at most 50% of flight 4575's, and aircraft A320#22's operated flights are at most 5% of all aircraft's."
+ "note": "Two relative limits are applied: one on the number of flights operated for flight 4564 relative to flight 4575, and another on the number of flights operated for aircraft A320#22 relative to the total number of flights operated."
 }

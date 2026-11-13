@@ -3,7 +3,7 @@
   "base_model": "assignment_with_constraints",
   "rules": [
     {
-      "name": "task_2_assignment_percentage",
+      "name": "task_2_min_percentage",
       "measure": "assign",
       "scope": {
         "task": "task_2"

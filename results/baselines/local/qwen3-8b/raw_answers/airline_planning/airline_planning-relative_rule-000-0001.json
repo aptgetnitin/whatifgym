@@ -3,7 +3,7 @@
  "base_model": "airline_planning",
  "rules": [
   {
-   "name": "flight_4564_at_least_75_of_operated",
+   "name": "flight_4564_operate_share",
    "measure": "operate",
    "scope": {
     "flight": 4564
@@ -241,5 +241,5 @@
    "factor": 0.75
   }
  ],
- "note": "A relative rule compares the sum of the operate measure for flight 4564 to the sum of the operate measure for all flights."
+ "note": "Flight 4564 must account for at least 75% of the total number of flights operated."
 }

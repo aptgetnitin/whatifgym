@@ -26,8 +26,7 @@
             "OTHER COAL"
           ]
         }
-      },
-      "factor": 1.0
+      }
     },
     {
       "name": "shut_downs_at_most_90_startups",
@@ -62,10 +61,9 @@
             "GAS",
             "HYDRO",
             "OTHER COAL"
-          ]
+        ]
         }
-      },
-      "factor": 1.0
+      }
     }
   ]
 }

@@ -1,1 +1,15 @@
-REQUEST_ERROR: Ollama /api/chat returned HTTP 500: {"error":"prediction aborted, token repeat limit reached"}
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j1_pairs_first",
+      "measure": "goes_first",
+      "scope": {
+        "job": "J1"
+      },
+      "sense": ">=",
+      "value": 0.6
+    }
+  ]
+}

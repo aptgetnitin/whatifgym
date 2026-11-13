@@ -1,1 +1,18 @@
-{"version":"0.1","base_model":"car_rental","rules":[{"measure":"damaged_transfers","scope":{"day":"Wednesday","from_depot":"Plymouth","to_depot":"Birmingham"},"sense":">=","value":47.6}]}
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "min_damaged_transfer_wed_ply_bham",
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Wednesday",
+        "from_depot": "Plymouth",
+        "to_depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 47.6
+    }
+  ],
+  "note": "Check feasibility of at least 47.6 damaged transfers from Plymouth to Birmingham on Wednesday."
+}

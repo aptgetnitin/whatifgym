@@ -309,6 +309,16 @@ zsh rejects `\>` inside `[ ]` (`condition expected: >`), so the time limit never
 
 Terminated with `delete-pod`; `list-pods` then returned no pods.
 
+**Second pre-audit pass, same evening (free, on the Mac).** 34 tasks dropped (the 8 solver-dependent ones above; 26 if-then questions that asked for 2 or more of one yes/no decision) and 82 questions reworded in place, commit `b31571b`. The records of the dropped tasks were removed from the four result folders. The four models then re-answered the 82 reworded questions on the Mac (M4 Max, Ollama 0.35.1, same settings; drone_network with the 32k window), 21:32 to 23:19 Pacific, and the new records replaced the old ones (field `reanswered`):
+
+```bash
+# .reworded_tmp/<base model>/<file>.jsonl held only the reworded tasks of each file
+python scripts/run_local_baselines.py --models qwen3:4b --tasks .reworded_tmp/*/*.jsonl --label-suffix=-reworded --force   # and the other three
+python scripts/summarise_results.py results/baselines/local --out results/baselines/local/summary.md
+```
+
+Correct on those 82, before and after rewording: qwen3:4b 16 and 18, qwen3:8b 24 and 30, qwen3:14b 56 and 54, gpt-oss:20b 70 and 70. **Final result (3,722 template tasks): qwen3:4b 25.3 %, qwen3:8b 59.1 %, qwen3:14b 72.2 %, gpt-oss:20b 89.4 %.** Full test suite on the changed files: 766 passed, 7 skipped.
+
 ## Run 5: learning curve with 14 held-out base models (Nov 12 evening)
 
 Decided Nov 12: the base models stay at 25 and the training pool stays at the original 11. The 11 base models added in November join the 3 of run 4 as held-out models, so one run gives both the learning curve and a wider held-out score. The run 4 adapters were not kept, so this is a fresh training run. Task set: commit `b31571b` (3,722 template tasks, after the second pre-audit pass).

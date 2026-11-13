@@ -12,5 +12,5 @@
       "value": 0.4
     }
   ],
-  "note": "The rule ensures that bin1 has at least 40% of all item placements."
+  "note": "The rule ensures that bin1 has at least 40% of the total item placements."
 }

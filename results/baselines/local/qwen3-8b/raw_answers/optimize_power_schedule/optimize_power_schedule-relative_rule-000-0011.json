@@ -21,19 +21,17 @@
    "name": "shutdowns_limit",
    "measure": "stop",
    "scope": {
-    "plant": "*",
-    "hour": "*"
+    "plant": "*"
    },
    "sense": "<=",
    "relative_to": {
     "measure": "start",
     "scope": {
-     "plant": "*",
-     "hour": "*"
+     "plant": "*"
     }
    },
    "factor": 0.9
   }
  ],
- "note": "Two relative limits are imposed on the total number of plant-hours on and the total number of plant shut-downs relative to start-ups."
+ "note": "Two relative limits are applied: Scherer's plant-hours on is at most 5% of total plant-hours on; total shut-downs is at most 90% of total start-ups."
 }

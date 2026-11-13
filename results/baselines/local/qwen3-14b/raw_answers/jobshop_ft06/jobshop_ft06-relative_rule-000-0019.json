@@ -1,28 +1,19 @@
 {
   "version": "0.1",
   "base_model": "jobshop_ft06",
-  "logic": [
+  "rules": [
     {
-      "name": "job1_goes_first_at_least_60_percent",
-      "at_least": 1,
-      "of": [
-        {
-          "measure": "goes_first",
-          "scope": {
-            "job": "J1"
-          },
-          "sense": ">=",
-          "value": 0.6
-        },
-        {
-          "measure": "goes_first",
-          "scope": {
-            "job": "J1"
-          },
-          "sense": "<=",
-          "value": 0.6
-        }
-      ]
+      "name": "j1_goes_first_percentage",
+      "measure": "goes_first",
+      "scope": {
+        "job": "J1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {}
+      },
+      "factor": 0.6
     }
   ]
 }

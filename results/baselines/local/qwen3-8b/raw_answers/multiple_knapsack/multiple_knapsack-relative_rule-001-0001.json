@@ -34,10 +34,5 @@
    "factor": 0.1
   }
  ],
- "objective": [
-  {
-   "sense": "max",
-   "measure": "original"
-  }
- ]
+ "note": "The rule limits the number of item placements in bin2 to 10% of the total item placements."
 }

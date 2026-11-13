@@ -3,24 +3,24 @@
  "base_model": "jobshop_ft06",
  "logic": [
   {
-   "name": "at_least_50_of_machine_m2_pairs",
-   "at_least": 1,
+   "name": "at_least_50_of_job_pairs_on_m2",
+   "at_least": 3,
    "of": [
     {
      "measure": "goes_first",
+     "sense": ">=",
+     "value": 1,
      "scope": {
       "machine": "M2"
-     },
-     "sense": ">=",
-     "value": 0
+     }
     },
     {
      "measure": "goes_first",
+     "sense": "<=",
+     "value": 0,
      "scope": {
       "machine": "M2"
-     },
-     "sense": "<=",
-     "value": 0
+     }
     }
    ]
   }

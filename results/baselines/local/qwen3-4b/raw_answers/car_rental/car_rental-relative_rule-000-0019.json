@@ -11,6 +11,5 @@
       "sense": ">=",
       "value": 0.05
     }
-  ],
-  "note": "A rule that at least 5% of the total damaged cars transferred must go to return depot Glasgow."
-  }
+  ]
+}

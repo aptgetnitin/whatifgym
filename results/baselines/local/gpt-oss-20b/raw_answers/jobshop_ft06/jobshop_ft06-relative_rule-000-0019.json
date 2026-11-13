@@ -10,9 +10,11 @@
       },
       "sense": ">=",
       "relative_to": {
-        "measure": "goes_first"
+        "measure": "goes_first",
+        "scope": {}
       },
       "factor": 0.6
     }
-  ]
+  ],
+  "note": "Job J1 must be first in at least 60% of all job pairs across all machines."
 }

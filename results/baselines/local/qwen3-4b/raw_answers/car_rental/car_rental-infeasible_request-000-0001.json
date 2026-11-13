@@ -1,12 +1,10 @@
 {
   "version": "0.1",
   "base_model": "car_rental",
-  "data_changes": [
+  "fixed_decisions": [
     {
-      "op": "set",
-      "table": "damaged_transfers",
-      "column": "damaged_transfers",
-      "where": {
+      "measure": "damaged_transfers",
+      "scope": {
         "day": "Friday",
         "from_depot": "Plymouth",
         "to_depot": "Birmingham"

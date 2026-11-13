@@ -9,20 +9,22 @@
     {
      "measure": "goes_first",
      "scope": {
-      "machine": "*",
-      "job": "J2"
+      "machine": "machine",
+      "job": "job",
+      "other_job": "other_job"
      },
      "sense": ">=",
-     "value": 0
+     "value": 0.15
     },
     {
      "measure": "goes_first",
      "scope": {
-      "machine": "*",
-      "job": "*"
+      "machine": "machine",
+      "job": "job",
+      "other_job": "other_job"
      },
      "sense": "<=",
-     "value": 0
+     "value": 1
     }
    ]
   }

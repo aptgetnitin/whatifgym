@@ -18,7 +18,7 @@
    "factor": 1.0
   },
   {
-   "name": "veg1_store_limit_total",
+   "name": "veg1_storage_limit",
    "measure": "store",
    "scope": {
     "oil": "VEG1"

@@ -3,7 +3,7 @@
   "base_model": "optimize_power_schedule",
   "rules": [
     {
-      "name": "hydro_on_hours_limit",
+      "name": "hydro_on_limit",
       "measure": "on",
       "scope": {
         "plant": "HYDRO"

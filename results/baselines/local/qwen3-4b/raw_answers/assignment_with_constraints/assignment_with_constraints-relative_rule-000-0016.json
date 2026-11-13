@@ -4,12 +4,18 @@
   "objective": [
     {
       "sense": "min",
-      "measure": "assign",
-      "scope": {
-        "task": [
-          "task_3"
-        ]
-      }
+      "measure": "original"
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "tasks",
+      "column": "min_workers",
+      "where": {
+        "task": "task_3"
+      },
+      "value": 30
     }
   ]
 }

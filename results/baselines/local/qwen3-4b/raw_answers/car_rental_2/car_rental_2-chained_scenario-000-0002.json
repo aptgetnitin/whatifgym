@@ -1,1 +1,20 @@
-REQUEST_ERROR: Ollama /api/chat returned HTTP 500: {"error":"prediction aborted, token repeat limit reached"}
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "expansion_options",
+      "column": "added_capacity",
+      "where": {
+        "depot": [
+          "Birmingham",
+          "Manchester",
+          "Plymouth"
+        ]
+      },
+      "factor": 1.25
+    }
+  ],
+  "note": "The repair capacity added by each expansion option rises by 25%."
+}

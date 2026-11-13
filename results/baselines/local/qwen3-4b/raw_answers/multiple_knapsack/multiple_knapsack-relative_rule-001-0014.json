@@ -12,5 +12,5 @@
       "value": 0.6
     }
   ],
-  "note": "The rule ensures that item14 accounts for at least 60% of all item placements."
-}
+  "note": "The rule ensures that item14 accounts for at least 60% of the total placements."
+  }

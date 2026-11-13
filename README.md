@@ -10,9 +10,9 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 > |---|---|
 > | Base models | 25 of 30, verified on HiGHS, SCIP and CBC |
 > | Task families | 10 of 10 |
-> | Tasks (current set) | 3,756 template tasks + 45 verified paraphrases, in 224 files; shared outcomes removed (`_v1`, section 11) |
+> | Tasks (current set) | 3,722 template tasks + 45 verified paraphrases, in 224 files; shared outcomes removed (`_v1`, section 11) |
 > | Tests | 766 pass, 7 slow tests skipped |
-> | Untrained LLMs (current set, Nov 12) | Qwen3 4B 25.0 %, 8B 58.4 %, 14B 71.8 %, gpt-oss 20B 88.8 % (section 11) |
+> | Untrained LLMs (current set, Nov 12) | Qwen3 4B 25.3 %, 8B 59.1 %, 14B 72.2 %, gpt-oss 20B 89.4 % (section 11) |
 > | Training result | GRPO on Qwen3 4B, one GPU, three base models held out: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds; section 11) |
 
 ---
@@ -406,32 +406,32 @@ Column names: data = `data_change`, limit = `new_limit`, relative = `relative_ru
 
 | base model | data | limit | relative | objective | fixed | relax | logic | infeasible | chained | vague | total |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `airline_planning` | 20 | 20 | 20 | 2 | 20 | – | 20 | – | 20 | 20 | 142 |
-| `assignment_with_constraints` | 20 | 9 | 20 | – | 20 | 4 | 15 | – | 20 | 20 | 128 |
+| `airline_planning` | 20 | 20 | 20 | 2 | 20 | – | 13 | – | 20 | 20 | 135 |
+| `assignment_with_constraints` | 20 | 9 | 20 | – | 20 | 4 | 11 | – | 20 | 20 | 124 |
 | `battery_scheduling` | 20 | 20† | 20 | 8† | 20 | 1 | 20 | 20 | 20 | 20 | 169 |
 | `bin_packing` | 20 | 1† | 7† | – | – | – | – | – | 20 | 20 | 68 |
 | `car_rental` | 20 | 20 | 20 | 13† | 20 | – | 20 | 2 | 20 | 20 | 155 |
 | `car_rental_2` | 20 | 20 | 20 | 20† | 20 | 14 | 20 | 20 | 20 | 20 | 194 |
 | `covid19_facility_location` | 20 | 20 | 20 | 1 | 20 | 20 | 20 | 20 | 20 | 20 | 181 |
-| `drone_network` | 20 | 18 | 20 | 14 | 20 | – | 15 | 4 | 20 | 20 | 151 |
+| `drone_network` | 20 | 18 | 20 | 14 | 20 | – | 12 | 3 | 20 | 20 | 147 |
 | `economic_planning` | 20 | 20 | 20 | 14 | 20 | – | 20 | 20 | 20 | 20 | 174 |
 | `factory_planning` | 60 | 20 | 20 | 3 | 20 | 20 | 20 | 20 | 20 | 20 | 223 |
 | `factory_planning_2` | 20 | 20 | 20 | 7† | 20 | 7 | 20 | 20 | 20 | 20 | 174 |
-| `fantasy_basketball` | 20 | – | 6 | – | 20 | – | 4 | – | 20 | 20 | 90 |
-| `farm_planning` | 20 | 20 | 20 | 20 | 20 | 7 | 20 | 20 | 20 | 20 | 187 |
+| `fantasy_basketball` | 20 | – | 6 | – | 20 | – | 3 | – | 20 | 20 | 89 |
+| `farm_planning` | 20 | 19 | 20 | 20 | 20 | 7 | 20 | 20 | 20 | 20 | 186 |
 | `food_manufacture` | 20† | 20 | 20† | 11† | 20 | 1 | 20 | 20 | 20 | 20 | 172 |
 | `food_supply` | 20 | 20 | 20 | 4 | 20 | – | 20 | 20 | 20 | 20 | 164 |
-| `jobshop_ft06` | 20 | 13 | 20 | 20 | 20 | – | 16 | 20 | 20 | 20 | 169 |
+| `jobshop_ft06` | 20 | 13 | 20 | 20 | 20 | – | 14 | 20 | 20 | 20 | 167 |
 | `manpower_planning` | 20 | 20 | 20 | 20 | 20 | 12 | 20 | 20 | 20 | 20 | 192 |
-| `mining` | 20 | 20 | 20 | 2† | 20 | 20 | 20 | 20 | 20 | 20 | 182 |
-| `multiple_knapsack` | 20 | 6† | 20† | 1 | 2† | 1 | 18 | – | 20 | 20 | 108 |
-| `optimize_power_schedule` | 20 | 20 | 16 | 2 | 20 | – | 20 | 20 | 20 | 20 | 158 |
-| `power_generation_hydro` | 20 | 20 | 20 | 14† | 20 | – | 20 | 19 | 20 | 20 | 173 |
-| `railway_dispatching` | 20 | 8 | 20 | 20 | 20 | – | 19 | 20 | 20 | 20 | 167 |
+| `mining` | 20 | 20 | 20 | 2† | 20 | 20 | 17 | 20 | 20 | 20 | 179 |
+| `multiple_knapsack` | 20 | 6† | 20† | 1 | 2† | 1 | 16 | – | 20 | 20 | 106 |
+| `optimize_power_schedule` | 20 | 19 | 16 | 2 | 20 | – | 19 | 20 | 20 | 20 | 156 |
+| `power_generation_hydro` | 20 | 20 | 20 | 14† | 20 | – | 19 | 19 | 20 | 20 | 172 |
+| `railway_dispatching` | 20 | 7 | 18 | 20 | 20 | – | 18 | 20 | 20 | 20 | 163 |
 | `single_machine_scheduling` | 7 | 3 | – | 8 | 1 | – | – | 18 | 2 | 6 | 45 |
-| `technician_routing_scheduling` | 20 | 20 | 20 | 15 | 20 | – | 20 | 2 | 20 | 20 | 157 |
+| `technician_routing_scheduling` | 20 | 20 | 20 | 13 | 20 | – | 19 | 2 | 20 | 20 | 154 |
 | `wedding_seating` | 5† | – | – | – | – | 1 | – | – | 7 | 20 | 33 |
-| **total** | 512 | 378 | 429 | 219 | 423 | 108 | 407 | 325 | 469 | 486 | **3756** |
+| **total** | 512 | 375 | 427 | 217 | 423 | 108 | 381 | 324 | 469 | 486 | **3722** |
 
 † a `_v1` file: regenerated on Nov 1 with the shared-outcome filter (the `_v0` file had more tasks). The table counts the current set; the `_v0` set of 14 models had 2,290.
 
@@ -480,21 +480,21 @@ On the 60 `factory_planning` data-change tasks: Claude Sonnet 59/60, Claude Opus
 
 ### Untrained open LLMs (Ollama)
 
-Complete run of Nov 12 on the current set: all 3,756 template tasks and 45 paraphrases, 25 base models, every task the same for every LLM. Run on one rented RTX 5090 (Ollama 0.35.1, four requests at once, thinking off); commands in [training/RUNPOD.md](training/RUNPOD.md). The October runs on the first task-set version are in `results/archive/local_2026-10/`.
+Complete run of Nov 12 on the current set: all 3,722 template tasks and 45 paraphrases, 25 base models, every task the same for every LLM. After the run, 34 tasks were dropped and 82 questions reworded (second pre-audit pass); the four models re-answered those 82 on an Apple M4 Max with the same Ollama version and settings, so every score below is for the current wording. Run on one rented RTX 5090 (Ollama 0.35.1, four requests at once, thinking off); commands in [training/RUNPOD.md](training/RUNPOD.md). The October runs on the first task-set version are in `results/archive/local_2026-10/`.
 
 | Family | Tasks | Qwen3 4B | Qwen3 8B | Qwen3 14B | gpt-oss 20B |
 |---|---|---|---|---|---|
 | data_change | 512 | 51 % | 82 % | 76 % | 95 % |
-| new_limit | 378 | 44 % | 74 % | 91 % | 98 % |
-| relative_rule | 429 | 18 % | 57 % | 81 % | 91 % |
-| objective_change | 219 | 20 % | 58 % | 78 % | 91 % |
+| new_limit | 375 | 45 % | 74 % | 91 % | 98 % |
+| relative_rule | 427 | 18 % | 58 % | 81 % | 91 % |
+| objective_change | 217 | 20 % | 59 % | 78 % | 91 % |
 | fixed_decision | 423 | 16 % | 60 % | 90 % | 94 % |
 | relax_remove | 108 | 6 % | 54 % | 86 % | 98 % |
-| **logical_rule** | 407 | **15 %** | **23 %** | **29 %** | **74 %** |
-| infeasible_request | 325 | 9 % | 69 % | 87 % | 93 % |
+| **logical_rule** | 381 | **16 %** | **25 %** | **31 %** | **78 %** |
+| infeasible_request | 324 | 9 % | 69 % | 87 % | 93 % |
 | chained_scenario | 469 | 48 % | 72 % | 78 % | 97 % |
 | under_specified | 486 | 1 % | 33 % | 42 % | 68 % |
-| **all 3,756 template tasks** | | **25.0 %** | **58.4 %** | **71.8 %** | **88.8 %** |
+| **all 3,722 template tasks** | | **25.3 %** | **59.1 %** | **72.2 %** | **89.4 %** |
 | valid scenario | | 72 % | 82 % | 87 % | 96 % |
 | answers the server aborted (repeat limit) | | 23 % | 0 % | 0 % | 0 % |
 | data_change, paraphrased | 6 | 50 % | 100 % | 100 % | 100 % |
@@ -502,16 +502,16 @@ Complete run of Nov 12 on the current set: all 3,756 template tasks and 45 parap
 
 ```mermaid
 xychart-beta
-    title "Accuracy on all 3,756 template tasks (%)"
+    title "Accuracy on all 3,722 template tasks (%)"
     x-axis ["Qwen3 4B", "Qwen3 8B", "Qwen3 14B", "gpt-oss 20B"]
     y-axis "accuracy (%)" 0 --> 100
-    bar [25.0, 58.4, 71.8, 88.8]
+    bar [25.3, 59.1, 72.2, 89.4]
 ```
 
 What this shows:
 
 1. **The benchmark separates the models:** from 25 % to 89 %.
-2. **`logical_rule` is the hardest family** for the three larger models. Qwen3 14B gets 29 %, gpt-oss 20B 74 %.
+2. **`logical_rule` is the hardest family** for the three larger models. Qwen3 14B gets 31 %, gpt-oss 20B 78 %.
 3. **Qwen3 4B fails most families** (6 to 9 % on relax and infeasible). Ollama ended 23 % of its answers because the model repeated itself. This is the headroom for RL.
 4. **Natural wording:** on the 39 new-limit paraphrases, Qwen3 8B gets 59 % against 74 % on the templates; 14B and gpt-oss lose nothing. The sample is small.
 5. **Notes on the run:** `drone_network` prompts are longer than 16,384 tokens, so that model was answered with a 32,768-token window. All answers are scored with HiGHS 1.15.1 (`scripts/rescore_results.py`).
@@ -525,11 +525,11 @@ On the 486 under-specified tasks:
 | Asked first | 17 % | 47 % | 48 % | 99 % |
 | Correct after asking | 4 % | 71 % | 86 % | 68 % |
 | Correct overall | 1 % | 33 % | 42 % | 68 % |
-| Needless questions (of 3,270 clear tasks) | 0 | 0 | 6 | 41 |
+| Needless questions (of 3,236 clear tasks) | 0 | 0 | 6 | 38 |
 
 1. **The decision to ask and the answer after it are two skills.** gpt-oss asks almost always, but answers well only 68 % of the time. Qwen3 14B asks half the time, but answers well 86 % of the time.
 2. **Qwen3 4B almost never benefits from asking.** It asks on 17 % of the tasks and then answers 4 % of them correctly.
-3. **Asking is cheap to get right on clear tasks:** at most 41 needless questions in 3,270.
+3. **Asking is cheap to get right on clear tasks:** at most 38 needless questions in 3,236.
 
 Claude, Qwen3 32B and Qwen3 8B with thinking never asked, so their earlier results do not change.
 
@@ -688,7 +688,7 @@ flowchart TB
 | done | 10 families; current set 2,194 tasks + 45 paraphrases (`_v0`: 2,290 + 78) |
 | done | Trivial agents exact on every file; probes 0.1 % and 1.7 % on the current set |
 | done | Frontier baseline (Sonnet 59/60, Opus 60/60); LLM ladder on the first 399 tasks |
-| done | Untrained LLMs on the current set (3,756 tasks, 25 base models, Nov 12): Qwen3 4B 25.0 %, 8B 58.4 %, 14B 71.8 %, gpt-oss 20B 88.8 % |
+| done | Untrained LLMs on the current set (3,722 tasks, 25 base models, Nov 12): Qwen3 4B 25.3 %, 8B 59.1 %, 14B 72.2 %, gpt-oss 20B 89.4 % |
 | next | Frontier APIs on all 10 families, with pinned ids |
 | done | All 10 families: `infeasible_request` and `chained_scenario` built Oct 7 |
 | done | Shared outcomes removed: 16 files regenerated as `_v1`, 4 paraphrase files dropped; probe 1.7 % (Nov 1) |
@@ -696,7 +696,7 @@ flowchart TB
 | next | GRPO with a pass-rate filter, three held-out base models and 3 seeds |
 | done | 6 more base models (economic planning, fantasy basketball, assignment, COVID-19 facilities, railway dispatching, power schedule): 20 models, 3,093 tasks (Nov 2) |
 | done | 5 more base models (technician routing, drone network, airline planning, job-shop ft06, single-machine scheduling): 25 models, 3,761 tasks (Nov 2) |
-| done | Hand-audit sample drawn (`audit/audit_v1.md`, 200 tasks, `scripts/make_audit_pack.py`). A first read by two reviewer agents found no wrong label, 5 ambiguous questions and 26 awkward ones; the templates were fixed, 747 questions reworded in place (`tasks/reworded_2026-11-12.txt`) and 5 tasks dropped: 3,756 tasks (Nov 12). The audit by a person is still to do. |
+| done | Hand-audit sample drawn (`audit/audit_v1.md`, 200 tasks, `scripts/make_audit_pack.py`). A first read by two reviewer agents found no wrong label, 5 ambiguous questions and 26 awkward ones; the templates were fixed, 747 questions reworded in place (`tasks/reworded_2026-11-12.txt`) and 5 tasks dropped: 3,722 tasks (Nov 12). The audit by a person is still to do. A second pass the same day dropped 34 more tasks (8 whose gold answer depends on the HiGHS release, 26 unreachable if-then thresholds; `tasks/dropped_2026-11-12.txt`) and reworded 82 questions (`tasks/reworded_2026-11-12b.txt`); the sample was redrawn. Audit page for the person's read: private claude.ai artifact. |
 | next | Port 5 more models (the gate needs 25) |
 | later | New families: explanation ("why") questions, goal seeking, nearest feasible alternative, scenario comparison, sensitivity and robustness |
 

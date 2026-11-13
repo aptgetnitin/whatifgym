@@ -33,5 +33,5 @@
    "factor": 3
   }
  ],
- "note": "Two relative limits: T17 must account for at least 75% of all temporary facilities built, and T18 must be at least 3 times the number of T17 facilities."
+ "note": "Two relative limits: T17 must account for at least 75% of the total temporary facilities built, and T18 must be at least 3 times the number of T17 facilities."
 }

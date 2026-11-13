@@ -17,8 +17,8 @@
           "Prod7"
         ]
       },
-      "value": "store >= sell"
+      "value": 0
     }
   ],
-  "note": "The planner's question is about a constraint that must hold: total stock >= total sales. This is a rule on the sum of store over products vs. sum of sell over products."
-  }
+  "note": "The planner's question implies a constraint that stock is at least as much as sales for all products. However, the model's inventory balance constraint already ensures that stock = sales + production - opening stock (with opening stock 0). The question is ambiguous and cannot be directly translated into a data change or rule without more precision."
+}

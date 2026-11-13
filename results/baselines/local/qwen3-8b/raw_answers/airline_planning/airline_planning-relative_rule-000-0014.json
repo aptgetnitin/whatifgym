@@ -3,7 +3,7 @@
  "base_model": "airline_planning",
  "rules": [
   {
-   "name": "flight_3112_at_least_75_of_operated",
+   "name": "flight_3112_at_least_75_percent",
    "measure": "operate",
    "scope": {
     "flight": 3112
@@ -241,5 +241,5 @@
    "factor": 0.75
   }
  ],
- "note": "A relative rule compares the sum of operate for flight 3112 to the sum of operate for all flights."
+ "note": "Flight 3112 must account for at least 75% of the total number of flights operated."
 }

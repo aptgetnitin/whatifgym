@@ -3,7 +3,7 @@
  "base_model": "railway_dispatching",
  "rules": [
   {
-   "name": "e_goes_first_percentage",
+   "name": "e_goes_first_share",
    "measure": "goes_first",
    "scope": {
     "resource": "*",
@@ -13,13 +13,14 @@
    "relative_to": {
     "measure": "goes_first",
     "scope": {
-     "resource": "*"
+     "resource": "*",
+     "train": "*"
     }
    },
    "factor": 0.2
   },
   {
-   "name": "d_meet_pairs_ratio",
+   "name": "d_meet_share_at_least_1_5_b",
    "measure": "meet",
    "scope": {
     "resource": "*",
@@ -36,5 +37,5 @@
    "factor": 1.5
   }
  ],
- "note": "Rules enforce relative limits on the number of trains clearing a resource before another train enters it and the number of train pairs sharing a resource at the same time for specific trains."
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
 }

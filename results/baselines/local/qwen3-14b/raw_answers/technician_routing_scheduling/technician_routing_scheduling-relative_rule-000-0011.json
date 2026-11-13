@@ -3,7 +3,7 @@
   "base_model": "technician_routing_scheduling",
   "rules": [
     {
-      "name": "freiburg_legs_percentage",
+      "name": "freiburg_legs_ratio",
       "measure": "route",
       "scope": {
         "to_location": "Freiburg im Breisgau"

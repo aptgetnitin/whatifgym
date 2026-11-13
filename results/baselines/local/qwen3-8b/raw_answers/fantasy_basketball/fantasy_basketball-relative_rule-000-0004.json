@@ -18,7 +18,7 @@
    "factor": 1.5
   },
   {
-   "name": "trevor_ariza_at_most_15_of_all_players",
+   "name": "trevor_ariza_at_most_15_percent_of_total_players",
    "measure": "pick",
    "scope": {
     "player": "Trevor Ariza"
@@ -33,5 +33,5 @@
    "factor": 0.15
   }
  ],
- "note": "Two relative limits: Jarrett Jack must be at least 1.5 times Dario Saric's selection, and Trevor Ariza must account for at most 15% of all players selected."
+ "note": "Two relative limits: Jarrett Jack must be at least 1.5 times Dario Saric's selection, and Trevor Ariza must account for at most 15% of total players selected."
 }

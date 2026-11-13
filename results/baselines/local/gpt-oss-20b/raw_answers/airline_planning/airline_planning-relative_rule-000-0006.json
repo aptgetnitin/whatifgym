@@ -3,7 +3,7 @@
   "base_model": "airline_planning",
   "rules": [
     {
-      "name": "flight4513_min5pct",
+      "name": "flight4513_min_pct",
       "measure": "operate",
       "scope": { "flight": 4513 },
       "sense": ">=",
@@ -14,7 +14,7 @@
       "factor": 0.05
     },
     {
-      "name": "flight3077_atleast1.25x3112",
+      "name": "flight3077_min_times_3112",
       "measure": "operate",
       "scope": { "flight": 3077 },
       "sense": ">=",
@@ -25,5 +25,5 @@
       "factor": 1.25
     }
   ],
-  "note": "Flight 4513 must account for at least 5% of all operated flights; flight 3077 must be at least 1.25 times the number of flights operated for flight 3112."
+  "note": "Flight 4513 must be at least 5% of all operated flights; flight 3077 must be at least 1.25 times flight 3112."
 }

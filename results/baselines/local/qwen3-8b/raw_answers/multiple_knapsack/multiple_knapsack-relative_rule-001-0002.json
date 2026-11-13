@@ -12,11 +12,17 @@
    "relative_to": {
     "measure": "x",
     "scope": {
-     "item": "*"
+     "bin": [
+      "bin0",
+      "bin1",
+      "bin2",
+      "bin3",
+      "bin4"
+     ]
     }
    },
    "factor": 0.5
   }
  ],
- "note": "The rule ensures that bin4 has at least 50% of all item placements."
+ "note": "A rule that enforces bin4 to account for at least 50% of the total number of item placements."
 }

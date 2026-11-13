@@ -3,7 +3,7 @@
  "base_model": "drone_network",
  "rules": [
   {
-   "name": "stratford_assigned_at_least_15_percent",
+   "name": "stratford_base_min_incidents",
    "measure": "assign",
    "scope": {
     "base": "3769 E. STRATFORD ROAD Rescue Squad"
@@ -18,5 +18,5 @@
    "factor": 0.15
   }
  ],
- "note": "The rule ensures that the base 3769 E. STRATFORD ROAD Rescue Squad is assigned at least 15% of all incident locations."
+ "note": "The rule ensures that the 3769 E. STRATFORD ROAD Rescue Squad handles at least 15% of all incident locations assigned to any base."
 }

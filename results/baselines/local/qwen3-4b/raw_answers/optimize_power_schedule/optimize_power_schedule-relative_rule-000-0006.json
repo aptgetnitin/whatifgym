@@ -1,15 +1,16 @@
 {
   "version": "0.1",
   "base_model": "optimize_power_schedule",
-  "rules": [
+  "data_changes": [
     {
-      "name": "hydro_hours_limit",
-      "measure": "on",
-      "scope": {
+      "op": "scale",
+      "table": "plants",
+      "column": "on",
+      "where": {
         "plant": "HYDRO"
       },
-      "sense": "<=",
-      "value": 0.05
+      "factor": 0.05
     }
-  ]
-}
+  ],
+  "note": "A relative constraint on the number of plant-hours on for HYDRO is a scale over the matching rows."
+  }

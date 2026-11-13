@@ -3,7 +3,7 @@
   "base_model": "food_manufacture",
   "rules": [
     {
-      "name": "veg1_veg2_buy_limit",
+      "name": "veg1_buy_leq_veg2_buy",
       "measure": "buy",
       "scope": {
         "oil": "VEG1"
@@ -14,17 +14,18 @@
         "scope": {
           "oil": "VEG2"
         }
-      }
+      },
+      "factor": 1.0
     },
     {
-      "name": "veg1_storage_limit",
-      "measure": "buy",
+      "name": "veg1_storage_leq_5_percent_total",
+      "measure": "store",
       "scope": {
         "oil": "VEG1"
       },
       "sense": "<=",
       "relative_to": {
-        "measure": "buy",
+        "measure": "store",
         "scope": {
           "oil": [
             "VEG1",

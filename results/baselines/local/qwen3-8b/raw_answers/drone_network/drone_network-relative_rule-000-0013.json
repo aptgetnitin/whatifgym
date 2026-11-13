@@ -35,5 +35,5 @@
    "factor": 0.3
   }
  ],
- "note": "The first rule enforces that the linked load for base 800 VIRGINIA BEACH BLVD Fire Station is at least 3 times that of base 5145 RURITAN COURT Rescue Squad. The second rule ensures that base 5145 RURITAN COURT Rescue Squad accounts for at least 30% of all opened bases."
+ "note": "The first rule enforces that the linked load for base 800 VIRGINIA BEACH BLVD Fire Station is at least 3 times that of base 5145 RURITAN COURT Rescue Squad. The second rule ensures that base 5145 RURITAN COURT Rescue Squad accounts for at least 30% of the total number of opened bases."
 }

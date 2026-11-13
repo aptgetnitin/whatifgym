@@ -40,5 +40,5 @@
    "measure": "original"
   }
  ],
- "note": "The rule ensures that the number of placements for item4 is at least 60% of the total number of placements across all items."
+ "note": "The rule ensures that item4's placements are at least 60% of the total placements, and the objective remains to maximise the original total value."
 }

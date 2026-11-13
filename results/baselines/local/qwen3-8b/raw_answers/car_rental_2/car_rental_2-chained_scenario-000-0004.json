@@ -6,11 +6,11 @@
    "name": "damaged_transfers_to_manchester",
    "measure": "damaged_transfers",
    "scope": {
-    "from_depot": "Manchester"
+    "to_depot": "Manchester"
    },
    "sense": ">=",
    "value": 56
   }
  ],
- "note": "A rule to ensure the total damaged cars transferred to Manchester meets the specified minimum."
+ "note": "A rule to ensure the total damaged cars transferred to Manchester meets the minimum requirement."
 }

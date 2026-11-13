@@ -6,22 +6,12 @@
    "name": "damaged_transfers_to_manchester",
    "measure": "damaged_transfers",
    "scope": {
-    "from_depot": [
-     "Glasgow",
-     "Birmingham",
-     "Plymouth"
-    ],
     "to_depot": "Manchester"
    },
    "sense": ">=",
    "relative_to": {
     "measure": "damaged_transfers",
     "scope": {
-     "from_depot": [
-      "Glasgow",
-      "Birmingham",
-      "Plymouth"
-     ],
      "to_depot": [
       "Glasgow",
       "Manchester",
@@ -33,5 +23,5 @@
    "factor": 0.25
   }
  ],
- "note": "A rule that enforces damaged transfers to Manchester to be at least 25% of all damaged transfers."
+ "note": "A rule that requires damaged transfers to Manchester to be at least 25% of all damaged transfers."
 }

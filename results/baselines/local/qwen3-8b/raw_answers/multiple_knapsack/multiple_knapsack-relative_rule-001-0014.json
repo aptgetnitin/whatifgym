@@ -3,7 +3,7 @@
  "base_model": "multiple_knapsack",
  "rules": [
   {
-   "name": "item14_placement_share",
+   "name": "item14_at_least_60_percent",
    "measure": "x",
    "scope": {
     "item": "item14"
@@ -34,11 +34,5 @@
    "factor": 0.6
   }
  ],
- "objective": [
-  {
-   "sense": "max",
-   "measure": "original"
-  }
- ],
- "note": "The rule ensures that the number of placements for item14 is at least 60% of the total number of placements across all items."
+ "note": "A rule that enforces item14 to account for at least 60% of the total number of item placements."
 }

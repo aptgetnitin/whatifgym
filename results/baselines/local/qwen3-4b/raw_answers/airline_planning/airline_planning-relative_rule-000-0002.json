@@ -3,7 +3,7 @@
   "base_model": "airline_planning",
   "rules": [
     {
-      "name": "a320_22_flight_share",
+      "name": "a320_22_min_60",
       "measure": "operate",
       "scope": {
         "aircraft": "A320#22"
@@ -12,18 +12,13 @@
       "value": 0.6
     },
     {
-      "name": "a318_8_flight_limit",
+      "name": "a318_8_max_a320_22",
       "measure": "operate",
       "scope": {
         "aircraft": "A318#8"
       },
       "sense": "<=",
-      "value": {
-        "measure": "operate",
-        "scope": {
-          "aircraft": "A320#22"
-        }
-      }
+      "value": 0.6
     }
   ]
 }

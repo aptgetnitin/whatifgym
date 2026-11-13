@@ -1,9 +1,10 @@
 {
   "version": "0.1",
   "base_model": "car_rental_2",
+  "data_changes": [],
   "rules": [
     {
-      "name": "damaged_transfer_rule",
+      "name": "damaged_transfer_glasgow_manchester_wednesday",
       "measure": "undamaged_transfers",
       "scope": {
         "day": "Wednesday",
@@ -13,5 +14,6 @@
       "sense": ">=",
       "value": 78
     }
-  ]
-}
+  ],
+  "note": "A rule that requires a minimum undamaged transfer for a specific day and depot pair."
+  }

@@ -241,7 +241,7 @@
    "factor": 0.05
   },
   {
-   "name": "flight_3077_at_least_125_flight_3112",
+   "name": "flight_3077_min_rel_to_3112",
    "measure": "operate",
    "scope": {
     "flight": 3077

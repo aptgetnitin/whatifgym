@@ -7,11 +7,9 @@
       "measure": "nstart",
       "sense": "<=",
       "relative_to": {
-        "measure": "hydro_start",
-        "scope": {}
+        "measure": "hydro_start"
       },
       "factor": 1.0
     }
-  ],
-  "note": "Enforce total thermal start‑ups <= total hydro start‑ups."
+  ]
 }

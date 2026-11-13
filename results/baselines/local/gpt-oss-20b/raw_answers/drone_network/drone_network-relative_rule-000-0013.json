@@ -18,16 +18,18 @@
       "factor": 3.0
     },
     {
-      "name": "open_5145_min_fraction",
+      "name": "open_base_fraction",
       "measure": "open",
       "scope": {
         "base": "5145 RURITAN COURT Rescue Squad"
       },
       "sense": ">=",
       "relative_to": {
-        "measure": "open"
+        "measure": "open",
+        "scope": {}
       },
       "factor": 0.3
     }
-  ]
+  ],
+  "note": "Ensure linked load at 800 is at least 3× that at 5145, and 5145 accounts for at least 30% of opened bases."
 }

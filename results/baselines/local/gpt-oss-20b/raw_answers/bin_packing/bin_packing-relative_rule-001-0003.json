@@ -1,17 +1,1 @@
-{
-  "version": "0.1",
-  "base_model": "bin_packing",
-  "rules": [
-    {
-      "name": "bins_at_least_items",
-      "measure": "y",
-      "scope": {},
-      "sense": ">=",
-      "relative_to": {
-        "measure": "x",
-        "scope": {}
-      },
-      "factor": 1.0
-    }
-  ]
-}
+{"version":"0.1","base_model":"bin_packing","rules":[{"name":"bins_at_least_items","measure":"y","scope":{},"sense":">=","relative_to":{"measure":"x","scope":{}},"factor":1.0}],"note":"Ensure at least as many bins used as items packed."}

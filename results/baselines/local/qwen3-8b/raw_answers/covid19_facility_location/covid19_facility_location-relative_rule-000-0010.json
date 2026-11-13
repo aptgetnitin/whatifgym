@@ -18,5 +18,5 @@
    "factor": 0.75
   }
  ],
- "note": "A rule enforces that the number of temporary facilities built at T15 is at least 75% of the total number of temporary facilities built."
+ "note": "A rule ensures that the number of temporary facilities built at T15 is at least 75% of the total number of temporary facilities built."
 }

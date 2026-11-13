@@ -3,18 +3,17 @@
   "base_model": "car_rental_2",
   "rules": [
     {
-      "name": "damaged_to_manchester_min_60",
+      "name": "damaged_transfers_to_Manchester_min_60_percent",
       "measure": "damaged_transfers",
       "scope": {
         "to_depot": "Manchester"
       },
       "sense": ">=",
       "relative_to": {
-        "measure": "damaged_transfers",
-        "scope": {}
+        "measure": "damaged_transfers"
       },
       "factor": 0.6
     }
   ],
-  "note": "At least 60% of all damaged transfers must go to Manchester."
+  "note": "At least 60% of all damaged car transfers must go to Manchester."
 }

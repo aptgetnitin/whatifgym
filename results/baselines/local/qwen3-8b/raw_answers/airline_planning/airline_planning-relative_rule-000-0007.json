@@ -241,7 +241,7 @@
    "factor": 0.3
   },
   {
-   "name": "flight_3097_max_rel_to_4265",
+   "name": "flight_3097_max_share",
    "measure": "operate",
    "scope": {
     "flight": 3097

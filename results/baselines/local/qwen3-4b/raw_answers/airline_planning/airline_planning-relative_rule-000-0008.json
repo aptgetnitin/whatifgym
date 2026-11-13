@@ -12,7 +12,7 @@
       "value": 0.05
     },
     {
-      "name": "a319_5_flight_limit",
+      "name": "a319_5_a318_5_flight_ratio",
       "measure": "operate",
       "scope": {
         "aircraft": "A319#5"
@@ -20,6 +20,5 @@
       "sense": "<=",
       "value": 0.25
     }
-  ],
-  "note": "Two relative limits: aircraft A319#11 must account for at most 5% of all number of flights operated; and the number of flights operated for aircraft A319#5 must be at most 25% of the number of flights operated for aircraft A318#5."
+  ]
 }

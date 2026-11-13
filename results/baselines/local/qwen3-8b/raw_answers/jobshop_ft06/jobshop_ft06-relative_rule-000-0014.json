@@ -9,9 +9,8 @@
     {
      "measure": "goes_first",
      "scope": {
-      "machine": "machine",
-      "job": "J3",
-      "other_job": "other_job"
+      "machine": "*",
+      "job": "J3"
      },
      "sense": "<=",
      "value": 0.05
@@ -19,12 +18,10 @@
     {
      "measure": "goes_first",
      "scope": {
-      "machine": "machine",
-      "job": "other_job",
-      "other_job": "other_job"
+      "machine": "*"
      },
      "sense": ">=",
-     "value": 0
+     "value": 1
     }
    ]
   }

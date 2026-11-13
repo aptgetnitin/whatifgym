@@ -97,5 +97,5 @@
    "factor": 0.5
   }
  ],
- "note": "Two relative limits: unfilled jobs at least 1.5 times assigned jobs, and Freiburg im Breisgau legs at least 50% of all legs."
+ "note": "Two relative limits: unfilled jobs at least 1.5 times assigned jobs, and Freiburg im Breisgau legs at least 50% of total legs."
 }

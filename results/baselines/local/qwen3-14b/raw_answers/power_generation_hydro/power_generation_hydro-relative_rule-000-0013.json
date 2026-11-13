@@ -3,7 +3,7 @@
   "base_model": "power_generation_hydro",
   "rules": [
     {
-      "name": "thermal_hydro_startups",
+      "name": "thermal_start_limit",
       "measure": "nstart",
       "scope": {
         "type": [

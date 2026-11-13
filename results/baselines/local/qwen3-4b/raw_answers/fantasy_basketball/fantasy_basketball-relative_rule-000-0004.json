@@ -3,7 +3,7 @@
   "base_model": "fantasy_basketball",
   "rules": [
     {
-      "name": "jarrett_jack_at_least_150_percent_saric",
+      "name": "jarrett_jack_at_least_15_saric",
       "measure": "pick",
       "scope": {
         "player": "Jarrett Jack"
@@ -24,11 +24,11 @@
         "player": "Trevor Ariza"
       },
       "sense": "<=",
-      "factor": 0.15,
+      "value": 0.15,
       "relative_to": {
         "measure": "pick",
         "scope": {
-          "player": "all"
+          "player": "player"
         }
       }
     }

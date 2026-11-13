@@ -11,7 +11,7 @@
   ],
   "rules": [
     {
-      "name": "damaged_transfers_manchester_at_least_56",
+      "name": "damaged_transfers_to_manchester_at_least_56",
       "measure": "damaged_transfers",
       "scope": {
         "to_depot": "Manchester"

@@ -1,1 +1,20 @@
-{"version":"0.1","base_model":"mining","rules":[{"name":"Mine4_work_share","measure":"operate","scope":{"mine":"Mine4"},"sense":">=","relative_to":{"measure":"operate","scope":{}},"factor":0.75}]}
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Mine4_work_share",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {}
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Mine4 must account for at least 75% of the total number of mine-years worked."
+}

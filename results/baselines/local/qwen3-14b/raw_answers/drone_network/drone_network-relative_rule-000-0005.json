@@ -11,7 +11,11 @@
    "sense": "<=",
    "relative_to": {
     "measure": "open",
-    "scope": {}
+    "scope": {
+     "base": {
+      "type": "string"
+     }
+    }
    },
    "factor": 0.15
   }

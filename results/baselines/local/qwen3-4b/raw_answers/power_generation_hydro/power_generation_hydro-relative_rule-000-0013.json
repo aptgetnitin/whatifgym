@@ -1,45 +1,30 @@
 {
   "version": "0.1",
   "base_model": "power_generation_hydro",
-  "rules": [
+  "logic": [
     {
       "name": "thermal_starts_le_hydro_starts",
-      "measure": "nstart",
-      "scope": {
-        "period": [
-          "00-06",
-          "06-09",
-          "09-15",
-          "15-18",
-          "18-24"
-        ],
-        "type": [
-          "Thermal0",
-          "Thermal1",
-          "Thermal2"
-        ]
-      },
-      "sense": "<=",
-      "value": 1
-    },
-    {
-      "name": "hydro_starts_le_thermal_starts",
-      "measure": "hydro_start",
-      "scope": {
-        "period": [
-          "00-06",
-          "06-09",
-          "09-15",
-          "15-18",
-          "18-24"
-        ],
-        "hydro": [
-          "HydroA",
-          "HydroB"
-        ]
-      },
-      "sense": "<=",
-      "value": 1
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "nstart",
+          "scope": {
+            "period": "*",
+            "type": "*"
+          },
+          "sense": "<=",
+          "value": 1
+        },
+        {
+          "measure": "hydro_start",
+          "scope": {
+            "period": "*",
+            "hydro": "*"
+          },
+          "sense": ">=",
+          "value": 1
+        }
+      ]
     }
   ]
 }

@@ -22,7 +22,7 @@
    "factor": 0.1
   },
   {
-   "name": "thermal_start_period_15_18_ge_00_06",
+   "name": "thermal_start_15_18_ge_00_06",
    "measure": "nstart",
    "scope": {
     "period": "15-18",

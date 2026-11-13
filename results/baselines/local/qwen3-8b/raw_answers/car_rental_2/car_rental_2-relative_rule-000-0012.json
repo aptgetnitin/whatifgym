@@ -3,7 +3,7 @@
  "base_model": "car_rental_2",
  "rules": [
   {
-   "name": "undamaged_left_saturday_tuesday",
+   "name": "undamaged_left_saturday_limit",
    "measure": "undamaged_left",
    "scope": {
     "day": "Saturday"
@@ -18,7 +18,7 @@
    "factor": 1.0
   },
   {
-   "name": "undamaged_transfers_thursday_percent",
+   "name": "undamaged_transfers_thursday_limit",
    "measure": "undamaged_transfers",
    "scope": {
     "day": "Thursday"
@@ -27,11 +27,11 @@
    "relative_to": {
     "measure": "undamaged_transfers",
     "scope": {
-     "day": "all"
+     "day": "Monday"
     }
    },
    "factor": 0.05
   }
  ],
- "note": "The first rule ensures that the undamaged cars kept overnight on Saturday are at most the same as those on Tuesday. The second rule limits the undamaged transfers on Thursday to at most 5% of all undamaged transfers."
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
 }

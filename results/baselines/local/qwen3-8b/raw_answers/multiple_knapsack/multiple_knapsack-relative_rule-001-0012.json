@@ -3,7 +3,7 @@
  "base_model": "multiple_knaps",
  "rules": [
   {
-   "name": "bin1_at_least_40_percent",
+   "name": "bin1_placement_share",
    "measure": "x",
    "scope": {
     "bin": "bin1"
@@ -12,11 +12,17 @@
    "relative_to": {
     "measure": "x",
     "scope": {
-     "item": "*"
+     "bin": [
+      "bin0",
+      "bin1",
+      "bin2",
+      "bin3",
+      "bin4"
+     ]
     }
    },
    "factor": 0.4
   }
  ],
- "note": "A rule that enforces bin1 to account for at least 40% of all item placements."
+ "note": "A rule that enforces bin1 to account for at least 40% of the total item placements."
 }

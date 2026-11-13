@@ -3,7 +3,7 @@
   "base_model": "airline_planning",
   "rules": [
     {
-      "name": "flight4564_75pct",
+      "name": "flight4564_min_75pct",
       "measure": "operate",
       "scope": {
         "flight": 4564
@@ -15,5 +15,5 @@
       "factor": 0.75
     }
   ],
-  "note": "Flight 4564 must account for at least 75% of all flights operated."
+  "note": "Flight 4564 must account for at least 75% of total flights operated."
 }

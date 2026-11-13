@@ -5,27 +5,22 @@
     {
       "name": "sat_le_tue_undamaged_left",
       "measure": "undamaged_left",
-      "scope": {
-        "day": "Saturday"
-      },
+      "scope": { "day": "Saturday" },
       "sense": "<=",
       "relative_to": {
         "measure": "undamaged_left",
-        "scope": {
-          "day": "Tuesday"
-        }
+        "scope": { "day": "Tuesday" }
       },
       "factor": 1.0
     },
     {
-      "name": "thu_transfers_5pct",
+      "name": "thu_transfers_at_most_5pct",
       "measure": "undamaged_transfers",
-      "scope": {
-        "day": "Thursday"
-      },
+      "scope": { "day": "Thursday" },
       "sense": "<=",
       "relative_to": {
-        "measure": "undamaged_transfers"
+        "measure": "undamaged_transfers",
+        "scope": {}
       },
       "factor": 0.05
     }

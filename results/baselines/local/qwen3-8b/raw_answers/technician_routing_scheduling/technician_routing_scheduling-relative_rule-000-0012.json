@@ -12,7 +12,15 @@
    "relative_to": {
     "measure": "use",
     "scope": {
-     "technician": "technician"
+     "technician": [
+      "Albert",
+      "Bob",
+      "Carlos",
+      "Doris",
+      "Ed",
+      "Flor",
+      "Gina"
+     ]
     }
    },
    "factor": 0.75
@@ -21,17 +29,33 @@
    "name": "assigned_jobs_unfilled_ratio",
    "measure": "assign",
    "scope": {
-    "customer": "customer"
+    "customer": [
+     "Customer1",
+     "Customer2",
+     "Customer3",
+     "Customer4",
+     "Customer5",
+     "Customer6",
+     "Customer7"
+    ]
    },
    "sense": "<=",
    "relative_to": {
     "measure": "unfilled",
     "scope": {
-     "customer": "customer"
+     "customer": [
+      "Customer1",
+      "Customer2",
+      "Customer3",
+      "Customer4",
+      "Customer5",
+      "Customer6",
+      "Customer7"
+     ]
     }
    },
    "factor": 0.75
   }
  ],
- "note": "Two relative limits: Flor must account for at least 75% of all dispatched technicians; total assigned jobs may be at most 75% of total unfilled jobs."
+ "note": "Two relative limits: Flor must account for at least 75% of the total number of dispatched technicians; and the total number of assigned jobs may be at most 75% of the total number of unfilled jobs."
 }

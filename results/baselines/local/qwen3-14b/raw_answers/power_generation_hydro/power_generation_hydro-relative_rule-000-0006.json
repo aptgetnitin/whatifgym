@@ -6,23 +6,13 @@
       "name": "thermal_output_15_18_leq_00_06",
       "measure": "output",
       "scope": {
-        "period": "15-18",
-        "type": [
-          "Thermal0",
-          "Thermal1",
-          "Thermal2"
-        ]
+        "period": "15-18"
       },
       "sense": "<=",
       "relative_to": {
         "measure": "output",
         "scope": {
-          "period": "00-06",
-          "type": [
-            "Thermal0",
-            "Thermal1",
-            "Thermal2"
-          ]
+          "period": "00-06"
         }
       },
       "factor": 1.0

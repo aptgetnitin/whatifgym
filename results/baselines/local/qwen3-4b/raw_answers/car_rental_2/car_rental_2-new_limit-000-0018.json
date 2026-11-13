@@ -20,15 +20,10 @@
       "value": 2
     },
     {
-      "name": "damaged_transfers_birmingham_min",
+      "name": "damaged_transfers_to_birmingham_at_least_40",
       "measure": "damaged_transfers",
       "scope": {
-        "from_depot": [
-          "Birmingham"
-        ],
-        "to_depot": [
-          "Birmingham"
-        ]
+        "to_depot": "Birmingham"
       },
       "sense": ">=",
       "value": 40

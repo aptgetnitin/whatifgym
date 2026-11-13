@@ -10,8 +10,7 @@
       },
       "sense": ">=",
       "relative_to": {
-        "measure": "operate",
-        "scope": {}
+        "measure": "operate"
       },
       "factor": 0.6
     },
@@ -31,5 +30,5 @@
       "factor": 1.0
     }
   ],
-  "note": "Ensure A320#22 operates at least 60% of all flights, and A318#8 operates no more than A320#22."
+  "note": "Ensure A320#22 operates at least 60% of total flights, and A318#8 does not exceed A320#22."
 }

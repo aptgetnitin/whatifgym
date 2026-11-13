@@ -6,13 +6,16 @@
       "name": "undamaged_left_saturday_vs_tuesday",
       "measure": "undamaged_left",
       "scope": {
-        "day": "Saturday"
+        "day": "Saturday",
+        "depot": "all"
       },
       "sense": "<=",
+      "value": 0,
       "relative_to": {
         "measure": "undamaged_left",
         "scope": {
-          "day": "Tuesday"
+          "day": "Tuesday",
+          "depot": "all"
         }
       },
       "factor": 1.0
@@ -21,12 +24,18 @@
       "name": "undamaged_transfers_thursday_limit",
       "measure": "undamaged_transfers",
       "scope": {
-        "day": "Thursday"
+        "day": "Thursday",
+        "from_depot": "all",
+        "to_depot": "all"
       },
       "sense": "<=",
       "relative_to": {
         "measure": "undamaged_transfers",
-        "scope": {}
+        "scope": {
+          "day": "all",
+          "from_depot": "all",
+          "to_depot": "all"
+        }
       },
       "factor": 0.05
     }

@@ -6,12 +6,15 @@
       "name": "other_train_e_clearing_resource",
       "measure": "goes_first",
       "scope": {
+        "resource": "resource",
         "other_train": "E"
       },
       "sense": ">=",
       "relative_to": {
         "measure": "goes_first",
-        "scope": {}
+        "scope": {
+          "resource": "resource"
+        }
       },
       "factor": 0.2
     },
@@ -19,12 +22,14 @@
       "name": "train_d_meet_pairs",
       "measure": "meet",
       "scope": {
+        "resource": "resource",
         "train": "D"
       },
       "sense": ">=",
       "relative_to": {
         "measure": "meet",
         "scope": {
+          "resource": "resource",
           "train": "B"
         }
       },

@@ -33,5 +33,5 @@
    "factor": 0.4
   }
  ],
- "note": "Rules enforce the required proportionality between the number of flights operated for flight 4568 and 4575, and the contribution of aircraft A319#11 to the total number of flights operated."
+ "note": "Rules enforce the required proportionality between the number of flights operated for specific flights and the contribution of a specific aircraft to the total number of operated flights."
 }

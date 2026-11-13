@@ -1,23 +1,30 @@
 {
   "version": "0.1",
   "base_model": "jobshop_ft06",
-  "rules": [
+  "logic": [
     {
-      "name": "job_pair_limit_j0_j4",
-      "measure": "goes_first",
-      "scope": {
-        "machine": "all",
-        "job": "J0"
-      },
-      "sense": "<=",
-      "relative_to": {
-        "measure": "goes_first",
-        "scope": {
-          "machine": "all",
-          "job": "J4"
+      "name": "job_pair_limit",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "any",
+            "job": "J0"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "goes_first",
+          "scope": {
+            "machine": "any",
+            "job": "J4"
+          },
+          "sense": ">=",
+          "value": 0
         }
-      },
-      "factor": 1.0
+      ]
     }
   ]
 }

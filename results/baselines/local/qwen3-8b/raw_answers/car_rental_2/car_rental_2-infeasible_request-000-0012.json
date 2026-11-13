@@ -12,5 +12,5 @@
    "value": 133
   }
  ],
- "note": "The scenario requires at least 133 damaged cars to be transferred from Glasgow, which is enforced through a rule."
+ "note": "A rule to ensure the total number of damaged cars transferred from Glasgow meets the minimum requirement."
 }

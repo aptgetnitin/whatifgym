@@ -3,7 +3,7 @@
   "base_model": "drone_network",
   "rules": [
     {
-      "name": "queue_load_5600_MEER_ST_at_most_50_percent_of_1700_VIRGINIA_BEACH_BL",
+      "name": "linked_load_5600_MEER_ST_at_most_50_percent_of_1700_VIRGINIA_BEACH_BL",
       "measure": "linked_load",
       "scope": {
         "location": "5600 MEER ST",

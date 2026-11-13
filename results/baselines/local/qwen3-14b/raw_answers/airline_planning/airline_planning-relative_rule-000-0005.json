@@ -7,8 +7,7 @@
       "measure": "operate",
       "scope": {
         "flight": [
-          4568,
-          4575
+          4568
         ]
       },
       "sense": ">=",

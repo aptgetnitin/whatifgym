@@ -1,1 +1,34 @@
-{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"measure":"stop","scope":{"hour":8},"sense":"<=","relative_to":{"measure":"stop","scope":{}},"factor":0.15},{"measure":"on","scope":{"plant":"Scherer"},"sense":">=","relative_to":{"measure":"on","scope":{"plant":"BIOMASS"}},"factor":3.0}]}
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "hour8_shutdowns_limit",
+      "measure": "stop",
+      "scope": {
+        "hour": 8
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "stop",
+        "scope": {}
+      },
+      "factor": 0.15
+    },
+    {
+      "name": "scherer_vs_biomass_on",
+      "measure": "on",
+      "scope": {
+        "plant": "Scherer"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "plant": "BIOMASS"
+        }
+      },
+      "factor": 3
+    }
+  ]
+}

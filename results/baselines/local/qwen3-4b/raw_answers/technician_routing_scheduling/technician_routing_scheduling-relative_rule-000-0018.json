@@ -3,7 +3,7 @@
   "base_model": "technician_routing_scheduling",
   "rules": [
     {
-      "name": "start_time_lahr_offenburg",
+      "name": "start_time_lahr_schwarzwald_le_offenburg",
       "measure": "start_time",
       "scope": {
         "location": [

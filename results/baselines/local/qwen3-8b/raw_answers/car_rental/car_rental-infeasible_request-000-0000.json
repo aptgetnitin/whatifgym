@@ -4,27 +4,15 @@
  "data_changes": [
   {
    "op": "set",
-   "table": "return_shares",
-   "column": "share",
+   "table": "damaged_transfers",
+   "column": "damaged_transfers",
    "where": {
-    "from_depot": "Plymouth",
-    "to_depot": "Birmingham"
-   },
-   "value": 0.476
-  }
- ],
- "rules": [
-  {
-   "name": "damaged_transfers_wed_plymouth_birmingham",
-   "measure": "damaged_transfers",
-   "scope": {
     "day": "Wednesday",
     "from_depot": "Plymouth",
     "to_depot": "Birmingham"
    },
-   "sense": ">=",
    "value": 47.6
   }
  ],
- "note": "The question is to set the return share from Plymouth to Birmingham to 47.6% and ensure that the damaged transfers for Wednesday from Plymouth to Birmingham are at least 47.6."
+ "note": "Setting the damaged_transfers value for Wednesday, Plymouth to Birmingham to 47.6."
 }

@@ -10,15 +10,19 @@
  ],
  "rules": [
   {
-   "name": "total_damaged_transferred_to_birmingham",
+   "name": "damaged_transfers_to_birmingham",
    "measure": "damaged_transfers",
    "scope": {
-    "from_depot": "*",
     "to_depot": "Birmingham"
    },
    "sense": ">=",
-   "value": 40
+   "relative_to": {
+    "measure": "damaged_transfers",
+    "scope": {
+     "to_depot": "Birmingham"
+    }
+   },
+   "factor": 40
   }
- ],
- "note": "A cap on the total number of expansion options and a rule to ensure the total damaged cars transferred to Birmingham meets the minimum requirement."
+ ]
 }

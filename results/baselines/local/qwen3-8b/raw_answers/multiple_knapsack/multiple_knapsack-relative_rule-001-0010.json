@@ -3,7 +3,7 @@
  "base_model": "multiple_knaps",
  "rules": [
   {
-   "name": "item5_at_least_75_of_all_placements",
+   "name": "item5_at_least_75_percent",
    "measure": "x",
    "scope": {
     "item": "item5"
@@ -39,5 +39,5 @@
    "measure": "original"
   }
  ],
- "note": "The rule ensures that item5's placements are at least 75% of all placements, and the objective remains to maximise the original objective."
+ "note": "The rule ensures that item5's placements are at least 75% of the total placements of all items except itself."
 }

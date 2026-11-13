@@ -1,1 +1,1 @@
-{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"damaged_transfers_from_Glasgow_at_least_133","measure":"damaged_transfers","scope":{"from_depot":"Glasgow"},"sense":">=","value":133}],"note":"Check feasibility of at least 133 damaged cars transferred from Glasgow."}
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"min_damaged_transfers_from_Glasgow","measure":"damaged_transfers","scope":{"from_depot":"Glasgow"},"sense":">=","value":133}]}

@@ -18,5 +18,5 @@
    "factor": 0.3
   }
  ],
- "note": "The rule ensures that task_3's assignments are at least 30% of all task assignments."
+ "note": "The rule ensures that task_3's assignments are at least 30% of the total assignments."
 }

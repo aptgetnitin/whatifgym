@@ -29,7 +29,7 @@
       }
     },
     {
-      "name": "undamaged_transfers_thu_leq_5_pct",
+      "name": "undamaged_transfers_thu_at_most_5_pct",
       "measure": "undamaged_transfers",
       "scope": {
         "day": "Thursday"

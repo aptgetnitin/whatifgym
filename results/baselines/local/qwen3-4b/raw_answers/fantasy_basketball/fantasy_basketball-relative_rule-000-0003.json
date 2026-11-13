@@ -3,7 +3,7 @@
   "base_model": "fantasy_basketball",
   "rules": [
     {
-      "name": "dario_saric_at_least_jarrett_jack",
+      "name": "dario_saric_at_least_125_jarrett_jack",
       "measure": "pick",
       "scope": {
         "player": "Dario Saric"
@@ -28,7 +28,11 @@
       "relative_to": {
         "measure": "pick",
         "scope": {
-          "player": "Dario Saric"
+          "player": [
+            "Dario Saric",
+            "Jarrett Jack",
+            "Trevor Ariza"
+          ]
         }
       }
     }

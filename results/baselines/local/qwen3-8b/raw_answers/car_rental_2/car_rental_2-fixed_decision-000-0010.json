@@ -9,18 +9,14 @@
         "step": 2
       },
       "value": 1
-    }
-  ],
-  "rules": [
+    },
     {
-      "name": "undamaged_transfers_sat_birmingham_to_manchester",
       "measure": "undamaged_transfers",
       "scope": {
         "day": "Saturday",
         "from_depot": "Birmingham",
         "to_depot": "Manchester"
       },
-      "sense": "==",
       "value": 3
     }
   ],

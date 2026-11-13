@@ -3,7 +3,7 @@
   "base_model": "airline_planning",
   "rules": [
     {
-      "name": "rule_1",
+      "name": "flight_4564_at_most_50_of_4575",
       "measure": "operate",
       "scope": {
         "aircraft": "A320#22",
@@ -20,7 +20,7 @@
       }
     },
     {
-      "name": "rule_2",
+      "name": "A320_22_at_most_5_of_total",
       "measure": "operate",
       "scope": {
         "aircraft": "A320#22"

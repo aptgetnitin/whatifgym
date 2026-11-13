@@ -35,5 +35,5 @@
    "factor": 1.0
   }
  ],
- "note": "Rules enforce that T17 must account for at least 75% of all temporary facilities built and that patients assigned to E12 are at most the same as those assigned to E6."
+ "note": "Rules enforce that T17 must account for at least 75% of the total temporary facilities built and that the patients assigned to E12 must not exceed those assigned to E6."
 }

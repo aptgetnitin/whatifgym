@@ -18,7 +18,7 @@
    "factor": 0.5
   },
   {
-   "name": "team_0_1_percentage",
+   "name": "team_0_1_limit",
    "measure": "team",
    "scope": {
     "team": "team_0_1"

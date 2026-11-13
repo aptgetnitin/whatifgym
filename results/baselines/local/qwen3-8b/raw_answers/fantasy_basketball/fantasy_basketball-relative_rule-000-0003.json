@@ -18,7 +18,7 @@
    "factor": 1.25
   },
   {
-   "name": "trevor_ariza_at_most_15_of_all_players",
+   "name": "trevor_ariza_at_most_15_total_players",
    "measure": "pick",
    "scope": {
     "player": "Trevor Ariza"
@@ -27,11 +27,11 @@
    "relative_to": {
     "measure": "pick",
     "scope": {
-     "player": "*"
+     "player": "player"
     }
    },
    "factor": 0.15
   }
  ],
- "note": "Rules enforce a relative constraint between the number of players picked for Dario Saric and Jarrett Jack, and a relative constraint on Trevor Ariza's contribution to the total number of players picked."
+ "note": "Rules enforce that Dario Saric's selection is at least 1.25 times Jarrett Jack's and Trevor Ariza's selection is at most 15% of the total players selected."
 }
