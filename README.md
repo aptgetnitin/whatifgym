@@ -13,7 +13,7 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 > | Tasks (current set) | 3,722 template tasks + 45 verified paraphrases, in 224 files; shared outcomes removed (`_v1`, section 11) |
 > | Tests | 766 pass, 7 slow tests skipped |
 > | Untrained LLMs (current set, Nov 12) | Qwen3 4B 25.3 %, 8B 59.1 %, 14B 72.2 %, gpt-oss 20B 89.4 % (section 11) |
-> | Training result | GRPO on Qwen3 4B, one GPU, three base models held out: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds; section 11) |
+> | Training result | GRPO on Qwen3 4B, one GPU. Three base models held out, 80 steps: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds). 14 base models held out, 160 steps: 52.5 % → 67.5 % (+15.0 points, 1 seed; section 11) |
 
 ---
 
@@ -543,7 +543,41 @@ Qwen3-4B-Instruct-2507, 4-bit with a LoRA adapter (rank 32), GRPO with the envir
 | Valid scenario | 73 % | 79 % | +6 |
 | Biggest family gains | infeasible 59 %, data 69 % | infeasible 73 %, data 78 % | +14, +9 |
 
-Five families gained, none lost. It is one seed on 200 tasks, so not yet significant alone. In 37–88 % of question groups all four answers scored the same, which gives GRPO no signal. The next run trains only on tasks of medium difficulty (pass rate 0.1–0.9), keeps three base models out of training and scores them apart, and uses three seeds. Setup, commands, every run and its numbers: [training/RUNPOD.md](training/RUNPOD.md).
+Five families gained, none lost. It is one seed on 200 tasks, so not significant alone. In 37–88 % of question groups all four answers scored the same, which gives GRPO no signal. The later runs therefore train only on tasks of medium difficulty (pass rate 0.1–0.9 over 8 samples) and keep whole base models out of training.
+
+### Training: filtered tasks, three held-out base models, 3 seeds (Nov 1–2)
+
+Same model and settings, 80 steps, 171 training tasks inside the pass-rate range. Power generation, manpower planning and mining are never seen in training.
+
+| | Seed 1 | Seed 2 | Seed 3 |
+|---|---|---|---|
+| Held-out models (200 tasks), before → after | 55.0 % → **68.0 %** | 56.0 % → **67.0 %** | 56.0 % → **66.0 %** |
+| Training models, test tasks (131), before → after | 51.9 % → 63.4 % | 52.7 % → 63.4 % | 51.1 % → 61.1 % |
+
+Mean gain on the held-out models: **+11.3 points** (standard deviation 1.5); every seed p ≤ 1.1e-5 (exact McNemar test).
+
+### Training: learning curve, 14 held-out base models (Nov 12)
+
+One seed, 160 steps, on the final task set (3,722 tasks). The training pool is the same 11 base models (176 tasks inside the pass-rate range, of 669). The 14 held-out base models are the 3 above plus the 11 added in November. Both test sets are scored before training, every 20 steps and after (greedy; 400 held-out tasks, 131 test tasks of the training models).
+
+| Step | Held-out models: correct | Held-out models: valid | Training models, test: correct |
+|---|---|---|---|
+| 0 | 52.5 % | 71.5 % | 54.2 % |
+| 20 | 56.2 % | 73.8 % | 57.2 % |
+| 40 | 57.5 % | 78.2 % | 60.3 % |
+| 60 | 62.0 % | 81.0 % | 62.6 % |
+| 80 | 64.0 % | 81.8 % | 65.6 % |
+| 100 | 65.8 % | 83.2 % | 66.4 % |
+| 120 | 67.0 % | 85.2 % | 67.9 % |
+| 140 | 66.5 % | 84.5 % | 68.7 % |
+| 160 | **67.5 %** | 85.0 % | **68.7 %** |
+
+1. **Held-out models: +15.0 points** (63 tasks gained, 3 lost; p = 1.3e-15; 95 % interval +11.2 to +18.8). Training models: +14.5 points (20 gained, 1 lost).
+2. **Most of the gain comes in the first 100 steps;** the curve is flat from step 120.
+3. **Relative rules gain the most** on the held-out models (17.5 % → 61.4 %). Logical rules stay hard (24.4 % → 26.8 %).
+4. It is one seed. Two more seeds are the next training step.
+
+About 2.7 hours of one RTX 4090 for training and the 9 evaluations (pod cost about $2.81 with set-up). Per-task results: `training/results/run5_seed1_summary.json`. Setup, commands, every run and its numbers: [training/RUNPOD.md](training/RUNPOD.md).
 
 ---
 
@@ -670,13 +704,13 @@ flowchart TB
         D3["10 families, 2,239 tasks<br/>(shared outcomes removed)"]
         D4["5 trivial agents"]
         D5["4 LLMs on every task"]
-        D6["GRPO pilot:<br/>51.5 % → 56.0 %"]
+        D6["GRPO, held-out base models:<br/>52.5 % → 67.5 %"]
     end
     subgraph X["Next"]
         direction LR
         X1["Frontier APIs on<br/>all 10 families"]
         X4["Hand audit<br/>(200 tasks)"]
-        X5["GRPO: 3 seeds, filtered tasks,<br/>held-out base models"]
+        X5["GRPO learning curve:<br/>2 more seeds"]
     end
     D --> X
 ```
@@ -693,7 +727,9 @@ flowchart TB
 | done | All 10 families: `infeasible_request` and `chained_scenario` built Oct 7 |
 | done | Shared outcomes removed: 16 files regenerated as `_v1`, 4 paraphrase files dropped; probe 1.7 % (Nov 1) |
 | done | GRPO pilot on one RTX 4090: Qwen3 4B, 51.5 % → 56.0 % on 200 test tasks, one seed (Nov 1) |
-| next | GRPO with a pass-rate filter, three held-out base models and 3 seeds |
+| done | GRPO with a pass-rate filter, three held-out base models and 3 seeds: 55.7 % → 67.0 % on the held-out models, +11.3 points (Nov 1–2) |
+| done | GRPO learning curve, 160 steps, 14 held-out base models, one seed: 52.5 % → 67.5 % on the held-out models (Nov 12) |
+| next | Two more seeds of the learning curve |
 | done | 6 more base models (economic planning, fantasy basketball, assignment, COVID-19 facilities, railway dispatching, power schedule): 20 models, 3,093 tasks (Nov 2) |
 | done | 5 more base models (technician routing, drone network, airline planning, job-shop ft06, single-machine scheduling): 25 models, 3,761 tasks (Nov 2) |
 | done | Hand-audit sample drawn (`audit/audit_v1.md`, 200 tasks, `scripts/make_audit_pack.py`). A first read by two reviewer agents found no wrong label, 5 ambiguous questions and 26 awkward ones; the templates were fixed, 747 questions reworded in place (`tasks/reworded_2026-11-12.txt`) and 5 tasks dropped: 3,722 tasks (Nov 12). The audit by a person is still to do. A second pass the same day dropped 34 more tasks (8 whose gold answer depends on the HiGHS release, 26 unreachable if-then thresholds; `tasks/dropped_2026-11-12.txt`) and reworded 82 questions (`tasks/reworded_2026-11-12b.txt`); the sample was redrawn. Audit page for the person's read: private claude.ai artifact. |

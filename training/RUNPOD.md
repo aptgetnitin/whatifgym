@@ -351,7 +351,35 @@ python training/grpo_pilot.py $H --pass-rates results/training/pass8/pass_rates.
     --eval-tasks 400 --workers 28 --seed 1 --out results/training/run5_seed1
 ```
 
-Timeline (UTC): 05:48:20 pod created; 05:50:34 set-up done; 05:50 to 05:59 smoke test; 06:00:10 pass rates start.
+Timeline (UTC): 05:48:20 pod created; 05:50:34 set-up done; 05:50 to 05:59 smoke test; 06:00:10 pass rates start; 06:11:38 training start; 08:57:11 training end (exit 0); 08:57:37 results downloaded (106 MB, size checked against the pod's file); 08:58 pod terminated with `delete-pod`, `list-pods` returned no pods. In Pacific time: created Nov 12, 9:48 PM; terminated Nov 13, 12:58 AM.
+
+**Cost: about $2.81** (3 h 10 min at $0.89/hr), under the $3.50 cap. The two deadline guards were not needed (pod guard due 09:27 UTC, Mac guard 09:13 UTC; the Mac guard was stopped after the pod was gone).
+
+**Pass rates** (669 training tasks of the 11 training models, 8 samples each): pass@1 54.8 %, pass@8 67.3 %; 176 tasks (26.3 %) inside [0.1, 0.9] and used for training.
+
+**Result, seed 1** (greedy; 400 tasks of the 14 held-out base models, 131 test tasks of the training models):
+
+| Step | Held-out: correct | Held-out: valid | Held-out: mean reward | Training models, test: correct | Test: valid |
+|---|---|---|---|---|---|
+| 0 | 52.5 % | 71.5 % | 0.597 | 54.2 % | 72.5 % |
+| 20 | 56.2 % | 73.8 % | 0.636 | 57.2 % | 77.9 % |
+| 40 | 57.5 % | 78.2 % | 0.653 | 60.3 % | 81.7 % |
+| 60 | 62.0 % | 81.0 % | 0.701 | 62.6 % | 85.5 % |
+| 80 | 64.0 % | 81.8 % | 0.722 | 65.6 % | 85.5 % |
+| 100 | 65.8 % | 83.2 % | 0.741 | 66.4 % | 87.0 % |
+| 120 | 67.0 % | 85.2 % | 0.755 | 67.9 % | 87.8 % |
+| 140 | 66.5 % | 84.5 % | 0.750 | 68.7 % | 88.5 % |
+| 160 | **67.5 %** | 85.0 % | 0.760 | **68.7 %** | 89.3 % |
+
+- Held-out models: **+15.0 points**, 63 tasks gained and 3 lost, exact McNemar p = 1.3e-15, 95 % bootstrap interval of the change +11.2 to +18.8 points.
+- Training models, test tasks: +14.5 points, 20 gained and 1 lost, p = 2.1e-5, interval +8.4 to +21.4.
+- Held-out models by family, before → after: relative rule 17.5 → 61.4 %, objective change 50.0 → 65.6 %, infeasible request 47.5 → 60.0 %, chained scenario 60.7 → 72.1 %, fixed decision 75.5 → 86.8 %, new limit 71.1 → 82.2 %, data change 68.4 → 78.9 %, logical rule 24.4 → 26.8 %, relax or remove 50.0 → 50.0 %.
+- Training reward: 0.634 (steps 1–20) to 1.042 (steps 141–160). 60.2 s per step including the evaluations; peak GPU memory 19.3 GB.
+- The curve is flat from step 120, so 160 steps are enough for this pool.
+
+Kept: `training/results/run5_seed1_summary.json` (curve, per-task `correct` strings, reward per step), `run5_seed1_eval_task_ids.json`, `run5_pass_rates.json`. The LoRA adapter (137 MB) is kept on the Mac outside the repository this time.
+
+Next: 2 more seeds (about $5; pass rates can be reused with `--pass-rates training/results/run5_pass_rates.json`, which saves about 11 minutes per pod).
 
 ## Problems hit, in order
 
