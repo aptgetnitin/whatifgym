@@ -309,6 +309,40 @@ zsh rejects `\>` inside `[ ]` (`condition expected: >`), so the time limit never
 
 Terminated with `delete-pod`; `list-pods` then returned no pods.
 
+## Run 5: learning curve with 14 held-out base models (Nov 12 evening)
+
+Decided Nov 12: the base models stay at 25 and the training pool stays at the original 11. The 11 base models added in November join the 3 of run 4 as held-out models, so one run gives both the learning curve and a wider held-out score. The run 4 adapters were not kept, so this is a fresh training run. Task set: commit `b31571b` (3,722 template tasks, after the second pre-audit pass).
+
+Pod `75vu749lvra9kl`, `whatifgym-curve`: RTX 4090, 32 vCPU, EU-RO-1, secure cloud, host CUDA 13.2, **$0.89/hr**, image `runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404`, 50 GB disk, no volume, port `8000/http`. Created 2026-11-13 05:48:20 UTC (Nov 12, 9:48 PM Pacific). Cap $3.50.
+
+Deadlines, set before any work (lesson of the afternoon run):
+
+```bash
+# on the pod: ends the pod 3 h 40 min after creation, whatever the state
+runpodctl config --apiKey "$RUNPOD_API_KEY"       # the pod's own key; "runpodctl get pod" answers Unauthorized with it,
+printf '#!/bin/sh\nsleep 13100\nrunpodctl remove pod $RUNPOD_POD_ID || runpodctl stop pod $RUNPOD_POD_ID\n' > /root/deadline.sh
+nohup /root/deadline.sh > /root/deadline.log 2>&1 &   # so this guard is NOT verified; the guard on the Mac is the one relied on
+# on the Mac: wakes the agent 3 h 25 min after creation; caffeinate keeps the Mac awake
+caffeinate -i sleep 12300; echo GUARD
+```
+
+Set-up (steps 2 to 5 of the top of this file, plus `uv pip install 'highspy==1.15.1'`): 2 minutes; torch 2.14.0+cu132; `check_gpu.py` READY.
+
+```bash
+H="--holdout-models power_generation_hydro manpower_planning mining assignment_with_constraints covid19_facility_location \
+   economic_planning fantasy_basketball optimize_power_schedule railway_dispatching airline_planning drone_network \
+   jobshop_ft06 single_machine_scheduling technician_routing_scheduling"
+# smoke test of --eval-every (new code): 5 steps, evaluation at steps 2 and 4
+python training/grpo_pilot.py $H --smoke --eval-every 2 --workers 28 --out results/training/smoke      # SMOKE_EXIT 0, 371 s, peak 18.5 GB
+# a) pass rates on the training tasks
+python training/grpo_pilot.py $H --measure-pass 8 --workers 28 --out results/training/pass8
+# b) 160 steps; "test" and "heldout_models" (up to 400 tasks each) scored before, every 20 steps, and after
+python training/grpo_pilot.py $H --pass-rates results/training/pass8/pass_rates.json --max-steps 160 --eval-every 20 \
+    --eval-tasks 400 --workers 28 --seed 1 --out results/training/run5_seed1
+```
+
+Timeline (UTC): 05:48:20 pod created; 05:50:34 set-up done; 05:50 to 05:59 smoke test; 06:00:10 pass rates start.
+
 ## Problems hit, in order
 
 1. `check_gpu.py` said `not sm_89` on the RTX 4090: a false alarm, fixed in `da6e3a8` (an `sm_86` build runs on `sm_89`).
