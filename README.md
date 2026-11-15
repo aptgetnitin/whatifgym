@@ -10,7 +10,7 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 > |---|---|
 > | Base models | 25 of 30, verified on HiGHS, SCIP and CBC |
 > | Task families | 10 of 10 |
-> | Tasks (current set) | 3,722 template tasks + 929 verified paraphrases, in 386 files; shared outcomes removed (`_v1`, section 11) |
+> | Tasks (current set) | 3,722 template tasks + 914 verified paraphrases (2 for each of the 457 fully specified test tasks), in 386 files; shared outcomes removed (`_v1`, section 11) |
 > | Tests | 766 pass, 7 slow tests skipped |
 > | Untrained LLMs (current set, Nov 12) | Qwen3 4B 25.3 %, 8B 59.1 %, 14B 72.2 %, gpt-oss 20B 89.4 % (section 11) |
 > | Training result | GRPO on Qwen3 4B, one GPU. Three base models held out, 80 steps: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds). 14 base models held out, 160 steps: 52.5 % → 67.5 % (+15.0 points, 1 seed; section 11) |
@@ -456,7 +456,7 @@ flowchart LR
 
 Example: *"An overall cap of 55 applies to the damaged cars transferred in total."* became *"Cap damaged-car transfers at 55 in total, all days and routes combined."* The first batch has 78 rewrites, on the test split of five models: paraphraser Claude Opus, verifier Claude Sonnet, 78 of 78 accepted. 4 of its 10 files shared outcomes and left the current set, which keeps 45. Do not report results on the paraphrases for the model that verified them.
 
-The second batch (Nov 14) covers the whole test split: every fully specified test task that had no paraphrase yet (442 tasks, all 25 base models, 9 families) got two rewrites, one short and one formal. Paraphraser Claude Fable 5.2, verifier Claude Sonnet (no access to the gold scenarios), 884 of 884 accepted; 40 deliberately wrong answers were all rejected by the same check. These rewrites keep measure and entity names exact, so they change sentence form and tone more than vocabulary. The current set has 929 paraphrases.
+The current paraphrases (Nov 14–15) cover the whole test split uniformly: each of the 457 fully specified test tasks (all 25 base models, 9 families) has exactly two rewrites, one short and one formal. Paraphraser Claude Fable 5.2, verifier Claude Sonnet (no access to the gold scenarios), 914 of 914 accepted; 40 deliberately wrong answers were all rejected by the same check. These rewrites keep measure and entity names exact, so they change sentence form and tone more than vocabulary. The 45 October rewrites that were still current (3 per task, 15 tasks) are now in `tasks/superseded.txt`, replaced by `*_v0_b_nl.jsonl` files; their results moved to `results/archive/local_2026-11-12_october_paraphrases/`.
 
 ---
 

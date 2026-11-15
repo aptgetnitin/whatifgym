@@ -21,3 +21,9 @@ tasks/car_rental/data_change_v0_nl.jsonl   # paraphrases with shared outcomes (p
 tasks/food_manufacture/data_change_v0_nl.jsonl   # paraphrases with shared outcomes (probe > 0.10); dropped
 tasks/power_generation_hydro/data_change_v0_nl.jsonl   # paraphrases with shared outcomes (probe > 0.10); dropped
 tasks/power_generation_hydro/new_limit_v0_nl.jsonl   # paraphrases with shared outcomes (probe > 0.10); dropped
+tasks/car_rental/new_limit_v0_nl.jsonl   # October paraphrases (3 rewrites per task); replaced by new_limit_v0_b_nl (2 rewrites per task, Nov 15)
+tasks/food_manufacture/new_limit_v0_nl.jsonl   # October paraphrases (3 rewrites per task); replaced by new_limit_v0_b_nl (2 rewrites per task, Nov 15)
+tasks/manpower_planning/data_change_v0_nl.jsonl   # October paraphrases (3 rewrites per task); replaced by data_change_v0_b_nl (2 rewrites per task, Nov 15)
+tasks/manpower_planning/new_limit_v0_nl.jsonl   # October paraphrases (3 rewrites per task); replaced by new_limit_v0_b_nl (2 rewrites per task, Nov 15)
+tasks/mining/data_change_v0_nl.jsonl   # October paraphrases (3 rewrites per task); replaced by data_change_v0_b_nl (2 rewrites per task, Nov 15)
+tasks/mining/new_limit_v0_nl.jsonl   # October paraphrases (3 rewrites per task); replaced by new_limit_v0_b_nl (2 rewrites per task, Nov 15)
