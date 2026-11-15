@@ -381,6 +381,22 @@ Kept: `training/results/run5_seed1_summary.json` (curve, per-task `correct` stri
 
 Next: 2 more seeds (about $5; pass rates can be reused with `--pass-rates training/results/run5_pass_rates.json`, which saves about 11 minutes per pod).
 
+## Shared scoreboard: training base on the whole current set (Nov 15)
+
+Goal: score the training base (Qwen3-4B-Instruct-2507, 4-bit) and the run 5 adapter on all 4,636 current tasks (3,722 templates + 914 paraphrases), so they share one table with the Ollama models. New script `training/score_models.py` (no training; plays whole episodes, so `under_specified` is scored; prompts up to 31,000 tokens, so `drone_network` is included).
+
+Pod `lsv9gfqgyqqjqh`, `whatifgym-scoreboard`: RTX 4090 (48 GB variant), 36 vCPU, EU-CZ-1, secure cloud, host CUDA 13.2, **$0.89/hr**, same image, 50 GB disk, no volume, port `8000/http`. Created 2026-11-15 22:01:29 UTC (2:01 PM Pacific). Hard stop $1.50; on-pod deadline 5,500 s after start (`runpodctl remove pod`), Mac guard at 85 min.
+
+Timeline (UTC): 22:01:29 created; 22:04:39 set-up done; adapter uploaded over HTTPS to a one-time secret path (132,188,392 bytes, sha256 checked); 22:04:37 to 22:07:49 smoke test (8 tasks, both models, exit 0); 22:07:50 full run starts; 22:25 training base done (887 s: 722 s for 4,636 first answers, then 305 second and third turns); 22:33:54 its results downloaded (sha256 checked); about 22:35:30 pod terminated at the user's request (laptop had to close), with the trained model at 3,072 of 4,636 first answers; `list-pods` empty. **Cost: about $0.50** (34 min).
+
+```bash
+python training/score_models.py --adapters trained-run5-seed1=/root/adapter --workers 30 --out /root/out
+```
+
+**Result, training base** (`results/baselines/pod/training-base/`): 49.4 % on the 3,722 template tasks, 52.2 % on the 914 paraphrases, valid scenario 72.9 %, no prompt too long. By family: data_change 68, new_limit 68, relative_rule 34, objective_change 46, fixed_decision 78, relax_remove 56, logical_rule 16, infeasible_request 53, chained_scenario 62, under_specified 16. Check against run 5's before-training numbers on the same task ids: 51.75 % on the 400 held-out tasks (run 5: 52.5 %), 53.4 % on the 131 test tasks (run 5: 54.2 %); the small gap is 3 and 1 tasks (different vLLM memory share and batch composition).
+
+**Not done:** the trained model (run 5 adapter). Next: the same command with `--no-base`, about 20 min of pod time (about $0.30 with set-up), needs a go.
+
 ## Problems hit, in order
 
 1. `check_gpu.py` said `not sm_89` on the RTX 4090: a false alarm, fixed in `da6e3a8` (an `sm_86` build runs on `sm_89`).
