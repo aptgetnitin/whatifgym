@@ -1,0 +1,16 @@
+{
+ "source_file": "tasks/factory_planning/fixed_decision_v0.jsonl",
+ "prompt_version": "paraphrase-v1 (2026-10-03)",
+ "paraphrase_system_prompt": "You rewrite what-if questions for a planning team. You are given the description of an\noptimization model a planner uses and one precise what-if question generated from a template. Rewrite it the way a\nreal planner would say it to a colleague \u2014 in an email, in a meeting, in a chat message \u2014 keeping EXACTLY the same\nmeaning: the same things (use the same product, month, depot or other names that appear in the question), the same\nnumbers, the same direction (higher/lower, at most/at least), the same scope (one row, several, or everything).\nNever add a condition, never drop one, never make it vaguer or more specific. Vary the style across rewrites\n(terse, chatty, formal), but never use table or column identifiers with underscores. Answer with JSON only:\n{\"paraphrases\": [\"...\", \"...\", \"...\"]}",
+ "paraphraser": "claude-fable-5-2 (Claude Code session, 2026-11-14, prompt paraphrase-v1, 2 rewrites per task)",
+ "verifier": "claude-sonnet (Claude Code subagent, 2026-11-14, batched per base model, no access to gold)",
+ "verified": true,
+ "rewrites_requested_per_task": 2,
+ "source_tasks": 3,
+ "counts": {
+  "candidates": 6,
+  "kept": 6
+ },
+ "seconds": 0.2,
+ "date": "2026-11-14"
+}
