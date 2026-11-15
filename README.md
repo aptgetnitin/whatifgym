@@ -13,7 +13,7 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 > | Tasks (current set) | 3,722 template tasks + 914 verified paraphrases (2 for each of the 457 fully specified test tasks), in 386 files; shared outcomes removed (`_v1`, section 11) |
 > | Tests | 766 pass, 7 slow tests skipped |
 > | Untrained LLMs (current set, Nov 12) | Qwen3 4B 25.3 %, 8B 59.1 %, 14B 72.2 %, gpt-oss 20B 89.4 % (section 11) |
-> | Training result | GRPO on Qwen3 4B, one GPU. Three base models held out, 80 steps: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds). 14 base models held out, 160 steps: 52.5 % → 67.5 % (+15.0 points, 1 seed; section 11) |
+> | Training result | GRPO on the training base (Qwen3-4B-Instruct-2507, 4-bit; not the Ollama Qwen3 4B of the baseline table), one GPU. Three base models held out, 80 steps: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds). 14 base models held out, 160 steps: 52.5 % → 67.5 % (+15.0 points, 1 seed; section 11) |
 
 ---
 
@@ -569,7 +569,7 @@ Mean gain on the held-out models: **+11.3 points** (standard deviation 1.5); eve
 
 ### Training: learning curve, 14 held-out base models (Nov 12)
 
-One seed, 160 steps, on the final task set (3,722 tasks). The training pool is the same 11 base models (176 tasks inside the pass-rate range, of 669). The 14 held-out base models are the 3 above plus the 11 added in November. Both test sets are scored before training, every 20 steps and after (greedy; 400 held-out tasks, 131 test tasks of the training models). The 400 are one fixed random draw from the held-out tasks whose prompt fits in 7,000 tokens; they come from 13 of the 14 held-out models, because every `drone_network` prompt is longer. The model trained here is Qwen3-4B-Instruct-2507 (4-bit, on the pod), a different release from the Ollama `qwen3:4b` baseline above, so its scores are comparable only with its own before-training score, not with the 25.3 %.
+One seed, 160 steps, on the final task set (3,722 tasks). The training pool is the same 11 base models (176 tasks inside the pass-rate range, of 669). The 14 held-out base models are the 3 above plus the 11 added in November. Both test sets are scored before training, every 20 steps and after (greedy; 400 held-out tasks, 131 test tasks of the training models). The 400 are one fixed random draw from the held-out tasks whose prompt fits in 7,000 tokens; they come from 13 of the 14 held-out models, because every `drone_network` prompt is longer. **Three names, to keep the models apart.** *Ollama Qwen3 4B* is the baseline in the table of untrained LLMs: Ollama's `qwen3:4b`, which is Qwen3-4B-Thinking-2507 at Q4_K_M, run with thinking off. The *training base* is Qwen3-4B-Instruct-2507 in 4 bits (bitsandbytes), served by vLLM on the pod. The *trained model* is the training base plus the LoRA adapter from a run. Every training result compares the trained model with the training base on the same tasks; neither is comparable with the Ollama Qwen3 4B score of 25.3 %, which comes from another variant, another serving stack and another task sample.
 
 | Step | Held-out models: correct | Held-out models: valid | Training models, test: correct |
 |---|---|---|---|
