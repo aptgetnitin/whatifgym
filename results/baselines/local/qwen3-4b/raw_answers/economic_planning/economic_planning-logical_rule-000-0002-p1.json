@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "coal_capacity_year3_impact",
+      "measure": "stock",
+      "scope": {
+        "industry": "steel",
+        "year": 2
+      },
+      "sense": ">=",
+      "value": 63
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "max_one_food",
+   "measure": "purchase",
+   "scope": {
+    "food": [
+     "Maize meal",
+     "Oil",
+     "Milk"
+    ],
+    "supplier": "*"
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "At most 1 unit of food (100 g) of Maize meal, Oil, and Milk can be purchased per supplier per day."
+}

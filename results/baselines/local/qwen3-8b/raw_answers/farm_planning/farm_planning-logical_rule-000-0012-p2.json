@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "grain_bought_min_beet_grown_year5",
+   "measure": "buy_grain",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "grow_beet",
+    "scope": {
+     "year": "Year5"
+    }
+   },
+   "factor": 42
+  }
+ ],
+ "note": "A rule that enforces a minimum amount of grain bought relative to sugar beet grown in Year5."
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "initial_capacity",
+      "factor": 1.1
+    }
+  ]
+}

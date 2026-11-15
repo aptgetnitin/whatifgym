@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "heifer_calf_share_year1",
+   "measure": "raise_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "raise_heifers",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "The rule ensures that the share of heifer calves raised in Year1 is at least 75% of the total heifer calves raised in that year."
+}

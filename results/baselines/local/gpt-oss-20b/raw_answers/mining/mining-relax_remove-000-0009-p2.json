@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "relax": [
+    {
+      "constraint": "max_operating"
+    },
+    {
+      "constraint": "quality"
+    }
+  ],
+  "note": "Lift both the limit on how many mines may operate in a year and the blend-quality target."
+}

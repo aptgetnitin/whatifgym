@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "trains",
+   "where": {
+    "train": "E"
+   }
+  }
+ ],
+ "note": "Train E is removed from the trains table, which will affect the routing and scheduling of the remaining trains."
+}

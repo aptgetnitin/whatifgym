@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "trains",
+   "where": {
+    "train": "D"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "f_arrival_time_limit",
+   "measure": "finish_time",
+   "scope": {
+    "train": "F"
+   },
+   "sense": "<=",
+   "value": 31
+  }
+ ],
+ "note": "Restrict the arrival time at destination for train F to be at or under 31 minutes."
+}

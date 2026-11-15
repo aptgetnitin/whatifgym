@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "max_charge_kw",
+   "factor": 0.99
+  }
+ ],
+ "note": "Scaling the max_charge_kw parameter by 0.99 effectively caps the total charging power at 5.9 kW over the whole day."
+}

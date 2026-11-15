@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine2"
+      },
+      "value": 21500000
+    }
+  ],
+  "note": "The planner asks for feasibility of a specific extraction amount for Mine2. This requires setting the extract measure for Mine2 to 21500000 and checking if the model remains feasible."
+}

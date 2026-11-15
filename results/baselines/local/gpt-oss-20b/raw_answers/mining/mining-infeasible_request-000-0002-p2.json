@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "fixed_decisions": [
+    {
+      "measure": "blend",
+      "scope": {
+        "year": "Year4"
+      },
+      "value": 28125000
+    }
+  ],
+  "note": "Fix blended ore sold in Year4 to exactly 28,125,000 tons."
+}

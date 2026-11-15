@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[{"op":"scale","table":"industries","column":"external_demand","where":{"industry":["coal","steel","transport"]},"factor":1.1}],"note":"Increase external demand by 10% for all industries."}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "retrain_year1_min",
+      "measure": "retrain",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 680
+    },
+    {
+      "name": "retrain_year3_min",
+      "measure": "retrain",
+      "scope": {
+        "year": 3
+      },
+      "sense": ">=",
+      "value": 460
+    }
+  ],
+  "note": "The planner asks if both minimum retraining levels (680 in year 1, 460 in year 3) are achievable. This is checked by adding rules that require at least those values for retrain in each year."
+}

@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "coal_capacity_year_5",
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 5,
+    "industry": "coal"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "stock",
+    "scope": {
+     "year": 1,
+     "industry": "coal"
+    }
+   },
+   "factor": 1180
+  }
+ ],
+ "note": "The rule ensures that the total capacity built for coal in year 5 is at least 1180 million USD/year, relative to the stock held for coal in year 1."
+}

@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "total_rentals_limit",
+   "measure": "rentals",
+   "scope": {},
+   "sense": "<=",
+   "value": 2550
+  }
+ ],
+ "note": "A new rule limits the total rentals across all days and depots to 2550."
+}

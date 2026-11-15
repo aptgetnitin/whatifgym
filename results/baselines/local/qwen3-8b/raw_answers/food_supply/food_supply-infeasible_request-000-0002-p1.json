@@ -1,0 +1,30 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_ration_per_person",
+   "measure": "ration",
+   "scope": {
+    "camp": [
+      "Ar Raqqa",
+      "Daraa",
+      "Dayr_Az_Zor",
+      "Hassakeh",
+      "Idleb",
+      "Jubb_al_Jarrah",
+      "Qamishli"
+    ]
+   },
+   "sense": ">=",
+   "value": 102
+  }
+ ],
+ "note": "The question asks whether the total ration per person across all camps can reach at least 102 units (100 g per day)."
+}

@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "heifer_calves_sold_year2_at_least_2_times_year4",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell_heifers",
+    "scope": {
+     "year": "Year4"
+    }
+   },
+   "factor": 2
+  },
+  {
+   "name": "heifer_calves_sold_year1_at_most_10_percent_of_sugar_beet_sold",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "sell_beet",
+    "scope": {
+     "year": "Year1"
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "Two relative limits on heifer calves sold in specific years compared to other years."
+}

@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "heifer_calf_share",
+   "factor": 0.5
+  }
+ ],
+ "note": "The share of calves that are heifers is halved by scaling the parameter."
+}

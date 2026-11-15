@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "grow_beet",
+      "scope": {
+        "year": ["Year1", "Year2", "Year3", "Year4", "Year5"]
+      }
+    }
+  ],
+  "note": "Prioritise maintaining the five-year profit while maximising the total sugar beet grown."
+}

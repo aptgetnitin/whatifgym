@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"max_60pct_discharge_21_22","measure":"discharge","scope":{"hour":"21-22"},"sense":"<=","relative_to":{"measure":"discharge","scope":{}},"factor":0.6}]}

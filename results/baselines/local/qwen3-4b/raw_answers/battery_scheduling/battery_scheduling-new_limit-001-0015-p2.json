@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "discharge_21-22_limit",
+      "measure": "discharge",
+      "scope": {
+        "hour": "21-22"
+      },
+      "sense": "<=",
+      "value": 2.5
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "sell_heifers_year1_le_25pct_year5",
+      "measure": "sell_heifers",
+      "scope": { "year": "Year1" },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell_heifers",
+        "scope": { "year": "Year5" }
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Limit Year1 sell_heifers to at most 25% of Year5 sell_heifers."
+}

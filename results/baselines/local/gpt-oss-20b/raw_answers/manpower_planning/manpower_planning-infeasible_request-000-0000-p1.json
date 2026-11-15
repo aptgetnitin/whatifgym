@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"measure":"redundant","sense":">=","value":4210}],"note":"Check feasibility of achieving at least 4210 redundant workers."}

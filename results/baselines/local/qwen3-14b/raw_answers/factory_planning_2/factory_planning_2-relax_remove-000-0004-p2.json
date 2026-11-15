@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "relax": [
+    {
+      "constraint": "maintenance"
+    }
+  ],
+  "note": "Removing the maintenance constraint allows any number of machines to be down for maintenance in any month."
+}

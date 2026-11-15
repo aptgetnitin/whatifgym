@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "year2_extraction_limit",
+      "measure": "extract",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "extract",
+        "scope": {}
+      },
+      "factor": 0.05
+    },
+    {
+      "name": "total_extraction_limit",
+      "measure": "extract",
+      "scope": {},
+      "sense": "<=",
+      "relative_to": {
+        "measure": "blend",
+        "scope": {}
+      },
+      "factor": 0.8
+    }
+  ]
+}

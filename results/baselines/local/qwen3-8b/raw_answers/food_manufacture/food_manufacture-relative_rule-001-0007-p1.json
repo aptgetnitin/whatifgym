@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "feb_buy_at_least_40_percent",
+   "measure": "buy",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "month": [
+      "Jan",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "A rule that enforces the total oil bought in February to be at least 40% of the total oil bought across all months."
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "unfilled",
+   "column": "unfilled",
+   "where": {
+    "customer": "Customer6"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Forcing the number of unfilled jobs for Customer6 to 1."
+}

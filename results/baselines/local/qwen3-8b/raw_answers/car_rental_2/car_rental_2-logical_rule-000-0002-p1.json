@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "rentals_plymouth_thursday",
+   "measure": "rentals",
+   "scope": {
+    "day": "Thursday",
+    "depot": "Plymouth"
+   },
+   "sense": ">=",
+   "value": 1
+  },
+  {
+   "name": "undamaged_stock_monday_plymouth",
+   "measure": "undamaged_stock",
+   "scope": {
+    "day": "Monday",
+    "depot": "Plymouth"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "day": "Thursday",
+     "depot": "Plymouth"
+    }
+   },
+   "factor": 1260
+  }
+ ],
+ "note": "The rule enforces that if any rentals occur at Plymouth on Thursday, the undamaged stock at Plymouth on Monday must be at least 1260."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "stock_steel_year_2_min",
+   "measure": "stock",
+   "scope": {
+    "year": 2,
+    "industry": "steel"
+   },
+   "sense": ">=",
+   "value": 63
+  }
+ ],
+ "note": "The stock of steel in year 2 must be at least 63 million USD."
+}

@@ -1,0 +1,61 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "flor_dispatched_percentage",
+   "measure": "use",
+   "scope": {
+    "technician": "Flor"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "use",
+    "scope": {
+     "technician": [
+      "Albert",
+      "Bob",
+      "Carlos",
+      "Doris",
+      "Ed",
+      "Flor",
+      "Gina"
+     ]
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "assigned_jobs_percentage_unfilled",
+   "measure": "assign",
+   "scope": {
+    "customer": [
+     "Customer1",
+     "Customer2",
+     "Customer3",
+     "Customer4",
+     "Customer5",
+     "Customer6",
+     "Customer7"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "unfilled",
+    "scope": {
+     "customer": [
+      "Customer1",
+      "Customer2",
+      "Customer3",
+      "Customer4",
+      "Customer5",
+      "Customer6",
+      "Customer7"
+     ]
+    }
+   },
+   "factor": 0.75
+  }
+ ],
+ "note": "Two relative limits: Flor's dispatched percentage and assigned jobs percentage relative to unfilled jobs."
+}

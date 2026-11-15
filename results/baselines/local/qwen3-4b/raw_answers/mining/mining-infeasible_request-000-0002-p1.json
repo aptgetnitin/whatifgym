@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "blend",
+      "column": "blend",
+      "where": {
+        "year": "Year4"
+      },
+      "value": 28125000
+    }
+  ],
+  "note": "Locking the blend amount for Year4 to 28125000 by setting the blend measure for Year4 to this value."
+}

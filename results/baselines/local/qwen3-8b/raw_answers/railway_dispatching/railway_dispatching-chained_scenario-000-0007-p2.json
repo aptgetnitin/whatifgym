@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "trains",
+   "column": "ready_time",
+   "where": {
+    "train": "B"
+   },
+   "value": 160
+  }
+ ],
+ "rules": [
+  {
+   "name": "cap_goes_first_B",
+   "measure": "goes_first",
+   "scope": {
+    "other_train": "B"
+   },
+   "sense": "<=",
+   "value": 8
+  }
+ ]
+}

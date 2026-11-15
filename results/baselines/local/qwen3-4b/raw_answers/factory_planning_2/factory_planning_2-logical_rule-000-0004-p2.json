@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "Jun",
+        "product": "Prod3"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "prod2_stock_at_least_220",
+      "measure": "store",
+      "scope": {
+        "product": "Prod2"
+      },
+      "sense": ">=",
+      "value": 220
+    }
+  ]
+}

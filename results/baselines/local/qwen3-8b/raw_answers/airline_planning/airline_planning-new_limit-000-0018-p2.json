@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "a319_5_flight_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A319#5"
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Limit the total number of flights operated by aircraft A319#5 to no more than 1."
+}

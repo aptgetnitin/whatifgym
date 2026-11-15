@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_linked_to_600_FLEET_DR_and_800_VIRGINIA_BEACH_BLVD_Fire_Station",
+   "measure": "linked_load",
+   "scope": {
+    "location": "600 FLEET DR",
+    "base": "800 VIRGINIA BEACH BLVD Fire Station"
+   },
+   "sense": ">=",
+   "value": 0.02
+  }
+ ]
+}

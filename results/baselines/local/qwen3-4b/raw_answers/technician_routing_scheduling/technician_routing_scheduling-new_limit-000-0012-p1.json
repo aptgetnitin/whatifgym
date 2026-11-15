@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "start_time",
+      "column": "start_time",
+      "where": {
+        "location": "Mannheim"
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "scale",
+      "table": "use",
+      "column": "use",
+      "where": {
+        "technician": [
+          "Albert",
+          "Bob",
+          "Carlos",
+          "Doris",
+          "Ed",
+          "Flor",
+          "Gina"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The planner's question refers to two limits: total service start time at Mannheim (min) at most 19, and at most 2 technicians dispatched overall. However, the model's decision variables are per location and per technician, so the 'total service start time' is a sum over time, not a single value. The question is ambiguous and cannot be directly translated into the model's structure."
+}

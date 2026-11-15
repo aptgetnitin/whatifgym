@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "assign",
+   "column": "assign",
+   "where": {
+    "customer": "Customer1",
+    "technician": "Albert"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "customer5_lateness",
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "sense": "==",
+   "value": 80
+  }
+ ],
+ "note": "Fixing the assignment of Customer1 to Albert and setting the lateness of Customer5 to exactly 80 minutes."
+}

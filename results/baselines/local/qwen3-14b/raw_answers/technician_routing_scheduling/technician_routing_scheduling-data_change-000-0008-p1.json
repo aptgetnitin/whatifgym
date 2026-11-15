@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "travel_times",
+      "column": "travel_min",
+      "where": {},
+      "factor": 1.2
+    }
+  ],
+  "note": "Scaling all travel times by 20% increases the travel time for every row in the travel_times table."
+}

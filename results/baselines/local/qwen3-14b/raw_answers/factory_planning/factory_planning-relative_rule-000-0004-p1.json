@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod5_make_share",
+      "measure": "make",
+      "scope": {
+        "product": "Prod5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {}
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "total_sold_stock_limit",
+      "measure": "sell",
+      "scope": {},
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {}
+      },
+      "factor": 2.0
+    }
+  ]
+}

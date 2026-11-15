@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "soc",
+      "column": "soc",
+      "where": {
+        "hour": "13-14"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "soc",
+      "column": "soc",
+      "where": {
+        "hour": "13-14"
+      },
+      "value": 20
+    }
+  ],
+  "note": "The planner wants to set the soc for hour 13-14 to either 0 or 20, but this is not a single value. The scenario DSL requires a single value for a set operation. This is ambiguous and needs clarification."
+}

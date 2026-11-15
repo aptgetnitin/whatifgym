@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "start_time_mannheim_total",
+   "measure": "start_time",
+   "scope": {
+    "location": "Mannheim"
+   },
+   "sense": "<=",
+   "value": 19
+  },
+  {
+   "name": "lateness_customer5_total",
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "lateness",
+    "scope": {
+     "customer": "Customer5"
+    }
+   },
+   "factor": 130
+  }
+ ],
+ "note": "Two rules: one limits the total start time at Mannheim, and the other ensures the total lateness for Customer5 is at least 130 minutes."
+}

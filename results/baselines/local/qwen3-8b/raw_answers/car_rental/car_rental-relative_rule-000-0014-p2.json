@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "damaged_stock_at_least_three_times_repairs",
+   "measure": "damaged_stock",
+   "scope": {
+    "depot": [
+      "Glasgow",
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "repairs",
+    "scope": {
+     "depot": [
+       "Glasgow",
+       "Manchester",
+       "Birmingham",
+       "Plymouth"
+     ]
+    }
+   },
+   "factor": 3
+  }
+ ],
+ "note": "The rule ensures that the total number of damaged cars at all depots in the morning is at least three times the total number of cars repaired."
+}

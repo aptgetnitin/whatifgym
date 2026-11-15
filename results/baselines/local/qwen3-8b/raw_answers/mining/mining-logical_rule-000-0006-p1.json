@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "logic": [
+  {
+   "name": "blend_non_overlap",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "blend",
+     "sense": ">",
+     "value": 0,
+     "scope": {
+      "year": "Year1"
+     }
+    },
+    {
+     "measure": "blend",
+     "sense": ">",
+     "value": 0,
+     "scope": {
+      "year": "Year2"
+     }
+    }
+   ]
+  }
+ ]
+}

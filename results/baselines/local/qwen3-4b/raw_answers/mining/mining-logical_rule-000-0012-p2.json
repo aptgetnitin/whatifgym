@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "extract_mine1_year5_zero_or_6m",
+      "measure": "extract",
+      "scope": {
+        "year": "Year5",
+        "mine": "Mine1"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "extract_mine1_year5_at_least_6m",
+      "measure": "extract",
+      "scope": {
+        "year": "Year5",
+        "mine": "Mine1"
+      },
+      "sense": ">=",
+      "value": 6000000
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "county_c7_facility_e9_impact",
+      "measure": "assign",
+      "scope": {
+        "county": "C7",
+        "facility": "E9"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "county": "C5",
+          "facility": "E6"
+        }
+      },
+      "factor": 420
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "measure": "short_time",
+      "sense": "<=",
+      "value": 240
+    },
+    {
+      "measure": "redundant",
+      "scope": {
+        "year": 2
+      },
+      "sense": "<=",
+      "value": 80
+    }
+  ],
+  "note": "Cap on total short-time workers and redundancy in year 2."
+}

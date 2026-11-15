@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "units_available",
+   "where": {
+    "type": "Thermal1"
+   },
+   "value": 10
+  },
+  {
+   "op": "set",
+   "table": "thermal_types",
+   "column": "units_on_at_start",
+   "where": {
+    "type": "Thermal1"
+   },
+   "value": 10
+  }
+ ],
+ "rules": [
+  {
+   "name": "thermal1_ngen_fixed",
+   "measure": "ngen",
+   "scope": {
+    "type": "Thermal1"
+   },
+   "sense": "==",
+   "value": 10
+  }
+ ],
+ "note": "Fix the number of Thermal1 units running to 10 in every period."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "years",
+   "column": "order",
+   "where": {
+    "year": "Year4"
+   },
+   "value": 4
+  }
+ ],
+ "rules": [
+  {
+   "name": "max_head_cattle_year4",
+   "measure": "herd",
+   "scope": {
+    "year": "Year4"
+   },
+   "sense": "<=",
+   "value": 100
+  }
+ ],
+ "note": "The head of cattle for Year4 is constrained to be no more than 100."
+}

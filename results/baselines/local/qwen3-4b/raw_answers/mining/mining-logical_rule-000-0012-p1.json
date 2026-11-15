@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine1",
+        "year": "Year5"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine1",
+        "year": "Year5"
+      },
+      "value": 6000000
+    }
+  ],
+  "note": "The planner's question specifies that for Mine1 in Year5, the total tons of ore extracted should be either nothing (0) or at least 6000000. This is a binary choice, so we represent it as two possible fixed decisions."
+}

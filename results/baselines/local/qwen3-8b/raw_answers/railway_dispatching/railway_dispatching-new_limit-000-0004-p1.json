@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "C_arrival_time",
+   "measure": "finish_time",
+   "scope": {
+    "train": "C"
+   },
+   "sense": ">=",
+   "value": 21
+  }
+ ],
+ "note": "The rule ensures that the total arrival time for train C at its destination is at least 21 minutes."
+}

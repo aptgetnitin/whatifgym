@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "ages",
+      "column": "initial_head",
+      "where": {
+        "age": [
+          4,
+          11
+        ]
+      },
+      "value": 110
+    },
+    {
+      "op": "set",
+      "table": "ages",
+      "column": "initial_head",
+      "where": {
+        "age": [
+          11
+        ]
+      },
+      "value": 94
+    }
+  ],
+  "note": "The planner wants to know if the initial herd can be set to at least 110 head for age 4 and 94 head for age 11. However, the model's initial herd is fixed (the first year's herd equals the initial herd), so we cannot change it. The question is about feasibility of the initial herd, but the model does not allow changing the initial herd. The planner's request is for the initial herd, which is a fixed decision in the model."
+}

@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "mine",
+   "where": {
+    "mine": "Mine2"
+   },
+   "value": "Mine2"
+  }
+ ],
+ "rules": [
+  {
+   "name": "extract_mine2_at_least_21500000",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine2"
+   },
+   "sense": ">=",
+   "value": 21500000
+  }
+ ],
+ "note": "The question asks whether it is feasible to have 21500000 or more tons of ore extracted for mine Mine2. This is modeled by setting the mine and adding a rule to enforce the minimum extraction."
+}

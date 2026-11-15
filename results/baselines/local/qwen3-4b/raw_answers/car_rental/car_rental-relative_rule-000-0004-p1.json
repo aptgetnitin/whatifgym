@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "depots",
+      "column": "repair_capacity",
+      "where": {
+        "depot": "Glasgow"
+      },
+      "value": 0
+    }
+  ],
+  "rules": [
+    {
+      "name": "glasgow_undamaged_stock_limit",
+      "measure": "undamaged_stock",
+      "scope": {
+        "depot": "Glasgow"
+      },
+      "sense": "<=",
+      "value": 0.15
+    }
+  ]
+}

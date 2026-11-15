@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "years",
+   "column": "order",
+   "where": {
+    "year": 2
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "The share of output in year 2 is scaled to 5% of the total output."
+}

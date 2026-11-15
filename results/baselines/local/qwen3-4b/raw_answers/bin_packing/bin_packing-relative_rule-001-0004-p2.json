@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "at_least_30_percent_in_bin1",
+      "measure": "x",
+      "scope": {
+        "item": [
+          "item0",
+          "item1",
+          "item2",
+          "item3",
+          "item4",
+          "item5",
+          "item6",
+          "item7",
+          "item8",
+          "item9",
+          "item10"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.3
+    }
+  ],
+  "note": "A requirement that no less than 30% of the total number of items packed is placed in bin1."
+}

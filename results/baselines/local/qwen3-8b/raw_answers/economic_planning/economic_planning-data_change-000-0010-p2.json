@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "industries",
+   "column": "labor_per_unit_capacity",
+   "where": {
+    "industry": "steel"
+   },
+   "factor": 1.1
+  },
+  {
+   "op": "set",
+   "table": "input_output",
+   "column": "input_per_unit_output",
+   "where": {
+    "supplier": "coal",
+    "user": "steel"
+   },
+   "value": 0.38
+  }
+ ],
+ "note": "The manpower per unit of capacity built for steel is increased by 10%, and the input per unit of output for coal to steel is set to 0.38."
+}

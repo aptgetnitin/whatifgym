@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod3_make_jun_impact_prod2_stock",
+      "measure": "store",
+      "scope": {
+        "product": "Prod2",
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "value": 220
+    }
+  ]
+}

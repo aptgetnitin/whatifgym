@@ -1,0 +1,66 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "external_demand",
+   "where": {
+    "industry": "steel"
+   },
+   "value": 80
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_stock",
+   "where": {
+    "industry": "transport"
+   },
+   "value": 150
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 250
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "labor_per_unit_output",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 0.5
+  }
+ ],
+ "rules": [
+  {
+   "name": "stock_year_1",
+   "measure": "stock",
+   "scope": {
+    "year": 1
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "stock",
+    "scope": {
+     "year": 1
+    }
+   },
+   "factor": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The question requires adjusting the external demand for steel, initial stock for transport, initial capacity for coal, and labor per unit output for coal. The objective is to hold employment at its maximum and then maximize the stock in year 1."
+}

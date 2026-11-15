@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "min_batch_other_coal_hour_2",
+      "measure": "output",
+      "scope": {
+        "plant": "OTHER COAL",
+        "hour": 2
+      },
+      "sense": ">=",
+      "value": 2980
+    }
+  ]
+}

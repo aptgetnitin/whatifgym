@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "fixed_decisions": [
+    {
+      "measure": "recruit",
+      "scope": {
+        "skill": "skilled",
+        "year": [
+          1,
+          2,
+          3
+        ]
+      },
+      "value": 420
+    }
+  ]
+}

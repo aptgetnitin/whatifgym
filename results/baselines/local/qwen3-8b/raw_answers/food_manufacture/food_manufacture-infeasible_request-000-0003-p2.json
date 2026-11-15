@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "produce_mar",
+   "measure": "produce",
+   "scope": {
+    "month": "Mar"
+   },
+   "sense": "==",
+   "value": 1350
+  }
+ ],
+ "note": "A fixed production target for March is a direct constraint on the produce measure."
+}

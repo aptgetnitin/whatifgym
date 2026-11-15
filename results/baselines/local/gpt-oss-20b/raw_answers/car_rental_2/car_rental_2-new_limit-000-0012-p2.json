@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "max_damaged_monday",
+      "measure": "damaged_stock",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": "<=",
+      "value": 47
+    }
+  ],
+  "note": "Limit total damaged cars on Monday to 47."
+}

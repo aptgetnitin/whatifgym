@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "logic": [
+    {
+      "name": "Milk_Idleb_batch_rule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Milk",
+            "camp": "Idleb"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Milk",
+            "camp": "Idleb"
+          },
+          "sense": ">=",
+          "value": 2.15
+        }
+      ]
+    }
+  ]
+}

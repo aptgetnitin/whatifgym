@@ -1,0 +1,50 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "resources",
+   "column": "entry_time",
+   "where": {
+    "resource": 1
+   },
+   "value": 2
+  },
+  {
+   "op": "set",
+   "table": "resources",
+   "column": "entry_time",
+   "where": {
+    "resource": 3
+   },
+   "value": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "entry_time_resource_2_limit",
+   "measure": "entry_time",
+   "scope": {
+    "resource": 2
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "resource": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "The entry time for resource 1 is set to double that of resource 3, and the entry time for resource 2 is constrained to be no more than 10% of the total entry time across all resources."
+}

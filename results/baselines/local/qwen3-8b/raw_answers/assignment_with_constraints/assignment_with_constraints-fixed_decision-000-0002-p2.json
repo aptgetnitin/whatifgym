@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "fixed_decisions": [
+  {
+   "measure": "assign",
+   "scope": {
+    "worker": "worker_3",
+    "task": "task_3"
+   },
+   "value": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "worker_3_task_assignments",
+   "measure": "assign",
+   "scope": {
+    "worker": "worker_3"
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "note": "Fixing the assignment of worker_3 to task_3 and ensuring the total number of tasks assigned to worker_3 is exactly 1."
+}

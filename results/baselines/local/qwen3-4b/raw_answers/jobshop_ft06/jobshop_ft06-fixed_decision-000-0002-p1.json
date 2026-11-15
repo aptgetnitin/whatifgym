@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "fixed_decisions": [
+    {
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M1",
+        "job": "J1",
+        "other_job": "J5"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner wants to fix the goes_first binary variable for the specific machine-job-other job pair to 0, meaning J1 does not go before J5 on machine M1."
+  }

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "coal_capacity_rule",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 5,
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 1180
+    }
+  ]
+}

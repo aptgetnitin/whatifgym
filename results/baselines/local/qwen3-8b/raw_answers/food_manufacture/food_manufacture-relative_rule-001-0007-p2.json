@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "feb_buy_share",
+   "measure": "buy",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ]
+    }
+   },
+   "factor": 0.4
+  }
+ ],
+ "note": "The share of oil bought in February must be at least 40% of the total oil bought across all months."
+}

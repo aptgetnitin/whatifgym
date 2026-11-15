@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","fixed_decisions":[{"measure":"soc","scope":{"hour":"04-05"},"value":40}],"note":"This sets soc[04-05] to 40 kWh, which exceeds the battery capacity of 13.5 kWh and will likely make the model infeasible."}

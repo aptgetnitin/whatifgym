@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "fantasy_basketball",
+ "fixed_decisions": [
+  {
+   "measure": "pick",
+   "scope": {
+    "player": "Kristaps Porzingis"
+   },
+   "value": 1
+  }
+ ],
+ "note": "Forcing Kristaps Porzingis into the line-up by fixing the pick decision to 1."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"covid19_facility_location","data_changes":[{"op":"scale","table":"facilities","column":"capacity","where":{"kind":["existing","temporary"]},"factor":0.8}],"note":"Cut capacity by 20% at every facility."}

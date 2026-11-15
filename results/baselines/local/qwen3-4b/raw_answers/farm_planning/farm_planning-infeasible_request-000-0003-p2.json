@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "yearly_profit",
+      "scope": {
+        "year": "Year3"
+      }
+    }
+  ],
+  "note": "The planner wants to know how the plan responds to a constraint that the yearly profit for Year3 must be at least 77450. This is a rule that sets a minimum value for the yearly_profit measure in Year3."
+  }

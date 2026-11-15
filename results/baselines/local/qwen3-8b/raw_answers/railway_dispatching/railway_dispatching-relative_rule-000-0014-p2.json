@@ -1,0 +1,41 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "trains_clearing_before_f",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "other_train": "F"
+   },
+   "sense": ">=",
+   "value": 3,
+   "relative_to": {
+    "measure": "goes_first",
+    "scope": {
+     "resource": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "other_train": "A"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The number of trains clearing a resource before another train enters it for other train F is no less than three times the number for other train A."
+}

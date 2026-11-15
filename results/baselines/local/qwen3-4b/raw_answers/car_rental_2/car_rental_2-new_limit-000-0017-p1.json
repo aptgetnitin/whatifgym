@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "rentals",
+      "column": "rentals",
+      "where": {
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ],
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ]
+      },
+      "factor": 0.92
+    }
+  ],
+  "note": "The planner's question is about a hard upper bound on the total number of cars rented out (rentals) across all depots and days. The model's 'rentals' decision measure is indexed by day and depot, so we scale the entire sum by a factor of 0.92 to reduce it to 2550 (original 2820)."
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 125000
+    }
+  ],
+  "note": "The planner wants to set the total required workforce across all years and skill levels to 125000. However, the model's requirements table has separate rows for each year and skill level, so this is not a single value but a sum over all years and skills. The question is ambiguous because it doesn't specify whether the 125000 is the total workforce across all years and skills or the required workforce per year/skill level."
+}

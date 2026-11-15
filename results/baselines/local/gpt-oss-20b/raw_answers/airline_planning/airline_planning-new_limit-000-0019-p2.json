@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"max_total_flights","measure":"operate","sense":"<=","value":38},{"name":"max_flights_A319#11","measure":"operate","scope":{"aircraft":"A319#11"},"sense":"<=","value":3}]}

@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "thermal_output_1518_le_0006",
+      "measure": "output",
+      "scope": {
+        "period": "15-18"
+      },
+      "sense": "<=",
+      "value": 0
+    },
+    {
+      "name": "thermal_output_1518_le_0006",
+      "measure": "output",
+      "scope": {
+        "period": "15-18"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "output",
+        "scope": {
+          "period": "00-06"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

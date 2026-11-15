@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_e_share",
+   "measure": "entry_time",
+   "scope": {
+    "train": "E"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "entry_time",
+    "scope": {
+     "train": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "The share of entry time for train E relative to all trains is bounded by 5%."
+}

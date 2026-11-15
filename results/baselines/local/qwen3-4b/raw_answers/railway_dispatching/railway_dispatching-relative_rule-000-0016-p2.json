@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "resource": "2"
+      },
+      "factor": 0.1
+    }
+  ],
+  "note": "The share of all entry time that falls on resource 2 cannot be more than 10%."
+}

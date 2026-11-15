@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "max_goes_first_for_J3",
+      "measure": "goes_first",
+      "scope": {
+        "job": "J3"
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ]
+}

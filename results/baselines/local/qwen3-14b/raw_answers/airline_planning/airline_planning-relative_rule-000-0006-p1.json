@@ -1,0 +1,56 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "logic": [
+    {
+      "name": "flight_4513_operated_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "operate",
+          "scope": {
+            "flight": 4513
+          },
+          "sense": ">=",
+          "value": 0.05
+        },
+        {
+          "measure": "operate",
+          "scope": {
+            "flight": 4513
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "flight_3077_vs_flight_3112_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "operate",
+          "scope": {
+            "flight": 3077
+          },
+          "sense": ">=",
+          "relative_to": {
+            "measure": "operate",
+            "scope": {
+              "flight": 3112
+            }
+          },
+          "factor": 1.25
+        },
+        {
+          "measure": "operate",
+          "scope": {
+            "flight": 3077
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

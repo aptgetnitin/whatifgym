@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "finish_time_c_double_d",
+   "measure": "finish_time",
+   "scope": {
+    "train": "C"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "finish_time",
+    "scope": {
+     "train": "D"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "note": "The finish time for train C must be at least double that of train D."
+}

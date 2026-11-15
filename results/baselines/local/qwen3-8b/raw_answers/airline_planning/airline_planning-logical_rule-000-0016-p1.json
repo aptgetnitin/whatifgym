@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "operate_flight_4577_or_4576",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": [
+     4577,
+     4576
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Only one of the two flights can be operated."
+}

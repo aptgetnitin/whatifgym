@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "milk_shipment_min",
+   "measure": "flow",
+   "scope": {
+    "food": "Milk"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "flow",
+    "scope": {
+     "food": "Milk"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The rule ensures that the total flow of Milk is no less than 36500 units per day."
+}

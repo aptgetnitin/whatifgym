@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "remove",
+   "table": "trains",
+   "where": {
+    "train": "F"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_trains_clearing_before_e",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "other_train": "E"
+   },
+   "sense": ">=",
+   "value": 6
+  }
+ ],
+ "note": "The rule ensures that the total number of trains clearing a resource before train E enters it is at least 6."
+}

@@ -1,0 +1,43 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "rentals",
+      "column": "rentals",
+      "where": {
+        "day": "Wednesday",
+        "depot": "Plymouth"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "rentals",
+      "column": "rentals",
+      "where": {
+        "day": "Wednesday",
+        "depot": "Plymouth"
+      },
+      "value": 138
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "rentals",
+      "scope": {
+        "day": "Wednesday",
+        "depot": "Plymouth"
+      },
+      "value": 0
+    },
+    {
+      "measure": "rentals",
+      "scope": {
+        "day": "Wednesday",
+        "depot": "Ply:lymouth"
+      },
+      "value": 138
+    }
+  ]
+}

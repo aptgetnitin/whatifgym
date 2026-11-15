@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "technicians",
+      "column": "capacity_min",
+      "where": {
+        "technician": "Ed"
+      },
+      "value": 240
+    },
+    {
+      "op": "set",
+      "table": "technicians",
+      "column": "depot",
+      "where": {
+        "technician": "Ed"
+      },
+      "value": "Freiburg im Breisgau"
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "assign",
+      "scope": {
+        "customer": [
+          "Customer1",
+          "Customer2",
+          "Customer3",
+          "Customer4",
+          "Customer5",
+          "Customer6",
+          "Customer7"
+        ]
+      },
+      "value": 1
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "cover[customer]",
+      "scope": {
+        "customer": [
+          "Customer4",
+          "Customer5"
+        ]
+      }
+    }
+  ]
+}

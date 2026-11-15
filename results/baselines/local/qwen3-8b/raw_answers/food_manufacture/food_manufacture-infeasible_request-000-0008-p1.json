@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg2_refine_jan",
+   "measure": "consume",
+   "scope": {
+    "month": "Jan",
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "value": 360
+  }
+ ],
+ "note": "A rule to ensure at least 360 tons of VEG2 is refined in January."
+}

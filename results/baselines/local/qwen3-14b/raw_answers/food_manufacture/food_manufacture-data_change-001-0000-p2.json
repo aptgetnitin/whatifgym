@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "purchase_prices",
+      "factor": 1.3
+    },
+    {
+      "op": "scale_param",
+      "name": "hardness",
+      "factor": 1.1
+    }
+  ]
+}

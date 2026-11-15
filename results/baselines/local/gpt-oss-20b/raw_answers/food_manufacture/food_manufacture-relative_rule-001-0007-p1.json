@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"feb_buy_min_40pct","measure":"buy","scope":{"month":"Feb"},"sense":">=","relative_to":{"measure":"buy"},"factor":0.4}],"note":"Ensure February purchases are at least 40% of total purchases."}

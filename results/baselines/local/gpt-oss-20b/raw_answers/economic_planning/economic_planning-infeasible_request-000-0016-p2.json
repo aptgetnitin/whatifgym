@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"steel_year3_min_production","measure":"production","scope":{"year":3,"industry":"steel"},"sense":">=","value":1820}],"note":"Check feasibility of achieving at least 1820 production in steel year 3."}

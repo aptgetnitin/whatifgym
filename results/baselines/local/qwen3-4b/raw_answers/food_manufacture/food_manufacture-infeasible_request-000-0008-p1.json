@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "veg2_jan_refined_at_least_360",
+      "measure": "consume",
+      "scope": {
+        "oil": "VEG2",
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "value": 360
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

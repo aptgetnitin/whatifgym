@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "logic": [
+    {
+      "name": "C7_to_E13_implies_C5_at_least_450",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "assign",
+          "scope": {
+            "county": "C7",
+            "facility": "E13"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "assign",
+          "scope": {
+            "county": "C5"
+          },
+          "sense": "<=",
+          "value": 449
+        }
+      ]
+    }
+  ],
+  "note": "If any patients are assigned from county C7 to facility E13, then patients assigned for county C5 must total at least 450."
+}

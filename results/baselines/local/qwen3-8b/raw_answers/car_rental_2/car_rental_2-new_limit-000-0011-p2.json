@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "damaged_stock_ceiling",
+   "measure": "damaged_stock",
+   "sense": "<=",
+   "value": 260
+  }
+ ],
+ "note": "A ceiling on the total number of damaged cars at all depots in the morning."
+}

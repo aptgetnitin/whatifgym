@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "a318_8_flight_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A318#8"
+   },
+   "sense": "<=",
+   "value": 4
+  }
+ ],
+ "note": "Restrict the total number of flights operated by aircraft A318#8 to 4."
+}

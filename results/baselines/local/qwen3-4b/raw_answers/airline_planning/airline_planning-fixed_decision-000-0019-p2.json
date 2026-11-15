@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "operate",
+      "where": {
+        "flight": 3102,
+        "aircraft": "A318#8"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Aircraft A318#8 is not allowed to operate flight 3102, so the operate decision for that flight is set to 0."
+}

@@ -1,0 +1,13 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "camps",
+   "column": "beneficiaries",
+   "where": {},
+   "factor": 0.75
+  }
+ ]
+}

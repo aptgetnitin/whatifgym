@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "feb_buy_share",
+      "measure": "buy",
+      "scope": {
+        "month": [
+          "Feb"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.4
+    }
+  ]
+}

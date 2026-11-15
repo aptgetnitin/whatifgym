@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4513_min_5_percent",
+      "measure": "operate",
+      "scope": {
+        "flight": "4513"
+      },
+      "sense": ">=",
+      "value": 0.05
+    },
+    {
+      "name": "flight_3077_at_least_1_25_flight_3112",
+      "measure": "operate",
+      "scope": {
+        "flight": "3077"
+      },
+      "sense": ">=",
+      "value": 1.25
+    }
+  ],
+  "note": "The planner's question specifies two conditions: flight 4513 must be at least 5% of total operated flights, and flight 3077 must be at least 1.25 times flight 3112's operated count."
+  }

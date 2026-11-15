@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "downgrade",
+   "column": "downgrade",
+   "where": {
+    "from_skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ],
+    "to_skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "value": 130
+  }
+ ],
+ "note": "The total number of workers downgraded to a lower skill level is capped at 130."
+}

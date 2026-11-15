@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "industries",
+   "column": "labor_per_unit_capacity",
+   "where": {
+    "industry": "steel"
+   },
+   "factor": 1.1
+  },
+  {
+   "op": "set",
+   "table": "input_output",
+   "column": "input_per_unit_output",
+   "where": {
+    "supplier": "coal",
+    "user": "steel"
+   },
+   "value": 0.38
+  }
+ ],
+ "note": "The first change scales the labor per unit of capacity built for steel by 10%, and the second sets the input per unit of output from coal to steel to 0.38."
+}

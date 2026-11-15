@@ -1,0 +1,117 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 1,
+    "skill": "unskilled"
+   },
+   "value": 2000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 1,
+    "skill": "semi_skilled"
+   },
+   "value": 1500
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 1,
+    "skill": "skilled"
+   },
+   "value": 1000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 2,
+    "skill": "unskilled"
+   },
+   "value": 2000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 2,
+    "skill": "semi_skilled"
+   },
+   "value": 1500
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 2,
+    "skill": "skilled"
+   },
+   "value": 1000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 3,
+    "skill": "unskilled"
+   },
+   "value": 2000
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 3,
+    "skill": "semi_skilled"
+   },
+   "value": 1500
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 3,
+    "skill": "skilled"
+   },
+   "value": 1000
+  }
+ ],
+ "rules": [
+  {
+   "name": "overmanned_year_1",
+   "measure": "overmanned",
+   "scope": {
+    "year": 1
+   },
+   "sense": ">=",
+   "value": 450
+  },
+  {
+   "name": "overmanned_year_3",
+   "measure": "overmanned",
+   "scope": {
+    "year": 3
+   },
+   "sense": ">=",
+   "value": 450
+  }
+ ],
+ "note": "The question asks if it is possible to have at least 450 workers overmanned in year 1 and year 3. This scenario sets the required workforce for each skill level in each year and adds rules to enforce the overmanning constraints."
+}

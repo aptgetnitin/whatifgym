@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "relax": [
+    {
+      "constraint": "capacity",
+      "scope": {}
+    }
+  ],
+  "note": "Removing the machine-hours limit involves relaxing the capacity constraint for all machines and months."
+}

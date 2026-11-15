@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "rentals_limit",
+   "measure": "rentals",
+   "scope": {
+    "day": [
+      "Thursday",
+      "Wednesday",
+      "Saturday"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "Restrict rentals to zero on Thursday, Wednesday and Saturday."
+}

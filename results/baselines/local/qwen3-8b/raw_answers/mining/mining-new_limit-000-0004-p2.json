@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "total_mine_years_worked",
+   "measure": "operate",
+   "scope": {
+    "mine": [
+     "Mine1",
+     "Mine2",
+     "Mine3",
+     "Mine4"
+    ],
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "sense": "<=",
+   "value": 7
+  },
+  {
+   "name": "total_blend_year5",
+   "measure": "blend",
+   "scope": {
+    "year": "Year5"
+   },
+   "sense": "<=",
+   "value": 3280000
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope."
+}

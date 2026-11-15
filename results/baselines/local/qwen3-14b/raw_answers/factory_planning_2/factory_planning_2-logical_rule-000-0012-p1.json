@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","ask":"Which product's sales are limited to at most one of the months Apr, May, and Mar? The question is ambiguous without specifying the product or the sales measure involved."}

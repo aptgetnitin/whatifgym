@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "bin_packing",
+ "rules": [
+  {
+   "name": "bin1_item_share",
+   "measure": "x",
+   "scope": {
+    "bin": "bin1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "x",
+    "scope": {
+     "bin": [
+      "bin0",
+      "bin1",
+      "bin2",
+      "bin3",
+      "bin4",
+      "bin5",
+      "bin6",
+      "bin7",
+      "bin8",
+      "bin9",
+      "bin10"
+     ]
+    }
+   },
+   "factor": 0.3
+  }
+ ],
+ "note": "A rule that enforces bin1 to hold at least 30% of all items."
+}

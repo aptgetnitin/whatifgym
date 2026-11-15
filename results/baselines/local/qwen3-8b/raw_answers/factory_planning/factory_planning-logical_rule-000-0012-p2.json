@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "logic": [
+  {
+   "name": "at_most_3_months_with_production",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "make",
+     "sense": ">",
+     "value": 0
+    },
+    {
+     "measure": "make",
+     "sense": ">",
+     "value": 0
+    },
+    {
+     "measure": "make",
+     "sense": ">",
+     "value": 0
+    },
+    {
+     "measure": "make",
+     "sense": ">",
+     "value": 0
+    },
+    {
+     "measure": "make",
+     "sense": ">",
+     "value": 0
+    }
+   ]
+  }
+ ],
+ "note": "Logical rule to enforce that at most 3 of the specified months have non-zero production."
+}

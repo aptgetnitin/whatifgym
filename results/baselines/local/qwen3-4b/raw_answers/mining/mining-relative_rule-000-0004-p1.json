@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "year2_blend_share",
+      "measure": "blend",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "value": 0.75
+    },
+    {
+      "name": "year2_operate_ratio",
+      "measure": "operate",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "year": "Year5"
+        }
+      },
+      "factor": 1.25
+    }
+  ]
+}

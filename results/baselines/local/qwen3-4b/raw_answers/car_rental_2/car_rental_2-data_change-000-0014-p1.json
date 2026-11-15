@@ -1,0 +1,21 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "price_same_depot",
+      "value": 60
+    }
+  ],
+  "rules": [
+    {
+      "name": "rental_length_3_same_depot",
+      "measure": "rentals",
+      "scope": {
+        "rental_days": 3
+      },
+      "sense": "==",
+      "value": 60
+    }
+  ]
+}

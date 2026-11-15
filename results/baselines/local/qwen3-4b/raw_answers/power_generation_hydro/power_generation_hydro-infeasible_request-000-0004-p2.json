@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": "15-18"
+      },
+      "value": 78750
+    }
+  ],
+  "note": "The planner asks for a fixed decision in the thermal output for a specific period and generator type. This is a data change to the demand_mw column for the period 15-18."
+}

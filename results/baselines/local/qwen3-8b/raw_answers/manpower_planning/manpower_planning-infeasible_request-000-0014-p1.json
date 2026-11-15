@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "workforce",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   }
+  }
+ ],
+ "rules": [
+  {
+   "name": "total_workers",
+   "measure": "workforce",
+   "scope": {
+    "year": [1, 2, 3],
+    "skill": ["unskilled", "semi_skilled", "skilled"]
+   },
+   "sense": "==",
+   "value": 125000
+  }
+ ],
+ "note": "The objective is to minimize redundancies, and a rule ensures the total workforce equals 125000."
+}

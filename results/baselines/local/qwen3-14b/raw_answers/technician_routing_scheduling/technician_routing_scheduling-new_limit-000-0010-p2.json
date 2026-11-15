@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "ed_min_jobs",
+      "measure": "assign",
+      "scope": {
+        "technician": "Ed"
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

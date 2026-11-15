@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_c_resource_4_condition",
+   "measure": "entry_time",
+   "scope": {
+    "train": "C",
+    "resource": 4
+   },
+   "sense": ">",
+   "value": 0,
+   "relative_to": {
+    "measure": "finish_time",
+    "scope": {
+     "train": "D"
+    }
+   },
+   "factor": 11.2
+  }
+ ],
+ "note": "The entry time for train C at resource 4 is permitted only when the total arrival time at destination for train D is 11.2 or more."
+}

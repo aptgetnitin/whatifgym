@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 6
+      },
+      "value": 9
+    },
+    {
+      "op": "set",
+      "table": "plants",
+      "column": "output",
+      "where": {
+        "plant": "Vogtle",
+        "hour": 6
+      },
+      "value": 45100
+    }
+  ],
+  "rules": [
+    {
+      "name": "min_plant_hours_on_6",
+      "measure": "on",
+      "scope": {
+        "hour": 6
+      },
+      "sense": ">=",
+      "value": 9
+    },
+    {
+      "name": "vogtle_output_limit",
+      "measure": "output",
+      "scope": {
+        "plant": "Vogtle",
+        "hour": 6
+      },
+      "sense": "<=",
+      "value": 45100
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "sat_le_tue_undamaged_left",
+      "measure": "undamaged_left",
+      "scope": { "day": "Saturday" },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "undamaged_left",
+        "scope": { "day": "Tuesday" }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "thursday_transfer_share",
+      "measure": "undamaged_transfers",
+      "scope": { "day": "Thursday" },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "undamaged_transfers"
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "Saturday undamaged cars kept overnight must not exceed Tuesday's, and Thursday's undamaged transfers must be no more than 5% of all undamaged transfers."
+}

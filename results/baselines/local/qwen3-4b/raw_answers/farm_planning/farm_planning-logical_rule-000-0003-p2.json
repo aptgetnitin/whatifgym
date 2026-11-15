@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "grow_beet",
+      "column": "grow_beet",
+      "where": {
+        "year": "Year1"
+      },
+      "value": 182
+    }
+  ],
+  "note": "The planner's question sets the total tons of sugar beet grown for Year1 to 182, which is the minimum required by the condition."
+}

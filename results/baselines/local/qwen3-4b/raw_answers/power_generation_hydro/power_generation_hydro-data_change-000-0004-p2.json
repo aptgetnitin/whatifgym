@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hydro_units",
+      "column": "output_mw",
+      "where": {
+        "hydro": "HydroA"
+      },
+      "factor": 0.9
+    },
+    {
+      "op": "remove",
+      "table": "thermal_types",
+      "rows": [
+        {
+          "type": "Thermal1"
+        }
+      ]
+    }
+  ]
+}

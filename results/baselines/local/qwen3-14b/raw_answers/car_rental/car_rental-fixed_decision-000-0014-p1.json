@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "undamaged_stock",
+      "column": "undamaged_stock",
+      "where": {
+        "day": "Saturday"
+      },
+      "value": 45
+    }
+  ],
+  "note": "Setting undamaged_stock for Saturday to 45 for all depots."
+}

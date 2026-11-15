@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "regular_labour_hours",
+   "column": "regular_labour_hours",
+   "where": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "factor": 1.2
+  },
+  {
+   "op": "scale",
+   "table": "housing_capacity",
+   "column": "housing_capacity",
+   "where": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   },
+   "factor": 1.2
+  }
+ ],
+ "note": "Both the labour-hours limit and the housing-capacity limit are lifted by scaling them up by 20%."
+}

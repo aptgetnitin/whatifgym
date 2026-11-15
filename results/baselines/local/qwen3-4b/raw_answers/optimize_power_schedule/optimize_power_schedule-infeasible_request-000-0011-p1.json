@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 14
+      },
+      "value": 15200
+    },
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 20
+      },
+      "value": 18850
+    }
+  ],
+  "note": "The planner asks if two specific demand levels are achievable in two specific hours. The scenario sets the demand for hour 14 to 15200 MWh and hour 20 to 18850 MWh."
+}

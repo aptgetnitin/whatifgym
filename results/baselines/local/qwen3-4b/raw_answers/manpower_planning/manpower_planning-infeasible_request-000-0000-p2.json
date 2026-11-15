@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 4210
+    }
+  ],
+  "note": "The planner asks if the total redundancies (redundant) can be 4210 or more. In the model, redundancies are captured by the measure 'redundant' over the scope of all years and skills. The question is about the feasibility of a total redundancy level of 4210 or more, which requires setting the 'required' column in the 'requirements' table to 4210 for all years and skills to test the scenario."
+}

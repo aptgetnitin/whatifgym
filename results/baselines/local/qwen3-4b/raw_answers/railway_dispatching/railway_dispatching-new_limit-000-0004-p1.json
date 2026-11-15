@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "C"
+      },
+      "value": 21
+    }
+  ],
+  "note": "The planner asks for a minimum arrival time for train C at its destination. In the railway dispatching model, the 'ready_time' is the time at which the train enters its current resource (0 = now). Setting 'ready_time' for train C to 21 means the train must arrive at its destination by at least 21 minutes after the current time."
+}

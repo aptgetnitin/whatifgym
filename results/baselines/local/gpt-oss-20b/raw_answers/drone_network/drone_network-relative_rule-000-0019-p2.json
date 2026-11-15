@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"min_60pct_queue_at_5145","measure":"queue_load","scope":{"base":"5145 RURITAN COURT Rescue Squad"},"sense":">=","relative_to":{"measure":"queue_load","scope":{}},"factor":0.6}],"note":"At least 60% of total queue load must be at base 5145 RURITAN COURT Rescue Squad."}

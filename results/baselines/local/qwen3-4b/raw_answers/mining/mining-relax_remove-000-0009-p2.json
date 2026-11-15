@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_mines",
+      "value": "2"
+    },
+    {
+      "op": "set_param",
+      "name": "discount_rate",
+      "value": "0.15"
+    }
+  ],
+  "note": "The planner wants to lift the limit on how many mines may operate in a year (set max_mines to 2) and the blend-quality target (set discount_rate to 0.15)."
+}

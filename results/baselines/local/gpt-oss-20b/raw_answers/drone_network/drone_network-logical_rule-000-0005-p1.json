@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "logic": [
+    {
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "linked_load",
+          "scope": {
+            "location": "4100 RAINBOW DR"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "linked_load",
+          "scope": {
+            "location": "4100 RAINBOW DR"
+          },
+          "sense": ">=",
+          "value": 0.02
+        }
+      ]
+    }
+  ]
+}

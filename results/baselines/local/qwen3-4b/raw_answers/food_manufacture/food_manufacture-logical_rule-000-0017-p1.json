@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "Mar",
+        "oil": "OIL1"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "month": "Mar",
+        "oil": "OIL1"
+      },
+      "value": 750
+    }
+  ],
+  "note": "The planner's question specifies two possible values for the store of OIL1 in March: 0 or at least 750. This requires two separate data changes to cover both cases."
+}

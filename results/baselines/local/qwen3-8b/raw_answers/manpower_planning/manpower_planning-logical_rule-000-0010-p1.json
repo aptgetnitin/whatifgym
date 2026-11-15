@@ -1,0 +1,41 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "retrain_to_higher_skill_year_1",
+   "measure": "retrain",
+   "scope": {
+    "year": 1,
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "sense": ">=",
+   "value": 0
+  },
+  {
+   "name": "overmanned_unskilled_year_1",
+   "measure": "overmanned",
+   "scope": {
+    "year": 1,
+    "skill": "unskilled"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "overmanned",
+    "scope": {
+     "year": 1,
+     "skill": "unskilled"
+    }
+   },
+   "factor": 860
+  }
+ ],
+ "note": "If any workers are retrained to a higher skill level in year 1, then workers employed above requirement at skill level unskilled must total at least 860."
+}

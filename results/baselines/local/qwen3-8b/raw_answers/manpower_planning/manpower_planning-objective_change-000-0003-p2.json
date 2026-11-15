@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "short_time",
+   "scope": {
+    "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+    ]
+   }
+  }
+ ],
+ "note": "The first objective minimises total redundancies, and the second objective minimises the total number of workers on short-time working among the minimum-redundancy plans."
+}

@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "health_costs",
+   "column": "health_cost",
+   "where": {
+    "plant": "GAS",
+    "hour": [
+     8,
+     9
+    ]
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "gas_total_output",
+   "measure": "output",
+   "scope": {
+    "plant": "GAS"
+   },
+   "sense": ">=",
+   "value": 36900
+  }
+ ],
+ "note": "Set health cost for GAS in hours 8 and 9 to 0 to avoid affecting the total output constraint."
+}

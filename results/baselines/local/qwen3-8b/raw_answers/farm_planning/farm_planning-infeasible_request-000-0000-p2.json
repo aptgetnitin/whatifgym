@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "minimum_cattle_age_4",
+   "measure": "herd",
+   "scope": {
+    "year": "Year1",
+    "age": 4
+   },
+   "sense": ">=",
+   "value": 110
+  },
+  {
+   "name": "minimum_cattle_age_11",
+   "measure": "herd",
+   "scope": {
+    "year": "Year1",
+    "age": 11
+   },
+   "sense": ">=",
+   "value": 94
+  }
+ ],
+ "note": "The planner is asking if the model can satisfy both requests for cattle of specific ages in the first year."
+}

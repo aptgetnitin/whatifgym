@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "logic": [
+    {
+      "name": "at_least_1_of_short_time_zero",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "short_time",
+          "scope": {
+            "year": 3
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "short_time",
+          "scope": {
+            "year": 1
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "short_time",
+          "scope": {
+            "year": 2
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

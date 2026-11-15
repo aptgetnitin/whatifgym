@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal0_output_09-15_min",
+      "measure": "output",
+      "scope": {
+        "period": "09-15",
+        "type": "Thermal0"
+      },
+      "sense": ">=",
+      "value": 26400
+    }
+  ],
+  "note": "The rule ensures that if Thermal0 output for 09-15 is above zero, it must reach at least 26400. However, the rule as written is not conditional but absolute. To make it conditional, we need to check if the output is above zero and then enforce the minimum. Since the DSL does not support conditional rules directly, we might need to rephrase or use a different approach. But the question says 'if ... then ...', so we need to express it as a rule that applies only when the output is above zero. Given the DSL constraints, we can only define absolute rules, so this might require a clarifying question."
+  }

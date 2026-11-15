@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "store_target",
+   "value": 180
+  }
+ ],
+ "note": "The end-of-horizon stock target is set to 180 units."
+}

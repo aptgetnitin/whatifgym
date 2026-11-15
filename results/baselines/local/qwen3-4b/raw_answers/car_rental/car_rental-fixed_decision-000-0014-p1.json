@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "undamaged_stock",
+      "column": "undamaged_stock",
+      "where": {
+        "day": "Saturday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "value": 45
+    }
+  ],
+  "note": "Each depot has exactly 45 undamaged cars at the depot in the morning on Saturday."
+}

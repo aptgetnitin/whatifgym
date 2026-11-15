@@ -1,0 +1,48 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "at_least_3x_clearing_before_F",
+      "measure": "goes_first",
+      "scope": {
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ],
+        "train": [
+          "B",
+          "C",
+          "D"
+        ],
+        "other_train": [
+          "F"
+        ]
+      },
+      "sense": ">=",
+      "value": 3
+    },
+    {
+      "name": "at_least_3x_clearing_before_A",
+      "measure": "goes_first",
+      "scope": {
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ],
+        "train": [
+          "B",
+          "C",
+          "D"
+        ],
+        "other_train": [
+          "A"
+        ]
+      },
+      "sense": ">=",
+      "value": 3
+    }
+  ]
+}

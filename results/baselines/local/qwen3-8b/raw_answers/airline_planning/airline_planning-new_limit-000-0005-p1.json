@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   }
+  }
+ ],
+ "note": "The objective is to minimize the total number of operated flights, constrained to at most 31."
+}

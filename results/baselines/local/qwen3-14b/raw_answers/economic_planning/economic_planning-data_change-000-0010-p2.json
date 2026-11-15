@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "labor_per_unit_capacity",
+      "factor": 1.1
+    },
+    {
+      "op": "set",
+      "table": "input_output",
+      "column": "input_per_unit_output",
+      "where": {
+        "supplier": "coal",
+        "user": "steel"
+      },
+      "value": 0.38
+    }
+  ]
+}

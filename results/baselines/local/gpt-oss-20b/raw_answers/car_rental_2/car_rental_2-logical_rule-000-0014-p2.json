@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","logic":[{"name":"rentals_tuesday_birmingham_cond","at_least":1,"of":[{"measure":"repairs","scope":{"day":"Monday"},"sense":">=","value":94},{"measure":"rentals","scope":{"day":"Tuesday","depot":"Birmingham"},"sense":"<=","value":0}]}],"note":"Rentals on Tuesday at Birmingham allowed only if Monday repairs >=94."}

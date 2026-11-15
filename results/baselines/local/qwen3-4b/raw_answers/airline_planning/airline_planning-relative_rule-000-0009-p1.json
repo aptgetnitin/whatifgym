@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "a318_4_at_least_2x_a318_5",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A318#4",
+          "A318#5"
+        ]
+      },
+      "sense": ">=",
+      "value": 2
+    }
+  ]
+}

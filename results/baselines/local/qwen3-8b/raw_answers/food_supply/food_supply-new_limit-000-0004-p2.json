@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "oil_ration_min",
+   "measure": "ration",
+   "scope": {
+    "food": "Oil"
+   },
+   "sense": ">=",
+   "value": 6.7
+  }
+ ],
+ "note": "The total oil ration across all camps must be at least 6.7 units per person per day."
+}

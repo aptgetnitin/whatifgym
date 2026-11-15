@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_e_resource_2_min",
+   "measure": "entry_time",
+   "scope": {
+    "train": "E",
+    "resource": 2
+   },
+   "sense": ">=",
+   "value": 48
+  }
+ ],
+ "note": "A minimum batch rule for the entry time of train E at resource 2."
+}

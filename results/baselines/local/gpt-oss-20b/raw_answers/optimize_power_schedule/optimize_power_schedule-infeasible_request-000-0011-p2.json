@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"min_output_hour14","measure":"output","scope":{"hour":14},"sense":">=","value":15200},{"name":"min_output_hour20","measure":"output","scope":{"hour":20},"sense":">=","value":18850}],"note":"Check feasibility of new minimum output constraints."}

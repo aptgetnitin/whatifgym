@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "min_batch_rule_for_E_resource_2",
+      "measure": "entry_time[train, resource]",
+      "scope": {
+        "train": "E",
+        "resource": "2"
+      },
+      "sense": ">=",
+      "value": 48
+    }
+  ],
+  "note": "A minimum batch rule for train E on resource 2: entry time must be at least 48 minutes."
+}

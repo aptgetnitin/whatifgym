@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "single_machine_scheduling",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "setup_times",
+   "column": "setup_time",
+   "where": {
+    "from_job": "job",
+    "to_job": "job"
+   },
+   "factor": 1.1
+  }
+ ]
+}

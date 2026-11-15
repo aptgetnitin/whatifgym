@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "total_flights_operated_limit",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 38
+  },
+  {
+   "name": "a319_11_flights_operated_limit",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A319#11",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "Two limits are applied: one on the total number of flights operated across all aircraft, and another on the number of flights operated by aircraft A319#11."
+}

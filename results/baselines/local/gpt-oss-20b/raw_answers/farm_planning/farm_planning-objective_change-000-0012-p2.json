@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "sell_beet"
+    }
+  ],
+  "note": "First maximize the five‑year profit, then maximize total tons of sugar beet sold."
+}

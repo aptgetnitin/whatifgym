@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "min_batch_prod7",
+      "measure": "store",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "value": 500
+    }
+  ]
+}

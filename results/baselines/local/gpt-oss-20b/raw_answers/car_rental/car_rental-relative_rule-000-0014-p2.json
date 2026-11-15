@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "rules": [
+    {
+      "name": "damaged_vs_repairs",
+      "measure": "damaged_stock",
+      "sense": ">=",
+      "relative_to": {
+        "measure": "repairs"
+      },
+      "factor": 3.0
+    }
+  ],
+  "note": "Overall damaged cars in the morning must be at least three times the overall number of cars repaired."
+}

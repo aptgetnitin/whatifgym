@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "end_j0_step4_min",
+   "measure": "end",
+   "scope": {
+    "job": "J0",
+    "step": 4
+   },
+   "sense": ">=",
+   "value": 57
+  }
+ ],
+ "note": "The end time of J0's step 4 must be at least 57."
+}

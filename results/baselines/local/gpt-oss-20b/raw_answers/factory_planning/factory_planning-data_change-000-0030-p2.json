@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "products",
+      "column": "profit_per_unit",
+      "where": {
+        "product": "Prod7"
+      },
+      "value": 4
+    },
+    {
+      "op": "set",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod5",
+        "month": "Jun"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Set profit of Prod7 to 4 and zero demand for Prod5 in June."
+}

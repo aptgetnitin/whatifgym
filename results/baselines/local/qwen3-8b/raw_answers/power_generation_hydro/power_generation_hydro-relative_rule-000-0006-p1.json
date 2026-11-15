@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_limit",
+   "measure": "output",
+   "scope": {
+    "period": "15-18"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "output",
+    "scope": {
+     "period": "00-06"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "A rule limits the sum of thermal output in period 15-18 relative to the sum in period 00-06."
+}

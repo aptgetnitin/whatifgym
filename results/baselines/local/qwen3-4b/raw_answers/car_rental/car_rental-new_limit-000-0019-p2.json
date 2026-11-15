@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "damaged_left_saturday_sum",
+      "measure": "damaged_left",
+      "scope": {
+        "day": "Saturday"
+      },
+      "sense": ">=",
+      "value": 1.9
+    },
+    {
+      "name": "damaged_stock_manchester_morning",
+      "measure": "damaged_stock",
+      "scope": {
+        "depot": "Manchester"
+      },
+      "sense": "<=",
+      "value": 67
+    }
+  ],
+  "note": "The planner specifies two constraints: a minimum sum of damaged cars kept overnight on Saturday (1.9) and a maximum limit on damaged cars at Manchester in the morning (67)."
+}

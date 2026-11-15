@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","objective":[{"measure":"original","sense":"min","scope":{}},{"measure":"short_time","sense":"max","scope":{}}]}

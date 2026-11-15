@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"total_charge_limit","measure":"charge","scope":{},"sense":"<=","value":5.9}],"note":"Limit total charging power over all hours to 5.9 kW."}

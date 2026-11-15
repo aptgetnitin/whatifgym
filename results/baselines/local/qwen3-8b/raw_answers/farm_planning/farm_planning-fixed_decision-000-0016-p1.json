@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "grow_beet",
+   "column": "grow_beet",
+   "where": {
+    "year": "Year5"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the sugar beet grown in Year5 to 0 and optimise the rest of the model."
+}

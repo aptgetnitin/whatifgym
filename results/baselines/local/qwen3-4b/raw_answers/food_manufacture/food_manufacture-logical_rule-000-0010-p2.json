@@ -1,0 +1,57 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg1_buy_condition",
+      "measure": "buy",
+      "scope": {
+        "oil": "VEG1",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "veg2_total_condition",
+      "measure": "buy",
+      "scope": {
+        "oil": "VEG2",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "veg1_buy_permitted",
+      "measure": "buy",
+      "scope": {
+        "oil": "VEG1",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ]
+}

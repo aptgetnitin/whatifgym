@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod1_prod3_may_cap",
+      "measure": "make",
+      "scope": {
+        "product": ["Prod1", "Prod3"],
+        "month": "May"
+      },
+      "sense": "<=",
+      "value": 450
+    }
+  ],
+  "note": "Cap combined production of Prod1 and Prod3 in May at 450 units."
+}

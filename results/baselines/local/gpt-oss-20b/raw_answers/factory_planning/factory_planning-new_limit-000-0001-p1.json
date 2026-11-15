@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "May_end_stock_limit",
+      "measure": "store",
+      "scope": {
+        "month": "May"
+      },
+      "sense": "<=",
+      "value": 180
+    }
+  ],
+  "note": "Total inventory at end of May limited to 180 units."
+}

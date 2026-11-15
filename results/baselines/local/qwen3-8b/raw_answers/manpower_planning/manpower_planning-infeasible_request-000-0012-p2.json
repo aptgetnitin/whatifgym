@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "workforce",
+   "column": "workforce",
+   "where": {
+    "year": 3,
+    "skill": "unskilled"
+   },
+   "value": 880
+  }
+ ],
+ "note": "Fix the workforce for year 3, unskilled to exactly 880."
+}

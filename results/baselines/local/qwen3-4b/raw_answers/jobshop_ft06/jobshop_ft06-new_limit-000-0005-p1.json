@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "makespan"
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "operations",
+      "column": "end",
+      "where": {
+        "job": "J0",
+        "step": 6
+      },
+      "value": 310
+    }
+  ]
+  }

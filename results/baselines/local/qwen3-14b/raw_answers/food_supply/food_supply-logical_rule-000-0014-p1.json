@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "limit_suppliers_to_3",
+   "measure": "purchase",
+   "scope": {
+    "supplier": [
+     "Daraa",
+     "Hassakeh",
+     "Aleppo",
+     "Gaziantep",
+     "Amman"
+    ]
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "purchase",
+    "scope": {
+     "supplier": [
+      "Daraa",
+      "Hassakeh",
+      "Aleppo",
+      "Gaziantep",
+      "Amman"
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ]
+}

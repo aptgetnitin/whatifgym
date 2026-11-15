@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"max_5pct_year3_capacity","measure":"extra_capacity","scope":{"year":3},"sense":"<=","relative_to":{"measure":"extra_capacity"},"factor":0.05}],"note":"No more than 5% of all capacity built may be in year 3."}

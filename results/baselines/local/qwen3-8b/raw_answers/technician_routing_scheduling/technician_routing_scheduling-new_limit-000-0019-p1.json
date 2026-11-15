@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "total_service_start_time_cap",
+   "measure": "start_time",
+   "scope": {
+    "location": [
+     "Heidelberg",
+     "Freiburg im Breisgau",
+     "Mannheim",
+     "Karlsruhe",
+     "Baden-Baden",
+     "Buehl",
+     "Offenburg",
+     "Lahr/Schwarzwald",
+     "Loerrach"
+    ]
+   },
+   "sense": "<=",
+   "value": 900
+  }
+ ],
+ "note": "Cap the total service start time (min) at 900 across everything."
+}

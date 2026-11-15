@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "jobs",
+      "column": "release_date",
+      "where": {
+        "job": "job_6"
+      },
+      "value": 415600
+    }
+  ],
+  "note": "The planner asks if job_6 can start at least at 415600, which means setting its release_date to 415600."
+}

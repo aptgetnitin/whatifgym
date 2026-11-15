@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "rules": [
+  {
+   "name": "E11_patient_assignment",
+   "measure": "assign",
+   "scope": {
+    "facility": "E11"
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "E11_patient_assignment_min",
+   "measure": "assign",
+   "scope": {
+    "facility": "E11"
+   },
+   "sense": ">=",
+   "value": 240
+  }
+ ],
+ "note": "The rule enforces that either no patients are assigned to E11 or at least 240 patients are assigned to E11."
+}

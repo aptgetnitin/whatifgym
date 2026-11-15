@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "monday_rentals_min",
+   "measure": "rentals",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "day": "Monday"
+    }
+   },
+   "factor": 0.96
+  }
+ ],
+ "note": "If the total cars rented out for day Monday is above zero, then it must reach at least 960."
+}

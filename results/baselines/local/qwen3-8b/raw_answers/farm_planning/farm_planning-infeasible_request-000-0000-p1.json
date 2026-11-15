@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "herd",
+   "column": "herd",
+   "where": {
+    "year": "Year1",
+    "age": 4
+   },
+   "value": 110
+  },
+  {
+   "op": "set",
+   "table": "herd",
+   "column": "herd",
+   "where": {
+    "year": "Year1",
+    "age": 11
+   },
+   "value": 94
+  }
+ ],
+ "note": "Setting the herd by age in Year1 to specific values to check feasibility."
+}

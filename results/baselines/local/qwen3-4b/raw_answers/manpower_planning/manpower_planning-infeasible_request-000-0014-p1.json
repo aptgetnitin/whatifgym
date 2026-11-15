@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": [
+          1,
+          2,
+          3
+        ],
+        "skill": [
+          "unskilled",
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "value": 125000
+    }
+  ],
+  "note": "The planner asks for a total employment target of 125000 workers across all skill levels and years. However, the model's requirements table specifies per-year and per-skill-level required workers. The total employment is the sum of workforce over all years and skills, but the model's requirements are structured per year and skill. The question is ambiguous because it doesn't specify whether the target is for a single year or cumulative over time. The model's requirements table has rows for each year and skill, so the total employment target of 125000 workers likely refers to the sum of required workers across all years and skills. However, the model's requirements are defined per year and skill, so the total employment target is not directly a single value in the model. The planner's question is not precise enough to be machine-checked without clarification."
+}

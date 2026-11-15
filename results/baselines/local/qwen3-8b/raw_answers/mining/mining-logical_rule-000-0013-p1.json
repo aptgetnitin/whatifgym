@@ -1,0 +1,35 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "mines",
+   "column": "capacity",
+   "where": {
+    "mine": "Mine1"
+   },
+   "value": 5000000
+  }
+ ],
+ "rules": [
+  {
+   "name": "mine1_extract_zero_or_at_least_5000000",
+   "measure": "extract",
+   "scope": {
+    "year": "Year1",
+    "mine": "Mine1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extract",
+    "scope": {
+     "year": "Year1",
+     "mine": "Mine1"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The minimum batch for Mine1 in Year1 is set to 5000000, and the rule ensures that the total extraction is either zero or at least 5000000."
+}

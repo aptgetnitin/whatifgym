@@ -1,0 +1,1 @@
+{"ask":"Please clarify whether you want to enforce that train E’s entry time on resource 2 must be either exactly 0 or at least 48 minutes (i.e., disallow values between 1 and 47), or if you intended a different constraint."}

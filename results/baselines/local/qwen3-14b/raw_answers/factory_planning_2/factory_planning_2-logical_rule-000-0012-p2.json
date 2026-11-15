@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "sales_months_limit",
+      "measure": "sell",
+      "scope": {
+        "month": [
+          "Mar",
+          "Apr",
+          "May"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": [
+            "Mar",
+            "Apr",
+            "May"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

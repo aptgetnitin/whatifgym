@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "logic": [
+    {
+      "name": "hour_14_and_20_generation",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "output",
+          "scope": {
+            "hour": 14
+          },
+          "sense": ">=",
+          "value": 15200
+        },
+        {
+          "measure": "output",
+          "scope": {
+            "hour": 20
+          },
+          "sense": ">=",
+          "value": 18850
+        }
+      ]
+    }
+  ]
+}

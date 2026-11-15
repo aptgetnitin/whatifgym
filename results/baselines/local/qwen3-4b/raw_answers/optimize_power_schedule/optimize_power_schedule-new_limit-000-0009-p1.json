@@ -1,0 +1,61 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "ramp_fraction",
+      "where": {
+        "plant": "GAS"
+      },
+      "factor": 0.0
+    },
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "ramp_fraction",
+      "where": {
+        "plant": "OTHER COAL"
+      },
+      "factor": 0.0
+    }
+  ],
+  "rules": [
+    {
+      "name": "at_most_one_start_up",
+      "measure": "start",
+      "scope": {
+        "plant": [
+          "Scherer",
+          "Bowen",
+          "Jack McDonough",
+          "Edwin I Hatch",
+          "Vogtle",
+          "OIL",
+          "BIOMASS",
+          "GAS",
+          "HYDRO",
+          "OTHER COAL"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "at_least_32500_gas_output",
+      "measure": "output",
+      "scope": {
+        "plant": "GAS"
+      },
+      "sense": ">=",
+      "value": 32500
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ]
+}

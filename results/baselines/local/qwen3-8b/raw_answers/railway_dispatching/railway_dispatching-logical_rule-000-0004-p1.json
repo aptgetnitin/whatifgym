@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "trains",
+   "column": "ready_time",
+   "where": {
+    "train": "E"
+   },
+   "value": 48
+  }
+ ],
+ "rules": [
+  {
+   "name": "entry_time_e_resource_2",
+   "measure": "entry_time",
+   "scope": {
+    "train": "E",
+    "resource": 2
+   },
+   "sense": ">=",
+   "value": 48
+  }
+ ],
+ "note": "Setting the ready_time of train E to 48 and enforcing its entry time on resource 2 to be at least 48."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "total_trains_clearing_before_E",
+      "measure": "goes_first",
+      "scope": {
+        "other_train": "E"
+      },
+      "sense": ">=",
+      "value": 6
+    }
+  ]
+}

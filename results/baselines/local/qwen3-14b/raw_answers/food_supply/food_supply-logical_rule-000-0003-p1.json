@@ -1,0 +1,72 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "ration_limit_csb",
+   "measure": "ration",
+   "scope": {
+    "food": "Corn-soya blend (CSB)",
+    "camp": {
+     "camp": {
+      "enum": [
+       "Ar Raqqa",
+       "Daraa",
+       "Dayr_Az_Zor",
+       "Hassakeh",
+       "Idleb",
+       "Jubb_al_Jarrah",
+       "Qamishli"
+      ]
+     }
+    }
+   },
+   "sense": "<=",
+   "value": 2
+  },
+  {
+   "name": "ration_limit_oil",
+   "measure": "ration",
+   "scope": {
+    "food": "Oil",
+    "camp": {
+     "camp": {
+      "enum": [
+       "Ar Raqqa",
+       "Daraa",
+       "Dayr_Az_Zor",
+       "Hassakeh",
+       "Idleb",
+       "Jubb_al_Jarrah",
+       "Qamishli"
+      ]
+     }
+    }
+   },
+   "sense": "<=",
+   "value": 2
+  },
+  {
+   "name": "ration_limit_milk",
+   "measure": "ration",
+   "scope": {
+    "food": "Milk",
+    "camp": {
+     "camp": {
+      "enum": [
+       "Ar Raqqa",
+       "Daraa",
+       "Dayr_Az_Zor",
+       "Hassakeh",
+       "Idleb",
+       "Jubb_al_Jarrah",
+       "Qamishli"
+      ]
+     }
+    }
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ]
+}

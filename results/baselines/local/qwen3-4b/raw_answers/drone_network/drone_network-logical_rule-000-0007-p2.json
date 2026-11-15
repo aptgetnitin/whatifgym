@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "queue_load_600_FLEET_DR_800_VIRGINIA_BEACH_BLVD",
+      "measure": "linked_load",
+      "scope": {
+        "location": "600 FLEET DR",
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": ">=",
+      "value": 0.02
+    },
+    {
+      "name": "no_queue_load_600_FLEET_DR_800_VIRGINIA_BEACH_BLVD",
+      "measure": "linked_load",
+      "scope": {
+        "location": "600 FLEET DR",
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": "<=",
+      "value": 0.0
+    }
+  ]
+}

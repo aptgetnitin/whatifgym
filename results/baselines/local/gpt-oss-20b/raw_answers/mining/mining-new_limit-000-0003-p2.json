@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Mine2_min_worked_years",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 4
+    },
+    {
+      "name": "Total_extraction_limit",
+      "measure": "extract",
+      "sense": "<=",
+      "value": 20873350
+    }
+  ],
+  "note": "Enforce at least 4 mine-years worked for Mine2 and total extraction <= 20,873,350 tons."
+}

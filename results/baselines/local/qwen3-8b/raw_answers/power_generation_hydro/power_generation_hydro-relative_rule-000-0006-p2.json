@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_15-18_limit",
+   "measure": "output",
+   "scope": {
+    "period": "15-18",
+    "type": "Thermal0",
+    "type": "Thermal1",
+    "type": "Thermal2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "output",
+    "scope": {
+     "period": "00-06",
+     "type": "Thermal0",
+     "type": "Thermal1",
+     "type": "Thermal2"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The thermal output for period 15-18 is limited to be no more than the thermal output for period 00-06."
+}

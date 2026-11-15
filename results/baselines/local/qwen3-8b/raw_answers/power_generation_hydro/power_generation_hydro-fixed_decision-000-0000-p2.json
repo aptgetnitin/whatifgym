@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "fixed_decisions": [
+  {
+   "measure": "ngen",
+   "scope": {
+    "type": "Thermal2"
+   },
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

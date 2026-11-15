@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"max_discharge_21_22","measure":"discharge","scope":{"hour":"21-22"},"sense":"<=","value":2.5}],"note":"Limit discharge power in hour 21-22 to 2.5 kW."}

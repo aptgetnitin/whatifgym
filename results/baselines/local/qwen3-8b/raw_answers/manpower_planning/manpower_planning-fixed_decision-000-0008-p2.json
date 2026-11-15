@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "short_time",
+   "column": "short_time",
+   "where": {
+    "year": 1,
+    "skill": "skilled"
+   },
+   "value": 62
+  }
+ ],
+ "note": "Fix the short_time value for year 1, skilled workers to exactly 62."
+}

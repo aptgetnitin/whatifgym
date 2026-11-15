@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "max_one_month_with_sales",
+   "measure": "sell",
+   "scope": {
+    "month": [
+     "Jan",
+     "Feb",
+     "Apr"
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "A rule limits the total units sold across the specified months to 1."
+}

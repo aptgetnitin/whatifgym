@@ -1,0 +1,24 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "monday_rentals_min",
+      "measure": "rentals",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": ">=",
+      "value": 960
+    },
+    {
+      "name": "monday_rentals_zero",
+      "measure": "rentals",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ]
+}

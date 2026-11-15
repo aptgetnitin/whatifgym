@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"soc_cap_14-15","measure":"soc","scope":{"hour":"14-15"},"sense":"<=","value":8}],"note":"Limit stored energy in hour 14-15 to at most 8 kWh."}

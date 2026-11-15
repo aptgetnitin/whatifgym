@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": [
+     "unskilled",
+     "semi_skilled"
+    ],
+    "to_skill": [
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "value": 300
+  },
+  {
+   "op": "set",
+   "table": "retraining",
+   "column": "max_per_year",
+   "where": {
+    "from_skill": "unskilled",
+    "to_skill": "skilled"
+   },
+   "value": 100
+  }
+ ],
+ "note": "Lift the limit on retraining for year 1 and 3 by setting the max_per_year to 300 for unskilled to semi_skilled and semi_skilled to skilled, and 100 for unskilled to skilled."
+}

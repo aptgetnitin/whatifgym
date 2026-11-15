@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": [
+          "Idleb"
+        ]
+      },
+      "value": 10000
+    },
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": [
+          "Qamishli"
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "table": "camps",
+      "rows": [
+        {
+          "camp": "Homs",
+          "beneficiaries": 3000
+        }
+      ]
+    }
+  ],
+  "note": "The question asks if the total ration per person (across all camps) is at least 102 units (100 g per day). This is a data change scenario where Idleb's population doubles to 10,000, Qamishli camp closes, and a new camp in Homs opens with 3,000 people."
+}

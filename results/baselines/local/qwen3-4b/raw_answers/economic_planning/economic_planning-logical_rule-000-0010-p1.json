@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "stock_year1_coal_positive",
+      "measure": "stock",
+      "scope": {
+        "year": 1,
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "coal_capacity_year5_at_least_1180",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 5,
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "value": 1180
+    }
+  ]
+}

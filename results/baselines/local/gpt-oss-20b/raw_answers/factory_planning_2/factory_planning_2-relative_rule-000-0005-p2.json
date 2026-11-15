@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "sold_at_most_twice_stock",
+      "measure": "sell",
+      "scope": {},
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {}
+      },
+      "factor": 2.0
+    }
+  ],
+  "note": "Limit total units sold to at most twice the total inventory held over the horizon."
+}

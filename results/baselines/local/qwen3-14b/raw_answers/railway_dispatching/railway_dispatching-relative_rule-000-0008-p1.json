@@ -1,0 +1,61 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "train_e_arrival_time_condition",
+      "measure": "finish_time",
+      "scope": {
+        "train": "E"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "finish_time",
+        "scope": {
+          "train": "C"
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "train_b_entry_time_condition",
+      "measure": "entry_time",
+      "scope": {
+        "train": "B",
+        "resource": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {
+          "train": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "resource": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        }
+      },
+      "factor": 0.05
+    }
+  ]
+}

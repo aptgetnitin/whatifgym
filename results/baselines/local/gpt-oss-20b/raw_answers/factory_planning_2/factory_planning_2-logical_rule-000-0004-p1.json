@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "Prod3Jun_Prod2StockRule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Jun",
+            "product": "Prod3"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "product": "Prod2"
+          },
+          "sense": ">=",
+          "value": 220
+        }
+      ]
+    }
+  ],
+  "note": "Conditional stock requirement triggered by Prod3 production in June."
+}

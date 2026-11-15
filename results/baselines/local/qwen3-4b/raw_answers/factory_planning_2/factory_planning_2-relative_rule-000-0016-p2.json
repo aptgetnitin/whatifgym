@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "may_make_share",
+      "measure": "make",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "value": 0.75
+    },
+    {
+      "name": "prod4_at_most_prod3",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "product": "Prod3"
+        }
+      },
+      "factor": 0.6
+    }
+  ]
+}

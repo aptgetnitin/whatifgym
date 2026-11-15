@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "biomass_hours_limit",
+   "measure": "on",
+   "scope": {
+    "plant": "BIOMASS"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "on",
+    "scope": {
+     "plant": "Edwin I Hatch"
+    }
+   },
+   "factor": 0.8
+  }
+ ],
+ "note": "The total number of hours BIOMASS is on is limited to 80% of the total hours Edwin I Hatch is on."
+}

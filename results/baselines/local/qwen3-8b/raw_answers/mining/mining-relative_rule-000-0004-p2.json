@@ -1,0 +1,48 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "year2_blend_share",
+   "measure": "blend",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "blend",
+    "scope": {
+     "year": "Year1",
+     "year": "Year2",
+     "year": "Year3",
+     "year": "Year4",
+     "year": "Year5"
+    }
+   },
+   "factor": 0.75
+  },
+  {
+   "name": "year2_mine_years_worked",
+   "measure": "operate",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "year": "Year5"
+    }
+   },
+   "factor": 1.25
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The first rule ensures Year2's blend share is at least 75% of total blend. The second rule ensures the number of mine-years worked in Year2 is at least 1.25 times that of Year5."
+}

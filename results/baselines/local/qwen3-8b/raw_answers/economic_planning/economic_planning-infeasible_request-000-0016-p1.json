@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "external_demand",
+   "where": {
+    "industry": "steel"
+   },
+   "value": 80
+  }
+ ],
+ "rules": [
+  {
+   "name": "steel_output_year_3",
+   "measure": "production",
+   "scope": {
+    "year": 3,
+    "industry": "steel"
+   },
+   "sense": ">=",
+   "value": 1820
+  }
+ ],
+ "note": "The question asks to set the external demand for steel to 80 and ensure that steel production in year 3 is at least 1820."
+}

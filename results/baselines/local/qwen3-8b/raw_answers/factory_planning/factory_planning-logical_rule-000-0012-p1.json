@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "max_months_prod",
+   "measure": "make",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "A rule limits the total production of a product to no more than 3 months."
+}

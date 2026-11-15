@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "milk_flow_min",
+      "measure": "flow",
+      "scope": {
+        "food": "Milk"
+      },
+      "sense": ">=",
+      "value": 36500
+    }
+  ]
+}

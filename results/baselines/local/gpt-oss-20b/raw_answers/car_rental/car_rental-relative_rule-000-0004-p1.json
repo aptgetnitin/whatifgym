@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"glasgow_undamaged_limit","measure":"undamaged_stock","scope":{"depot":"Glasgow"},"sense":"<=","relative_to":{"measure":"undamaged_stock"},"factor":0.15}],"note":"Limit Glasgow morning undamaged cars to 15% of total undamaged cars."}

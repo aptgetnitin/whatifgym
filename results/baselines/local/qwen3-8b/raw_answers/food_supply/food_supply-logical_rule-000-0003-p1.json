@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "ration_limit_csb_oil_milk",
+   "measure": "ration",
+   "scope": {
+    "food": [
+     "Corn-soya blend (CSB)",
+     "Oil",
+     "Milk"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Limits the ration per person for the specified foods to 2 units (100 g) per day."
+}

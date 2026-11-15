@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "industries",
+      "column": "stock",
+      "where": {
+        "industry": "coal",
+        "year": 2
+      },
+      "value": 0
+    }
+  ],
+  "note": "Set the stock of coal in year 2 to 0."
+}

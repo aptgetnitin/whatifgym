@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_3769_E_stratford_road",
+   "measure": "queue_load",
+   "scope": {
+    "base": "3769 E. STRATFORD ROAD Rescue Squad"
+   },
+   "sense": "<=",
+   "value": 0.05,
+   "relative_to": {
+    "measure": "queue_load",
+    "scope": {
+     "base": "*"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "open_21_municipal_ctr_at_least_double_5145_ruritan_court",
+   "measure": "open",
+   "scope": {
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "open",
+    "scope": {
+     "base": "5145 RURITAN COURT Rescue Squad"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "The first rule limits the queue load at 3769 E. STRATFORD ROAD Rescue Squad to 5% of the total queue load. The second rule ensures the number of open bases at 21 MUNICIPAL CTR Fire Station is at least double that at 5145 RURITAN COURT Rescue Squad."
+}

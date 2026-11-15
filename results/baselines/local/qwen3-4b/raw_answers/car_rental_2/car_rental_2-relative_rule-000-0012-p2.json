@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_left_sat_leq_tue",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Saturday"
+      },
+      "sense": "<=",
+      "value": {
+        "measure": "undamaged_left",
+        "scope": {
+          "day": "Tuesday"
+        }
+      }
+    },
+    {
+      "name": "undamaged_transfers_thu_share_leq_5",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "day": "Thursday"
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

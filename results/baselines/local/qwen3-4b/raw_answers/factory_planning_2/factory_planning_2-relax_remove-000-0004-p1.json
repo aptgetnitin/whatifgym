@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "machines_to_maintain",
+      "value": 0
+    }
+  ],
+  "note": "The maintenance requirement is dropped by setting the parameter `machines_to_maintain` to 0."
+}

@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "makespan"
+  },
+  {
+   "sense": "max",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "all"
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "start",
+   "scope": {
+    "job": "all",
+    "step": "all"
+   }
+  }
+ ],
+ "note": "Prioritizing the makespan first, then maximizing the number of job pairs where a job goes first on a machine, and finally minimizing the total operation start time."
+}

@@ -1,0 +1,118 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "sold_at_most_twice_stock",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod1"
+    }
+   },
+   "factor": 2
+  },
+  {
+   "name": "sold_at_most_twice_stock_prod2",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod2"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod2"
+    }
+   },
+   "factor": 2
+  },
+  {
+   "name": "sold_at_most_twice_stock_prod3",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod3"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod3"
+    }
+   },
+   "factor": 2
+  },
+  {
+   "name": "sold_at_most_twice_stock_prod4",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod4"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod4"
+    }
+   },
+   "factor": 2
+  },
+  {
+   "name": "sold_at_most_twice_stock_prod5",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod5"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod5"
+    }
+   },
+   "factor": 2
+  },
+  {
+   "name": "sold_at_most_twice_stock_prod6",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod6"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod6"
+    }
+   },
+   "factor": 2
+  },
+  {
+   "name": "sold_at_most_twice_stock_prod7",
+   "measure": "sell",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "product": "Prod7"
+    }
+   },
+   "factor": 2
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The planner's question is translated into a rule that limits the total units sold to twice the total units in stock for each product, and the objective is to maximise the original profit."
+}

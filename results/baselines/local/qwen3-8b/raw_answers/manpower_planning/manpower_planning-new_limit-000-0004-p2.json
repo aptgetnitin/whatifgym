@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "max_short_time",
+   "value": 240
+  }
+ ],
+ "rules": [
+  {
+   "name": "redundant_limit_year_2",
+   "measure": "redundant",
+   "scope": {
+    "year": 2
+   },
+   "sense": "<=",
+   "value": 80
+  }
+ ],
+ "note": "The total workers on short-time working is limited to 240, and the total workers made redundant for year 2 is limited to 80."
+}

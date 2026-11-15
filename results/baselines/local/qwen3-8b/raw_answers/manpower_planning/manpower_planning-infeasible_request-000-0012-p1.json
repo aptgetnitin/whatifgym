@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": 3,
+    "skill": "unskilled"
+   },
+   "value": 880
+  }
+ ],
+ "rules": [
+  {
+   "name": "exact_unskilled_workforce_year_3",
+   "measure": "workforce",
+   "scope": {
+    "year": 3,
+    "skill": "unskilled"
+   },
+   "sense": "==",
+   "value": 880
+  }
+ ],
+ "note": "Set the required workforce for unskilled workers in year 3 to exactly 880 and enforce it as a rule."
+}

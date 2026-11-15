@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      },
+      "delta": 0.1
+    },
+    {
+      "op": "set",
+      "table": "resources",
+      "column": "duration",
+      "where": {
+        "resource": [
+          "4"
+        ]
+      },
+      "value": 1.5
+    }
+  ]
+}

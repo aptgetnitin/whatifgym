@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "storage_zero_or_750",
+   "measure": "store",
+   "scope": {
+    "month": "Mar",
+    "oil": "OIL1"
+   },
+   "sense": ">=",
+   "value": 0
+  },
+  {
+   "name": "storage_at_least_750",
+   "measure": "store",
+   "scope": {
+    "month": "Mar",
+    "oil": "OIL1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Mar",
+     "oil": "OIL1"
+    }
+   },
+   "factor": 750
+  }
+ ],
+ "note": "The total storage for OIL1 in March must be either zero or at least 750 tons."
+}

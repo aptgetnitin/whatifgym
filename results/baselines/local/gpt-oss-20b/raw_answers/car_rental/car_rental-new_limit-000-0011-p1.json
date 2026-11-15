@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"max_undamaged_stock_total","measure":"undamaged_stock","sense":"<=","value":1900}]}

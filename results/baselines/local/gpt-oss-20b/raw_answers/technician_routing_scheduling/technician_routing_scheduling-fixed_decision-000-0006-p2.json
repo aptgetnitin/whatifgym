@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","fixed_decisions":[{"measure":"lateness","scope":{"customer":"Customer5"},"value":210}],"note":"Enforce lateness of Customer5 to be exactly 210 minutes."}

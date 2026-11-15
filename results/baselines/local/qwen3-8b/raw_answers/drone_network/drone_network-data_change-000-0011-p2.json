@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "maintenance_minutes",
+   "value": 19
+  }
+ ],
+ "note": "Maintenance time per mission is set to 19 minutes."
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "logic": [
+    {
+      "name": "rentals_monday_conditional",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Monday"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Monday"
+          },
+          "sense": ">=",
+          "value": 960
+        }
+      ]
+    }
+  ]
+}

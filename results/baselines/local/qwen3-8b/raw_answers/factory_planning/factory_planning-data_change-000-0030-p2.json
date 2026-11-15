@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "holding_cost",
+   "value": 2
+  },
+  {
+   "op": "scale_param",
+   "name": "max_inventory",
+   "factor": 1.5
+  },
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Jun",
+    "product": "Prod5"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "products",
+   "column": "profit_per_unit",
+   "where": {
+    "product": "Prod7"
+   },
+   "value": 4
+  }
+ ],
+ "note": "The holding cost doubles, the warehouse limit becomes 150, and the demand for Prod5 in June is zero. Additionally, the profit contribution for Prod7 is updated to 4 per unit."
+}

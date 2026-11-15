@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "mines",
+      "column": "royalty",
+      "where": {},
+      "factor": 0.75
+    }
+  ],
+  "note": "Scaling all royalties in the mines table by 75% to reflect a 25% reduction."
+}

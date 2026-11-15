@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "fixed_decisions": [
+  {
+   "measure": "expand",
+   "scope": {
+    "depot": "Birmingham",
+    "step": 2
+   },
+   "value": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "max_expansions_birmingham",
+   "measure": "expand",
+   "scope": {
+    "depot": "Birmingham"
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "Fixing the second expansion at Birmingham to 1 and limiting the total expansions at Birmingham to 1 ensures only the second expansion is carried out."
+}

@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "logic": [
+    {
+      "name": "at_most_two_foods_with_positive_ration",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Corn-soya blend (CSB)",
+            "camp": {
+              "const": "all"
+            }
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Oil",
+            "camp": {
+              "const": "all"
+            }
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Milk",
+            "camp": {
+              "const": "all"
+            }
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

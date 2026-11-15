@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "jan_make_target",
+   "measure": "make",
+   "scope": {
+    "month": "Jan"
+   },
+   "sense": ">=",
+   "value": 6150
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "A rule enforces a minimum total production in January, and the objective is to maximise profit."
+}

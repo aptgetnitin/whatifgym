@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "total_flights_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 38
+  },
+  {
+   "name": "a319_11_flights_cap",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "A319#11",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 3
+  }
+ ],
+ "note": "Two caps are added: one on the total number of flights operated and another on the number of flights operated by aircraft A319#11."
+}

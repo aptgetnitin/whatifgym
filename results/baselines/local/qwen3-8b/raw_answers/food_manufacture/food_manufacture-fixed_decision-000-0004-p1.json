@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "no_refining_veg2_jan",
+   "measure": "consume",
+   "scope": {
+    "month": "Jan",
+    "oil": "VEG2"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Fix the amount of VEG2 refined in January to zero."
+}

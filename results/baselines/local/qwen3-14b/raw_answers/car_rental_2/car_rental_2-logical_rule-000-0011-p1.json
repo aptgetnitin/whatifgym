@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "min_batch_plymouth_wednesday",
+      "measure": "rentals",
+      "scope": {
+        "day": "Wednesday",
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 138
+    }
+  ]
+}

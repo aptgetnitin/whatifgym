@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "jobs",
+      "column": "release_date",
+      "where": {
+        "job": "job_14"
+      },
+      "value": 213800
+    }
+  ],
+  "note": "The planner asks if job_14 can start at 213800 or later. This sets the release_date of job_14 to 213800, which is the earliest start time. The model will check if this is feasible."
+}

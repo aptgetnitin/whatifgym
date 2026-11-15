@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "soc",
+      "scope": {
+        "hour": "21-22"
+      }
+    }
+  ],
+  "note": "The planner wants to maximize the stored energy in hour 21-22 without reducing daily profit."
+  }

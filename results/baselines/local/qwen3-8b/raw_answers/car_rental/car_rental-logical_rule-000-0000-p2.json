@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "max_rentals_non_zero_depots",
+   "measure": "rentals",
+   "scope": {
+    "depot": [
+     "Plymouth",
+     "Manchester",
+     "Birmingham",
+     "Glasgow"
+    ]
+   },
+   "sense": "<=",
+   "value": 0,
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "depot": [
+      "Plymouth",
+      "Manchester",
+      "Birmingham",
+      "Glasgow"
+     ]
+    }
+   },
+   "factor": 2
+  }
+ ]
+}

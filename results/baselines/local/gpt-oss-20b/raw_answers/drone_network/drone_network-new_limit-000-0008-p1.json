@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"max_total_linked_load","measure":"linked_load","sense":"<=","value":0.53},{"name":"min_queue_load_800V","measure":"queue_load","scope":{"base":"800 VIRGINIA BEACH BLVD Fire Station"},"sense":">=","value":0.01}],"note":"Limits on total linked load and queue load at 800 VIRGINIA BEACH BLVD Fire Station."}

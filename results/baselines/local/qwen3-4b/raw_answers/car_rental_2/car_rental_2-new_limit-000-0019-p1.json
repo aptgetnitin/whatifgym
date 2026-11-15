@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_least_78_transfers_to_manchester",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "to_depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 78
+    }
+  ],
+  "note": "A rule that requires at least 78 undamaged cars transferred into Manchester in total."
+}

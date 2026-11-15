@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "entry_time_E2_disjunction",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "E",
+            "resource": 2
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "entry_time",
+          "scope": {
+            "train": "E",
+            "resource": 2
+          },
+          "sense": ">=",
+          "value": 48
+        }
+      ]
+    }
+  ],
+  "note": "Enforce entry_time[E,2] is either 0 or at least 48 minutes."
+}

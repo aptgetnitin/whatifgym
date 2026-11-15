@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "rule_for_feb_make",
+      "measure": "make",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "rule_for_apr_sell_prod4",
+      "measure": "sell",
+      "scope": {
+        "month": "Apr",
+        "product": "Prod4"
+      },
+      "sense": ">=",
+      "value": 150
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "c_entry_time_4_d_arrival_112",
+      "measure": "entry_time",
+      "scope": {
+        "train": "C",
+        "resource": "4"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "d_arrival_112",
+      "measure": "finish_time",
+      "scope": {
+        "train": "D"
+      },
+      "sense": ">=",
+      "value": 11.2
+    }
+  ],
+  "note": "The planner's question specifies a condition on entry time for train C at resource 4 and arrival time for train D. This is translated into two rules: one for the minimum entry time of C at resource 4 (>=0) and one for the minimum finish time of D (>=11.2)."
+}

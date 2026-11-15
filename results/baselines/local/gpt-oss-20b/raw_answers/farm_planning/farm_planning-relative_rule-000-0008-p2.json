@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"Year1_heifer_share","measure":"raise_heifers","scope":{"year":"Year1"},"sense":">=","relative_to":{"measure":"raise_heifers"},"factor":0.75}],"note":"Ensure at least 75% of all heifer calves raised occur in Year1."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"refine_may_at_least_2x_feb","measure":"consume","scope":{"month":"May"},"sense":">=","relative_to":{"measure":"consume","scope":{"month":"Feb"}},"factor":2.0}],"note":"Policy: total refined in May must be at least twice the total refined in February."}

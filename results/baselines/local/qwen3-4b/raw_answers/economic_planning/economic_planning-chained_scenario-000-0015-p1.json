@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "rules": [
+    {
+      "name": "cap_stock_total",
+      "measure": "stock",
+      "scope": {},
+      "sense": "<=",
+      "value": 850
+    },
+    {
+      "name": "cap_production_total",
+      "measure": "production",
+      "scope": {},
+      "sense": "<=",
+      "value": 3700
+    }
+  ]
+}

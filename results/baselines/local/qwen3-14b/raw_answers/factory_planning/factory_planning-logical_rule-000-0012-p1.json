@@ -1,0 +1,74 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "production_months_limit",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "make",
+          "scope": {
+            "month": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "Jun"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": [
+              "Jan",
+              "Feb",
+              "Mar"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": [
+              "Jan",
+              "Apr",
+              "Jun"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": [
+              "Feb",
+              "Apr",
+              "Jun"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": [
+              "Jan",
+              "Feb",
+              "Jun"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

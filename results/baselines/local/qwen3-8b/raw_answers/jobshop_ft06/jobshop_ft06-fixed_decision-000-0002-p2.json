@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "relax": [
+  {
+   "constraint": "order",
+   "scope": {
+    "machine": "M1",
+    "job": "J1",
+    "other_job": "J5"
+   }
+  }
+ ],
+ "note": "The constraint for the order on machine M1 between jobs J1 and J5 is relaxed to exclude this specific pair from the big-M disjunction."
+}

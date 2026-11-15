@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "other_coal_hour_2_min_batch",
+   "measure": "output",
+   "scope": {
+    "plant": "OTHER COAL",
+    "hour": 2
+   },
+   "sense": ">=",
+   "value": 2980
+  }
+ ],
+ "note": "A minimum batch rule ensures that whenever the total power generated for plant OTHER COAL in hour 2 is positive, it must be at least 2980 MWh."
+}

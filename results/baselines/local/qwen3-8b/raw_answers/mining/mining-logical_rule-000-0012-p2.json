@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "extract_mine1_year5_zero_or_more_than_6000000",
+   "measure": "extract",
+   "scope": {
+    "year": "Year5",
+    "mine": "Mine1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "extract",
+    "scope": {
+     "year": "Year5",
+     "mine": "Mine1"
+    }
+   },
+   "factor": 6000000
+  }
+ ]
+}

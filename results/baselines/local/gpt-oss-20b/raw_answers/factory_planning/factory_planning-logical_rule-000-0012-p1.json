@@ -1,0 +1,1 @@
+{"ask":"Do you intend to restrict the number of months in which any production occurs to at most 3 among Feb, Jan, Apr, Mar, Jun, or do you mean each product can be produced in at most 3 of those months? Also, would you like to enforce this as a cardinality constraint or approximate it with a linear bound on total production per month?"}

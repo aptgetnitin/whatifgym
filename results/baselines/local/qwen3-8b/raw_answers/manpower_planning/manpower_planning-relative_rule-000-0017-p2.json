@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "semi_skilled_short_time_limit",
+   "measure": "short_time",
+   "scope": {
+    "skill": "semi_skilled"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "short_time",
+    "scope": {
+     "skill": [
+      "unskilled",
+      "semi_skilled",
+      "skilled"
+     ]
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "The share of semi_skilled workers on short-time working relative to all short-time workers is capped at 5%."
+}

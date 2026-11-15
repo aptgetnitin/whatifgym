@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "undamaged_stock_glasgow_limit",
+   "measure": "undamaged_stock",
+   "scope": {
+    "depot": "Glasgow"
+   },
+   "sense": "<=",
+   "value": 0.15
+  }
+ ],
+ "note": "The share of undamaged cars at Glasgow depot in the morning cannot exceed 15% of the total undamaged cars."
+}

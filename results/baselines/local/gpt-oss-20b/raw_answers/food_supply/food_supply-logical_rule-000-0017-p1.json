@@ -1,0 +1,1 @@
+{"ask":"The rule \"ration of Milk at Idleb is either zero or at least 2.15\" is a disjunction. The current DSL supports only linear constraints on sums of decision measures. Do you want to enforce a minimum of 2.15 if any Milk is provided (i.e., ration[Milk,Idleb] ≥ 2.15), or do you need a true binary‐threshold constraint?"}

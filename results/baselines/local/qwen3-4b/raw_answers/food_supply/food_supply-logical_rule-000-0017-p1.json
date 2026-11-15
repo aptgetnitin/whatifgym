@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "milk_rideb_min_batch",
+      "measure": "ration",
+      "scope": {
+        "food": "Milk",
+        "camp": "Idleb"
+      },
+      "sense": ">=",
+      "value": 2.15
+    },
+    {
+      "name": "milk_rideb_zero_batch",
+      "measure": "ration",
+      "scope": {
+        "food": "Milk",
+        "camp": "Idleb"
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ],
+  "note": "The planner asks for the minimum batch size for Milk at Idleb, which is either zero or at least 2.15 units per person per day."
+}

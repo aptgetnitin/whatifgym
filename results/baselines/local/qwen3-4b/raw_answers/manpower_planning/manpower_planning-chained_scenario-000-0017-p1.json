@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_downgrade_skilled_to_lower",
+      "measure": "downgrade",
+      "scope": {
+        "from_skill": "skilled",
+        "to_skill": [
+          "semi_skilled",
+          "unskilled"
+        ]
+      },
+      "sense": "<=",
+      "value": 130,
+      "description": "Limit total downgrades from skilled to lower skills to 130"
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "redundant",
+      "scope": {}
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

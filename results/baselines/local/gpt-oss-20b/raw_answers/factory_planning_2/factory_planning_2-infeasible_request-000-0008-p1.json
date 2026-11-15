@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "prod3_total_3750",
+      "measure": "make",
+      "scope": {
+        "product": "Prod3"
+      },
+      "sense": "==",
+      "value": 3750
+    }
+  ],
+  "note": "Enforce total production of Prod3 to be 3750 units."
+}

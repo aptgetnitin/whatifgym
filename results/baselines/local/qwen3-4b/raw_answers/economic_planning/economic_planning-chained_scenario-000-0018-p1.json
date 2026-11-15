@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "industries",
+      "column": "labor_per_unit_output",
+      "where": {
+        "industry": "coal"
+      },
+      "delta": 0.2
+    }
+  ],
+  "rules": [
+    {
+      "name": "floor_stock_1",
+      "measure": "stock",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 123
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "scale",
+   "table": "health_costs",
+   "column": "health_cost",
+   "where": {
+    "plant": [
+     "Bowen",
+     "Jack McDonough",
+     "Scherer"
+    ]
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "Health costs for the three named coal plants are reduced by 10%."
+}

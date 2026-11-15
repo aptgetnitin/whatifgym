@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_buy_total",
+      "measure": "buy",
+      "scope": {},
+      "sense": "<=",
+      "value": 1900
+    },
+    {
+      "name": "cap_store_feb",
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "value": 2950
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

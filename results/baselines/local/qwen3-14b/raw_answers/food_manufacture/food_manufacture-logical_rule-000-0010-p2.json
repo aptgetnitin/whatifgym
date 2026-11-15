@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "logic": [
+    {
+      "name": "veg1_buy_dependency",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "buy",
+          "scope": {
+            "oil": "VEG1",
+            "month": {
+              "type": "string"
+            }
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "buy",
+          "scope": {
+            "oil": "VEG2",
+            "month": {
+              "type": "string"
+            }
+          },
+          "sense": ">=",
+          "value": 680
+        }
+      ]
+    }
+  ]
+}

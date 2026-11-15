@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"measure":"production","scope":{"year":3,"industry":"steel"},"sense":">=","value":1820}],"note":"Check feasibility of producing at least 1820 steel output in year 3."}

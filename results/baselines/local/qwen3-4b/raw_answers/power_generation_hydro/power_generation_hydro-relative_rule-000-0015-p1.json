@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_units_1824_at_most_50_of_0915",
+      "measure": "ngen",
+      "scope": {
+        "period": "18-24"
+      },
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "ngen",
+        "scope": {
+          "period": "09-15"
+        }
+      }
+    }
+  ]
+}

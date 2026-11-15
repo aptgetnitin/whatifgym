@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "sugar_beet_grain_buying_rule",
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "buy_grain",
+        "scope": {
+          "year": "Year5"
+        }
+      },
+      "factor": 0.0,
+      "value": 42
+    }
+  ]
+}

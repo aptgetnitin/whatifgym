@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "sell_heifers_year1_le_25pct_year5",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell_heifers",
+        "scope": {
+          "year": "Year5"
+        }
+      },
+      "factor": 0.25
+    }
+  ],
+  "note": "Heifer calves sold in Year1 must be at most 25% of those sold in Year5."
+}

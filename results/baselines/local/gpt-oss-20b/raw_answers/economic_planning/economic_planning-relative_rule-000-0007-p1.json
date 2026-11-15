@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"year2_output_limit","measure":"production","scope":{"year":2},"sense":"<=","relative_to":{"measure":"production"},"factor":0.05}],"note":"Limit year‑2 production to at most 5 % of total production over years 1‑5."}

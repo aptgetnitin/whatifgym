@@ -1,0 +1,118 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "mine",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": "Mine3"
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "capacity",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 1600000
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "quality",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 0.6
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "royalty",
+      "where": {
+        "mine": "Mine3"
+      },
+      "value": 6000000
+    },
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine4"
+      }
+    },
+    {
+      "op": "add",
+      "table": "mines",
+      "rows": [
+        {
+          "mine": "Mine5"
+        }
+      ]
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "extract",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "mine": "Mine3"
+      },
+      "value": 15600000
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "stay_closed",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "mine": "Mine3"
+      }
+    }
+  ],
+  "logic": [
+    {
+      "name": "at_least",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extract",
+          "scope": {
+            "year": [
+              "Year1",
+              "Year2",
+              "Year3",
+              "Year4",
+          "Year5"
+            ],
+            "mine": "Mine3"
+          },
+          "sense": ">=",
+          "value": 15600000
+        }
+      ]
+    }
+  ]
+}

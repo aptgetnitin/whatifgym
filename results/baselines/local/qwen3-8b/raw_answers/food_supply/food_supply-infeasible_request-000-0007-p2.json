@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Dayr_Az_Zor"
+      },
+      "value": 2500
+    }
+  ],
+  "rules": [
+    {
+      "name": "fixed_ration_oil_dayr_az_zor",
+      "measure": "ration",
+      "scope": {
+        "food": "Oil",
+        "camp": "Dayr_Az_Zor"
+      },
+      "sense": "==",
+      "value": 4
+    }
+  ],
+  "note": "Fix the ration of oil in Dayr_Az_Zor to 4 units per person per day and adjust the number of beneficiaries to ensure the total ration is 4 units per person."
+}

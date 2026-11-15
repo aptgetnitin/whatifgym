@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"total_workforce_target","measure":"workforce","scope":{},"sense":"==","value":125000}]}

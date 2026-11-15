@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "sell_vs_store",
+      "measure": "sell",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store"
+      },
+      "factor": 2.0
+    }
+  ],
+  "note": "Total units sold must not exceed twice total units in stock."
+}

@@ -1,0 +1,32 @@
+{
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": [
+          "unskilled",
+          "semi_skilled"
+        ],
+        "to_skill": [
+          "semi_skilled",
+          "skilled"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "retraining_limit",
+      "scope": {
+        "year": [
+          "1",
+          "3"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "min_batch_oil1_mar",
+   "measure": "store",
+   "scope": {
+    "month": "Mar",
+    "oil": "OIL1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "store",
+    "scope": {
+     "month": "Mar",
+     "oil": "OIL1"
+    }
+   },
+   "factor": 0.0
+  },
+  {
+   "name": "min_batch_oil1_mar_positive",
+   "measure": "store",
+   "scope": {
+    "month": "Mar",
+    "oil": "OIL1"
+   },
+   "sense": ">=",
+   "value": 750
+  }
+ ],
+ "note": "A minimum batch rule: whenever the total tons of oil in storage for month Mar, oil OIL1 is positive, it has to be 750 or more."
+}

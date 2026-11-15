@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"discharge_share_21_22","measure":"discharge","scope":{"hour":"21-22"},"sense":">=","relative_to":{"measure":"discharge"},"factor":0.75}],"note":"Share of discharging power in hour 21-22 must be at least 75%."}

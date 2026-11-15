@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "drone_network",
+ "rules": [
+  {
+   "name": "queue_load_3769_E",
+   "measure": "queue_load",
+   "scope": {
+    "base": "3769 E. STRATFORD ROAD Rescue Squad"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "queue_load",
+    "scope": {}
+   },
+   "factor": 0.05
+  },
+  {
+   "name": "base_open_21_MUNICIPAL_CTR_vs_5145_RURITAN_COURT",
+   "measure": "open",
+   "scope": {
+    "base": "21 MUNICIPAL CTR Fire Station"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "open",
+    "scope": {
+     "base": "5145 RURITAN COURT Rescue Squad"
+    }
+   },
+   "factor": 2.0
+  }
+ ]
+}

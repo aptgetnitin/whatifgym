@@ -482,7 +482,7 @@ On the 60 `factory_planning` data-change tasks: Claude Sonnet 59/60, Claude Opus
 
 ### Untrained open LLMs (Ollama)
 
-Complete run of Nov 12 on the current set: all 3,722 template tasks and 45 paraphrases, 25 base models, every task the same for every LLM. After the run, 34 tasks were dropped and 82 questions reworded (second pre-audit pass); the four models re-answered those 82 on an Apple M4 Max with the same Ollama version and settings, so every score below is for the current wording. Run on one rented RTX 5090 (Ollama 0.35.1, four requests at once, thinking off); commands in [training/RUNPOD.md](training/RUNPOD.md). The October runs on the first task-set version are in `results/archive/local_2026-10/`.
+Complete run of Nov 12 on the current set: all 3,722 template tasks (the paraphrases are scored separately, below), 25 base models, every task the same for every LLM. After the run, 34 tasks were dropped and 82 questions reworded (second pre-audit pass); the four models re-answered those 82 on an Apple M4 Max with the same Ollama version and settings, so every score below is for the current wording. Run on one rented RTX 5090 (Ollama 0.35.1, four requests at once, thinking off); commands in [training/RUNPOD.md](training/RUNPOD.md). The October runs on the first task-set version are in `results/archive/local_2026-10/`.
 
 | Family | Tasks | Qwen3 4B | Qwen3 8B | Qwen3 14B | gpt-oss 20B |
 |---|---|---|---|---|---|
@@ -499,8 +499,17 @@ Complete run of Nov 12 on the current set: all 3,722 template tasks and 45 parap
 | **all 3,722 template tasks** | | **25.3 %** | **59.1 %** | **72.2 %** | **89.4 %** |
 | valid scenario | | 72 % | 82 % | 87 % | 96 % |
 | answers the server aborted (repeat limit) | | 23 % | 0 % | 0 % | 0 % |
-| data_change, paraphrased | 6 | 50 % | 100 % | 100 % | 100 % |
-| new_limit, paraphrased | 39 | 38 % | 59 % | 92 % | 97 % |
+
+**Template wording against the rewrites** (Nov 15, Apple M4 Max, same Ollama settings). Paired on the 457 fully specified test tasks: each model answers the template question and both rewrites of it (914 rewrites, section "Natural-language paraphrases").
+
+| Model | Template | Short rewrite | Formal rewrite | Short: lost / gained (p) | Formal: lost / gained (p) |
+|---|---|---|---|---|---|
+| Qwen3 4B | 27.1 % | 24.5 % | 28.4 % | 53 / 41 (0.26) | 38 / 44 (0.58) |
+| Qwen3 8B | 65.2 % | 60.0 % | 65.2 % | 58 / 34 (0.016) | 49 / 49 (1.00) |
+| Qwen3 14B | 74.6 % | 73.5 % | 75.3 % | 30 / 25 (0.59) | 29 / 32 (0.80) |
+| gpt-oss 20B | 94.1 % | 92.1 % | 93.2 % | 26 / 17 (0.22) | 22 / 18 (0.64) |
+
+"Lost" = right on the template, wrong on the rewrite; p from the exact McNemar test. Only Qwen3 8B on the short rewrite is below 0.05, and it does not survive a correction for the 8 comparisons (threshold 0.006). Totals hide churn: 9 to 21 % of single answers flip between the template and a rewrite, in both directions. By family the largest drops are on `logical_rule` (Qwen3 8B 29 % → 17 %, gpt-oss 20B 87 % → 79 %, mean of both rewrites). These rewrites keep measure and entity names exact, so this tests sentence form and tone, not vocabulary. The 45 October rewrites and their results are in `results/archive/local_2026-11-12_october_paraphrases/`.
 
 ```mermaid
 xychart-beta
@@ -515,7 +524,7 @@ What this shows:
 1. **The benchmark separates the models:** from 25 % to 89 %.
 2. **`logical_rule` is the hardest family** for the three larger models. Qwen3 14B gets 31 %, gpt-oss 20B 78 %.
 3. **Qwen3 4B fails most families** (6 to 9 % on relax and infeasible). Ollama ended 23 % of its answers because the model repeated itself. This is the headroom for RL.
-4. **Natural wording:** on the 39 new-limit paraphrases, Qwen3 8B gets 59 % against 74 % on the templates; 14B and gpt-oss lose nothing. The sample is small.
+4. **Natural wording:** rewording the question moves no model by more than 5 points (table below).
 5. **Notes on the run:** `drone_network` prompts are longer than 16,384 tokens, so that model was answered with a 32,768-token window. All answers are scored with HiGHS 1.15.1 (`scripts/rescore_results.py`).
 
 ### Asking
@@ -560,7 +569,7 @@ Mean gain on the held-out models: **+11.3 points** (standard deviation 1.5); eve
 
 ### Training: learning curve, 14 held-out base models (Nov 12)
 
-One seed, 160 steps, on the final task set (3,722 tasks). The training pool is the same 11 base models (176 tasks inside the pass-rate range, of 669). The 14 held-out base models are the 3 above plus the 11 added in November. Both test sets are scored before training, every 20 steps and after (greedy; 400 held-out tasks, 131 test tasks of the training models).
+One seed, 160 steps, on the final task set (3,722 tasks). The training pool is the same 11 base models (176 tasks inside the pass-rate range, of 669). The 14 held-out base models are the 3 above plus the 11 added in November. Both test sets are scored before training, every 20 steps and after (greedy; 400 held-out tasks, 131 test tasks of the training models). The 400 are one fixed random draw from the held-out tasks whose prompt fits in 7,000 tokens; they come from 13 of the 14 held-out models, because every `drone_network` prompt is longer. The model trained here is Qwen3-4B-Instruct-2507 (4-bit, on the pod), a different release from the Ollama `qwen3:4b` baseline above, so its scores are comparable only with its own before-training score, not with the 25.3 %.
 
 | Step | Held-out models: correct | Held-out models: valid | Training models, test: correct |
 |---|---|---|---|

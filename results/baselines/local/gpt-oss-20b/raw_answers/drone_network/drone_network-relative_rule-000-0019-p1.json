@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"base5145_min_60pct_queue","measure":"queue_load","scope":{"base":"5145 RURITAN COURT Rescue Squad"},"sense":">=","relative_to":{"measure":"queue_load"},"factor":0.6}],"note":"Ensure base 5145 RURITAN COURT carries at least 60% of total queue load."}

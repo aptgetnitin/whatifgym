@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min_blend_target",
+      "measure": "blend",
+      "sense": ">=",
+      "value": 130458350
+    }
+  ],
+  "note": "Check whether the model can produce at least 130,458,350 tons of blended ore over the horizon."
+}

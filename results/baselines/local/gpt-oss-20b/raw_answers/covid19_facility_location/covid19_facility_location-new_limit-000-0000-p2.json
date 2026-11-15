@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"covid19_facility_location","rules":[{"name":"E4_capacity_limit","measure":"assign","scope":{"facility":"E4"},"sense":"<=","value":200},{"name":"T18_build_must_be_one","measure":"build","scope":{"facility":"T18"},"sense":">=","value":1}],"note":"Limit E4 capacity to 200 patients and require T18 to be built."}

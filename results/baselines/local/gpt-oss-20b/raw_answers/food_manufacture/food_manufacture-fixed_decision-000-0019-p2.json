@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","fixed_decisions":[{"measure":"consume","scope":{"month":"Jan"},"value":45}],"note":"Fix consume in Jan to 45 for each oil."}

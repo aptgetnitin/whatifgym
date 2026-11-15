@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "equal_refining_in_may",
+      "measure": "consume",
+      "scope": {
+        "month": "May",
+        "oil": [
+          "VEG1",
+          "VEG2",
+          "OIL1",
+          "OIL2",
+          "OIL3"
+        ]
+      },
+      "sense": "==",
+      "value": 68
+    }
+  ]
+}

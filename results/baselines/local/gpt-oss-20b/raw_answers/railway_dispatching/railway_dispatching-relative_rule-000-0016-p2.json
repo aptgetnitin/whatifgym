@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "resource2_share_limit",
+      "measure": "entry_time",
+      "scope": {
+        "resource": 2
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {}
+      },
+      "factor": 0.1
+    }
+  ],
+  "note": "The total entry time on resource 2 must not exceed 10% of the total entry time across all resources."
+}

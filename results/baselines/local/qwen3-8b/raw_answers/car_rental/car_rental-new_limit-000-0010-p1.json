@@ -1,0 +1,68 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "damaged_transfers",
+   "column": "damaged_transfers",
+   "where": {
+    "from_depot": "Glasgow",
+    "to_depot": "Plymouth"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "damaged_transfers",
+   "column": "damaged_transfers",
+   "where": {
+    "from_depot": "Manchester",
+    "to_depot": "Plymouth"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "damaged_transfers",
+   "column": "damaged_transfers",
+   "where": {
+    "from_depot": "Birmingham",
+    "to_depot": "Plymouth"
+   },
+   "value": 0
+  },
+  {
+   "op": "set",
+   "table": "damaged_transfers",
+   "column": "damaged_transfers",
+   "where": {
+    "from_depot": "Plymouth",
+    "to_depot": "Plymouth"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "damaged_transfers_cap",
+   "measure": "damaged_transfers",
+   "scope": {
+    "from_depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ],
+    "to_depot": [
+     "Glasgow",
+     "Manchester",
+     "Birmingham",
+     "Plymouth"
+    ]
+   },
+   "sense": "<=",
+   "value": 55
+  }
+ ]
+}

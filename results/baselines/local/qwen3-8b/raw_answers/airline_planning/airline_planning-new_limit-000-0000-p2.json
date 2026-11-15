@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "max_flights_operated",
+   "measure": "operate",
+   "scope": {
+    "aircraft": "*",
+    "flight": "*"
+   },
+   "sense": "<=",
+   "value": 41
+  }
+ ],
+ "note": "A global limit on the number of flights that can be operated."
+}

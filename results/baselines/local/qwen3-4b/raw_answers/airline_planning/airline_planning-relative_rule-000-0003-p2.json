@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "op_4572_at_least_1.25_op_3065",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A321#2"
+        ],
+        "flight": [
+          "4572"
+        ]
+      },
+      "sense": ">=",
+      "value": 1.25
+    },
+    {
+      "name": "op_4572_at_least_1.25_op_3065",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A321#2"
+        ],
+        "flight": [
+          "3065"
+        ]
+      },
+      "sense": ">=",
+      "value": 1.25
+    }
+  ]
+}

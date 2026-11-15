@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "max_sales",
+   "column": "max_sales",
+   "where": {
+    "month": "Feb",
+    "product": "Prod2"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Setting the max_sales for Prod2 in February to 0 effectively prevents any sales of Prod2 in that month."
+}

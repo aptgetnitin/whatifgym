@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "entry_time_share_for_E",
+      "measure": "entry_time",
+      "scope": {
+        "train": "E"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ]
+}

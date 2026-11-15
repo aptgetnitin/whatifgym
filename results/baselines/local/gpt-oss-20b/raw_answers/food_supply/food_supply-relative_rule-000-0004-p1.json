@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "milk_flow_limit",
+      "measure": "flow",
+      "scope": {
+        "food": "Milk"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "flow",
+        "scope": {}
+      },
+      "factor": 0.15
+    }
+  ],
+  "note": "Milk flow limited to 15% of total food shipped."
+}

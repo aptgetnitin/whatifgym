@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "plant": "OTHER COAL",
+        "hour": 14
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "plant": "OTHER COAL",
+        "hour": 14
+      },
+      "value": 3250
+    }
+  ],
+  "note": "The planner wants to set the output for OTHER COAL in hour 14 to either 0 or at least 3250 MWh. This requires two data changes: one to set it to 0 and another to set it to 3250. However, the scenario DSL does not support multiple values for the same key; it requires a single value per row. Therefore, this question cannot be precisely formulated as a machine-checkable scenario."
+}

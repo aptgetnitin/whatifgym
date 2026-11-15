@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "year3_capacity_limit",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": 3
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "extra_capacity",
+        "scope": {
+          "year": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

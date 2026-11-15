@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "factor": 0.8
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "set",
+      "table": "overmanned",
+      "column": "overmanned",
+      "where": {
+        "year": "*",
+        "skill": "semi_skilled"
+      },
+      "value": 9
+    }
+  ]
+}

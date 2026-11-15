@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "max_cattle_year4",
+      "measure": "herd",
+      "scope": {
+        "year": "Year4"
+      },
+      "sense": "<=",
+      "value": 100
+    }
+  ]
+}

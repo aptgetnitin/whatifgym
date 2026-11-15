@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_most_one_year_short_time",
+      "measure": "short_time",
+      "scope": {
+        "year": [
+          "3",
+          "1",
+          "2"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "A rule that limits the total short-time workers across specific years to 1."
+  }

@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 3
+   },
+   "sense": ">=",
+   "value": 78
+  }
+ ],
+ "note": "Require at least 78 million USD/year of extra capacity built in year 3."
+}

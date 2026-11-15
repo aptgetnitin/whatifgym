@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "logic": [
+    {
+      "name": "at_least_one_of_year2_year4",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "production",
+          "scope": { "year": 2 },
+          "sense": ">=",
+          "value": 1e-6
+        },
+        {
+          "measure": "production",
+          "scope": { "year": 4 },
+          "sense": ">=",
+          "value": 1e-6
+        }
+      ]
+    },
+    {
+      "name": "not_both_year2_year4",
+      "at_least": 1,
+      "of": [

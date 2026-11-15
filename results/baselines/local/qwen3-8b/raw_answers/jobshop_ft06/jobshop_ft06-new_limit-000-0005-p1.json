@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "step6_start_time",
+   "measure": "start",
+   "scope": {
+    "job": "J0",
+    "step": 6
+   },
+   "sense": ">=",
+   "value": 310
+  }
+ ],
+ "note": "The start time of step 6 for job J0 is constrained to be at least 310."
+}

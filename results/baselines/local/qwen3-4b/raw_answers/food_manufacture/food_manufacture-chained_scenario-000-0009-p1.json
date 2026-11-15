@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "price",
+      "where": {
+        "month": "Feb",
+        "oil": "OIL2"
+      },
+      "value": null
+    }
+  ],
+  "rules": [
+    {
+      "name": "cap_buy_total",
+      "measure": "buy",
+      "scope": {},
+      "sense": "<=",
+      "value": 1900
+    },
+    {
+      "name": "store_feb_total",
+      "measure": "store",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": ">=",
+      "value": 2950
+    }
+  ]
+}

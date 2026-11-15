@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"measure":"use","scope":{"technician":"Flor"},"sense":">=","relative_to":{"measure":"use"},"factor":0.75},{"measure":"assign","sense":"<=","relative_to":{"measure":"unfilled"},"factor":0.75}],"note":"Flor must be at least 75% of dispatched technicians; assigned jobs <= 75% of unfilled jobs."}

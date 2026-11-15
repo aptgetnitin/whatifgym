@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "operate",
+      "where": {
+        "aircraft": [
+          "A319#11"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "flights",
+      "column": "operate",
+      "where": {
+        "aircraft": [
+          "A319#11"
+        ]
+      },
+      "value": 3
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_flights_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A319#11"
+        ]
+      },
+      "sense": "<=",
+      "value": 38
+    }
+  ]
+}

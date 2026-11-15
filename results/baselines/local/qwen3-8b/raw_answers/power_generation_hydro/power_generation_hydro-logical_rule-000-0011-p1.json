@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "power_generation_hydro",
+ "rules": [
+  {
+   "name": "thermal_output_09-15_min",
+   "measure": "output",
+   "scope": {
+    "period": "09-15",
+    "type": "Thermal1"
+   },
+   "sense": ">=",
+   "value": 31500
+  },
+  {
+   "name": "thermal_output_09-15_zero",
+   "measure": "output",
+   "scope": {
+    "period": "09-15",
+    "type": "Thermal1"
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "The total thermal output for Thermal1 in period 09-15 must be either zero or at least 31500 MW."
+}

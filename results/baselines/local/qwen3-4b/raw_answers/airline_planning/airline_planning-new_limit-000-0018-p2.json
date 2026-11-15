@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "aircraft",
+      "column": "operate",
+      "where": {
+        "aircraft": "A319#5"
+      },
+      "value": 1
+    }
+  ],
+  "note": "A limit on the number of flights operated by an aircraft is a fixed decision on the operate measure for that aircraft."
+}

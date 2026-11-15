@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"total_charge_cap","measure":"charge","sense":"<=","value":5.9}]}

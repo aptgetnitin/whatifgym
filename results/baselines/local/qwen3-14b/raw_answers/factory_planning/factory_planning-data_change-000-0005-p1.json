@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "profit_per_unit",
+      "factor": 0.7
+    }
+  ],
+  "note": "Scaling the profit_per_unit parameter for Prod4 by 30% less due to raw-material prices."
+}

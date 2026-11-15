@@ -1,0 +1,1 @@
+{"ask":"How should we enforce that Year1 and Year2 cannot both have positive blend? Do you want to add a binary variable or use a rule that limits the sum of blend[Year1] and blend[Year2] to a small threshold?"}

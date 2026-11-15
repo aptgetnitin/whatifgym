@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "may_makes_at_least_75_percent",
+      "measure": "make",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make"
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "prod4_at_most_60_percent_of_prod3",
+      "measure": "make",
+      "scope": {
+        "product": "Prod4"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "product": "Prod3"
+        }
+      },
+      "factor": 0.6
+    }
+  ],
+  "note": "May gets at least 75% of all units made, and units made of Prod4 are at most 60% of units made of Prod3."
+}

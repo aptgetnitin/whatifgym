@@ -1,0 +1,105 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "logic": [
+    {
+      "name": "at_least_one_zero_CSB_Oil_Milk_Ar_Raqqa",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Corn-soya blend (CSB)",
+            "camp": "Ar Raqqa"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Oil",
+            "camp": "Ar Raqqa"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Milk",
+            "camp": "Ar Raqqa"
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "at_least_one_zero_CSB_Oil_Milk_Daraa",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Corn-soya blend (CSB)",
+            "camp": "Daraa"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Oil",
+            "camp": "Daraa"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Milk",
+            "camp": "Daraa"
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "at_least_one_zero_CSB_Oil_Milk_Dayr_Az_Zor",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Corn-soya blend (CSB)",
+            "camp": "Dayr_Az_Zor"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Oil",
+            "camp": "Dayr_Az_Zor"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "ration",
+          "scope": {
+            "food": "Milk",
+            "camp": "Dayr_Az_Zor"
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "at_least_one_zero_CSB_Oil_Milk_Hassakeh",

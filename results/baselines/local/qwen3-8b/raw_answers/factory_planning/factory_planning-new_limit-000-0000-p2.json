@@ -1,0 +1,28 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "process_hours",
+   "column": "hours_per_unit",
+   "where": {
+    "machine": "grinder",
+    "product": "Prod7"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "prod7_production_cap",
+   "measure": "make",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": "<=",
+   "value": 320
+  }
+ ],
+ "note": "A ceiling on total production of Prod7 is enforced via a rule limiting the sum of make over all months."
+}

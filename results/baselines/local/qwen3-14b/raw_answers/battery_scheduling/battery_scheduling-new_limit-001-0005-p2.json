@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "rules": [
+    {
+      "name": "total_charge_limit",
+      "measure": "charge",
+      "scope": {
+        "hour": {
+          "all": true
+        }
+      },
+      "sense": "<=",
+      "value": 5.9
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"single_machine_scheduling","data_changes":[{"op":"scale","table":"jobs","column":"due_date","factor":1.1},{"op":"set","table":"setup_times","column":"setup_time","where":{"from_job":"job_7","to_job":"job_9"},"value":2365}]}

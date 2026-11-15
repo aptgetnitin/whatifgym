@@ -1,0 +1,24 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "remove_expansion_cap",
+      "measure": "expand",
+      "scope": {
+        "depot": [
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ],
+        "step": [
+          "1",
+          "2"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    }
+  ],
+  "note": "The planner wants to remove the cap on the number of workshop expansions. The model has a parameter `max_expansions` that limits the total number of expansions. To remove this cap, we set the constraint `sum(expand) <= max_expansions` to be relaxed, which means allowing any number of expansions."
+  }

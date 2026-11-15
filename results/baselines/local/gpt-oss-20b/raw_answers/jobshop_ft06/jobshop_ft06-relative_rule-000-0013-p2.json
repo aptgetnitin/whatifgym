@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "step2_end_time_fraction",
+      "measure": "end",
+      "scope": {
+        "step": 2
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {}
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "At most 5% of the total sum of all operation end times may belong to routing step 2."
+}

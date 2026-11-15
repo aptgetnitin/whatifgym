@@ -1,0 +1,51 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "logic": [
+    {
+      "name": "at_most_2_workers_active",
+      "at_least": 3,
+      "of": [
+        {
+          "measure": "works",
+          "scope": {
+            "worker": [
+              "worker_1",
+              "worker_0",
+              "worker_11",
+              "worker_10"
+            ]
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "works",
+          "scope": {
+            "worker": [
+              "worker_1",
+              "worker_0",
+              "worker_11",
+              "worker_10"
+            ]
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "works",
+          "scope": {
+            "worker": [
+              "worker_1",
+              "worker_0",
+              "worker_11",
+              "worker_10"
+            ]
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

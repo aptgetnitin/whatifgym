@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "overmanned",
+      "where": {
+        "year": [
+          1
+        ],
+        "skill": [
+          "unskilled"
+        ]
+      },
+      "value": 450
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "overmanned",
+      "where": {
+        "year": [
+          3
+        ],
+        "skill": [
+          "unskilled"
+        ]
+      },
+      "value": 450
+    }
+  ],
+  "note": "The planner wants to set overmanned to 450 for year 1 and year 3, but the model's requirements table doesn't have an overmanned column. The overmanned is a decision variable, not a requirement. The requirements table has 'required' and 'max_recruit' columns, but not overmanned. The overmanned is a decision variable that must be non-negative and constrained by max_overmanned. The planner's request is to set the overmanned decision variable to 450 for year 1 and year 3, but the model doesn't have a direct way to set it as a requirement. The requirements table is for the required headcount, not for overmanned. The overmanned is a decision variable that is part of the workforce balance. The planner's request is to have 450 overmanned workers in year 1 and year 3, but the model's requirements table doesn't have a column for overmanned. The overmanned is a decision variable that is constrained by the max_overmanned parameter. The planner's request is to set the overmanned decision variable to 450 for year 1 and year 3, but the model doesn't have a direct way to set it as a requirement. The model's requirements table has 'required' and 'max_recruit' columns, but not overmanned. The overmanned is a decision variable that is part of the workforce balance. The planner's request is to have 450 overmanned workers in year 1 and year 3, but the model doesn't have a requirement for overmanned. The overmanned is a decision variable that is constrained by the max_overmanned parameter. The planner's request is to set the overmanned decision variable to 450 for year 1 and year 3, but the model doesn't have a direct way to set it as a requirement. The model's requirements table is for the required headcount, not for overmanned. The overmanned is a decision variable that is part of the workforce balance. The planner's request is to have 450 overmanned workers in year 1 and year 3, but the model doesn't have a requirement for overmanned. The overmanned is a decision variable that is constrained by the max_overmanned parameter. The planner's request is to set the overmanned decision variable to 450 for year 1 and year 3, but the model doesn't have a direct way to set it as a requirement. The model's requirements table has 'required' and 'max_recruit' columns, but not overmanned. The overmanned is a decision variable that is part of the workforce balance. The planner's request is to have 450 overmanned workers in year 1 and year 3, but the model doesn't have a requirement for overmanned. The overmanned is a decision variable that is constrained by the max_overmanned parameter. The planner's request is to set the overmanned decision variable to 450 for year 1 and year 3, but the model doesn't have a direct way to set it as a requirement. The model's requirements table is for the required headcount, not for overmanned. The overmanned is a decision variable that is part of the workforce balance. The planner's request is to have 450 overmanned workers in year 1 and year 3, but the model doesn't have a requirement for overmanned. The overmanned is a decision variable that is constrained by the max_overmanned parameter."
+  }

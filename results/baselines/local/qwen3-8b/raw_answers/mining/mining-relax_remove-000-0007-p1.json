@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_mines",
+      "value": 3
+    }
+  ],
+  "relax": [
+    {
+      "constraint": "max_operating",
+      "scope": {
+        "year": [
+          "Year5",
+          "Year1"
+        ]
+      }
+    }
+  ],
+  "note": "The maximum number of mines worked per year is set to 3, and the constraint on the maximum number of mines operated is relaxed for Year1 and Year5."
+}

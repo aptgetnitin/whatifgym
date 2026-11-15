@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "stock_conditional_rule",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Feb"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Jun",
+            "product": "Prod7"
+          },
+          "sense": ">=",
+          "value": 100
+        }
+      ]
+    }
+  ],
+  "note": "If any units are in stock in Feb, then at least 100 units of Prod7 must be sold in Jun."
+}

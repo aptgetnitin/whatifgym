@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "min_placements_in_bin0",
+      "measure": "x",
+      "scope": {
+        "bin": "bin0"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "bin": [
+            "bin0",
+            "bin1",
+            "bin2",
+            "bin3",
+            "bin4"
+          ]
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

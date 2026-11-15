@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Baden-Baden"
+        ]
+      }
+    }
+  ],
+  "note": "The planner wants the total service start time at Baden-Baden to be at least 60% of the total service start time across all locations. However, the objective stage in the DSL requires a measure that is a scalar (total time) and a scope that is a single location. The problem states 'share of all service start time (min) that falls at location Baden-Baden has to be 60% or more', which implies a ratio condition. This cannot be directly expressed as a single objective stage in the DSL, which requires a measure that is a scalar (total time) and a scope that is a single location. The ratio condition would need to be expressed as a rule or a logic condition, but the question asks for a scenario that can be machine-checked. Since the DSL does not support ratio conditions directly in the objective, this question cannot be precisely formulated as a machine-checkable scenario. Therefore, I need to ask for clarification."
+}

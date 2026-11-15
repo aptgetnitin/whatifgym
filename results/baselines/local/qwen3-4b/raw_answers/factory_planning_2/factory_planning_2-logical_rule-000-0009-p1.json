@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "sell",
+      "column": "sell",
+      "where": {
+        "month": "Mar",
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "sell",
+      "column": "sell",
+      "where": {
+        "month": "Mar",
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "value": 4750
+    }
+  ],
+  "note": "The planner's question specifies two possibilities for Mar's total sales: either 0 or at least 4750. This requires two separate data changes: one for the zero case and one for the at-least-4750 case."
+}

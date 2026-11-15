@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "production",
+      "column": "production",
+      "where": {
+        "year": 3,
+        "industry": "transport"
+      },
+      "value": 0
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "production",
+      "scope": {
+        "year": 3,
+        "industry": "transport"
+      },
+      "value": 0
+    }
+  ]
+  }

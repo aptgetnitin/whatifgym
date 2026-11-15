@@ -1,0 +1,24 @@
+{
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "depots",
+      "column": "repair_capacity",
+      "where": {
+        "depot": [
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ],
+        "repair_capacity": [
+          "12",
+          "20",
+          "0"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The repair capacity limit is lifted for Thursday and Saturday, but the repair capacity is a per-depot parameter, not a per-day one. The question likely refers to lifting the constraint on repair capacity for those days, but the model's repair capacity is fixed per depot (not per day)."
+}

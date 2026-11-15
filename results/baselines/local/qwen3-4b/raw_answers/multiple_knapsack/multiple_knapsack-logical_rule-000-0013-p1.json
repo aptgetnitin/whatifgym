@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "items",
+      "column": "x",
+      "where": {
+        "item": [
+          "item9",
+          "item4",
+          "item3",
+          "item8"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "Only one of the specified items can be placed in a bin; the rest are set to not be placed."
+}

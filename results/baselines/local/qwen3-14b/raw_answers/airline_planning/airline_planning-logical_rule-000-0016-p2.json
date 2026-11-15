@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "at_most_one_flight_operated",
+      "measure": "operate",
+      "scope": {
+        "flight": [
+          4577,
+          4576
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

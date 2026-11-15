@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "holding_cost",
+   "factor": 2.0
+  }
+ ],
+ "note": "The holding cost is scaled by a factor of 2.0."
+}

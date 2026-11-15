@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "retrain_year1_min",
+      "measure": "retrain",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 680
+    },
+    {
+      "name": "retrain_year3_min",
+      "measure": "retrain",
+      "scope": {
+        "year": 3
+      },
+      "sense": ">=",
+      "value": 460
+    }
+  ],
+  "note": "The planner asks for minimum retraining levels in year 1 and year 3. The rules enforce these minimums."
+}

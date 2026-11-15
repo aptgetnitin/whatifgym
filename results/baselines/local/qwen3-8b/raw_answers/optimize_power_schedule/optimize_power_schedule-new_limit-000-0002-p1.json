@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "plant_hours_on_hour_6",
+   "measure": "on",
+   "scope": {
+    "hour": 6
+   },
+   "sense": ">=",
+   "value": 9
+  },
+  {
+   "name": "vogtle_total_output",
+   "measure": "output",
+   "scope": {
+    "plant": "Vogtle"
+   },
+   "sense": "<=",
+   "value": 45100
+  }
+ ],
+ "note": "The scenario imposes two constraints: the total number of plants on in hour 6 is at least 9, and Vogtle's total output is at most 45100 MWh."
+}

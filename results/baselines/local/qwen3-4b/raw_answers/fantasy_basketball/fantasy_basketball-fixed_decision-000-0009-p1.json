@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "fixed_decisions": [
+    {
+      "measure": "pick",
+      "scope": {
+        "player": "Marcin Gortat"
+      },
+      "value": 1
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "players",
+      "column": "pick",
+      "where": {
+        "player": "Marcin Gortat"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Force player Marcin Gortat into the team by setting his pick to 1, with the number of players picked for that player fixed at 1."
+}

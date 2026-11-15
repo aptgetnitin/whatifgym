@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "total_service_start_time_cap",
+      "measure": "start_time",
+      "scope": {
+        "location": {
+          "customer": [
+            "Customer1",
+            "Customer2",
+            "Customer3",
+            "Customer4",
+            "Customer5",
+            "Customer6",
+            "Customer7"
+          ],
+          "depot": [
+            "Heidelberg",
+            "Freiburg im Breisgau"
+          ]
+        }
+      },
+      "sense": "<=",
+      "value": 900
+    }
+  ]
+}

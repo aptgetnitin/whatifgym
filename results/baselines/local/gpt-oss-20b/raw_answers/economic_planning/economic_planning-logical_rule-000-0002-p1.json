@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "logic": [
+    {
+      "name": "capacity3_coal_implies_stock2_steel",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "extra_capacity",
+          "scope": {
+            "year": 3,
+            "industry": "coal"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "stock",
+          "scope": {
+            "year": 2,
+            "industry": "steel"
+          },
+          "sense": ">=",
+          "value": 63
+        }
+      ]
+    }
+  ],
+  "note": "If any coal capacity is built in year 3, steel stock in year 2 must be at least 63."
+}

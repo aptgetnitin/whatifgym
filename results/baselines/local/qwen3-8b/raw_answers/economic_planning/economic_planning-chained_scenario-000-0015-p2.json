@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "measure": "production",
+   "scope": {},
+   "sense": "<=",
+   "value": 3700,
+   "name": "cap_production_total"
+  }
+ ],
+ "note": "An absolute cap on total production across all industries and years."
+}

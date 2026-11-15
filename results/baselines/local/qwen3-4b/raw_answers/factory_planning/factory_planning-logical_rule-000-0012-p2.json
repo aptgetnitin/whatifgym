@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "at_most_3_months_positive_make",
+      "measure": "make",
+      "scope": {
+        "month": [
+          "Feb",
+          "Jan",
+          "Apr",
+          "Mar",
+          "Jun"
+        ]
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ]
+}

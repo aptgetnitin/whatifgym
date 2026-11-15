@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "damaged_transfers_glasgow_to_manchester_condition",
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Wednesday",
+        "from_depot": "Glasgow",
+        "to_depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "undamaged_transfers_manchester_condition",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "to_depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 78
+    }
+  ]
+}

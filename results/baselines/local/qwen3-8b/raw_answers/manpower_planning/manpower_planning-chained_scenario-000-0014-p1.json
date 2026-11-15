@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "short_time_productivity",
+   "factor": 0.75
+  }
+ ],
+ "note": "Short-time worker productivity is reduced by 25%."
+}

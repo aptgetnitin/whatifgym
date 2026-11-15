@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "items",
+      "where": {
+        "item": "item1"
+      }
+    }
+  ]
+}

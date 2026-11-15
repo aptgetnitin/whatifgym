@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "other_coal_hour2_min_batch",
+      "measure": "output",
+      "scope": {
+        "plant": "OTHER COAL",
+        "hour": 2
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "plant": "OTHER COAL",
+          "hour": 2
+        }
+      },
+      "factor": 2980
+    }
+  ],
+  "note": "If OTHER COAL generates any power in hour 2, it must be at least 2980 MWh."
+}

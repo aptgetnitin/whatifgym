@@ -1,0 +1,12 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "data_changes": [
+  {
+   "op": "set_param",
+   "name": "energy_capacity_kwh",
+   "value": 27
+  }
+ ],
+ "note": "The energy capacity of the battery is set to 27 kWh."
+}

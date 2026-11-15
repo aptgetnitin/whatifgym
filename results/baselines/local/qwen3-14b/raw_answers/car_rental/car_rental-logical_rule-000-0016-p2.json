@@ -1,0 +1,54 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "logic": [
+    {
+      "name": "only_one_day_rentals",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Thursday",
+            "depot": [
+              "Glasgow",
+              "Manchester",
+              "Birmingham",
+              "Plymouth"
+            ]
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Wednesday",
+            "depot": [
+              "Glasgow",
+              "Manchester",
+              "Birmingham",
+              "Plymouth"
+            ]
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Saturday",
+            "depot": [
+              "Glasgow",
+              "Manchester",
+              "Birmingham",
+              "Plymouth"
+            ]
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

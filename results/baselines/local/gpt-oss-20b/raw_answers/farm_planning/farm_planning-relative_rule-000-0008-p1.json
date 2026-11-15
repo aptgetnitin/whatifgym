@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"Year1_75pct_raised","measure":"raise_heifers","scope":{"year":"Year1"},"sense":">=","relative_to":{"measure":"raise_heifers","scope":{}},"factor":0.75}]}

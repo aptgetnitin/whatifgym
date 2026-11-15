@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "fixed_decisions": [
+    {
+      "measure": "pick",
+      "scope": {
+        "player": "Andrew Wiggins"
+      },
+      "value": 1
+    }
+  ],
+  "rules": [
+    {
+      "measure": "pick",
+      "scope": {
+        "position": "SF"
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ]
+}

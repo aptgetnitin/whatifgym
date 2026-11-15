@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "logic": [
+    {
+      "name": "thermal0_output_batch",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "output",
+          "scope": {
+            "period": "09-15",
+            "type": "Thermal0"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "output",
+          "scope": {
+            "period": "09-15",
+            "type": "Thermal0"
+          },
+          "sense": ">=",
+          "value": 26400
+        }
+      ]
+    }
+  ],
+  "note": "Enforce that Thermal0 output in period 09-15 is either zero or at least 26400 MW."
+}

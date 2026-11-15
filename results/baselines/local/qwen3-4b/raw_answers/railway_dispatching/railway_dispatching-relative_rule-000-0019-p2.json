@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "entry_time",
+      "column": "entry_time",
+      "where": {
+        "resource": "1"
+      },
+      "factor": 2.0
+    },
+    {
+      "op": "shift",
+      "table": "entry_time",
+      "column": "entry_time",
+      "where": {
+        "resource": "2"
+      },
+      "delta": 0.1
+    }
+  ],
+  "rules": [
+    {
+      "name": "entry_time_1_at_least_2x_3",
+      "measure": "entry_time",
+      "scope": {
+        "resource": "1"
+      },
+      "sense": ">=",
+      "value": 2.0
+    },
+    {
+      "name": "entry_time_2_at_most_10_percent",
+      "measure": "entry_time",
+      "scope": {
+        "resource": "2"
+      },
+      "sense": "<=",
+      "value": 0.1
+    }
+  ]
+}

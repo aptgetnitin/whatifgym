@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "open_mine_years_limit",
+   "measure": "open",
+   "scope": {
+    "mine": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "mine": "*"
+    }
+   },
+   "factor": 0.9
+  }
+ ],
+ "note": "The rule limits the total number of mine-years kept open to 90% of the total number of mine-years worked."
+}

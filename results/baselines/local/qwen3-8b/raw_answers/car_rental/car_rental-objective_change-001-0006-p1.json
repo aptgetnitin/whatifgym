@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "damaged_stock",
+   "scope": {
+    "day": "Monday",
+    "depot": "Manchester"
+   }
+  }
+ ],
+ "note": "Keep weekly profit at its best, and then get the damaged cars at the depot in the morning for depot Manchester as low as possible."
+}

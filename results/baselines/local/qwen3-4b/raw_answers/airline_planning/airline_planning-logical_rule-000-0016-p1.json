@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "mutually_exclusive_flights",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A321#2"
+        ],
+        "flight": [
+          "4576",
+          "4577"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

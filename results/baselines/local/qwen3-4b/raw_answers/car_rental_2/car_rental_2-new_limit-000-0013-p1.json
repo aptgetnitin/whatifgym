@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "undamaged_stock_total_cap",
+      "measure": "undamaged_stock",
+      "scope": {},
+      "sense": "<=",
+      "value": 2650
+    },
+    {
+      "name": "undamaged_transfers_thursday_cap",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "day": "Thursday"
+      },
+      "sense": "<=",
+      "value": 45
+    }
+  ],
+  "note": "Two caps: undamaged cars at the depot in the morning at most 2650 in total across everything, and undamaged cars transferred on day Thursday at most 45 in total."
+}

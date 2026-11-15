@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "min3_extraction_min",
+      "measure": "extract",
+      "scope": {
+        "mine": "Mine3"
+      },
+      "sense": ">=",
+      "value": 15600000
+    }
+  ],
+  "note": "Check feasibility of at least 15.6 million tons extracted from Mine3."
+}

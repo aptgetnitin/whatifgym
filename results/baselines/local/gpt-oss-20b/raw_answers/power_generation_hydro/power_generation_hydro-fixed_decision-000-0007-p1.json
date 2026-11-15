@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "fixed_decisions": [
+    {
+      "measure": "ngen",
+      "scope": {
+        "type": "Thermal1"
+      },
+      "value": 10
+    }
+  ],
+  "note": "Fix the number of running Thermal1 units to 10 in every period."
+}

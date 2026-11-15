@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","objective":[{"sense":"max","measure":"original"},{"sense":"min","measure":"store","scope":{"month":"Mar"}}],"note":"Hold profit at its maximum, then minimize storage in March."}

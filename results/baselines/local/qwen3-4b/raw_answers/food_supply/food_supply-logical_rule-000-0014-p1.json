@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "fixed_decisions": [
+    {
+      "measure": "purchase",
+      "scope": {
+        "supplier": [
+          "Daraa",
+          "Hassakeh",
+          "Aleppo",
+          "Gaziantep",
+          "Amman"
+        ]
+      },
+      "value": 0
+    }
+  ],
+  "note": "Only 3 suppliers may have food bought; the rest must have 0 purchase."
+  }

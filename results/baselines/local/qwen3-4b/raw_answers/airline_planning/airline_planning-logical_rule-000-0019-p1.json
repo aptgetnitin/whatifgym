@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "at_most_one_flight",
+      "measure": "operate",
+      "scope": {
+        "aircraft": [
+          "A321#2",
+          "A318#4"
+        ],
+        "flight": [
+          "4510",
+          "3107"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

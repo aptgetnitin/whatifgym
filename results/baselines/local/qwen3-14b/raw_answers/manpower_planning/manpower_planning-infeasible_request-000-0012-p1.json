@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "unskilled_year3_workforce_exact",
+      "measure": "workforce",
+      "scope": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "sense": "==",
+      "value": 880
+    }
+  ]
+}

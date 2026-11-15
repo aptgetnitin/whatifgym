@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "assignment_with_constraints",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "assign",
+   "column": "assign",
+   "where": {
+    "worker": "worker_3",
+    "task": "task_3"
+   },
+   "value": 1
+  }
+ ],
+ "rules": [
+  {
+   "name": "force_assign_worker_3_task_3",
+   "measure": "assign",
+   "scope": {
+    "worker": "worker_3",
+    "task": "task_3"
+   },
+   "sense": "==",
+   "value": 1
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ]
+}

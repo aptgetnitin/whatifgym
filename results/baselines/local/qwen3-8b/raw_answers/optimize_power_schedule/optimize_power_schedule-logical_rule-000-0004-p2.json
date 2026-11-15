@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "other_coal_hour_14_zero_or_more",
+   "measure": "output",
+   "scope": {
+    "plant": "OTHER COAL",
+    "hour": 14
+   },
+   "sense": ">=",
+   "value": 0
+  },
+  {
+   "name": "other_coal_hour_14_at_least_3250",
+   "measure": "output",
+   "scope": {
+    "plant": "OTHER COAL",
+    "hour": 14
+   },
+   "sense": ">=",
+   "value": 3250
+  }
+ ],
+ "note": "The rule enforces that the output for OTHER COAL in hour 14 is either zero or at least 3250."
+}

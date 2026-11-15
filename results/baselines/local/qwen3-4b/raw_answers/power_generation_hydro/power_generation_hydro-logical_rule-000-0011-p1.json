@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "periods",
+      "column": "demand_mw",
+      "where": {
+        "period": "09-15"
+      },
+      "value": 31500
+    }
+  ],
+  "rules": [
+    {
+      "name": "thermal1_min_output_09-15",
+      "measure": "output",
+      "scope": {
+        "period": "09-15",
+        "type": "Thermal1"
+      },
+      "sense": ">=",
+      "value": 31500
+    }
+  ],
+  "note": "The planner asks for the minimum batch of Thermal1 in period 09-15 to be either zero or at least 31500 MW. This is interpreted as a rule that the output must be at least 31500 MW (since zero is not a valid minimum batch for a thermal unit in this context)."
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "item1_item8_exclusion",
+      "measure": "x",
+      "scope": {
+        "item": [
+          "item1",
+          "item8"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

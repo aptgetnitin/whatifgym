@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "logic": [
+    {
+      "name": "birmingham_rentals_monday_repairs",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "rentals",
+          "scope": {
+            "day": "Tuesday",
+            "depot": "Birmingham"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "repairs",
+          "scope": {
+            "day": "Monday",
+            "depot": {
+              "depot": [
+                "Manchester",
+                "Birmingham",
+                "Plymouth"
+              ]
+            }
+          },
+          "sense": ">=",
+          "value": 94
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "rule_1",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Monday",
+        "depot": "Plymouth"
+      },
+      "sense": ">=",
+      "value": 1260
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

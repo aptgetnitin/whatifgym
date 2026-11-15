@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "fixed_decisions": [
+  {
+   "measure": "assign",
+   "scope": {
+    "customer": "Customer5",
+    "technician": "Ed"
+   },
+   "value": 1
+  },
+  {
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "value": 210
+  }
+ ],
+ "note": "Fixed decisions set the number of jobs assigned for Customer5 by Ed and the minutes late for Customer5."
+}

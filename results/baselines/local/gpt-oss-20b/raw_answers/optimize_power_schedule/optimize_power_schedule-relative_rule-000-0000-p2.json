@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"biomass_edwin_ratio","measure":"on","scope":{"plant":"BIOMASS"},"sense":"<=","relative_to":{"measure":"on","scope":{"plant":"Edwin I Hatch"}},"factor":0.8}]}

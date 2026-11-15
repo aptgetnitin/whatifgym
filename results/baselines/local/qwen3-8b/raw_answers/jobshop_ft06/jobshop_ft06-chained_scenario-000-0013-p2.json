@@ -1,0 +1,66 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "limit_j3_first_on_machine",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "M0",
+    "job": "J3"
+   },
+   "sense": "<=",
+   "value": 4
+  },
+  {
+   "name": "limit_j3_first_on_machine",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "M1",
+    "job": "J3"
+   },
+   "sense": "<=",
+   "value": 4
+  },
+  {
+   "name": "limit_j3_first_on_machine",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "M2",
+    "job": "J3"
+   },
+   "sense": "<=",
+   "value": 4
+  },
+  {
+   ",":
+   "measure”: ",
+   "scope": {
+    "machine": "M3",
+    "job": "J3"
+   },
+   "sense": "<=",
+   "value": 4
+  },
+  {
+   "name": "limit_j3_first_on_machine",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "M4",
+    "job": "J3"
+   },
+   "sense": "<=",
+   "value": 4
+  },
+  {
+   "name": "limit_j3_first_on_machine",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "M5",
+    "job": "J3"
+   },
+   "sense": "<=",
+   "value": 4
+  }
+ ]
+}

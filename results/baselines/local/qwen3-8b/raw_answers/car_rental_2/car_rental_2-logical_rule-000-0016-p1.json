@@ -1,0 +1,54 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "relax": [
+  {
+   "constraint": "repair_capacity",
+   "scope": {
+    "day": [
+      "Saturday",
+      "Wednesday"
+    ],
+    "depot": [
+      "Manchester",
+      "Birmingham",
+      "Plymouth"
+    ]
+   }
+  }
+ ],
+ "logic": [
+  {
+   "name": "repair_capacity_exclusivity",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "repairs",
+     "scope": {
+      "day": "Saturday",
+      "depot": [
+        "Manchester",
+        "Birmingham",
+        "Plymouth"
+      ]
+     },
+     "sense": ">=",
+     "value": 1
+    },
+    {
+     "measure": "repairs",
+     "scope": {
+      "day": "Wednesday",
+      "depot": [
+        "Manchester",
+        "Birmingham",
+        "Plymouth"
+      ]
+     },
+     "sense": ">=",
+     "value": 1
+    }
+   ]
+  }
+ ]
+}

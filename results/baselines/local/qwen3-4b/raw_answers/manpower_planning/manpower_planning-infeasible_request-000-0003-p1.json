@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 1,
+        "skill": "unskilled"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "unskilled"
+      },
+      "value": 0
+    }
+  ],
+  "note": "The planner is asking if it's possible to have at least 450 overmanned workers in year 1 and year 3. The overmanned measure is defined as workers employed above the requirement, so setting the required to 0 for those years makes the overmanned equal to the workforce. However, the model's overmanning allowance is 500 workers per year, so 450 is within the limit. But the question is about feasibility, not the minimum redundancy. The answer is yes, but the planner needs to clarify if they mean the minimum redundancy plan or a different plan."
+}

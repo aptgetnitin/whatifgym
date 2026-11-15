@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "stock_above_zero_in_feb_impacts_prod7_jun",
+      "measure": "sell",
+      "scope": {
+        "month": "Jun",
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "value": 100,
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Feb",
+          "product": "Prod7"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

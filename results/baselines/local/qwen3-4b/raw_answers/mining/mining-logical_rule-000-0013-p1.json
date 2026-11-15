@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine1",
+        "year": "Year1"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "mines",
+      "column": "extract",
+      "where": {
+        "mine": "Mine1",
+        "year": "Year1"
+      },
+      "value": 5000000
+    }
+  ],
+  "note": "The planner asks for the minimum batch for Mine1 in Year1 to be either zero or at least 5000000. This requires two fixed decisions: one for zero and one for 5000000."
+}

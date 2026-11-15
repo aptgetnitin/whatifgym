@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "rules": [
+  {
+   "name": "total_start_ups_limit",
+   "measure": "start",
+   "scope": {
+    "plant": "*",
+    "hour": "*"
+   },
+   "sense": "<=",
+   "value": 1
+  },
+  {
+   "name": "total_gas_generation",
+   "measure": "output",
+   "scope": {
+    "plant": "GAS",
+    "hour": "*"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "output",
+    "scope": {
+     "plant": "GAS",
+     "hour": "*"
+    }
+   },
+   "factor": 32500
+  }
+ ],
+ "note": "Two rules: one limits total plant start-ups to 1, and the other ensures at least 32500 MWh of power is generated from the GAS plant."
+}

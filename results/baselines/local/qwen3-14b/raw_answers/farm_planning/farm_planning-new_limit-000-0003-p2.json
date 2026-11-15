@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "cattle_head_limit_year4",
+   "measure": "herd",
+   "scope": {
+    "year": "Year4"
+   },
+   "sense": "<=",
+   "value": 100
+  }
+ ]
+}

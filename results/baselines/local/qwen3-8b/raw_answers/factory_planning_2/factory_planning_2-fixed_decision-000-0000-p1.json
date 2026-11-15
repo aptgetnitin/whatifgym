@@ -1,0 +1,29 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "equal_sales_may",
+   "measure": "sell",
+   "scope": {
+    "month": "May"
+   },
+   "sense": "==",
+   "value": 210,
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": "May"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "Enforce equal sales of 210 units for each product in May and optimise the rest."
+}

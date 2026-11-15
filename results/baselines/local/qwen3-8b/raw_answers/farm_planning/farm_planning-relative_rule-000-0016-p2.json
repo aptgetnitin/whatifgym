@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "sell_heifers_year2_at_least_double_year4",
+   "measure": "sell_heifers",
+   "scope": {
+    "year": "Year2"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell_heifers",
+    "scope": {
+     "year": "Year4"
+    }
+   },
+   "factor": 2.0
+  },
+  {
+   "name": "year1_share_of_sugar_beet_sold_no_more_than_10%",
+   "measure": "sell_beet",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "sell_beet",
+    "scope": {
+     "year": "Year"
+    }
+   },
+   "factor": 0.1
+  }
+ ],
+ "note": "Rules bound the SUM of a decision measure over a scope; a relative rule compares two such sums."
+}

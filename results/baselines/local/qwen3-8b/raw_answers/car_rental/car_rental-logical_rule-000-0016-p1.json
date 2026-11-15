@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "one_day_rentals",
+   "measure": "rentals",
+   "scope": {
+    "day": [
+      "Thursday",
+      "Wednesday",
+      "Saturday"
+    ]
+   },
+   "sense": "==",
+   "value": 0
+  }
+ ],
+ "note": "Only one of the specified days may have any rentals, so the sum of rentals on those days is set to zero."
+}

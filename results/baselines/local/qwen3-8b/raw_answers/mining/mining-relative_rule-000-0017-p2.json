@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "open_mine_years_limit",
+   "measure": "open",
+   "scope": {
+    "mine": "*"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "operate",
+    "scope": {
+     "mine": "*"
+    }
+   },
+   "factor": 0.5
+  },
+  {
+   "name": "blend_year1_double_year3",
+   "measure": "blend",
+   "scope": {
+    "year": "Year1"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "blend",
+    "scope": {
+     "year": "Year3"
+    }
+   },
+   "factor": 2.0
+  }
+ ],
+ "note": "The first rule limits the number of mine-years kept open to 50% of the number of mine-years worked. The second rule ensures the tons of blended ore sold in Year1 are at least double those sold in Year3."
+}

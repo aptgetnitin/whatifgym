@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"measure":"operate","sense":"<=","value":38},{"measure":"operate","scope":{"aircraft":"A319#11"},"sense":"<=","value":3}],"note":"Cap on total flights operated overall and on flights operated by aircraft A319#11."}

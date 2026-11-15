@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "A319_5_flight_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A319#5"
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

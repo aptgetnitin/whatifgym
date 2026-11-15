@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "rules": [
+  {
+   "name": "max_one_year_short_time",
+   "measure": "short_time",
+   "scope": {
+    "year": [
+     1,
+     2,
+     3
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "At most one year may have any workers on short-time working."
+}

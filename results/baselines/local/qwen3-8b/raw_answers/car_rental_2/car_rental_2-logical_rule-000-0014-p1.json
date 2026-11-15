@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "repair_monday_if_birmingham_rentals_tuesday",
+   "measure": "repairs",
+   "scope": {
+    "day": "Monday"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "rentals",
+    "scope": {
+     "day": "Tuesday",
+     "depot": "Birmingham"
+    }
+   },
+   "factor": 94
+  }
+ ],
+ "note": "A rule that links the number of repairs on Monday to the number of rentals at Birmingham on Tuesday."
+}

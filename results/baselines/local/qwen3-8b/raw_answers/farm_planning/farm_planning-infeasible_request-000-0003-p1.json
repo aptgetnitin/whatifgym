@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "rules": [
+  {
+   "name": "yearly_profit_year3",
+   "measure": "yearly_profit",
+   "scope": {
+    "year": "Year3"
+   },
+   "sense": ">=",
+   "value": 77450
+  }
+ ],
+ "note": "A rule to ensure the yearly profit in Year3 is at least 77450 USD."
+}

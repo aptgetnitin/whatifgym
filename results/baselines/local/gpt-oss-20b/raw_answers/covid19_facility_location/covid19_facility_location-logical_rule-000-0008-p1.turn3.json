@@ -1,0 +1,1 @@
+{"ask":"Do you want to enforce that for each county, the assignments to E9 and E5 cannot both be positive (i.e., at most one of them is used per county), or do you mean a different restriction? The current DSL can only express linear sum constraints, not disjunctions."}

@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "units_available",
+      "where": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 80
+    }
+  ],
+  "note": "The planner wants to cap the total number of thermal units running at 80 across everything. This is a set operation on the units_available column for all thermal types to 80."
+}

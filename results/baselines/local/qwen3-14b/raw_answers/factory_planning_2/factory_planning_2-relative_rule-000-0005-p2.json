@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "sold_stock_ratio",
+      "measure": "sell",
+      "scope": {
+        "product": "all",
+        "month": "all"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "product": "all",
+          "month": "all"
+        }
+      },
+      "factor": 2.0
+    }
+  ],
+  "note": "Enforces that total units sold across all products and months is at most twice the total units in stock."
+}

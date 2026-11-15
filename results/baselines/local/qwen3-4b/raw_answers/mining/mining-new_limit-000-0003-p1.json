@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "at_least_4_mine_years_for_mine2",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 4
+    },
+    {
+      "name": "at_most_20873350_tons_extracted",
+      "measure": "extract",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "sense": "<=",
+      "value": 20873350
+    }
+  ],
+  "note": "Two rules: one for the minimum mine-years worked for Mine2, one for the maximum total extracted ore."
+}

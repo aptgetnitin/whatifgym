@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "required",
+   "where": {
+    "year": [
+     1,
+     2,
+     3
+    ],
+    "skill": [
+     "unskilled",
+     "semi_skilled",
+     "skilled"
+    ]
+   },
+   "value": 125000
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The question asks whether the plan can meet a total of 125000 workers employed, which is interpreted as setting the required workforce for each year and skill level to 125000 and minimizing redundancies."
+}

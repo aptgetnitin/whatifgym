@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "optimize_power_schedule",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "plants",
+   "column": "capacity_mwh",
+   "where": {
+    "plant": "Scherer"
+   },
+   "value": 0
+  }
+ ],
+ "fixed_decisions": [
+  {
+   "measure": "output",
+   "scope": {
+    "plant": "Scherer"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix Scherer's capacity to zero and ensure its output is zero."
+}

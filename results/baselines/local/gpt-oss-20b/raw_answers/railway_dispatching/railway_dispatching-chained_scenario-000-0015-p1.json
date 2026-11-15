@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "trains",
+      "where": {
+        "train": "F"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "min_goes_first_before_E",
+      "measure": "goes_first",
+      "scope": {
+        "other_train": "E"
+      },
+      "sense": ">=",
+      "value": 6
+    }
+  ],
+  "note": "Require at least 6 trains to clear a resource before train E enters it."
+}

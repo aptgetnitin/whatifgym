@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "total_item_placements_limit",
+      "measure": "x",
+      "scope": {},
+      "sense": "<=",
+      "value": 10
+    }
+  ]
+}

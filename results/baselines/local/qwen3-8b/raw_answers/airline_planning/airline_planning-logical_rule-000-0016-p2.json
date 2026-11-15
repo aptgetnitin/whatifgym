@@ -1,0 +1,19 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "rules": [
+  {
+   "name": "at_most_one_of_4577_and_4576",
+   "measure": "operate",
+   "scope": {
+    "flight": [
+     4577,
+     4576
+    ]
+   },
+   "sense": "<=",
+   "value": 1
+  }
+ ],
+ "note": "A rule that limits the number of operated flights among flight 4577 and 4576."
+}

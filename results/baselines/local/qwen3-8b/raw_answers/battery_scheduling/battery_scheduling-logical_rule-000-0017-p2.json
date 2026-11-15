@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "battery_scheduling",
+ "rules": [
+  {
+   "name": "soc_13-14_zero_or_more_than_20",
+   "measure": "soc",
+   "scope": {
+    "hour": "13-14"
+   },
+   "sense": ">=",
+   "value": 0,
+   "relative_to": {
+    "measure": "soc",
+    "scope": {
+     "hour": "13-14"
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The rule enforces that the stored energy for hour 13-14 is either zero or at least 20 kWh."
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "objective": [
+    {
+      "measure": "original",
+      "sense": "min"
+    },
+    {
+      "measure": "entry_time",
+      "sense": "max"
+    }
+  ]
+}

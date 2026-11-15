@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "suppliers",
+      "where": {
+        "supplier": [
+          "Aleppo",
+          "Hassakeh",
+          "Gaziantep",
+          "Amman"
+        ]
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "max_purchase_per_supplier",
+      "measure": "purchase",
+      "scope": {
+        "supplier": [
+          "Daraa",
+          "Hassakeh"
+        ]
+      },
+      "sense": "<=",
+      "value": 10000000
+    }
+  ],
+  "note": "Only Daraa and Hassakeh can have food purchased, with a purchase limit of 10,000,000 units per day."
+}

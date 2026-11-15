@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "day": "Saturday",
+        "depot": "Birmingham"
+      },
+      "factor": 1.25
+    }
+  ],
+  "rules": [
+    {
+      "name": "undamaged_left_total_limit",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 150
+    }
+  ]
+}

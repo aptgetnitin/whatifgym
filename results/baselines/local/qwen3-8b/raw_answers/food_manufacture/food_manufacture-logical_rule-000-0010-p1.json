@@ -1,0 +1,23 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg1_veg2_purchase_relation",
+   "measure": "buy",
+   "scope": {
+    "oil": "VEG1"
+   },
+   "sense": ">=",
+   "value": 1,
+   "relative_to": {
+    "measure": "buy",
+    "scope": {
+     "oil": "VEG2"
+    }
+   },
+   "factor": 680
+  }
+ ],
+ "note": "If any tons of oil VEG1 are bought, then the total tons of oil VEG2 bought must be at least 680."
+}

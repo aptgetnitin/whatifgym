@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "farm_planning",
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "grow_beet",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  },
+  {
+   "sense": "min",
+   "measure": "yearly_profit",
+   "scope": {
+    "year": [
+     "Year1",
+     "Year2",
+     "Year3",
+     "Year4",
+     "Year5"
+    ]
+   }
+  }
+ ],
+ "note": "Maximise total sugar beet grown while keeping the total profit unchanged."
+}

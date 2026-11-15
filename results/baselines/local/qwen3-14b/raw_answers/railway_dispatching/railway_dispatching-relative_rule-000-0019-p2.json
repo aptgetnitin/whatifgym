@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "entry_time_resource_1_double_resource_3",
+      "measure": "entry_time",
+      "scope": {
+        "resource": 1
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {
+          "resource": 3
+        }
+      },
+      "factor": 2.0
+    },
+    {
+      "name": "entry_time_resource_2_total_limit",
+      "measure": "entry_time",
+      "scope": {
+        "resource": 2
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "entry_time",
+        "scope": {
+          "resource": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "factor": 0.1
+    }
+  ]
+}

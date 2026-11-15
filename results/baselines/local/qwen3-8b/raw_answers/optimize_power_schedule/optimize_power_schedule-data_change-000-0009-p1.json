@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {
+        "plant": "Vogtle"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "Scaling the capacity_mwh of Vogtle by 50% reflects the loss of generation capacity."
+}

@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "covid19_facility_location",
+ "logic": [
+  {
+   "name": "c5_demand_condition",
+   "at_least": 1,
+   "of": [
+    {
+     "measure": "assign",
+     "sense": ">=",
+     "value": 0,
+     "scope": {
+      "county": "C7",
+      "facility": "E13"
+     }
+    },
+    {
+     "measure": "assign",
+     "sense": "<=",
+     "value": 0,
+     "scope": {
+      "county": "C5",
+      "facility": "E13"
+     }
+    },
+    {
+     "measure": "assign",
+     "sense": ">=",
+     "value": 450,
+     "scope": {
+      "county": "C5"
+     }
+    }
+   ]
+  }
+ ]
+}

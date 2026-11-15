@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "clearing_count_f_at_least_three_times_clearing_count_a",
+      "measure": "goes_first",
+      "scope": {
+        "resource": [
+          "1",
+          "3",
+          "5"
+        ],
+        "train": [
+          "F"
+        ],
+        "other_train": [
+          "A"
+        ]
+      },
+      "sense": ">=",
+      "value": 3
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

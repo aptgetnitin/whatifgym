@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "fixed_decisions": [
+  {
+   "measure": "goes_first",
+   "scope": {
+    "machine": "M1",
+    "job": "J1",
+    "other_job": "J5"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fixed decision to set the goes_first variable for machine M1, job J1, and other job J5 to 0."
+}

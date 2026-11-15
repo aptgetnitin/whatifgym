@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning_2",
+ "rules": [
+  {
+   "name": "mar_sales_zero_or_4750",
+   "measure": "sell",
+   "scope": {
+    "month": "Mar"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "sell",
+    "scope": {
+     "month": "Mar"
+    }
+   },
+   "factor": 4750
+  }
+ ],
+ "note": "The rule enforces that total sales in March are either zero or at least 4750."
+}

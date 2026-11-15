@@ -1,0 +1,25 @@
+{
+ "version": "0.1",
+ "base_model": "factory_planning",
+ "rules": [
+  {
+   "name": "prod7_stock_batch",
+   "measure": "store",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": "==",
+   "value": 0
+  },
+  {
+   "name": "prod7_stock_batch_min",
+   "measure": "store",
+   "scope": {
+    "product": "Prod7"
+   },
+   "sense": ">=",
+   "value": 500
+  }
+ ],
+ "note": "Logical rule: the total units in stock for product Prod7 is either zero or at least 500."
+}

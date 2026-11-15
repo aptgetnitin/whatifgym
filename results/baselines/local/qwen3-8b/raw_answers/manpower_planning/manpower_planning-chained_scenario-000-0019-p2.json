@@ -1,0 +1,42 @@
+{
+ "version": "0.1",
+ "base_model": "manpower_planning",
+ "data_changes": [
+  {
+   "op": "scale_param",
+   "name": "short_time_productivity",
+   "factor": 1.25
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 1,
+    "skill": "skilled"
+   },
+   "value": 700
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 2,
+    "skill": "skilled"
+   },
+   "value": 700
+  },
+  {
+   "op": "set",
+   "table": "requirements",
+   "column": "max_recruit",
+   "where": {
+    "year": 3,
+    "skill": "skilled"
+   },
+   "value": 700
+  }
+ ],
+ "note": "The short-time worker productivity is scaled by 1.25, and the maximum recruitment for skilled workers in each year is capped at 700."
+}

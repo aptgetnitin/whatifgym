@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "max_rentals_depots",
+   "measure": "rentals",
+   "scope": {
+    "depot": [
+     "Plymouth",
+     "Manchester",
+     "Birmingham",
+     "Glasgow"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Restrict the number of depots used for rentals to no more than 2."
+}

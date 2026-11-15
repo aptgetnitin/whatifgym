@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "biomass_hours_at_most_80_hatch",
+      "measure": "on",
+      "scope": {
+        "plant": "BIOMASS"
+      },
+      "sense": "<=",
+      "value": 0.8,
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "plant": "Edwin I Hatch"
+        }
+      }
+    }
+  ]
+}

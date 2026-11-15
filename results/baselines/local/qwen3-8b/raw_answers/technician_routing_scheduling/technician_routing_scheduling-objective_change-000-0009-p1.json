@@ -1,0 +1,27 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  },
+  {
+   "sense": "min",
+   "measure": "route",
+   "scope": {
+    "from_location": "*",
+    "to_location": "*",
+    "technician": "*"
+   }
+  },
+  {
+   "sense": "max",
+   "measure": "use",
+   "scope": {
+    "technician": "*"
+   }
+  }
+ ],
+ "note": "Prioritizing total penalty minimization, then minimizing total legs driven, and finally maximizing the number of technicians dispatched."
+}

@@ -1,0 +1,31 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "service_start_time_coverage",
+   "measure": "start_time",
+   "scope": {
+    "location": "Baden-Baden"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start_time",
+    "scope": {
+     "location": [
+      "Heidelberg",
+      "Freiburg im Breisgau",
+      "Mannheim",
+      "Karlsruhe",
+      "Baden-Baden",
+      "Buehl",
+      "Offenburg",
+      "Lahr/Schwarzwald"
+     ]
+    }
+   },
+   "factor": 0.6
+  }
+ ],
+ "note": "A rule to ensure that the service start time at Baden-Baden covers at least 60% of the total service start time across all locations."
+}

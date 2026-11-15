@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "flight_4564_share",
+      "measure": "operate",
+      "scope": {
+        "flight": 4564
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "flight": {
+            "all": true
+          }
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

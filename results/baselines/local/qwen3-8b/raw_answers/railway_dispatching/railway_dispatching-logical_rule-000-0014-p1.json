@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "entry_time_c_resource_4_above_zero",
+   "measure": "entry_time",
+   "scope": {
+    "train": "C",
+    "resource": 4
+   },
+   "sense": ">",
+   "value": 0
+  },
+  {
+   "name": "arrival_time_d_at_least_11_2",
+   "measure": "finish_time",
+   "scope": {
+    "train": "D"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "finish_time",
+    "scope": {
+     "train": "D"
+    }
+   },
+   "factor": 11.2
+  }
+ ],
+ "note": "If the entry time of train C on resource 4 is above zero, then the arrival time of train D must be at least 11.2 minutes."
+}

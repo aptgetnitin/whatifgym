@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "allowed_teams",
+      "where": {
+        "worker": [
+          "worker_1",
+          "worker_10"
+        ]
+      }
+    }
+  ],
+  "note": "The restriction on allowed teams no longer applies to worker_1 and worker_10, so we remove their rows from the allowed_teams table."
+}

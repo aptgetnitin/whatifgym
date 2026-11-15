@@ -1,0 +1,32 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "goes_first_j5",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "*",
+    "job": "J5"
+   },
+   "sense": "<=",
+   "value": 9
+  },
+  {
+   "name": "start_j5_sum",
+   "measure": "start",
+   "scope": {
+    "job": "J5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": "J5"
+    }
+   },
+   "factor": 190
+  }
+ ],
+ "note": "The first rule limits the number of job pairs where J5 goes first on each machine. The second rule ensures the sum of start times for J5 is at least 190."
+}

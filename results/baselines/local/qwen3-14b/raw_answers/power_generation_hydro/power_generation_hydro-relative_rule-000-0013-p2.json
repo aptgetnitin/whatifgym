@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_start_under_hydro_start",
+      "measure": "nstart",
+      "scope": {
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ],
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "hydro_start",
+        "scope": {
+          "hydro": [
+            "HydroA",
+            "HydroB"
+          ],
+          "period": [
+            "00-06",
+            "06-09",
+            "09-15",
+            "15-18",
+            "18-24"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "soc",
+      "column": "soc",
+      "where": {
+        "hour": "13-14"
+      },
+      "value": 0
+    },
+    {
+      "op": "set",
+      "table": "soc",
+      "column": "soc",
+      "where": {
+        "hour": "13-14"
+      },
+      "value": 20
+    }
+  ],
+  "note": "The planner's question is ambiguous: it requires soc[13-14] to be either 0 or at least 20. This is a logical rule (at least one of two conditions holds), but the DSL does not support multiple values for a single row. The scenario DSL requires a single value per row. So I need to ask for clarification."
+}

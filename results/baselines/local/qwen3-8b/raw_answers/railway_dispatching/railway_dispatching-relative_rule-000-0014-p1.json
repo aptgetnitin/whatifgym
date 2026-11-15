@@ -1,0 +1,102 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "rules": [
+  {
+   "name": "goes_first_f_over_a",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "train": "F",
+    "other_train": "A"
+   },
+   "sense": ">=",
+   "value": 3
+  },
+  {
+   "name": "goes_first_f_over_b",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "train": "F",
+    "other_train": "B"
+   },
+   "sense": ">=",
+   "value": 3
+  },
+  {
+   "name": "goes_first_f_over_c",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "train": "F",
+    "other_train": "C"
+   },
+   "sense": ">=",
+   "value": 3
+  },
+  {
+   "name": "goes_first_f_over_d",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "train": "F",
+    "other_train": "D"
+   },
+   "sense": ">=",
+   "value": 3
+  },
+  {
+   "name": "goes_first_f_over_e",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "train": "F",
+    "other_train": "E"
+   },
+   "sense": ">=",
+   "value": 3
+  }
+ ],
+ "note": "The policy change requires that the number of trains clearing a resource before train F enters it with other trains A, B, C, D, and E must be at least 3 times the same number with other train A."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "bin_packing",
+  "rules": [
+    {
+      "name": "bin1_at_least_30_percent_items",
+      "measure": "x",
+      "scope": {
+        "bin": "bin1"
+      },
+      "sense": ">=",
+      "value": 0.3
+    }
+  ],
+  "note": "The rule specifies that bin1 must hold at least 30% of the total items packed."
+}

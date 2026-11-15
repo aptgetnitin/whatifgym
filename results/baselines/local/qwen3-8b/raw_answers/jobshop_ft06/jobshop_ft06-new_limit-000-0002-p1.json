@@ -1,0 +1,38 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "job_pairs_with_j5",
+   "measure": "goes_first",
+   "scope": {
+    "machine": "*",
+    "other_job": "J5"
+   },
+   "sense": "<=",
+   "value": 9
+  },
+  {
+   "name": "start_time_j5_sum",
+   "measure": "start",
+   "scope": {
+    "job": "J5"
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": "J5"
+    }
+   },
+   "factor": 190
+  }
+ ],
+ "objective": [
+  {
+   "sense": "min",
+   "measure": "original"
+  }
+ ],
+ "note": "The scenario introduces two constraints: one limiting the number of job pairs where a job goes first on the machine with J5, and another requiring the sum of start times for J5 to be at least 190."
+}

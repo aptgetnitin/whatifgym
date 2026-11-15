@@ -1,0 +1,1 @@
+{"ask":"How should the constraint that at most two of the foods Corn-soya blend, Oil, and Milk may have a positive ration per person be implemented? For example, should we limit the total ration of these foods, or enforce a cardinality constraint?"}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "measure": "open",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate"
+      },
+      "factor": 0.9
+    }
+  ],
+  "note": "Total open mine-years must not exceed 90% of total operate mine-years."
+}

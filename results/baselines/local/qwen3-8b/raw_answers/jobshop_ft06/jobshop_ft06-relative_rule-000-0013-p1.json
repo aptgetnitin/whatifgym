@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "step2_end_time_limit",
+   "measure": "end",
+   "scope": {
+    "job": [
+      "J0",
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5"
+    ],
+    "step": 2
+   },
+   "sense": "<=",
+   "value": 0.05
+  }
+ ],
+ "note": "The rule limits the sum of end times for step 2 across all jobs to no more than 5% of all operation end times."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "E"
+      },
+      "factor": 0.95
+    }
+  ],
+  "note": "The share of all entry time that belongs to train E cannot be more than 5% implies scaling the ready_time of train E by 0.95 to reduce its entry time by 5%."
+}

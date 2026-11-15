@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "purchase_limit",
+   "measure": "purchase",
+   "scope": {
+    "supplier": [
+     "Aleppo",
+     "Amman",
+     "Daraa",
+     "Gaziantep",
+     "Hassakeh"
+    ]
+   },
+   "sense": "<=",
+   "value": 10000000
+  }
+ ],
+ "note": "Restrict purchase to only 3 suppliers: Daraa, Hassakeh, Aleppo, Gaziantep and Amman."
+}

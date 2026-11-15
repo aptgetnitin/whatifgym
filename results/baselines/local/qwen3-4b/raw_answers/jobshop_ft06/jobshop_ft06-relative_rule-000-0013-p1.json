@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "routing_step_2_end_time_limit",
+      "measure": "end",
+      "scope": {
+        "job": "J0",
+        "step": 2
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ],
+  "note": "The planner's question refers to 'all operation end time', but the model only has one operation per job-step. The question is ambiguous without specifying which operations are included in 'all'."
+}

@@ -1,0 +1,24 @@
+{
+ "version": "0.1",
+ "base_model": "jobshop_ft06",
+ "rules": [
+  {
+   "name": "end_time_j0_step4",
+   "measure": "end",
+   "scope": {
+    "job": "J0",
+    "step": 4
+   },
+   "sense": ">=",
+   "relative_to": {
+    "measure": "start",
+    "scope": {
+     "job": "J0",
+     "step": 3
+    }
+   },
+   "factor": 1.0
+  }
+ ],
+ "note": "The end time of J0's step 4 must be at least equal to the start time of J0's step 3."
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "4577_or_4576",
+      "measure": "operate",
+      "scope": {
+        "flight": [4577, 4576]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ],
+  "note": "Ensure that at most one of flights 4577 or 4576 is operated."
+}

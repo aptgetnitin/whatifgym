@@ -1,0 +1,36 @@
+{
+ "version": "0.1",
+ "base_model": "railway_dispatching",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "trains",
+   "column": "ready_time",
+   "where": {
+    "train": "E"
+   },
+   "value": 10
+  }
+ ],
+ "rules": [
+  {
+   "name": "trains_clearing_before_e",
+   "measure": "goes_first",
+   "scope": {
+    "resource": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "other_train": "E"
+   },
+   "sense": ">=",
+   "value": 6
+  }
+ ],
+ "note": "Set train E's ready_time to 10 and require at least 6 trains to clear a resource before E enters it."
+}

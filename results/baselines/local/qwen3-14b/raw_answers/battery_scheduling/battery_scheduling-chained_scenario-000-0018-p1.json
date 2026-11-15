@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "battery_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "hours",
+      "column": "export_price",
+      "where": {},
+      "factor": 0.9
+    }
+  ],
+  "rules": [
+    {
+      "measure": "soc",
+      "scope": {},
+      "sense": "<=",
+      "value": 210,
+      "name": "cap_soc_total"
+    }
+  ]
+}

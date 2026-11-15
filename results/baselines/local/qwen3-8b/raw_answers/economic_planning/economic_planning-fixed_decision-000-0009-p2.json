@@ -1,0 +1,15 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "fixed_decisions": [
+  {
+   "measure": "production",
+   "scope": {
+    "year": 3,
+    "industry": "transport"
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the production of transport in year 3 to 0 and re-optimise the rest of the plan."
+}

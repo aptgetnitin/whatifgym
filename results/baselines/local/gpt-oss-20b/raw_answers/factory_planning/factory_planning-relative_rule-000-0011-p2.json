@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"measure":"store","sense":">=","relative_to":{"measure":"make"},"factor":3.0}],"note":"Overall inventory must be at least three times overall production."}

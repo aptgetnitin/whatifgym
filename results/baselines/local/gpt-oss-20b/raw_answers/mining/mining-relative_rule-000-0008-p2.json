@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "Year2_extract_share",
+      "measure": "extract",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "extract"
+      },
+      "factor": 0.05
+    },
+    {
+      "name": "extract_vs_blend",
+      "measure": "extract",
+      "sense": "<=",
+      "relative_to": {
+        "measure": "blend"
+      },
+      "factor": 0.8
+    }
+  ]
+}

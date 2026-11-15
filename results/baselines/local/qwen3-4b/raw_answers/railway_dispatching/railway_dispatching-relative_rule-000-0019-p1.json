@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "resource": "1"
+      },
+      "factor": 2.0
+    },
+    {
+      "op": "scale",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "resource": "3"
+      },
+      "factor": 0.1
+    }
+  ],
+  "note": "The planner's question refers to entry time on resources, but the model's decision variables are entry_time[train, resource]. The 'ready_time' column in the trains table is the time at which the train enters its current resource (0 = now). The question specifies conditions on entry times, which are captured by scaling the ready_time column for specific resources."
+}

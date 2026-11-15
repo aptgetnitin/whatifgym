@@ -1,0 +1,23 @@
+{
+  "base_model": "food_manufacture",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "purchase_prices",
+      "column": "buy",
+      "where": {
+        "oil": "OIL2",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "value": 250
+    }
+  ],
+  "note": "The planner wants to fix the amount of OIL2 bought each month to 250 tons. This is a fixed decision on the 'buy' measure for OIL2 over all months."
+}

@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "rules": [
+  {
+   "name": "veg2_consume_jan",
+   "measure": "consume",
+   "scope": {
+    "month": "Jan",
+    "oil": "VEG2"
+   },
+   "sense": ">=",
+   "value": 360
+  }
+ ],
+ "note": "The rule enforces a minimum consumption of VEG2 in January to achieve 360 or more tons refined."
+}

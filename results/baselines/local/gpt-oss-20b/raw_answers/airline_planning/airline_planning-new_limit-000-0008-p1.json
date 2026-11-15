@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"max_flights_A318#8","measure":"operate","scope":{"aircraft":"A318#8"},"sense":"<=","value":4}],"note":"Limit aircraft A318#8 to at most 4 flights operated in total."}

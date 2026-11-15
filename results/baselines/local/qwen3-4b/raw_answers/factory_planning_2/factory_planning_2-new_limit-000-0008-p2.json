@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "store",
+      "column": "store",
+      "where": {
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "note": "The planner wants to limit the total stock across all products to no more than 570 units. However, the model's `store` variable is per product and per month, so the total stock over time is not directly a single measure. The question is ambiguous and cannot be precisely translated into a machine-checkable scenario."
+}

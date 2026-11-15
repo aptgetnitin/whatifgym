@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental",
+ "rules": [
+  {
+   "name": "repair_min_tuesday_manchester",
+   "measure": "repairs",
+   "scope": {
+    "day": "Tuesday",
+    "depot": "Manchester"
+   },
+   "sense": ">=",
+   "value": 30
+  }
+ ],
+ "note": "A minimum batch rule for repairs on Tuesday at Manchester depot."
+}

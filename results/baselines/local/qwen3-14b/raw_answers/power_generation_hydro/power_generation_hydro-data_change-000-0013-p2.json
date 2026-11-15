@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "thermal_types",
+      "column": "cost_per_hour",
+      "where": {
+        "type": "Thermal2"
+      },
+      "value": 6000
+    }
+  ]
+}

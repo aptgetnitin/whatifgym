@@ -1,0 +1,34 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "data_changes": [],
+ "rules": [
+  {
+   "name": "total_service_start_time_at_mannheim",
+   "measure": "start_time",
+   "scope": {
+    "location": "Mannheim"
+   },
+   "sense": "<=",
+   "value": 19
+  },
+  {
+   "name": "max_technicians_dispatched",
+   "measure": "use",
+   "scope": {
+    "technician": [
+     "Albert",
+     "Bob",
+     "Carlos",
+     "Doris",
+     "Ed",
+     "Flor",
+     "Gina"
+    ]
+   },
+   "sense": "<=",
+   "value": 2
+  }
+ ],
+ "note": "Two rules: total service start time at Mannheim is limited to 19 minutes, and at most 2 technicians are dispatched."
+}

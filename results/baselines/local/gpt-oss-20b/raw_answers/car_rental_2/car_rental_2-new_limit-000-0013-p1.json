@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"measure":"undamaged_stock","sense":"<=","value":2650},{"measure":"undamaged_transfers","scope":{"day":"Thursday"},"sense":"<=","value":45}],"note":"Cap total undamaged stock at 2650 and undamaged transfers on Thursday at 45."}

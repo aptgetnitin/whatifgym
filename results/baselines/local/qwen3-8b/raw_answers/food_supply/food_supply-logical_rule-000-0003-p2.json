@@ -1,0 +1,20 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "rules": [
+  {
+   "name": "max_non_zero_rations",
+   "measure": "ration",
+   "scope": {
+    "food": [
+     "Corn-soya blend (CSB)",
+     "Oil",
+     "Milk"
+    ]
+   },
+   "sense": "<=",
+   "value": 0
+  }
+ ],
+ "note": "At most one of the three foods can have a non-zero ration."
+}

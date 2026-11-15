@@ -1,0 +1,14 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "fixed_decisions": [
+  {
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine4"
+   },
+   "value": 9562500
+  }
+ ],
+ "note": "Fixing the total extraction from Mine4 to 9562500 tons."
+}

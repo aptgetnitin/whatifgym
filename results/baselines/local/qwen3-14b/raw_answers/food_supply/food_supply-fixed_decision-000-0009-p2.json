@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "food_supply",
+ "fixed_decisions": [
+  {
+   "measure": "purchase",
+   "scope": {
+    "supplier": "Homs"
+   },
+   "value": 250
+  },
+  {
+   "measure": "ration",
+   "scope": {
+    "food": "Milk",
+    "camp": "Dayr_Az_Zor"
+   },
+   "value": 0.15
+  }
+ ]
+}

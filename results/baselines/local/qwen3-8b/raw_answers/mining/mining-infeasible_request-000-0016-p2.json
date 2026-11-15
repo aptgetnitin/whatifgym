@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "mining",
+ "rules": [
+  {
+   "name": "mine3_extract_limit",
+   "measure": "extract",
+   "scope": {
+    "mine": "Mine3"
+   },
+   "sense": ">=",
+   "value": 15600000
+  }
+ ],
+ "note": "The rule ensures that the total ore extracted from Mine3 meets or exceeds the specified amount."
+}

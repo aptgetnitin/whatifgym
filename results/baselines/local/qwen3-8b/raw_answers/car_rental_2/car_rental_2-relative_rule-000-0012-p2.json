@@ -1,0 +1,37 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_left_saturday_limit",
+   "measure": "undamaged_left",
+   "scope": {
+    "day": "Saturday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "undamaged_left",
+    "scope": {
+     "day": "Tuesday"
+    }
+   },
+   "factor": 1.0
+  },
+  {
+   "name": "undamaged_transfers_thursday_share_limit",
+   "measure": "undamaged_transfers",
+   "scope": {
+    "day": "Thursday"
+   },
+   "sense": "<=",
+   "relative_to": {
+    "measure": "undamaged_transfers",
+    "scope": {
+     "day": "all"
+    }
+   },
+   "factor": 0.05
+  }
+ ],
+ "note": "The first rule limits undamaged cars kept overnight on Saturday to those on Tuesday. The second rule caps Thursday's undamaged transfers to 5% of all undamaged transfers."
+}

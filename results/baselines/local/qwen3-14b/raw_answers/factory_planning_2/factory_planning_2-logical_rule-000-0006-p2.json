@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "logic": [
+    {
+      "name": "prod4_apr_sales_condition",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Apr",
+            "product": "Prod4"
+          },
+          "sense": ">=",
+          "value": 150
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "month": "Feb",
+            "product": {
+              "$not": "0"
+            }
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

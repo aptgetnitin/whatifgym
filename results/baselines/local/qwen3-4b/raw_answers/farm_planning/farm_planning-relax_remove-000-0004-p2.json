@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "years",
+      "column": "regular_labour_hours",
+      "where": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "delta": 0
+    },
+    {
+      "op": "shift",
+      "table": "years",
+      "column": "housing_capacity",
+      "where": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "delta": 0
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","relax":[{"constraint":"housing"},{"constraint":"labour"}],"note":"Lift labour-hours and housing capacity limits"}

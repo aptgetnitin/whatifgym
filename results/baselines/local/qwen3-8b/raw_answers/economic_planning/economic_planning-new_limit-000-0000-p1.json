@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "name": "transport_output_total",
+   "measure": "production",
+   "scope": {
+    "industry": "transport"
+   },
+   "sense": ">=",
+   "value": 1330
+  }
+ ],
+ "note": "The total output of the transport industry over the planning horizon must be at least 1330 million USD."
+}

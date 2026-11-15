@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "measure": "extra_capacity",
+   "scope": {
+    "year": 3
+   },
+   "sense": "<=",
+   "value": 78,
+   "name": "cap_extra_capacity_3"
+  }
+ ],
+ "note": "A cap on the total capacity built in year 3."
+}

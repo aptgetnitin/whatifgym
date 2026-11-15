@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "E_entry_time_fraction",
+      "measure": "entry_time",
+      "scope": {
+        "train": "E"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "entry_time"
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "Train E's total entry time must not exceed 5% of the total entry time of all trains."
+}

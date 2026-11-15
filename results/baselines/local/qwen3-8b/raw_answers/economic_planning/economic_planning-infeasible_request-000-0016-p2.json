@@ -1,0 +1,61 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "external_demand",
+   "where": {
+    "industry": "steel"
+   },
+   "value": 80
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_stock",
+   "where": {
+    "industry": "transport"
+   },
+   "value": 150
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "initial_capacity",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 250
+  },
+  {
+   "op": "set",
+   "table": "industries",
+   "column": "labor_per_unit_output",
+   "where": {
+    "industry": "coal"
+   },
+   "value": 0.5
+  }
+ ],
+ "rules": [
+  {
+   "name": "steel_output_year_3",
+   "measure": "production",
+   "scope": {
+    "year": 3,
+    "industry": "steel"
+   },
+   "sense": ">=",
+   "value": 1820
+  }
+ ],
+ "objective": [
+  {
+   "sense": "max",
+   "measure": "original"
+  }
+ ],
+ "note": "The question asks if the plan can achieve an output produced of 1820 or more for year 3, industry steel. The scenario sets the steel demand to 80, transport initial stock to 150, coal initial capacity to 250, and coal labor per unit output to 0.5. A rule is added to ensure steel production in year 3 is at least 1820."
+}

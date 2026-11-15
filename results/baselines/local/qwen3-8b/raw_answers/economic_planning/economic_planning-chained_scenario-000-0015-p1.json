@@ -1,0 +1,21 @@
+{
+ "version": "0.1",
+ "base_model": "economic_planning",
+ "rules": [
+  {
+   "measure": "production",
+   "scope": {},
+   "sense": "<=",
+   "value": 3700,
+   "name": "cap_production_total"
+  },
+  {
+   "measure": "stock",
+   "scope": {},
+   "sense": "<=",
+   "value": 850,
+   "name": "cap_stock_total"
+  }
+ ],
+ "note": "An overall cap of 850 applies to the output held in stock (million USD), summed over everything. Output produced (million USD) is also capped at 3700 across everything."
+}

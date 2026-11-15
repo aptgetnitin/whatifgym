@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","data_changes":[{"op":"scale","table":"trains","column":"ready_time","where":{"train":["A","B","C","D","E","F"]},"factor":1.1},{"op":"set","table":"resources","column":"duration","where":{"resource":4},"value":1.5}],"note":"All trains’ ready_time increased by 10%; resource 4’s minimum duration set to 1.5 minutes."}

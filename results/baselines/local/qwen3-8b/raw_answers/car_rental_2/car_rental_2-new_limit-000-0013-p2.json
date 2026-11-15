@@ -1,0 +1,22 @@
+{
+ "version": "0.1",
+ "base_model": "car_rental_2",
+ "rules": [
+  {
+   "name": "undamaged_stock_limit",
+   "measure": "undamaged_stock",
+   "sense": "<=",
+   "value": 2650
+  },
+  {
+   "name": "undamaged_transfers_thursday_limit",
+   "measure": "undamaged_transfers",
+   "scope": {
+    "day": "Thursday"
+   },
+   "sense": "<=",
+   "value": 45
+  }
+ ],
+ "note": "Limits the total undamaged cars at all depots in the morning and the total undamaged transfers on Thursday."
+}

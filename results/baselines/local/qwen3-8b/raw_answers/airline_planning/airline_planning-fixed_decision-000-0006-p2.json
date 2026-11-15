@@ -1,0 +1,17 @@
+{
+ "version": "0.1",
+ "base_model": "airline_planning",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "operate",
+   "column": "operate",
+   "where": {
+    "aircraft": "A320#22",
+    "flight": 4577
+   },
+   "value": 0
+  }
+ ],
+ "note": "Fix the operate decision for aircraft A320#22 and flight 4577 to 0."
+}

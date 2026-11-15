@@ -1,0 +1,26 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "fixed_decisions": [
+  {
+   "measure": "assign",
+   "scope": {
+    "customer": "Customer1",
+    "technician": "Albert"
+   },
+   "value": 0
+  }
+ ],
+ "rules": [
+  {
+   "name": "lateness_customer5",
+   "measure": "lateness",
+   "scope": {
+    "customer": "Customer5"
+   },
+   "sense": "==",
+   "value": 80
+  }
+ ],
+ "note": "Fixed decision for assign[Customer1, Albert] and rule for lateness[Customer5] = 80."
+}

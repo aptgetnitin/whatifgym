@@ -1,0 +1,88 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "external_demand",
+      "where": {
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "initial_stock",
+      "where": {
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "initial_capacity",
+      "where": {
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "labor_per_unit_output",
+      "where": {
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "factor": 1.0
+    },
+    {
+      "op": "scale",
+      "table": "industries",
+      "column": "labor_per_unit_capacity",
+      "where": {
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "factor": 1.0
+    }
+  ],
+  "rules": [
+    {
+      "name": "year2_output_limit",
+      "measure": "production",
+      "scope": {
+        "year": 2
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

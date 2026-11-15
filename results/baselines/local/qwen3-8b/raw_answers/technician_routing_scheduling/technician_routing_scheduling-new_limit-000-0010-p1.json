@@ -1,0 +1,16 @@
+{
+ "version": "0.1",
+ "base_model": "technician_routing_scheduling",
+ "rules": [
+  {
+   "name": "ed_jobs_assigned",
+   "measure": "assign",
+   "scope": {
+    "technician": "Ed"
+   },
+   "sense": ">=",
+   "value": 2
+  }
+ ],
+ "note": "Ensuring Technician Ed is assigned at least 2 jobs."
+}

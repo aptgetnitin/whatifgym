@@ -1,0 +1,33 @@
+{
+ "version": "0.1",
+ "base_model": "food_manufacture",
+ "data_changes": [
+  {
+   "op": "set",
+   "table": "params",
+   "column": "final_stock",
+   "where": {
+    "oil": [
+     "VEG1",
+     "VEG2",
+     "OIL1",
+     "OIL2",
+     "OIL3"
+    ]
+   },
+   "value": 500
+  }
+ ],
+ "rules": [
+  {
+   "name": "store_total_feb",
+   "measure": "store",
+   "scope": {
+    "month": "Feb"
+   },
+   "sense": ">=",
+   "value": 2950
+  }
+ ],
+ "note": "Require at least 2950 tons of oil in storage in February, and maintain the final stock target of 500 tons for each oil."
+}
