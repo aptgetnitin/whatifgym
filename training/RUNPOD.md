@@ -379,7 +379,7 @@ Timeline (UTC): 05:48:20 pod created; 05:50:34 set-up done; 05:50 to 05:59 smoke
 
 Kept: `training/results/run5_seed1_summary.json` (curve, per-task `correct` strings, reward per step), `run5_seed1_eval_task_ids.json`, `run5_pass_rates.json`. The LoRA adapter (137 MB) is kept on the Mac outside the repository this time.
 
-Next: 2 more seeds (about $5; pass rates can be reused with `--pass-rates training/results/run5_pass_rates.json`, which saves about 11 minutes per pod).
+Seeds 2 and 3: done Nov 15 night, see the section "Run 5, seeds 2 and 3" below.
 
 ## Shared scoreboard: training base on the whole current set (Nov 15)
 
@@ -404,6 +404,49 @@ python training/score_models.py --no-base --adapters trained-run5-seed1=/root/ad
 **Result, trained model** (`results/baselines/pod/trained-run5-seed1/`): 63.1 % on the 3,722 template tasks (base 49.4 %), 65.1 % on the 914 paraphrases (base 52.2 %), valid scenario 87.3 % (base 73.2 %). On the 2,078 template tasks of the 14 held-out base models: 48.3 % → 61.6 %, 310 gained and 33 lost (exact McNemar p = 1.4e-57). On the training models: 50.8 % → 65.0 % (1,644 tasks, 176 of them training tasks). By family, base → trained: data_change 68 → 80, new_limit 68 → 82, relative_rule 34 → 71, objective_change 46 → 70, fixed_decision 78 → 86, relax_remove 56 → 71, logical_rule 16 → 22, infeasible_request 53 → 75, chained_scenario 62 → 70, under_specified 16 → 16 (it asks first on 26 % of them, the base on 38 %). drone_network: 49.0 % → 57.8 %. Check against run 5 on the same task ids: 68.5 % on the 400 held-out tasks (run 5: 67.5 %), 67.9 % on the 131 test tasks (run 5: 68.7 %).
 
 **Same model under Ollama** (free, Mac, Nov 15): `qwen3:4b-instruct-2507-q4_K_M` scores 44.1 % on the 3,722 template tasks, with no request errors. The default tag `qwen3:4b` used before is Qwen3-4B-Thinking-2507; with thinking off it scores 25.3 % and repeats itself, so the Instruct build replaces it as the 4B baseline.
+
+## Run 5, seeds 2 and 3: two pods side by side (Nov 15 night, Pacific)
+
+Goal: two more seeds of the run 5 recipe, and each adapter scored on the whole current set. One script per pod, `training/pod_seed_run.sh SEED WORKERS SECRET` (set-up, training with `--pass-rates training/results/run5_pass_rates.json`, then `score_models.py --no-base` on the new adapter, then one archive served on port 8000 under a one-time secret path). Two pods in parallel cost the same as one after the other and finish in half the time.
+
+| | Seed 2 | Seed 3 |
+|---|---|---|
+| Pod | `l9dtv0flqvh1bl`, `whatifgym-run5-seed2` | `kpkmed365zauxc`, `whatifgym-run5-seed3` |
+| Machine | RTX 4090, 16 vCPU, US-NC-1, secure cloud | RTX 4090, 19 vCPU, secure cloud |
+| Price | $0.89/hr | $0.89/hr |
+| Created (UTC, Nov 16) | 07:42:16 (11:42 PM Pacific, Nov 15) | 07:42:17 |
+| Set-up done | 07:42:57 (20 s) | 07:54:51 (11 min: slow package download) |
+| Training exit 0 | 10:26:47 | 10:43:15 |
+| Scoring exit 0 | 10:44:57 | 11:02:48 |
+| Archive on the Mac, sha256 checked | 10:45 (106,640,780 bytes) | 11:03 (106,628,101 bytes) |
+| Terminated | 10:45 (2:45 AM Pacific) | 11:03 (3:03 AM Pacific) |
+| Billed (`list-pod-billing`) | $2.13 | $2.13 |
+
+Guards: on-pod deadline 12,880 s on each pod (cap $6.38 for both), Mac guard at 3 h 25 min; neither fired. `list-pods` empty after the second termination. Total **$4.25** (quoted about $5.60, hard stop $6.50).
+
+Problems: (1) `create-pod` with `minVcpuCountPerGpu: 24` was refused for capacity; 16 worked. (2) On the seed 3 pod the first `exec-pod` timed out during `git clone` and the script did not start; a second call started it.
+
+**Result, 160 steps, same 400 held-out and 131 test tasks as seed 1** (`eval_task_ids.json` identical on all three):
+
+| | Seed 1 | Seed 2 | Seed 3 | Mean |
+|---|---|---|---|---|
+| Held-out models (400), before | 52.5 % | 53.0 % | 53.0 % | 52.8 % |
+| Held-out models (400), after | 67.5 % | 68.2 % | 68.0 % | 67.9 % |
+| Gain, points | +15.0 | +15.2 | +15.0 | +15.1 (sd 0.1) |
+| Gained / lost, exact McNemar p | 63 / 3, 1.3e-15 | 63 / 2, 1.2e-16 | 62 / 2, 2.3e-16 | |
+| Training models, test (131), before → after | 54.2 → 68.7 % | 54.2 → 68.7 % | 54.2 → 67.9 % | 54.2 → 68.4 % |
+| All 3,722 template tasks | 63.1 % | 62.6 % | 62.3 % | 62.7 % (sd 0.4) |
+| 2,078 tasks of the 14 held-out models | 61.6 % | 61.0 % | 60.2 % | 60.9 % (sd 0.7) |
+| 914 paraphrases | 65.1 % | 65.8 % | 65.2 % | 65.4 % |
+| Valid scenario, all 4,636 | 87.2 % | 87.2 % | 87.5 % | 87.3 % |
+| Minutes of training with 9 evaluations | 161 | 156 | 158 | |
+
+- The step-0 score on the 400 differs by 2 tasks between seed 1 (52.5 %) and seeds 2 and 3 (53.0 %), with the same model and tasks. Cause not verified; batched 4-bit inference is the likely one.
+- Against the untrained Qwen3 8B on the 2,078 held-out tasks (60.2 %): trained-only / 8B-only correct = 308 / 278, 309 / 292, 303 / 304 (p = 0.23, 0.51, 1.00). The trained 4B model matches the 8B there; it does not pass it.
+- Of the 2,078 held-out tasks, 1,203 are solved by all three seeds, 745 by none, 130 by one or two.
+- Scoring-time check on the curve's task sets (full-set run): seed 2 gives 68.75 % / 68.7 %, seed 3 gives 67.0 % / 69.47 % (training-time: 68.25 / 68.7 and 68.0 / 67.94), so the two code paths agree within 4 tasks of 400.
+
+Kept: `training/results/run5_seed{2,3}_summary.json`, `results/baselines/pod/trained-run5-seed{2,3}/`. The two adapters (about 132 MB each) are on the Mac outside the repository.
 
 ## Problems hit, in order
 

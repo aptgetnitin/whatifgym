@@ -13,7 +13,7 @@ whatifgym is a clean-room benchmark and reinforcement-learning environment for *
 > | Tasks (current set) | 3,722 template tasks + 914 verified paraphrases (2 for each of the 457 fully specified test tasks), in 386 files; shared outcomes removed (`_v1`, section 11) |
 > | Tests | 766 pass, 7 slow tests skipped |
 > | Untrained LLMs (current set, Nov 12) | Qwen3 4B 25.3 %, 8B 59.1 %, 14B 72.2 %, gpt-oss 20B 89.4 % (section 11) |
-> | Training result | GRPO on the training base (Qwen3-4B-Instruct-2507, 4-bit; not the Ollama Qwen3 4B of the baseline table), one GPU. Three base models held out, 80 steps: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds). 14 base models held out, 160 steps: 52.5 % → 67.5 % (+15.0 points, 1 seed; section 11) |
+> | Training result | GRPO on the training base (Qwen3-4B-Instruct-2507, 4-bit; not the Ollama Qwen3 4B of the baseline table), one GPU. Three base models held out, 80 steps: 55.7 % → 67.0 % on the held-out models (+11.3 points, 3 seeds). 14 base models held out, 160 steps: 52.8 % → 67.9 % (+15.1 points, 3 seeds; section 11) |
 
 ---
 
@@ -519,8 +519,9 @@ Complete run of Nov 12 on the current set: all 3,722 template tasks (the paraphr
 | 914 paraphrases | | 44.0 % | 62.6 % | 74.4 % | 92.7 % | 52.2 % | 65.1 % |
 | valid scenario | | 68 % | 82 % | 87 % | 96 % | 73 % | 87 % |
 
-- **Training lifts the 4B model past the untrained 8B**: 63.1 % against 59.1 % on all tasks, 61.6 % against 60.2 % on the base models it never trained on (310 tasks gained, 33 lost against its own base).
-- **The gain holds on reworded questions** (52.2 % → 65.1 %) and on `drone_network`, whose prompts were too long for training (49.0 % → 57.8 %).
+- **Training lifts the 4B model to the level of the untrained 8B.** The Trained column is seed 1. Over three seeds: 62.7 % on all tasks (63.1, 62.6, 62.3; 8B: 59.1 %) and 60.9 % on the base models it never trained on (61.6, 61.0, 60.2; 8B: 60.2 %). On those held-out models no seed differs significantly from the 8B (paired exact McNemar p = 0.23, 0.51, 1.00), so "matches", not "passes". Against its own base every seed gains about 300 tasks and loses 33 to 47.
+- **Seeds agree task by task:** of the 2,078 held-out template tasks, 1,203 are solved by all three seeds, 745 by none and 130 by one or two.
+- **The gain holds on reworded questions** (52.2 % → 65.1, 65.8, 65.2 %) and on `drone_network`, whose prompts were too long for training (49.0 % → 57.8, 57.1, 55.8 %).
 - **Not learned:** `logical_rule` (16 % → 22 %) and `under_specified` (16 %; single-turn training never rewards a useful question, and the trained model asks less often).
 - **Serving matters:** the same 4B model scores 44.1 % under Ollama (Q4_K_M) and 49.4 % in 4 bits under vLLM.
 
@@ -593,26 +594,26 @@ Mean gain on the held-out models: **+11.3 points** (standard deviation 1.5); eve
 
 ### Training: learning curve, 14 held-out base models (Nov 12)
 
-One seed, 160 steps, on the final task set (3,722 tasks). The training pool is the same 11 base models (176 tasks inside the pass-rate range, of 669). The 14 held-out base models are the 3 above plus the 11 added in November. Both test sets are scored before training, every 20 steps and after (greedy; 400 held-out tasks, 131 test tasks of the training models). The 400 are one fixed random draw from the held-out tasks whose prompt fits in 7,000 tokens; they come from 13 of the 14 held-out models, because every `drone_network` prompt is longer. **Three names, to keep the models apart.** *Ollama Qwen3 4B* is the baseline in the table of untrained LLMs: Ollama's `qwen3:4b`, which is Qwen3-4B-Thinking-2507 at Q4_K_M, run with thinking off. The *training base* is Qwen3-4B-Instruct-2507 in 4 bits (bitsandbytes), served by vLLM on the pod. The *trained model* is the training base plus the LoRA adapter from a run. Every training result compares the trained model with the training base on the same tasks; neither is comparable with the Ollama Qwen3 4B score of 25.3 %, which comes from another variant, another serving stack and another task sample.
+Three seeds, 160 steps each, on the final task set (3,722 tasks). The training pool is the same 11 base models (176 tasks inside the pass-rate range, of 669). The 14 held-out base models are the 3 above plus the 11 added in November. Both test sets are scored before training, every 20 steps and after (greedy; 400 held-out tasks, 131 test tasks of the training models). The 400 are one fixed random draw from the held-out tasks whose prompt fits in 7,000 tokens; they come from 13 of the 14 held-out models, because every `drone_network` prompt is longer. **Three names, to keep the models apart.** *Ollama Qwen3 4B* is the baseline in the table of untrained LLMs: Ollama's `qwen3:4b`, which is Qwen3-4B-Thinking-2507 at Q4_K_M, run with thinking off. The *training base* is Qwen3-4B-Instruct-2507 in 4 bits (bitsandbytes), served by vLLM on the pod. The *trained model* is the training base plus the LoRA adapter from a run. Every training result compares the trained model with the training base on the same tasks; neither is comparable with the Ollama Qwen3 4B score of 25.3 %, which comes from another variant, another serving stack and another task sample.
 
-| Step | Held-out models: correct | Held-out models: valid | Training models, test: correct |
-|---|---|---|---|
-| 0 | 52.5 % | 71.5 % | 54.2 % |
-| 20 | 56.2 % | 73.8 % | 57.2 % |
-| 40 | 57.5 % | 78.2 % | 60.3 % |
-| 60 | 62.0 % | 81.0 % | 62.6 % |
-| 80 | 64.0 % | 81.8 % | 65.6 % |
-| 100 | 65.8 % | 83.2 % | 66.4 % |
-| 120 | 67.0 % | 85.2 % | 67.9 % |
-| 140 | 66.5 % | 84.5 % | 68.7 % |
-| 160 | **67.5 %** | 85.0 % | **68.7 %** |
+| Step | Held-out: seed 1 | seed 2 | seed 3 | Held-out: mean correct | Held-out: mean valid | Training models, test: mean correct |
+|---|---|---|---|---|---|---|
+| 0 | 52.5 | 53.0 | 53.0 | 52.8 % | 71.7 % | 54.2 % |
+| 20 | 56.2 | 55.2 | 53.2 | 54.9 % | 73.4 % | 56.0 % |
+| 40 | 57.5 | 59.5 | 57.5 | 58.2 % | 77.8 % | 59.5 % |
+| 60 | 62.0 | 62.0 | 61.0 | 61.7 % | 80.3 % | 62.3 % |
+| 80 | 64.0 | 64.0 | 63.2 | 63.8 % | 81.8 % | 65.6 % |
+| 100 | 65.8 | 65.5 | 65.2 | 65.5 % | 83.4 % | 66.4 % |
+| 120 | 67.0 | 68.0 | 67.5 | 67.5 % | 84.5 % | 67.9 % |
+| 140 | 66.5 | 68.8 | 67.0 | 67.4 % | 84.6 % | 68.4 % |
+| 160 | 67.5 | 68.2 | 68.0 | **67.9 %** | 85.2 % | **68.4 %** |
 
-1. **Held-out models: +15.0 points** (63 tasks gained, 3 lost; p = 1.3e-15; 95 % interval +11.2 to +18.8). Training models: +14.5 points (20 gained, 1 lost).
-2. **Most of the gain comes in the first 100 steps;** the curve is flat from step 120.
-3. **Relative rules gain the most** on the held-out models (17.5 % → 61.4 %). Logical rules stay hard (24.4 % → 26.8 %).
-4. It is one seed. Two more seeds are the next training step.
+1. **Held-out models: +15.1 points** on average (52.8 % → 67.9 %; per seed +15.0, +15.2, +15.0). Each seed gains 62 or 63 tasks and loses 2 or 3 (every p ≤ 1.3e-15, exact McNemar test). Training models: +14.2 points (54.2 % → 68.4 %; 19 or 20 gained, 1 lost).
+2. **The three seeds end within 0.8 points of each other** (67.5, 68.2, 68.0 %). The step-0 scores differ by 0.5 points (2 tasks of 400) although the model is the same; the cause is not verified (batched 4-bit inference is the likely one).
+3. **Most of the gain comes in the first 100 steps;** the curve is flat from step 120 in every seed.
+4. **Relative rules gain the most** on the held-out models (about 20 % → 63 %). Logical rules stay hard (about 23 % → 25 %).
 
-About 2.7 hours of one RTX 4090 for training and the 9 evaluations (pod cost about $2.81 with set-up). Per-task results: `training/results/run5_seed1_summary.json`. Setup, commands, every run and its numbers: [training/RUNPOD.md](training/RUNPOD.md).
+About 2.7 hours of one RTX 4090 per seed for training and the 9 evaluations (pod cost $2.81 for seed 1, $2.13 each for seeds 2 and 3, which also include the full-set scoring below). Per-task results: `training/results/run5_seed{1,2,3}_summary.json`. Setup, commands, every run and its numbers: [training/RUNPOD.md](training/RUNPOD.md).
 
 ---
 
@@ -739,13 +740,12 @@ flowchart TB
         D3["10 families, 2,239 tasks<br/>(shared outcomes removed)"]
         D4["5 trivial agents"]
         D5["4 LLMs on every task"]
-        D6["GRPO, held-out base models:<br/>52.5 % → 67.5 %"]
+        D6["GRPO, held-out base models:<br/>52.8 % → 67.9 % (3 seeds)"]
     end
     subgraph X["Next"]
         direction LR
         X1["Frontier APIs on<br/>all 10 families"]
         X4["Hand audit<br/>(200 tasks)"]
-        X5["GRPO learning curve:<br/>2 more seeds"]
     end
     D --> X
 ```
@@ -763,8 +763,7 @@ flowchart TB
 | done | Shared outcomes removed: 16 files regenerated as `_v1`, 4 paraphrase files dropped; probe 1.7 % (Nov 1) |
 | done | GRPO pilot on one RTX 4090: Qwen3 4B, 51.5 % → 56.0 % on 200 test tasks, one seed (Nov 1) |
 | done | GRPO with a pass-rate filter, three held-out base models and 3 seeds: 55.7 % → 67.0 % on the held-out models, +11.3 points (Nov 1–2) |
-| done | GRPO learning curve, 160 steps, 14 held-out base models, one seed: 52.5 % → 67.5 % on the held-out models (Nov 12) |
-| next | Two more seeds of the learning curve |
+| done | GRPO learning curve, 160 steps, 14 held-out base models, 3 seeds: 52.8 % → 67.9 % on the held-out models, +15.1 points (Nov 12 and 16) |
 | done | 6 more base models (economic planning, fantasy basketball, assignment, COVID-19 facilities, railway dispatching, power schedule): 20 models, 3,093 tasks (Nov 2) |
 | done | 5 more base models (technician routing, drone network, airline planning, job-shop ft06, single-machine scheduling): 25 models, 3,761 tasks (Nov 2) |
 | done | Hand-audit sample drawn (`audit/audit_v1.md`, 200 tasks, `scripts/make_audit_pack.py`). A first read by two reviewer agents found no wrong label, 5 ambiguous questions and 26 awkward ones; the templates were fixed, 747 questions reworded in place (`tasks/reworded_2026-11-12.txt`) and 5 tasks dropped: 3,722 tasks (Nov 12). The audit by a person is still to do. A second pass the same day dropped 34 more tasks (8 whose gold answer depends on the HiGHS release, 26 unreachable if-then thresholds; `tasks/dropped_2026-11-12.txt`) and reworded 82 questions (`tasks/reworded_2026-11-12b.txt`); the sample was redrawn. Audit page for the person's read: private claude.ai artifact. |
