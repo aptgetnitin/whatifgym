@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "flow_oil_beirut_to_homs_at_least_49800",
+      "measure": "flow",
+      "scope": {
+        "food": "Oil",
+        "from_city": "Beirut",
+        "to_city": "Homs"
+      },
+      "sense": ">=",
+      "value": 49800
+    },
+    {
+      "name": "flow_oil_dayr_az_zor_at_least_49800",
+      "measure": "flow",
+      "scope": {
+        "food": "Oil",
+        "from_city": "Dayr_Az_Zor"
+      },
+      "sense": ">=",
+      "value": 49800
+    }
+  ],
+  "note": "A non-zero shipment of Oil from Beirut to Homs requires at least 49,800 units of Oil shipped from Dayr_Az_Zor, ensuring sufficient flow for the food requirement."
+}

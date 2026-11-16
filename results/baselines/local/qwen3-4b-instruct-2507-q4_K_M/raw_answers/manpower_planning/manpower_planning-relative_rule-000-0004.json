@@ -1,0 +1,55 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "short_time_60_percent_of_total",
+      "measure": "short_time",
+      "scope": {
+        "year": 1
+      },
+      "sense": ">=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "short_time",
+        "scope": {
+          "year": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "overmanned_at_most_50_percent_of_redundant",
+      "measure": "overmanned",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3
+        ]
+      },
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "redundant",
+        "scope": {
+          "year": [
+            1,
+            2,
+            3
+          ],
+          "skill": [
+            "unskilled",
+            "semi_skilled",
+            "skilled"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

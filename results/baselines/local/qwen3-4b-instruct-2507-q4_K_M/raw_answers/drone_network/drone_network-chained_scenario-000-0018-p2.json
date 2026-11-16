@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "shift_param",
+      "name": "observation_days",
+      "delta": 5
+    }
+  ],
+  "note": "The observation window is extended from 7 to 15 days, adjusting the arrival rate per location accordingly."
+}

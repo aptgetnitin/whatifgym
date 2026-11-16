@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "buy_veg1_at_most_veg2",
+      "measure": "buy",
+      "scope": {
+        "oil": "VEG1"
+      },
+      "sense": "<=",
+      "value": 500,
+      "relative_to": {
+        "measure": "buy",
+        "scope": {
+          "oil": "VEG2"
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "storage_veg1_at_most_5_percent",
+      "measure": "store",
+      "scope": {
+        "oil": "VEG1"
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "oil": [
+            "VEG1",
+            "VEG2",
+            "OIL1",
+            "OIL2",
+            "OIL3"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

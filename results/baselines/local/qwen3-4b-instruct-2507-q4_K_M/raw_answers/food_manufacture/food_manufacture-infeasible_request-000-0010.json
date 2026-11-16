@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","objective":[{"sense":"max","measure":"original"}],"note":"The question asks whether the total food production can reach at least 8100 tons. This is a feasibility query about the sum of produce over months, so it is expressed as a constraint on the sum of the produce decision measure over the horizon."}

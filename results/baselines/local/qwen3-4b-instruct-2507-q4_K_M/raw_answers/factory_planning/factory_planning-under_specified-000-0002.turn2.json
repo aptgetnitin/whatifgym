@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"set","table":"machines","column":"installed","where":{"machine":"horiDrill"},"value":3}],"note":"The number of installed horiDrill machines is set to 3, as per the planner's statement. This change affects the machine capacity constraints in the model."}

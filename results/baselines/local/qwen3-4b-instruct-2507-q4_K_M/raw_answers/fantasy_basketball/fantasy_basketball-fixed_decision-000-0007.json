@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set","table":"positions","column":"required","where":{"position":"PG"},"value":1},{"op":"set","table":"players","column":"position","where":{"player":"Terry Rozier"},"value":"PG"}],"fixed_decisions":[{"measure":"pick","scope":{"player":"Terry Rozier"},"value":1}]}

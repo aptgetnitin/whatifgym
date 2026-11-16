@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","objective":[{"sense":"max","measure":"blend","scope":{"year":["Year1","Year2","Year3","Year4","Year5"]}}],"note":"The question asks whether a total blended ore sale of at least 130,458,350 tons is achievable; this is checked by setting the objective to maximize total blend and verifying feasibility."}

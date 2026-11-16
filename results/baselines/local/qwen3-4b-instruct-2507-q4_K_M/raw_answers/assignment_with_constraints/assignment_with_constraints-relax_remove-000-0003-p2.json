@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","relax":[{"constraint":"one_team","scope":{"group":["group_0","group_1","group_2"]}}],"note":"The restriction that only allowed teams may work is removed for worker_1 and worker_10, while remaining in force for all other workers. This relaxes the one_team constraint for those specific workers' groups."}

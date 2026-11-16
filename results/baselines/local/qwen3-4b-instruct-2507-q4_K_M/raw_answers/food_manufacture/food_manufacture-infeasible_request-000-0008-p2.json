@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[],"rules":[{"name":"veg2_jan_refine","measure":"consume","scope":{"month":"Jan","oil":"VEG2"},"sense":"<=","value":360}],"objective":[{"sense":"max","measure":"original"}],"note":"A rule limits the total consumption of VEG2 in January to 360 tons; the objective remains the original profit maximisation."}

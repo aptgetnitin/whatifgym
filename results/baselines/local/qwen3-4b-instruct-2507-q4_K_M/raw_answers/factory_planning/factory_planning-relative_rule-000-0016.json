@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"stock_prod6_at_most_25_of_prod2","measure":"store","scope":{"product":"Prod6"},"sense":"<=","relative_to":{"measure":"store","scope":{"product":"Prod2"},"factor":0.25}}]}

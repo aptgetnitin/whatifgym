@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "operate_3107_at_most_75_of_3112",
+      "measure": "operate",
+      "scope": {
+        "flight": "3107"
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "flight": "3112"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

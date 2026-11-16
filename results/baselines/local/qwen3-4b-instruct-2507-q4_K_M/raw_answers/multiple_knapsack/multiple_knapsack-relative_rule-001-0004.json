@@ -1,0 +1,53 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "bin4_at_least_60_percent",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "bin": "bin4"
+          },
+          "sense": ">=",
+          "value": 0.6
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "bin": "bin0"
+          },
+          "sense": ">=",
+          "value": 0.6
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "bin": "bin1"
+          },
+          "sense": ">=",
+          "value": 0.6
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "bin": "bin2"
+          },
+          "sense": ">=",
+          "value": 0.6
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "bin": "bin3"
+          },
+          "sense": ">=",
+          "value": 0.6
+        }
+      ]
+    }
+  ],
+  "note": "The total number of item placements is the sum of x[item, bin] over all items and bins. Bin4 must account for at least 60% of this total, meaning the sum of x[item, bin4] must be at least 60% of the total sum of all x[item, bin]."
+}

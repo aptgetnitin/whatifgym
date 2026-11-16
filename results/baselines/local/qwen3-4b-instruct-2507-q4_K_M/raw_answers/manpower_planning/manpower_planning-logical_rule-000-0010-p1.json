@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"retrain_unskilled_to_semi_in_year1","measure":"retrain","scope":{"year":1,"from_skill":"unskilled","to_skill":"semi_skilled"},"sense":">=","value":0},{"name":"overmanned_unskilled_total_at_least_860","measure":"overmanned","scope":{"skill":"unskilled"},"sense":">=","value":860}]}

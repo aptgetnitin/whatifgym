@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 22
+      },
+      "delta": -0.25
+    },
+    {
+      "op": "scale",
+      "table": "fuels",
+      "column": "shutdown_cost",
+      "where": {},
+      "factor": 1.2
+    }
+  ]
+}

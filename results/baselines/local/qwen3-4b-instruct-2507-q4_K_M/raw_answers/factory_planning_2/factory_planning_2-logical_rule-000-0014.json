@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","logic":[{"name":"stock_prod3_jun_min_62","at_least":1,"of":[{"measure":"store","scope":{"product":"Prod3","month":"Jun"},"sense":">=","value":62},{"measure":"sell","scope":{"month":"Feb","product":"Prod7"},"sense":">","value":0}]}]}

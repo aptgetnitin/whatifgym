@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "start_time",
+      "scope": {
+        "location": "Loerrach"
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "use",
+      "scope": {}
+    }
+  ],
+  "rules": [
+    {
+      "name": "loerrach_start_time_min",
+      "measure": "start_time",
+      "scope": {
+        "location": "Loerrach"
+      },
+      "sense": ">=",
+      "value": 540
+    },
+    {
+      "name": "total_dispatched_technicians_max",
+      "measure": "use",
+      "scope": {},
+      "sense": "<=",
+      "value": 4
+    }
+  ],
+  "note": "The total service start time for Loerrach must be at least 540 minutes, and the total number of dispatched technicians across all jobs must not exceed 4."
+}

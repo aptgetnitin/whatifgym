@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "total_flow_at_least_1_5_total_purchase",
+      "measure": "flow",
+      "scope": {
+        "food": "*"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "*"
+        }
+      },
+      "factor": 1.5
+    },
+    {
+      "name": "wheat_ration_at_most_75_of_milk_ration",
+      "measure": "ration",
+      "scope": {
+        "food": "Wheat",
+        "camp": "*"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Milk",
+          "camp": "*"
+        }
+      },
+      "factor": 0.75
+    }
+  ]
+}

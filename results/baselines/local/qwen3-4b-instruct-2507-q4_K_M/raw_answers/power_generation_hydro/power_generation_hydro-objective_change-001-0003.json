@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "output",
+      "scope": {
+        "period": ["00-06", "06-09", "09-15", "15-18", "18-24"],
+        "type": ["Thermal0", "Thermal1", "Thermal2"]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "cost_per_mwh_above_min * output",
+      "scope": {
+        "period": ["00-06", "06-09", "09-15", "15-18", "18-24"],
+        "type": ["Thermal0", "Thermal1", "Thermal2"]
+      }
+    }
+  ],
+  "note": "The objective first minimises total thermal output across all periods and types, then minimises total generating cost among those plans."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","data_changes":[{"op":"set","table":"trains","column":"ready_time","where":{"train":"B"},"value":410}],"note":"Train B's ready_time is set to 410 minutes to enforce an exact arrival time at destination."}

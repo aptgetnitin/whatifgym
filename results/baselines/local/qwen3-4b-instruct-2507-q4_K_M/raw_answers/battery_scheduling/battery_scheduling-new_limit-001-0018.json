@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"charge_02-03_limit","measure":"charge","scope":{"hour":["02-03"]},"sense":"<=","value":2.2}]}

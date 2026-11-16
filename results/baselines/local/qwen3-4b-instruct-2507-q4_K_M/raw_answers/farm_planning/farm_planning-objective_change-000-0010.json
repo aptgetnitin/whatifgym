@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year3"
+      }
+    }
+  ],
+  "note": "First maximise the original objective (total profit over five years), then, subject to that optimum, maximise sugar beet sold in Year3."
+}

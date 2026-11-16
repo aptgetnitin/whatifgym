@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "beet_grown_year5_at_least_160",
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "value": 160
+    },
+    {
+      "name": "beet_sold_total_at_most_170",
+      "measure": "sell_beet",
+      "scope": {},
+      "sense": "<=",
+      "value": 170
+    }
+  ]
+}

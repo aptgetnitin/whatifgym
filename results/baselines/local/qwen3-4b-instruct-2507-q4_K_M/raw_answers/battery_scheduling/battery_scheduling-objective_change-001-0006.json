@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","objective":[{"sense":"max","measure":"original"}],"rules":[{"name":"max_profit_achieved","measure":"profit","scope":{"hour":["21-22"]},"sense":"==","value":1.56625}],"note":"First ensure daily profit is maximized, then optimize stored energy in hour 21-22 under that constraint."}

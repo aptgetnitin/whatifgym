@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"set","table":"params","column":"nonveg_refining_capacity","where":{"param":"nonveg_refining_capacity"},"value":500}]}

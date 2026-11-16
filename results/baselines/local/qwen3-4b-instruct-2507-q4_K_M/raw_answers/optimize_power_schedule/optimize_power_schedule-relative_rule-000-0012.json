@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "other_coal_minimum_hours",
+      "measure": "on",
+      "scope": {
+        "plant": "OTHER COAL"
+      },
+      "sense": ">=",
+      "value": 0.2
+    }
+  ],
+  "note": "At least 20% of the total plant-hours on must be allocated to the OTHER COAL plant group."
+}

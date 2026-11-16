@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "at_least_75_percent_to_bin0",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "bin": "bin0"
+          },
+          "sense": ">=",
+          "value": 0.75
+        }
+      ]
+    }
+  ],
+  "note": "At least 75% of all item placements must be in bin0, expressed as a fraction of the total number of item placements."
+}

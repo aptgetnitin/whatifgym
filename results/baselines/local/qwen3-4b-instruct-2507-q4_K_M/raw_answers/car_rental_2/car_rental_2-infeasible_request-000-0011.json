@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","data_changes":[],"rules":[{"name":"repair_tuesday_at_least_140","measure":"repairs","scope":{"day":"Tuesday","depot":"*"},"sense":">=","value":140},{"name":"repair_monday_at_least_140","measure":"repairs","scope":{"day":"Monday","depot":"*"},"sense":">=","value":140}]}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "max_heifer_sales_year1",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "value": 0.1,
+      "relative_to": {
+        "measure": "sell_heifers",
+        "scope": {
+          "year": [
+            "Year1",
+            "Year2",
+            "Year3",
+            "Year4",
+            "Year5"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "At most 10% of the total heifer calves sold go to Year1."
+}

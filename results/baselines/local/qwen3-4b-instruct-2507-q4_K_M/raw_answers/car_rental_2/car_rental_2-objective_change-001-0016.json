@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "damaged_transfers",
+      "scope": {
+        "day": "Wednesday",
+        "from_depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ],
+        "to_depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      }
+    }
+  ],
+  "note": "First, weekly profit is maximized to maintain the original optimum. Then, among feasible plans, the transfer of damaged cars on Wednesday is maximized."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"manchester_repairs_saturday","measure":"repairs","scope":{"day":"Saturday","depot":"Manchester"},"sense":"==","value":6}]}

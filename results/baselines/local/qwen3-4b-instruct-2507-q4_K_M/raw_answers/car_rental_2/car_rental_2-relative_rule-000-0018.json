@@ -1,0 +1,66 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "logic": [
+    {
+      "name": "expansion_step_2_at_least_75_of_step_1",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "expand",
+          "scope": {
+            "depot": "Manchester",
+            "step": 2
+          },
+          "sense": ">=",
+          "value": 0.75
+        },
+        {
+          "measure": "expand",
+          "scope": {
+            "depot": "Birmingham",
+            "step": 2
+          },
+          "sense": ">=",
+          "value": 0.75
+        },
+        {
+          "measure": "expand",
+          "scope": {
+            "depot": "Plymouth",
+            "step": 2
+          },
+          "sense": ">=",
+          "value": 0.75
+        },
+        {
+          "measure": "expand",
+          "scope": {
+            "depot": "Manchester",
+            "step": 1
+          },
+          "sense": "==",
+          "value": 1
+        },
+        {
+          "measure": "expand",
+          "scope": {
+            "depot": "Birmingham",
+            "step": 1
+          },
+          "sense": "==",
+          "value": 1
+        },
+        {
+          "measure": "expand",
+          "scope": {
+            "depot": "Plymouth",
+            "step": 1
+          },
+          "sense": "==",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

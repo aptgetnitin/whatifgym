@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"at_most_two_nonzero_refined","measure":"consume","scope":{"month":["Feb","Jan","May","Mar"]},"sense":"<=","value":2}]}

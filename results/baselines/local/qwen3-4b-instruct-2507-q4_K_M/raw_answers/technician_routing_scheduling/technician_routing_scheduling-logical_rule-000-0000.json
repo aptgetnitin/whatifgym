@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[],"rules":[],"objective":[{"sense":"min","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"note":"Only one of the locations Loerrach, Offenburg, and Mannheim may have a non-zero service start time; this restricts the routing to a single location with a service start."}

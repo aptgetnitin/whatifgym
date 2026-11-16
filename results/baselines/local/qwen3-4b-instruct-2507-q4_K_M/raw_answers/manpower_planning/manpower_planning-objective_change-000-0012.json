@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "short_time",
+      "scope": {
+        "skill": "skilled"
+      }
+    }
+  ],
+  "note": "First minimise total redundancies (achieving the minimum redundancy from the original optimum), then maximise short-time working for skilled workers, holding total redundancy at its minimum."
+}

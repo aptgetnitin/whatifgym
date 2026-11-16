@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set","table":"positions","column":"required","where":{"position":"PG"},"value":1}],"note":"Marcin Gortat plays PG, so the requirement for PG is fixed at 1 player."}

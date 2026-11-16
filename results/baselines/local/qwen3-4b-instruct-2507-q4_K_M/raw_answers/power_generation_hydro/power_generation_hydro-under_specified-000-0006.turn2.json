@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"thermal0_running_cap","measure":"ngen","scope":{"period":"00-06","type":"Thermal0"},"sense":"<=","value":36}]}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "cap_x_total",
+      "measure": "x",
+      "scope": {},
+      "sense": "<=",
+      "value": 9
+    }
+  ],
+  "note": "The overall cap on item placements is increased from 8 to 9."
+}

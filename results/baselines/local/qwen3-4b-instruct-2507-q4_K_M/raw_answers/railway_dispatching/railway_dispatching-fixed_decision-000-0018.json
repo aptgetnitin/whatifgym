@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","logic":[{"name":"resource_3_train_e_f_meet_count","at_least":1,"of":[{"measure":"meet","scope":{"resource":"3","train":["E"],"other_train":["F"]}}]}]}

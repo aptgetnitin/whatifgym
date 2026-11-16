@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"capacity_cap","measure":"extra_capacity","scope":{"industry":["coal","steel","transport"]},"sense":"<=","value":100}]}

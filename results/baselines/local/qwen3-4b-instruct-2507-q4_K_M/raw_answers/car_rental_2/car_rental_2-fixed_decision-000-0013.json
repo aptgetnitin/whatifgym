@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","data_changes":[],"rules":[{"name":"repairs_limit_manchester","measure":"repairs","scope":{"day":"Wednesday","depot":"Manchester"},"sense":"==","value":11}],"note":"A fixed repair count at a specific day and depot is enforced via a rule on the repairs decision variable."}

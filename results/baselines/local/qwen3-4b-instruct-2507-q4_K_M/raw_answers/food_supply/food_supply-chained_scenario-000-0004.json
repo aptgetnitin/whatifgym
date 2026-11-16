@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","rules":[{"name":"cap_purchase_total","measure":"purchase","scope":{"}},":","}},{"value":321150,"sense":"<="}]}

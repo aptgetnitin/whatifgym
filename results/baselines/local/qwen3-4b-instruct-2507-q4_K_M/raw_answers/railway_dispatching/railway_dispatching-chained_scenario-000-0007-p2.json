@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_goes_first_B",
+      "measure": "goes_first",
+      "scope": {
+        "other_train": "B"
+      },
+      "sense": "<=",
+      "value": 8
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "entry_time",
+      "scope": {
+        "train": "B",
+        "resource": "resource"
+      }
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": [],
+  "note": "Train B's total entry time across all resources must be at least 160 minutes, with the earlier constraint on goes_first for other train B still active."
+}

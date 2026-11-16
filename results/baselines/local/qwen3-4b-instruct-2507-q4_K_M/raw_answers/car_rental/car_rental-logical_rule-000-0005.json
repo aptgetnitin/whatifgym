@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"no_repairs_both_wednesday_and_monday","measure":"repairs","scope":{"day":["Wednesday","Monday"]},"sense":"==","value":0}]}

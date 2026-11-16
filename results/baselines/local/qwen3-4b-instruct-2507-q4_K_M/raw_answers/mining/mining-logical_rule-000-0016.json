@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","logic":[{"name":"at_most_one_open","at_least":1,"of":[{"measure":"open","scope":{"mine":["Mine3","Mine4","Mine1","Mine2"]},"sense":">=","value":0},{"measure":"open","scope":{"mine":["Mine3","Mine4","Mine1","Mine2"]},"sense":"==","value":1}]}]}

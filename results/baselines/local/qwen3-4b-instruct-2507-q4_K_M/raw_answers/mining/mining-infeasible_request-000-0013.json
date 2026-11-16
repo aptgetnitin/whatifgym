@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"set","table":"blend","column":"blend","where":{"year":"Year2"},"value":18000000}]}

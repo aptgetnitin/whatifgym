@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","data_changes":[],"rules":[{"name":"entry_time_F_resource_2_at_least_60","measure":"entry_time","scope":{"train":"F","resource":"2"},"sense":">=","value":60}],"note":"A non-zero arrival time at destination for train F implies a total entry time of at least 60 minutes for train F at resource 2."}

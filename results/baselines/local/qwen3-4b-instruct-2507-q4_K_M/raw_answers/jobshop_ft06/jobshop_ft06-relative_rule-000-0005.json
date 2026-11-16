@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "j4_at_least_30_percent_of_end_time",
+      "measure": "end",
+      "scope": {
+        "job": "J4"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {}
+      },
+      "factor": 0.3
+    },
+    {
+      "name": "step5_end_at_least_twice_step3_end",
+      "measure": "end",
+      "scope": {
+        "job": "J4",
+        "step": 5
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": "J4",
+          "step": 3
+        }
+      },
+      "factor": 2.0
+    }
+  ]
+}

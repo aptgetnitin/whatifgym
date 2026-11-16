@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","logic":[{"name":"clearing_ratio","at_least":3,"of":[{"measure":"goes_first","scope":{"resource":"resource","train":"F","other_train":"other_train"},"sense":">=","value":3},{"measure":"goes_first","scope":{"resource":"resource","train":"A","other_train":"other_train"},"sense":">=","value":1}]}]}

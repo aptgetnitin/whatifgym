@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "resources",
+      "column": "duration",
+      "where": {
+        "resource": 0
+      },
+      "value": 3
+    },
+    {
+      "op": "scale",
+      "table": "resources",
+      "column": "duration",
+      "factor": 1.25
+    }
+  ],
+  "note": "Set the duration of resource 0 to 3 minutes, on top of a 25% increase for all stations and tracks."
+}

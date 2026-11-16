@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "daraa_purchase_minimum",
+      "measure": "purchase",
+      "scope": {
+        "food": "*",
+        "supplier": "Daraa"
+      },
+      "sense": ">=",
+      "value": 50450
+    }
+  ]
+}

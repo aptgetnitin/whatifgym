@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "age_4_minimum",
+      "measure": "herd",
+      "scope": {
+        "year": ["Year1", "Year2", "Year3", "Year4", "Year5"],
+        "age": 4
+      },
+      "sense": ">=",
+      "value": 110
+    },
+    {
+      "name": "age_11_minimum",
+      "measure": "herd",
+      "scope": {
+        "year": ["Year1", "Year2", "Year3", "Year4", "Year5"],
+        "age": 11
+      },
+      "sense": ">=",
+      "value": 94
+    }
+  ],
+  "note": "Both age-specific herd minimums are enforced across all years in the planning horizon."
+}

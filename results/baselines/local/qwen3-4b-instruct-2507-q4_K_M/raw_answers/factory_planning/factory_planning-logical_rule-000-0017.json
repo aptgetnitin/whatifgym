@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "min_stock_jan",
+      "measure": "store",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "value": 124
+    }
+  ],
+  "note": "A minimum batch rule ensures that the stock at the start of January is at least 124 units if positive."
+}

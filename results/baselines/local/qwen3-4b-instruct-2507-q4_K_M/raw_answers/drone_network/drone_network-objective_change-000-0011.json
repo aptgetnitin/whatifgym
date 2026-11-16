@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "linked_load",
+      "scope": {
+        "location": "1700 PLEASURE HOUSE RD",
+        "base": "5145 RURITAN COURT Rescue Squad"
+      }
+    }
+  ],
+  "note": "The response objective is kept at its minimum, then the queue load linked to the location 1700 PLEASURE HOUSE RD assigned to base 5145 RURITAN COURT Rescue Squad is minimised."
+}

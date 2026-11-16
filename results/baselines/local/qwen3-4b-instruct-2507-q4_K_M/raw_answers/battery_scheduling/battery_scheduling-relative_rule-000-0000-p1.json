@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"charge_03-04_at_least_75_percent","measure":"charge","scope":{"hour":"03-04"},"sense":"==","value":0.75},{"name":"charge_03-04_at_least_75_percent","measure":"charge","scope":{"hour":"03-04"},"sense":">=","value":0.75}]}

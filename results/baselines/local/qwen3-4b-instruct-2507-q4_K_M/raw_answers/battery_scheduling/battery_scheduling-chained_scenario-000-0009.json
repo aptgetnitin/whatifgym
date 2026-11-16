@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","data_changes":[{"op":"scale","table":"hours","column":"export_price","factor":1.1},{"op":"set","table":"params","name":"max_charge_kw","value":1.4}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","logic":[{"name":"thursday_damaged_kept_at_least_75","at_least":1,"of":[{"measure":"damaged_left","scope":{"day":"Thursday"},"sense":">=","value":75}]}]}

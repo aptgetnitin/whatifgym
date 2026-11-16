@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"capacity_year5_at_most_20_percent","measure":"extra_capacity","scope":{"year":[5]},"sense":"<=","value":20,"relative_to":{"measure":"extra_capacity","scope":{"year":[1,2,3,4,5]}},"factor":1.0}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"prod4_jun_make_zero_or_at_least_1050","measure":"make","scope":{"month":"Jun","product":"Prod4"},"sense":"==","value":0},{"name":"prod4_jun_make_zero_or_at_least_1050","measure":"make","scope":{"month":"Jun","product":"Prod4"},"sense":">=","value":1050}]}

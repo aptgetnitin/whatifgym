@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "make_prod3_apr_at_least_800",
+      "measure": "make",
+      "scope": {
+        "product": "Prod3",
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "value": 800
+    },
+    {
+      "name": "sell_prod4_apr_requires_make_prod3_apr",
+      "measure": "make",
+      "scope": {
+        "product": "Prod3",
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod4",
+          "month": "Apr"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "A non-zero sale of Prod4 in April requires at least 800 units of Prod3 made in April, and the production of Prod3 in April must be at least as much as the sales of Prod4 in April."
+}

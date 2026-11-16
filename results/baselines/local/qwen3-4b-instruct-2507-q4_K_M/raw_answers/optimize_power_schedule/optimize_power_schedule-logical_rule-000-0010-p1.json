@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "plant": "OTHER COAL",
+        "hour": 2
+      },
+      "value": 2980
+    }
+  ],
+  "note": "The minimum batch for OTHER COAL in hour 2 is set to 2980 MWh, ensuring it is either zero or at least 2980."
+}

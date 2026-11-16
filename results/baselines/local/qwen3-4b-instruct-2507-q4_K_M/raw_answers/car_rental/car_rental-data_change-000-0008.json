@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "day": "Friday",
+        "depot": "Manchester"
+      },
+      "delta": 320
+    },
+    {
+      "op": "scale",
+      "table": "depots",
+      "column": "repair_capacity",
+      "where": {
+        "depot": "Birmingham"
+      },
+      "factor": 0.5
+    }
+  ]
+}

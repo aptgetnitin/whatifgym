@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "sum_start_J3_at_least_220",
+      "measure": "start",
+      "scope": {
+        "job": "J3"
+      },
+      "sense": ">=",
+      "value": 220
+    }
+  ]
+}

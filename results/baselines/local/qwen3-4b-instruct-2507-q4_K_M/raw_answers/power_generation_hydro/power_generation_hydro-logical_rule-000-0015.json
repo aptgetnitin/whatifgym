@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_output_18_24_zero_or_at_least_38900",
+      "measure": "output",
+      "scope": {
+        "period": "18-24",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "==",
+      "value": 0
+    },
+    {
+      "name": "thermal_output_18_24_at_least_38900",
+      "measure": "output",
+      "scope": {
+        "period": "18-24",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": ">=",
+      "value": 38900
+    }
+  ],
+  "note": "The total thermal output in period 18-24 must be either zero or at least 38900 MW. This is modeled as two mutually exclusive rules: one enforcing zero output and one enforcing a minimum output of 38900 MW."
+}

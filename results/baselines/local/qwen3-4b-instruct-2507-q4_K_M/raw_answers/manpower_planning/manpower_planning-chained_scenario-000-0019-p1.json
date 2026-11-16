@@ -1,0 +1,330 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "short_time_productivity",
+      "factor": 1.25
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "skilled"
+      },
+      "value": 2200
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "value": 700
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "value": 300
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_share_of_target",
+      "where": {
+        "from_skill": "semi_skilled",
+        "to_skill": "skilled"
+      },
+      "value": 0.2
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "skilled"
+      },
+      "value": 100
+    },
+    {
+      "op": "scale",
+      "table": "retraining",
+      "column": "cost",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "set",
+      "table": "skills",
+      "column": "current_strength",
+      "where": {
+        "skill": "semi_skilled"
+      },
+      "value": 1700
+    },
+    {
+      "op": "set",
+      "table": "skills",
+      "column": "attrition_new",
+      "where": {
+        "skill": "unskilled"
+      },
+      "value": 0.2
+    },
+    {
+      "op": "set",
+      "table": "skills",
+      "column": "attrition_experienced",
+      "where": {
+        "skill": "skilled"
+      },
+      "value": 0.05
+    },
+    {
+      "op": "set",
+      "table": "costs",
+      "column": "redundancy_cost",
+      "where": {
+        "skill": "skilled"
+      },
+      "value": 800
+    },
+    {
+      "op": "scale",
+      "table": "costs",
+      "column": "overmanning_cost",
+      "where": {
+        "skill": "skilled"
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_overmanned",
+      "value": 250
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_short_time",
+      "value": 100
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "short_time_productivity",
+      "value": 0.6
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "skilled"
+      },
+      "value": 2200
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "value": 700
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "value": 300
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_share_of_target",
+      "where": {
+        "from_skill": "semi_skilled",
+        "to_skill": "skilled"
+      },
+      "value": 0.2
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "skilled"
+      },
+      "value": 100
+    },
+    {
+      "op": "scale",
+      "table": "retraining",
+      "column": "cost",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "set",
+      "table": "skills",
+      "column": "current_strength",
+      "where": {
+        "skill": "semi_skilled"
+      },
+      "value": 1700
+    },
+    {
+      "op": "set",
+      "table": "skills",
+      "column": "attrition_new",
+      "where": {
+        "skill": "unskilled"
+      },
+      "value": 0.2
+    },
+    {
+      "op": "set",
+      "table": "skills",
+      "column": "attrition_experienced",
+      "where": {
+        "skill": "skilled"
+      },
+      "value": 0.05
+    },
+    {
+      "op": "set",
+      "table": "costs",
+      "column": "redundancy_cost",
+      "where": {
+        "skill": "skilled"
+      },
+      "value": 800
+    },
+    {
+      "op": "scale",
+      "table": "costs",
+      "column": "overmanning_cost",
+      "where": {
+        "skill": "skilled"
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_overmanned",
+      "value": 250
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_short_time",
+      "value": 100
+    },
+    {
+      "op": "set",
+      "table": "params",
+      "column": "short_time_productivity",
+      "value": 0.6
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 3,
+        "skill": "skilled"
+      },
+      "value": 2200
+    },
+    {
+      "op": "set",
+      "table": "requirements",
+      "column": "required",
+      "where": {
+        "year": 2,
+        "skill": "unskilled"
+      },
+      "value": 700
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "value": 300
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_share_of_target",
+      "where": {
+        "from_skill": "semi_skilled",
+        "to_skill": "skilled"
+      },
+      "value": 0.2
+    },
+    {
+      "op": "set",
+      "table": "retraining",
+      "column": "max_per_year",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "skilled"
+      },
+      "value": 100
+    },
+    {
+      "op": "scale",
+      "table": "retraining",
+      "column": "cost",
+      "where": {
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "factor": 1.1
+    },
+    {
+      "op": "set",
+      "table": "skills",
+      "column": "current_strength",
+      "where": {
+        "skill": "semi_skilled"
+      },
+      "value": 1700
+    },
+    {
+      "op": "set",
+      "table": "skills",
+      "column": "attrition_new",
+      "where": {
+        "skill": "unskilled

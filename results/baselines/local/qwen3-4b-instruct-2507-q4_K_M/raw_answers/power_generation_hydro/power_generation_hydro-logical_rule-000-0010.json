@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal0_0006_to_0915_constraint",
+      "measure": "ngen",
+      "scope": {
+        "period": "00-06",
+        "type": "Thermal0"
+      },
+      "sense": ">=",
+      "value": 0,
+      "relative_to": {
+        "measure": "ngen",
+        "scope": {
+          "period": "09-15",
+          "type": "Thermal0"
+        }
+      },
+      "factor": 42
+    }
+  ]
+}

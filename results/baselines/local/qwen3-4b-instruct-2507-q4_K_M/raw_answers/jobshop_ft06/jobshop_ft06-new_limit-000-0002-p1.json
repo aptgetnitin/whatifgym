@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"at_most_9_job_pairs_with_j5_first","measure":"goes_first","scope":{"machine":["M0","M1","M2","M3","M4","M5"],"job":["J0","J1","J2","J3","J4"],"other_job":"J5"},"sense":"<=","value":9},{"name":"j5_start_time_sum_at_least_190","measure":"start","scope":{"job":"J5","step":[1,2,3,4,5,6]},"sense":">=","value":190}]}

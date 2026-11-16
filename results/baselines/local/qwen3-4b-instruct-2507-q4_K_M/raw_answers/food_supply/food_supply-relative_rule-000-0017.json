@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "flow_at_least_twice_purchase",
+      "measure": "flow",
+      "scope": {
+        "food": "*",
+        "from_city": "*",
+        "to_city": "*"
+      },
+      "sense": ">=",
+      "value": 2,
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "*",
+          "supplier": "*"
+        }
+      },
+      "factor": 1
+    }
+  ],
+  "note": "The total food shipped is required to be at least twice the total food bought, expressed as sums over all foods and routes versus all foods and suppliers."
+}

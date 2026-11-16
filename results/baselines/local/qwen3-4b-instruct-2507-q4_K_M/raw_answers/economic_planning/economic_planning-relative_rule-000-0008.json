@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"output_at_most_90_of_stock","measure":"production","scope":{"industry":["coal","steel","transport"],"year":[1,2,3,4,5]},"sense":"<=","value":90,"relative_to":{"measure":"stock","scope":{"industry":["coal","steel","transport"],"year":[1,2,3,4,5]}},"factor":0.9}]}

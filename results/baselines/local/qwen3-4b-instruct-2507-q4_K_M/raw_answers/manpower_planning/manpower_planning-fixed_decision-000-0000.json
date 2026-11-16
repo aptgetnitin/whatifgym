@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[{"op":"set","table":"requirements","column":"required","where":{"year":[1,2,3],"skill":"skilled"},"value":420}],"note":"Set the required workforce for skilled workers in each year to 420 to achieve levelled recruitment at that level."}

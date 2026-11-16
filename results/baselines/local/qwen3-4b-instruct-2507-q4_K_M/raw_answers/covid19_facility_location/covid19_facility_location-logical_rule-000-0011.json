@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"covid19_facility_location","rules":[{"name":"non_zero_assign_only","measure":"assign","scope":{"facility":["E2","E9","E3","E4","E13"]},"sense":"==","value":0}]}

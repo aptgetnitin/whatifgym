@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"apr_production_share","measure":"produce","scope":{"month":["Apr"]},"sense":">=","value":20,"relative_to":{"measure":"produce","scope":{"month":["Jan","Feb","Mar","Apr","May","Jun"]}},"factor":0.2}]}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "total_flights_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "any",
+        "flight": "any"
+      },
+      "sense": "<=",
+      "value": 46
+    },
+    {
+      "name": "a321_4_flight_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A321#4",
+        "flight": "any"
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ]
+}

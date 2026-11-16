@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[],"rules":[],"objective":[],"fixed_decisions":[],"relax":[],"logic":[],"note":"Set the lateness penalty to 2 per minute, as specified in the question."}

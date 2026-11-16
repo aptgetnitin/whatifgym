@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "linked_load",
+      "scope": {
+        "location": "1700 PLEASURE HOUSE RD",
+        "base": "21 MUNICIPAL CTR Fire Station"
+      }
+    }
+  ],
+  "note": "First optimise the original response objective, then minimise the queue load linked to a specific location-base pair for the 21 MUNICIPAL CTR Fire Station base."
+}

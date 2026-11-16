@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "mine2_work_at_least_15_mine1",
+      "measure": "operate",
+      "scope": {
+        "mine": "Mine2"
+      },
+      "sense": ">=",
+      "value": 1.5,
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "mine": "Mine1"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

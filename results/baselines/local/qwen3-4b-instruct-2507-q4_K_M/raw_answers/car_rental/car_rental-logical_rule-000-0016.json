@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","data_changes":[{"op":"set","table":"rentals","column":"rentals","where":{"day":"Thursday","depot":"Glasgow"},"value":0},{"op":"set","table":"rentals","column":"rentals","where":{"day":"Wednesday","depot":"Glasgow"},"value":0},{"op":"set","table":"rentals","column":"rentals","where":{"day":"Saturday","depot":"Glasgow"},"value":0}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"j2_at_most_60_of_j1","measure":"start","scope":{"job":["J2"]},"sense":"<=","value":60,"relative_to":{"measure":"start","scope":{"job":["J1"]},"factor":100}}]}

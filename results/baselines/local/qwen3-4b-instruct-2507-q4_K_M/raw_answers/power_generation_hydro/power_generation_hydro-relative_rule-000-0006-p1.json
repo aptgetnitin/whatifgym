@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_output_15_18_le_00_06",
+      "measure": "output",
+      "scope": {
+        "period": "15-18",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "output",
+        "scope": {
+          "period": "00-06",
+          "type": [
+            "Thermal0",
+            "Thermal1",
+            "Thermal2"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The thermal output in the 15-18 period is capped at the level of output in the 00-06 period for all thermal types."
+}

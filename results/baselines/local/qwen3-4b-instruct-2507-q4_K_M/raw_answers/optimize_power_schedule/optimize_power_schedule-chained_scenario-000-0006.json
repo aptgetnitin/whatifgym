@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "plants",
+      "column": "capacity_mwh",
+      "where": {},
+      "factor": 1.2
+    }
+  ],
+  "note": "Every generation capacity in the plants table rises by 20%, scaled uniformly across all plants and hours."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"no_sugar_beet_in_both_year1_and_year2","measure":"grow_beet","scope":{"year":["Year1","Year2"]},"sense":"<=","value":0}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","logic":[{"name":"storage_constraint","at_least":1,"of":[{"measure":"store","scope":{"month":"May"},"sense":">=","value":2000},{"measure":"consume","scope":{"month":"Apr","oil":"*"},"sense":">","value":0}]}]}

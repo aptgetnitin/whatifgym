@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "day_length_min",
+      "factor": 1.25
+    },
+    {
+      "op": "scale",
+      "table": "technicians",
+      "column": "capacity_min",
+      "where": {},
+      "factor": 1.25
+    }
+  ],
+  "note": "The daily working capacity is increased by 25% for all technicians, and the day length is extended by 25% as a structural parameter. This affects the big-M sequencing and capacity constraints."
+}

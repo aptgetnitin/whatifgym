@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","data_changes":[],"rules":[{"name":"at_least_30_percent_assignments_to_task_5","measure":"assign","scope":{"task":"task_5"},"sense":"==","value":30,"relative_to":{"measure":"assign","scope":{"task":["task_0","task_1","task_2","task_3","task_4","task_5"]}},"factor":0.3}]}

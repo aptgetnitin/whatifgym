@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Baden-Baden"
+        ]
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "start_time",
+      "scope": {
+        "location": [
+          "Heidelberg",
+          "Freiburg im Breisgau",
+          "Mannheim",
+          "Karlsruhe",
+          "Baden-Baden",
+          "Buehl",
+          "Offenburg",
+          "Lahr/Schwarzwald"
+        ]
+      }
+    }
+  ],
+  "note": "The total service start time across all locations is capped at 750 minutes, and the start time for Baden-Baden locations is required to be at least 80 minutes. This is a lexicographic objective with a constraint on the sum of start times over all locations and a minimum on the sum over Baden-Baden locations."
+}

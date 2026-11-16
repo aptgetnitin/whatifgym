@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "linked_load_ratio_800_to_5145",
+      "measure": "linked_load",
+      "scope": {
+        "location": "*",
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": ">=",
+      "value": 3,
+      "relative_to": {
+        "measure": "linked_load",
+        "scope": {
+          "location": "*",
+          "base": "5145 RURITAN COURT Rescue Squad"
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "open_5145_at_least_30_percent",
+      "measure": "open",
+      "scope": {
+        "base": "5145 RURITAN COURT Rescue Squad"
+      },
+      "sense": ">=",
+      "value": 0.3,
+      "relative_to": {
+        "measure": "open",
+        "scope": {
+          "base": "*"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

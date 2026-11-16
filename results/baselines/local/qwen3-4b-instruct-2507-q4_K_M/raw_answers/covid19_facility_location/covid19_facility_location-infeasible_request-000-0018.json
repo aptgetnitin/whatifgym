@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"covid19_facility_location","rules":[{"name":"c4_e5_min_assign","measure":"assign","scope":{"county":"C4","facility":"E5"},"sense":">=","value":560}]}

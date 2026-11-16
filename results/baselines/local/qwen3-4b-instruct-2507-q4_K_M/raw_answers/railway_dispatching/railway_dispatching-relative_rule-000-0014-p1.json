@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","logic":[{"name":"at_least_3_times_A_for_F","at_least":3,"of":[{"measure":"goes_first","scope":{"resource":"resource","train":"train","other_train":"F"},"sense":">=","value":3},{"measure":"goes_first","scope":{"resource":"resource","train":"train","other_train":"A"},"sense":">=","value":1}]}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","logic":[{"name":"thermal_startup_le_hydro_startup","at_least":1,"of":[{"measure":"nstart","scope":{"type":["Thermal0","Thermal1","Thermal2"]},"sense":"<=","value":1},{"measure":"hydro_start","scope":{"hydro":["HydroA","HydroB"]},"sense":"==","value":1}]}]}

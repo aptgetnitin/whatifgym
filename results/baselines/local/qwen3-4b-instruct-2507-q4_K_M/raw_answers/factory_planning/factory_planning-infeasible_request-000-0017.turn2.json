@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"prod1_march_sales","measure":"sell","scope":{"product":"Prod1","month":"Mar"},"sense":">=","value":200}]}

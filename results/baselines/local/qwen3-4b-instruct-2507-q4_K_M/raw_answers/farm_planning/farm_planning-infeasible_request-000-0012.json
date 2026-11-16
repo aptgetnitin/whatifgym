@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "age_2_herd_target",
+      "measure": "herd",
+      "scope": {
+        "year": "Year1",
+        "age": 2
+      },
+      "sense": "=",
+      "value": 149
+    }
+  ],
+  "note": "A fixed herd size for a specific age and year is enforced as an equality constraint in the model."
+}

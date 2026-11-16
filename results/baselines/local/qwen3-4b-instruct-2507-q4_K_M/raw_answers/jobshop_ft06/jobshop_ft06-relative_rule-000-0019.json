@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"j1_goes_first_share","measure":"goes_first","scope":{"machine":"*","job":"J1","other_job":"*"},"sense":">=","value":60,"relative_to":{"measure":"goes_first","scope":{"machine":"*","job":"*","other_job":"*"},"factor":100}}]}

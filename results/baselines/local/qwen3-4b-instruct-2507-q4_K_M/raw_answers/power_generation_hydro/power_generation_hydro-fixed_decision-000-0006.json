@@ -1,0 +1,58 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "period": "00-06",
+        "type": "Thermal1"
+      },
+      "value": 7900
+    },
+    {
+      "op": "set",
+      "table": "nstart",
+      "column": "nstart",
+      "where": {
+        "period": "15-18"
+      },
+      "value": 1
+    }
+  ],
+  "rules": [
+    {
+      "name": "exactly_7900_thermal1_0006",
+      "measure": "output",
+      "scope": {
+        "period": "00-06",
+        "type": "Thermal1"
+      },
+      "sense": "==",
+      "value": 7900
+    },
+    {
+      "name": "exactly_one_start_1518",
+      "measure": "nstart",
+      "scope": {
+        "period": "15-18",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "==",
+      "value": 1
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "note": "Two commitments: fixed thermal output for Thermal1 in 00-06 and exactly one thermal unit started in each type during 15-18. The rest is optimised under the base model constraints."
+}

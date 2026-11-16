@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"repairs_manchester_at_most_50_of_birmingham","measure":"repairs","scope":{"depot":["Manchester"]},"sense":"<=","value":50,"relative_to":{"measure":"repairs","scope":{"depot":["Birmingham"]},"factor":0.5}}]}

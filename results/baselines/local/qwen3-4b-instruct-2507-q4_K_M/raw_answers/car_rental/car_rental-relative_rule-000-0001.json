@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","logic":[{"name":"at_least_1_of","at_least":1,"of":[{"measure":"damaged_transfers","scope":{"to_depot":"Manchester"},"sense":">=","value":0.25}]}]}

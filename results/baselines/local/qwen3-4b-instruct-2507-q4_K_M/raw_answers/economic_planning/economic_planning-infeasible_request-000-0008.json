@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","objective":[{"sense":"max","measure":"original"}],"note":"The question asks whether a specific production level is achievable in a given year and industry. The scenario checks feasibility of producing at least 740 million USD of coal output in year 3 by evaluating the constraint structure and decision variables."}

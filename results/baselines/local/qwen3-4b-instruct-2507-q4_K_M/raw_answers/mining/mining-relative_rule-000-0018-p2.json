@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"extract_year1_at_least_three_times_year2","measure":"extract","scope":{"year":"Year1"},"sense":">=","value":3,"relative_to":{"measure":"extract","scope":{"year":"Year2"}},"factor":1.0}]}

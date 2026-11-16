@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"apr_refining_share","measure":"consume","scope":{"month":"Apr"},"sense":">=","value":300,"relative_to":{"measure":"consume","scope":{"month":["Jan","Feb","Mar","Apr","May","Jun"]}},"factor":0.6}]}

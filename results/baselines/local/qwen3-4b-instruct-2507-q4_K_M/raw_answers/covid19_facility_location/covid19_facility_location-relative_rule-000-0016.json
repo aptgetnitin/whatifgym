@@ -1,0 +1,50 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "t17_at_least_75_of_temporary_facilities",
+      "measure": "build",
+      "scope": {
+        "facility": "T17"
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "build",
+        "scope": {
+          "facility": [
+            "T15",
+            "T16",
+            "T17",
+            "T18",
+            "T19",
+            "T20",
+            "T21",
+            "T22",
+            "T23"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "e12_assign_not_exceed_e6_assign",
+      "measure": "assign",
+      "scope": {
+        "county": "all",
+        "facility": "E12"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "county": "all",
+          "facility": "E6"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "T17 must account for at least 75% of total temporary facility builds; patient assignment to E12 must not exceed that to E6."
+}

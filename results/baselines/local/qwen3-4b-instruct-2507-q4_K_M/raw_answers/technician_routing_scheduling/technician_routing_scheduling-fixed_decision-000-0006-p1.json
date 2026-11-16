@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[],"rules":[],"objective":[{"sense":"min","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"note":"Customer5 is exactly 210 minutes late, so lateness[Customer5] is fixed at 210 minutes."}

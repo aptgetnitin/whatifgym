@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "cost_per_mwh_above_min",
+      "where": {
+        "type": "Thermal0"
+      },
+      "factor": 0.75
+    }
+  ],
+  "params": {
+    "reserve_margin": 0.11
+  }
+}

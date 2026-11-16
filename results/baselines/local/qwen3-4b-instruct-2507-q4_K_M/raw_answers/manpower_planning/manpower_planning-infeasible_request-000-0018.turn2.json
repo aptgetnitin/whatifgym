@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","objective":[{"sense":"max","measure":"redundant","scope":{"year":["1","2","3"],"skill":["unskilled","semi_skilled","skilled"]}}],"note":"A total redundancy of at least 8420 workers across all years and skill levels is sought, with the objective maximised."}

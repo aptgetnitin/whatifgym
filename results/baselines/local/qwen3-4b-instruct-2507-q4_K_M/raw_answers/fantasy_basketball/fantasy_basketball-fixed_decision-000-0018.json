@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set","table":"players","column":"position","where":{"player":"Jeff Green"},"value":"PG"}],"rules":[{"name":"fixed_position_count","measure":"pick","scope":{"position":"PG"},"sense":"==","value":1}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","relax":[{"constraint":"mass_balance","scope":{"year":["Year1","Year2"]}}]}

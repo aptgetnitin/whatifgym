@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [
+    {
+      "op": "scale_param",
+      "name": "short_time_productivity",
+      "factor": 1.5
+    }
+  ],
+  "note": "Short-time worker productivity is multiplied by 1.5, affecting the output coverage of short-time workers in the requirement constraint."
+}

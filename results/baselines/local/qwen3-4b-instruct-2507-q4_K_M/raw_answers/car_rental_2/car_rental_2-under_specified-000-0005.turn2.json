@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_stock_floor_wednesday",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Wednesday",
+        "depot": "Glasgow"
+      },
+      "sense": ">=",
+      "value": 870
+    }
+  ],
+  "note": "A floor on undamaged cars at the depot in the morning is a lower bound on the undamaged_stock at a specific day and depot, derived from the planner's input."
+}

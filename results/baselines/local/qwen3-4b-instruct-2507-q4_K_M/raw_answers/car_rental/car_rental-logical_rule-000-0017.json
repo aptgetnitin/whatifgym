@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","relax":[{"constraint":"repairs","scope":{"day":["Tuesday","Saturday"]}}]}

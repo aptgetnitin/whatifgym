@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","data_changes":[{"op":"set","table":"repairs","column":"repairs","where":{"day":"Saturday","depot":"Manchester"},"value":6}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","data_changes":[],"rules":[{"name":"plant_hours_on_hour_19","measure":"on","scope":{"hour":20},"sense":">=","value":10}]}

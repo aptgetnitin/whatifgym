@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"at_most_one_non_zero_repair","measure":"repairs","scope":{"day":["Friday","Wednesday","Thursday","Tuesday","Saturday"]},"sense":"<=","value":1}]}

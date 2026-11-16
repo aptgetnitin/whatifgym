@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "start_time_mannheim_sum",
+      "measure": "start_time",
+      "scope": {
+        "location": "Mannheim"
+      },
+      "sense": ">=",
+      "value": 36
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"repair_minimum","measure":"repairs","scope":{"day":"Monday","depot":"any"},"sense":">=","value":94,"oneOf":[{"required":"value"},{"required":"relative_to"}]}],"note":"A logical rule is applied: if rentals at Birmingham on Tuesday are positive, then repairs on Monday must meet a minimum threshold."}

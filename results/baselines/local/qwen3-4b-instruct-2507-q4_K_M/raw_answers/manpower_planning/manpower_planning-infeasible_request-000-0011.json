@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"retrain_year1_at_least_680","measure":"retrain","scope":{"year":1,"from_skill":"unskilled","to_skill":"semi_skilled"},"sense":">=","value":680},{"name":"retrain_year3_at_least_460","measure":"retrain","scope":{"year":3,"from_skill":"unskilled","to_skill":"semi_skilled"},"sense":">=","value":460}]}

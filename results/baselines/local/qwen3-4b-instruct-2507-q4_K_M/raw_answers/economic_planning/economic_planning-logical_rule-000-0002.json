@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","logic":[{"name":"capacity_coal_year3_steel_stock_year2","at_least":1,"of":[{"measure":"stock","scope":{"year":[2],"industry":["steel"]},"sense":">=","value":63},{"measure":"extra_capacity","scope":{"year":[3],"industry":["coal"]},"sense":">","value":0}]}]}

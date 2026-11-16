@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"set","table":"mines","column":"extract","where":{"mine":"Mine1","year":"Year1"},"value":5000000}],"rules":[{"name":"mine1_extract_minimum","measure":"extract","scope":{"mine":"Mine1","year":"Year1"},"sense":"==","value":5000000}]}

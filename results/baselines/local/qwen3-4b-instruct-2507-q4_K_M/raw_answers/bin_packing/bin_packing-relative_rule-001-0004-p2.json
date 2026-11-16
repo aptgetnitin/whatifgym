@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"bin_packing","logic":[{"name":"at_least_30_in_bin1","at_least":1,"of":[{"measure":"x","scope":{"bin":"bin1"},"sense":">=","value":30}]}]}

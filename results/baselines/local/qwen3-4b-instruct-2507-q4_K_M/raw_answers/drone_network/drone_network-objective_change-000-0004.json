@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "linked_load",
+      "scope": {
+        "location": "400 TROON CHASE"
+      }
+    }
+  ],
+  "note": "First optimise the original objective to maintain minimum response time, then maximise the queue load linked to the assigned location for 400 TROON CHASE."
+}

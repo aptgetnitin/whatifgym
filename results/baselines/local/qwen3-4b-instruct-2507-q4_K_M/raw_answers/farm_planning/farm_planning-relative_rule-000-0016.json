@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_calves_sold_year2_twice_year4",
+      "measure": "sell_heifers",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": ">=",
+      "value": 2,
+      "relative_to": {
+        "measure": "sell_heifers",
+        "scope": {
+          "year": "Year4"
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "year1_sugar_beet_sales_at_most_10_percent",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "value": 0.1,
+      "relative_to": {
+        "measure": "sell_beet",
+        "scope": {
+          "year": [
+            "Year1",
+            "Year2",
+            "Year3",
+            "Year4",
+            "Year5"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[],"rules":[{"name":"cap_extra_capacity_3","measure":"extra_capacity","scope":{"year":3},"sense":">=","value":78}],"objective":[{"sense":"max","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"note":"Require at least 78 million USD of capacity built in year 3, total across industries."}

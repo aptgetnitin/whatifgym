@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"name":"at_most_5_percent_to_doris","measure":"use","scope":{"technician":["Doris"]},"sense":"<=","value":5,"relative_to":{"measure":"use","scope":{"technician":["Albert","Bob","Carlos","Doris","Ed","Flor","Gina"]}},"factor":0.05}]}

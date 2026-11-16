@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "make_jun_at_least_4000_if_mar_positive",
+      "measure": "make",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": "Mar",
+          "product": "any"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "If any units are made in March, then total units made in June must be at least 4000. This is a conditional rule on the sum of production over a scope."
+}

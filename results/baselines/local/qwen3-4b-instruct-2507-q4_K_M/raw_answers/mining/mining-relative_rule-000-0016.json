@@ -1,0 +1,69 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "extract_75_percent_year1",
+      "measure": "extract",
+      "scope": {
+        "year": "Year1",
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "sense": "=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "extract",
+        "scope": {
+          "year": [
+            "Year1",
+            "Year2",
+            "Year3",
+            "Year4",
+            "Year5"
+          ],
+          "mine": [
+            "Mine1",
+            "Mine2",
+            "Mine3",
+            "Mine4"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "open_year2_at_most_90_percent_year1",
+      "measure": "open",
+      "scope": {
+        "year": "Year2",
+        "mine": [
+          "Mine1",
+          "Mine2",
+          "Mine3",
+          "Mine4"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.9,
+      "relative_to": {
+        "measure": "open",
+        "scope": {
+          "year": "Year1",
+          "mine": [
+            "Mine1",
+            "Mine2",
+            "Mine3",
+            "Mine4"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The first rule ensures that 75% of total extracted tons go to Year1. The second rule limits the number of mine-years open in Year2 to 90% of those open in Year1."
+}

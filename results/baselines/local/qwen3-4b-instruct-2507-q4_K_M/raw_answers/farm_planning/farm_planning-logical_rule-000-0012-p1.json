@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "grain_buy_min_when_beet_grown_in_year5",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year5"
+      },
+      "sense": ">=",
+      "value": 42,
+      "relative_to": {
+        "measure": "grow_beet",
+        "scope": {
+          "year": "Year5"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

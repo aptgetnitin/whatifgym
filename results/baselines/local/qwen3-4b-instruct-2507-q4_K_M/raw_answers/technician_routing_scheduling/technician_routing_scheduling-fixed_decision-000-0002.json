@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","objective":[{"sense":"min","measure":"original"}],"note":"Commit to exactly 130 minutes late for Customer5, meaning lateness for Customer5 is fixed at 130 minutes, and the rest of the objective is optimised accordingly."}

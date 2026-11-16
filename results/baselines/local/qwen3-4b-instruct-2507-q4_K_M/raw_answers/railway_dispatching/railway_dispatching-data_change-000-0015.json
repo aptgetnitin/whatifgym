@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","data_changes":[{"op":"set","table":"resources","column":"duration","where":{"resource":"2"},"value":2},{"op":"shift","table":"trains","column":"ready_time","where":{"train":["A","B","C","D","E","F"]},"delta":-0.25}]}

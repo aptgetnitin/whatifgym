@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"heifer_calfs_sold_year1_at_least_37","measure":"sell_heifers","scope":{"year":"Year1"},"sense":">=","value":37}]}

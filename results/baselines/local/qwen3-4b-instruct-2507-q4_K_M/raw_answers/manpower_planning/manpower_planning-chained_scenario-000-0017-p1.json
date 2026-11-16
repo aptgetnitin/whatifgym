@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[],"rules":[{"name":"limit_downgrade_skilled_to_unskilled","measure":"downgrade","scope":{"from_skill":"skilled","to_skill":"unskilled"},"sense":"<=","value":130}],"note":"Limit total downgrades from skilled to unskilled to 130 workers across all years."}

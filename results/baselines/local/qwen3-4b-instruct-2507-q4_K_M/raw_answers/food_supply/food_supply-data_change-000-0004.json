@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "foods",
+      "column": "international_price",
+      "where": {
+        "food": "Lentils"
+      },
+      "factor": 0.75
+    },
+    {
+      "op": "shift",
+      "table": "arcs",
+      "column": "transport_cost",
+      "where": {},
+      "delta": -0.1
+    }
+  ]
+}

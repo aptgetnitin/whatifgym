@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"cap_retrain_total","measure":"retrain","scope":{"}},":{"sense":"<=","value":780},"note":"A cap on total retraining is a global upper bound on the sum of retrain decisions over all years and skill pairs."}}]}

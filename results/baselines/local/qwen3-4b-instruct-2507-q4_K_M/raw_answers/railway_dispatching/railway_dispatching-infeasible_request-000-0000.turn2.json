@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"max","measure":"finish_time","scope":{"train":["A","B","C","D","E","F"]}}],"note":"Total arrival time at destination is the sum of finish_time over all trains."}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "tasks",
+      "column": "size",
+      "factor": 0.9
+    }
+  ],
+  "note": "A 10% reduction in task size is achieved by scaling the size column in the tasks table by 0.9."
+}

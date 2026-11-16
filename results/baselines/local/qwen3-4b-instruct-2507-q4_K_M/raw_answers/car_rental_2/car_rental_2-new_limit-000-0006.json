@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_left_friday_limit",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Friday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 80
+    }
+  ]
+}

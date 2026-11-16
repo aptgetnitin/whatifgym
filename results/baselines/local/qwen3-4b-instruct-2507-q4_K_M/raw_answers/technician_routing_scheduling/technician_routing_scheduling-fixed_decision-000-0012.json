@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[],"rules":[],"objective":[{"sense":"min","measure":"original"}],"fixed_decisions":[{"measure":"start_time","scope":{"location":"Loerrach"},"value":270}],"relax":[],"logic":[],"note":"Fixed start time for Loerrach to exactly 270 minutes."}

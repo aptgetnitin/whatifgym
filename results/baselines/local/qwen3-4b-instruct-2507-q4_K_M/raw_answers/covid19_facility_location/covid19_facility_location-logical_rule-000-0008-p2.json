@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "at_most_one_of_e9_e5",
+      "measure": "assign",
+      "scope": {
+        "county": "*",
+        "facility": "E9"
+      },
+      "sense": "<=",
+      "value": 0
+    },
+    {
+      "name": "at_most_one_of_e9_e5",
+      "measure": "assign",
+      "scope": {
+        "county": "*",
+        "facility": "E5"
+      },
+      "sense": "<=",
+      "value": 0
+    }
+  ],
+  "note": "Only one of E9 or E5 can have patients assigned; both cannot have positive assignments simultaneously."
+}

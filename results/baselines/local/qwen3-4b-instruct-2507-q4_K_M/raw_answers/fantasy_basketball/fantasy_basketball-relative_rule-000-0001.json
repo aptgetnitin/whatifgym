@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set","table":"players","column":"position","where":{"player":"Joel Embiid"},"value":"C"}],"rules":[{"name":"max_embiid_fraction","measure":"pick","scope":{"player":"Joel Embiid"},"sense":"<=","value":1.0,"relative_to":{"measure":"pick","scope":{"player":"player"}},"factor":0.15}]}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "rules": [
+    {
+      "name": "bin0_placement_ratio",
+      "measure": "x",
+      "scope": {
+        "bin": "bin0"
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "x",
+        "scope": {
+          "bin": [
+            "bin0",
+            "bin1",
+            "bin2",
+            "bin3",
+            "bin4"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Bin0 must receive at least 75% of all item placements across all bins."
+}

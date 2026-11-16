@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"single_machine_scheduling","data_changes":[],"rules":[],"objective":[],"fixed_decisions":[],"relax":[],"logic":[],"note":"A feasibility query about a specific job's start time requires checking if the constraint system allows start_time[job_6] >= 415600 under the current model parameters and constraints."}

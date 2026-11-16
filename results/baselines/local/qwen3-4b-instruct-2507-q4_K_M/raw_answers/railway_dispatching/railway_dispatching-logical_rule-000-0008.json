@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"finish_time","scope":{"train":["A"]}}],"note":"The finish_time of train A must be either 0 or at least 99 minutes, which is enforced by setting a binary choice between these two values in the objective stage."}

@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "queue_load_zero_or_min",
+      "measure": "linked_load",
+      "scope": {
+        "location": "600 FLEET DR",
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": "=",
+      "value": 0
+    },
+    {
+      "name": "queue_load_min_002",
+      "measure": "linked_load",
+      "scope": {
+        "location": "600 FLEET DR",
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      },
+      "sense": ">=",
+      "value": 0.02
+    }
+  ],
+  "note": "The queue load linked to location 600 FLEET DR from base 800 VIRGINIA BEACH BLVD Fire Station must be either zero or at least 0.02 hours."
+}

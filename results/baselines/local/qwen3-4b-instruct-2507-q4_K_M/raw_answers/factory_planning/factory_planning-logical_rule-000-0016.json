@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","logic":[{"name":"at_least","at_least":1,"of":[{"measure":"make","scope":{"month":["Jan"],"product":["Prod1"]},"sense":">=","value":0},{"measure":"make","scope":{"month":["May"],"product":["Prod1"]},"sense":">=","value":0}]}]}

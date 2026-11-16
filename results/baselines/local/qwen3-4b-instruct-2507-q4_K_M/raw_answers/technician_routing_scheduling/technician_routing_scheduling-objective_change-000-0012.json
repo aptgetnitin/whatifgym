@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "start_time",
+      "scope": {
+        "location": "Lahr/Schwarzwald"
+      }
+    }
+  ],
+  "note": "First, total penalty is minimized to its original optimum; then, the service start time for Lahr/Schwarzwald is minimized subject to that."
+}

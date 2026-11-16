@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"set","table":"purchase_prices","column":"price","where":{"month":"Jun","oil":"VEG2"},"value":1620}],"note":"A fixed purchase amount is set as a value in the purchase_prices table for the specified month and oil."}

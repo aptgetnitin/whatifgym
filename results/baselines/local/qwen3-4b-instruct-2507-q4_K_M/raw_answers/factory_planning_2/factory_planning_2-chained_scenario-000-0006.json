@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "machines",
+      "column": "installed",
+      "where": {
+        "machine": "horiDrill"
+      },
+      "factor": 0.5
+    }
+  ],
+  "note": "A 50% reduction in installed horiDrill machines is applied by scaling the installed count by 0.5."
+}

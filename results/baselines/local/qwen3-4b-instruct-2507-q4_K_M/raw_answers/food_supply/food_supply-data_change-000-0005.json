@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "foods",
+      "column": "international_price",
+      "factor": 1.25
+    },
+    {
+      "op": "shift",
+      "table": "nutrients",
+      "column": "min_per_person",
+      "where": {
+        "nutrient": "Protein(g)"
+      },
+      "delta": 0.2
+    }
+  ]
+}

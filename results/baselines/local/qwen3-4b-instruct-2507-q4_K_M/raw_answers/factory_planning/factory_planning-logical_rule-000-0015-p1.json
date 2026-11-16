@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "stock_in_feb_implies_sell_prod7_jun",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Feb"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "product": "Prod7",
+            "month": "Jun"
+          },
+          "sense": ">=",
+          "value": 100
+        }
+      ]
+    }
+  ],
+  "note": "A logical rule ensures that if any units are in stock in February, then at least 100 units of Prod7 are sold in June."
+}

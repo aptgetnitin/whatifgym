@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "damaged_left",
+      "scope": {
+        "day": "Saturday",
+        "depot": "Glasgow"
+      }
+    }
+  ],
+  "note": "First stage maximises weekly profit as in the original model. Second stage, with profit held at its maximum, maximises the damaged cars kept overnight at Glasgow on Saturday."
+}

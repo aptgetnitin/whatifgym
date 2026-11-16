@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"cap_consume_total","measure":"consume","scope":{"}},":{"sense":"<=","value":1750},"note":"A cap on total refined oil is a global upper bound on the sum of consume over all months and oils."}}]}

@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "observation_days",
+      "where": {},
+      "factor": 15.0
+    }
+  ],
+  "note": "The observation window is scaled from the original value to 15 days, affecting the arrival rate calculation per location."
+}

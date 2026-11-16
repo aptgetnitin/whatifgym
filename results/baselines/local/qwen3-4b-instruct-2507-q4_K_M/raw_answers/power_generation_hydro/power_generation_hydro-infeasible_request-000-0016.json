@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_output_06-09_thermal0",
+      "measure": "output",
+      "scope": {
+        "period": "06-09",
+        "type": "Thermal0"
+      },
+      "sense": "=",
+      "value": 142500
+    }
+  ]
+}

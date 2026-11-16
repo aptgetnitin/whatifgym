@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"entry_time_f_at_most_75_of_c","measure":"entry_time","scope":{"train":"F","resource":"resource"},"sense":"<=","value":75,"relative_to":{"measure":"entry_time","scope":{"train":"C","resource":"resource"},"factor":0.75}}]}

@@ -1,0 +1,47 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "rentals",
+      "scope": {
+        "day": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      }
+    }
+  ],
+  "note": "Prioritizes minimizing undamaged cars kept overnight at depots, then maximizing weekly profit from rentals."
+}

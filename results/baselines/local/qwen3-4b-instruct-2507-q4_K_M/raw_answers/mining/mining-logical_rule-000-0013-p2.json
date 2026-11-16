@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[],"rules":[{"name":"min_batch_mine1_year1","measure":"extract","scope":{"year":"Year1","mine":"Mine1"},"sense":">=","value":5000000}]}

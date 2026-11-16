@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "min_thermal_output_06-09",
+      "measure": "output",
+      "scope": {
+        "period": "06-09",
+        "type": "Thermal0"
+      },
+      "sense": ">=",
+      "value": 45000
+    },
+    {
+      "name": "min_thermal_output_06-09_any_type",
+      "measure": "output",
+      "scope": {
+        "period": "06-09"
+      },
+      "sense": ">=",
+      "value": 45000
+    }
+  ],
+  "note": "The rule ensures that if the total thermal output in the 06-09 period is above zero, it must be at least 45000 MW. This is expressed as a minimum output constraint over the period for any thermal type, with a specific requirement for the 06-09 period."
+}

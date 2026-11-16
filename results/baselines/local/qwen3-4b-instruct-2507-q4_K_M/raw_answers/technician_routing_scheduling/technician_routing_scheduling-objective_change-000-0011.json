@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "start_time",
+      "scope": {
+        "location": "Karlsruhe"
+      }
+    }
+  ],
+  "note": "First optimise total penalty to its minimum, then maximise the service start time for Karlsruhe."
+}

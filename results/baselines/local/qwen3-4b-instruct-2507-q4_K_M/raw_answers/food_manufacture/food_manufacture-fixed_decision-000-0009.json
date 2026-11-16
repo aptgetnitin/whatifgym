@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"set","table":"store","column":"store","where":{"month":"Jan","oil":"OIL3"},"value":1000}]}

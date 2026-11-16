@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"goes_first_j5_limit","measure":"goes_first","scope":{"machine":["M0","M1","M2","M3","M4","M5"],"job":"J5","other_job":["J0","J1","J2","J3","J4"]},"sense":"<=","value":9},{"name":"start_j5_sum_limit","measure":"start","scope":{"job":"J5","step":[1,2,3,4,5,6]},"sense":">=","value":190}]}

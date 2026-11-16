@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[],"rules":[{"name":"storage_feb_min","measure":"store","scope":{"month":"Feb"},"sense":">=","value":2950}],"objective":[{"sense":"max","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"note":"A minimum storage requirement for February is imposed on the total tons of oil in storage that month."}

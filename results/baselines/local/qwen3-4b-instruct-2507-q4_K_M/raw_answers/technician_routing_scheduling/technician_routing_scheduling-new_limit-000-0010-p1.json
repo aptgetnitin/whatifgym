@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[],"rules":[{"name":"ed_job_count","measure":"assign","scope":{"customer":"Customer1","technician":"Ed"},"sense":">=","value":2}],"note":"A rule enforcing at least 2 jobs assigned to Ed, based on the assign decision variable."}

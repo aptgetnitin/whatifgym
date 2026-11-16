@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","logic":[{"name":"hydro6_min_if_othercoal17_positive","at_least":1,"of":[{"measure":"output","scope":{"plant":"HYDRO","hour":6},"sense":">=","value":400},{"measure":"output","scope":{"plant":"OTHER COAL","hour":17},"sense":">","value":0}]}]}

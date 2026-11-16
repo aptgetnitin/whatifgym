@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"step1_end_at_least_50_percent_of_step6_end","measure":"end","scope":{"job":"job","step":[1,6]},"sense":">=","value":0,"relative_to":{"measure":"end","scope":{"job":"job","step":[6]},"factor":0.5}}]}

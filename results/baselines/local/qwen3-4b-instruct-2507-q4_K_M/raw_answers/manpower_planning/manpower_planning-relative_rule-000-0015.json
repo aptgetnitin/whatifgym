@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "short_time_unskilled_limit",
+      "measure": "short_time",
+      "scope": {
+        "skill": "unskilled"
+      },
+      "sense": "<=",
+      "value": 0.4,
+      "relative_to": {
+        "measure": "short_time",
+        "scope": {
+          "skill": [
+            "unskilled",
+            "semi_skilled",
+            "skilled"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "redundant_year3_at_most_25_of_year1",
+      "measure": "redundant",
+      "scope": {
+        "year": 3
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "redundant",
+        "scope": {
+          "year": 1
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

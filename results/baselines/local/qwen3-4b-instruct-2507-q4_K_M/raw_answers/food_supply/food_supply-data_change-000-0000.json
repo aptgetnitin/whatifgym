@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"params","column":"max_nutrient_factor","where":{"parameter":"max_nutrient_factor"},"factor":2.0}]}

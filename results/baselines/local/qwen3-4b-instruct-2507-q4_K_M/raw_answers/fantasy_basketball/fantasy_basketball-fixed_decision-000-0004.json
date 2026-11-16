@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set","table":"positions","column":"required","where":{"position":"SG"},"value":1}],"note":"Kevin Love is a SG, so setting the required number of guards at SG to 1 enforces a fixed number of players at that position."}

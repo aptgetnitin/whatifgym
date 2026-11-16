@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"thermal1_at_least_14_1824","measure":"ngen","scope":{"period":"18-24","type":"Thermal1"},"sense":">=","value":14}]}

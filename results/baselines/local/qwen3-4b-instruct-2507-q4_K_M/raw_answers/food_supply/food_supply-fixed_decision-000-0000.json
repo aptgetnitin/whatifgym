@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_purchase_level",
+      "measure": "purchase",
+      "scope": {
+        "food": "Oil",
+        "supplier": [
+          "Aleppo",
+          "Amman",
+          "As_Suweida",
+          "Beirut",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Gaziantep",
+          "Hama",
+          "Hassakeh",
+          "Homs"
+        ]
+      },
+      "sense": "==",
+      "value": 3650
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","logic":[{"name":"goes_first_balance","at_least":1,"of":[{"measure":"goes_first","scope":{"machine":"M0","job":"J0","other_job":["J1","J2","J3","J4","J5"]},"sense":">=","value":0},{"measure":"goes_first","scope":{"machine":"M4","job":"J4","other_job":["J0","J1","J2","J3","J5"]},"sense":">=","value":0}]}]}

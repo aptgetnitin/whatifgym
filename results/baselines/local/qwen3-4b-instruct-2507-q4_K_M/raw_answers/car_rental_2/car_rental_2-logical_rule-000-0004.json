@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","logic":[{"name":"at_least","of":[{"measure":"expand","scope":{"depot":"Manchester","step":[1,2]},"sense":">=","value":0},{"measure":"expand","scope":{"depot":"Birmingham","step":[1,2]},"sense":">=","value":0},{"measure":"expand","scope":{"depot":"Plymouth","step":[1,2]},"sense":">=","value":0}],"at_least":1}]}

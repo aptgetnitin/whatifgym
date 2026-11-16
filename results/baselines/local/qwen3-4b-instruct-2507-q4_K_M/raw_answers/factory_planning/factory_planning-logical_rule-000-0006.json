@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","logic":[{"name":"sold_prod5_apr_at_least_sold_prod4_may","at_least":1,"of":[{"measure":"sell","scope":{"product":"Prod5","month":"Apr"},"sense":">=","value":200},{"measure":"sell","scope":{"product":"Prod4","month":"May"},"sense":">=","value":200}]}]}

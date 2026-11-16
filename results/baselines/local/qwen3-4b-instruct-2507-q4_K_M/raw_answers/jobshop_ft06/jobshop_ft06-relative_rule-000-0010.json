@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "step5_end_time_limit",
+      "measure": "end",
+      "scope": {
+        "job": "J0",
+        "step": 5
+      },
+      "sense": "<=",
+      "value": 15,
+      "relative_to": {
+        "measure": "end",
+        "scope": {
+          "job": [
+            "J0",
+            "J1",
+            "J2",
+            "J3",
+            "J4",
+            "J5"
+          ],
+          "step": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "factor": 0.15
+    }
+  ],
+  "note": "The end time of step 5 for any job is limited to at most 15% of the total sum of all operation end times across all jobs and steps."
+}

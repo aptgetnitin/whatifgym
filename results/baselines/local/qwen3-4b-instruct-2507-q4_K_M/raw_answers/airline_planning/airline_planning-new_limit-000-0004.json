@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "total_operated_flights_cap",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "*",
+        "flight": "*"
+      },
+      "sense": "<=",
+      "value": 26
+    }
+  ]
+}

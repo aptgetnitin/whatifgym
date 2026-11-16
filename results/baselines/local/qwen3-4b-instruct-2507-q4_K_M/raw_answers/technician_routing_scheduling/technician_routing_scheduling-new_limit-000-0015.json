@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[],"rules":[{"name":"max_legs_doris","measure":"route","scope":{"technician":"Doris"},"sense":"<=","value":1}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","data_changes":[{"op":"set","table":"soc","column":"soc","where":{"hour":"13-14"},"value":0}],"logic":[{"name":"soc_13_14_condition","at_least":1,"of":[{"measure":"soc","scope":{"hour":"13-14"},"sense":">=","value":20},{"measure":"soc","scope":{"hour":"13-14"},"sense":"==","value":0}]}]}

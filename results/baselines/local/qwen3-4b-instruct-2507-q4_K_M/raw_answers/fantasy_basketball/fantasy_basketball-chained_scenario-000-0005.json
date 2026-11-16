@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "positions",
+      "column": "required",
+      "where": {
+        "position": "PG"
+      },
+      "value": 0
+    },
+    {
+      "op": "set_param",
+      "name": "salary_cap",
+      "value": 60000
+    }
+  ]
+}

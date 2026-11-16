@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "minimum_start_time_mannheim",
+      "measure": "start_time",
+      "scope": {
+        "location": "Mannheim"
+      },
+      "sense": ">=",
+      "value": 48
+    }
+  ]
+}

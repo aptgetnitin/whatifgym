@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "items",
+      "column": "weight",
+      "where": {},
+      "factor": 0.75
+    },
+    {
+      "op": "add",
+      "table": "items",
+      "rows": [
+        {
+          "item": "new_item",
+          "weight": 42,
+          "value": 24
+        }
+      ]
+    }
+  ],
+  "note": "Every item weight is reduced by 25% via scaling, and a new item is added as before."
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "land_groups",
+      "rows": [
+        {
+          "land_group": "new_land_group",
+          "area": 18,
+          "grain_yield": 1.12
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"coal_output_at_least_2700","measure":"production","scope":{"industry":["coal"]},"sense":">=","value":2700}]}

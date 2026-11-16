@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "total_purchase_at_least_three_times_total_flow",
+      "measure": "purchase",
+      "scope": {
+        "food": "*",
+        "supplier": "*"
+      },
+      "sense": ">=",
+      "value": 3,
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "food": "*",
+          "from_city": "*",
+          "to_city": "*"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

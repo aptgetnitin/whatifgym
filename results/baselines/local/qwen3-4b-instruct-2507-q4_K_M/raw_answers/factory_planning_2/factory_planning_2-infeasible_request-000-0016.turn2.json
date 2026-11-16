@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"mar_make_sum_at_least_12500","measure":"make","scope":{"month":"Mar"},"sense":">=","value":12500}]}

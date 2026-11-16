@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "rules": [
+    {
+      "name": "open_years2_limit",
+      "measure": "open",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "value": 0.15,
+      "relative_to": {
+        "measure": "open",
+        "scope": {
+          "year": [
+            "Year1",
+            "Year2",
+            "Year3",
+            "Year4",
+            "Year5"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "blend_year1_80p_year4",
+      "measure": "blend",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": "<=",
+      "value": 0.8,
+      "relative_to": {
+        "measure": "blend",
+        "scope": {
+          "year": "Year4"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

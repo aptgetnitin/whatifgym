@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "demand",
+      "column": "demand",
+      "where": {
+        "day": "Monday",
+        "depot": "Glasgow"
+      },
+      "delta": 80
+    }
+  ],
+  "note": "A shift in demand for a specific day and depot increases the demand value by the specified amount."
+}

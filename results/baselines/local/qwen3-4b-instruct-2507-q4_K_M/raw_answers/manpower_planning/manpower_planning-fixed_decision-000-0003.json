@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[],"rules":[{"name":"short_time_level_2","measure":"short_time","scope":{"year":2},"sense":"==","value":42}],"objective":[{"sense":"min","measure":"original"}],"note":"Set exactly 42 workers on short-time working in each skill level during year 2; optimise total redundancies."}

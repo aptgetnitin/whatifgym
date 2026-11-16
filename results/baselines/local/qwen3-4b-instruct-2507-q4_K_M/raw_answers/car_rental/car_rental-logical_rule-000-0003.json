@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"at_most_3_non_zero_rentals","measure":"rentals","scope":{"depot":["Birmingham","Plymouth","Glasgow","Manchester"]},"sense":"<=","value":3}]}

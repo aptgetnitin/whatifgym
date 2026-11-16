@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "fixed_decisions": [
+    {
+      "measure": "ngen",
+      "scope": {
+        "period": ["00-06", "06-09", "09-15", "15-18", "18-24"],
+        "type": "Thermal2"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Fixed the number of Thermal2 units running to exactly 1 in each period, as requested."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"undamaged_stock_saturday_at_most_90_of_wednesday","measure":"undamaged_stock","scope":{"day":"Saturday","depot":"depot"},"sense":"<=","value":90,"relative_to":{"measure":"undamaged_stock","scope":{"day":"Wednesday","depot":"depot"},"factor":0.9}}]}

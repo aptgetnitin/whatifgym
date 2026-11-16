@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "prod7_stock_batch",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "product": "Prod7",
+            "month": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun"
+            ]
+          },
+          "sense": ">=",
+          "value": 500
+        },
+        {
+          "measure": "store",
+          "scope": {
+            "product": "Prod7",
+            "month": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun"
+            ]
+          },
+          "sense": "==",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "note": "The stock of Prod7 is either zero or at least 500 units across all months, satisfying the minimum batch requirement."
+}

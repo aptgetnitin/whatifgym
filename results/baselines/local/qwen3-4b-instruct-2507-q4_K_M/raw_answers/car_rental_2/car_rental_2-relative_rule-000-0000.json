@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "rentals_to_plymouth_at_least_40%",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "sense": "=",
+      "value": 0.4
+    }
+  ],
+  "note": "At least 40% of total rentals must be to Plymouth. This is expressed as a share of total rentals, so the rule is applied to the sum of rentals at Plymouth relative to the total sum of all rentals."
+}

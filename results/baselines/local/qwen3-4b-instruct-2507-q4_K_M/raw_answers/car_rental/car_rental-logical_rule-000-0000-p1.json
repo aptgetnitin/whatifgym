@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","data_changes":[{"op":"set","table":"depots","column":"repair_capacity","where":{"depot":["Plymouth","Manchester","Birmingham","Glasgow"]},"value":0}],"note":"Only two depots can rent cars; all others are closed to rentals. This sets repair capacity to zero for those depots, effectively removing rental capacity from them."}

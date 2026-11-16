@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","rules":[{"name":"task3_at_most_75_of_task5","measure":"assign","scope":{"task":"task_3"},"sense":"<=","value":0.75,"relative_to":{"measure":"assign","scope":{"task":"task_5"}}}]}

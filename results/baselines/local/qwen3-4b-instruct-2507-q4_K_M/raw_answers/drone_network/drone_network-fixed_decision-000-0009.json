@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","fixed_decisions":[{"measure":"queue_load","scope":{"base":"21 MUNICIPAL CTR Fire Station"},"value":0}]}

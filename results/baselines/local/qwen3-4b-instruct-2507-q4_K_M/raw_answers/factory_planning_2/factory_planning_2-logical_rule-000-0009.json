@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"mar_sales_zero_or_high","measure":"sell","scope":{"month":["Mar"]},"sense":"==","value":0},{"name":"mar_sales_high","measure":"sell","scope":{"month":["Mar"]},"sense":">=","value":4750}]}

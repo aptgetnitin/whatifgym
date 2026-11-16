@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "resources",
+      "column": "duration",
+      "factor": 1.2
+    },
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "F"
+      },
+      "value": 310
+    }
+  ],
+  "note": "The total entry time for train F is set to at least 310 minutes, as requested. The existing 20% increase in resource duration is retained."
+}

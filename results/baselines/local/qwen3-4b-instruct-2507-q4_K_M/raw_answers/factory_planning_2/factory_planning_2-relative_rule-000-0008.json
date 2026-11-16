@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "at_least_40_percent_to_prod2",
+      "measure": "make",
+      "scope": {
+        "product": "Prod2"
+      },
+      "sense": ">=",
+      "value": 0.4,
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "product": [
+            "Prod1",
+            "Prod2",
+            "Prod3",
+            "Prod4",
+            "Prod5",
+            "Prod6",
+            "Prod7"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "stock_mar_at_most_90_percent_of_stock_jun",
+      "measure": "store",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": "<=",
+      "value": 0.9,
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Jun"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

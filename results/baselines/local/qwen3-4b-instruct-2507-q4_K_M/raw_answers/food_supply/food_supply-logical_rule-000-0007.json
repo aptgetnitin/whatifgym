@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "at_most_one_oil_csb_wheat",
+      "measure": "ration",
+      "scope": {
+        "food": [
+          "Oil",
+          "Corn-soya blend (CSB)",
+          "Wheat"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

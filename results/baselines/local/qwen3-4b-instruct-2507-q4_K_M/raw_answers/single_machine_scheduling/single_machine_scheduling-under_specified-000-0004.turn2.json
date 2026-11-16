@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"single_machine_scheduling","data_changes":[],"rules":[{"name":"minimum_start_time","measure":"start_time","scope":{"job":["job_14"]},"sense":">=","value":78400}],"note":"A minimum start time is a lower bound on the start time of a specific job, as specified in the planner's input."}

@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal1_output_minimum",
+      "measure": "output",
+      "scope": {
+        "period": "09-15",
+        "type": "Thermal1"
+      },
+      "sense": ">=",
+      "value": 31500
+    },
+    {
+      "name": "thermal1_output_zero_or_minimum",
+      "measure": "output",
+      "scope": {
+        "period": "09-15",
+        "type": "Thermal1"
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ],
+  "note": "The rule enforces that in period 09-15, the total output of Thermal1 units is either zero or at least 31500 MW, as specified in the planner's question."
+}

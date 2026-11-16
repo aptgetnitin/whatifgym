@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"at_most_one_non_zero_sale","measure":"sell","scope":{"month":["Apr","May","Mar"]},"sense":"<=","value":1}]}

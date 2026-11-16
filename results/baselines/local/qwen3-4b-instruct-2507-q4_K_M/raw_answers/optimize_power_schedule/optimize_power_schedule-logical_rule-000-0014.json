@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "vogtle_min_output_if_scherer_on_hour_1",
+      "measure": "output",
+      "scope": {
+        "plant": "Vogtle",
+        "hour": 8
+      },
+      "sense": ">=",
+      "value": 2600,
+      "relative_to": {
+        "measure": "output",
+        "scope": {
+          "plant": "Scherer",
+          "hour": 1
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

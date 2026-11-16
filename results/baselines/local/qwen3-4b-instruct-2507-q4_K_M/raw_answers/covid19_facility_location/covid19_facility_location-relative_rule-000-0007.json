@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "e3_not_exceed_t18",
+      "measure": "assign",
+      "scope": {
+        "facility": "E3"
+      },
+      "sense": "<=",
+      "value": 500000,
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "facility": "T18"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The patients assigned to facility E3 must not exceed those assigned to facility T18, enforced as a rule on the assignment measure."
+}

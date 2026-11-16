@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "beet_sale_requires_grain_buy",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 0,
+      "relative_to": {
+        "measure": "buy_grain",
+        "scope": {
+          "year": "Year2"
+        }
+      },
+      "factor": 44
+    }
+  ]
+}

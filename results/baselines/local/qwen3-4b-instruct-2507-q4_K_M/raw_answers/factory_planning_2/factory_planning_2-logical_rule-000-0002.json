@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"jun_sales_min_if_jan_make_positive","measure":"sell","scope":{"month":"Jun"},"sense":">=","value":6100,"relative_to":{"measure":"make","scope":{"month":"Jan"}},"factor":1.0}]}

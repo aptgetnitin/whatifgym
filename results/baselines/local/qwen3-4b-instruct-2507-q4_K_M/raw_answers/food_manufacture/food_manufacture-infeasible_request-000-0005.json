@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[],"rules":[{"name":"veg1_apr_consume","measure":"consume","scope":{"month":"Apr","oil":"VEG1"},"sense":"==","value":1590}],"objective":[{"sense":"max","measure":"original"}],"note":"A fixed consumption of 1590 tons of VEG1 in April is imposed as a rule on the consume decision variable."}

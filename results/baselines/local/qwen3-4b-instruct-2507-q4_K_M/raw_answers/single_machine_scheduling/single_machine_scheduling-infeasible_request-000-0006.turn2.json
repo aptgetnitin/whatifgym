@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"single_machine_scheduling","data_changes":[],"rules":[{"name":"job_4_start_at_least","measure":"start_time","scope":{"job":"job_4"},"sense":">=","value":373300}],"objective":[{"sense":"min","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"note":"A rule enforces a minimum start time for job_4 at 373300 time units."}

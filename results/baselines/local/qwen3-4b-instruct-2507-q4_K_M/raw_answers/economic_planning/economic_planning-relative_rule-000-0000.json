@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"output_year4_at_most_80_of_year3","measure":"production","scope":{"year":["4"],"industry":["coal","steel","transport"]},"sense":"<=","value":0.8,"relative_to":{"measure":"production","scope":{"year":["3"],"industry":["coal","steel","transport"]}},"factor":1.0}]}

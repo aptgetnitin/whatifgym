@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "customers",
+      "column": "unfilled",
+      "where": {
+        "customer": "Customer1"
+      },
+      "value": 1
+    },
+    {
+      "op": "set",
+      "table": "customers",
+      "column": "lateness",
+      "where": {
+        "customer": "Customer5"
+      },
+      "value": 80
+    }
+  ],
+  "rules": [
+    {
+      "name": "customer1_unfilled",
+      "measure": "unfilled",
+      "scope": {
+        "customer": "Customer1"
+      },
+      "sense": "==",
+      "value": 1
+    },
+    {
+      "name": "customer5_lateness_exact",
+      "measure": "lateness",
+      "scope": {
+        "customer": "Customer5"
+      },
+      "sense": "==",
+      "value": 80
+    }
+  ],
+  "note": "Fixes the assignment of Customer1 to be unfilled and sets exact lateness of Customer5 to 80 minutes."
+}

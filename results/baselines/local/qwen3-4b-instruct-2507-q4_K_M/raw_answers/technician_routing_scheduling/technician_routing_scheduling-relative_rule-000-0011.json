@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "freiburg_im_breisgau_legs_75_percent",
+      "measure": "route",
+      "scope": {
+        "to_location": "Freiburg im Breisgau"
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "route",
+        "scope": {}
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "assigned_jobs_25_percent_of_legs",
+      "measure": "assign",
+      "scope": {
+        "customer": []
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "route",
+        "scope": {}
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Two relative limits: Freiburg im Breisgau must account for at least 75% of total legs driven; total assigned jobs must be at most 25% of total legs driven."
+}

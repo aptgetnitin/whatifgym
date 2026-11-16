@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"redundancy_limit_year_3","measure":"redundant","scope":{"year":[3]},"sense":"<=","value":120}]}

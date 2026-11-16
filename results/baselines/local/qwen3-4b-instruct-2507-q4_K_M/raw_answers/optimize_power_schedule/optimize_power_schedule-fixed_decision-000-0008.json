@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","data_changes":[{"op":"set","table":"on","column":"on","where":{"plant":"Scherer","hour":3},"value":0}]}

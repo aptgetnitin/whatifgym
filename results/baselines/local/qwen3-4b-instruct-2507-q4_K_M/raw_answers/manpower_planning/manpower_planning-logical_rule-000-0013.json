@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"short_time_unskilled_minimum","measure":"short_time","scope":{"skill":"unskilled"},"sense":">=","value":220}]}

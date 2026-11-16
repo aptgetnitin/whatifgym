@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Idleb"
+      },
+      "factor": 2.0
+    },
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": "Qamishli"
+      }
+    },
+    {
+      "op": "add",
+      "table": "camps",
+      "rows": [
+        {
+          "camp": "Homs",
+          "beneficiaries": 3000
+        }
+      ]
+    }
+  ],
+  "note": "A change in the number of beneficiaries affects the demand in a camp. The scenario includes doubling Idleb's population, removing Qamishli, and adding a new camp in Homs with 3,000 beneficiaries."
+}

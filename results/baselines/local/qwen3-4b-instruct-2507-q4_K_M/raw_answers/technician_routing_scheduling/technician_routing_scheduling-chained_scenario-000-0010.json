@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "customers",
+      "column": "window_end",
+      "factor": 0.7
+    }
+  ],
+  "note": "A relative change in time window end is a scale over the matching rows; 30% lower means multiplying by 0.7."
+}

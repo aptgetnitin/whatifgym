@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","objective":[{"sense":"max","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"data_changes":[],"note":"A fixed decision on the total production in January is expressed as a rule on the sum of the 'make' decision variable over the scope of product and month 'Jan'."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","data_changes":[{"op":"set","table":"thermal_types","column":"min_output_mw","where":{"type":"Thermal0","period":"09-15"},"value":5300}]}

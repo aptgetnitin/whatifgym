@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "overmanned"
+    },
+    {
+      "sense": "min",
+      "measure": "redundant"
+    }
+  ],
+  "note": "New priority: minimise overmanning first, then total redundancies, as per the revised objective sequence."
+}

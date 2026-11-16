@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","data_changes":[{"op":"shift","table":"params","column":"maintenance_minutes","where":{},"delta":-0.25}]}

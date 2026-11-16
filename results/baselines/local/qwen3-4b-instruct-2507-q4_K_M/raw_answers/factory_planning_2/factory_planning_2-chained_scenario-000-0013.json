@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "cap_sell_May",
+      "measure": "sell",
+      "scope": {
+        "month": "May"
+      },
+      "sense": "<=",
+      "value": 1450
+    }
+  ],
+  "note": "The sales cap for May is increased from 1200 to 1450 units."
+}

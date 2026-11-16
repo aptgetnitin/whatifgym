@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "storage_at_least_15_percent_apr",
+      "measure": "store",
+      "scope": {
+        "month": "Apr"
+      },
+      "sense": ">=",
+      "value": 0.15,
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "consume_oil2_at_most_90_percent_veg2",
+      "measure": "consume",
+      "scope": {
+        "oil": "OIL2"
+      },
+      "sense": "<=",
+      "value": 0.9,
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "oil": "VEG2"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

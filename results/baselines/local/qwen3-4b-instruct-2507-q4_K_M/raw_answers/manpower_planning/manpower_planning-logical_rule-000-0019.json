@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","logic":[{"name":"downgrade_requirement","at_least":1,"of":[{"measure":"downgrade","scope":{"year":[1],"from_skill":"skilled","to_skill":"semi_skilled"},"sense":">=","value":210}]}]}

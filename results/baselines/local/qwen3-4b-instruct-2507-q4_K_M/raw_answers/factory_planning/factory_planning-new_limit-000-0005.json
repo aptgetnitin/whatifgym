@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "max_inventory",
+      "column": "max_inventory",
+      "where": {
+        "month": "Feb"
+      },
+      "value": 320
+    },
+    {
+      "op": "set",
+      "table": "max_inventory",
+      "column": "max_inventory",
+      "where": {
+        "month": [
+          "Mar",
+          "Apr"
+        ],
+        "product": "Prod1"
+      },
+      "value": 160
+    }
+  ],
+  "rules": [
+    {
+      "name": "prod1_make_mar_apr_limit",
+      "measure": "make",
+      "scope": {
+        "product": "Prod1",
+        "month": [
+          "Mar",
+          "Apr"
+        ]
+      },
+      "sense": "<=",
+      "value": 160
+    }
+  ],
+  "note": "Warehouse space limit is applied as a cap on total inventory at the end of February. For March and April, production of Prod1 is capped at 160 units in total across those months."
+}

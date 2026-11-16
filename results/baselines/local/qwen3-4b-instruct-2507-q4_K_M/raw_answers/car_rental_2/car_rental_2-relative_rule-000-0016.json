@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","logic":[{"name":"at_least_60_percent_to_manchester","at_least":1,"of":[{"measure":"damaged_transfers","scope":{"to_depot":"Manchester"},"sense":">=","value":0.6},{"measure":"damaged_transfers","scope":{"to_depot":"Manchester"},"sense":"==","value":0.6}]}]}

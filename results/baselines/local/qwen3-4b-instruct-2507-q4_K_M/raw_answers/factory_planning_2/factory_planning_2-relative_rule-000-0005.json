@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"sell_at_most_twice_store","measure":"sell","scope":{"product":"*"},"sense":"<=","relative_to":{"measure":"store","scope":{"product":"*"}},"factor":2.0}]}

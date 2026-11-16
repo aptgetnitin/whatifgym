@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"min_rentals_plymouth_thursday","measure":"rentals","scope":{"day":"Thursday","depot":"Plymouth"},"sense":">=","value":127}]}

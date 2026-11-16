@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"damaged_transfers_limit","measure":"damaged_transfers","scope":{"day":"day","from_depot":"from_depot","to_depot":"to_depot"},"sense":"<=","value":75,"relative_to":{"measure":"damaged_left","scope":{"day":"day","depot":"depot"}},"factor":0.75}]}

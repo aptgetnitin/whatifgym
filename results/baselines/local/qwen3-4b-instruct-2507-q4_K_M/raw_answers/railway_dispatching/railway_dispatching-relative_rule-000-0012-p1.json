@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"original"}],"note":"A constraint on arrival time relative to another train's is a rule on finish_time, but finish_time is not a decision measure. The scenario requires a rule on a decision measure, so this question cannot be precisely formulated in the DSL."}

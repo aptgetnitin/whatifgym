@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","logic":[{"name":"resource_5_train_a_other_train_c_meet_fixed","at_least":1,"of":[{"measure":"meet","scope":{"resource":"5","train":"A","other_train":"C"},"sense":"==","value":1}]}]}

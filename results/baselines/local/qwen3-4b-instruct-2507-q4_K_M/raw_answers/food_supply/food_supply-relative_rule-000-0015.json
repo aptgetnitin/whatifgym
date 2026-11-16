@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_ration_at_most_75_of_dsm",
+      "measure": "ration",
+      "scope": {
+        "food": "Oil",
+        "camp": [
+          "Ar Raqqa",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Idleb",
+          "Jubb_al_Jarrah",
+          "Qamishli"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "Dried skim milk (enriched) (DSM)",
+          "camp": [
+            "Ar Raqqa",
+            "Daraa",
+            "Dayr_Az_Zor",
+            "Hassakeh",
+            "Idleb",
+            "Jubb_al_Jarrah",
+            "Qamishli"
+          ]
+        }
+      }
+    }
+  ]
+}

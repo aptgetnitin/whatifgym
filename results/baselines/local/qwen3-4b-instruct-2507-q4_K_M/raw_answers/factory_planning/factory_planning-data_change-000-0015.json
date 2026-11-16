@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "process_hours",
+      "column": "hours_per_unit",
+      "where": {
+        "machine": "planer",
+        "product": "Prod7"
+      },
+      "value": 0.025
+    },
+    {
+      "op": "set_param",
+      "name": "profit_per_unit",
+      "value": 2
+    }
+  ],
+  "note": "Prod7's planer time is reduced to 0.025 hours per unit; Prod1's profit per unit is reduced to 2."
+}

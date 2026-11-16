@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"rentals_on_at_most_one_day","measure":"rentals","scope":{"day":["Thursday","Wednesday","Saturday"]},"sense":"<=","value":1}]}

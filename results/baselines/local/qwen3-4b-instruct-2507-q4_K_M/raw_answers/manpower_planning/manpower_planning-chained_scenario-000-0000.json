@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": [],
+  "note": "The short-time worker productivity is scaled by a factor of 1.25 across all years and skill levels."
+}

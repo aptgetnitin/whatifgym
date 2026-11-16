@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "max_beet_sold_year3",
+      "measure": "sell_beet",
+      "scope": {
+        "year": "Year3"
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "sell_beet",
+        "scope": {
+          "year": [
+            "Year1",
+            "Year2",
+            "Year3",
+            "Year4",
+            "Year5"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The rule ensures that sales of sugar beet in Year3 are at most 5% of total sugar beet sales over all five years."
+}

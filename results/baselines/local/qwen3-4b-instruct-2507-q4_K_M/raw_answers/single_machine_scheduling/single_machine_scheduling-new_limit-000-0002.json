@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "single_machine_scheduling",
+  "rules": [
+    {
+      "name": "at_least_9_jobs_before_job_14",
+      "measure": "runs_before",
+      "scope": {
+        "job": "job_14"
+      },
+      "sense": ">=",
+      "value": 9
+    },
+    {
+      "name": "at_most_one_after_job_6",
+      "measure": "follows",
+      "scope": {
+        "from_job": "job_6"
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

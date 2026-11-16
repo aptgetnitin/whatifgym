@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"at_most_two_non_zero_sales","measure":"sell","scope":{"product":["Prod4","Prod5","Prod6","Prod1","Prod2"]},"sense":"==","value":2}]}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_rentals_Plymouth",
+      "measure": "rentals",
+      "scope": {
+        "depot": "Plymouth"
+      },
+      "sense": "<=",
+      "value": 400
+    }
+  ],
+  "note": "The rental limit for Plymouth is increased from 360 to 400."
+}

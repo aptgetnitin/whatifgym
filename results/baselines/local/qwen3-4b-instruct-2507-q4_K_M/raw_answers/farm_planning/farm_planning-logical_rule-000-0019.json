@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "max_grain_buy_in_selected_years",
+      "measure": "buy_grain",
+      "scope": {
+        "year": [
+          "Year5",
+          "Year1",
+          "Year4",
+          "Year2"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

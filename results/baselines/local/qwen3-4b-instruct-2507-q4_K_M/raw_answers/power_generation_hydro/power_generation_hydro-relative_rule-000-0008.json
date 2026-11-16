@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "reservoir_level_ratio_0915_to_1518",
+      "measure": "reservoir_level",
+      "scope": {
+        "period": "09-15"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "reservoir_level",
+        "scope": {
+          "period": "15-18"
+        }
+      },
+      "factor": 3
+    },
+    {
+      "name": "hydro_unit_periods_at_least_thermal_starts",
+      "measure": "hydro_on",
+      "scope": {
+        "period": "period"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "nstart",
+        "scope": {
+          "type": "type"
+        }
+      },
+      "factor": 1
+    }
+  ]
+}

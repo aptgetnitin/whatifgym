@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "rules": [
+    {
+      "name": "jarrett_jack_at_least_15_times_dario_saric",
+      "measure": "pick",
+      "scope": {
+        "player": "Jarrett Jack"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "pick",
+        "scope": {
+          "player": "Dario Saric"
+        }
+      },
+      "factor": 1.5
+    },
+    {
+      "name": "trevor_ariza_at_most_15_percent_of_total",
+      "measure": "pick",
+      "scope": {
+        "player": "Trevor Ariza"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "pick",
+        "scope": {
+          "player": "all"
+        }
+      },
+      "factor": 0.15
+    }
+  ]
+}

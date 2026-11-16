@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"finish_time","scope":{"train":"C"}}],"note":"Ensure train C's finish time is at least 21 minutes by modifying the objective to minimize total delay while enforcing a minimum arrival time at destination."}

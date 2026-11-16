@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","logic":[{"name":"at_most_one_sold","at_least":1,"of":[{"measure":"sell","scope":{"product":["Prod5","Prod4","Prod3"]},"sense":">=","value":0},{"measure":"sell","scope":{"product":["Prod5","Prod4","Prod3"]},"sense":"==","value":1}]}]}

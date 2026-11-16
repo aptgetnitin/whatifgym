@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "max_start_time_lahr",
+      "measure": "start_time",
+      "scope": {
+        "location": "Lahr/Schwarzwald"
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "start_time",
+        "scope": {
+          "location": [
+            "Heidelberg",
+            "Freiburg im Breisgau",
+            "Mannheim",
+            "Karlsruhe",
+            "Baden-Baden",
+            "Buehl",
+            "Offenburg",
+            "Loerrach"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The total service start time at Lahr/Schwarzwald is capped at 5% of the total start time across all locations."
+}

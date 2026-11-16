@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "manchester_undamaged_left_min",
+      "measure": "undamaged_left",
+      "scope": {
+        "depot": "Manchester"
+      },
+      "sense": ">=",
+      "value": 250
+    },
+    {
+      "name": "total_rentals_cap",
+      "measure": "rentals",
+      "scope": {},
+      "sense": "<=",
+      "value": 2250
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"original"},{"sense":"max","measure":"entry_time","scope":{"train":"*","resource":"*"}},{"sense":"max","measure":"goes_first","scope":{"resource":"*","train":"*","other_train":"*"}}]}

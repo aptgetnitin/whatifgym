@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[],"rules":[{"name":"min_steel_output","measure":"production","scope":{"industry":"steel","year":[1,2,3,4,5]},"sense":">=","value":1150}],"objective":[{"sense":"max","measure":"original"}],"note":"A minimum output requirement is set for steel production across years 1 to 5, totaling 1150 million USD."}

@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "e13_assignment_zero_or_at_least_750",
+      "measure": "assign",
+      "scope": {
+        "facility": "E13"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "e13_assignment_at_least_750",
+      "measure": "assign",
+      "scope": {
+        "facility": "E13"
+      },
+      "sense": ">=",
+      "value": 750
+    }
+  ],
+  "note": "The assignment to facility E13 must be either zero or at least 750 patients."
+}

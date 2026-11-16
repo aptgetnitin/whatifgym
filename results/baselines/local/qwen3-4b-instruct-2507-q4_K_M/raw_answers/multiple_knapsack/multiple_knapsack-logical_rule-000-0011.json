@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "at_most_two_non_zero",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item13"
+          }
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item10"
+          }
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item3"
+          }
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item2"
+          }
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item7"
+          }
+        }
+      ]
+    }
+  ],
+  "note": "At most two of the specified items may have non-zero placements in any bin."
+}

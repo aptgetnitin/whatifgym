@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"scherer_output_limit","measure":"output","scope":{"plant":"Scherer"},"sense":"<=","value":10,"relative_to":{"measure":"output","scope":{"plant":["Scherer"]}},"factor":0.1}]}

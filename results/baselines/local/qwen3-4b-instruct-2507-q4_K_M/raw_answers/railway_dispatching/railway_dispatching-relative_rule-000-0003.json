@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"original"}],"note":"A constraint on the arrival time of train D relative to train F is expressed as a rule on the finish_time decision measure."}

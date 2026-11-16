@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"j0_step6_start_at_least_170","measure":"start","scope":{"job":"J0","step":6},"sense":">=","value":170},{"name":"j1_total_start_at_least_170","measure":"start","scope":{"job":"J1"},"sense":">=","value":170}]}

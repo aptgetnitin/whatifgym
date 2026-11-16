@@ -1,0 +1,54 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "stock_at_least_three_times_make",
+      "measure": "store",
+      "scope": {
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ],
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "product": [
+            "Prod1",
+            "Prod2",
+            "Prod3",
+            "Prod4",
+            "Prod5",
+            "Prod6",
+            "Prod7"
+          ],
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 3.0
+    }
+  ],
+  "note": "The total stock across all products and months must be at least three times the total units made across all products and months."
+}

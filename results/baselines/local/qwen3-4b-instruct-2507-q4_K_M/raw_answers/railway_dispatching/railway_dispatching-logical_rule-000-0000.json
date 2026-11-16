@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"arrival_f_at_least_65","measure":"finish_time","scope":{"train":"F"},"sense":">=","value":65,"relative_to":{"measure":"entry_time","scope":{"train":"A","resource":"6"}}}]}

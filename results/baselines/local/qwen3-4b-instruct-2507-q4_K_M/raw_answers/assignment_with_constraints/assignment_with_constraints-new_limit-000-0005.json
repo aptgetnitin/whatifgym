@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","rules":[{"name":"at_least_two_assignments_worker_6","measure":"assign","scope":{"worker":"worker_6"},"sense":">=","value":2}]}

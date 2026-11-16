@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","data_changes":[],"rules":[{"name":"works_count_worker_10","measure":"works","scope":{"worker":"worker_10"},"sense":"==","value":2}]}

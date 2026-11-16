@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","data_changes":[],"rules":[{"name":"repair_capacity_total","measure":"repairs","scope":{"day":"*","depot":"*"},"sense":">=","value":1410}]}

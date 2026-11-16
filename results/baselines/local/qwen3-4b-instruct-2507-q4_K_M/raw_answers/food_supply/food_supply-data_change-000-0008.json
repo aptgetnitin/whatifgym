@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "local_prices",
+      "column": "price",
+      "where": {
+        "supplier": [
+          "Aleppo",
+          "As_Suweida",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hama",
+          "Hassakeh",
+          "Homs"
+        ],
+        "food": [
+          "Beans",
+          "Bulgur",
+          "Cheese",
+          "Chickpeas",
+          "Dates",
+          "Fish",
+          "Lentils",
+          "Meat",
+          "Milk",
+          "Oil",
+          "Rice",
+          "Sugar",
+          "Wheatflour"
+        ]
+      },
+      "factor": 0.8
+    },
+    {
+      "op": "remove",
+      "table": "camps",
+      "where": {
+        "camp": "Idleb"
+      }
+    }
+  ]
+}

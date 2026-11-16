@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","objective":[{"sense":"min","measure":"makespan","scope":{}},{"sense":"min","measure":"goes_first","scope":{"machine":"machine","job":"job","other_job":"other_job"}},{"sense":"min","measure":"start","scope":{"job":"job","step":"step"}}]}

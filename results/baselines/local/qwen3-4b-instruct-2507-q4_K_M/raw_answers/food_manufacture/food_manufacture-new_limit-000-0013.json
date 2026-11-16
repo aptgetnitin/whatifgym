@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[],"rules":[{"name":"storage_sum_may_at_least_1100","measure":"store","scope":{"month":["May"]},"sense":">=","value":1100}]}

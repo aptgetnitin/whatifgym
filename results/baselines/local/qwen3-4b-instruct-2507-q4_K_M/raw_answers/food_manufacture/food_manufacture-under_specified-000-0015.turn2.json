@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"refining_capacity_upper","measure":"consume","scope":{"category":"veg","month":["Jan","Feb","Mar","Apr","May","Jun"]},"sense":"<=","value":200},{"name":"nonveg_refining_capacity_upper","measure":"consume","scope":{"category":"nonveg","month":["Jan","Feb","Mar","Apr","May","Jun"]},"sense":"<=","value":250}]}

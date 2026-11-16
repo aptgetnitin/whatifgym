@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"veg2_min_refined","measure":"consume","scope":{"oil":"VEG2"},"sense":">=","value":1080}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[],"rules":[{"name":"short_time_limit_year_3_1_2","measure":"short_time","scope":{"year":[3,1,2]},"sense":"<=","value":1}]}

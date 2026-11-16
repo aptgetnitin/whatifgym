@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "qamishli_flow_minimum",
+      "measure": "flow",
+      "scope": {
+        "food": "*",
+        "to_city": "Qamishli"
+      },
+      "sense": ">=",
+      "value": 72600
+    },
+    {
+      "name": "idleb_flow_minimum",
+      "measure": "flow",
+      "scope": {
+        "food": "*",
+        "to_city": "Idleb"
+      },
+      "sense": ">=",
+      "value": 72600
+    }
+  ],
+  "note": "The scenario requires at least 72600 units of food per day to be shipped to both Qamishli and Idleb, as flow measures for destination cities are constrained."
+}

@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "at_most_one_start_up",
+      "measure": "start",
+      "scope": {
+        "plant": [
+          "Scherer",
+          "Bowen",
+          "Jack McDonough",
+          "Edwin I Hatch",
+          "Vogtle",
+          "OIL",
+          "BIOMASS",
+          "GAS",
+          "HYDRO",
+          "OTHER COAL"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "gaso_total_output_at_least_32500",
+      "measure": "output",
+      "scope": {
+        "plant": "GAS"
+      },
+      "sense": ">=",
+      "value": 32500
+    }
+  ]
+}

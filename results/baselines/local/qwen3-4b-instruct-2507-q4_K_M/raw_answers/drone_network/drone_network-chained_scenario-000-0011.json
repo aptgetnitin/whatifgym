@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "params",
+      "column": "drone_speed_kmh",
+      "where": {},
+      "factor": 0.5
+    }
+  ]
+}

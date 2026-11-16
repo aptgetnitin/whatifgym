@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "expansion_limit_total",
+      "measure": "expand",
+      "scope": {
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ],
+        "step": [
+          1,
+          2
+        ]
+      },
+      "sense": "<=",
+      "value": 2
+    },
+    {
+      "name": "damaged_transfers_to_birmingham_at_least_40",
+      "measure": "damaged_transfers",
+      "scope": {
+        "to_depot": "Birmingham"
+      },
+      "sense": ">=",
+      "value": 40
+    }
+  ]
+}

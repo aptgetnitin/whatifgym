@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "linked_load_london_bridge_zero_or_min",
+      "measure": "linked_load",
+      "scope": {
+        "location": "700 LONDON BRIDGE RD"
+      },
+      "sense": "=",
+      "value": 0
+    },
+    {
+      "name": "linked_load_london_bridge_at_least_001",
+      "measure": "linked_load",
+      "scope": {
+        "location": "700 LONDON BRIDGE RD"
+      },
+      "sense": ">=",
+      "value": 0.01
+    }
+  ],
+  "note": "The linked load for location 700 LONDON BRIDGE RD must be either zero or at least 0.01 hours, as specified in the question."
+}

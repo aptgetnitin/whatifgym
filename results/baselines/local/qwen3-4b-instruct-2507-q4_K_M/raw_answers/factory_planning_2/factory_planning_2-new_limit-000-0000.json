@@ -1,0 +1,58 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "make",
+      "column": "make",
+      "where": {
+        "product": "Prod7"
+      },
+      "value": 390
+    },
+    {
+      "op": "set",
+      "table": "make",
+      "column": "make",
+      "where": {
+        "product": "Prod1",
+        "product": "Prod2",
+        "product": "Prod3",
+        "product": "Prod4",
+        "product": "Prod5",
+        "product": "Prod6",
+        "product": "Prod7"
+      },
+      "value": 11950
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_make_cap",
+      "measure": "make",
+      "scope": {
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "sense": "<=",
+      "value": 11950
+    },
+    {
+      "name": "prod7_make_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": "<=",
+      "value": 390
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"storage_ratio_veg1_oil1","measure":"store","scope":{"oil":["VEG1","OIL1"],"month":["Jan","Feb","Mar","Apr","May","Jun"]},"sense":"<=","value":0.25}]}

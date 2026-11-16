@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","data_changes":[],"rules":[],"objective":[{"sense":"min","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"note":"An overall cap of 7 applies to the number of thermal units started, summed over everything."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"stock_steam_year2_min","measure":"stock","scope":{"industry":"steel","year":[2]},"sense":">=","value":63,"oneOf":[{"required":["value"],"not":{"required":["relative_to"]}}]}]}

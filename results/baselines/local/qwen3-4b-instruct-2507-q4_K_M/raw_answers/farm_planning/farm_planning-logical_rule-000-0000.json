@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "beet_grown_min_if_sold_heifers_positive",
+      "measure": "grow_beet",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 182,
+      "relative_to": {
+        "measure": "sell_heifers",
+        "scope": {
+          "year": "Year1"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

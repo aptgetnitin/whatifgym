@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_output_00-06_at_least_20_percent",
+      "measure": "output",
+      "scope": {
+        "period": "00-06",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.2,
+      "relative_to": {
+        "measure": "output",
+        "scope": {
+          "period": [
+            "00-06",
+            "06-09",
+            "09-15",
+            "15-18",
+            "18-24"
+          ],
+          "type": [
+            "Thermal0",
+            "Thermal1",
+            "Thermal2"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The thermal output in period 00-06 must be at least 20% of the total thermal output across all periods. This is a relative rule on the sum of output over periods and types."
+}

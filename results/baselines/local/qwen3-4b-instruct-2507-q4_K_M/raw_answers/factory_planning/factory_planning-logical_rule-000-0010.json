@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "prod3_feb_sell_implies_mar_make",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "product": "Prod3",
+            "month": "Feb"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "make",
+          "scope": {
+            "product": "*",
+            "month": "Mar"
+          },
+          "sense": ">=",
+          "value": 800
+        }
+      ]
+    }
+  ],
+  "note": "A logical rule that if sales of Prod3 in Feb are positive, then total production in Mar must be at least 800 units."
+}

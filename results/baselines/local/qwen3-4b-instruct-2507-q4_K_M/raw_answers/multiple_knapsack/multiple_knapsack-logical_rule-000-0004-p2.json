@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "not_both_item1_and_item8_positive",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item1"
+          },
+          "sense": "<=",
+          "value": 0
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item8"
+          },
+          "sense": "<=",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "note": "At least one of item1 or item8 must have zero placements; they cannot both be positively assigned."
+}

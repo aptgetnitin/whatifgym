@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","rules":[{"name":"mine3_work_limit","measure":"operate","scope":{"mine":["Mine3"]},"sense":"<=","value":3}]}

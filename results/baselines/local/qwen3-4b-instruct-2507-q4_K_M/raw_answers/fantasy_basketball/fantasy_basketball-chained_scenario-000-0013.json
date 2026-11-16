@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "players",
+      "column": "predicted_points",
+      "factor": 0.5
+    }
+  ],
+  "note": "A relative drop of 50% in predicted fantasy points is achieved by scaling the predicted_points column by 0.5 across all players."
+}

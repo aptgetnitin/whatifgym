@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 20
+      },
+      "delta": -0.2
+    }
+  ],
+  "note": "A 20% reduction in demand for hour 20 is achieved by shifting the demand_mwh value by -20% at hour 20."
+}

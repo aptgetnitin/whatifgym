@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"cap_output_coal","measure":"production","scope":{"industry":"coal"},"sense":"<=","value":1500}]}

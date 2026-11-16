@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "store",
+      "scope": {
+        "month": [
+          "Jun"
+        ]
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "New priority: as little units in stock as possible, then the maximum profit that allows."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"at_most_5_percent_step2","measure":"end","scope":{"job":["J0","J1","J2","J3","J4","J5"],"step":2},"sense":"<=","value":19.7,"relative_to":{"measure":"end","scope":{"job":["J0","J1","J2","J3","J4","J5"],"step":[1,3,4,5,6]},"factor":0.05}}]}

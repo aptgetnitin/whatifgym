@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "fixed_decisions": [
+    {
+      "measure": "nstart",
+      "scope": {
+        "period": "06-09",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "value": 2
+    }
+  ],
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "reservoir_level",
+      "column": "reservoir_level",
+      "where": {
+        "period": "06-09"
+      },
+      "value": 0
+    }
+  ]
+}

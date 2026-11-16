@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "loerrach_start_time_constraint",
+      "measure": "start_time",
+      "scope": {
+        "location": "Loerrach"
+      },
+      "sense": ">=",
+      "value": 720
+    },
+    {
+      "name": "loerrach_start_time_zero_or_positive",
+      "measure": "start_time",
+      "scope": {
+        "location": "Loerrach"
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ],
+  "note": "The total service start time for Loerrach must be either exactly zero or at least 720 minutes."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"A321_4_flight_limit","measure":"operate","scope":{"aircraft":"A321#4"},"sense":"<=","value":3}]}

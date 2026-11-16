@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"redundant_year1_at_most_1_5_year2","measure":"redundant","scope":{"year":[1],"skill":["unskilled","semi_skilled","skilled"]},"sense":"<=","value":1.5,"relative_to":{"measure":"redundant","scope":{"year":[2],"skill":["unskilled","semi_skilled","skilled"]}},"factor":1.0}]}

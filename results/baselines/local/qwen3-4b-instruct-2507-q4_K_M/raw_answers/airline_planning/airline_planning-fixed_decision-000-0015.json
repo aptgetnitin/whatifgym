@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","data_changes":[{"op":"set","table":"operate","column":"operate","where":{"aircraft":"A318#4","flight":"3095"},"value":0}]}

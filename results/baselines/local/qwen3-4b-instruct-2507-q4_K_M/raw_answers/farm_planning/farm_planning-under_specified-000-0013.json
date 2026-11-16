@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","data_changes":[{"op":"set","table":"land_groups","column":"beet_yield","where":{"land_group":"Group1"},"value":0}],"note":"An upper limit on sugar beet grown is modeled by setting the yield to zero for a land group, preventing any sugar beet from being grown there."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"meet","scope":{"resource":"*","train":"*","other_train":"*"}}],"note":"Minimizing the number of train pairs sharing a resource at the same time, subject to maintaining the same total delay as the original solution."}

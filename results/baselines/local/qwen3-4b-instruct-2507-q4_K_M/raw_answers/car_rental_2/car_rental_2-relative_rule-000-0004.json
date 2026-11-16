@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "friday_undamaged_stock_limit",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "Friday",
+        "depot": [
+          "Glasgow",
+          "Manchester",
+          "Birmingham",
+          "Plymouth"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "undamaged_stock",
+        "scope": {
+          "day": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "depot": [
+            "Glasgow",
+            "Manchester",
+            "Birmingham",
+            "Plymouth"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Friday's undamaged stock is capped at 5% of the total weekly undamaged stock across all days and depots."
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "prod6_mar_zero_or_high",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "sell",
+          "scope": {
+            "product": "Prod6",
+            "month": "Mar"
+          },
+          "sense": "==",
+          "value": 0
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "product": "Prod6",
+            "month": "Mar"
+          },
+          "sense": ">=",
+          "value": 600
+        }
+      ]
+    }
+  ],
+  "note": "A logical rule ensures that either no units of Prod6 are sold in March, or at least 600 units are sold in March."
+}

@@ -1,0 +1,65 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "oil_ration_minimum",
+      "measure": "ration",
+      "scope": {
+        "food": "Oil",
+        "camp": [
+          "Ar Raqqa",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Idleb",
+          "Jubb_al_Jarrah",
+          "Qamishli"
+        ]
+      },
+      "sense": ">=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "camp": [
+            "Ar Raqqa",
+            "Daraa",
+            "Dayr_Az_Zor",
+            "Hassakeh",
+            "Idleb",
+            "Jubb_al_Jarrah",
+            "Qamishli"
+          ],
+          "food": [
+            "Beans",
+            "Bulgur",
+            "Cheese",
+            "Fish",
+            "Meat",
+            "Corn-soya blend (CSB)",
+            "Dates",
+            "Dried skim milk (enriched) (DSM)",
+            "Milk",
+            "Lentils",
+            "Maize",
+            "Maize meal",
+            "Chickpeas",
+            "Rice",
+            "Sorghum/millet",
+            "Soya-fortified bulgur wheat",
+            "Soya-fortified maize meal",
+            "Soya-fortified sorghum grits",
+            "Soya-fortified wheat flour",
+            "Sugar",
+            "Wheat",
+            "Wheatflour",
+            "WSB"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "At least 25% of the total ration per person must be allocated to oil, relative to the total ration across all foods and camps."
+}

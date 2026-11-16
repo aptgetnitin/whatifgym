@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "rules": [
+    {
+      "name": "queue_load_floor_21_municipal_ctr",
+      "measure": "linked_load",
+      "scope": {
+        "location": "5800 PICKERING ST",
+        "base": "21 MUNICIPAL CTR Fire Station"
+      },
+      "sense": ">=",
+      "value": 0.06
+    }
+  ],
+  "note": "A floor on the queue load linked to an assigned location means a minimum required wait time for a specific incident-base pair, ensuring service reliability at that location-base combination."
+}

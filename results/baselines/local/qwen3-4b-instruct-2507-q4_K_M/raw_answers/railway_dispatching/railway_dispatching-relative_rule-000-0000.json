@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"original"}],"note":"A constraint on the ratio of arrival times between trains C and B is expressed as a relative rule on finish_time, using the finish_time of train B as the reference."}

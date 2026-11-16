@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_goes_first_B",
+      "measure": "goes_first",
+      "scope": {
+        "other_train": "B"
+      },
+      "sense": "<=",
+      "value": 8
+    },
+    {
+      "name": "entry_time_B_at_least_160",
+      "measure": "entry_time",
+      "scope": {
+        "train": "B"
+      },
+      "sense": ">=",
+      "value": 160
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

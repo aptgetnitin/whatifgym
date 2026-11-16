@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "idleb_at_least_twice_daraa",
+      "measure": "ration",
+      "scope": {
+        "food": "any",
+        "camp": "Idleb"
+      },
+      "sense": ">=",
+      "value": 2,
+      "relative_to": {
+        "measure": "ration",
+        "scope": {
+          "food": "any",
+          "camp": "Daraa"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

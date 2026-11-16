@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"single_machine_scheduling","data_changes":[],"rules":[],"objective":[{"sense":"min","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"note":"A start time of 213800 or later for job_14 is queried as a feasibility condition on the start_time[job_14] decision variable."}

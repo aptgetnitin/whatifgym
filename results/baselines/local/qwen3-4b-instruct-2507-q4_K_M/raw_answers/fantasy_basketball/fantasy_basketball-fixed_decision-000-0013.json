@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set","table":"players","column":"position","where":{"player":"Shaun Livingston"},"value":"PG"}],"objective":[{"sense":"max","measure":"pick","scope":{"player":"Shaun Livingston"}}],"fixed_decisions":[{"measure":"pick","scope":{"player":"Shaun Livingston"},"value":1}]}

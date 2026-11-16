@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "on"
+    }
+  ],
+  "note": "The objective is restructured to first minimize total cost (original objective), then minimize total plant-hours on, in lexicographic order."
+}

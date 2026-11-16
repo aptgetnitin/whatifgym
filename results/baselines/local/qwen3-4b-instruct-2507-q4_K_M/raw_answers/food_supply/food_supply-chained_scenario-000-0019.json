@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_purchase_total",
+      "measure": "purchase",
+      "scope": {},
+      "sense": "<=",
+      "value": 291950
+    },
+    {
+      "name": "cap_flow_total",
+      "measure": "flow",
+      "scope": {},
+      "sense": "<=",
+      "value": 86800
+    }
+  ],
+  "note": "An overall cap is applied to the total food purchased and shipped, in units of 100 g per day."
+}

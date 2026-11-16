@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[],"rules":[],"objective":[{"sense":"min","measure":"original"}],"fixed_decisions":[{"measure":"lateness","scope":{"customer":"Customer5"},"value":130}],"relax":[],"logic":[],"note":"Fix the lateness for Customer5 to exactly 130 minutes and re-optimize the rest of the plan."}

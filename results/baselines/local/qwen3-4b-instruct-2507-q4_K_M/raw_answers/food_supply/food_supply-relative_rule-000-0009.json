@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_flow_at_most_60_percent_of_oil_flow",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat",
+        "from_city": "*",
+        "to_city": "*"
+      },
+      "sense": "<=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "food": "Oil",
+          "from_city": "*",
+          "to_city": "*"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

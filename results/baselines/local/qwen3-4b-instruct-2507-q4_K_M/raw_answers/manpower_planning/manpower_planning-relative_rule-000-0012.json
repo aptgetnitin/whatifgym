@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","logic":[{"name":"semi_skilled_overmanned_at_least_half_unskilled","at_least":1,"of":[{"measure":"overmanned","scope":{"skill":"semi_skilled"},"sense":">=","value":0.5},{"measure":"overmanned","scope":{"skill":"unskilled"},"sense":">=","value":0}]}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","logic":[{"name":"at_least_18_pairs_for_J1","at_least":18,"of":[{"measure":"goes_first","scope":{"job":"J1","other_job":["J0","J2","J3","J4","J5"],"machine":["M0","M1","M2","M3","M4","M5"]},"sense":">=","value":0}]}]}

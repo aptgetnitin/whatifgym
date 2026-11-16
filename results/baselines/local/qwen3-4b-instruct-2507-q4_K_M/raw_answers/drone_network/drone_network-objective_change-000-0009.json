@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "linked_load",
+      "scope": {
+        "location": "2400 LAUREL COVE DR"
+      }
+    }
+  ],
+  "note": "First optimise the original objective to ensure response time is minimal, then maximise the queue load for the specified incident location under the assignment constraint."
+}

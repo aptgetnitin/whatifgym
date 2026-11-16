@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [],
+  "rules": [],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "lateness",
+      "scope": {
+        "customer": "Customer5"
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "assign",
+      "scope": {
+        "customer": "Customer6",
+        "technician": "Bob"
+      }
+    }
+  ],
+  "fixed_decisions": [
+    {
+      "measure": "assign",
+      "scope": {
+        "customer": "Customer6",
+        "technician": "Bob"
+      },
+      "value": 1
+    }
+  ],
+  "relax": [],
+  "logic": []
+}

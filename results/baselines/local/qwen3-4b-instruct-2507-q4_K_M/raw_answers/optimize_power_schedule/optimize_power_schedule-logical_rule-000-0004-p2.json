@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","data_changes":[{"op":"set","table":"output","column":"output","where":{"plant":"OTHER COAL","hour":14},"value":0},{"op":"rule","measure":"output","scope":{"plant":"OTHER COAL","hour":14},"sense":">=","value":3250}]}

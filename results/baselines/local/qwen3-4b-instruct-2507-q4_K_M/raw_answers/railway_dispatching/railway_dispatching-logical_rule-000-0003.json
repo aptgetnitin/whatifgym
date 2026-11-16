@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"entry_time_d_resource1_delay_constraint","measure":"finish_time","scope":{"train":"D"},"sense":">=","value":18}]}

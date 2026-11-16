@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","data_changes":[{"op":"set","table":"plants","column":"must_run","where":{"plant":"OTHER COAL"},"value":0}],"fixed_decisions":[{"measure":"on","scope":{"plant":"OTHER COAL"},"value":0}],"relax":[{"constraint":"must_run","scope":{"plant":"OTHER COAL"}}]}

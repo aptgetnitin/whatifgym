@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "fixed_decisions": [
+    {
+      "measure": "lateness",
+      "scope": {
+        "customer": "Customer5"
+      },
+      "value": 130
+    },
+    {
+      "measure": "unfilled",
+      "scope": {
+        "customer": "Customer6"
+      },
+      "value": 1
+    }
+  ],
+  "note": "Customer5's lateness is fixed at 130 minutes; Customer6 has one unfilled job; the rest of the model is optimised accordingly."
+}

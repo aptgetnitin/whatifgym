@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "job_types",
+      "column": "duration_min",
+      "where": {
+        "job_type": [
+          "Equipment Installation",
+          "Equipment Setup",
+          "Inspect/Service Equipment",
+          "Repair - Regular",
+          "Repair - Important",
+          "Repair - Urgent",
+          "Repair - Critical"
+        ]
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Every job duration in the job_types table is reduced by 25% through a scale operation on the duration_min column across all job types."
+}

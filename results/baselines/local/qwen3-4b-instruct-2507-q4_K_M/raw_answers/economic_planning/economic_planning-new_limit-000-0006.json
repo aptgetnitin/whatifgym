@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"stock_transport_limit","measure":"stock","scope":{"industry":["transport"]},"sense":"<=","value":39}]}

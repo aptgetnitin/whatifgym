@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "trains",
+      "column": "ready_time",
+      "where": {
+        "train": "F"
+      },
+      "value": 31
+    }
+  ],
+  "note": "Limit the arrival time at destination of train F to at most 31 minutes by setting its ready_time to 31, which constrains its entry time into the final resource and thus its finish time."
+}

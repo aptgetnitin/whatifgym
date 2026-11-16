@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"single_machine_scheduling","data_changes":[],"rules":[],"objective":[{"sense":"min","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"note":"A cap on end time means a hard upper bound on the sum of end times for a subset of jobs."}

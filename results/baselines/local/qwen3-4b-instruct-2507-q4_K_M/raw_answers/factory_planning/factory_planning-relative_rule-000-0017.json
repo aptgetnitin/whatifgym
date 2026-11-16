@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"stock_at_least_60_percent_of_make","measure":"store","scope":{"product":"*"},"sense":">=","relative_to":{"measure":"make","scope":{"product":"*"}},"factor":0.6}]}

@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "total_meet_pairs_cap",
+      "measure": "meet",
+      "scope": {
+        "resource": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "sense": "<=",
+      "value": 4
+    },
+    {
+      "name": "entry_time_sum_at_resource_0",
+      "measure": "entry_time",
+      "scope": {
+        "resource": "0"
+      },
+      "sense": ">=",
+      "value": 114
+    }
+  ]
+}

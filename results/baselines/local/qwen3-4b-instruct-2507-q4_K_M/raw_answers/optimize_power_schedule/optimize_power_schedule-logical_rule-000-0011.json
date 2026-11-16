@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","data_changes":[],"rules":[{"name":"at_most_two_plants_on","measure":"on","scope":{"plant":["Edwin I Hatch","OTHER COAL","GAS"]},"sense":"<=","value":2}]}

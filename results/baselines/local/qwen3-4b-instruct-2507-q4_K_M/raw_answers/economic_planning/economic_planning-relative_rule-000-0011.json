@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","logic":[{"name":"stock_at_least_twice_capacity","at_least":1,"of":[{"measure":"stock","scope":{"year":[1,2,3,4,5]},"sense":">=","value":2},{"measure":"extra_capacity","scope":{"year":[3,4,5]},"sense":">=","value":0.5}]}]}

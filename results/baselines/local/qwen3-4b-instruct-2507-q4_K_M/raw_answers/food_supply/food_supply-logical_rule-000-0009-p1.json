@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "at_most_one_food_positive",
+      "measure": "purchase",
+      "scope": {
+        "food": [
+          "Maize meal",
+          "Oil",
+          "Milk"
+        ]
+      },
+      "sense": "<=",
+      "value": 1
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","data_changes":[],"rules":[{"name":"repairs_manchester_saturday","measure":"repairs","scope":{"day":"Saturday","depot":"Manchester"},"sense":"==","value":66}],"objective":[{"sense":"max","measure":"original"}],"note":"A fixed repair target at a specific depot and day is set as a rule on the repairs decision variable."}

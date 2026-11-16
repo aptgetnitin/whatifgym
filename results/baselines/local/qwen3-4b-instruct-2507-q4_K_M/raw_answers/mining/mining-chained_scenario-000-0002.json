@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "remove",
+      "table": "mines",
+      "where": {
+        "mine": "Mine3"
+      }
+    }
+  ],
+  "note": "Mine3 is removed entirely from the mining operations, eliminating its royalty, capacity, and grade. The model re-plans with only the remaining mines."
+}

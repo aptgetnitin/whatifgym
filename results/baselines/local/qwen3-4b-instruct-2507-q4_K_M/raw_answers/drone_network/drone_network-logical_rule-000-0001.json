@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "logic": [
+    {
+      "name": "queue_load_requirement",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "linked_load",
+          "scope": {
+            "location": "500 PINE TOPS CT",
+            "base": "800 VIRGINIA BEACH BLVD Fire Station"
+          },
+          "sense": ">=",
+          "value": 0.02
+        },
+        {
+          "measure": "queue_load",
+          "scope": {
+            "base": "5145 RURITAN COURT Rescue Squad"
+          },
+          "sense": ">=",
+          "value": 0.02
+        }
+      ]
+    }
+  ]
+}

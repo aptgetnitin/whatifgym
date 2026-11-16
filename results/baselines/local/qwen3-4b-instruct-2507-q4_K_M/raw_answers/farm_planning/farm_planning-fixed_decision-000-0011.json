@@ -1,0 +1,101 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "land_groups",
+      "column": "grain_yield",
+      "where": {
+        "land_group": "Group1"
+      },
+      "value": 1.3
+    },
+    {
+      "op": "remove",
+      "table": "land_groups",
+      "where": {
+        "land_group": "Group2"
+      }
+    },
+    {
+      "op": "add",
+      "table": "land_groups",
+      "rows": [
+        {
+          "land_group": "Group5",
+          "area": 25,
+          "grain_yield": 1.0
+        }
+      ]
+    },
+    {
+      "op": "shift",
+      "table": "land_groups",
+      "column": "grain_yield",
+      "where": {
+        "land_group": "Group1"
+      },
+      "delta": -0.2
+    }
+  ],
+  "rules": [
+    {
+      "name": "grain_yield_group1",
+      "measure": "grow_grain",
+      "scope": {
+        "year": "Year2",
+        "land_group": "Group1"
+      },
+      "sense": "=",
+      "value": 5.5
+    },
+    {
+      "name": "grain_yield_group2",
+      "measure": "grow_grain",
+      "scope": {
+        "year": "Year2",
+        "land_group": "Group2"
+      },
+      "sense": "=",
+      "value": 5.5
+    },
+    {
+      "name": "grain_yield_group3",
+      "measure": "grow_grain",
+      "scope": {
+        "year": "Year2",
+        "land_group": "Group3"
+      },
+      "sense": "=",
+      "value": 5.5
+    },
+    {
+      "name": "grain_yield_group4",
+      "measure": "grow_grain",
+      "scope": {
+        "year": "Year2",
+        "land_group": "Group4"
+      },
+      "sense": "=",
+      "value": 5.5
+    },
+    {
+      "name": "grain_yield_group5",
+      "measure": "grow_grain",
+      "scope": {
+        "year": "Year2",
+        "land_group": "Group5"
+      },
+      "sense": "=",
+      "value": 5.5
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "Year2 gets exactly 5.5 tons of grain grown in each land group, including the new Group5. The grain yield of Group1 is adjusted to 1.3, Group2 is removed, and 25 acres are added to Group5 with a yield of 1.0. The rest of the model is optimised accordingly."
+}

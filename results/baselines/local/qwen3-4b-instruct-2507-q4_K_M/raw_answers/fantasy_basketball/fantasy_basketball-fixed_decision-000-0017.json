@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set","table":"players","column":"pick","where":{"player":"J.R. Smith"},"value":1}],"objective":[{"sense":"max","measure":"pick","scope":{"player":["J.R. Smith"]}}],"note":"Set the pick of J.R. Smith to 1 and optimise the rest of the line-up."}

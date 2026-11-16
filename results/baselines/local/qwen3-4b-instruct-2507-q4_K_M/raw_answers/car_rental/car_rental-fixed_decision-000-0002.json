@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","fixed_decisions":[{"measure":"damaged_stock","scope":{"day":"Monday","depot":"Plymouth"},"value":0}]}

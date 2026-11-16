@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "years",
+      "column": "quality_target",
+      "where": {
+        "year": "Year4"
+      },
+      "value": 1.2
+    }
+  ],
+  "note": "The blended ore quality target for Year4 is set to 1.2, matching the original target as specified in the base model."
+}

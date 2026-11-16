@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","objective":[{"sense":"min","measure":"makespan"}],"note":"The total number of job pairs where the job goes first on the machine is minimized first, then makespan is minimized among those plans."}

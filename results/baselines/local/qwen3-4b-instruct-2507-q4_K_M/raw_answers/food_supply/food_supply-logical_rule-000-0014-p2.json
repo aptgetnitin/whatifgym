@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "purchase_limit_three_suppliers",
+      "measure": "purchase",
+      "scope": {
+        "supplier": [
+          "Daraa",
+          "Hassakeh",
+          "Aleppo",
+          "Gaziantep",
+          "Amman"
+        ]
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "at_most_three_positive_purchases",
+      "measure": "purchase",
+      "scope": {
+        "supplier": [
+          "Daraa",
+          "Hassakeh",
+          "Aleppo",
+          "Gaziantep",
+          "Amman"
+        ]
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ],
+  "note": "Only three of the five specified suppliers may have positive food purchases; the rule enforces that at most three suppliers have non-zero purchases, with each purchase being non-negative."
+}

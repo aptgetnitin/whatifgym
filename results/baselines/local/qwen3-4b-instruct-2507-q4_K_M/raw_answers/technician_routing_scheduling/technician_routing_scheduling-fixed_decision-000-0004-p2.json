@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "fixed_decisions": [
+    {
+      "measure": "assign",
+      "scope": {
+        "customer": "Customer5",
+        "technician": "Ed"
+      },
+      "value": 1
+    },
+    {
+      "measure": "lateness",
+      "scope": {
+        "customer": "Customer5"
+      },
+      "value": 210
+    }
+  ],
+  "note": "Customer5 is fixed to be assigned to Ed and has a lateness of 210 minutes; all other decisions are optimised accordingly."
+}

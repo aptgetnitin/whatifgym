@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"name":"at_most_two_locations","measure":"start_time","scope":{"location":["Buehl","Karlsruhe","Lahr/Schwarzwald","Loerrach"]},"sense":"<=","value":2}]}

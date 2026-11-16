@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"at_most_one_nonzero_production","measure":"produce","scope":{"month":["Jun","Feb","Apr","May","Mar"]},"sense":"==","value":1}]}

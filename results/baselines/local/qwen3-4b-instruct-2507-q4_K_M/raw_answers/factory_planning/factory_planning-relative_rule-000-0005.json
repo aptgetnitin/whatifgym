@@ -1,0 +1,69 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "feb_sales_at_most_60_percent_of_jan",
+      "measure": "sell",
+      "scope": {
+        "month": "Feb"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": "Jan"
+        }
+      },
+      "factor": 0.6
+    },
+    {
+      "name": "total_sales_at_most_75_percent_of_total_stock",
+      "measure": "sell",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ],
+          "product": [
+            "Prod1",
+            "Prod2",
+            "Prod3",
+            "Prod4",
+            "Prod5",
+            "Prod6",
+            "Prod7"
+          ]
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "Two relative limits are specified: sales in February are at most 60% of sales in January, and total sales are at most 75% of total stock across all months and products."
+}

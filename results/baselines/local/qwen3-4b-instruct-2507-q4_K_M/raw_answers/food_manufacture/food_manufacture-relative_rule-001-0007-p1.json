@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[],"rules":[{"name":"feb_buy_share","measure":"buy","scope":{"month":["Feb"],"oil":["VEG1","VEG2","OIL1","OIL2","OIL3"]},"sense":">=","value":0.4,"relative_to":{"measure":"buy","scope":{"month":["Jan","Feb","Mar","Apr","May","Jun"],"oil":["VEG1","VEG2","OIL1","OIL2","OIL3"]}},"factor":1.0}]}

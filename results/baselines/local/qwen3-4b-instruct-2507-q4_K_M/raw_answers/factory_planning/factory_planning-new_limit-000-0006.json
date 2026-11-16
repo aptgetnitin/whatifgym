@@ -1,0 +1,57 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_inventory",
+      "value": 550
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_stock_horizon",
+      "measure": "store",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "sense": "<=",
+      "value": 550
+    },
+    {
+      "name": "stock_end_feb",
+      "measure": "store",
+      "scope": {
+        "month": "Feb",
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "sense": "<=",
+      "value": 240
+    }
+  ],
+  "note": "The total unit-months of stock over the horizon is bounded by 550, and total stock at the end of February across all products is capped at 240 units."
+}

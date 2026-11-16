@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"set","table":"ration","column":"ration","where":{"food":"Oil","camp":"*"},"value":6.7}]}

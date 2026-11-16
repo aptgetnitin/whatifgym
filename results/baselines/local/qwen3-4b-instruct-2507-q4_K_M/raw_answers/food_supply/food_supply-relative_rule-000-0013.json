@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "total_purchase_at_most_half_of_flow",
+      "measure": "purchase",
+      "scope": {
+        "food": "all"
+      },
+      "sense": "<=",
+      "value": 0.5,
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "food": "all"
+        }
+      }
+    },
+    {
+      "name": "csb_purchase_at_least_1_5_times_milk_purchase",
+      "measure": "purchase",
+      "scope": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "purchase",
+        "scope": {
+          "food": "Milk"
+        },
+        "factor": 1.5
+      }
+    }
+  ]
+}

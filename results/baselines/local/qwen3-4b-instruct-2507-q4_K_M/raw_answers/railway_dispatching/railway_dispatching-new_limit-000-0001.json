@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","logic":[{"name":"at_least_1_of","at_least":1,"of":[{"measure":"meet","scope":{"resource":"*","train":"D","other_train":"*"},"sense":">=","value":1},{"measure":"meet","scope":{"resource":"*","train":"D","other_train":"*"},"sense":"<=","value":1}]}]}

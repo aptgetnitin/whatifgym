@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "camps",
+      "column": "beneficiaries",
+      "where": {
+        "camp": "Hassakeh"
+      },
+      "delta": 1
+    }
+  ],
+  "note": "A change in the number of beneficiaries for Hassakeh is modeled as a shift in the beneficiaries column of the camps table for the Hassakeh camp."
+}

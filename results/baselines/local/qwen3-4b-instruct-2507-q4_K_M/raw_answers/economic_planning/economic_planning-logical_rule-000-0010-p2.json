@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[],"rules":[{"name":"coal_capacity_min_year5","measure":"extra_capacity","scope":{"year":[5],"industry":"coal"},"sense":">=","value":1180}],"note":"Any output held in stock for year 1 obliges the total capacity built for year 5, industry coal to be at least 1180."}

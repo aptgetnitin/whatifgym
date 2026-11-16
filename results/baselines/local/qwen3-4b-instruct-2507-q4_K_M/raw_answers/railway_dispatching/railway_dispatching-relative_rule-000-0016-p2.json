@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"entry_time_resource_2_limit","measure":"entry_time","scope":{"resource":["2"]},"sense":"<=","value":10.0,"relative_to":{"measure":"entry_time","scope":{"resource":["2"]}},"factor":1.0}]}

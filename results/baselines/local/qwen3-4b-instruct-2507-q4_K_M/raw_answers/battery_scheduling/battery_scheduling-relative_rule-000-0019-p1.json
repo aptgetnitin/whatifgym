@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","logic":[{"name":"at_least_75_of_discharge","at_least":1,"of":[{"measure":"discharge","scope":{"hour":["21-22"]},"sense":">=","value":0.75},{"measure":"discharge","scope":{"hour":["21-22"]},"sense":"==","value":0.75}]}]}

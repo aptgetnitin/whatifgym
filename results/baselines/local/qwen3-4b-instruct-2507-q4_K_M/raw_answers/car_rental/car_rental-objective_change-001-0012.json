@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","objective":[{"sense":"max","measure":"original"}],"rules":[{"name":"max_profit","measure":"rentals","scope":{"day":"Monday","depot":"Glasgow"},"sense":"==","value":100}]}

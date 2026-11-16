@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set_param",
+      "name": "max_inventory",
+      "value": 700
+    },
+    {
+      "op": "set_param",
+      "name": "max_inventory",
+      "value": 700
+    }
+  ],
+  "rules": [
+    {
+      "name": "prod6_make_cap",
+      "measure": "make",
+      "scope": {
+        "product": "Prod6"
+      },
+      "sense": "<=",
+      "value": 1200
+    }
+  ]
+}

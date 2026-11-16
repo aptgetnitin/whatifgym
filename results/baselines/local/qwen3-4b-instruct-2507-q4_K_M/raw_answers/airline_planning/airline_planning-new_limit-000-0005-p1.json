@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","data_changes":[],"rules":[{"name":"total_flights_limit","measure":"operate","scope":{"flight":["flight"]},"sense":"<=","value":31}],"objective":[{"sense":"min","measure":"original"}],"note":"A total flight operation limit is enforced on all flights by capping the sum of operated flights at 31."}

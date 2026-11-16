@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "at_least_75_percent_to_prod1",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod1"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": [
+            "Prod1",
+            "Prod2",
+            "Prod3",
+            "Prod4",
+            "Prod5",
+            "Prod6",
+            "Prod7"
+          ]
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "At least 75% of total sales must be allocated to Prod1, expressed as a relative rule over all products."
+}

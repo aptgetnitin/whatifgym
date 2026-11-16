@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","relax":[{"constraint":"max_operating","scope":{"year":"year"}},{"constraint":"stay_closed","scope":{"mine":"mine","year":"year"}}]}

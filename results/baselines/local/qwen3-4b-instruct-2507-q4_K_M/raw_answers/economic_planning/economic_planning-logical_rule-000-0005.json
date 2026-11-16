@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[],"rules":[{"name":"output_non_zero","measure":"production","scope":{"year":[6,5,2,3]},"sense":"==","value":0}],"objective":[{"sense":"max","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"note":"Only years 6, 5, 2, and 3 are allowed to have non-zero production; all others must be zero."}

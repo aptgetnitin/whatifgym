@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[],"rules":[],"objective":[{"sense":"max","measure":"original"}],"fixed_decisions":[{"measure":"stock","scope":{"year":[5],"industry":["coal","steel","transport"]},"value":260}],"relax":[],"logic":[],"note":"Fix stock in year 5 to 260 million USD for each industry."}

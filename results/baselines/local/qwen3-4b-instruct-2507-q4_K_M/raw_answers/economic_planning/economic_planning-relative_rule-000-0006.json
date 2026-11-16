@@ -1,0 +1,60 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "rules": [
+    {
+      "name": "stock_at_most_75_percent_of_capacity_built",
+      "measure": "stock",
+      "scope": {
+        "year": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "industry": [
+          "coal",
+          "steel",
+          "transport"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "extra_capacity",
+        "scope": {
+          "year": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "industry": [
+            "coal",
+            "steel",
+            "transport"
+          ]
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "year3_capacity_at_least_60_percent_of_year5",
+      "measure": "extra_capacity",
+      "scope": {
+        "year": "3",
+        "industry": "coal"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "extra_capacity",
+        "scope": {
+          "year": "5",
+          "industry": "coal"
+        }
+      },
+      "factor": 0.6
+    }
+  ]
+}

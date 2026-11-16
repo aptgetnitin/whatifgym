@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","data_changes":[],"rules":[{"name":"grain_grown_year3_group1","measure":"grow_grain","scope":{"year":"Year3","land_group":"Group1"},"sense":">=","value":110}],"note":"A rule sets a minimum sum of grain grown in Year3 on Group1 to 110 tons."}

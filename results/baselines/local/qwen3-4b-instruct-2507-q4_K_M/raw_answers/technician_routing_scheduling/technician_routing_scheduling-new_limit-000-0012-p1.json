@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "start_time_mannheim_limit",
+      "measure": "start_time",
+      "scope": {
+        "location": "Mannheim"
+      },
+      "sense": "<=",
+      "value": 19
+    },
+    {
+      "name": "max_technicians_dispatched",
+      "measure": "use",
+      "scope": {},
+      "sense": "<=",
+      "value": 2
+    }
+  ]
+}

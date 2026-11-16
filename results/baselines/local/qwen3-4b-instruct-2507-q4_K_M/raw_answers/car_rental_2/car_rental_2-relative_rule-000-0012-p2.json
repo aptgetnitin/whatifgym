@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_left_tuesday_saturday",
+      "measure": "undamaged_left",
+      "scope": {
+        "day": "Saturday",
+        "depot": "any"
+      },
+      "sense": "<=",
+      "value": 1.0,
+      "relative_to": {
+        "measure": "undamaged_left",
+        "scope": {
+          "day": "Tuesday",
+          "depot": "any"
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "undamaged_transfers_thursday_share",
+      "measure": "undamaged_transfers",
+      "scope": {
+        "day": "Thursday",
+        "from_depot": "any",
+        "to_depot": "any"
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "undamaged_transfers",
+        "scope": {
+          "day": "any",
+          "from_depot": "any",
+          "to_depot": "any"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

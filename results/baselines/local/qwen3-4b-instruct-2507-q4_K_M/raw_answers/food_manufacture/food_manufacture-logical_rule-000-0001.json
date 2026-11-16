@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"oil1_storage_minimum","measure":"store","scope":{"oil":"OIL1"},"sense":">=","value":4500}]}

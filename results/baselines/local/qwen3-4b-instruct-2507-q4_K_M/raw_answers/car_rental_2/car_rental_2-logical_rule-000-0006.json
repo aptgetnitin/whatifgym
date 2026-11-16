@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"undamaged_kept_minimum","measure":"undamaged_left","scope":{"day":"Monday","depot":"Glasgow"},"sense":">=","value":290}]}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "stock_may_at_most_75_of_jun",
+      "measure": "store",
+      "scope": {
+        "month": "May"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "Jun"
+        }
+      },
+      "factor": 0.75
+    }
+  ],
+  "note": "A stock ratio constraint between May and June is modeled as a relative rule on the store decision measure."
+}

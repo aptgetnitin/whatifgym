@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "raise_heifers",
+      "scope": {
+        "year": "Year1"
+      }
+    }
+  ],
+  "note": "First, maximise the five-year profit to maintain the original optimum. Then, within that optimal profit scenario, maximise the number of heifer calves raised in Year1."
+}

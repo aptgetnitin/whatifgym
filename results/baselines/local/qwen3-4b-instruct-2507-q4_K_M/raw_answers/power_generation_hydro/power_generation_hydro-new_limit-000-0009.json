@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "hydro_b_startups_at_least_2",
+      "measure": "hydro_start",
+      "scope": {
+        "hydro": "HydroB"
+      },
+      "sense": ">=",
+      "value": 2
+    },
+    {
+      "name": "thermal0_running_at_most_30",
+      "measure": "ngen",
+      "scope": {
+        "period": ["00-06", "06-09", "09-15", "15-18", "18-24"],
+        "type": "Thermal0"
+      },
+      "sense": "<=",
+      "value": 30
+    }
+  ]
+}

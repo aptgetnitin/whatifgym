@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "thermal_types",
+      "column": "cost_per_mwh_above_min",
+      "where": {
+        "type": "Thermal0"
+      },
+      "factor": 0.75
+    }
+  ],
+  "rules": [
+    {
+      "name": "reserve_margin_011",
+      "measure": "reserve_margin",
+      "sense": "=",
+      "value": 0.11
+    }
+  ],
+  "note": "The reserve margin is set to 0.11 (110% of demand), and the original cost reduction for Thermal0 is retained."
+}

@@ -1,0 +1,60 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "biomass_hours_limit",
+      "measure": "on",
+      "scope": {
+        "plant": "BIOMASS"
+      },
+      "sense": "<=",
+      "value": 0.1,
+      "relative_to": {
+        "measure": "output",
+        "scope": {
+          "plant": [
+            "Scherer",
+            "Bowen",
+            "Jack McDonough",
+            "Edwin I Hatch",
+            "Vogtle",
+            "OIL",
+            "BIOMASS",
+            "GAS",
+            "HYDRO",
+            "OTHER COAL"
+          ],
+          "hour": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The total number of plant-hours on for BIOMASS is capped at 10% of the total plant-hours on across all plants and hours."
+}

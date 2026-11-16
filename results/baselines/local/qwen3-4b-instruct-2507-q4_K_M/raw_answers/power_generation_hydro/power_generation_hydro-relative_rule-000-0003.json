@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","rules":[{"name":"thermal_units_ratio_18_24_to_00_06","measure":"ngen","scope":{"period":"18-24","type":"Thermal0"},"sense":"<=","value":0.6,"relative_to":{"measure":"ngen","scope":{"period":"00-06","type":"Thermal0"}},"factor":1.0}]}

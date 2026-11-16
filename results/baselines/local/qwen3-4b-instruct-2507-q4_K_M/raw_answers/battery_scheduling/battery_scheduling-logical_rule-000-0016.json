@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","rules":[{"name":"discharge_2122_at_least_27_in_1920","measure":"discharge","scope":{"hour":"21-22"},"sense":">=","value":0,"relative_to":{"measure":"discharge","scope":{"hour":"19-20"},"factor":2.7}}]}

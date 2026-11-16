@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"repair_limit","measure":"repairs","scope":{"day":"*","depot":"*"},"sense":"<=","value":500,"relative_to":{"measure":"damaged_stock","scope":{"day":"*","depot":"*"}},"factor":0.5}]}

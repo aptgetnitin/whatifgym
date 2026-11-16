@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"at_most_three_non_zero_years","measure":"production","scope":{"year":[2,6,5,4,3]},"sense":"<=","value":3}]}

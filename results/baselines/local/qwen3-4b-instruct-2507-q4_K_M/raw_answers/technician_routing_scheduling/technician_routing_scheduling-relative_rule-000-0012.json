@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "flor_at_least_75_of_dispatched",
+      "measure": "use",
+      "scope": {
+        "technician": "Flor"
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "use",
+        "scope": {}
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "total_assigned_at_most_75_of_unfilled",
+      "measure": "assign",
+      "scope": {},
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "unfilled",
+        "scope": {}
+      },
+      "factor": 1.0
+    }
+  ]
+}

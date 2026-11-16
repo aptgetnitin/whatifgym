@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[],"rules":[{"name":"cap_downgrade_skilled","measure":"downgrade","scope":{"from_skill":"skilled"},"sense":"<=","value":104}],"objective":[{"sense":"min","measure":"original"}],"fixed_decisions":[],"relax":[],"logic":[],"note":"Corrected the downgrade limit from 80 to 104 for workers from skilled level."}

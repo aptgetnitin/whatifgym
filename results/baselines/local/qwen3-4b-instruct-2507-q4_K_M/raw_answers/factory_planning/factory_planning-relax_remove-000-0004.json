@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","relax":[{"constraint":"capacity","scope":{"month":["Jan","Feb","Mar","Apr","May","Jun"],"machine":["grinder","vertDrill","horiDrill","borer","planer"]}}]}

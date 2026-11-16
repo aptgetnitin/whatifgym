@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[],"rules":[{"name":"blend_year1_at_least_twice_year4","measure":"blend","scope":{"year":["Year1"]},"sense":">=","value":2,"relative_to":{"measure":"blend","scope":{"year":["Year4"]}},"factor":1.0}]}

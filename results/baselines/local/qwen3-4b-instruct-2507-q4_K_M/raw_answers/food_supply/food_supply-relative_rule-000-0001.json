@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "daraa_destination_share",
+      "measure": "flow",
+      "scope": {
+        "to_city": "Daraa"
+      },
+      "sense": ">=",
+      "value": 0.1,
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "to_city": [
+            "Aleppo",
+            "Amman",
+            "Ar Raqqa",
+            "As_Suweida",
+            "Beirut",
+            "Damascus",
+            "Dayr_Az_Zor",
+            "Gaziantep",
+            "Hama",
+            "Hassakeh",
+            "Homs",
+            "Idleb",
+            "Jubb_al_Jarrah",
+            "Qamishli"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The rule ensures that shipments to Daraa are at least 10% of total food shipments to all destination cities."
+}

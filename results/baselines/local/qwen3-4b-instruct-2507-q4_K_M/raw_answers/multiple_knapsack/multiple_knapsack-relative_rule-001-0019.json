@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "item4_at_least_60_percent",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item4"
+          },
+          "sense": ">=",
+          "value": 0.6
+        },
+        {
+          "measure": "x",
+          "scope": {
+            "item": [
+              "item0",
+              "item1",
+              "item2",
+              "item3",
+              "item4",
+              "item5",
+              "item6",
+              "item7",
+              "item8",
+              "item9",
+              "item10",
+              "item11",
+              "item12",
+              "item13",
+              "item14"
+            ]
+          },
+          "sense": "==",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "note": "The total number of item placements is the sum of x over all items; item4 must be at least 60% of that sum."
+}

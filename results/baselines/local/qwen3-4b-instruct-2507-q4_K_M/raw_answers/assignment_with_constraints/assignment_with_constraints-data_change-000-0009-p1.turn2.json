@@ -1,0 +1,1 @@
+{"ask": "The requested change 'Set the worker works in the team (0/1) entry for team team_0_1 and worker worker_1 to 2' is invalid because the 'works' field in the 'allowed_teams' table is a binary (0/1) value, and setting it to 2 is outside the valid range. The value must be either 0 or 1."}

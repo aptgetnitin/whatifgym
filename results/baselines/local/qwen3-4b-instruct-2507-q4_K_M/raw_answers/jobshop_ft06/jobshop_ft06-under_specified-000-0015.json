@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"cap_job_pairs_goes_first","measure":"goes_first","scope":{"machine":"M0","job":["J0","J1"],"other_job":["J2","J3"]},"sense":"<=","value":10}]}

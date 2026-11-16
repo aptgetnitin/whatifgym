@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","data_changes":[],"rules":[{"name":"coal_capacity_year3_stock_year5","measure":"stock","scope":{"year":"5","industry":"coal"},"sense":">=","value":1190}],"note":"A non-zero capacity built in year 3 for coal requires a minimum stock of 1190 million USD for coal in year 5."}

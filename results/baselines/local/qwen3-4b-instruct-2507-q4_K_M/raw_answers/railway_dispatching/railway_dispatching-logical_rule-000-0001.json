@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"original"}],"note":"A minimum batch constraint on arrival time for train C is expressed as a rule on finish_time for train C, ensuring it is at least 34 minutes."}

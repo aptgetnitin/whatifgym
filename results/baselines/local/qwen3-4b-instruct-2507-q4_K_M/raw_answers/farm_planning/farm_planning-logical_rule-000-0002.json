@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "grain_bought_min_year1",
+      "measure": "buy_grain",
+      "scope": {
+        "year": "Year1"
+      },
+      "sense": ">=",
+      "value": 46
+    }
+  ],
+  "note": "A non-zero grain grown in Year4, Group1 triggers a minimum grain bought in Year1, ensuring sufficient input supply in the first year."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"original"}],"note":"The arrival time at destination for train A must be at least twice that of train E. This is expressed as a constraint on finish_time, which is derived from entry_time and duration along the route."}

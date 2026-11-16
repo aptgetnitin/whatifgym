@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","rules":[{"name":"beet_grown_min_if_grain_grown","measure":"grow_beet","scope":{"year":"Year1"},"sense":">=","value":182,"relative_to":{"measure":"grow_grain","scope":{"year":"Year1","land_group":"Group1"}},"factor":1.0}]}

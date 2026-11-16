@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"stock_prod7_at_least_190","measure":"store","scope":{"product":"Prod7","month":"Jun"},"sense":">=","value":190}]}

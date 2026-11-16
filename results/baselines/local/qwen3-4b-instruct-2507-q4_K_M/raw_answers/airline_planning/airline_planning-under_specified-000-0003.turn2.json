@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"operated_flights_cap","measure":"operate","scope":{"flight":[]},"sense":"<=","value":46}]}

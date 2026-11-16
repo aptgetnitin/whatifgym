@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "purchase",
+      "scope": {
+        "food": "*",
+        "supplier": "*"
+      }
+    },
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "note": "New priority: as little food bought as possible, then the minimum total cost that allows."
+}

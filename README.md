@@ -500,6 +500,30 @@ Complete run of Nov 12 on the current set: all 3,722 template tasks (the paraphr
 | valid scenario | | 72 % | 82 % | 87 % | 96 % |
 | answers the server aborted (repeat limit) | | 23 % | 0 % | 0 % | 0 % |
 
+**One scoreboard, six models** (Nov 15). All 3,722 template tasks, same prompt and scorer. The 4B baseline is now the Instruct build (`qwen3:4b-instruct-2507-q4_K_M`): Ollama's default `qwen3:4b` in the table above is the Thinking build run with thinking off, which repeats itself and understates a 4B model. "Base" and "Trained" are the model of the training sections (the same 4B Instruct model in 4 bits on vLLM, before and after the 160-step run), scored on a pod with `training/score_models.py`; 176 of the tasks are its training tasks.
+
+| Family | Tasks | Qwen3 4B | Qwen3 8B | Qwen3 14B | gpt-oss 20B | Base | Trained |
+|---|---|---|---|---|---|---|---|
+| data_change | 512 | 67 % | 82 % | 76 % | 95 % | 68 % | 80 % |
+| new_limit | 375 | 70 % | 74 % | 91 % | 98 % | 68 % | 82 % |
+| relative_rule | 427 | 10 % | 58 % | 81 % | 91 % | 34 % | 71 % |
+| objective_change | 217 | 46 % | 59 % | 78 % | 91 % | 46 % | 70 % |
+| fixed_decision | 423 | 57 % | 60 % | 90 % | 94 % | 78 % | 86 % |
+| relax_remove | 108 | 55 % | 54 % | 86 % | 98 % | 56 % | 71 % |
+| logical_rule | 381 | 14 % | 25 % | 31 % | 78 % | 16 % | 22 % |
+| infeasible_request | 324 | 43 % | 69 % | 87 % | 93 % | 53 % | 75 % |
+| chained_scenario | 469 | 64 % | 72 % | 78 % | 97 % | 62 % | 70 % |
+| under_specified | 486 | 20 % | 33 % | 42 % | 68 % | 16 % | 16 % |
+| **all 3,722 template tasks** | | **44.1 %** | **59.1 %** | **72.2 %** | **89.4 %** | **49.4 %** | **63.1 %** |
+| 14 held-out base models | 2,078 | 41.4 % | 60.2 % | 74.2 % | 87.9 % | 48.3 % | 61.6 % |
+| 914 paraphrases | | 44.0 % | 62.6 % | 74.4 % | 92.7 % | 52.2 % | 65.1 % |
+| valid scenario | | 68 % | 82 % | 87 % | 96 % | 73 % | 87 % |
+
+- **Training lifts the 4B model past the untrained 8B**: 63.1 % against 59.1 % on all tasks, 61.6 % against 60.2 % on the base models it never trained on (310 tasks gained, 33 lost against its own base).
+- **The gain holds on reworded questions** (52.2 % → 65.1 %) and on `drone_network`, whose prompts were too long for training (49.0 % → 57.8 %).
+- **Not learned:** `logical_rule` (16 % → 22 %) and `under_specified` (16 %; single-turn training never rewards a useful question, and the trained model asks less often).
+- **Serving matters:** the same 4B model scores 44.1 % under Ollama (Q4_K_M) and 49.4 % in 4 bits under vLLM.
+
 **Template wording against the rewrites** (Nov 15, Apple M4 Max, same Ollama settings). Paired on the 457 fully specified test tasks: each model answers the template question and both rewrites of it (914 rewrites, section "Natural-language paraphrases").
 
 | Model | Template | Short rewrite | Formal rewrite | Short: lost / gained (p) | Formal: lost / gained (p) |

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[{"op":"set","table":"params","column":"day_length_min","where":{"day_length_min":0},"value":60}],"note":"A floor on service start time is implemented by setting the minimum day length to 60 minutes, ensuring all service starts are at least 60 minutes from the day start."}

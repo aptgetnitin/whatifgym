@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "flow",
+      "scope": {
+        "food": "Maize meal"
+      }
+    }
+  ],
+  "note": "First, maintain the total cost at its minimum; then minimise the shipment of Maize meal across all links."
+}

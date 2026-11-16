@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "total_purchase_vs_flow",
+      "measure": "purchase",
+      "scope": {
+        "food": "*"
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "food": "*"
+        }
+      }
+    },
+    {
+      "name": "amman_flow_vs_gaziantep_flow",
+      "measure": "flow",
+      "scope": {
+        "from_city": "Amman"
+      },
+      "sense": "<=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "flow",
+        "scope": {
+          "from_city": "Gaziantep"
+        }
+      }
+    }
+  ]
+}

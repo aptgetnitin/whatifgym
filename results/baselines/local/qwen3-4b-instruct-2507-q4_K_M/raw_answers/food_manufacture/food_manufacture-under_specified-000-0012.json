@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"shift","table":"params","column":"initial_stock","where":{"oil":["VEG1","VEG2","OIL1","OIL2","OIL3"]},"delta":0}]}

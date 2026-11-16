@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","data_changes":[{"op":"set","table":"hours","column":"hour","where":{"hour":["22-23","07-08","11-12"]},"value":0}],"note":"Only one of the specified hours may have any stored energy, enforced by setting the stored energy to zero for the other two hours."}

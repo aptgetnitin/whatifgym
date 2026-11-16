@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "jun_sales_limit",
+      "measure": "sell",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": "<=",
+      "value": 0.05,
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "prod3_at_most_25_of_prod1",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod3"
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod1"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The first rule limits total sales in June to 5% of total sales across all months. The second rule caps sales of Prod3 at 25% of sales of Prod1 across all months."
+}

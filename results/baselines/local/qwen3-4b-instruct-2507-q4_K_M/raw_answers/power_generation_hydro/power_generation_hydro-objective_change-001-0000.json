@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "reservoir_level",
+      "scope": {
+        "period": [
+          "00-06",
+          "06-09",
+          "09-15",
+          "15-18",
+          "18-24"
+        ]
+      }
+    }
+  ],
+  "note": "Among all plans that achieve the minimum total generating cost, this selects the one with the least total reservoir level across the day."
+}

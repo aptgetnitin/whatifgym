@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"consume_may_at_least_double_feb","measure":"consume","scope":{"month":["May"],"oil":["VEG1","VEG2","OIL1","OIL2","OIL3"]},"sense":">=","value":0,"relative_to":{"measure":"consume","scope":{"month":["Feb"],"oil":["VEG1","VEG2","OIL1","OIL2","OIL3"]},"factor":2.0}}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[{"op":"scale","table":"params","column":"holding_cost","where":{"}}],":{"holding_cost":0.5}}}]}

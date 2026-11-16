@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "logic": [
+    {
+      "name": "at_least_6_clear_before_E",
+      "at_least": 6,
+      "of": [
+        {
+          "measure": "goes_first",
+          "scope": {
+            "resource": [
+              1,
+              3,
+              5
+            ],
+            "train": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F"
+            ],
+            "other_train": "E"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"name":"max_jobs_assigned","measure":"assign","scope":{"customer":"customer"},"sense":"<=","value":7}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"prod4_prod6_jun_limit","measure":"make","scope":{"product":["Prod4","Prod6"],"month":"Jun"},"sense":"<=","value":450}]}

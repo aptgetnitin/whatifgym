@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"original"}],"note":"Train C's arrival time at destination must be at least twice that of train D. The arrival time is captured by finish_time[train] for each train, and the destination is station 6 for all trains on routes 0-6 or 6-0. Thus, this is a rule on finish_time."}

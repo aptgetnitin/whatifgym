@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","logic":[{"name":"redundancy_ratio_year3_to_year2","at_least":1,"of":[{"measure":"redundant","scope":{"year":["3"],"skill":["unskilled","semi_skilled","skilled"]},"sense":"<=","value":0.6},{"measure":"redundant","scope":{"year":["2"],"skill":["unskilled","semi_skilled","skilled"]},"sense":"==","value":1}]}]}

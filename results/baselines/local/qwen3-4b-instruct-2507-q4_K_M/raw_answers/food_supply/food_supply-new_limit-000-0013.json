@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_flow_minimum",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat"
+      },
+      "sense": ">=",
+      "value": 86400
+    }
+  ]
+}

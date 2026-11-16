@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"step2_end_limit","measure":"end","scope":{"job":"*","step":2},"sense":"<=","value":19.75}]}

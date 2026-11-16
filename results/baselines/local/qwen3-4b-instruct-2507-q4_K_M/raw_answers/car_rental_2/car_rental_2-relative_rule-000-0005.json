@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "undamaged_stock_limit",
+      "measure": "undamaged_stock",
+      "scope": {
+        "day": "any",
+        "depot": "any"
+      },
+      "sense": "<=",
+      "value": 2.0,
+      "relative_to": {
+        "measure": "undamaged_transfers",
+        "scope": {
+          "day": "any",
+          "from_depot": "any",
+          "to_depot": "any"
+        }
+      }
+    },
+    {
+      "name": "friday_repair_share",
+      "measure": "repairs",
+      "scope": {
+        "day": "Friday",
+        "depot": "any"
+      },
+      "sense": ">=",
+      "value": 0.3,
+      "relative_to": {
+        "measure": "repairs",
+        "scope": {
+          "day": "any",
+          "depot": "any"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","objective":[{"sense":"max","measure":"original"}],"fixed_decisions":[],"rules":[],"data_changes":[],"relax":[],"logic":[],"note":"The target of 27000 tons of oil refined in total is achieved by setting the total production across months to 27000 tons, which is equivalent to the sum of the produce[month] over all months."}

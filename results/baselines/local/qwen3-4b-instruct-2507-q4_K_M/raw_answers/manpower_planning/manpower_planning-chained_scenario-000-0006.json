@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_retrain_total",
+      "measure": "retrain",
+      "scope": {},
+      "sense": "<=",
+      "value": 750
+    },
+    {
+      "name": "cap_overmanned_total",
+      "measure": "overmanned",
+      "scope": {},
+      "sense": "<=",
+      "value": 400
+    }
+  ],
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

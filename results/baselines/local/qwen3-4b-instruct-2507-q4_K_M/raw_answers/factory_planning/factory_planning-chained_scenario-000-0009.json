@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "add",
+      "table": "downtime",
+      "rows": [
+        {
+          "month": "Jun",
+          "machine": "vertDrill"
+        }
+      ]
+    }
+  ],
+  "note": "Additional maintenance for a vertical drill in June is added as a new row in the downtime table."
+}

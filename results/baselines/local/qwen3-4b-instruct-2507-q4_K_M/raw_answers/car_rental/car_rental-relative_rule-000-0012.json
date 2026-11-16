@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"friday_rentals_at_most_half_monday","measure":"rentals","scope":{"day":"Friday","depot":["Glasgow","Manchester","Birmingham","Plymouth"]},"sense":"<=","value":50,"relative_to":{"measure":"rentals","scope":{"day":"Monday","depot":["Glasgow","Manchester","Birmingham","Plymouth"]}},"factor":0.5}]}

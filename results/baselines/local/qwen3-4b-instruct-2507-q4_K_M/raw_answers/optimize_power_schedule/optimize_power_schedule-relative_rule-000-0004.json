@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "plant_hours_hour17_at_most_60_of_hour8",
+      "measure": "on",
+      "scope": {
+        "hour": 17
+      },
+      "sense": "<=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "hour": 8
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

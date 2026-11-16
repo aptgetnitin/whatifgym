@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","objective":[{"sense":"min","measure":"end","scope":{"job":["J1"],"step":[1,2,3,4,5,6]}}],"note":"Keep makespan at minimum by not altering any constraints or data; then minimise end times for job J1's operations."}

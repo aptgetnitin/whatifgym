@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "assignment_with_constraints",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "tasks",
+      "column": "size",
+      "factor": 0.75
+    }
+  ],
+  "note": "Task sizes are reduced by 25% across all tasks, as corrected from the original 10% lower request."
+}

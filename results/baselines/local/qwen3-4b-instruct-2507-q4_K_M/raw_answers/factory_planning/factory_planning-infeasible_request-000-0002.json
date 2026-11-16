@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","objective":[{"sense":"max","measure":"original"}],"fixed_decisions":[{"measure":"make","scope":{"product":"Prod1","month":["Jan","Feb","Mar","Apr","May","Jun"]},"value":35800}]}

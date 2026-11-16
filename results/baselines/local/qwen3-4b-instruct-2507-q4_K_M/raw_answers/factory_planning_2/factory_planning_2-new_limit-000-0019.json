@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"prod7_stock_at_least_160","measure":"store","scope":{"product":"Prod7","month":["Jan","Feb","Mar","Apr","May","Jun"]},"sense":">=","value":160},{"name":"jun_make_at_most_2050","measure":"make","scope":{"month":"Jun"},"sense": "<=","value":2050}]}

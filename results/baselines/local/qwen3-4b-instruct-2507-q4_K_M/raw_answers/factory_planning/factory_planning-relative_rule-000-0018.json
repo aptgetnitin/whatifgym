@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "mar_sales_at_least_40%",
+      "measure": "sell",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 0.4
+    },
+    {
+      "name": "jan_stock_at_least_1_5_times_may",
+      "measure": "store",
+      "scope": {
+        "month": "Jan"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": "May"
+        }
+      },
+      "factor": 1.5
+    }
+  ],
+  "note": "Two relative limits: at least 40% of total sales go to March; Jan stock is at least 1.5 times May stock."
+}

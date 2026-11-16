@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[],"rules":[],"objective":[{"sense":"min","measure":"original"}],"fixed_decisions":[{"measure":"overmanned","scope":{"year":2,"skill":"unskilled"},"value":80}],"relax":[],"logic":[],"note":"Fix overmanned workers to 80 for year 2, unskilled level, and minimise redundancies."}

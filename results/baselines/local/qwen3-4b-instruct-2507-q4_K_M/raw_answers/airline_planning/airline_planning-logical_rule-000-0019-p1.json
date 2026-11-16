@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","data_changes":[{"op":"remove","table":"flights","where":{"flight":[4510,3107]}}],"rules":[{"name":"at_most_one_of_4510_3107","measure":"operate","scope":{"flight":[4510,3107]},"sense":"<=","value":1}]}

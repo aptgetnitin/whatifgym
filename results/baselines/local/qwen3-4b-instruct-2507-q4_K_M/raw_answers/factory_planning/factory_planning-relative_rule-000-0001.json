@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "mar_sales_limit",
+      "measure": "sell",
+      "scope": {
+        "month": "Mar"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 0.05
+    }
+  ],
+  "note": "A limit on sales in March as a fraction of total sales across all months is enforced via a relative rule on the sum of sales over the full horizon."
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "total_purchase_at_least_1621950",
+      "measure": "purchase",
+      "scope": {
+        "food": "*"
+      },
+      "sense": ">=",
+      "value": 1621950
+    }
+  ]
+}

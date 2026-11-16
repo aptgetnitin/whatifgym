@@ -1,0 +1,54 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "reservoir_level_15_18_at_least_75pct",
+      "measure": "reservoir_level",
+      "scope": {
+        "period": "15-18"
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "reservoir_level",
+        "scope": {
+          "period": [
+            "00-06",
+            "06-09",
+            "09-15",
+            "15-18",
+            "18-24"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "nstart_00_06_at_most_60pct_of_15_18",
+      "measure": "nstart",
+      "scope": {
+        "period": "00-06",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "nstart",
+        "scope": {
+          "period": "15-18",
+          "type": [
+            "Thermal0",
+            "Thermal1",
+            "Thermal2"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

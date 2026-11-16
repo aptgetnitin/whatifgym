@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_idleb_ration_constraint",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat",
+        "from_city": "Idleb"
+      },
+      "sense": ">=",
+      "value": 86400
+    }
+  ],
+  "note": "The total food shipped for Wheat from Idleb must be at least 86400 units per day if the ration for Wheat in Idleb is above zero."
+}

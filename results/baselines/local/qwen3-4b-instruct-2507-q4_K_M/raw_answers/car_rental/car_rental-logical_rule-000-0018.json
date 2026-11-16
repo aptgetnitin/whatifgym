@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"rentals_min_tuesday_manchester","measure":"rentals","scope":{"day":"Tuesday","depot":"Manchester"},"sense":">=","value":118}]}

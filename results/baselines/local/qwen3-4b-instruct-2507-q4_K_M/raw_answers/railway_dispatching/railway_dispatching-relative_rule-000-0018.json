@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"original"}],"rules":[{"name":"arrival_b_at_most_2_times_d","measure":"finish_time","scope":{"train":["B"]},"sense":"<=","value":2,"relative_to":{"measure":"finish_time","scope":{"train":["D"]}},"factor":2}]}

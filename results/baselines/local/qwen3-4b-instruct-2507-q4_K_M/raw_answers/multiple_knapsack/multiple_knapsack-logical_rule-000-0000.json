@@ -1,0 +1,53 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "at_most_two_non_zero_bins",
+      "at_least": 2,
+      "of": [
+        {
+          "measure": "x[item, bin]",
+          "scope": {
+            "bin": "bin3"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "x[item, bin]",
+          "scope": {
+            "bin": "bin4"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "x[item, bin]",
+          "scope": {
+            "bin": "bin1"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "x[item, bin]",
+          "scope": {
+            "bin": "bin2"
+          },
+          "sense": ">=",
+          "value": 0
+        },
+        {
+          "measure": "x[item, bin]",
+          "scope": {
+            "bin": "bin0"
+          },
+          "sense": ">=",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "note": "At most two of the bins bin3, bin4, bin1, bin2, and bin0 may have non-zero item placements. This is modeled as at least two of the bin-specific placement sums being zero."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[],"rules":[{"name":"at_most_3_non_zero_months","measure":"make","scope":{"month":["Jan","Feb","Apr","Mar","Jun"]},"sense":"<=","value":3}]}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"make_jun_at_most_75_of_mar","measure":"make","scope":{"month":"Jun","product":"*"},"sense":"<=","value":75,"relative_to":{"measure":"make","scope":{"month":"Mar","product":"*"},"factor":100}}]}

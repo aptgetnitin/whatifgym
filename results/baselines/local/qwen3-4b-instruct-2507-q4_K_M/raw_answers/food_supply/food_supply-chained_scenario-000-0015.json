@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "flow_to_daraa_at_least_12050",
+      "measure": "flow",
+      "scope": {
+        "to_city": "Daraa"
+      },
+      "sense": ">=",
+      "value": 12050
+    }
+  ]
+}

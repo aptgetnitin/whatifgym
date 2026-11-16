@@ -1,0 +1,47 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "output",
+      "column": "output",
+      "where": {
+        "plant": "Vogtle",
+        "hour": 6
+      },
+      "value": 45100
+    },
+    {
+      "op": "set",
+      "table": "on",
+      "column": "on",
+      "where": {
+        "plant": "Vogtle",
+        "hour": 6
+      },
+      "value": 1
+    }
+  ],
+  "rules": [
+    {
+      "name": "total_plant_hours_on_hour_6",
+      "measure": "on",
+      "scope": {
+        "hour": 6
+      },
+      "sense": ">=",
+      "value": 9
+    },
+    {
+      "name": "vogtle_total_output_limit",
+      "measure": "output",
+      "scope": {
+        "plant": "Vogtle"
+      },
+      "sense": "<=",
+      "value": 45100
+    }
+  ],
+  "note": "The scenario imposes a minimum of 9 plant-hours on in hour 6 and a total output limit of 45100 MWh for Vogtle across all hours."
+}

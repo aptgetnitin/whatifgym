@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "shut_down_limit_total",
+      "measure": "stop",
+      "scope": {},
+      "sense": "<=",
+      "value": 1
+    },
+    {
+      "name": "gas_output_limit",
+      "measure": "output",
+      "scope": {
+        "plant": "GAS"
+      },
+      "sense": "<=",
+      "value": 14750
+    }
+  ]
+}

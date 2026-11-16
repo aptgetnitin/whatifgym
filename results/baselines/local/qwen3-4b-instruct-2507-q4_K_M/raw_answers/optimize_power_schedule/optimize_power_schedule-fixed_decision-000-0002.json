@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "fixed_decisions": [
+    {
+      "measure": "start",
+      "scope": {
+        "plant": "Bowen",
+        "hour": 4
+      },
+      "value": 1
+    },
+    {
+      "measure": "output",
+      "scope": {
+        "plant": "GAS"
+      },
+      "value": 900
+    }
+  ]
+}

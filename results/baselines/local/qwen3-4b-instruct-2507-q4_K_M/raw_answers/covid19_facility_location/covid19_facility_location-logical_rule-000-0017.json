@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "covid19_facility_location",
+  "rules": [
+    {
+      "name": "c3_e3_assign_zero_or_at_least_600",
+      "measure": "assign",
+      "scope": {
+        "county": "C3",
+        "facility": "E3"
+      },
+      "sense": ">=",
+      "value": 0
+    },
+    {
+      "name": "c3_e3_assign_at_least_600",
+      "measure": "assign",
+      "scope": {
+        "county": "C3",
+        "facility": "E3"
+      },
+      "sense": ">=",
+      "value": 600
+    }
+  ],
+  "note": "The assignment for county C3 to facility E3 must be either zero or at least 600 patients."
+}

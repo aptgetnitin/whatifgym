@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "logic": [
+    {
+      "name": "at_least_50_percent_item13",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "x",
+          "scope": {
+            "item": "item13"
+          },
+          "sense": ">=",
+          "value": 0.5
+        }
+      ]
+    }
+  ],
+  "note": "At least 50% of all item placements must be assigned to item13."
+}

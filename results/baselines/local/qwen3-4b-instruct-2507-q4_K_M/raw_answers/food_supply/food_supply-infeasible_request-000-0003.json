@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "csb_min_ration",
+      "measure": "ration",
+      "scope": {
+        "food": "Corn-soya blend (CSB)"
+      },
+      "sense": ">=",
+      "value": 15
+    },
+    {
+      "name": "dsm_min_ration",
+      "measure": "ration",
+      "scope": {
+        "food": "Dried skim milk (enriched) (DSM)"
+      },
+      "sense": ">=",
+      "value": 1.2
+    }
+  ]
+}

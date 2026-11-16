@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "shut_downs_hour_5_at_least_1",
+      "measure": "stop",
+      "scope": {
+        "hour": 5
+      },
+      "sense": ">=",
+      "value": 1
+    },
+    {
+      "name": "total_plant_hours_on_cap",
+      "measure": "on",
+      "scope": {},
+      "sense": "<=",
+      "value": 107
+    }
+  ]
+}

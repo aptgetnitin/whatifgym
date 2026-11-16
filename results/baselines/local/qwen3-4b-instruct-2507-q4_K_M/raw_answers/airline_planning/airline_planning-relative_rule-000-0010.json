@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"at_least_75_percent_to_A319_11","measure":"operate","scope":{"aircraft":"A319#11"},"sense":"==","value":75,"relative_to":{"measure":"operate","scope":{"aircraft":["A319#11"]}},"factor":0.75}]}

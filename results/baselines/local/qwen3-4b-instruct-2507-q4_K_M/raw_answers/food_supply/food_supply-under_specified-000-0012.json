@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "nutrients",
+      "column": "min_per_person",
+      "where": {
+        "nutrient": "VitaminA(ug)"
+      },
+      "delta": 0.0
+    }
+  ],
+  "note": "A change in the minimum daily intake for a nutrient is modeled by shifting the minimum value in the nutrients table for that nutrient."
+}

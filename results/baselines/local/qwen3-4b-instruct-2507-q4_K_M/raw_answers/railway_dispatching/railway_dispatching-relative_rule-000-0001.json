@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "rules": [
+    {
+      "name": "e_clears_at_least_20_percent",
+      "measure": "goes_first",
+      "scope": {
+        "resource": "resource",
+        "train": "E",
+        "other_train": "train"
+      },
+      "sense": ">=",
+      "value": 0.2,
+      "relative_to": {
+        "measure": "goes_first",
+        "scope": {
+          "resource": "resource",
+          "train": "train"
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "d_meet_pairs_at_least_15_of_b_meet_pairs",
+      "measure": "meet",
+      "scope": {
+        "resource": "resource",
+        "train": "D",
+        "other_train": "train"
+      },
+      "sense": ">=",
+      "value": 1.5,
+      "relative_to": {
+        "measure": "meet",
+        "scope": {
+          "resource": "resource",
+          "train": "B",
+          "other_train": "train"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Two relative limits: E must clear at least 20% of the total train entries on a resource before others; D's shared resource pairs must be at least 1.5 times B's."
+}

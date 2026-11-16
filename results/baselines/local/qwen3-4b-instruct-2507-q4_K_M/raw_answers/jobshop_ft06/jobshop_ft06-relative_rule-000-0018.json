@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"j1_start_share","measure":"start","scope":{"job":"J1"},"sense":">=","value":50,"relative_to":{"measure":"start","scope":{"job":["J0","J1","J2","J3","J4","J5"]}},"factor":0.5}]}

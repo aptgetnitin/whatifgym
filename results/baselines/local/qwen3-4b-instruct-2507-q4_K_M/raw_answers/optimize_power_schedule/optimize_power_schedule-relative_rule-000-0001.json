@@ -1,0 +1,50 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "shut_down_limit_hour_8",
+      "measure": "stop",
+      "scope": {
+        "hour": 8
+      },
+      "sense": "<=",
+      "value": 0.15,
+      "relative_to": {
+        "measure": "stop",
+        "scope": {
+          "plant": [
+            "Scherer",
+            "Bowen",
+            "Jack McDonough",
+            "Edwin I Hatch",
+            "Vogtle",
+            "OIL",
+            "BIOMASS",
+            "GAS",
+            "HYDRO",
+            "OTHER COAL"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "scherer_on_at_least_three_times_biomass",
+      "measure": "on",
+      "scope": {
+        "plant": "Scherer"
+      },
+      "sense": ">=",
+      "value": 3.0,
+      "relative_to": {
+        "measure": "on",
+        "scope": {
+          "plant": "BIOMASS"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Hour 8's shut-downs are capped at 15% of total shut-downs; Scherer's on-hours are at least three times BIOMASS's on-hours."
+}

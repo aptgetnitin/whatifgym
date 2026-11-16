@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"j0_step3_start_positive","measure":"end","scope":{"job":"J0","step":4},"sense":">=","value":57,"relative_to":null,"factor":1.0},{"measure":"start","scope":{"job":"J0","step":3},"sense":">","value":0,"relative_to":null,"factor":1.0}]}

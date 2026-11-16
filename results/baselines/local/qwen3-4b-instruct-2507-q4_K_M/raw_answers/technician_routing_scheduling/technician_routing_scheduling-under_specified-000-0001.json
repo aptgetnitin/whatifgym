@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","objective":[{"sense":"min","measure":"original"}],"note":"A minimum minutes late is not a feasible objective as it would require a penalty to be minimized, but the model already penalizes lateness. Instead, a constraint on total lateness can be added as a rule."}

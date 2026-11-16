@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "incidents",
+      "column": "incidents",
+      "where": {
+        "location": "500 PINE TOPS CT"
+      },
+      "delta": 0.2
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"set","table":"params","column":"max_mines","where":{"year":"Year2"},"value":100}]}

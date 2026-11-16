@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "multiple_knapsack",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "items",
+      "column": "value",
+      "where": {},
+      "factor": 1.2
+    }
+  ],
+  "note": "A 20% increase in all item values is achieved by scaling the value column of the items table by a factor of 1.2."
+}

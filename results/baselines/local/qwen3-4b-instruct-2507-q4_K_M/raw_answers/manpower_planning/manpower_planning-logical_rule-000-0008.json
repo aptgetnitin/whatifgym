@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","logic":[{"name":"redundancy_condition","at_least":1,"of":[{"measure":"redundant","scope":{"year":2,"skill":"unskilled"},"sense":">=","value":250},{"measure":"recruit","scope":{"year":3},"sense":">","value":0}]}]}

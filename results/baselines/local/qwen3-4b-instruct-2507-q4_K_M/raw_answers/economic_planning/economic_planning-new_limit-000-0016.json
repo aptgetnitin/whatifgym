@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","objective":[{"sense":"max","measure":"original"}],"rules":[{"name":"steel_output_at_least_1550","measure":"production","scope":{"industry":"steel","year":[1,2,3,4,5]},"sense":">=","value":1550}]}

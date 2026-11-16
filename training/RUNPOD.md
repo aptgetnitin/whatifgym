@@ -395,7 +395,15 @@ python training/score_models.py --adapters trained-run5-seed1=/root/adapter --wo
 
 **Result, training base** (`results/baselines/pod/training-base/`): 49.4 % on the 3,722 template tasks, 52.2 % on the 914 paraphrases, valid scenario 72.9 %, no prompt too long. By family: data_change 68, new_limit 68, relative_rule 34, objective_change 46, fixed_decision 78, relax_remove 56, logical_rule 16, infeasible_request 53, chained_scenario 62, under_specified 16. Check against run 5's before-training numbers on the same task ids: 51.75 % on the 400 held-out tasks (run 5: 52.5 %), 53.4 % on the 131 test tasks (run 5: 54.2 %); the small gap is 3 and 1 tasks (different vLLM memory share and batch composition).
 
-**Not done:** the trained model (run 5 adapter). Next: the same command with `--no-base`, about 20 min of pod time (about $0.30 with set-up), needs a go.
+**Second pod, trained model** (Nov 15, 10:46 PM Pacific). Pod `w7e6k49dvznsey`, `whatifgym-scoreboard-2`: RTX 4090 (24 GB), 21 vCPU, US-IL-1, secure cloud, host CUDA 13.2, **$0.89/hr**, same image and settings; on-pod deadline 2,280 s, Mac guard at 33 min. Timeline (UTC, Nov 16): 06:46:28 created; 06:47:30 set-up done (one minute: the host had the wheels cached); 06:47:58 adapter uploaded and sha256 checked on the pod; 07:07:57 scoring done (997 s, exit 0); 07:08:13 results downloaded (sha256 checked); 07:08:40 pod terminated, `list-pods` empty. **Cost: about $0.33** (22 min). Both pods together: about $0.83.
+
+```bash
+python training/score_models.py --no-base --adapters trained-run5-seed1=/root/adapter --workers 19 --out /root/out
+```
+
+**Result, trained model** (`results/baselines/pod/trained-run5-seed1/`): 63.1 % on the 3,722 template tasks (base 49.4 %), 65.1 % on the 914 paraphrases (base 52.2 %), valid scenario 87.3 % (base 73.2 %). On the 2,078 template tasks of the 14 held-out base models: 48.3 % → 61.6 %, 310 gained and 33 lost (exact McNemar p = 1.4e-57). On the training models: 50.8 % → 65.0 % (1,644 tasks, 176 of them training tasks). By family, base → trained: data_change 68 → 80, new_limit 68 → 82, relative_rule 34 → 71, objective_change 46 → 70, fixed_decision 78 → 86, relax_remove 56 → 71, logical_rule 16 → 22, infeasible_request 53 → 75, chained_scenario 62 → 70, under_specified 16 → 16 (it asks first on 26 % of them, the base on 38 %). drone_network: 49.0 % → 57.8 %. Check against run 5 on the same task ids: 68.5 % on the 400 held-out tasks (run 5: 67.5 %), 67.9 % on the 131 test tasks (run 5: 68.7 %).
+
+**Same model under Ollama** (free, Mac, Nov 15): `qwen3:4b-instruct-2507-q4_K_M` scores 44.1 % on the 3,722 template tasks, with no request errors. The default tag `qwen3:4b` used before is Qwen3-4B-Thinking-2507; with thinking off it scores 25.3 % and repeats itself, so the Instruct build replaces it as the 4B baseline.
 
 ## Problems hit, in order
 

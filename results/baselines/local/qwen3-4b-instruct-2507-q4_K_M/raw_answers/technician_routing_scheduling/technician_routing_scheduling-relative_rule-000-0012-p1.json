@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "flor_at_least_75_of_dispatched",
+      "measure": "use",
+      "scope": {
+        "technician": "Flor"
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "use",
+        "scope": {}
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "assigned_at_most_75_of_unfilled",
+      "measure": "assign",
+      "scope": {},
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "unfilled",
+        "scope": {}
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "Two relative limits: Flor's dispatch share is at least 75% of total dispatched technicians; total assigned jobs are at most 75% of total unfilled jobs."
+}

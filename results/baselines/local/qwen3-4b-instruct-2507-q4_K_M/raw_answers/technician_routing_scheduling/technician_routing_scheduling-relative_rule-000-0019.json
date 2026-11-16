@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "customers",
+      "column": "location",
+      "where": {
+        "location": "Baden-Baden"
+      },
+      "value": "Baden-Baden"
+    }
+  ],
+  "rules": [
+    {
+      "name": "baden_baden_start_time_share",
+      "measure": "start_time",
+      "scope": {
+        "location": "Baden-Baden"
+      },
+      "sense": ">=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "start_time",
+        "scope": {
+          "location": [
+            "Heidelberg",
+            "Freiburg im Breisgau",
+            "Mannheim",
+            "Karlsruhe",
+            "Baden-Baden",
+            "Buehl",
+            "Offenburg",
+            "Lahr/Schwarzwald"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The service start time in Baden-Baden must account for at least 60% of the total service start time across all locations."
+}

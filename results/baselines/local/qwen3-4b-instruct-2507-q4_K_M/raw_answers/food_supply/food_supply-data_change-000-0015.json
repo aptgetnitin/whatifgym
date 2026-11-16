@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "nutrients",
+      "column": "min_per_person",
+      "where": {
+        "nutrient": [
+          "Energy(kcal)",
+          "Protein(g)",
+          "Fat(g)",
+          "Calcium(mg)",
+          "Iron(mg)",
+          "VitaminA(ug)",
+          "ThiamineB1(mg)",
+          "RiboflavinB2(mg)",
+          "NicacinB3(mg)",
+          "Folate(ug)",
+          "VitaminC(mg)"
+        ]
+      },
+      "factor": 1.1
+    }
+  ]
+}

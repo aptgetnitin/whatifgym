@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_other_coal_hours_on",
+      "measure": "on",
+      "scope": {
+        "plant": "OTHER COAL"
+      },
+      "sense": "<=",
+      "value": 9
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": [],
+  "note": "The total number of hours that the OTHER COAL plant is on is capped at 9 hours over the 24-hour period."
+}

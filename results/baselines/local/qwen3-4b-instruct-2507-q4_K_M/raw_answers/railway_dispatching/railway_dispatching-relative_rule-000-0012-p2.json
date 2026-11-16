@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"entry_time","scope":{"train":["C"],"resource":["6"]}}],"rules":[{"name":"arrival_c_at_least_double_d","measure":"entry_time","scope":{"train":["D"],"resource":["6"]},"sense":">=","value":0,"relative_to":{"measure":"entry_time","scope":{"train":["C"],"resource":["6"]}},"factor":2}]}

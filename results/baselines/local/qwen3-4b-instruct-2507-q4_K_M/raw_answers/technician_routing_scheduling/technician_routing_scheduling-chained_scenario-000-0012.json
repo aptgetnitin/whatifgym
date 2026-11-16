@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "job_types",
+      "column": "duration_min",
+      "where": {},
+      "factor": 0.8
+    }
+  ],
+  "note": "A 20% reduction in every job duration is achieved by scaling the duration_min column in job_types by 0.8 across all rows."
+}

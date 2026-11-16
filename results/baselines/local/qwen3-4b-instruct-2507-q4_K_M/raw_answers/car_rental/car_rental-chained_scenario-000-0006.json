@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "params",
+      "column": "damage_excess",
+      "where": {
+        "param": "damage_excess"
+      },
+      "delta": 80
+    }
+  ],
+  "note": "The damage excess charged is increased by 80, as specified in the question."
+}

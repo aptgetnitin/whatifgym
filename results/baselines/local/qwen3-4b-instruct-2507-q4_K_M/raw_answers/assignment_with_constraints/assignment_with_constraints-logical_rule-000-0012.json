@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","data_changes":[],"rules":[{"name":"at_most_one_nonzero","measure":"works","scope":{"worker":["worker_10","worker_1","worker_5","worker_6"]},"sense":"==","value":1}],"note":"Only one of the specified workers may have a non-zero number of tasks assigned, enforced via a sum constraint on the works variable."}

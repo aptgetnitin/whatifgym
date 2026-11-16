@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "flights",
+      "column": "departure",
+      "where": {},
+      "delta": 25
+    },
+    {
+      "op": "shift",
+      "table": "flights",
+      "column": "arrival",
+      "where": {},
+      "delta": 25
+    }
+  ],
+  "note": "Every departure and arrival time in the flights table is increased by 25 minutes, affecting flight sequencing and routing constraints."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"arrival_f_above_zero","measure":"entry_time","scope":{"train":"E","resource":"3"},"sense":">=","value":12,"relative_to":{"measure":"entry_time","scope":{"train":"F","resource":"destination"}}}]}

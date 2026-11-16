@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"start_step3_positive_implies_end_step4_at_least_57","measure":"end","scope":{"job":"J0","step":4},"sense":">=","value":57,"relative_to":null,"factor":1.0}]}

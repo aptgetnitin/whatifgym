@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","logic":[{"name":"at_least","at_least":1,"of":[{"measure":"operate","scope":{"flight":["4563","3103"]},"sense":"==","value":0}]}]}

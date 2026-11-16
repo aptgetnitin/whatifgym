@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","objective":[{"sense":"max","measure":"original"},{"sense":"max","measure":"stock","scope":{"year":[1],"industry":["coal"]}}],"note":"Hold employment at its maximum, and after that make output held in stock in year 1 as large as possible."}

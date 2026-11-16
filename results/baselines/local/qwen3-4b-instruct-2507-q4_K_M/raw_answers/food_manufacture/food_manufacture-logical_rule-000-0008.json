@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","logic":[{"name":"storage_requirement","at_least":1,"of":[{"measure":"store","scope":{"month":"May","oil":"OIL3"},"sense":">=","value":1000},{"measure":"buy","scope":{"month":"Jun"},"sense":">","value":0}]}]}

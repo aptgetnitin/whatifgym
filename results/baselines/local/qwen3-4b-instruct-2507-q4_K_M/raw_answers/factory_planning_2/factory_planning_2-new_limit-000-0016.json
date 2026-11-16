@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","rules":[{"name":"total_sold_limit","measure":"sell","scope":{"month":["Apr"],"product":["Prod1","Prod2","Prod3","Prod4","Prod5","Prod6","Prod7"]},"sense":"<=","value":9700},{"name":"apr_sold_at_least_720","measure":"sell","scope":{"month":"Apr"},"sense":">=","value":720}]}

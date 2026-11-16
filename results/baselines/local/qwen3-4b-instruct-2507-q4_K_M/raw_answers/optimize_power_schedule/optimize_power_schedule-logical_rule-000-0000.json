@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "rules": [
+    {
+      "name": "at_most_three_plants_non_zero",
+      "measure": "output",
+      "scope": {
+        "plant": [
+          "Scherer",
+          "OTHER COAL",
+          "Edwin I Hatch",
+          "GAS",
+          "HYDRO"
+        ]
+      },
+      "sense": "<=",
+      "value": 3
+    }
+  ]
+}

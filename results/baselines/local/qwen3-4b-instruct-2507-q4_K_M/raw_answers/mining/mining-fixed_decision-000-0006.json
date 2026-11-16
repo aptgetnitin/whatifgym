@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"mining","data_changes":[{"op":"set","table":"operate","column":"operate","where":{"year":"Year2","mine":"Mine2"},"value":0}]}

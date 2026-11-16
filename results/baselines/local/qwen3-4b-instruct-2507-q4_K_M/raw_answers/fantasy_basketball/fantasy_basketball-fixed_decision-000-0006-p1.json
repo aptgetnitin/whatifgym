@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","data_changes":[{"op":"set","table":"players","column":"pick","where":{"player":"Kristaps Porzingis"},"value":1}],"fixed_decisions":[{"measure":"pick","scope":{"player":"Kristaps Porzingis"},"value":1}]}

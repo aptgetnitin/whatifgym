@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "dsd_min_flow_wheat_hassakeh_to_qamishli",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat",
+        "from_city": "Hassakeh",
+        "to_city": "Qamishli"
+      },
+      "sense": ">=",
+      "value": 16350
+    }
+  ],
+  "note": "A non-zero ration for Dried skim milk (enriched) (DSM) in Dayr_Az_Zor implies a minimum flow requirement for Wheat from Hassakeh to Qamishli of 16350 units per day."
+}

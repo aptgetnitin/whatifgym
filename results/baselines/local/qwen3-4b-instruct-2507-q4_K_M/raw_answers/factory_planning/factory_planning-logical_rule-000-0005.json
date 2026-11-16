@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","rules":[{"name":"feb_store_zero_or_600","measure":"store","scope":{"month":"Feb"},"sense":"==","value":0},{"name":"feb_store_at_least_600","measure":"store","scope":{"month":"Feb"},"sense":">=","value":600}]}

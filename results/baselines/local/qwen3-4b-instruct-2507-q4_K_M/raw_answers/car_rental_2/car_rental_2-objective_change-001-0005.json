@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "sum(undamaged_transfers, day, from_depot, to_depot)",
+      "scope": {}
+    },
+    {
+      "sense": "max",
+      "measure": "original",
+      "scope": {}
+    }
+  ]
+}

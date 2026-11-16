@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"plant_hours_on_cap","measure":"on","scope":{"plant":"*","hour":"*"},"sense":"<=","value":161}]}

@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "cap_purchase_DSM",
+      "measure": "purchase",
+      "scope": {
+        "food": "Dried skim milk (enriched) (DSM)"
+      },
+      "sense": "<=",
+      "value": 7450
+    }
+  ]
+}

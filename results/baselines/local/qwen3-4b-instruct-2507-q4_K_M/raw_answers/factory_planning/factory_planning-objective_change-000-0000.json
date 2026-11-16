@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "make",
+      "scope": {
+        "product": "all"
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "The objective is restructured to first minimize total units made, then maximize profit, reflecting a prioritized optimization sequence."
+}

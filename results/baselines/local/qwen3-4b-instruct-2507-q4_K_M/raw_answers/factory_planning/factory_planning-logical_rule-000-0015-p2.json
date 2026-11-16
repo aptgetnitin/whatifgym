@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "logic": [
+    {
+      "name": "stock_in_feb_implies_sell_prod7_jun_at_least_100",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "store",
+          "scope": {
+            "month": "Feb",
+            "product": "Prod7"
+          },
+          "sense": ">=",
+          "value": 1
+        },
+        {
+          "measure": "sell",
+          "scope": {
+            "month": "Jun",
+            "product": "Prod7"
+          },
+          "sense": ">=",
+          "value": 100
+        }
+      ]
+    }
+  ],
+  "note": "If there is any stock at the end of February for Prod7, then sales of Prod7 in June must be at least 100 units."
+}

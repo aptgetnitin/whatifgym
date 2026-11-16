@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_supply","data_changes":[{"op":"scale","table":"camps","column":"beneficiaries","where":{"camp":["Ar Raqqa","Daraa","Dayr_Az_Zor","Hassakeh","Idleb","Jubb_al_Jarrah","Qamishli"]},"factor":0.75}]}

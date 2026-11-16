@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_output_15_18_not_exceed_00_06",
+      "measure": "output",
+      "scope": {
+        "period": "15-18",
+        "type": [
+          "Thermal0",
+          "Thermal1",
+          "Thermal2"
+        ]
+      },
+      "sense": "<=",
+      "value": 10000,
+      "relative_to": {
+        "measure": "output",
+        "scope": {
+          "period": "00-06",
+          "type": [
+            "Thermal0",
+            "Thermal1",
+            "Thermal2"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The thermal output in the 15-18 period must not exceed the thermal output in the 00-06 period, enforced as a rule on the total output across all thermal types."
+}

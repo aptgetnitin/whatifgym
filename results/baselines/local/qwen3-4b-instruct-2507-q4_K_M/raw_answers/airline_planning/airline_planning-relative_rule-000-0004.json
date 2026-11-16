@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "rules": [
+    {
+      "name": "operate_4564_at_most_50_of_4575",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A320#22",
+        "flight": "4564"
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "operate",
+        "scope": {
+          "aircraft": "A320#22",
+          "flight": "4575"
+        }
+      },
+      "factor": 0.5
+    },
+    {
+      "name": "A320_22_operate_at_most_5_of_total",
+      "measure": "operate",
+      "scope": {
+        "aircraft": "A320#22"
+      },
+      "sense": "<=",
+      "value": 0.05
+    }
+  ]
+}

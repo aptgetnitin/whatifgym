@@ -1,0 +1,61 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "unfilled_at_least_1_5_assigned",
+      "measure": "unfilled",
+      "scope": {
+        "customer": [
+          "Customer1",
+          "Customer2",
+          "Customer3",
+          "Customer4",
+          "Customer5",
+          "Customer6",
+          "Customer7"
+        ]
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "assign",
+        "scope": {
+          "customer": [
+            "Customer1",
+            "Customer2",
+            "Customer3",
+            "Customer4",
+            "Customer5",
+            "Customer6",
+            "Customer7"
+          ]
+        }
+      },
+      "factor": 1.5
+    },
+    {
+      "name": "freiburg_location_50_percent_of_legs",
+      "measure": "route",
+      "scope": {
+        "from_location": "Freiburg im Breisgau"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "route",
+        "scope": {
+          "from_location": [
+            "Heidelberg",
+            "Freiburg im Breisgau",
+            "Mannheim",
+            "Karlsruhe",
+            "Baden-Baden",
+            "Buehl",
+            "Offenburg",
+            "Lahr/Schwarzwald"
+          ]
+        }
+      },
+      "factor": 0.5
+    }
+  ]
+}

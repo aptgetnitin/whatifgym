@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "min",
+      "measure": "pump",
+      "scope": {
+        "period": "09-15"
+      }
+    }
+  ],
+  "note": "First stage minimises the original cost (total generating cost), then in the second stage minimises pumping power during the 09-15 period, holding the first stage optimum."
+}

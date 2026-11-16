@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "leg_count_constraint",
+      "measure": "route",
+      "scope": {
+        "technician": "all"
+      },
+      "sense": "<=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "use",
+        "scope": {
+          "technician": "all"
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The total number of legs driven must be at most 75% of the total number of technicians dispatched."
+}

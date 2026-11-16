@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental","rules":[{"name":"damaged_stock_at_least_three_times_repairs","measure":"damaged_stock","scope":{"day":"*","depot":"*"},"sense":">=","value":3,"relative_to":{"measure":"repairs","scope":{"day":"*","depot":"*"}},"factor":1.0}]}

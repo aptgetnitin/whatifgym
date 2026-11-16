@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "fantasy_basketball",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "positions",
+      "column": "required",
+      "where": {
+        "position": "PG"
+      },
+      "value": 2
+    },
+    {
+      "op": "scale",
+      "table": "players",
+      "column": "predicted_points",
+      "where": {},
+      "factor": 1.25
+    }
+  ],
+  "note": "The required number of players at PG is set to 2, and all players' predicted fantasy points are increased by 25%."
+}

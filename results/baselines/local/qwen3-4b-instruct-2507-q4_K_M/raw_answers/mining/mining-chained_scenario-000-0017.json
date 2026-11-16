@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "data_changes": [
+    {
+      "op": "shift",
+      "table": "mines",
+      "column": "royalty",
+      "where": {},
+      "delta": -0.25
+    }
+  ],
+  "note": "Every yearly royalty in the mines table falls by 25%, applied uniformly across all mines and years."
+}

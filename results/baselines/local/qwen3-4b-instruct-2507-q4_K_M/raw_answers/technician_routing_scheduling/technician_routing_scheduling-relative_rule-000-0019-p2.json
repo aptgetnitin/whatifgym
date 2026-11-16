@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "baden_baden_start_time_share",
+      "measure": "start_time",
+      "scope": {
+        "location": "Baden-Baden"
+      },
+      "sense": ">=",
+      "value": 0.6,
+      "relative_to": {
+        "measure": "start_time",
+        "scope": {
+          "location": [
+            "Heidelberg",
+            "Freiburg im Breisgau",
+            "Mannheim",
+            "Karlsruhe",
+            "Baden-Baden",
+            "Buehl",
+            "Offenburg",
+            "Lahr/Schwarzwald"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "The share of service start time at Baden-Baden must be at least 60% of the total start time across all locations."
+}

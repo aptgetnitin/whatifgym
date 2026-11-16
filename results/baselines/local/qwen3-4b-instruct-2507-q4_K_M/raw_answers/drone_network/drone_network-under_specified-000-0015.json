@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","rules":[{"name":"queue_load_capped","measure":"linked_load","scope":{"location":"location","base":"base"},"sense":"<=","value":1.0}]}

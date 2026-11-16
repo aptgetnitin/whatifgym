@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","objective":[{"sense":"min","measure":"makespan"},{"sense":"max","measure":"start","scope":{"job":"J0","step":"step"}}],"note":"First optimise makespan to its minimum, then maximise the start time of J0's operations, subject to the original makespan constraint."}

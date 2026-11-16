@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","rules":[{"name":"total_goes_first_limit","measure":"goes_first","scope":{"resource":"*","train":"*","other_train":"*"},"sense":"<=","value":50}]}

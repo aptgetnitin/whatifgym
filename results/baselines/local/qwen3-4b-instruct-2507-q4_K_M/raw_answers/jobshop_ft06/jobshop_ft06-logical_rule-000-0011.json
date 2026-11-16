@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"j2_step1_end_constraint","measure":"end","scope":{"job":"J2","step":1},"sense":"==","value":0},{"name":"j2_step1_end_constraint_alt","measure":"end","scope":{"job":"J2","step":1},"sense":">=","value":15}]}

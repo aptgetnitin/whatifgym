@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","data_changes":[{"op":"shift","table":"years","column":"regular_labour_hours","where":{"year":["Year1","Year2","Year3","Year4","Year5"]},"delta":1000},{"op":"shift","table":"ages","column":"housing_capacity","where":{"age":[1,2,3,4,5,6,7,8,9,10,11,12]},"delta":100}]}

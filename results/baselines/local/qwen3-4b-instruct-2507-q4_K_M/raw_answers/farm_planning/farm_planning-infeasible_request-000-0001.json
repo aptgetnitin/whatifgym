@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"farm_planning","objective":[{"sense":"max","measure":"yearly_profit","scope":{"year":"Year4"}}],"note":"A fixed yearly profit target for a specific year is a constraint on the yearly_profit measure for that year, with the rest of the plan optimized around it."}

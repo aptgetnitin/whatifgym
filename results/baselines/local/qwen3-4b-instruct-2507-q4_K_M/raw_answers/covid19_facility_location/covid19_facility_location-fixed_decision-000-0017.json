@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"covid19_facility_location","data_changes":[{"op":"set","table":"build","column":"build","where":{"facility":"T15"},"value":0},{"op":"fixed_decision","measure":"assign","scope":{"county":"C5","facility":"E7"},"value":63}]}

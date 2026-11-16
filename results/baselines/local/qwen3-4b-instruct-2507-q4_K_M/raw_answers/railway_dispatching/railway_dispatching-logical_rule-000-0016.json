@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"min","measure":"finish_time","scope":{"train":["A"]}}],"note":"The objective is to minimize the finish time of train A, but with a constraint that its finish time is either zero or at least 66 minutes. This is expressed as a logical rule on the finish_time of train A."}

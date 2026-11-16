@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[{"op":"shift","table":"requirements","column":"max_recruit","where":{"year":"year","skill":"skill"},"delta":1},{"op":"shift","table":"retraining","column":"max_per_year","where":{"from_skill":"from_skill","to_skill":"to_skill"},"delta":1}]}

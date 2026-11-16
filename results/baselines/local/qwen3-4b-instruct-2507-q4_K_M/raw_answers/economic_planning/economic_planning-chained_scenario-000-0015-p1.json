@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "base_model": "economic_planning",
+  "data_changes": [],
+  "rules": [
+    {
+      "name": "cap_stock_total",
+      "measure": "stock",
+      "scope": {},
+      "sense": "<=",
+      "value": 850
+    },
+    {
+      "name": "cap_production_total",
+      "measure": "production",
+      "scope": {},
+      "sense": "<=",
+      "value": 3700
+    }
+  ],
+  "objective": [
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "fixed_decisions": [],
+  "relax": [],
+  "logic": []
+}

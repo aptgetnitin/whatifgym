@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "milk_ration_idleb_minimum",
+      "measure": "ration",
+      "scope": {
+        "food": "Milk",
+        "camp": "Idleb"
+      },
+      "sense": ">=",
+      "value": 2.15
+    }
+  ],
+  "note": "The ration of Milk at Idleb must be at least 2.15 units per person per day, or zero."
+}

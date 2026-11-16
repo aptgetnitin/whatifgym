@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","rules":[{"name":"a320_22_operation_limit","measure":"operate","scope":{"aircraft":"A320#22","flight":["flight"]},"sense":"<=","value":3}]}

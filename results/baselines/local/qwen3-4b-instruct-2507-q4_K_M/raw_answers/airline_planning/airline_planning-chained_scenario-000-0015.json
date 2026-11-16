@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "passengers",
+      "where": {},
+      "factor": 0.75
+    }
+  ],
+  "note": "A 25% drop in booked passengers is modeled as a 75% of original passenger count across all flights."
+}

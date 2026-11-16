@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","data_changes":[],"rules":[{"name":"repair_target_tuesday_plymouth","measure":"repairs","scope":{"day":"Tuesday","depot":"Plymouth"},"sense":"==","value":25}]}

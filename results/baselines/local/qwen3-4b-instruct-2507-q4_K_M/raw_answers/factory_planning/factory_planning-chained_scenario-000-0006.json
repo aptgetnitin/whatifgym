@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning","data_changes":[],"rules":[{"name":"total_inventory_cap","measure":"store","scope":{"product":"*","month":"*"},"sense":"<=","value":900}]}

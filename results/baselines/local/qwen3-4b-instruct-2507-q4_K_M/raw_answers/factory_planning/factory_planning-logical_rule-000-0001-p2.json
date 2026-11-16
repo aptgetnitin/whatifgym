@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod7_batch_rule",
+      "measure": "store",
+      "scope": {
+        "product": "Prod7"
+      },
+      "sense": ">=",
+      "value": 500
+    }
+  ],
+  "note": "A minimum batch rule ensures that if any stock exists for Prod7, it is at least 500 units."
+}

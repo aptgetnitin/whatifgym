@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "linked_load",
+      "scope": {
+        "location": "*"
+      }
+    }
+  ],
+  "note": "Among all plans that achieve the minimum response objective, this selects the one with the least total linked load across all assigned locations."
+}

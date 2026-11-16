@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[],"rules":[{"name":"mar_produce_target","measure":"produce","scope":{"month":["Mar"]},"sense":"==","value":1350}]}

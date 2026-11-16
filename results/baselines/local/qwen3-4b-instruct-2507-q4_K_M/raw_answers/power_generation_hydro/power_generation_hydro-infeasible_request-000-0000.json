@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","data_changes":[],"rules":[{"name":"thermal_output_18_24","measure":"output","scope":{"period":"18-24","type":"Thermal0"},"sense":">=","value":77850}]}

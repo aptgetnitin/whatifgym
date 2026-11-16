@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"assignment_with_constraints","data_changes":[],"rules":[{"name":"task_4_assignment_count","measure":"assign","scope":{"task":"task_4"},"sense":">=","value":2}]}

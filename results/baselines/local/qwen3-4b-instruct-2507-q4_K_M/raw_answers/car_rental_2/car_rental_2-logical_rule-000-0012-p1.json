@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "car_rental_2",
+  "rules": [
+    {
+      "name": "monday_rentals_minimum_batch",
+      "measure": "rentals",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": ">=",
+      "value": 960
+    },
+    {
+      "name": "monday_rentals_zero_or_minimum",
+      "measure": "rentals",
+      "scope": {
+        "day": "Monday"
+      },
+      "sense": "==",
+      "value": 0
+    }
+  ],
+  "note": "The rule ensures that on Monday, either no cars are rented (zero) or at least 960 cars are rented out. This creates a binary choice between zero and a minimum batch of 960."
+}

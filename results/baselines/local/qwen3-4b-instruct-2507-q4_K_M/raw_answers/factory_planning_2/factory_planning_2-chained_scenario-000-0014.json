@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"factory_planning_2","data_changes":[],"rules":[],"objective":[],"fixed_decisions":[],"relax":[],"logic":[],"note":"A 25% increase in the closing stock target modifies the end-of-horizon inventory requirement."}

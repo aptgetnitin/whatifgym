@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"optimize_power_schedule","rules":[{"name":"max_edwin_hatch_output","measure":"output","scope":{"plant":"Edwin I Hatch"},"sense":"<=","value":0.15,"relative_to":{"measure":"output","scope":{"plant":["Scherer","Bowen","Jack McDonough","Edwin I Hatch","Vogtle","OIL","BIOMASS","GAS","HYDRO","OTHER COAL"]}},"factor":1.0}]}

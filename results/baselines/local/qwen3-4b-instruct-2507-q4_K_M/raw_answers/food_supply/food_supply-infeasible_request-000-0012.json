@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "wheat_flow_hassakeh_to_qamishli_min",
+      "measure": "flow",
+      "scope": {
+        "food": "Wheat",
+        "from_city": "Hassakeh",
+        "to_city": "Qamishli"
+      },
+      "sense": ">=",
+      "value": 39250
+    }
+  ]
+}

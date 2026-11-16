@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "railway_dispatching",
+  "fixed_decisions": [
+    {
+      "measure": "goes_first",
+      "scope": {
+        "resource": 3,
+        "train": "F",
+        "other_train": "E"
+      },
+      "value": 1
+    },
+    {
+      "measure": "meet",
+      "scope": {
+        "resource": 6,
+        "train": "D",
+        "other_train": "F"
+      },
+      "value": 0
+    }
+  ],
+  "note": "Forced ordering at resource 3 between trains F and E, and elimination of shared occupancy at resource 6 between trains D and F."
+}

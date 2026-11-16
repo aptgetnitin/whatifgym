@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "sell",
+      "scope": {
+        "product": "product"
+      }
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "The objective first minimises total units sold across all products, then maximises profit among those plans."
+}

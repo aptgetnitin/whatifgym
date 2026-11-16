@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[{"op":"set","table":"customers","column":"due_time","where":{"customer":"Customer5"},"value":160}],"note":"Pin the due time for Customer5 at 160 minutes from day start, which changes the lateness penalty calculation and thus the penalty for finishing after due time."}

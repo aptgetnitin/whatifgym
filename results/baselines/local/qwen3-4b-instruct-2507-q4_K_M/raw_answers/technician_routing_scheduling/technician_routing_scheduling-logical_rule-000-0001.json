@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","data_changes":[{"op":"set","table":"unfilled","column":"customer","where":{"customer":["Customer6","Customer5","Customer1","Customer2"]},"value":1}]}

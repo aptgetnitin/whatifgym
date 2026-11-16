@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "base_model": "jobshop_ft06",
+  "rules": [
+    {
+      "name": "at_most_4_job_pairs_for_j3",
+      "measure": "goes_first",
+      "scope": {
+        "machine": "M0",
+        "job": "J3",
+        "other_job": [
+          "J0",
+          "J1",
+          "J2",
+          "J4",
+          "J5"
+        ]
+      },
+      "sense": "<=",
+      "value": 4
+    }
+  ]
+}

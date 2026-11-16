@@ -1,0 +1,76 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "rules": [
+    {
+      "name": "prod5_75_of_total_make",
+      "measure": "make",
+      "scope": {
+        "product": "Prod5"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "make",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      },
+      "factor": 0.75
+    },
+    {
+      "name": "sold_at_most_twice_stock",
+      "measure": "sell",
+      "scope": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "sense": "<=",
+      "relative_to": {
+        "measure": "store",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ],
+          "product": [
+            "Prod1",
+            "Prod2",
+            "Prod3",
+            "Prod4",
+            "Prod5",
+            "Prod6",
+            "Prod7"
+          ]
+        }
+      },
+      "factor": 2.0
+    }
+  ],
+  "note": "Two relative limits: Prod5 makes at least 75% of total production; total sales do not exceed twice total stock across all products and months."
+}

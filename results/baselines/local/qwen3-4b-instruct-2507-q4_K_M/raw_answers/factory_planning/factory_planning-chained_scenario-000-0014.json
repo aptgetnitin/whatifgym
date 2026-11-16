@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "params",
+      "column": "max_inventory",
+      "where": {
+        "product": [
+          "Prod1",
+          "Prod2",
+          "Prod3",
+          "Prod4",
+          "Prod5",
+          "Prod6",
+          "Prod7"
+        ]
+      },
+      "value": 320
+    }
+  ],
+  "note": "The total stock across all products at the end of February is constrained by the per-product inventory limit. Since the limit applies per product per month, setting max_inventory to 320 for all products enforces the overall cap on total stock at the end of February."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","objective":[{"sense":"max","measure":"recruit","scope":{"year":["1","2","3"],"skill":["unskilled","semi_skilled","skilled"]}}],"note":"Maximise total recruitment while keeping total redundancy unchanged, as per the original objective of minimising redundancies."}

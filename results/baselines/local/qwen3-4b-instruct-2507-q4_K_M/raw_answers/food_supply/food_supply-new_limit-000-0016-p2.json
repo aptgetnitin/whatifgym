@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "base_model": "food_supply",
+  "rules": [
+    {
+      "name": "milk_flow_minimum",
+      "measure": "flow",
+      "scope": {
+        "food": "Milk",
+        "from_city": [
+          "Aleppo",
+          "Amman",
+          "Ar Raqqa",
+          "As_Suweida",
+          "Beirut",
+          "Damascus",
+          "Daraa",
+          "Dayr_Az_Zor",
+          "Gaziantep",
+          "Hama",
+          "Hassakeh",
+          "Homs",
+          "Idleb",
+          "Jubb_al_Jarrah"
+        ],
+        "to_city": [
+          "Ar Raqqa",
+          "Idleb",
+          "As_Suweida",
+          "Daraa",
+          "Aleppo",
+          "Dayr_Az_Zor",
+          "Hassakeh",
+          "Damascus",
+          "Homs",
+          "Jubb_al_Jarrah",
+          "Qamishli",
+          "Hama"
+        ]
+      },
+      "sense": ">=",
+      "value": 36500
+    }
+  ]
+}

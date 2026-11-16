@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "base_model": "optimize_power_schedule",
+  "data_changes": [
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 11
+      },
+      "value": 11900
+    },
+    {
+      "op": "set",
+      "table": "hours",
+      "column": "demand_mwh",
+      "where": {
+        "hour": 21
+      },
+      "value": 18600
+    }
+  ],
+  "note": "Two demand requirements are set for specific hours: 11900 MWh at hour 11 and 18600 MWh at hour 21. The model must satisfy both demands simultaneously."
+}

@@ -1,0 +1,59 @@
+{
+  "version": "0.1",
+  "base_model": "food_manufacture",
+  "rules": [
+    {
+      "name": "veg2_at_least_3_times_veg1",
+      "measure": "consume",
+      "scope": {
+        "oil": "VEG2",
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "sense": ">=",
+      "value": 3,
+      "relative_to": {
+        "measure": "consume",
+        "scope": {
+          "oil": "VEG1",
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      }
+    },
+    {
+      "name": "jun_production_75_percent",
+      "measure": "produce",
+      "scope": {
+        "month": "Jun"
+      },
+      "sense": ">=",
+      "value": 0.75,
+      "relative_to": {
+        "measure": "produce",
+        "scope": {
+          "month": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun"
+          ]
+        }
+      }
+    }
+  ]
+}

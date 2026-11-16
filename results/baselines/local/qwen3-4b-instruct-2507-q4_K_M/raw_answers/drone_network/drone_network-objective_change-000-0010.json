@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "original"
+    },
+    {
+      "sense": "max",
+      "measure": "linked_load",
+      "scope": {
+        "location": "1700 PLEASURE HOUSE RD",
+        "base": "800 VIRGINIA BEACH BLVD Fire Station"
+      }
+    }
+  ],
+  "note": "Keep the response objective at its minimum, then maximise the queue load linked to the location 1700 PLEASURE HOUSE RD assigned to the base 800 VIRGINIA BEACH BLVD Fire Station."
+}

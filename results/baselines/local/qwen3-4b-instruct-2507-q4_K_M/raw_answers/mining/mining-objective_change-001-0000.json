@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "base_model": "mining",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "sum_open_years"
+    },
+    {
+      "sense": "max",
+      "measure": "original"
+    }
+  ],
+  "note": "New priority: minimize total mine-years kept open, then maximize discounted profit."
+}

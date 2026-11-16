@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "manpower_planning",
+  "rules": [
+    {
+      "name": "retraining_minimum_for_overmanning",
+      "measure": "retrain",
+      "scope": {
+        "year": 1,
+        "from_skill": "unskilled",
+        "to_skill": "semi_skilled"
+      },
+      "sense": ">=",
+      "value": 300
+    },
+    {
+      "name": "overmanning_year_2_positive",
+      "measure": "overmanned",
+      "scope": {
+        "year": 2
+      },
+      "sense": ">=",
+      "value": 1
+    }
+  ],
+  "note": "A non-zero overmanning in year 2 triggers a minimum retraining requirement of 300 unskilled-to-semi-skilled trainees in year 1."
+}

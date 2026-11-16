@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"power_generation_hydro","fixed_decisions":[{"measure":"nstart","scope":{"period":"00-06","type":"Thermal0"},"value":14}]}

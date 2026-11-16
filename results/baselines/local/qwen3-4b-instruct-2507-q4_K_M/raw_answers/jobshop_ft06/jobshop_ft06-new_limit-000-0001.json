@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"end_sum_j4_at_least_270","measure":"end","scope":{"job":"J4"},"sense":">=","value":270}]}

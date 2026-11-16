@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"jobshop_ft06","rules":[{"name":"j5_start_non_zero","measure":"start","scope":{"job":"J5","step":6},"sense":">=","value":0},{"name":"j4_end_at_least_280","measure":"end","scope":{"job":"J4","step":6},"sense":">=","value":280}]}

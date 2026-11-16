@@ -1,0 +1,58 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "max_sales",
+      "column": "max_sales",
+      "where": {
+        "product": "Prod5",
+        "month": [
+          "May",
+          "Jun"
+        ]
+      },
+      "factor": 0.8
+    }
+  ],
+  "rules": [
+    {
+      "name": "prod1_cap_feb_mar",
+      "measure": "make",
+      "scope": {
+        "product": "Prod1",
+        "month": [
+          "Feb",
+          "Mar"
+        ]
+      },
+      "sense": "<=",
+      "value": 500
+    },
+    {
+      "name": "prod2_at_least_prod1",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod2"
+      },
+      "sense": ">=",
+      "relative_to": {
+        "measure": "sell",
+        "scope": {
+          "product": "Prod1"
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "make_sum_may_at_least_2200",
+      "measure": "make",
+      "scope": {
+        "month": "May"
+      },
+      "sense": ">=",
+      "value": 2200
+    }
+  ]
+}

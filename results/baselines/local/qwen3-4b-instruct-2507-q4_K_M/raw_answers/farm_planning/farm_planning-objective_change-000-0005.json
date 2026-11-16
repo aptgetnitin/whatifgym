@@ -1,0 +1,43 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "objective": [
+    {
+      "sense": "min",
+      "measure": "grow_grain",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ],
+        "land_group": [
+          "Group1",
+          "Group2",
+          "Group3",
+          "Group4"
+        ]
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "five_year_profit_max",
+      "measure": "yearly_profit",
+      "scope": {
+        "year": [
+          "Year1",
+          "Year2",
+          "Year3",
+          "Year4",
+          "Year5"
+        ]
+      },
+      "sense": ">=",
+      "value": 121719.17
+    }
+  ],
+  "note": "Among all plans that achieve the maximum five-year profit, this selects the one with the least total grain grown across all years and land groups."
+}

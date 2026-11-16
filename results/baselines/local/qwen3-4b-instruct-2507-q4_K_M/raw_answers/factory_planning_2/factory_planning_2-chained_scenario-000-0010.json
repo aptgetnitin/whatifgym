@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "base_model": "factory_planning_2",
+  "rules": [
+    {
+      "name": "cap_sell_Prod1",
+      "measure": "sell",
+      "scope": {
+        "product": "Prod1"
+      },
+      "sense": "<=",
+      "value": 1100
+    }
+  ],
+  "note": "The sales limit for product Prod1 is increased from 1000 to 1100 units."
+}

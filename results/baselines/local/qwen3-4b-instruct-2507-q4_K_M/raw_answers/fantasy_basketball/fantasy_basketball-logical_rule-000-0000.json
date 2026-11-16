@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"fantasy_basketball","logic":[{"name":"at_most_two_picked","at_least":2,"of":[{"measure":"pick","scope":{"player":["Jarrett Jack","Markieff Morris","Dario Saric","Trevor Ariza","Joel Embiid"]},"sense":"<=","value":2}]}]}

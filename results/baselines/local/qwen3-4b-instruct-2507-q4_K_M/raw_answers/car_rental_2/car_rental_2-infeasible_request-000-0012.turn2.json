@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","data_changes":[{"op":"set","table":"damaged_transfers","column":"damaged_transfers","where":{"from_depot":"Glasgow"},"value":133}],"rules":[{"name":"min_damaged_transfers_glasgow","measure":"damaged_transfers","scope":{"from_depot":"Glasgow"},"sense":">=","value":133}]}

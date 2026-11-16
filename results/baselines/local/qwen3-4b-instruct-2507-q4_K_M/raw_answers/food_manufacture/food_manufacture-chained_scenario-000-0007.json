@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","rules":[{"name":"cap_buy_total","measure":"buy","scope":{"}},":{"sense":"<=","value":1600},"data_changes":[],"rules":[],"objective":[],"fixed_decisions":[],"relax":[],"logic":[],"note":"A cap on total oil purchases, updated from 1350 to 1600."}}]}

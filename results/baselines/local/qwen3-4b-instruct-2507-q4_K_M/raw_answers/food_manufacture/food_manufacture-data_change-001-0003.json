@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"food_manufacture","data_changes":[{"op":"scale","table":"purchase_prices","column":"price","where":{"oil":"VEG1"},"factor":0.75},{"op":"scale","table":"oils","column":"hardness","where":{"oil":"VEG1"},"factor":1.2}]}

@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "base_model": "airline_planning",
+  "data_changes": [
+    {
+      "op": "scale",
+      "table": "flights",
+      "column": "passengers",
+      "factor": 1.3
+    }
+  ],
+  "note": "A relative demand change over a subset of periods is a scale over the matching rows."
+}

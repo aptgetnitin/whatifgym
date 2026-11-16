@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","logic":[{"name":"at_least_60_percent_queue_load","at_least":1,"of":[{"measure":"queue_load","scope":{"base":"5145 RURITAN COURT Rescue Squad"},"sense":">=","value":0.6}]},{"name":"total_queue_load","at_least":1,"of":[{"measure":"queue_load","scope":{"base":"*"},"sense":"==","value":1.0}]}]}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "base_model": "drone_network",
+  "logic": [
+    {
+      "name": "queue_load_ratio",
+      "at_least": 1,
+      "of": [
+        {
+          "measure": "linked_load",
+          "scope": {
+            "location": "1100 ATLANTIC AV"
+          },
+          "sense": ">=",
+          "value": 2
+        },
+        {
+          "measure": "linked_load",
+          "scope": {
+            "location": "1300 HAWKS NEST WAY"
+          },
+          "sense": "<=",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

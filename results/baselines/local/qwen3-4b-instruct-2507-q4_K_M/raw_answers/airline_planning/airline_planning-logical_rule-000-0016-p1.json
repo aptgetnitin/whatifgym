@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"airline_planning","data_changes":[{"op":"set","table":"flights","column":"operate","where":{"flight":[4576,4577]},"value":1},{"op":"set","table":"flights","column":"operate","where":{"flight":[4576,4577]},"value":0}],"rules":[{"name":"exactly_one_of_4576_4577","measure":"operate","scope":{"flight":[4576,4577]},"sense":"==","value":1}]}

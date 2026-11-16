@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "base_model": "power_generation_hydro",
+  "rules": [
+    {
+      "name": "thermal_output_06-09",
+      "measure": "output",
+      "scope": {
+        "period": "06-09",
+        "type": "Thermal0"
+      },
+      "sense": ">=",
+      "value": 60000
+    },
+    {
+      "name": "thermal_output_15-18",
+      "measure": "output",
+      "scope": {
+        "period": "15-18",
+        "type": "Thermal0"
+      },
+      "sense": ">=",
+      "value": 77200
+    }
+  ],
+  "note": "The rules enforce minimum thermal output in two periods. The output is aggregated per type and period as per the decision variable schema."
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","rules":[{"name":"undamaged_stock_at_most_90_percent_of_damaged_transfers","measure":"undamaged_stock","scope":{"day":"day","depot":"depot"},"sense":"<=","value":0.9,"relative_to":{"measure":"damaged_transfers","scope":{"day":"day","from_depot":"from_depot","to_depot":"to_depot"}},"factor":1.0}]}

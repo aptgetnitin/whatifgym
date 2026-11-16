@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "base_model": "farm_planning",
+  "rules": [
+    {
+      "name": "heifer_calves_year2_limit",
+      "measure": "raise_heifers",
+      "scope": {
+        "year": "Year2"
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "raise_heifers",
+        "scope": {
+          "year": [
+            "Year1",
+            "Year2",
+            "Year3",
+            "Year4",
+            "Year5"
+          ]
+        }
+      },
+      "factor": 1.0
+    }
+  ],
+  "note": "At most 25% of the total heifer calves raised across all years may go to Year2."
+}

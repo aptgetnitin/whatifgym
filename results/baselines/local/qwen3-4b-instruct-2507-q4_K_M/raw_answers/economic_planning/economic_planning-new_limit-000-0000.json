@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"transport_output_requirement","measure":"production","scope":{"industry":"transport"},"sense":">=","value":1330}]}

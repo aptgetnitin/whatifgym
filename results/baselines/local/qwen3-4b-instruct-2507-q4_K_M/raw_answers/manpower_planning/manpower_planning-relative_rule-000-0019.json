@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","rules":[{"name":"short_time_year1_max","measure":"short_time","scope":{"year":[1]},"sense":"<=","value":25,"relative_to":{"measure":"short_time","scope":{"year":[1,2,3]},"factor":0.25}}]}

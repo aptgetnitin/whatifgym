@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"railway_dispatching","objective":[{"sense":"max","measure":"meet","scope":{"resource":"resource","train":["train"],"other_train":["train"]}}],"note":"Maximizes the total number of train pairs sharing a resource at the same time, without increasing total delay."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"battery_scheduling","objective":[{"sense":"max","measure":"original"}],"rules":[{"name":"min_discharge_19-20","measure":"discharge","scope":{"hour":"19-20"},"sense":"<=","value":0}]}

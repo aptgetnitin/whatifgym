@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"drone_network","data_changes":[{"op":"set","table":"queue_load","column":"base","where":{"base":"5145 RURITAN COURT Rescue Squad"},"value":0}]}

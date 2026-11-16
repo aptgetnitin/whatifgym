@@ -1,0 +1,47 @@
+{
+  "version": "0.1",
+  "base_model": "technician_routing_scheduling",
+  "rules": [
+    {
+      "name": "karlsruhe_start_time_share",
+      "measure": "start_time",
+      "scope": {
+        "location": "Karlsruhe"
+      },
+      "sense": ">=",
+      "value": 0.2,
+      "relative_to": {
+        "measure": "start_time",
+        "scope": {
+          "location": [
+            "Heidelberg",
+            "Freiburg im Breisgau",
+            "Mannheim",
+            "Karlsruhe",
+            "Baden-Baden",
+            "Buehl",
+            "Offenburg",
+            "Lahr/Schwarzwald"
+          ]
+        }
+      },
+      "factor": 1.0
+    },
+    {
+      "name": "carlos_dispatch_at_most_25_of_ed",
+      "measure": "use",
+      "scope": {
+        "technician": "Carlos"
+      },
+      "sense": "<=",
+      "value": 0.25,
+      "relative_to": {
+        "measure": "use",
+        "scope": {
+          "technician": "Ed"
+        }
+      },
+      "factor": 1.0
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"manpower_planning","data_changes":[],"rules":[{"name":"short_time_semi_skilled_limit","measure":"short_time","scope":{"skill":"semi_skilled"},"sense":"<=","value":5}],"note":"A limit on the proportion of short-time workers in a skill level is enforced as an absolute cap on the number of such workers, given the skill level and year dimensions."}

@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"car_rental_2","data_changes":[],"rules":[{"name":"repair_target_monday","measure":"repairs","scope":{"day":"Monday","depot":"Birmingham"},"sense":"==","value":94}]}

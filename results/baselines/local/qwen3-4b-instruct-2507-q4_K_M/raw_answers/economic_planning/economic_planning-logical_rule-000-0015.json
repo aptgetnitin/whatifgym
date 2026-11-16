@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"economic_planning","rules":[{"name":"at_most_one_stock","measure":"stock","scope":{"industry":["steel","coal","transport"]},"sense":"<=","value":1}]}

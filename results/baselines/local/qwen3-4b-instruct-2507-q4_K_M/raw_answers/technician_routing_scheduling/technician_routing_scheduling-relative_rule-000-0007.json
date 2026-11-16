@@ -1,0 +1,1 @@
+{"version":"0.1","base_model":"technician_routing_scheduling","rules":[{"name":"at_least_60_percent_to_ed","measure":"use","scope":{"technician":"Ed"},"sense":"==","value":0.6}]}
